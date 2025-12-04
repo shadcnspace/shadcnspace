@@ -20,17 +20,27 @@ export interface RegistryBlock {
 
 
 export const blocks: RegistryBlock[] =
- [
-  // Hero Blocks
-  {
-    name: "hero-01",
-    title: "Hero 01",
-    description: "A simple hero block",
-    component: React.lazy(
-      () => import("@/registry/blocks/hero-01/components/hero")
-    ),
-    categories: [categories.hero],
-    files: [{ path: "components/hero.tsx" }],
-  }
- 
-];
+  [
+    // Hero Blocks
+    {
+      name: "hero-01",
+      title: "Hero 01",
+      description: "A simple hero block",
+      component: React.lazy(
+        () => import("@/registry/blocks/hero-01/components/hero")
+      ),
+      categories: [categories.hero],
+      files: [{ path: "components/hero.tsx" }],
+    },
+    {
+      name: "banner-01",
+      title: "Banner 01",
+      description: "A simple banner block",
+      component: React.lazy(
+        () => import("@/registry/blocks/banner-01/components/banner")
+      ),
+      categories: [categories.banner],
+      files: [{ path: "components/banner.tsx" }],
+    }
+
+  ];
