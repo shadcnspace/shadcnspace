@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-02",
+  "type": "registry:component",
+  "title": "Tooltip with Arrow",
+  "description": "A tooltip component with an arrow",
+  "registryDependencies": [
+    "tooltip",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/tooltip/tooltip-02.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/ui/tooltip\";\nimport { Tooltip as TooltipPrimitive } from \"radix-ui\";\n\nexport default function WithArrowTooltipDemo() {\n  return (\n    <TooltipProvider>\n      <Tooltip>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\">Hover</Button>\n        </TooltipTrigger>\n        <TooltipContent>\n          <p>Tooltip with arrow</p>\n          <TooltipPrimitive.Arrow className=\"fill-foreground\" />\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

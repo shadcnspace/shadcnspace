@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-09",
+  "type": "registry:component",
+  "title": "Select with Custom Menu Position",
+  "description": "A select component with custom menu position",
+  "registryDependencies": [
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/select/select-09.tsx",
+      "content": "import * as React from \"react\";\n\nimport {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/ui/select\";\nimport { Label } from \"@/registry/ui/label\";\n\nexport default function SelectMenuPositionDemo() {\n  return (\n    <div className=\"grid sm:grid-cols-2 gap-3 w-full\">\n      <div className=\"grow\">\n        <Label className=\"mb-2 block\">Popper (Default)</Label>\n        <Select defaultValue=\"apple\">\n          <SelectTrigger className=\"w-full\">\n            <SelectValue placeholder=\"Select a fruit\" />\n          </SelectTrigger>\n          <SelectContent position=\"popper\">\n            <SelectGroup>\n              <SelectLabel>Fruits</SelectLabel>\n              <SelectItem value=\"apple\">Apple</SelectItem>\n              <SelectItem value=\"banana\">Banana</SelectItem>\n              <SelectItem value=\"blueberry\">Blueberry</SelectItem>\n              <SelectItem value=\"grapes\">Grapes</SelectItem>\n              <SelectItem value=\"pineapple\">Pineapple</SelectItem>\n            </SelectGroup>\n          </SelectContent>\n        </Select>\n      </div>\n      <div className=\"grow\">\n        <Label className=\"mb-2 block\">Item Aligned</Label>\n        <Select defaultValue=\"apple\">\n          <SelectTrigger className=\"w-full\">\n            <SelectValue placeholder=\"Select a fruit\" />\n          </SelectTrigger>\n          <SelectContent position=\"item-aligned\">\n            <SelectGroup>\n              <SelectLabel>Fruits</SelectLabel>\n              <SelectItem value=\"apple\">Apple</SelectItem>\n              <SelectItem value=\"banana\">Banana</SelectItem>\n              <SelectItem value=\"blueberry\">Blueberry</SelectItem>\n              <SelectItem value=\"grapes\">Grapes</SelectItem>\n              <SelectItem value=\"pineapple\">Pineapple</SelectItem>\n            </SelectGroup>\n          </SelectContent>\n        </Select>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

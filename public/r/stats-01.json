@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stats-01",
+  "type": "registry:block",
+  "title": "Stats 01",
+  "description": "A simple stats block",
+  "files": [
+    {
+      "path": "src/registry/blocks/stats-01/components/stats.tsx",
+      "content": "const Stats = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"max-w-(--breakpoint-xl) mx-auto py-12 text-center\">\n        <h2 className=\"text-4xl md:text-5xl font-semibold tracking-tighter\">\n          Why Should You Choose Us?\n        </h2>\n        <p className=\"mt-4 text-xl text-muted-foreground\">\n          Because after switching to us...\n        </p>\n\n        <div className=\"mt-16 sm:mt-24 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 justify-center\">\n          <div className=\"max-w-3xs\">\n            <span className=\"text-5xl font-semibold\">96%</span>\n            <p className=\"mt-6 text-lg\">\n              of customers say they have a better brand experience\n            </p>\n          </div>\n          <div className=\"max-w-3xs\">\n            <span className=\"text-5xl font-semibold\">95%</span>\n            <p className=\"mt-6 text-lg\">\n              of customers say they gather more data, more easily\n            </p>\n          </div>\n          <div className=\"max-w-3xs\">\n            <span className=\"text-5xl font-semibold\">87%</span>\n            <p className=\"mt-6 text-lg\">\n              of customers say they reveal deeper insights from data\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Stats;\n",
+      "type": "registry:component"
+    }
+  ]
+}

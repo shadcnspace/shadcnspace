@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-05",
+  "type": "registry:component",
+  "title": "Gradient Progress",
+  "description": "A progress component with gradient styling",
+  "registryDependencies": [
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/progress/progress-05.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Progress } from \"@/registry/ui/progress\";\n\nexport default function ProgressGradientDemo() {\n  const [progress, setProgress] = React.useState(13);\n\n  React.useEffect(() => {\n    const timer = setTimeout(() => setProgress(66), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <Progress\n      value={progress}\n      className=\"w-[60%] [&>div]:bg-linear-to-r [&>div]:from-cyan-400 [&>div]:via-sky-500 [&>div]:to-indigo-500 [&>div]:rounded-l-full\"\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

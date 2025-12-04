@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel-11",
+  "type": "registry:component",
+  "title": "Carousel with Scale Transition",
+  "description": "A carousel with scale transition effects",
+  "registryDependencies": [
+    "carousel",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/carousel/carousel-11.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Card, CardContent } from \"@/registry/ui/card\";\nimport {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselNext,\n  CarouselPrevious,\n  type CarouselApi,\n} from \"@/registry/ui/carousel\";\nimport { cn } from \"@/lib/utils\";\n\nexport default function SlideScale() {\n  const [api, setApi] = React.useState<CarouselApi>();\n  const [current, setCurrent] = React.useState(0);\n  console.log(\"current :\", current);\n\n  React.useEffect(() => {\n    if (!api) {\n      return;\n    }\n\n    setCurrent(api.selectedScrollSnap() + 1);\n\n    api.on(\"select\", () => {\n      setCurrent(api.selectedScrollSnap() + 1);\n    });\n  }, [api]);\n\n  return (\n    <div className=\"mx-auto max-w-xs\">\n      <Carousel\n        setApi={setApi}\n        className=\"w-full max-w-xs\"\n        opts={{ loop: true }}\n      >\n        <CarouselContent className=\"py-3\">\n          {Array.from({ length: 5 }).map((_, index) => (\n            <CarouselItem key={index} className={cn(\"basis-[33%]\", {})}>\n              <Card\n                className={cn(\"transition-transform duration-500\", {\n                  \"scale-[0.6]\": index !== current - 1,\n                })}\n              >\n                <CardContent className=\"flex aspect-square items-center justify-center p-6\">\n                  <span className=\"text-4xl font-semibold\">{index + 1}</span>\n                </CardContent>\n              </Card>\n            </CarouselItem>\n          ))}\n        </CarouselContent>\n        <CarouselPrevious />\n        <CarouselNext />\n      </Carousel>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

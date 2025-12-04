@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-05",
+  "type": "registry:component",
+  "title": "Select with Custom Shape",
+  "description": "A select component with custom shape styling",
+  "registryDependencies": [
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/select/select-05.tsx",
+      "content": "import { Label } from \"@/registry/ui/label\";\nimport {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/ui/select\";\n\nexport default function SelectShapeDemo() {\n  return (\n    <div className=\"flex items-center justify-center gap-5\">\n      <div className=\"w-28\">\n        <Label className=\"mb-2 block\">Rectangular</Label>\n        <Select defaultValue=\"apple\">\n          <SelectTrigger className=\"rounded-none\">\n            <SelectValue placeholder=\"Select a fruit\" />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectGroup>\n              <SelectLabel>Fruits</SelectLabel>\n              <SelectItem value=\"apple\">Apple</SelectItem>\n              <SelectItem value=\"banana\">Banana</SelectItem>\n              <SelectItem value=\"blueberry\">Blueberry</SelectItem>\n              <SelectItem value=\"grapes\">Grapes</SelectItem>\n              <SelectItem value=\"pineapple\">Pineapple</SelectItem>\n            </SelectGroup>\n          </SelectContent>\n        </Select>\n      </div>\n      <div className=\"w-28\">\n        <Label className=\"mb-2 block\">Circular</Label>\n        <Select defaultValue=\"apple\">\n          <SelectTrigger className=\"rounded-full\">\n            <SelectValue placeholder=\"Select a fruit\" />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectGroup>\n              <SelectLabel>Fruits</SelectLabel>\n              <SelectItem value=\"apple\">Apple</SelectItem>\n              <SelectItem value=\"banana\">Banana</SelectItem>\n              <SelectItem value=\"blueberry\">Blueberry</SelectItem>\n              <SelectItem value=\"grapes\">Grapes</SelectItem>\n              <SelectItem value=\"pineapple\">Pineapple</SelectItem>\n            </SelectGroup>\n          </SelectContent>\n        </Select>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

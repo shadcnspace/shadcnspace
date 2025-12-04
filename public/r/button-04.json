@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-04",
+  "type": "registry:component",
+  "title": "Outline Button",
+  "description": "An outline button component",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-04.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\n\nconst OutlineButtonDemo = () => <Button variant=\"outline\">Outline</Button>;\n\nexport default OutlineButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

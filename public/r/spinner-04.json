@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-04",
+  "type": "registry:component",
+  "title": "Spinner Colors",
+  "description": "A spinner component with different colors",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/spinner/spinner-04.tsx",
+      "content": "import { Loader2Icon } from \"lucide-react\";\n\nexport default function SpinnerColorsDemo() {\n  return (\n    <div className=\"flex gap-4 flex-wrap\">\n      <Loader2Icon className=\"animate-spin\" />\n      <Loader2Icon className=\"animate-spin text-green-500\" />\n      <Loader2Icon className=\"animate-spin text-indigo-500\" />\n      <Loader2Icon className=\"animate-spin text-rose-500\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

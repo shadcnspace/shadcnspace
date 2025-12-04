@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-04",
+  "type": "registry:component",
+  "title": "Slider Color",
+  "description": "A slider component with different colors",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/slider/slider-04.tsx",
+      "content": "import { Slider as SliderPrimitive } from \"radix-ui\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n// Replace `Slider` component in `@components/ui/slider.tsx` with the following code to customize the appearance of the slider.\nconst Slider = React.forwardRef<\n  React.ElementRef<typeof SliderPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & {\n    trackClassName?: string;\n    rangeClassName?: string;\n    thumbClassName?: string;\n  }\n>(\n  (\n    { className, trackClassName, rangeClassName, thumbClassName, ...props },\n    ref\n  ) => (\n    <SliderPrimitive.Root\n      ref={ref}\n      className={cn(\n        \"relative flex w-full touch-none select-none items-center\",\n        className\n      )}\n      {...props}\n    >\n      <SliderPrimitive.Track\n        className={cn(\n          \"relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20\",\n          trackClassName\n        )}\n      >\n        <SliderPrimitive.Range\n          className={cn(\"absolute h-full bg-primary\", rangeClassName)}\n        />\n      </SliderPrimitive.Track>\n      <SliderPrimitive.Thumb\n        className={cn(\n          \"block h-4 w-4 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50\",\n          thumbClassName\n        )}\n      />\n    </SliderPrimitive.Root>\n  )\n);\nSlider.displayName = SliderPrimitive.Root.displayName;\n\nexport default function SliderColorDemo() {\n  return (\n    <div className=\"grid gap-6 max-w-sm w-full mx-auto\">\n      <Slider\n        defaultValue={[50]}\n        max={100}\n        step={1}\n        rangeClassName=\"bg-green-500\"\n        thumbClassName=\"bg-white\"\n      />\n      <Slider\n        defaultValue={[50]}\n        max={100}\n        step={1}\n        rangeClassName=\"bg-indigo-500\"\n        thumbClassName=\"bg-white\"\n      />\n      <Slider\n        defaultValue={[50]}\n        max={100}\n        step={1}\n        rangeClassName=\"bg-rose-500\"\n        thumbClassName=\"bg-white\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

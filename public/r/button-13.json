@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-13",
+  "type": "registry:component",
+  "title": "Neon Button",
+  "description": "A neon button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-13.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { cn } from \"@/lib/utils\";\nimport { StarIcon } from \"lucide-react\";\n\nconst ButtonNeon = ({\n  className,\n  ...props\n}: React.ComponentProps<typeof Button>) => (\n  <Button\n    className={cn(\n      \"bg-indigo-500 text-primary-foreground hover:bg-indigo-600 dark:text-foreground shadow-lg shadow-indigo-400 dark:shadow-indigo-700\",\n      className\n    )}\n    {...props}\n  />\n);\n\nconst NeonButtonDemo = () => (\n  <div className=\"flex items-center gap-2 flex-wrap\">\n    <ButtonNeon>Neon</ButtonNeon>\n    <ButtonNeon size=\"icon\">\n      <StarIcon />\n    </ButtonNeon>\n    <ButtonNeon>\n      <StarIcon /> Star\n    </ButtonNeon>\n  </div>\n);\n\nexport default NeonButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

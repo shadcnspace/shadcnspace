@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-12",
+  "type": "registry:component",
+  "title": "Numberless Pagination with Text",
+  "description": "A pagination component without numbers but with text",
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/pagination/pagination-12.tsx",
+      "content": "import {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationNext,\n  PaginationPrevious,\n} from \"@/registry/ui/pagination\";\n\nexport default function PaginationNumberless() {\n  return (\n    <div className=\"w-full max-w-xs\">\n      <Pagination className=\"w-full\">\n        <PaginationContent className=\"w-full justify-between\">\n          <PaginationItem>\n            <PaginationPrevious href=\"#\" className=\"border\" />\n          </PaginationItem>\n          <PaginationItem>\n            <span className=\"text-sm text-muted-foreground\">Page 1 of 21</span>\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationNext href=\"#\" className=\"border\" />\n          </PaginationItem>\n        </PaginationContent>\n      </Pagination>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

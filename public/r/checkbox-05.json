@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-05",
+  "type": "registry:component",
+  "title": "Vertical Checkbox Group",
+  "description": "A vertical checkbox group component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/checkbox/checkbox-05.tsx",
+      "content": "import { Checkbox } from \"@/registry/ui/checkbox\";\nimport { Beer, IceCreamBowl, Pizza, Sandwich } from \"lucide-react\";\n\nconst options = [\n  {\n    name: \"pizza\",\n    label: \"Pizza\",\n    icon: Pizza,\n    defaultChecked: true,\n  },\n  {\n    name: \"sandwich\",\n    label: \"Sandwich\",\n    icon: Sandwich,\n    defaultChecked: true,\n  },\n  {\n    name: \"beer\",\n    label: \"Beer\",\n    icon: Beer,\n  },\n  {\n    name: \"ice-cream\",\n    label: \"Ice Cream\",\n    icon: IceCreamBowl,\n  },\n];\n\nexport default function CheckboxVerticalGroupDemo() {\n  return (\n    <div className=\"mt-2 flex flex-col items-start gap-4\">\n      {options.map(({ name, label, icon: Icon, defaultChecked }) => (\n        <div key={name} className=\"flex items-center gap-4\">\n          <Checkbox defaultChecked={defaultChecked} id={`${name}-vertical`} />\n          <label\n            htmlFor={`${name}-vertical`}\n            className=\"flex items-center gap-2 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"\n          >\n            <Icon className=\"h-5 w-5\" />\n            {label}\n          </label>\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

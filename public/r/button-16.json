@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-16",
+  "type": "registry:component",
+  "title": "Theme Toggle Button",
+  "description": "A theme toggle button component",
+  "dependencies": [
+    "lucide-react",
+    "next-themes"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-16.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/ui/button\";\nimport { MoonIcon, SunIcon } from \"lucide-react\";\nimport { useTheme } from \"next-themes\";\nimport { useEffect, useState } from \"react\";\n\nconst ThemeToggleButton = () => {\n  const [mounted, setMounted] = useState(false);\n  const { resolvedTheme, setTheme } = useTheme();\n\n  const toggleTheme = () => {\n    setTheme(resolvedTheme === \"dark\" ? \"light\" : \"dark\");\n  };\n\n  useEffect(() => {\n    setMounted(true);\n  }, []);\n\n  // Prevent SSR flicker and hydration mismatch\n  if (!mounted) {\n    return <Button size=\"icon\" className=\"rounded-full\" />;\n  }\n\n  return (\n    <Button size=\"icon\" className=\"rounded-full\" onClick={toggleTheme}>\n      {resolvedTheme === \"dark\" ? <SunIcon /> : <MoonIcon />}\n    </Button>\n  );\n};\n\nexport default ThemeToggleButton;\n",
+      "type": "registry:component"
+    }
+  ]
+}

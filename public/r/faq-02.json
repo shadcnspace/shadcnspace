@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faq-02",
+  "type": "registry:block",
+  "title": "FAQ 02",
+  "description": "A simple FAQ component",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/faq-02/components/faq.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\";\n\nconst faq = [\n  {\n    question: \"What is your return policy?\",\n    answer:\n      \"You can return unused items in their original packaging within 30 days for a refund or exchange. Contact support for assistance.\",\n  },\n  {\n    question: \"How do I track my order?\",\n    answer:\n      \"Track your order using the link provided in your confirmation email, or log into your account to view tracking details.\",\n  },\n  {\n    question: \"Do you ship internationally?\",\n    answer:\n      \"Yes, we ship worldwide. Shipping fees and delivery times vary by location, and customs duties may apply for some countries.\",\n  },\n  {\n    question: \"What payment methods do you accept?\",\n    answer:\n      \"We accept Visa, MasterCard, American Express, PayPal, Apple Pay, and Google Pay, ensuring secure payment options for all customers.\",\n  },\n  {\n    question: \"What if I receive a damaged item?\",\n    answer:\n      \"Please contact our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund.\",\n  },\n];\n\nconst FAQ = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center px-6 py-12\">\n      <div className=\"flex flex-col md:flex-row items-start gap-x-12 gap-y-6\">\n        <h2 className=\"text-4xl lg:text-5xl leading-[1.15]! font-semibold tracking-[-0.035em]\">\n          Frequently Asked <br /> Questions\n        </h2>\n\n        <Accordion type=\"single\" defaultValue=\"question-0\" className=\"max-w-xl\">\n          {faq.map(({ question, answer }, index) => (\n            <AccordionItem key={question} value={`question-${index}`}>\n              <AccordionTrigger className=\"text-left text-lg\">\n                {question}\n              </AccordionTrigger>\n              <AccordionContent className=\"text-base text-muted-foreground\">\n                {answer}\n              </AccordionContent>\n            </AccordionItem>\n          ))}\n        </Accordion>\n      </div>\n    </div>\n  );\n};\n\nexport default FAQ;\n",
+      "type": "registry:component"
+    }
+  ]
+}

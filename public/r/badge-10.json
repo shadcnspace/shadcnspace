@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-10",
+  "type": "registry:component",
+  "title": "Badge with Image",
+  "description": "A badge with image component",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/badge/badge-10.tsx",
+      "content": "import { Badge } from \"@/registry/ui/badge\";\nimport Image from \"next/image\";\n\nconst BadgeWithImageDemo = () => {\n  return (\n    <div className=\"flex items-center gap-3 flex-wrap\">\n      <Badge className=\"rounded-full pl-[3px]\" variant=\"outline\">\n        <Image\n          src=\"https://github.com/shadcn.png\"\n          className=\"mr-2 h-5 w-5 rounded-full\"\n          alt=\"\"\n          height={20}\n          width={20}\n        />\n        shadcn\n      </Badge>\n      <Badge className=\"rounded-full pr-[3px]\" variant=\"outline\">\n        shadcn\n        <Image\n          src=\"https://github.com/shadcn.png\"\n          className=\"ml-2 h-5 w-5 rounded-full\"\n          alt=\"\"\n          height={20}\n          width={20}\n        />\n      </Badge>\n    </div>\n  );\n};\n\nexport default BadgeWithImageDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-09",
+  "type": "registry:component",
+  "title": "Slider with Marks",
+  "description": "A slider component with marks for specific values",
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/slider/slider-09.tsx",
+      "content": "import { Slider } from \"@/registry/ui/slider\";\n\nexport default function SliderMarksDemo() {\n  const ramExpansions = [\"4GB\", \"6GB\", \"8GB\"];\n\n  return (\n    <div className=\"w-full max-w-sm\">\n      <Slider defaultValue={[1]} max={2} step={1} />\n      <div className=\"mt-2 -mx-1.5 flex items-center justify-between text-muted-foreground text-xs\">\n        {ramExpansions.map((expansion) => (\n          <span key={expansion}>{expansion}</span>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

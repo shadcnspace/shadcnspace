@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-06",
+  "type": "registry:component",
+  "title": "Post Card",
+  "description": "A post card component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "button",
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/card/card-06.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { Card, CardContent, CardFooter, CardHeader } from \"@/registry/ui/card\";\nimport {\n  Item,\n  ItemActions,\n  ItemContent,\n  ItemDescription,\n  ItemMedia,\n  ItemTitle,\n} from \"@/registry/ui/item\";\nimport {\n  HeartIcon,\n  MessageCircleIcon,\n  MoreHorizontalIcon,\n  ShareIcon,\n} from \"lucide-react\";\nimport Image from \"next/image\";\n\nexport default function CardPost() {\n  return (\n    <Card className=\"w-full max-w-xs shadow-none py-0 gap-0\">\n      <CardHeader className=\"flex flex-row items-center justify-between py-2.5 -mr-1\">\n        <Item className=\"w-full p-0 gap-2.5\">\n          <ItemMedia>\n            <Image\n              src=\"https://github.com/shadcn.png\"\n              className=\"h-8 w-8 rounded-full bg-secondary object-contain\"\n              alt=\"\"\n              height={32}\n              width={32}\n            />\n          </ItemMedia>\n          <ItemContent className=\"gap-0\">\n            <ItemTitle>shadcn</ItemTitle>\n            <ItemDescription className=\"text-xs\">@shadcn</ItemDescription>\n          </ItemContent>\n          <ItemActions className=\"-me-1\">\n            <Button variant=\"ghost\" size=\"icon\">\n              <MoreHorizontalIcon />\n            </Button>\n          </ItemActions>\n        </Item>\n      </CardHeader>\n      <CardContent className=\"p-0\">\n        <div className=\"relative aspect-video bg-muted border-y\" />\n        <div className=\"py-5 px-6\">\n          <h2 className=\"font-semibold\">Exploring New Horizons</h2>\n          <p className=\"mt-1 text-sm text-muted-foreground\">\n            Had an amazing time discovering hidden gems! 🌄 Can&apos;t wait to\n            share more from this journey.{\" \"}\n            <span className=\"text-blue-500\">#Wanderlust</span>{\" \"}\n            <span className=\"text-blue-500\">#NatureLovers</span>\n          </p>\n        </div>\n      </CardContent>\n      <CardFooter className=\"border-t flex px-2 pb-0 py-2!\">\n        <Button variant=\"ghost\" className=\"grow shrink-0 text-muted-foreground\">\n          <HeartIcon /> <span className=\"hidden sm:inline\">Like</span>\n        </Button>\n        <Button variant=\"ghost\" className=\"grow shrink-0 text-muted-foreground\">\n          <MessageCircleIcon />\n          <span className=\"hidden sm:inline\">Comment</span>\n        </Button>\n        <Button variant=\"ghost\" className=\"grow shrink-0 text-muted-foreground\">\n          <ShareIcon /> <span className=\"hidden sm:inline\">Share</span>\n        </Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

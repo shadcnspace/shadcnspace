@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-12",
+  "type": "registry:component",
+  "title": "Checkbox with Form",
+  "description": "A checkbox with form component",
+  "dependencies": [
+    "react-hook-form",
+    "zod",
+    "@hookform/resolvers"
+  ],
+  "registryDependencies": [
+    "checkbox",
+    "form",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/checkbox/checkbox-12.tsx",
+      "content": "\"use client\";\n\nimport { useForm, useFormContext } from \"react-hook-form\";\nimport { z } from \"zod\";\n\nimport { Checkbox } from \"@/registry/ui/checkbox\";\nimport {\n  FormControl,\n  FormItem,\n  FormField,\n  FormMessage,\n  FormLabel,\n  Form,\n  FormDescription,\n} from \"@/registry/ui/form\";\nimport { Button } from \"@/registry/ui/button\";\nimport { zodResolver } from \"@hookform/resolvers/zod\";\n\ntype CheckboxWithFormProps<K> = {\n  name: keyof K & string;\n  title?: string;\n  description?: string;\n  className?: string;\n  disabled?: boolean;\n};\n\nexport function CheckboxWithForm<K>({\n  title,\n  description,\n  name,\n  disabled,\n  className,\n}: CheckboxWithFormProps<K>) {\n  const form = useFormContext();\n\n  return (\n    <FormField\n      control={form.control}\n      name={name}\n      render={({ field }) => (\n        <FormItem className=\"w-full flex gap-4 items-center\">\n          <FormControl>\n            <Checkbox\n              id={name}\n              {...field}\n              checked={field.value}\n              onCheckedChange={field.onChange}\n              disabled={disabled}\n              className={className}\n            />\n          </FormControl>\n          <div className=\"flex flex-col gap-2\">\n            {title && <FormLabel htmlFor={name}>{title}</FormLabel>}\n            {description && <FormDescription>{description}</FormDescription>}\n          </div>\n\n          <FormMessage />\n        </FormItem>\n      )}\n    />\n  );\n}\n\nconst schema = z.object({\n  isAdmin: z.boolean(),\n});\n\ntype schemaType = z.infer<typeof schema>;\n\nexport default function CheckboxWithFormDemo() {\n  const form = useForm<schemaType>({\n    resolver: zodResolver(schema),\n    defaultValues: {\n      isAdmin: false,\n    },\n    mode: \"onBlur\",\n  });\n\n  const onSubmit = (data: schemaType) => {\n    console.log(data);\n  };\n\n  return (\n    <Form {...form}>\n      <form\n        onSubmit={form.handleSubmit(onSubmit)}\n        className=\"space-y-4 w-full px-4\"\n      >\n        <CheckboxWithForm<schemaType>\n          name=\"isAdmin\"\n          title=\"Admin role\"\n          description=\"This role has access to all the features of the application.\"\n        />\n        <Button type=\"submit\">Submit</Button>\n      </form>\n    </Form>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

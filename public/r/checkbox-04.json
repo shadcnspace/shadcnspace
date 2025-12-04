@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-04",
+  "type": "registry:component",
+  "title": "Horizontal Checkbox Group",
+  "description": "A horizontal checkbox group component",
+  "registryDependencies": [
+    "checkbox",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/checkbox/checkbox-04.tsx",
+      "content": "import { Checkbox } from \"@/registry/ui/checkbox\";\nimport { Label } from \"@/registry/ui/label\";\n\nconst technologies = [\n  {\n    name: \"react\",\n    label: \"React\",\n  },\n  {\n    name: \"next\",\n    label: \"Next\",\n  },\n  {\n    name: \"node\",\n    label: \"Node\",\n  },\n  {\n    name: \"remix\",\n    label: \"Remix\",\n  },\n];\n\nexport default function CheckboxHorizontalGroupDemo() {\n  return (\n    <div>\n      <Label className=\"font-semibold\">Technologies</Label>\n      <div className=\"mt-4 flex items-center gap-4 flex-wrap\">\n        {technologies.map(({ name, label }) => (\n          <div key={name} className=\"flex items-center gap-2\">\n            <Checkbox id={name} />\n            <label\n              htmlFor={name}\n              className=\"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"\n            >\n              {label}\n            </label>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

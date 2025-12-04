@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-08",
+  "type": "registry:component",
+  "title": "Spinner Circle 2",
+  "description": "A circle spinner component variation 2",
+  "files": [
+    {
+      "path": "src/components/customized/spinner/spinner-08.tsx",
+      "content": "import React from \"react\";\n\nconst SpinnerCircle2 = () => (\n  <div className=\"w-7 h-7 border-[3px] border-transparent border-t-primary border-r-primary rounded-full animate-spin\" />\n);\n\nexport default SpinnerCircle2;\n",
+      "type": "registry:component"
+    }
+  ]
+}

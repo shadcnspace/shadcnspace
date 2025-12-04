@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-02",
+  "type": "registry:component",
+  "title": "Disabled Slider",
+  "description": "A disabled slider component",
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/slider/slider-02.tsx",
+      "content": "import { Slider } from \"@/registry/ui/slider\";\n\nexport default function SliderDisabledDemo() {\n  return (\n    <Slider\n      defaultValue={[50]}\n      max={100}\n      step={1}\n      className=\"max-w-sm data-disabled:cursor-not-allowed data-disabled:opacity-50\"\n      disabled\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

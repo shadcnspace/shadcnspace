@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-03",
+  "type": "registry:component",
+  "title": "Disabled Switch",
+  "description": "A disabled switch component",
+  "registryDependencies": [
+    "switch",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/switch/switch-03.tsx",
+      "content": "import { Label } from \"@/registry/ui/label\";\nimport { Switch } from \"@/registry/ui/switch\";\nimport React from \"react\";\n\nconst DisabledSwitchDemo = () => {\n  return (\n    <div className=\"flex items-center gap-3\">\n      <Switch id=\"enable-feature-disabled\" disabled />\n      <Label htmlFor=\"enable-feature-disabled\">Enable Feature</Label>\n    </div>\n  );\n};\n\nexport default DisabledSwitchDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

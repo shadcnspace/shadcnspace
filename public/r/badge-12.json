@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-12",
+  "type": "registry:component",
+  "title": "Clickable Badge",
+  "description": "A clickable badge component",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/badge/badge-12.tsx",
+      "content": "import { badgeVariants } from \"@/registry/ui/badge\";\n\nconst ClickableBadgeDemo = () => {\n  return (\n    <button\n      className={badgeVariants({\n        className: \"cursor-pointer select-none focus:ring-offset-1\",\n      })}\n    >\n      Clickable\n    </button>\n  );\n};\n\nexport default ClickableBadgeDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

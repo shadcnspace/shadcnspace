@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-04",
+  "type": "registry:component",
+  "title": "Select with Custom Dropdown Icon",
+  "description": "A select component with custom dropdown icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/select/select-04.tsx",
+      "content": "import {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectValue,\n} from \"@/registry/ui/select\";\nimport { cn } from \"@/lib/utils\";\nimport { Select as SelectPrimitive } from \"radix-ui\";\nimport { ChevronDown } from \"lucide-react\";\n\nexport default function SelectWithCustomDropdownIconDemo() {\n  return (\n    <Select>\n      <SelectPrimitive.Trigger\n        className={cn(\n          \"flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs ring-offset-background placeholder:text-muted-foreground focus:outline-hidden focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1\",\n          \"w-44\"\n        )}\n      >\n        <SelectValue placeholder=\"Select a fruit\" />\n        <SelectPrimitive.Icon asChild>\n          <ChevronDown className=\"h-4 w-4 opacity-50\" />\n        </SelectPrimitive.Icon>\n      </SelectPrimitive.Trigger>\n      <SelectContent>\n        <SelectGroup>\n          <SelectLabel>Fruits</SelectLabel>\n          <SelectItem value=\"apple\">Apple</SelectItem>\n          <SelectItem value=\"banana\">Banana</SelectItem>\n          <SelectItem value=\"blueberry\">Blueberry</SelectItem>\n          <SelectItem value=\"grapes\">Grapes</SelectItem>\n          <SelectItem value=\"pineapple\">Pineapple</SelectItem>\n        </SelectGroup>\n      </SelectContent>\n    </Select>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

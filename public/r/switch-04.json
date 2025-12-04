@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-04",
+  "type": "registry:component",
+  "title": "Switch Colors",
+  "description": "A switch component with different colors",
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/switch/switch-04.tsx",
+      "content": "import { Switch } from \"@/registry/ui/switch\";\nimport * as React from \"react\";\n\nconst SwitchColorsDemo = () => {\n  return (\n    <div className=\"flex items-center gap-3\">\n      <Switch defaultChecked />\n      <Switch defaultChecked className=\"data-[state=checked]:bg-green-500\" />\n      <Switch defaultChecked className=\"data-[state=checked]:bg-indigo-500\" />\n      <Switch defaultChecked className=\"data-[state=checked]:bg-rose-500\" />\n    </div>\n  );\n};\n\nexport default SwitchColorsDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

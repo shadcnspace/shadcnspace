@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blog-02",
+  "type": "registry:block",
+  "title": "Blog 02",
+  "description": "A simple blog post list",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge",
+    "button",
+    "card",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/blog-02/components/blog.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\nimport { Button } from \"@/components/ui/button\";\nimport { Card, CardContent, CardHeader } from \"@/components/ui/card\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\nimport { ChevronRight } from \"lucide-react\";\n\nconst Blog = () => {\n  return (\n    <div className=\"max-w-(--breakpoint-xl) mx-auto py-16 px-6 xl:px-0\">\n      <div className=\"flex items-end justify-between\">\n        <h2 className=\"text-3xl font-semibold tracking-tight\">\n          Recommended Posts\n        </h2>\n        <Select defaultValue=\"recommended\">\n          <SelectTrigger className=\"w-[180px]\">\n            <SelectValue />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectItem value=\"recommended\">Recommended</SelectItem>\n            <SelectItem value=\"latest\">Latest</SelectItem>\n            <SelectItem value=\"popular\">Popular</SelectItem>\n          </SelectContent>\n        </Select>\n      </div>\n\n      <div className=\"mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-10\">\n        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (\n          <Card key={i} className=\"shadow-none overflow-hidden rounded-md py-0\">\n            <CardHeader className=\"p-0\">\n              <div className=\"aspect-video bg-muted w-full border-b\" />\n            </CardHeader>\n            <CardContent className=\"pb-6\">\n              <div className=\"flex items-center gap-3\">\n                <Badge className=\"bg-primary/5 text-primary hover:bg-primary/5 shadow-none\">\n                  Technology\n                </Badge>\n                <span className=\"font-medium text-xs text-muted-foreground\">\n                  5 min read\n                </span>\n              </div>\n\n              <h3 className=\"mt-4 text-[1.4rem] font-semibold tracking-tight\">\n                A beginner&apos;s guide to blockchain for engineers\n              </h3>\n              <p className=\"mt-2 text-muted-foreground\">\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                Suspendisse varius enim in eros.\n              </p>\n\n              <Button size=\"sm\" className=\"mt-6 shadow-none\">\n                Read more <ChevronRight />\n              </Button>\n            </CardContent>\n          </Card>\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport default Blog;\n",
+      "type": "registry:component"
+    }
+  ]
+}

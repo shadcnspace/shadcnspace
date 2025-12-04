@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-06",
+  "type": "registry:component",
+  "title": "Customized Footer Alert Dialog",
+  "description": "An alert dialog with customized footer",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/alert-dialog/alert-dialog-06.tsx",
+      "content": "import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/ui/alert-dialog\";\nimport { Button, buttonVariants } from \"@/registry/ui/button\";\nimport { ExternalLink, OctagonAlert, Trash, X } from \"lucide-react\";\n\nexport default function AlertDialogWithCustomizedFooter() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger asChild>\n        <Button variant=\"outline\">Show Dialog</Button>\n      </AlertDialogTrigger>\n      <AlertDialogContent className=\"overflow-hidden\">\n        <AlertDialogHeader className=\"pb-4\">\n          <AlertDialogTitle>\n            <div className=\"mx-auto sm:mx-0 mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-destructive/10\">\n              <OctagonAlert className=\"h-5 w-5 text-destructive\" />\n            </div>\n            Are you absolutely sure?\n          </AlertDialogTitle>\n          <AlertDialogDescription className=\"text-[15px]\">\n            This action cannot be undone. This will permanently delete your\n            account and remove your data from our servers.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter className=\"border-t -mx-6 -mb-6 px-6 py-5\">\n          <Button\n            variant=\"link\"\n            className=\"-ml-3 mr-auto text-muted-foreground\"\n          >\n            Learn more <ExternalLink />\n          </Button>\n          <AlertDialogCancel>\n            <X /> Cancel\n          </AlertDialogCancel>\n          <AlertDialogAction\n            className={buttonVariants({ variant: \"destructive\" })}\n          >\n            <Trash />\n            Continue\n          </AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

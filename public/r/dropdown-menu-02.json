@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-02",
+  "type": "registry:component",
+  "title": "Dropdown Menu with Icon",
+  "description": "A dropdown menu with icon component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dropdown-menu",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/dropdown-menu/dropdown-menu-02.tsx",
+      "content": "import { Avatar, AvatarFallback } from \"@/registry/ui/avatar\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/registry/ui/dropdown-menu\";\nimport { LogOut, Settings, User } from \"lucide-react\";\n\nexport default function DropdownMenuWithIcon() {\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger className=\"focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-primary rounded-full\">\n        <Avatar>\n          <AvatarFallback>A</AvatarFallback>\n        </Avatar>\n      </DropdownMenuTrigger>\n      <DropdownMenuContent>\n        <DropdownMenuLabel>My Account</DropdownMenuLabel>\n        <DropdownMenuSeparator />\n        <DropdownMenuItem>\n          <User className=\"h-4 w-4\" /> Profile\n        </DropdownMenuItem>\n        <DropdownMenuItem>\n          <Settings className=\"h-4 w-4\" /> Settings\n        </DropdownMenuItem>\n        <DropdownMenuItem className=\"text-destructive\">\n          <LogOut className=\"h-4 w-4\" /> Logout\n        </DropdownMenuItem>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

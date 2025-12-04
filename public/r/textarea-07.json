@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-07",
+  "type": "registry:component",
+  "title": "Controlled Textarea",
+  "description": "A controlled textarea component",
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/textarea/textarea-07.tsx",
+      "content": "\"use client\";\n\nimport { Textarea } from \"@/registry/ui/textarea\";\nimport { ChangeEventHandler, useState } from \"react\";\n\nexport default function ControlledTextareaDemo() {\n  const [message, setMessage] = useState<string>();\n\n  const handleChange: ChangeEventHandler<HTMLTextAreaElement> = (e) => {\n    setMessage(e.target.value);\n  };\n\n  return (\n    <Textarea\n      value={message}\n      onChange={handleChange}\n      placeholder=\"Type your message here.\"\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

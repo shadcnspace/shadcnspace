@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-10",
+  "type": "registry:component",
+  "title": "Link Button",
+  "description": "A link button component",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-10.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\n\nconst LinkButtonDemo = () => (\n  <div className=\"flex items-center gap-2 flex-wrap\">\n    <Button variant=\"link\">Link</Button>\n    <Button variant=\"link\" disabled>\n      Disabled Link\n    </Button>\n  </div>\n);\n\nexport default LinkButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

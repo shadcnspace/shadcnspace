@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-05",
+  "type": "registry:component",
+  "title": "Pricing Card",
+  "description": "A pricing card component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "button",
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/card/card-05.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/ui/card\";\nimport { Tooltip, TooltipContent, TooltipTrigger } from \"@/registry/ui/tooltip\";\nimport { CircleHelpIcon } from \"lucide-react\";\n\nexport default function PricingCard() {\n  return (\n    <Card className=\"max-w-xs w-full shadow-md shadow-border/70\">\n      <CardHeader>\n        <CardTitle className=\"text-2xl font-bold tracking-tight\">\n          Pro Plan\n        </CardTitle>\n        <CardDescription>\n          For teams that need advanced scheduling tools to streamline workflows\n          and enhance collaboration, ensuring every meeting is productive and on\n          track.\n        </CardDescription>\n      </CardHeader>\n      <CardContent className=\"text-sm text-muted-foreground flex items-end leading-6\">\n        <span className=\"text-4xl leading-none font-bold text-foreground\">\n          $20\n        </span>\n        <span className=\"ml-0.5 mr-1.5\">/mo</span>\n        <Tooltip>\n          <TooltipTrigger className=\"mb-1\">\n            <CircleHelpIcon className=\"h-4 w-4\" />\n          </TooltipTrigger>\n          <TooltipContent className=\"max-w-xs\">\n            <p>\n              Seats are required for users to connect calendars and create\n              Calendly links to help book meetings - meeting invitees do not\n              require an account or seat.\n            </p>\n          </TooltipContent>\n        </Tooltip>\n      </CardContent>\n      <CardFooter className=\"mt-2 flex justify-between\">\n        <Button size=\"lg\" className=\"w-full\">\n          Try for free\n        </Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

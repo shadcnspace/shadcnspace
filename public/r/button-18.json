@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-18",
+  "type": "registry:component",
+  "title": "Button Group",
+  "description": "A button group component",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-18.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { ButtonGroup, ButtonGroupSeparator } from \"@/registry/ui/button-group\";\n\nconst GroupButtonDemo = () => (\n  <ButtonGroup>\n    <Button variant=\"secondary\">Left</Button>\n    <ButtonGroupSeparator />\n    <Button variant=\"secondary\">Middle</Button>\n    <ButtonGroupSeparator />\n    <Button variant=\"secondary\">Right</Button>\n  </ButtonGroup>\n);\n\nexport default GroupButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

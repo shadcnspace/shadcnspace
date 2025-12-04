@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-04",
+  "type": "registry:component",
+  "title": "Banner Card",
+  "description": "A banner card component",
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/card/card-04.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/ui/card\";\n\nexport default function CardBanner() {\n  return (\n    <Card className=\"w-full max-w-3xl shadow-none bg-muted py-10\">\n      <CardHeader className=\"px-8\">\n        <CardTitle className=\"mb-1 text-4xl font-semibold tracking-tighter\">\n          Power up your scheduling\n        </CardTitle>\n        <CardDescription className=\"text-base text-muted-foreground\">\n          Get started with the world&apos;s leading Scheduling Automation\n          Platform in seconds - for free.\n        </CardDescription>\n      </CardHeader>\n      <CardContent className=\"mt-2 flex flex-row gap-2 px-8\">\n        <Button>Sign up for free</Button>\n        <Button variant=\"outline\">Get a demo</Button>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-04",
+  "type": "registry:block",
+  "title": "Hero 04",
+  "description": "A simple hero block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/hero-04/components/hero.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\nimport { Button } from \"@/components/ui/button\";\nimport { ArrowUpRight, CirclePlay } from \"lucide-react\";\nimport Link from \"next/link\";\n\nexport default function Hero() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center overflow-hidden\">\n      <div className=\"max-w-(--breakpoint-xl) w-full mx-auto grid lg:grid-cols-2 gap-12 px-6 py-12 lg:py-0\">\n        <div className=\"my-auto\">\n          <Badge\n            variant=\"secondary\"\n            className=\"rounded-full py-1 border-border\"\n            asChild\n          >\n            <Link href=\"#\">\n              Just released v1.0.0 <ArrowUpRight className=\"ml-1 size-4\" />\n            </Link>\n          </Badge>\n          <h1 className=\"mt-6 max-w-[17ch] text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] font-semibold leading-[1.2]! tracking-[-0.035em]\">\n            Customized Shadcn UI Blocks & Components\n          </h1>\n          <p className=\"mt-6 max-w-[60ch] text-lg text-foreground/80\">\n            Explore a collection of Shadcn UI blocks and components, ready to\n            preview and copy. Streamline your development workflow with\n            easy-to-implement examples.\n          </p>\n          <div className=\"mt-12 flex items-center gap-4\">\n            <Button size=\"lg\" className=\"rounded-full text-base\">\n              Get Started <ArrowUpRight className=\"h-5! w-5!\" />\n            </Button>\n            <Button\n              variant=\"outline\"\n              size=\"lg\"\n              className=\"rounded-full text-base shadow-none\"\n            >\n              <CirclePlay className=\"h-5! w-5!\" /> Watch Demo\n            </Button>\n          </div>\n        </div>\n        <div className=\"w-full aspect-video lg:aspect-auto lg:w-[1000px] lg:h-[calc(100vh-4rem)] bg-accent rounded-xl\" />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

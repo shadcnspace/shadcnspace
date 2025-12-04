@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-03",
+  "type": "registry:component",
+  "title": "File Tree Collapsible",
+  "description": "A collapsible component for displaying file trees",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/collapsible/collapsible-03.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from \"@/registry/ui/collapsible\";\nimport { ChevronRight, FileIcon, FolderIcon } from \"lucide-react\";\n\ninterface FileTreeItem {\n  name: string;\n  type: \"folder\" | \"file\";\n  children?: FileTreeItem[];\n}\n\nconst fileTree: FileTreeItem[] = [\n  {\n    name: \"src\",\n    type: \"folder\",\n    children: [\n      {\n        name: \"components\",\n        type: \"folder\",\n        children: [\n          { name: \"button.tsx\", type: \"file\" },\n          { name: \"input.tsx\", type: \"file\" },\n        ],\n      },\n    ],\n  },\n  {\n    name: \"public\",\n    type: \"folder\",\n    children: [\n      { name: \"favicon.ico\", type: \"file\" },\n      { name: \"index.html\", type: \"file\" },\n    ],\n  },\n  {\n    name: \"package.json\",\n    type: \"file\",\n  },\n];\n\nexport default function FileTree() {\n  return (\n    <div className=\"w-[350px] bg-accent p-4 rounded-lg\">\n      <div className=\"w-full -ml-4\">\n        {fileTree.map((treeItem) => (\n          <FileTreeItem key={treeItem.name} {...treeItem} />\n        ))}\n      </div>\n    </div>\n  );\n}\n\nconst FileTreeItem = ({ name, type, children }: FileTreeItem) => {\n  if (type === \"file\") {\n    return (\n      <div className=\"flex items-center gap-2 pl-10 py-1\">\n        <FileIcon className=\"h-4 w-4\" /> {name}\n      </div>\n    );\n  }\n\n  return (\n    <Collapsible className=\"pl-4\">\n      <CollapsibleTrigger className=\"w-full group flex items-center gap-2 py-1\">\n        <ChevronRight className=\"h-4 w-4 group-data-[state=open]:rotate-90 transition-transform\" />\n        <span className=\"flex items-center gap-2\">\n          <FolderIcon className=\"h-4 w-4 fill-current\" /> {name}\n        </span>\n      </CollapsibleTrigger>\n      <CollapsibleContent>\n        {children?.map((child) => (\n          <FileTreeItem key={child.name} {...child} />\n        ))}\n      </CollapsibleContent>\n    </Collapsible>\n  );\n};\n",
+      "type": "registry:component"
+    }
+  ]
+}

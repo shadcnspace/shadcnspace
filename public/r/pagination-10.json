@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-10",
+  "type": "registry:component",
+  "title": "Pagination with Icon and Label",
+  "description": "A pagination component with icons and labels",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/pagination/pagination-10.tsx",
+      "content": "import {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n} from \"@/registry/ui/pagination\";\nimport { ChevronsLeft, ChevronsRight } from \"lucide-react\";\n\nexport default function PaginationWithIconAndLabel() {\n  return (\n    <Pagination>\n      <PaginationContent>\n        <PaginationItem>\n          <PaginationLink\n            href=\"#\"\n            aria-label=\"Go to previous page\"\n            size=\"default\"\n            className=\"gap-1 pl-2.5\"\n          >\n            <ChevronsLeft className=\"h-4 w-4\" />\n            <span>Previous</span>\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink href=\"#\">1</PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink href=\"#\" isActive>\n            2\n          </PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink href=\"#\">3</PaginationLink>\n        </PaginationItem>\n        <PaginationItem>\n          <PaginationLink\n            href=\"#\"\n            aria-label=\"Go to next page\"\n            size=\"default\"\n            className=\"gap-1 pr-2.5\"\n          >\n            <span>Next</span>\n            <ChevronsRight className=\"h-4 w-4\" />\n          </PaginationLink>\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

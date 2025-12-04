@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-06",
+  "type": "registry:component",
+  "title": "OTP Input with Custom Separator",
+  "description": "An OTP input with custom separator between fields",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input-otp"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/input-otp/input-otp-06.tsx",
+      "content": "import { InputOTP, InputOTPGroup, InputOTPSlot } from \"@/registry/ui/input-otp\";\nimport { Dot } from \"lucide-react\";\n\nexport default function InputOTPDemo() {\n  return (\n    <InputOTP maxLength={6}>\n      <InputOTPGroup>\n        <InputOTPSlot index={0} />\n        <InputOTPSlot index={1} />\n        <InputOTPSlot index={2} />\n      </InputOTPGroup>\n      <div role=\"separator\" className=\"text-muted-foreground\">\n        <Dot />\n      </div>\n      <InputOTPGroup>\n        <InputOTPSlot index={3} />\n        <InputOTPSlot index={4} />\n        <InputOTPSlot index={5} />\n      </InputOTPGroup>\n    </InputOTP>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

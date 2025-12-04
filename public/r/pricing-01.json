@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pricing-01",
+  "type": "registry:block",
+  "title": "Pricing 01",
+  "description": "A simple pricing block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/pricing-01/components/pricing.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Separator } from \"@/components/ui/separator\";\nimport { CircleCheck } from \"lucide-react\";\n\nconst plans = [\n  {\n    name: \"Starter\",\n    price: 19,\n    description:\n      \"Get 20 AI-generated portraits with 2 unique styles and filters.\",\n    features: [\n      \"5 hours turnaround time\",\n      \"20 AI portraits\",\n      \"Choice of 2 styles\",\n      \"Choice of 2 filters\",\n      \"2 retouch credits\",\n    ],\n    buttonText: \"Get 20 portraits in 5 hours\",\n  },\n  {\n    name: \"Advanced\",\n    price: 29,\n    isRecommended: true,\n    description:\n      \"Get 50 AI-generated portraits with 5 unique styles and filters.\",\n    features: [\n      \"3 hours turnaround time\",\n      \"50 AI portraits\",\n      \"Choice of 5 styles\",\n      \"Choice of 5 filters\",\n      \"5 retouch credits\",\n    ],\n    buttonText: \"Get 50 portraits in 3 hours\",\n    isPopular: true,\n  },\n  {\n    name: \"Premium\",\n    price: 49,\n    description:\n      \"Get 100 AI-generated portraits with 10 unique styles and filters.\",\n    features: [\n      \"1-hour turnaround time\",\n      \"100 AI portraits\",\n      \"Choice of 10 styles\",\n      \"Choice of 10 filters\",\n      \"10 retouch credits\",\n    ],\n    buttonText: \"Get 100 portraits in 1 hour\",\n  },\n];\n\nconst Pricing = () => {\n  return (\n    <div className=\"min-h-screen flex flex-col items-center justify-center py-12 px-6\">\n      <h2 className=\"text-5xl font-semibold text-center tracking-[-0.03em]\">\n        Our Plans\n      </h2>\n      <p className=\"mt-3 text-xl text-center text-muted-foreground\">\n        Choose the plan that fits your needs and get started today\n      </p>\n      <div className=\"mt-12 sm:mt-16 max-w-(--breakpoint-lg) mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8\">\n        {plans.map((plan) => (\n          <div key={plan.name} className=\"border rounded-lg p-6\">\n            <h3 className=\"text-lg font-medium\">{plan.name}</h3>\n            <p className=\"mt-2 text-4xl font-semibold\">${plan.price}</p>\n            <p className=\"mt-4 font-medium text-muted-foreground\">\n              {plan.description}\n            </p>\n            <Separator className=\"my-4\" />\n            <ul className=\"space-y-2\">\n              {plan.features.map((feature) => (\n                <li key={feature} className=\"flex items-start gap-2\">\n                  <CircleCheck className=\"h-4 w-4 mt-1 text-green-600\" />{\" \"}\n                  {feature}\n                </li>\n              ))}\n            </ul>\n            <Button\n              variant={plan.isPopular ? \"default\" : \"outline\"}\n              size=\"lg\"\n              className=\"w-full mt-6\"\n            >\n              {plan.buttonText}\n            </Button>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport default Pricing;\n",
+      "type": "registry:component"
+    }
+  ]
+}

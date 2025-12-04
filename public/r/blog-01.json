@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blog-01",
+  "type": "registry:block",
+  "title": "Blog 01",
+  "description": "A simple blog post list",
+  "registryDependencies": [
+    "badge",
+    "card",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/blog-01/components/blog.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\nimport { Card, CardContent, CardHeader } from \"@/components/ui/card\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\n\nconst Blog = () => {\n  return (\n    <div className=\"max-w-(--breakpoint-xl) mx-auto py-16 px-6 xl:px-0\">\n      <div className=\"flex items-end justify-between\">\n        <h2 className=\"text-3xl font-semibold tracking-tight\">\n          Today&apos;s Posts\n        </h2>\n        <Select defaultValue=\"recommended\">\n          <SelectTrigger className=\"w-[180px]\">\n            <SelectValue />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectItem value=\"recommended\">Recommended</SelectItem>\n            <SelectItem value=\"latest\">Latest</SelectItem>\n            <SelectItem value=\"popular\">Popular</SelectItem>\n          </SelectContent>\n        </Select>\n      </div>\n\n      <div className=\"mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-10\">\n        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (\n          <Card key={i} className=\"shadow-none py-0 gap-3\">\n            <CardHeader className=\"p-2 pb-0\">\n              <div className=\"aspect-video bg-muted rounded-lg w-full\" />\n            </CardHeader>\n            <CardContent className=\"pt-0 pb-5 px-5\">\n              <Badge variant=\"secondary\">Technology</Badge>\n\n              <h3 className=\"mt-4 text-2xl text-[1.4rem] font-semibold tracking-[-0.015em]\">\n                What is the future of web development?\n              </h3>\n              <div className=\"mt-6 flex items-center justify-between\">\n                <div className=\"flex items-center gap-2\">\n                  <div className=\"size-8 rounded-full bg-muted\"></div>\n                  <span className=\"text-muted-foreground font-medium\">\n                    John Doe\n                  </span>\n                </div>\n\n                <span className=\"text-muted-foreground text-sm\">\n                  Nov 30, 2024\n                </span>\n              </div>\n            </CardContent>\n          </Card>\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport default Blog;\n",
+      "type": "registry:component"
+    }
+  ]
+}

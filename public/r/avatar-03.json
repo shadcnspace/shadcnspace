@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-03",
+  "type": "registry:component",
+  "title": "Avatar with Tooltip",
+  "description": "An avatar with tooltip component",
+  "registryDependencies": [
+    "avatar",
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/avatar/avatar-03.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/registry/ui/avatar\";\nimport { Tooltip, TooltipContent, TooltipTrigger } from \"@/registry/ui/tooltip\";\n\nexport default function AvatarWithTooltipDemo() {\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Avatar>\n          <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n          <AvatarFallback>CN</AvatarFallback>\n        </Avatar>\n      </TooltipTrigger>\n      <TooltipContent className=\"font-semibold\">shadcn</TooltipContent>\n    </Tooltip>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-08",
+  "type": "registry:component",
+  "title": "Radio Group with Cards (Style 2)",
+  "description": "A radio group component with card-style options (style 2)",
+  "dependencies": [
+    "lucide-react",
+    "radix-ui"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/radio-group/radio-group-08.tsx",
+      "content": "import React from \"react\";\nimport { RadioGroup as RadioGroupPrimitive } from \"radix-ui\";\nimport { CircleCheck, CpuIcon } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\nconst options = [\n  {\n    value: \"4-core\",\n    label: \"4-core CPU\",\n    description: \"32 GB RAM\",\n  },\n  {\n    value: \"6-core\",\n    label: \"6-core CPU\",\n    description: \"32 GB RAM\",\n  },\n  {\n    value: \"8-core\",\n    label: \"8-core CPU\",\n    description: \"32 GB RAM\",\n  },\n];\n\nconst RadioCardsDemo = () => {\n  return (\n    <RadioGroupPrimitive.Root\n      defaultValue={options[0].value}\n      className=\"max-w-md w-full grid grid-cols-3 gap-4\"\n    >\n      {options.map((option) => (\n        <RadioGroupPrimitive.Item\n          key={option.value}\n          value={option.value}\n          className={cn(\n            \"relative group ring-[1px] ring-border rounded py-2 px-3 text-start\",\n            \"data-[state=checked]:ring-2 data-[state=checked]:ring-blue-500\"\n          )}\n        >\n          <CircleCheck className=\"absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 h-6 w-6 text-primary fill-blue-500 stroke-white group-data-[state=unchecked]:hidden\" />\n\n          <CpuIcon className=\"mb-2.5 text-muted-foreground\" />\n          <span className=\"font-semibold tracking-tight\">{option.label}</span>\n          <p className=\"text-xs\">{option.description}</p>\n        </RadioGroupPrimitive.Item>\n      ))}\n    </RadioGroupPrimitive.Root>\n  );\n};\n\nexport default RadioCardsDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

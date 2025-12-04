@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-07",
+  "type": "registry:component",
+  "title": "Split Button",
+  "description": "A split button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-07.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { ButtonGroup } from \"@/registry/ui/button-group\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/registry/ui/dropdown-menu\";\nimport { ChevronDown, Plus, Star, X } from \"lucide-react\";\n\nconst SplitButton = () => {\n  return (\n    <ButtonGroup>\n      <Button variant=\"outline\">\n        <Star /> Star\n      </Button>\n      <DropdownMenu>\n        <DropdownMenuTrigger asChild>\n          <Button size=\"icon\" variant=\"outline\">\n            <ChevronDown />\n          </Button>\n        </DropdownMenuTrigger>\n        <DropdownMenuContent className=\"min-w-52\">\n          <DropdownMenuLabel className=\"flex items-center justify-between gap-2\">\n            Lists\n            <Button size=\"icon\" variant=\"ghost\" className=\"h-5 w-5\">\n              <X />\n            </Button>\n          </DropdownMenuLabel>\n          <DropdownMenuSeparator />\n          <DropdownMenuItem>🔮 Future ideas</DropdownMenuItem>\n          <DropdownMenuItem>🚀 My stack</DropdownMenuItem>\n          <DropdownMenuItem>✨ Inspiration</DropdownMenuItem>\n          <DropdownMenuSeparator />\n          <DropdownMenuItem>\n            <Plus /> Create List\n          </DropdownMenuItem>\n        </DropdownMenuContent>\n      </DropdownMenu>\n    </ButtonGroup>\n  );\n};\n\nexport default SplitButton;\n",
+      "type": "registry:component"
+    }
+  ]
+}

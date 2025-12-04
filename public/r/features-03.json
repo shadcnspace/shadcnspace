@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "features-03",
+  "type": "registry:block",
+  "title": "Features 03",
+  "description": "A simple features block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/features-03/components/features.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { ArrowRight, Blocks, Settings2 } from \"lucide-react\";\n\nconst Features = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"w-full max-w-(--breakpoint-lg) mx-auto py-12 px-6\">\n        <h2 className=\"text-3xl leading-10 sm:text-4xl md:text-[40px] md:leading-13 font-semibold tracking-tight\">\n          Design and Engage: <br />\n          <span className=\"text-foreground/65\">\n            Build Smarter Spaces and Strategies\n          </span>\n        </h2>\n        <div className=\"mt-8 grid sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-3 gap-6\">\n          {/* Card 1 */}\n          <div className=\"bg-muted rounded-xl p-6 col-span-1 md:col-span-2 lg:col-span-1\">\n            {/* Media 1 Mobile */}\n            <div className=\"md:hidden mb-6 aspect-video w-full bg-background rounded-xl\"></div>\n\n            <span className=\"text-xl font-semibold tracking-tight\">\n              Plan Smarter\n            </span>\n\n            <ul className=\"mt-6 space-y-4\">\n              <li>\n                <div className=\"flex items-start gap-3\">\n                  <Settings2 className=\"shrink-0\" />\n                  <p className=\"-mt-0.5\">\n                    Design your space with drag-and-drop simplicity—create\n                    grids, lists, or galleries in seconds.\n                  </p>\n                </div>\n              </li>\n              <li>\n                <div className=\"flex items-start gap-3\">\n                  <Blocks className=\"shrink-0\" />\n                  <p className=\"-mt-0.5\">\n                    Embed polls, quizzes, or forms to keep your audience\n                    engaged.\n                  </p>\n                </div>\n              </li>\n            </ul>\n\n            <Button className=\"mt-8 w-full\">\n              Build your strategy <ArrowRight />\n            </Button>\n          </div>\n          {/* Media 1 Desktop */}\n          <div className=\"hidden md:block bg-muted rounded-xl col-span-1 md:col-span-3 lg:col-span-2\"></div>\n\n          {/* Media 2 Desktop */}\n          <div className=\"hidden md:block bg-muted rounded-xl col-span-1 md:col-span-3 lg:col-span-2\"></div>\n\n          {/* Card 2 */}\n          <div className=\"bg-muted rounded-xl p-6 col-span-1 md:col-span-2 lg:col-span-1\">\n            {/* Media 2 Mobile */}\n            <div className=\"md:hidden mb-6 aspect-video w-full bg-background rounded-xl\"></div>\n\n            <span className=\"text-xl font-semibold tracking-tight\">\n              Plan Smarter\n            </span>\n\n            <ul className=\"mt-6 space-y-4\">\n              <li>\n                <div className=\"flex items-start gap-3\">\n                  <Settings2 className=\"shrink-0\" />\n                  <p className=\"-mt-0.5\">\n                    Design your space with drag-and-drop simplicity—create\n                    grids, lists, or galleries in seconds.\n                  </p>\n                </div>\n              </li>\n              <li>\n                <div className=\"flex items-start gap-3\">\n                  <Blocks className=\"shrink-0\" />\n                  <p className=\"-mt-0.5\">\n                    Embed polls, quizzes, or forms to keep your audience\n                    engaged.\n                  </p>\n                </div>\n              </li>\n            </ul>\n\n            <Button className=\"mt-8 w-full\">\n              Build your strategy <ArrowRight />\n            </Button>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Features;\n",
+      "type": "registry:component"
+    }
+  ]
+}

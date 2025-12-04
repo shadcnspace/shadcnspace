@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-04",
+  "type": "registry:component",
+  "title": "Pagination with Rounded Buttons",
+  "description": "A pagination component with rounded button styling",
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/pagination/pagination-04.tsx",
+      "content": "import {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n  PaginationNext,\n  PaginationPrevious,\n} from \"@/registry/ui/pagination\";\n\nconst pages = [1, 2, 3];\n\nexport default function PaginationWithRoundedButton() {\n  return (\n    <Pagination>\n      <PaginationContent>\n        <PaginationItem>\n          <PaginationPrevious href=\"#\" />\n        </PaginationItem>\n        {pages.map((page) => (\n          <PaginationItem key={page}>\n            <PaginationLink\n              href={`#${page}`}\n              isActive={page === 2}\n              className=\"rounded-full\"\n            >\n              {page}\n            </PaginationLink>\n          </PaginationItem>\n        ))}\n        <PaginationItem>\n          <PaginationNext href=\"#\" />\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

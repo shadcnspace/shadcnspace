@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-06",
+  "type": "registry:component",
+  "title": "Animated Progress",
+  "description": "A progress component with animation effects",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/progress/progress-06.tsx",
+      "content": "\"use client\";\n\nimport { Progress as ProgressPrimitive } from \"radix-ui\";\nimport * as React from \"react\";\n\nexport default function ProgressAnimationDemo() {\n  const [progress, setProgress] = React.useState(13);\n\n  React.useEffect(() => {\n    const timer = setTimeout(() => setProgress(66), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <div className=\"w-[60%]\">\n      <style>\n        {`@keyframes progress {\n            to {\n              left: calc(100% - 2rem);\n            }\n          }\n          .progress {\n            transform-origin: center;\n            animation: progress 1.25s ease-in-out infinite;\n          }\n          `}\n      </style>\n      <ProgressPrimitive.Root className=\"relative h-2 w-full overflow-hidden rounded-full bg-primary/20\">\n        <ProgressPrimitive.Indicator\n          className=\"relative h-full w-full flex-1 bg-primary transition-all\"\n          style={{ transform: `translateX(-${100 - (progress || 0)}%)` }}\n        >\n          <div className=\"absolute left-0 w-6 h-full bg-primary-foreground blur-[10px] inset-y-0 progress\" />\n        </ProgressPrimitive.Indicator>\n      </ProgressPrimitive.Root>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

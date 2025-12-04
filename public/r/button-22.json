@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-22",
+  "type": "registry:component",
+  "title": "Button with Tooltip",
+  "description": "A button with tooltip component",
+  "registryDependencies": [
+    "button",
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-22.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { Tooltip, TooltipContent, TooltipTrigger } from \"@/registry/ui/tooltip\";\n\nconst ButtonsWithTooltip = () => (\n  <div className=\"flex items-center gap-2 flex-wrap\">\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Button variant=\"outline\">Left</Button>\n      </TooltipTrigger>\n      <TooltipContent side=\"left\">Left tooltip</TooltipContent>\n    </Tooltip>\n\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Button variant=\"outline\">Top</Button>\n      </TooltipTrigger>\n      <TooltipContent side=\"top\">Top tooltip</TooltipContent>\n    </Tooltip>\n\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Button variant=\"outline\">Bottom</Button>\n      </TooltipTrigger>\n      <TooltipContent side=\"bottom\">Bottom tooltip</TooltipContent>\n    </Tooltip>\n\n    <Tooltip>\n      <TooltipTrigger asChild>\n        <Button variant=\"outline\">Right</Button>\n      </TooltipTrigger>\n      <TooltipContent side=\"right\">Right tooltip</TooltipContent>\n    </Tooltip>\n  </div>\n);\n\nexport default ButtonsWithTooltip;\n",
+      "type": "registry:component"
+    }
+  ]
+}

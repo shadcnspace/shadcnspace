@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-08",
+  "type": "registry:component",
+  "title": "Avatar Shape",
+  "description": "Different shapes of avatar component",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/avatar/avatar-08.tsx",
+      "content": "import { Avatar, AvatarFallback } from \"@/registry/ui/avatar\";\n\nexport default function AvatarShapeDemo() {\n  return (\n    <div className=\"grid gap-5\">\n      <div className=\"flex items-center gap-4\">\n        <Avatar className=\"rounded-none\">\n          <AvatarFallback className=\"rounded-none bg-indigo-500 text-white\">\n            A\n          </AvatarFallback>\n        </Avatar>\n        <Avatar className=\"rounded-md\">\n          <AvatarFallback className=\"rounded-lg bg-indigo-500 text-white\">\n            A\n          </AvatarFallback>\n        </Avatar>\n        <Avatar className=\"rounded-full\">\n          <AvatarFallback className=\"rounded-full bg-indigo-500 text-white\">\n            A\n          </AvatarFallback>\n        </Avatar>\n      </div>\n      <div className=\"flex items-center gap-4\">\n        <Avatar className=\"rounded-none\">\n          <AvatarFallback className=\"rounded-none bg-indigo-500/25 text-indigo-500\">\n            A\n          </AvatarFallback>\n        </Avatar>\n        <Avatar className=\"rounded-md\">\n          <AvatarFallback className=\"rounded-lg bg-indigo-500/25 text-indigo-500\">\n            A\n          </AvatarFallback>\n        </Avatar>\n        <Avatar className=\"rounded-full\">\n          <AvatarFallback className=\"rounded-full bg-indigo-500/25 text-indigo-500\">\n            A\n          </AvatarFallback>\n        </Avatar>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

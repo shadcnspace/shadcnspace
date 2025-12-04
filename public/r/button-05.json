@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-05",
+  "type": "registry:component",
+  "title": "Icon Button",
+  "description": "An icon button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-05.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { ArrowRight, Star } from \"lucide-react\";\n\nconst IconButtonDemo = () => {\n  return (\n    <div className=\"flex items-center gap-2\">\n      <Button size=\"icon\">\n        <Star />\n      </Button>\n      <Button>\n        <Star /> Star\n      </Button>\n      <Button>\n        Read More <ArrowRight />\n      </Button>\n    </div>\n  );\n};\n\nexport default IconButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

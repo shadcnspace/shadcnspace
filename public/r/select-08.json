@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-08",
+  "type": "registry:component",
+  "title": "Theme Selector Select",
+  "description": "A select component for theme selection",
+  "dependencies": [
+    "lucide-react",
+    "next-themes"
+  ],
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/select/select-08.tsx",
+      "content": "\"use client\";\n\nimport {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/ui/select\";\nimport { MoonIcon, SunIcon } from \"lucide-react\";\nimport { useTheme } from \"next-themes\";\n\nexport default function ThemeSelector() {\n  const { resolvedTheme, setTheme } = useTheme();\n\n  return (\n    <Select value={resolvedTheme} onValueChange={setTheme}>\n      <SelectTrigger className=\"w-[180px]\">\n        <SelectValue placeholder=\"Select a theme\" />\n      </SelectTrigger>\n      <SelectContent>\n        <SelectGroup>\n          <SelectLabel>Themes</SelectLabel>\n          <SelectItem value=\"light\">\n            <div className=\"flex items-center gap-2\">\n              <SunIcon className=\"h-4 w-4\" />\n              Light\n            </div>\n          </SelectItem>\n          <SelectItem value=\"dark\">\n            <div className=\"flex items-center gap-2\">\n              <MoonIcon className=\"h-4 w-4\" />\n              Dark\n            </div>\n          </SelectItem>\n        </SelectGroup>\n      </SelectContent>\n    </Select>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

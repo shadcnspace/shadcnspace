@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-04",
+  "type": "registry:component",
+  "title": "Textarea with Label",
+  "description": "A textarea component with a label",
+  "registryDependencies": [
+    "textarea",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/textarea/textarea-04.tsx",
+      "content": "import { Label } from \"@/registry/ui/label\";\nimport { Textarea } from \"@/registry/ui/textarea\";\n\nexport default function TextareaWithLabelDemo() {\n  return (\n    <div className=\"w-full flex flex-col gap-2\">\n      <Label htmlFor=\"message\">Message</Label>\n      <Textarea id=\"message\" placeholder=\"Type your message here.\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

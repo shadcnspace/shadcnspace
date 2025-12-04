@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-06",
+  "type": "registry:component",
+  "title": "Dropdown Menu with Shortcuts",
+  "description": "A dropdown menu with keyboard shortcuts component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/dropdown-menu/dropdown-menu-06.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuSeparator,\n  DropdownMenuShortcut,\n  DropdownMenuSub,\n  DropdownMenuSubContent,\n  DropdownMenuSubTrigger,\n  DropdownMenuTrigger,\n} from \"@/registry/ui/dropdown-menu\";\nimport { EllipsisVertical } from \"lucide-react\";\n\nexport default function DropdownMenuWithShortcuts() {\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        <Button variant=\"outline\" size=\"icon\">\n          <EllipsisVertical />\n        </Button>\n      </DropdownMenuTrigger>\n      <DropdownMenuContent className=\"w-60\">\n        <DropdownMenuItem>\n          New Tab <DropdownMenuShortcut>⌘T</DropdownMenuShortcut>\n        </DropdownMenuItem>\n        <DropdownMenuItem>\n          New Window <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>\n        </DropdownMenuItem>\n        <DropdownMenuItem>\n          New Incognito Window <DropdownMenuShortcut>⌘⇧N</DropdownMenuShortcut>\n        </DropdownMenuItem>\n        <DropdownMenuSeparator />\n        <DropdownMenuSub>\n          <DropdownMenuSubTrigger>History</DropdownMenuSubTrigger>\n          <DropdownMenuSubContent className=\"w-40\">\n            <DropdownMenuItem>\n              History <DropdownMenuShortcut>⌘Y</DropdownMenuShortcut>\n            </DropdownMenuItem>\n            <DropdownMenuItem>Grouped History</DropdownMenuItem>\n          </DropdownMenuSubContent>\n        </DropdownMenuSub>\n        <DropdownMenuItem>\n          Downloads <DropdownMenuShortcut>⌥⇧L</DropdownMenuShortcut>\n        </DropdownMenuItem>\n        <DropdownMenuItem>\n          Delete browsing data <DropdownMenuShortcut>⇧⌘⌫</DropdownMenuShortcut>\n        </DropdownMenuItem>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

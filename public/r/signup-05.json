@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "signup-05",
+  "type": "registry:block",
+  "title": "Signup 05",
+  "description": "A simple signup block",
+  "dependencies": [
+    "@hookform/resolvers",
+    "lucide-react",
+    "react-hook-form",
+    "zod"
+  ],
+  "registryDependencies": [
+    "button",
+    "form",
+    "input",
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/signup-05/components/signup.tsx",
+      "content": "\"use client\";\n\nimport { Logo } from \"@/registry/blocks/signup-05/components/logo\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Form,\n  FormControl,\n  FormField,\n  FormItem,\n  FormLabel,\n  FormMessage,\n} from \"@/components/ui/form\";\nimport { Input } from \"@/components/ui/input\";\nimport { Separator } from \"@/components/ui/separator\";\nimport { zodResolver } from \"@hookform/resolvers/zod\";\nimport {\n  FigmaIcon,\n  GithubIcon,\n  InstagramIcon,\n  TwitchIcon,\n  TwitterIcon,\n} from \"lucide-react\";\nimport Link from \"next/link\";\nimport { useForm } from \"react-hook-form\";\nimport { z } from \"zod\";\n\nconst formSchema = z.object({\n  email: z.string().email(),\n  password: z.string().min(8, \"Password must be at least 8 characters long\"),\n});\n\nconst SignUp = () => {\n  const form = useForm<z.infer<typeof formSchema>>({\n    defaultValues: {\n      email: \"\",\n      password: \"\",\n    },\n    resolver: zodResolver(formSchema),\n  });\n\n  const onSubmit = (data: z.infer<typeof formSchema>) => {\n    console.log(data);\n  };\n\n  return (\n    <div className=\"h-screen flex items-center justify-center\">\n      <div className=\"w-full h-full grid lg:grid-cols-2 p-4\">\n        <div className=\"max-w-xs m-auto w-full flex flex-col items-center\">\n          <Logo className=\"h-9 w-9\" />\n          <p className=\"mt-4 text-xl font-semibold tracking-tight\">\n            Sign up for Shadcn UI Blocks\n          </p>\n\n          <div className=\"mt-8 flex items-center gap-3\">\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"rounded-full h-10 w-10\"\n            >\n              <GithubIcon className=\"h-[18px]! w-[18px]!\" />\n            </Button>\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"rounded-full h-10 w-10\"\n            >\n              <InstagramIcon className=\"h-[18px]! w-[18px]!\" />\n            </Button>\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"rounded-full h-10 w-10\"\n            >\n              <TwitterIcon className=\"h-[18px]! w-[18px]!\" />\n            </Button>\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"rounded-full h-10 w-10\"\n            >\n              <FigmaIcon className=\"h-[18px]! w-[18px]!\" />\n            </Button>\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"rounded-full h-10 w-10\"\n            >\n              <TwitchIcon className=\"h-[18px]! w-[18px]!\" />\n            </Button>\n          </div>\n\n          <div className=\"my-7 w-full flex items-center justify-center overflow-hidden\">\n            <Separator />\n            <span className=\"text-sm px-2\">OR</span>\n            <Separator />\n          </div>\n\n          <Form {...form}>\n            <form\n              className=\"w-full space-y-4\"\n              onSubmit={form.handleSubmit(onSubmit)}\n            >\n              <FormField\n                control={form.control}\n                name=\"email\"\n                render={({ field }) => (\n                  <FormItem>\n                    <FormLabel>Email</FormLabel>\n                    <FormControl>\n                      <Input\n                        type=\"email\"\n                        placeholder=\"Email\"\n                        className=\"w-full\"\n                        {...field}\n                      />\n                    </FormControl>\n                    <FormMessage />\n                  </FormItem>\n                )}\n              />\n              <FormField\n                control={form.control}\n                name=\"password\"\n                render={({ field }) => (\n                  <FormItem>\n                    <FormLabel>Password</FormLabel>\n                    <FormControl>\n                      <Input\n                        type=\"password\"\n                        placeholder=\"Password\"\n                        className=\"w-full\"\n                        {...field}\n                      />\n                    </FormControl>\n                    <FormMessage />\n                  </FormItem>\n                )}\n              />\n              <Button type=\"submit\" className=\"mt-4 w-full\">\n                Continue with Email\n              </Button>\n            </form>\n          </Form>\n\n          <p className=\"mt-5 text-sm text-center\">\n            Already have an account?\n            <Link href=\"#\" className=\"ml-1 underline text-muted-foreground\">\n              Log in\n            </Link>\n          </p>\n        </div>\n        <div className=\"bg-muted hidden lg:block rounded-lg border\" />\n      </div>\n    </div>\n  );\n};\n\nexport default SignUp;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/registry/blocks/signup-05/components/logo.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\n\nexport const Logo = ({ className, ...props }: React.ComponentProps<\"img\">) => {\n  return (\n    <img\n      src=\"/images/android-chrome-192x192.png\"\n      alt=\"logo\"\n      className={cn(\"size-7\", className)}\n      {...props}\n    />\n  );\n};\n",
+      "type": "registry:component"
+    }
+  ]
+}

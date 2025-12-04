@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-05",
+  "type": "registry:component",
+  "title": "Dropdown Menu with Sub Menu",
+  "description": "A dropdown menu with sub menu component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/dropdown-menu/dropdown-menu-05.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuSeparator,\n  DropdownMenuSub,\n  DropdownMenuSubContent,\n  DropdownMenuSubTrigger,\n  DropdownMenuTrigger,\n} from \"@/registry/ui/dropdown-menu\";\nimport {\n  Copy,\n  Ellipsis,\n  ExternalLink,\n  Eye,\n  MessageCircle,\n  Search,\n  User,\n} from \"lucide-react\";\n\nexport default function DropdownMenuWithSubMenu() {\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        <Button variant=\"outline\" size=\"icon\">\n          <Ellipsis />\n        </Button>\n      </DropdownMenuTrigger>\n      <DropdownMenuContent className=\"mt-2\">\n        <DropdownMenuItem>\n          <Eye className=\"mr-1\" /> Open conversation details\n        </DropdownMenuItem>\n        <DropdownMenuItem>\n          <User className=\"mr-1\" /> View full profile\n        </DropdownMenuItem>\n        <DropdownMenuSeparator />\n        <DropdownMenuItem>\n          <MessageCircle className=\"mr-1\" /> Start conversation\n        </DropdownMenuItem>\n        <DropdownMenuSeparator />\n        <DropdownMenuSub>\n          <DropdownMenuSubTrigger>\n            <Copy className=\"mr-3 size-4 text-muted-foreground\" />\n            Copy\n          </DropdownMenuSubTrigger>\n          <DropdownMenuSubContent>\n            <DropdownMenuItem>Copy name</DropdownMenuItem>\n            <DropdownMenuItem>Copy email</DropdownMenuItem>\n            <DropdownMenuItem>Copy link</DropdownMenuItem>\n          </DropdownMenuSubContent>\n        </DropdownMenuSub>\n        <DropdownMenuItem>\n          <Search className=\"mr-1\" /> Search in conversation\n        </DropdownMenuItem>\n        <DropdownMenuItem>\n          <ExternalLink className=\"mr-1\" /> Open in new window\n        </DropdownMenuItem>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

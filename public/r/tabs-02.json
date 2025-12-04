@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-02",
+  "type": "registry:component",
+  "title": "Underlined Tabs",
+  "description": "Tabs with underlined style",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "tabs",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/tabs/tabs-02.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/ui/tabs\";\nimport { Copy } from \"lucide-react\";\n\nconst tabs = [\n  {\n    name: \"pnpm\",\n    value: \"pnpm\",\n    content: \"pnpm dlx shadcn@latest add tabs\",\n  },\n  {\n    name: \"npm\",\n    value: \"npm\",\n    content: \"npx shadcn@latest add tabs\",\n  },\n  {\n    name: \"yarn\",\n    value: \"yarn\",\n    content: \"npx shadcn@latest add tabs\",\n  },\n  {\n    name: \"bun\",\n    value: \"bun\",\n    content: \"bunx --bun shadcn@latest add tabs\",\n  },\n];\n\nexport default function TabsUnderlinedDemo() {\n  return (\n    <Tabs defaultValue={tabs[0].value} className=\"max-w-xs w-full\">\n      <TabsList className=\"w-full p-0 bg-background justify-start border-b rounded-none\">\n        {tabs.map((tab) => (\n          <TabsTrigger\n            key={tab.value}\n            value={tab.value}\n            className=\"rounded-none bg-background h-full data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-primary\"\n          >\n            <code className=\"text-[13px]\">{tab.name}</code>\n          </TabsTrigger>\n        ))}\n      </TabsList>\n\n      {tabs.map((tab) => (\n        <TabsContent key={tab.value} value={tab.value}>\n          <div className=\"h-10 flex items-center justify-between border gap-2 rounded-md pl-3 pr-1.5\">\n            <code className=\"text-[13px]\">{tab.content}</code>\n            <Button size=\"icon\" variant=\"secondary\" className=\"h-7 w-7\">\n              <Copy className=\"h-3.5! w-3.5!\" />\n            </Button>\n          </div>\n        </TabsContent>\n      ))}\n    </Tabs>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

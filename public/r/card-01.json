@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-01",
+  "type": "registry:component",
+  "title": "Default Card",
+  "description": "A default card component",
+  "registryDependencies": [
+    "card",
+    "button",
+    "input",
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/card/card-01.tsx",
+      "content": "import * as React from \"react\";\n\nimport { Button } from \"@/registry/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/ui/card\";\nimport { Input } from \"@/registry/ui/input\";\nimport { Label } from \"@/registry/ui/label\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/ui/select\";\n\nexport default function CardDemo() {\n  return (\n    <Card className=\"w-[350px]\">\n      <CardHeader>\n        <CardTitle>Create Task</CardTitle>\n        <CardDescription>\n          Quickly add a new task to stay organized.\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <form>\n          <div className=\"grid w-full items-center gap-4\">\n            <div className=\"flex flex-col space-y-1.5\">\n              <Label htmlFor=\"name\">Name</Label>\n              <Input id=\"name\" placeholder=\"Name of your project\" />\n            </div>\n            <div className=\"flex flex-col space-y-1.5\">\n              <Label htmlFor=\"framework\">Priority</Label>\n              <Select>\n                <SelectTrigger id=\"framework\" className=\"w-full\">\n                  <SelectValue placeholder=\"Select\" />\n                </SelectTrigger>\n                <SelectContent position=\"popper\">\n                  <SelectItem value=\"low\">Low</SelectItem>\n                  <SelectItem value=\"medium\">Medium</SelectItem>\n                  <SelectItem value=\"high\">High</SelectItem>\n                </SelectContent>\n              </Select>\n            </div>\n          </div>\n        </form>\n      </CardContent>\n      <CardFooter className=\"flex justify-between\">\n        <Button variant=\"outline\">Cancel</Button>\n        <Button>Create</Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

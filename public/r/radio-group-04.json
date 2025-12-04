@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-04",
+  "type": "registry:component",
+  "title": "Radio Group with Custom Colors",
+  "description": "A radio group component with custom color options",
+  "registryDependencies": [
+    "radio-group",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/radio-group/radio-group-04.tsx",
+      "content": "import { Label } from \"@/registry/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/ui/radio-group\";\n\nexport default function RadioGroupColorDemo() {\n  return (\n    <RadioGroup defaultValue=\"indigo\" className=\"flex items-center gap-3\">\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem\n          value=\"green\"\n          id=\"color-green\"\n          className=\"text-green-500 border-green-500 [&_svg]:fill-green-500\"\n        />\n        <Label htmlFor=\"color-green\">Green</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem\n          value=\"indigo\"\n          id=\"color-indigo\"\n          className=\"text-indigo-500 border-indigo-500 [&_svg]:fill-indigo-500\"\n        />\n        <Label htmlFor=\"color-indigo\">Indigo</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem\n          value=\"rose\"\n          id=\"color-rose\"\n          className=\"text-rose-500 border-rose-500 [&_svg]:fill-rose-500\"\n        />\n        <Label htmlFor=\"color-rose\">Rose</Label>\n      </div>\n    </RadioGroup>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

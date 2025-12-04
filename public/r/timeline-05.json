@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "timeline-05",
+  "type": "registry:block",
+  "title": "Timeline 05",
+  "description": "A simple timeline block for process steps",
+  "files": [
+    {
+      "path": "src/registry/blocks/timeline-05/components/timeline.tsx",
+      "content": "const steps = [\n  {\n    title: \"Research\",\n    description:\n      \"Gather information and analyze requirements to understand the problem and define objectives.\",\n  },\n  {\n    title: \"Planning\",\n    description:\n      \"Create a roadmap, define the scope, and outline the necessary steps to achieve the goal.\",\n  },\n  {\n    title: \"Design\",\n    description:\n      \"Develop wireframes, mockups, and prototypes to visualize the structure and user experience.\",\n  },\n  {\n    title: \"Development\",\n    description:\n      \"Write code, integrate features, and build the core functionality of the application.\",\n  },\n  {\n    title: \"Testing\",\n    description:\n      \"Perform quality assurance, fix bugs, and optimize performance before release.\",\n  },\n  {\n    title: \"Deployment\",\n    description:\n      \"Launch the project in a live environment and ensure smooth deployment.\",\n  },\n  {\n    title: \"Maintenance\",\n    description:\n      \"Monitor performance, update features, and provide ongoing support and improvements.\",\n  },\n];\n\nexport default function Timeline() {\n  return (\n    <div className=\"max-w-(--breakpoint-sm) mx-auto py-12 md:py-20 px-6\">\n      <div className=\"relative ml-6\">\n        {/* Timeline line */}\n        <div className=\"absolute left-0 inset-y-0 border-l-2\" />\n\n        {steps.map(({ title, description }, index) => (\n          <div key={index} className=\"relative pl-10 pb-10 last:pb-0\">\n            {/* Timeline Icon */}\n            <div className=\"absolute left-px -translate-x-1/2 h-9 w-9 border-2 border-muted-foreground/40 flex items-center justify-center rounded-full bg-accent ring-8 ring-background\">\n              <span className=\"font-semibold text-lg\">{index + 1}</span>\n            </div>\n\n            {/* Content */}\n            <div className=\"pt-1 space-y-2\">\n              <h3 className=\"text-xl font-semibold tracking-[-0.01em]\">\n                {title}\n              </h3>\n              <p className=\"text-muted-foreground\">{description}</p>\n            </div>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

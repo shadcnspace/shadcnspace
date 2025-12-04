@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-18",
+  "type": "registry:component",
+  "title": "Animated Tabs",
+  "description": "Tabs with content animation",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "tabs",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/tabs/tabs-18.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/ui/button\";\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/ui/tabs\";\nimport { BanIcon, MoreHorizontalIcon } from \"lucide-react\";\nimport { motion, AnimatePresence } from \"framer-motion\";\n\nconst followers = [\n  { username: \"jane_doe\", fullName: \"Jane Doe\" },\n  { username: \"tech_guru\", fullName: \"Alex Thompson\" },\n  { username: \"nature_lover\", fullName: \"Emma Green\" },\n  { username: \"photogirl\", fullName: \"Sophia Martinez\" },\n  { username: \"code_master\", fullName: \"Liam Patel\" },\n];\n\nconst following = [\n  { username: \"startup_guy\", fullName: \"James Lee\" },\n  { username: \"design_dreamer\", fullName: \"Mia Wilson\" },\n  { username: \"art_addict\", fullName: \"Benjamin White\" },\n  { username: \"web_wizard\", fullName: \"Lucas Nguyen\" },\n  { username: \"health_nut\", fullName: \"Ella Singh\" },\n];\n\nconst listVariants = {\n  hidden: { opacity: 0 },\n  visible: {\n    opacity: 1,\n    transition: {\n      staggerChildren: 0.15,\n    },\n  },\n};\n\nconst itemVariants = {\n  hidden: { opacity: 0, y: 20 },\n  visible: { opacity: 1, y: 0 },\n};\n\nconst UserList = ({ users }: { users: typeof following }) => (\n  <AnimatePresence>\n    <motion.div\n      className=\"space-y-4\"\n      initial=\"hidden\"\n      animate=\"visible\"\n      exit=\"hidden\"\n      variants={listVariants}\n    >\n      {users.map(({ username, fullName }) => (\n        <motion.div\n          key={username}\n          className=\"flex items-center gap-2 justify-between\"\n          variants={itemVariants}\n          transition={{ type: \"tween\" }}\n        >\n          <div className=\"flex items-center gap-4\">\n            <div className=\"h-10 w-10 rounded-full bg-secondary\" />\n            <div>\n              <span className=\"block text-sm leading-none font-semibold\">\n                {fullName}\n              </span>\n              <span className=\"text-xs leading-none\">@{username}</span>\n            </div>\n          </div>\n          <div className=\"flex items-center gap-2\">\n            <Button size=\"icon\" variant=\"outline\">\n              <MoreHorizontalIcon className=\"h-5 w-5\" />\n            </Button>\n            <Button size=\"icon\" variant=\"outline\" className=\"text-destructive\">\n              <BanIcon className=\"h-5 w-5\" />\n            </Button>\n          </div>\n        </motion.div>\n      ))}\n    </motion.div>\n  </AnimatePresence>\n);\n\nexport default function AnimatedTabsDemo() {\n  return (\n    <Tabs defaultValue=\"followers\" className=\"max-w-xs w-full\">\n      <TabsList className=\"w-full grid grid-cols-2\">\n        <TabsTrigger value=\"followers\">Followers</TabsTrigger>\n        <TabsTrigger value=\"following\">Following</TabsTrigger>\n      </TabsList>\n\n      <div className=\"mt-2 p-4 border rounded-md\">\n        <TabsContent value=\"followers\">\n          <UserList users={followers} />\n        </TabsContent>\n        <TabsContent value=\"following\">\n          <UserList users={following} />\n        </TabsContent>\n      </div>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-02",
+  "type": "registry:component",
+  "title": "Show More Collapsible",
+  "description": "A collapsible component with show more functionality",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "collapsible",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/collapsible/collapsible-02.tsx",
+      "content": "\"use client\";\n\nimport { ChevronDown, ChevronUp } from \"lucide-react\";\nimport * as React from \"react\";\n\nimport { Button } from \"@/registry/ui/button\";\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from \"@/registry/ui/collapsible\";\n\nexport default function ShowMoreCollapsible() {\n  const [isOpen, setIsOpen] = React.useState(false);\n\n  return (\n    <Collapsible\n      open={isOpen}\n      onOpenChange={setIsOpen}\n      className=\"w-full max-w-xs space-y-2\"\n    >\n      {Array.from({ length: 2 }).map((_, index) => (\n        <div key={index} className=\"flex items-center gap-2\">\n          <div className=\"h-10 w-10 shrink-0 rounded-full bg-accent\" />\n          <div className=\"w-full flex flex-col gap-1.5\">\n            <div className=\"h-2.5 w-[40%] rounded-lg bg-accent\" />\n            <div className=\"h-2.5 w-full rounded-lg bg-accent\" />\n          </div>\n        </div>\n      ))}\n      <CollapsibleContent className=\"space-y-2\">\n        {Array.from({ length: 3 }).map((_, index) => (\n          <div key={index + 2} className=\"flex items-center gap-2\">\n            <div className=\"h-10 w-10 shrink-0 rounded-full bg-accent\" />\n            <div className=\"w-full flex flex-col gap-1.5\">\n              <div className=\"h-2.5 w-[40%] rounded-lg bg-accent\" />\n              <div className=\"h-2.5 w-full rounded-lg bg-accent\" />\n            </div>\n          </div>\n        ))}\n      </CollapsibleContent>\n      <CollapsibleTrigger asChild>\n        <Button\n          variant=\"outline\"\n          size=\"sm\"\n          className=\"mt-4! data-[state=open]:hidden\"\n        >\n          Show more <ChevronDown />\n        </Button>\n      </CollapsibleTrigger>\n      <CollapsibleTrigger asChild>\n        <Button\n          variant=\"outline\"\n          size=\"sm\"\n          className=\"mt-4! data-[state=open]:inline-flex hidden\"\n        >\n          Show less <ChevronUp />\n        </Button>\n      </CollapsibleTrigger>\n    </Collapsible>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-09",
+  "type": "registry:component",
+  "title": "Icon Checkbox",
+  "description": "A checkbox with custom icon component",
+  "dependencies": [
+    "lucide-react",
+    "radix-ui"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/checkbox/checkbox-09.tsx",
+      "content": "import * as React from \"react\";\nimport { Checkbox as CheckboxPrimitive } from \"radix-ui\";\nimport { cn } from \"@/lib/utils\";\nimport { BookmarkIcon, CheckIcon, Heart, StarIcon } from \"lucide-react\";\n\n// Replace the `Checkbox` component in `@components/ui/checkbox` with below component and use it here to support custom icon.\nconst Checkbox = React.forwardRef<\n  React.ElementRef<typeof CheckboxPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & {\n    icon?: React.ReactNode;\n    checkedIcon?: React.ReactNode;\n  }\n>(({ className, icon, checkedIcon, ...props }, ref) => (\n  <>\n    <CheckboxPrimitive.Root\n      ref={ref}\n      className={cn(\"peer group\", className)}\n      {...props}\n    >\n      <span className=\"group-data-[state=checked]:hidden\">{icon}</span>\n      <span className=\"group-data-[state=unchecked]:hidden\">{checkedIcon}</span>\n\n      {!checkedIcon && (\n        <CheckboxPrimitive.Indicator\n          className={cn(\"flex items-center justify-center text-current\")}\n        >\n          <CheckIcon className=\"h-4 w-4\" />\n        </CheckboxPrimitive.Indicator>\n      )}\n    </CheckboxPrimitive.Root>\n  </>\n));\nCheckbox.displayName = CheckboxPrimitive.Root.displayName;\n\nexport default function CheckboxIconDemo() {\n  return (\n    <div className=\"flex items-center space-x-3\">\n      <Checkbox\n        defaultChecked\n        icon={<Heart />}\n        checkedIcon={<Heart className=\"fill-rose-500 stroke-rose-500\" />}\n      />\n      <Checkbox\n        defaultChecked\n        icon={<BookmarkIcon />}\n        checkedIcon={<BookmarkIcon className=\"fill-primary\" />}\n      />\n      <Checkbox\n        icon={<StarIcon />}\n        defaultChecked\n        checkedIcon={<StarIcon className=\"fill-yellow-400 stroke-yellow-400\" />}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

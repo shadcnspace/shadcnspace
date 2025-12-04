@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-10",
+  "type": "registry:component",
+  "title": "Avatar with Ring",
+  "description": "Avatar with ring component",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/avatar/avatar-10.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/registry/ui/avatar\";\n\nexport default function AvatarRing() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Avatar className=\"ring-2 ring-ring ring-offset-2 ring-offset-background\">\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n        <AvatarFallback className=\"rounded-none\">ER</AvatarFallback>\n      </Avatar>\n      <Avatar className=\"ring-2 ring-green-500 ring-offset-2 ring-offset-background\">\n        <AvatarImage src=\"https://github.com/leerob.png\" alt=\"@evilrabbit\" />\n        <AvatarFallback className=\"rounded-md\">LR</AvatarFallback>\n      </Avatar>\n      <div className=\"bg-gradient-to-b from-red-500 to-blue-500 rounded-full p-1\">\n        <Avatar className=\"ring-2 ring-background\">\n          <AvatarImage\n            src=\"https://github.com/evilrabbit.png\"\n            alt=\"@evilrabbit\"\n          />\n          <AvatarFallback>CN</AvatarFallback>\n        </Avatar>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

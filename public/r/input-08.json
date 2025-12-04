@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-08",
+  "type": "registry:component",
+  "title": "Input with Helper Text",
+  "description": "An input with helper text component",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/input/input-08.tsx",
+      "content": "import { Input } from \"@/registry/ui/input\";\nimport { Label } from \"@/registry/ui/label\";\n\nexport default function InputWithHelperTextDemo() {\n  return (\n    <div className=\"w-full max-w-xs space-y-1.5\">\n      <Label htmlFor=\"email-address\">Email Address</Label>\n      <Input id=\"email-address\" type=\"email\" placeholder=\"Email\" />\n      <p className=\"text-[0.8rem] text-muted-foreground\">\n        We&apos;ll never share your email with anyone else.\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

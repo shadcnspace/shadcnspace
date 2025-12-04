@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-03",
+  "type": "registry:component",
+  "title": "Indeterminate Checkbox",
+  "description": "An indeterminate checkbox component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/checkbox/checkbox-03.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Checkbox as CheckboxPrimitive } from \"radix-ui\";\nimport { CheckIcon, MinusIcon } from \"lucide-react\";\nimport * as React from \"react\";\n\n// Replace the `Checkbox` component in `@components/ui/checkbox` with below component and use it here to support indeterminate.\nconst Checkbox = React.forwardRef<\n  React.ElementRef<typeof CheckboxPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>\n>(({ className, ...props }, ref) => (\n  <CheckboxPrimitive.Root\n    ref={ref}\n    className={cn(\n      \"group peer h-4 w-4 shrink-0 rounded border border-primary shadow-sm focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=indeterminate]:bg-primary data-[state=checked]:text-primary-foreground data-[state=indeterminate]:text-primary-foreground\",\n      className\n    )}\n    {...props}\n  >\n    <CheckboxPrimitive.Indicator\n      className={cn(\"flex items-center justify-center text-current\")}\n    >\n      <MinusIcon className=\"h-4 w-4 hidden group-data-[state=indeterminate]:block\" />\n      <CheckIcon className=\"h-4 w-4 hidden group-data-[state=checked]:block\" />\n    </CheckboxPrimitive.Indicator>\n  </CheckboxPrimitive.Root>\n));\nCheckbox.displayName = CheckboxPrimitive.Root.displayName;\n\nexport default function IndeterminateCheckboxDemo() {\n  const [checked, setChecked] = React.useState<\n    Record<string, CheckboxPrimitive.CheckedState>\n  >({\n    child1: true,\n    child2: false,\n  });\n\n  const handleCheckedChange = (\n    name: string,\n    checked: CheckboxPrimitive.CheckedState\n  ) => {\n    setChecked((prev) => ({\n      ...prev,\n      [name]: checked,\n    }));\n  };\n\n  const handleParentCheckedChange = (\n    checked: CheckboxPrimitive.CheckedState\n  ) => {\n    setChecked({\n      child1: checked,\n      child2: checked,\n    });\n  };\n\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"flex items-center\">\n        <Checkbox\n          id=\"parent\"\n          checked={\n            checked.child1 === checked.child2 ? checked.child1 : \"indeterminate\"\n          }\n          onCheckedChange={handleParentCheckedChange}\n        />\n        <label\n          htmlFor=\"parent\"\n          className=\"ml-2 text-sm font-medium leading-none\"\n        >\n          Parent\n        </label>\n      </div>\n      <div className=\"pl-6 space-y-2\">\n        <div className=\"flex items-center\">\n          <Checkbox\n            id=\"child1\"\n            checked={checked.child1}\n            onCheckedChange={(checked) =>\n              handleCheckedChange(\"child1\", checked)\n            }\n          />\n          <label\n            htmlFor=\"child1\"\n            className=\"ml-2 text-sm font-medium leading-none\"\n          >\n            Child 1\n          </label>\n        </div>\n        <div className=\"flex items-center\">\n          <Checkbox\n            id=\"child2\"\n            checked={checked.child2}\n            onCheckedChange={(checked) =>\n              handleCheckedChange(\"child2\", checked)\n            }\n          />\n          <label\n            htmlFor=\"child2\"\n            className=\"ml-2 text-sm font-medium leading-none\"\n          >\n            Child 2\n          </label>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

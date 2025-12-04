@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-04",
+  "type": "registry:component",
+  "title": "Info Alert Dialog",
+  "description": "An info alert dialog component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/alert-dialog/alert-dialog-04.tsx",
+      "content": "import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/ui/alert-dialog\";\nimport { Badge } from \"@/registry/ui/badge\";\nimport { Button } from \"@/registry/ui/button\";\nimport { CircleFadingArrowUp, Rocket } from \"lucide-react\";\n\nexport default function AlertDialogInfo() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger asChild>\n        <Button variant=\"outline\">Show Dialog</Button>\n      </AlertDialogTrigger>\n      <AlertDialogContent>\n        <AlertDialogHeader>\n          <div className=\"mx-auto sm:mx-0 mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-primary/10\">\n            <CircleFadingArrowUp className=\"h-[18px] w-[18px] text-primary\" />\n          </div>\n          <AlertDialogTitle className=\"text-2xl font-bold tracking-tight\">\n            New Software Update Available\n          </AlertDialogTitle>\n          <AlertDialogDescription className=\"mt-3! text-[15px]\">\n            A new software update is available for your device. Please update to\n            the latest version to continue using the app.\n          </AlertDialogDescription>\n          <div className=\"mt-6! flex flex-wrap gap-2\">\n            <Badge variant=\"outline\" className=\"py-1\">\n              Faster Performance\n            </Badge>\n            <Badge variant=\"outline\" className=\"py-1\">\n              Advanced Blocks\n            </Badge>\n            <Badge variant=\"outline\" className=\"py-1\">\n              Customized Components\n            </Badge>\n            <Badge variant=\"outline\" className=\"py-1\">\n              UI Revamp\n            </Badge>\n            <Badge variant=\"outline\" className=\"py-1\">\n              Security Improvements\n            </Badge>\n            <Badge variant=\"outline\" className=\"py-1\">\n              Other Improvements\n            </Badge>\n            <Badge variant=\"outline\" className=\"py-1\">\n              Bug Fixes\n            </Badge>\n            <Badge variant=\"outline\" className=\"py-1\">\n              + much more\n            </Badge>\n          </div>\n        </AlertDialogHeader>\n        <AlertDialogFooter className=\"mt-4\">\n          <AlertDialogCancel>Cancel</AlertDialogCancel>\n          <AlertDialogAction>\n            <Rocket /> Update Now\n          </AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

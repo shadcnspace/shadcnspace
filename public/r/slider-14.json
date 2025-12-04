@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-14",
+  "type": "registry:component",
+  "title": "Range Slider",
+  "description": "A range slider component",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/slider/slider-14.tsx",
+      "content": "\"use client\";\n\nimport { Slider as SliderPrimitive } from \"radix-ui\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n// Replace `Slider` component in `@components/ui/slider.tsx` with the following code to customize the appearance of the slider.\nconst Slider = React.forwardRef<\n  React.ElementRef<typeof SliderPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>\n>(({ className, ...props }, ref) => (\n  <SliderPrimitive.Root\n    ref={ref}\n    className={cn(\n      \"relative flex w-full touch-none select-none items-center\",\n      className\n    )}\n    {...props}\n  >\n    <SliderPrimitive.Track className=\"relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20\">\n      <SliderPrimitive.Range className=\"absolute h-full bg-primary\" />\n    </SliderPrimitive.Track>\n    {(props.value ?? props.defaultValue)?.map((_, index) => (\n      <SliderPrimitive.Thumb\n        key={index}\n        className=\"block h-4 w-4 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50\"\n      />\n    ))}\n  </SliderPrimitive.Root>\n));\nSlider.displayName = SliderPrimitive.Root.displayName;\n\nexport default function RangeSliderDemo() {\n  const [value, setValue] = React.useState([30, 80]);\n  const [from, to] = value;\n\n  return (\n    <div className=\"w-full max-w-sm mx-auto\">\n      <div className=\"w-full flex items-center justify-between gap-2\">\n        <span className=\"text-sm text-muted-foreground\">0</span>\n        <Slider value={value} onValueChange={setValue} max={100} step={1} />\n        <span className=\"text-sm text-muted-foreground\">100</span>\n      </div>\n      <p className=\"mt-2 text-center text-sm text-muted-foreground\">\n        {from} - {to}\n      </p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

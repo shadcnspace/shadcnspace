@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-01",
+  "type": "registry:component",
+  "title": "Default Switch",
+  "description": "A default switch component",
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/switch/switch-01.tsx",
+      "content": "import { Switch } from \"@/registry/ui/switch\";\nimport React from \"react\";\n\nconst SwitchDemo = () => {\n  return <Switch />;\n};\n\nexport default SwitchDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

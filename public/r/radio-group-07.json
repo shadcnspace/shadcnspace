@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-07",
+  "type": "registry:component",
+  "title": "Radio Group with Cards (Style 1)",
+  "description": "A radio group component with card-style options (style 1)",
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/radio-group/radio-group-07.tsx",
+      "content": "import React from \"react\";\nimport { RadioGroup as RadioGroupPrimitive } from \"radix-ui\";\n\nconst options = [\n  {\n    value: \"4gb\",\n    label: \"4GB + 64GB\",\n  },\n  {\n    value: \"6gb\",\n    label: \"6GB + 128GB\",\n  },\n  {\n    value: \"8gb\",\n    label: \"8GB + 128GB\",\n  },\n];\n\nconst RadioCardsDemo = () => {\n  return (\n    <RadioGroupPrimitive.Root\n      defaultValue={options[0].value}\n      className=\"max-w-md w-full grid grid-cols-3 gap-3\"\n    >\n      {options.map((option) => (\n        <RadioGroupPrimitive.Item\n          key={option.value}\n          value={option.value}\n          className=\"ring-[1px] ring-border rounded py-1 px-3 data-[state=checked]:ring-2 data-[state=checked]:ring-blue-500\"\n        >\n          <span className=\"font-semibold tracking-tight\">{option.label}</span>\n        </RadioGroupPrimitive.Item>\n      ))}\n    </RadioGroupPrimitive.Root>\n  );\n};\n\nexport default RadioCardsDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

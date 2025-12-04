@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-09",
+  "type": "registry:component",
+  "title": "Expand Icon Accordion",
+  "description": "An accordion with a custom expand icon",
+  "dependencies": [
+    "lucide-react",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/accordion/accordion-09.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n} from \"@/registry/ui/accordion\";\nimport { Accordion as AccordionPrimitive } from \"radix-ui\";\nimport { Plus } from \"lucide-react\";\n\nconst items = [\n  {\n    title: \"Is it accessible?\",\n    content: \"Yes. It adheres to the WAI-ARIA design pattern.\",\n  },\n  {\n    title: \"Is it styled?\",\n    content:\n      \"Yes. It comes with default styles that matches the other components' aesthetic.\",\n  },\n  {\n    title: \"Is it animated?\",\n    content:\n      \"Yes. It's animated by default, but you can disable it if you prefer.\",\n  },\n];\n\nexport default function AccordionDefaultOpenDemo() {\n  return (\n    <Accordion\n      defaultValue=\"item-0\"\n      type=\"single\"\n      collapsible\n      className=\"max-w-lg my-4 w-full\"\n    >\n      {items.map(({ title, content }, index) => (\n        <AccordionItem key={index} value={`item-${index}`}>\n          <AccordionPrimitive.Header className=\"flex\">\n            <AccordionPrimitive.Trigger className=\"flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-45 text-sm\">\n              {title}\n              <Plus className=\"h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200\" />\n            </AccordionPrimitive.Trigger>\n          </AccordionPrimitive.Header>\n          <AccordionContent>{content}</AccordionContent>\n        </AccordionItem>\n      ))}\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

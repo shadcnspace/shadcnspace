@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-04",
+  "type": "registry:component",
+  "title": "Dropdown Menu with Radio Group",
+  "description": "A dropdown menu with radio group component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/dropdown-menu/dropdown-menu-04.tsx",
+      "content": "\"use client\";\nimport { Button } from \"@/registry/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuLabel,\n  DropdownMenuRadioGroup,\n  DropdownMenuRadioItem,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/registry/ui/dropdown-menu\";\nimport { ChevronDown, ChevronsUp, ChevronUp, Equal } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function DropdownMenuWithRadioGroup() {\n  const [priority, setPriority] = useState(\"highest\");\n\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        <Button variant=\"outline\">Set Priority</Button>\n      </DropdownMenuTrigger>\n      <DropdownMenuContent className=\"w-44\">\n        <DropdownMenuLabel>Set Priority</DropdownMenuLabel>\n        <DropdownMenuSeparator />\n        <DropdownMenuRadioGroup value={priority} onValueChange={setPriority}>\n          <DropdownMenuRadioItem value=\"highest\">\n            <ChevronsUp className=\"mr-2 h-4 w-4 text-destructive\" /> Highest\n          </DropdownMenuRadioItem>\n          <DropdownMenuRadioItem value=\"high\">\n            <ChevronUp className=\"mr-2 h-4 w-4 text-orange-500\" /> High\n          </DropdownMenuRadioItem>\n          <DropdownMenuRadioItem value=\"medium\">\n            <Equal className=\"mr-2 h-4 w-4 text-yellow-500\" /> Medium\n          </DropdownMenuRadioItem>\n          <DropdownMenuRadioItem value=\"low\">\n            <ChevronDown className=\"mr-2 h-4 w-4 text-green-600\" /> Low\n          </DropdownMenuRadioItem>\n        </DropdownMenuRadioGroup>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

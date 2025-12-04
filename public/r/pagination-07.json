@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-07",
+  "type": "registry:component",
+  "title": "Bordered Pagination",
+  "description": "A pagination component with bordered styling",
+  "registryDependencies": [
+    "pagination",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/pagination/pagination-07.tsx",
+      "content": "import { buttonVariants } from \"@/registry/ui/button\";\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n  PaginationNext,\n  PaginationPrevious,\n} from \"@/registry/ui/pagination\";\nimport { cn } from \"@/lib/utils\";\n\nconst pages = [1, 2, 3];\n\nexport default function PaginationBordered() {\n  return (\n    <Pagination>\n      <PaginationContent className=\"gap-0 border rounded-lg divide-x overflow-hidden\">\n        <PaginationItem>\n          <PaginationPrevious href=\"#\" className=\"rounded-none\" />\n        </PaginationItem>\n        {pages.map((page) => {\n          const isActive = page === 2;\n\n          return (\n            <PaginationItem key={page}>\n              <PaginationLink\n                href={`#${page}`}\n                className={cn(\n                  {\n                    [buttonVariants({\n                      variant: \"default\",\n                      className:\n                        \"dark:bg-primary dark:hover:bg-primary/90 hover:text-primary-foreground!\",\n                    })]: isActive,\n                  },\n                  \"rounded-none border-none\"\n                )}\n                isActive={isActive}\n              >\n                {page}\n              </PaginationLink>\n            </PaginationItem>\n          );\n        })}\n        <PaginationItem>\n          <PaginationNext href=\"#\" className=\"rounded-none\" />\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

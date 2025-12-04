@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-02",
+  "type": "registry:component",
+  "title": "Ring Input",
+  "description": "A ring input component",
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/input/input-02.tsx",
+      "content": "import { Input } from \"@/registry/ui/input\";\n\nexport default function InputRingDemo() {\n  return (\n    <Input\n      type=\"email\"\n      placeholder=\"Email\"\n      className=\"max-w-xs focus-visible:ring-[3px] focus-visible:ring-blue-500/20 focus-visible:border-blue-500\"\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

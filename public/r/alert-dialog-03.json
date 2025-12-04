@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-03",
+  "type": "registry:component",
+  "title": "Destructive Alert Dialog",
+  "description": "A destructive alert dialog component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/alert-dialog/alert-dialog-03.tsx",
+      "content": "import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/ui/alert-dialog\";\nimport { Button, buttonVariants } from \"@/registry/ui/button\";\nimport { OctagonAlert } from \"lucide-react\";\n\nexport default function AlertDialogDestructive() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger asChild>\n        <Button variant=\"outline\">Show Dialog</Button>\n      </AlertDialogTrigger>\n      <AlertDialogContent>\n        <AlertDialogHeader className=\"items-center\">\n          <AlertDialogTitle>\n            <div className=\"mb-2 mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10\">\n              <OctagonAlert className=\"h-7 w-7 text-destructive\" />\n            </div>\n            Are you absolutely sure?\n          </AlertDialogTitle>\n          <AlertDialogDescription className=\"text-[15px] text-center\">\n            This action cannot be undone. This will permanently delete your\n            account and remove your data from our servers.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter className=\"mt-2 sm:justify-center\">\n          <AlertDialogCancel>Cancel</AlertDialogCancel>\n          <AlertDialogAction\n            className={buttonVariants({ variant: \"destructive\" })}\n          >\n            Continue\n          </AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

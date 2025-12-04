@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "features-04",
+  "type": "registry:block",
+  "title": "Features 04",
+  "description": "A simple features block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/features-04/components/features.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\";\nimport {\n  BookCheck,\n  ChartPie,\n  FolderSync,\n  Goal,\n  Users,\n  Zap,\n} from \"lucide-react\";\n\nconst features = [\n  {\n    icon: Goal,\n    title: \"Identify Opportunities\",\n    description:\n      \"Easily uncover untapped areas to explore and expand your reach effortlessly and effectively.\",\n  },\n  {\n    icon: BookCheck,\n    title: \"Build Authority\",\n    description:\n      \"Create valuable content that resonates, inspires trust, and positions you as an expert.\",\n  },\n  {\n    icon: ChartPie,\n    title: \"Instant Insights\",\n    description:\n      \"Gain immediate, actionable insights with a quick glance, enabling fast decision-making.\",\n  },\n  {\n    icon: Users,\n    title: \"Engage with Your Audience\",\n    description:\n      \"Boost audience engagement with interactive features like polls, quizzes, and forms.\",\n  },\n  {\n    icon: FolderSync,\n    title: \"Automate Your Workflow\",\n    description:\n      \"Streamline your processes by automating repetitive tasks, saving time and reducing effort.\",\n  },\n  {\n    icon: Zap,\n    title: \"Accelerate Growth\",\n    description:\n      \"Supercharge your growth by implementing strategies that drive results quickly and efficiently.\",\n  },\n];\n\nconst Features = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"max-w-(--breakpoint-lg) w-full py-12 px-6\">\n        <h2 className=\"text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em] max-w-lg\">\n          Boost Your Strategy with Smart Features\n        </h2>\n        <div className=\"mt-6 md:mt-10 w-full mx-auto grid md:grid-cols-2 gap-12\">\n          <div>\n            <Accordion defaultValue=\"item-0\" type=\"single\" className=\"w-full\">\n              {features.map(({ title, description, icon: Icon }, index) => (\n                <AccordionItem\n                  key={index}\n                  value={`item-${index}`}\n                  className=\"group/accordion-item data-[state=open]:border-b-2 data-[state=open]:border-primary\"\n                >\n                  <AccordionTrigger className=\"text-lg [&>svg]:hidden group-first/accordion-item:pt-0\">\n                    <div className=\"flex items-center gap-4\">\n                      <Icon />\n                      {title}\n                    </div>\n                  </AccordionTrigger>\n                  <AccordionContent className=\"text-[17px] leading-relaxed text-muted-foreground\">\n                    {description}\n                    <div className=\"mt-6 mb-2 md:hidden aspect-video w-full bg-muted rounded-xl\" />\n                  </AccordionContent>\n                </AccordionItem>\n              ))}\n            </Accordion>\n          </div>\n\n          {/* Media */}\n          <div className=\"hidden md:block w-full h-full bg-muted rounded-xl\" />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Features;\n",
+      "type": "registry:component"
+    }
+  ]
+}

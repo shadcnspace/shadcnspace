@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-06",
+  "type": "registry:component",
+  "title": "Controlled Checkbox",
+  "description": "A controlled checkbox component",
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/checkbox/checkbox-06.tsx",
+      "content": "\"use client\";\n\nimport { Checkbox } from \"@/registry/ui/checkbox\";\nimport { Checkbox as CheckboxPrimitive } from \"radix-ui\";\nimport { useState } from \"react\";\n\nexport default function ControlledCheckboxDemo() {\n  const [checked, setChecked] = useState<CheckboxPrimitive.CheckedState>(false);\n\n  return (\n    <div className=\"flex items-center space-x-2\">\n      <Checkbox\n        id=\"terms-controlled\"\n        checked={checked}\n        onCheckedChange={setChecked}\n      />\n      <label\n        htmlFor=\"terms-controlled\"\n        className=\"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"\n      >\n        Accept terms and conditions\n      </label>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-04",
+  "type": "registry:component",
+  "title": "Tooltip with Disabled Hoverable Content",
+  "description": "A tooltip component with disabled hoverable content",
+  "registryDependencies": [
+    "tooltip",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/tooltip/tooltip-04.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/ui/tooltip\";\n\nexport default function TooltipWithDisabledHoverableContentDemo() {\n  return (\n    <TooltipProvider>\n      <Tooltip disableHoverableContent>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\">Hover</Button>\n        </TooltipTrigger>\n        <TooltipContent>\n          <p>You can&apos;t hover over me</p>\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

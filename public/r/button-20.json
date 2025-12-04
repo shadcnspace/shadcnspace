@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-20",
+  "type": "registry:component",
+  "title": "Copy Button",
+  "description": "A copy button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-20.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/ui/button\";\nimport { Check, Copy } from \"lucide-react\";\nimport React from \"react\";\n\nconst CopyButton = () => {\n  const { isCopied, copyToClipboard } = useCopyToClipboard();\n  const link = \"https://www.shadcnui-blocks.com\";\n\n  return (\n    <div className=\"flex items-center border rounded-full overflow-hidden p-1\">\n      <p className=\"pl-4 pr-2 max-w-[25ch] text-ellipsis overflow-hidden whitespace-nowrap text-sm\">\n        {link}\n      </p>\n      <Button\n        size=\"icon\"\n        className=\"rounded-full\"\n        onClick={() => copyToClipboard(link)}\n      >\n        {isCopied ? <Check /> : <Copy />}\n      </Button>\n    </div>\n  );\n};\n\n// @hooks/use-copy-to-clipboard.tsx\nfunction useCopyToClipboard({\n  timeout = 2000,\n  onCopy,\n}: {\n  timeout?: number;\n  onCopy?: () => void;\n} = {}) {\n  const [isCopied, setIsCopied] = React.useState(false);\n\n  const copyToClipboard = (value: string) => {\n    if (typeof window === \"undefined\" || !navigator.clipboard.writeText) {\n      return;\n    }\n\n    if (!value) return;\n\n    navigator.clipboard.writeText(value).then(() => {\n      setIsCopied(true);\n\n      if (onCopy) {\n        onCopy();\n      }\n\n      setTimeout(() => {\n        setIsCopied(false);\n      }, timeout);\n    }, console.error);\n  };\n\n  return { isCopied, copyToClipboard };\n}\n\nexport default CopyButton;\n",
+      "type": "registry:component"
+    }
+  ]
+}

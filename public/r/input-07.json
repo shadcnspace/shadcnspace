@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-07",
+  "type": "registry:component",
+  "title": "Input with Adornment",
+  "description": "An input with adornment component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/input/input-07.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/ui/button\";\nimport { Input } from \"@/registry/ui/input\";\nimport { EyeIcon, EyeOffIcon, LockIcon, MailIcon } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function InputWithAdornmentDemo() {\n  const [showPassword, setShowPassword] = useState(false);\n\n  const togglePasswordVisibility = () => {\n    setShowPassword(!showPassword);\n  };\n\n  return (\n    <div className=\"w-full max-w-xs space-y-2\">\n      <div className=\"relative flex items-center rounded-md border focus-within:ring-1 focus-within:ring-ring pl-2\">\n        <MailIcon className=\"h-5 w-5 text-muted-foreground\" />\n        <Input\n          type=\"email\"\n          placeholder=\"Email\"\n          className=\"border-0 focus-visible:ring-0 shadow-none\"\n        />\n      </div>\n      <div className=\"relative flex items-center rounded-md border focus-within:ring-1 focus-within:ring-ring px-2\">\n        <LockIcon className=\"h-5 w-5 text-muted-foreground\" />\n        <Input\n          type={showPassword ? \"text\" : \"password\"}\n          placeholder=\"Password\"\n          className=\"border-0 focus-visible:ring-0 shadow-none\"\n        />\n        <button onClick={togglePasswordVisibility}>\n          {showPassword ? (\n            <EyeOffIcon className=\"h-5 w-5 text-muted-foreground\" />\n          ) : (\n            <EyeIcon className=\"h-5 w-5 text-muted-foreground\" />\n          )}\n        </button>\n      </div>\n      <Button className=\"w-full\">Log In</Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

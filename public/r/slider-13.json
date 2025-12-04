@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-13",
+  "type": "registry:component",
+  "title": "Vertical Slider",
+  "description": "A vertical slider component",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/slider/slider-13.tsx",
+      "content": "import * as React from \"react\";\nimport { Slider as SliderPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n// Replace `Slider` component in `@components/ui/slider.tsx` with the following code to add vertical orientation to the slider.\nconst Slider = React.forwardRef<\n  React.ElementRef<typeof SliderPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>\n>(({ className, ...props }, ref) => (\n  <SliderPrimitive.Root\n    ref={ref}\n    className={cn(\n      \"relative flex w-full touch-none select-none items-center data-[orientation=vertical]:flex-col\",\n      className\n    )}\n    {...props}\n  >\n    <SliderPrimitive.Track className=\"relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20 data-[orientation=vertical]:w-1.5 data-[orientation=vertical]:h-full\">\n      <SliderPrimitive.Range className=\"absolute h-full bg-primary data-[orientation=vertical]:w-full\" />\n    </SliderPrimitive.Track>\n    <SliderPrimitive.Thumb className=\"block h-4 w-4 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50\" />\n  </SliderPrimitive.Root>\n));\nSlider.displayName = SliderPrimitive.Root.displayName;\n\nexport default function VerticalSliderDemo() {\n  return (\n    <Slider\n      defaultValue={[50]}\n      max={100}\n      step={1}\n      orientation=\"vertical\"\n      className=\"w-fit mx-auto h-40\"\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-15",
+  "type": "registry:component",
+  "title": "Steps Breadcrumb",
+  "description": "A steps breadcrumb component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/breadcrumb/breadcrumb-15.tsx",
+      "content": "import {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n} from \"@/registry/ui/breadcrumb\";\nimport { Package, ShoppingCart, Store, Truck } from \"lucide-react\";\nimport { Fragment } from \"react\";\n\nconst steps = [\n  {\n    label: \"Store\",\n    href: \"#/store\",\n    icon: Store,\n  },\n  {\n    label: \"Delivery Tracking\",\n    href: \"#/delivery-tracking\",\n    icon: Truck,\n  },\n  {\n    label: \"Cart\",\n    href: \"#/cart\",\n    icon: ShoppingCart,\n  },\n  {\n    label: \"Package\",\n    href: \"#/package\",\n    icon: Package,\n    active: true,\n  },\n];\n\nconst BreadcrumbsSteps = () => {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        {steps.map((step, index) => (\n          <Fragment key={index}>\n            <BreadcrumbItem>\n              {step.active ? (\n                <BreadcrumbPage>\n                  <step.icon className=\"h-5 w-5\" />\n                </BreadcrumbPage>\n              ) : (\n                <BreadcrumbLink href={step.href}>\n                  <step.icon className=\"h-5 w-5\" />\n                </BreadcrumbLink>\n              )}\n            </BreadcrumbItem>\n            {index !== steps.length - 1 && (\n              <li\n                role=\"presentation\"\n                aria-hidden=\"true\"\n                className=\"inline-block h-[2px] w-[40px] bg-muted\"\n              />\n            )}\n          </Fragment>\n        ))}\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n};\n\nexport default BreadcrumbsSteps;\n",
+      "type": "registry:component"
+    }
+  ]
+}

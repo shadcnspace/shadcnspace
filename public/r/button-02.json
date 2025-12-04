@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-02",
+  "type": "registry:component",
+  "title": "Secondary Button",
+  "description": "A secondary button component",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-02.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\n\nconst SecondaryButtonDemo = () => (\n  <Button variant=\"secondary\">Secondary</Button>\n);\n\nexport default SecondaryButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

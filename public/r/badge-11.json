@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-11",
+  "type": "registry:component",
+  "title": "Badge with Icon",
+  "description": "A badge with icon component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/badge/badge-11.tsx",
+      "content": "import { Badge } from \"@/registry/ui/badge\";\nimport { ArrowLeftIcon, ArrowRightIcon, XIcon } from \"lucide-react\";\n\nconst BadgeWithIconDemo = () => {\n  return (\n    <div className=\"flex items-center gap-3 flex-wrap\">\n      <Badge className=\"rounded-full pl-1 gap-1.5\">\n        <ArrowLeftIcon className=\"h-4 w-4\" />\n        Left\n      </Badge>\n      <Badge className=\"rounded-full pr-1 gap-1.5\">\n        Right\n        <ArrowRightIcon className=\"h-4 w-4\" />\n      </Badge>\n      <Badge className=\"rounded-full pr-1 gap-1.5\">\n        Remove\n        <XIcon className=\"h-4 w-4\" />\n      </Badge>\n    </div>\n  );\n};\n\nexport default BadgeWithIconDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

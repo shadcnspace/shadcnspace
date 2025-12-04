@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faq-07",
+  "type": "registry:block",
+  "title": "FAQ 07",
+  "description": "A simple FAQ component",
+  "dependencies": [
+    "lucide-react",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/faq-07/components/faq.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n} from \"@/components/ui/accordion\";\nimport { cn } from \"@/lib/utils\";\nimport { Accordion as AccordionPrimitive } from \"radix-ui\";\nimport { PlusIcon } from \"lucide-react\";\n\nconst faq = [\n  {\n    question: \"What is your return policy?\",\n    answer:\n      \"You can return unused items in their original packaging within 30 days for a refund or exchange. Contact support for assistance.\",\n  },\n  {\n    question: \"How do I track my order?\",\n    answer:\n      \"Track your order using the link provided in your confirmation email, or log into your account to view tracking details.\",\n  },\n  {\n    question: \"Do you ship internationally?\",\n    answer:\n      \"Yes, we ship worldwide. Shipping fees and delivery times vary by location, and customs duties may apply for some countries.\",\n  },\n  {\n    question: \"What payment methods do you accept?\",\n    answer:\n      \"We accept Visa, MasterCard, American Express, PayPal, Apple Pay, and Google Pay, ensuring secure payment options for all customers.\",\n  },\n  {\n    question: \"What if I receive a damaged item?\",\n    answer:\n      \"Please contact our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund.\",\n  },\n];\n\nconst FAQ = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center px-6 py-12\">\n      <div className=\"w-full max-w-2xl\">\n        <h2 className=\"text-4xl leading-[1.15]! font-semibold tracking-[-0.03em]\">\n          Frequently Asked Questions\n        </h2>\n        <p className=\"mt-2 text-xl text-muted-foreground\">\n          Quick answers to common questions about our products and services.\n        </p>\n\n        <Accordion\n          type=\"single\"\n          collapsible\n          className=\"mt-8 sm:mt-10 space-y-4\"\n          defaultValue=\"question-0\"\n        >\n          {faq.map(({ question, answer }, index) => (\n            <AccordionItem\n              key={question}\n              value={`question-${index}`}\n              className=\"bg-accent py-1 px-4 rounded-xl border-none\"\n            >\n              <AccordionPrimitive.Header className=\"flex\">\n                <AccordionPrimitive.Trigger\n                  className={cn(\n                    \"flex flex-1 items-center justify-between pt-4 pb-3 font-semibold tracking-tight transition-all hover:underline [&[data-state=open]>svg]:rotate-45\",\n                    \"text-start text-lg\"\n                  )}\n                >\n                  {question}\n                  <PlusIcon className=\"h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200\" />\n                </AccordionPrimitive.Trigger>\n              </AccordionPrimitive.Header>\n              <AccordionContent className=\"text-base text-muted-foreground\">\n                {answer}\n              </AccordionContent>\n            </AccordionItem>\n          ))}\n        </Accordion>\n      </div>\n    </div>\n  );\n};\n\nexport default FAQ;\n",
+      "type": "registry:component"
+    }
+  ]
+}

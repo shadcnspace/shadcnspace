@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-09",
+  "type": "registry:component",
+  "title": "Secondary Tabs Pagination",
+  "description": "A pagination component with secondary tabs styling",
+  "registryDependencies": [
+    "pagination",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/pagination/pagination-09.tsx",
+      "content": "import { buttonVariants } from \"@/registry/ui/button\";\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n  PaginationNext,\n  PaginationPrevious,\n} from \"@/registry/ui/pagination\";\nimport { cn } from \"@/lib/utils\";\n\nconst pages = [1, 2, 3];\n\nexport default function PaginationTabsSecondary() {\n  return (\n    <Pagination>\n      <PaginationContent>\n        <PaginationItem>\n          <PaginationPrevious\n            href=\"#\"\n            className=\"bg-secondary text-secondary-foreground\"\n          />\n        </PaginationItem>\n\n        {pages.map((page) => {\n          const isActive = page === 2;\n\n          return (\n            <PaginationItem key={page}>\n              <PaginationLink\n                href={`#${page}`}\n                isActive={page === 2}\n                className={cn({\n                  [buttonVariants({\n                    variant: \"default\",\n                    className:\n                      \"hover:text-primary-foreground! shadow-none! dark:bg-primary dark:hover:bg-primary/90\",\n                  })]: isActive,\n                  \"bg-secondary text-secondary-foreground\": !isActive,\n                })}\n              >\n                {page}\n              </PaginationLink>\n            </PaginationItem>\n          );\n        })}\n\n        <PaginationItem>\n          <PaginationNext\n            href=\"#\"\n            className=\"bg-secondary text-secondary-foreground\"\n          />\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

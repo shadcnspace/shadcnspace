@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "features-06",
+  "type": "registry:block",
+  "title": "Features 06",
+  "description": "A simple features block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/features-06/components/features.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { ArrowRight } from \"lucide-react\";\nimport Link from \"next/link\";\n\nconst features = [\n  {\n    category: \"Marketing and Sales\",\n    title: \"Collect and enrich leads your way\",\n    details:\n      \"Take control over how and when to follow up with your leads. Store and reference leads in multiple tables and, from there, automatically send them personalized emails.\",\n    tutorialLink: \"#\",\n  },\n  {\n    category: \"Project Management\",\n    title: \"Streamline your workflows effortlessly\",\n    details:\n      \"Organize tasks, deadlines, and team collaboration in one place. Use customizable boards to manage projects efficiently and automate routine updates.\",\n    tutorialLink: \"#\",\n  },\n  {\n    category: \"Customer Support\",\n    title: \"Deliver seamless customer experiences\",\n    details:\n      \"Track and resolve customer queries faster with an integrated ticketing system. Set priorities, automate follow-ups, and enhance satisfaction with personalized responses.\",\n    tutorialLink: \"#\",\n  },\n  {\n    category: \"Team Collaboration\",\n    title: \"Stay connected with your team\",\n    details:\n      \"Simplify communication and align team efforts with shared boards and real-time updates. Enable transparent goal tracking and instant feedback for better results.\",\n    tutorialLink: \"#\",\n  },\n  {\n    category: \"Product Development\",\n    title: \"Accelerate innovation with ease\",\n    details:\n      \"Bring your product ideas to life by managing prototypes, feedback, and iterations in one place. Collaborate with your team to refine features and release with confidence.\",\n    tutorialLink: \"#\",\n  },\n];\n\nconst Features = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"max-w-(--breakpoint-lg) w-full py-10 px-6\">\n        <h2 className=\"text-4xl md:text-[2.75rem] md:leading-[1.2] font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty sm:mx-auto sm:text-center\">\n          Strengthen Your Strategy\n        </h2>\n        <p className=\"mt-2 text-muted-foreground text-lg sm:text-xl sm:text-center\">\n          Enhance your strategy with intelligent tools designed for success.\n        </p>\n        <div className=\"mt-8 md:mt-16 w-full mx-auto space-y-20\">\n          {features.map((feature) => (\n            <div\n              key={feature.category}\n              className=\"flex flex-col md:flex-row items-center gap-x-12 gap-y-6 md:even:flex-row-reverse\"\n            >\n              <div className=\"w-full aspect-[4/3] bg-muted rounded-xl border border-border/50 basis-1/2\" />\n              <div className=\"basis-1/2 shrink-0\">\n                <span className=\"uppercase font-medium text-sm text-muted-foreground\">\n                  {feature.category}\n                </span>\n                <h4 className=\"my-3 text-3xl font-semibold tracking-[-0.02em]\">\n                  {feature.title}\n                </h4>\n                <p className=\"text-muted-foreground\">{feature.details}</p>\n                <Button asChild size=\"lg\" className=\"mt-6 rounded-full gap-3\">\n                  <Link href={feature.tutorialLink}>\n                    Learn More <ArrowRight />\n                  </Link>\n                </Button>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Features;\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-13",
+  "type": "registry:component",
+  "title": "Clickable Link Badge",
+  "description": "A clickable link badge component",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/badge/badge-13.tsx",
+      "content": "import { badgeVariants } from \"@/registry/ui/badge\";\nimport { cn } from \"@/lib/utils\";\nimport Image from \"next/image\";\nimport Link from \"next/link\";\n\nconst ClickableLinkBadgeDemo = () => {\n  return (\n    <Link\n      href=\"https://github.com/shadcn\"\n      target=\"_blank\"\n      className={cn(\n        badgeVariants({\n          variant: \"outline\",\n        }),\n        \"rounded-full pl-[3px]\"\n      )}\n    >\n      <Image\n        src=\"https://github.com/shadcn.png\"\n        className=\"mr-2 h-5 w-5 rounded-full\"\n        alt=\"\"\n        height={20}\n        width={20}\n      />\n      shadcn\n    </Link>\n  );\n};\n\nexport default ClickableLinkBadgeDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

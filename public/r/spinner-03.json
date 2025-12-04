@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-03",
+  "type": "registry:component",
+  "title": "Pinwheel Spinner",
+  "description": "A pinwheel spinner component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/spinner/spinner-03.tsx",
+      "content": "import { LoaderPinwheel } from \"lucide-react\";\n\nexport default function SpinnerPinwheelDemo() {\n  return <LoaderPinwheel className=\"animate-spin\" />;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

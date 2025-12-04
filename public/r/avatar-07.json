@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-07",
+  "type": "registry:component",
+  "title": "Avatar Color",
+  "description": "Different colors of avatar component",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/avatar/avatar-07.tsx",
+      "content": "import { Avatar, AvatarFallback } from \"@/registry/ui/avatar\";\n\nexport default function AvatarColorDemo() {\n  return (\n    <div className=\"grid gap-4\">\n      <div className=\"flex items-center gap-4\">\n        <Avatar>\n          <AvatarFallback className=\"bg-slate-500 text-white\">C</AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-indigo-500 text-white\">\n            C\n          </AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-rose-500 text-white\">C</AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-cyan-500 text-white\">C</AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-green-500 text-white\">C</AvatarFallback>\n        </Avatar>\n      </div>\n      <div className=\"flex items-center gap-4\">\n        <Avatar>\n          <AvatarFallback className=\"bg-slate-500/25 text-slate-500\">\n            C\n          </AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-indigo-500/25 text-indigo-500\">\n            C\n          </AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-rose-500/25 text-rose-500\">\n            C\n          </AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-cyan-500/25 text-cyan-500\">\n            C\n          </AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-green-500/25 text-green-500\">\n            C\n          </AvatarFallback>\n        </Avatar>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

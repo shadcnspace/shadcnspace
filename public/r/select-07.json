@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-07",
+  "type": "registry:component",
+  "title": "Select with Form Integration",
+  "description": "A select component integrated with form handling",
+  "dependencies": [
+    "@hookform/resolvers",
+    "zod"
+  ],
+  "registryDependencies": [
+    "select",
+    "form"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/select/select-07.tsx",
+      "content": "\"use client\";\n\nimport { SelectHTMLAttributes } from \"react\";\nimport { useForm, useFormContext } from \"react-hook-form\";\nimport { z } from \"zod\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/ui/select\";\nimport {\n  FormControl,\n  FormItem,\n  FormField,\n  FormMessage,\n  FormLabel,\n  Form,\n} from \"@/registry/ui/form\";\nimport { Button } from \"@/registry/ui/button\";\nimport { cn } from \"@/lib/utils\";\nimport { zodResolver } from \"@hookform/resolvers/zod\";\n\nconst COUNTRIES: OptionType[] = [\n  { id: \"us\", name: \"United States\" },\n  { id: \"uk\", name: \"United Kingdom\" },\n  { id: \"ca\", name: \"Canada\" },\n  { id: \"au\", name: \"Australia\" },\n  { id: \"fr\", name: \"France\" },\n  { id: \"de\", name: \"Germany\" },\n  { id: \"jp\", name: \"Japan\" },\n  { id: \"br\", name: \"Brazil\" },\n];\n\nconst schema = z.object({\n  country: z.string().min(1, \"Country is required\"),\n});\n\ntype schemaType = z.infer<typeof schema>;\n\nexport default function SelectWithFormDemo() {\n  const form = useForm<schemaType>({\n    resolver: zodResolver(schema),\n    defaultValues: {\n      country: \"\",\n    },\n    mode: \"onBlur\",\n  });\n\n  const onSubmit = (data: schemaType) => {\n    console.log(data);\n  };\n\n  return (\n    <Form {...form}>\n      <form\n        onSubmit={form.handleSubmit(onSubmit)}\n        className=\"max-w-sm mx-auto space-y-3 w-full\"\n      >\n        <SelectWithForm<schemaType>\n          name=\"country\"\n          title=\"Select country\"\n          options={COUNTRIES}\n        />\n        <Button type=\"submit\">Submit</Button>\n      </form>\n    </Form>\n  );\n}\n\ntype OptionType = {\n  id: string;\n  name: string;\n};\n\ntype SelectWithFormProps<K> = {\n  name: keyof K & string;\n  title?: string;\n  className?: string;\n  options: OptionType[];\n} & Omit<\n  SelectHTMLAttributes<HTMLSelectElement>,\n  \"children\" | \"onValueChange\" | \"value\" | \"defaultValue\" | \"dir\"\n>;\n\nexport function SelectWithForm<K>({\n  title,\n  name,\n  className,\n  options,\n  ...props\n}: SelectWithFormProps<K>) {\n  const form = useFormContext();\n\n  return (\n    <FormField\n      control={form.control}\n      name={name}\n      render={({ field }) => (\n        <FormItem>\n          {title && <FormLabel htmlFor={name}>{title}</FormLabel>}\n          <Select {...field} {...props} onValueChange={field.onChange}>\n            <FormControl>\n              <SelectTrigger\n                id={name}\n                className={cn(\n                  \"aria-invalid:border-destructive aria-invalid:ring-destructive w-full\",\n                  className\n                )}\n              >\n                <SelectValue placeholder=\"Select\" />\n              </SelectTrigger>\n            </FormControl>\n\n            <SelectContent>\n              {options.map((item) => (\n                <SelectItem key={`${name}_${item.id}`} value={item.id}>\n                  {item.name}\n                </SelectItem>\n              ))}\n            </SelectContent>\n          </Select>\n          <FormMessage />\n        </FormItem>\n      )}\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-06",
+  "type": "registry:component",
+  "title": "Swirling Effect Spinner",
+  "description": "A spinner component with swirling effect",
+  "files": [
+    {
+      "path": "src/components/customized/spinner/spinner-06.tsx",
+      "content": "import React from \"react\";\n\nconst SwirlingEffectSpinner = () => {\n  return (\n    <>\n      <style>\n        {`@keyframes spin {\n            to {\n              transform: rotate(360deg);\n            }\n          }\n        \n          @keyframes spin2 {\n            0% {\n              stroke-dasharray: 1, 800;\n              stroke-dashoffset: 0;\n            }\n            50% {\n              stroke-dasharray: 400, 400;\n              stroke-dashoffset: -200px;\n            }\n            100% {\n              stroke-dasharray: 800, 1;\n              stroke-dashoffset: -800px;\n            }\n          }\n        \n          .spin2 {\n            transform-origin: center;\n            animation: spin2 1.5s ease-in-out infinite,\n              spin 2s linear infinite;\n            animation-direction: alternate;\n          }`}\n      </style>\n\n      <svg\n        viewBox=\"0 0 800 800\"\n        className=\"h-14 w-14\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <circle\n          className=\"spin2 stroke-primary\"\n          cx=\"400\"\n          cy=\"400\"\n          fill=\"none\"\n          r=\"200\"\n          strokeWidth=\"50\"\n          strokeDasharray=\"700 1400\"\n          strokeLinecap=\"round\"\n        />\n      </svg>\n    </>\n  );\n};\n\nexport default SwirlingEffectSpinner;\n",
+      "type": "registry:component"
+    }
+  ]
+}

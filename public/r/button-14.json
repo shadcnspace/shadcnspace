@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-14",
+  "type": "registry:component",
+  "title": "Rounded Button",
+  "description": "A rounded button component",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-14.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { StarIcon } from \"lucide-react\";\n\nconst RoundedButtonDemo = () => (\n  <div className=\"flex items-center gap-2 flex-wrap\">\n    <Button className=\"rounded-full\">Rounded</Button>\n    <Button className=\"rounded-full\" size=\"icon\">\n      <StarIcon />\n    </Button>\n    <Button className=\"rounded-full\">\n      <StarIcon /> Star\n    </Button>\n  </div>\n);\n\nexport default RoundedButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

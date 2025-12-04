@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stats-02",
+  "type": "registry:block",
+  "title": "Stats 02",
+  "description": "A simple stats block",
+  "files": [
+    {
+      "path": "src/registry/blocks/stats-02/components/stats.tsx",
+      "content": "const Stats = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"max-w-(--breakpoint-xl) mx-auto w-full py-12 px-6 xl:px-0\">\n        <h2 className=\"text-4xl md:text-5xl font-semibold tracking-tighter\">\n          The perfect starting point for any project\n        </h2>\n        <p className=\"mt-4 text-lg max-w-2xl text-muted-foreground\">\n          The world&apos;s most advanced UI kit for Figma. Meticulously crafted\n          with 100% Auto Layout 5.0, variables, smart variants, and WCAG\n          accessibility.\n        </p>\n\n        <div className=\"mt-16 sm:mt-24 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-16 justify-center\">\n          <div>\n            <span className=\"text-5xl md:text-6xl tracking-tight font-semibold\">\n              900+\n            </span>\n            <p className=\"mt-6 font-medium text-xl\">\n              Global styles + variables\n            </p>\n            <p className=\"mt-2 text-muted-foreground\">\n              Super smart global color, typography and effects styles +\n              variables!\n            </p>\n          </div>\n          <div>\n            <span className=\"text-5xl md:text-6xl tracking-tight font-semibold text-muted-foreground\">\n              10,000+\n            </span>\n            <p className=\"mt-6 font-medium text-xl\">Components and variants</p>\n            <p className=\"mt-2 text-muted-foreground\">\n              We&apos;ve thought of everything you need so you don&apos;t have\n              to.\n            </p>\n          </div>\n          <div>\n            <span className=\"text-5xl md:text-6xl tracking-tight font-semibold\">\n              420+\n            </span>\n            <p className=\"mt-6 font-medium text-xl\">Page design examples</p>\n            <p className=\"mt-2 text-muted-foreground\">\n              A whopping 420+ ready-to-go desktop and mobile page examples.\n            </p>\n          </div>\n          <div>\n            <span className=\"text-5xl md:text-6xl tracking-tight font-semibold text-muted-foreground\">\n              2,000+\n            </span>\n            <p className=\"mt-6 font-medium text-xl\">Icons and logos</p>\n            <p className=\"mt-2 text-muted-foreground\">\n              All the icons you&apos;ll need, including country flags and\n              payments.\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Stats;\n",
+      "type": "registry:component"
+    }
+  ]
+}

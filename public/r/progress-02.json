@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-02",
+  "type": "registry:component",
+  "title": "Linear Progress with Label",
+  "description": "A linear progress component with label",
+  "registryDependencies": [
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/progress/progress-02.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Progress } from \"@/registry/ui/progress\";\n\nexport default function LinearProgressWithLabelDemo() {\n  const [progress, setProgress] = React.useState(13);\n\n  React.useEffect(() => {\n    const timer = setTimeout(() => setProgress(66), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <div className=\"w-full flex items-center justify-center gap-3\">\n      <Progress value={progress} className=\"w-[60%]\" />\n      <span className=\"text-sm\">{progress}%</span>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

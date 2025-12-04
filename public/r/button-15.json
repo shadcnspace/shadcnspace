@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-15",
+  "type": "registry:component",
+  "title": "Toggle Button",
+  "description": "A toggle button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-15.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/ui/button\";\nimport { cn } from \"@/lib/utils\";\nimport { Heart } from \"lucide-react\";\nimport React from \"react\";\n\nconst ToggleButton = () => {\n  const [isLiked, setIsLiked] = React.useState(false);\n\n  return (\n    <Button\n      size=\"icon\"\n      variant=\"secondary\"\n      className={cn(\"rounded-full h-10 w-10\", {\n        \"bg-rose-100 hover:bg-rose-100 focus:bg-rose-100\": isLiked,\n      })}\n      onClick={() => setIsLiked(!isLiked)}\n    >\n      <Heart\n        className={cn(\"h-5! w-5!\", {\n          \"fill-rose-600 stroke-rose-600\": isLiked,\n        })}\n      />\n    </Button>\n  );\n};\n\nexport default ToggleButton;\n",
+      "type": "registry:component"
+    }
+  ]
+}

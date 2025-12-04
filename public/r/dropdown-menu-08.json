@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-08",
+  "type": "registry:component",
+  "title": "Workspace Switcher Dropdown Menu",
+  "description": "A workspace switcher dropdown menu component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "dropdown-menu",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/dropdown-menu/dropdown-menu-08.tsx",
+      "content": "\"use client\";\n\nimport { Avatar, AvatarFallback } from \"@/registry/ui/avatar\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuTrigger,\n} from \"@/registry/ui/dropdown-menu\";\nimport { Check, ChevronsUpDown } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst workspaces = [\n  {\n    id: 1,\n    name: \"Workspace 1\",\n    createdBy: \"abc@example.com\",\n  },\n  {\n    id: 2,\n    name: \"Workspace 2\",\n    createdBy: \"def@example.com\",\n  },\n  {\n    id: 3,\n    name: \"Workspace 3\",\n    createdBy: \"ghi@example.com\",\n  },\n];\n\nexport default function WorkspaceSwitcher() {\n  const [selectedWorkspace, setSelectedWorkspace] = useState(workspaces[0]);\n\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger className=\"flex items-center gap-2 bg-accent py-2.5 px-3 rounded-lg\">\n        <Avatar className=\"rounded-lg h-8 w-8\">\n          <AvatarFallback className=\"rounded-lg bg-primary text-primary-foreground\">\n            {selectedWorkspace.name[0]}\n          </AvatarFallback>\n        </Avatar>\n        <div className=\"text-start flex flex-col gap-1 leading-none\">\n          <span className=\"text-sm leading-none font-semibold truncate max-w-[17ch]\">\n            {selectedWorkspace.name}\n          </span>\n          <span className=\"text-xs text-muted-foreground truncate max-w-[20ch]\">\n            {selectedWorkspace.createdBy}\n          </span>\n        </div>\n        <ChevronsUpDown className=\"ml-6 h-4 w-4 text-muted-foreground\" />\n      </DropdownMenuTrigger>\n      <DropdownMenuContent className=\"w-52\" align=\"start\">\n        <DropdownMenuLabel>Workspaces</DropdownMenuLabel>\n        {workspaces.map((workspace) => (\n          <DropdownMenuItem\n            key={workspace.id}\n            onClick={() => setSelectedWorkspace(workspace)}\n          >\n            <div className=\"flex items-center gap-2\">\n              <Avatar className=\"rounded-md h-8 w-8\">\n                <AvatarFallback className=\"rounded-md bg-primary/10 text-foreground\">\n                  {workspace.name[0]}\n                </AvatarFallback>\n              </Avatar>\n              <div className=\"flex flex-col\">\n                <span>{workspace.name}</span>\n                <span className=\"text-xs text-muted-foreground\">\n                  {workspace.createdBy}\n                </span>\n              </div>\n            </div>\n            {selectedWorkspace.id === workspace.id && (\n              <Check className=\"ml-auto\" />\n            )}\n          </DropdownMenuItem>\n        ))}\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

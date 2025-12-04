@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-06",
+  "type": "registry:component",
+  "title": "Radio Group with Variant Styling",
+  "description": "A radio group component with variant styling options",
+  "registryDependencies": [
+    "radio-group",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/radio-group/radio-group-06.tsx",
+      "content": "import { Label } from \"@/registry/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/ui/radio-group\";\n\nexport default function RadioGroupVariantDemo() {\n  return (\n    <RadioGroup defaultValue=\"default\" className=\"flex items-center gap-3\">\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem\n          value=\"default\"\n          id=\"variant-default\"\n          className=\"text-indigo-500 border-indigo-500 [&_svg]:fill-indigo-500\"\n        />\n        <Label htmlFor=\"variant-default\">Default</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem\n          value=\"soft\"\n          id=\"variant-soft\"\n          className=\"text-indigo-500 border-indigo-500 [&_svg]:fill-indigo-500 border-none bg-indigo-500/25 dark:bg-indigo-500/30\"\n        />\n        <Label htmlFor=\"variant-soft\">Soft</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem\n          value=\"solid\"\n          id=\"variant-solid\"\n          className=\"text-indigo-500 border-indigo-500 border-none bg-indigo-500 dark:bg-indigo-500 [&_svg]:fill-white\"\n        />\n        <Label htmlFor=\"variant-solid\">Solid</Label>\n      </div>\n    </RadioGroup>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

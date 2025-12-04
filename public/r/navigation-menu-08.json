@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-08",
+  "type": "registry:component",
+  "title": "Mobile Navigation Menu",
+  "description": "A mobile-friendly navigation menu",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "navigation-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/navigation-menu/navigation-menu-08.tsx",
+      "content": "import {\n  NavigationMenu,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  navigationMenuTriggerStyle,\n} from \"@/registry/ui/navigation-menu\";\nimport { cn } from \"@/lib/utils\";\nimport { BookOpen, Home, Rss, Settings, User } from \"lucide-react\";\nimport Link from \"next/link\";\n\nconst navigationMenuItems = [\n  { title: \"Home\", href: \"#\", icon: Home, isActive: true },\n  { title: \"Blog\", href: \"#blog\", icon: Rss },\n  { title: \"Docs\", href: \"#docs\", icon: BookOpen },\n  { title: \"Account\", href: \"#account\", icon: Settings },\n  { title: \"Settings\", href: \"#settings\", icon: User },\n];\n\nexport default function NavigationMenuMobile() {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        {navigationMenuItems.map((item) => (\n          <NavigationMenuItem key={item.title}>\n            <NavigationMenuLink\n              className={cn(\n                navigationMenuTriggerStyle(),\n                \"flex flex-col h-auto items-center px-5 py-2.5\"\n              )}\n              active={item.isActive}\n              asChild\n            >\n              <Link href={item.href}>\n                <item.icon className=\"mb-1.5 h-5 w-5\" />\n                {item.title}\n              </Link>\n            </NavigationMenuLink>\n          </NavigationMenuItem>\n        ))}\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

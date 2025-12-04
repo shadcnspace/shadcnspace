@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-06",
+  "type": "registry:component",
+  "title": "Loading Button",
+  "description": "A loading button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-06.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { Loader } from \"lucide-react\";\n\nconst LoadingButtonDemo = () => {\n  return (\n    <div className=\"flex items-center gap-2\">\n      <Button size=\"icon\">\n        <Loader className=\"animate-spin\" />\n      </Button>\n      <Button>\n        <Loader className=\"animate-spin\" /> Loading\n      </Button>\n    </div>\n  );\n};\n\nexport default LoadingButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

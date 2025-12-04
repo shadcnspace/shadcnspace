@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-10",
+  "type": "registry:component",
+  "title": "Alert With Actions",
+  "description": "An alert with actions component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/alert/alert-10.tsx",
+      "content": "\"use client\";\n\nimport { Alert, AlertDescription, AlertTitle } from \"@/registry/ui/alert\";\nimport { Button } from \"@/registry/ui/button\";\nimport { CircleFadingArrowUpIcon, XIcon } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function AlertWithActionsDemo() {\n  const [isAlertVisible, setIsAlertVisible] = useState(true);\n\n  const showAlert = () => {\n    setIsAlertVisible(true);\n  };\n  const hideAlert = () => {\n    setIsAlertVisible(false);\n  };\n\n  return (\n    <div className=\"w-full\">\n      {isAlertVisible && (\n        <Alert className=\"flex justify-between items-center pr-2 [&>svg+div]:translate-y-0\">\n          <div className=\"flex items-start gap-3\">\n            <CircleFadingArrowUpIcon className=\"mt-0.5 size-4\" />\n            <div className=\"flex-col justify-center\">\n              <AlertTitle>Update Available</AlertTitle>\n              <AlertDescription>\n                A new version of the app is now available.\n              </AlertDescription>\n            </div>\n          </div>\n          <Button\n            size=\"icon\"\n            variant=\"ghost\"\n            className=\"pl-0!\"\n            onClick={hideAlert}\n          >\n            <XIcon className=\"h-5 w-5\" />\n          </Button>\n        </Alert>\n      )}\n      {!isAlertVisible && (\n        <div className=\"flex justify-center\">\n          <Button className=\"mt-2 mx-auto\" onClick={showAlert}>\n            Reopen\n          </Button>\n        </div>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

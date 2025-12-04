@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-11",
+  "type": "registry:component",
+  "title": "Avatar Status",
+  "description": "Avatar with status indicator component",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/avatar/avatar-11.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/registry/ui/avatar\";\n\nexport default function AvatarWithStatusDemo() {\n  return (\n    <div className=\"flex items-center gap-3\">\n      {/* Online */}\n      <div className=\"relative\">\n        <Avatar>\n          <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n          <AvatarFallback>CN</AvatarFallback>\n        </Avatar>\n        <div className=\"size-2 ring-2 ring-background rounded-full bg-green-500 absolute bottom-0 right-0\"></div>\n      </div>\n\n      {/* DND */}\n      <div className=\"relative\">\n        <Avatar>\n          <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n          <AvatarFallback>CN</AvatarFallback>\n        </Avatar>\n        <div className=\"size-2 ring-2 ring-background rounded-full bg-red-500 absolute bottom-0 right-0\"></div>\n      </div>\n\n      {/* Busy */}\n      <div className=\"relative\">\n        <Avatar>\n          <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n          <AvatarFallback>CN</AvatarFallback>\n        </Avatar>\n        <div className=\"size-2 ring-2 ring-background rounded-full bg-yellow-500 absolute bottom-0 right-0\"></div>\n      </div>\n\n      {/* Offline */}\n      <div className=\"relative\">\n        <Avatar>\n          <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n          <AvatarFallback>CN</AvatarFallback>\n        </Avatar>\n        <div className=\"size-2 ring-2 ring-background border-2 border-muted-foreground rounded-full bg-background absolute bottom-0 right-0\"></div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

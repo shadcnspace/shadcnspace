@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-06",
+  "type": "registry:block",
+  "title": "Hero 06",
+  "description": "A simple hero block",
+  "dependencies": [
+    "lucide-react",
+    "next-themes"
+  ],
+  "registryDependencies": [
+    "badge",
+    "button",
+    "https://www.shadcnui-blocks.com/r/dot-pattern.json",
+    "https://www.shadcnui-blocks.com/r/particles.json"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/hero-06/components/hero.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\nimport { Button } from \"@/components/ui/button\";\nimport { ArrowUpRight, CirclePlay } from \"lucide-react\";\nimport { BackgroundPattern } from \"@/registry/blocks/hero-06/components/background-pattern\";\nimport Link from \"next/link\";\n\nexport default function Hero() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center px-6\">\n      <BackgroundPattern />\n\n      <div className=\"relative z-10 text-center max-w-3xl\">\n        <Badge\n          variant=\"secondary\"\n          className=\"rounded-full py-1 border-border\"\n          asChild\n        >\n          <Link href=\"#\">\n            Just released v1.0.0 <ArrowUpRight className=\"ml-1 size-4\" />\n          </Link>\n        </Badge>\n        <h1 className=\"mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter\">\n          Customized Shadcn UI Blocks & Components\n        </h1>\n        <p className=\"mt-6 md:text-lg text-foreground/80\">\n          Explore a collection of Shadcn UI blocks and components, ready to\n          preview and copy. Streamline your development workflow with\n          easy-to-implement examples.\n        </p>\n        <div className=\"mt-12 flex items-center justify-center gap-4\">\n          <Button size=\"lg\" className=\"rounded-full text-base\">\n            Get Started <ArrowUpRight className=\"h-5! w-5!\" />\n          </Button>\n          <Button\n            variant=\"outline\"\n            size=\"lg\"\n            className=\"rounded-full text-base shadow-none\"\n          >\n            <CirclePlay className=\"h-5! w-5!\" /> Watch Demo\n          </Button>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/registry/blocks/hero-06/components/background-pattern.tsx",
+      "content": "\"use client\";\n\nimport DotPattern from \"@/components/ui/dot-pattern\";\nimport Particles from \"@/components/ui/particles\";\nimport { cn } from \"@/lib/utils\";\nimport { useTheme } from \"next-themes\";\n\nexport const BackgroundPattern = () => {\n  const { resolvedTheme } = useTheme();\n  const isLightTheme = resolvedTheme === \"light\";\n\n  return (\n    <>\n      <DotPattern\n        width={20}\n        height={20}\n        cx={1}\n        cy={1}\n        cr={1}\n        className={cn(\n          \"mask-[radial-gradient(ellipse,rgba(0,0,0,0.3)_30%,black_50%)]\",\n          \"dark:fill-slate-700\"\n        )}\n      />\n      <Particles\n        className=\"absolute inset-0\"\n        quantity={100}\n        ease={80}\n        color={isLightTheme ? \"#000\" : \"#fff\"}\n        refresh\n      />\n    </>\n  );\n};\n",
+      "type": "registry:component"
+    }
+  ]
+}

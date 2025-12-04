@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-07",
+  "type": "registry:component",
+  "title": "Navigation Menu with Icons",
+  "description": "A navigation menu with icon elements",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "navigation-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/navigation-menu/navigation-menu-07.tsx",
+      "content": "import { buttonVariants } from \"@/registry/ui/button\";\nimport {\n  NavigationMenu,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n} from \"@/registry/ui/navigation-menu\";\nimport { cn } from \"@/lib/utils\";\nimport { BookOpen, Home, Rss, Settings, User } from \"lucide-react\";\nimport Link from \"next/link\";\n\nconst navigationMenuItems = [\n  { title: \"Home\", href: \"#\", icon: Home, isActive: true },\n  { title: \"Blog\", href: \"#blog\", icon: Rss },\n  { title: \"Docs\", href: \"#docs\", icon: BookOpen },\n  { title: \"Account\", href: \"#account\", icon: Settings },\n  { title: \"Settings\", href: \"#settings\", icon: User },\n];\n\nexport default function NavigationMenuWithIcon() {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList className=\"space-x-3\">\n        {navigationMenuItems.map((item) => (\n          <NavigationMenuItem key={item.title}>\n            <NavigationMenuLink\n              className={cn(\n                buttonVariants({\n                  size: \"icon\",\n                  variant: item.isActive ? \"secondary\" : \"ghost\",\n                }),\n                \"h-11 w-11\"\n              )}\n              asChild\n            >\n              <Link href={item.href}>\n                <item.icon className=\"h-6! w-6!\" />\n              </Link>\n            </NavigationMenuLink>\n          </NavigationMenuItem>\n        ))}\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

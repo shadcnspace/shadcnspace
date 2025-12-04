@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-01",
+  "type": "registry:component",
+  "title": "Default Navigation Menu",
+  "description": "A default navigation menu component",
+  "registryDependencies": [
+    "navigation-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/navigation-menu/navigation-menu-01.tsx",
+      "content": "import {\n  NavigationMenu,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  navigationMenuTriggerStyle,\n} from \"@/registry/ui/navigation-menu\";\nimport Link from \"next/link\";\n\nconst navigationMenuItems = [\n  { title: \"Home\", href: \"#\" },\n  { title: \"Blog\", href: \"#blog\" },\n  { title: \"Docs\", href: \"#docs\" },\n];\n\nexport default function NavigationMenuDemo() {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        {navigationMenuItems.map((item) => (\n          <NavigationMenuItem key={item.title}>\n            <NavigationMenuLink\n              className={navigationMenuTriggerStyle()}\n              asChild\n            >\n              <Link href={item.href}>{item.title}</Link>\n            </NavigationMenuLink>\n          </NavigationMenuItem>\n        ))}\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

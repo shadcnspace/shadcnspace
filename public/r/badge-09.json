@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-09",
+  "type": "registry:component",
+  "title": "Status Badge",
+  "description": "A status badge component",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/badge/badge-09.tsx",
+      "content": "import { Badge } from \"@/registry/ui/badge\";\n\nconst StatusBadgeDemo = () => {\n  return (\n    <div className=\"flex items-center gap-3 flex-wrap\">\n      <Badge className=\"bg-amber-600/10 dark:bg-amber-600/20 hover:bg-amber-600/10 text-amber-500 border-amber-600/60 shadow-none rounded-full\">\n        <div className=\"h-1.5 w-1.5 rounded-full bg-amber-500 mr-2\" /> In\n        Progress\n      </Badge>\n      <Badge className=\"bg-red-600/10 dark:bg-red-600/20 hover:bg-red-600/10 text-red-500 border-red-600/60 shadow-none rounded-full\">\n        <div className=\"h-1.5 w-1.5 rounded-full bg-red-500 mr-2\" /> Blocked\n      </Badge>\n      <Badge className=\"bg-emerald-600/10 dark:bg-emerald-600/20 hover:bg-emerald-600/10 text-emerald-500 border-emerald-600/60 shadow-none rounded-full\">\n        <div className=\"h-1.5 w-1.5 rounded-full bg-emerald-500 mr-2\" /> Done\n      </Badge>\n    </div>\n  );\n};\n\nexport default StatusBadgeDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

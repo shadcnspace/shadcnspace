@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-11",
+  "type": "registry:component",
+  "title": "Slider with Sticky Label on Hover",
+  "description": "A slider component with a sticky label that appears on hover",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/slider/slider-11.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { Badge } from \"@/registry/ui/badge\";\nimport { Slider as SliderPrimitive } from \"radix-ui\";\n\nexport default function SliderWithHoverStickyLabelDemo() {\n  const [progress, setProgress] = React.useState([30]);\n\n  return (\n    <div className=\"relative w-full flex flex-col items-center max-w-sm\">\n      <SliderPrimitive.Root\n        defaultValue={progress}\n        max={100}\n        step={1}\n        onValueChange={setProgress}\n        className=\"relative flex w-full touch-none select-none items-center\"\n      >\n        <SliderPrimitive.Track className=\"relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20\">\n          <SliderPrimitive.Range className=\"absolute h-full bg-primary\" />\n        </SliderPrimitive.Track>\n\n        <SliderPrimitive.Thumb className=\"group block h-4 w-4 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50\">\n          {/* Sticky label */}\n          <Badge className=\"scale-0 group-hover:scale-100 transition-transform absolute left-1/2 -translate-x-1/2 -translate-y-1/2 -top-4\">\n            {progress[0]}%\n          </Badge>\n        </SliderPrimitive.Thumb>\n      </SliderPrimitive.Root>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

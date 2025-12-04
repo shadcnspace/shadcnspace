@@ -1,0 +1,182 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Shadcn UI Blocks",
+  "homepage": "https://www.shadcnui-blocks.com",
+  "items": [
+    
+    {
+      "name": "hero-01",
+      "type": "registry:block",
+      "title": "Hero 01",
+      "description": "A simple hero block",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["badge", "button"],
+      "files": [
+        {
+          "path": "src/registry/blocks/hero-01/components/hero.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-01",
+      "type": "registry:component",
+      "title": "Default Accordion",
+      "description": "A default accordion component",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-01.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-02",
+      "type": "registry:component",
+      "title": "Outline Accordion",
+      "description": "An outline styled accordion",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-02.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-03",
+      "type": "registry:component",
+      "title": "Box Accordion",
+      "description": "A box styled accordion",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-03.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-04",
+      "type": "registry:component",
+      "title": "Contained Accordion",
+      "description": "A contained accordion component",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-04.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-05",
+      "type": "registry:component",
+      "title": "Box Contained Accordion",
+      "description": "A box-contained accordion component",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-05.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-06",
+      "type": "registry:component",
+      "title": "Tabs Accordion",
+      "description": "A tabs-styled accordion component",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-06.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-07",
+      "type": "registry:component",
+      "title": "Highlight Active Item Accordion",
+      "description": "An accordion that highlights the active item",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-07.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-08",
+      "type": "registry:component",
+      "title": "Multiple Expanded at a time Accordion",
+      "description": "An accordion that allows multiple items to be expanded at once",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-08.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-09",
+      "type": "registry:component",
+      "title": "Expand Icon Accordion",
+      "description": "An accordion with a custom expand icon",
+      "dependencies": ["lucide-react", "radix-ui"],
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-09.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-10",
+      "type": "registry:component",
+      "title": "Icon Accordion",
+      "description": "An accordion with icons",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-10.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-11",
+      "type": "registry:component",
+      "title": "Media Content Accordion",
+      "description": "An accordion with media content",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-11.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "accordion-12",
+      "type": "registry:component",
+      "title": "Disabled Item Accordion",
+      "description": "An accordion with disabled items",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "src/components/customized/accordion/accordion-12.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

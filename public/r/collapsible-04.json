@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-04",
+  "type": "registry:component",
+  "title": "Filters Collapsible",
+  "description": "A collapsible component for filter options",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "collapsible",
+    "input",
+    "label",
+    "slider",
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/collapsible/collapsible-04.tsx",
+      "content": "\"use client\";\n\nimport { Checkbox } from \"@/registry/ui/checkbox\";\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from \"@/registry/ui/collapsible\";\nimport { Input } from \"@/registry/ui/input\";\nimport { Label } from \"@/registry/ui/label\";\nimport { Slider } from \"@/registry/ui/slider\";\nimport {\n  ChevronDown,\n  CircleDollarSign,\n  LucideIcon,\n  Star,\n  Tag,\n} from \"lucide-react\";\nimport { ReactNode, useState } from \"react\";\n\ntype PriceRange = { from: number; to: number };\n\nconst CollapsibleFilters = () => {\n  return (\n    <div className=\"w-full max-w-xs divide-y-2\">\n      <PriceRangeFilter />\n      <CategoryFilter />\n      <RatingFilter />\n    </div>\n  );\n};\n\nconst MIN_PRICE = 0;\nconst MAX_PRICE = 1000;\nfunction PriceRangeFilter() {\n  const [value, setValue] = useState<PriceRange>({\n    from: MIN_PRICE,\n    to: MAX_PRICE,\n  });\n\n  const handleChange = (newValue: PriceRange) => {\n    setValue(newValue);\n  };\n\n  return (\n    <CollapsibleFilter title=\"Price Range\" icon={CircleDollarSign}>\n      <div className=\"flex justify-between space-x-4\">\n        <Input\n          type=\"number\"\n          value={value.from}\n          onChange={(e) =>\n            handleChange({ from: +e.target.value, to: value.to })\n          }\n          // onBlur={handleBlur}\n          className=\"w-20\"\n        />\n        <Input\n          type=\"number\"\n          value={value.to}\n          onChange={(e) =>\n            handleChange({ from: value.from, to: +e.target.value })\n          }\n          // onBlur={handleBlur}\n          className=\"w-20\"\n        />\n      </div>\n      <Slider\n        min={MIN_PRICE}\n        max={MAX_PRICE}\n        step={10}\n        value={[value.from, value.to]}\n        onValueChange={([from, to]) => handleChange({ from, to })}\n        className=\"w-full mt-4 mb-3\"\n      />\n    </CollapsibleFilter>\n  );\n}\n\nfunction RatingFilter() {\n  const [rating, setRating] = useState<number | null>(null);\n  const [hoveredRating, setHoveredRating] = useState<number | null>(null);\n\n  return (\n    <CollapsibleFilter title=\"Rating\" icon={Star}>\n      <div className=\"flex space-x-1 mb-1\">\n        {[1, 2, 3, 4, 5].map((ratingValue) => (\n          <Star\n            key={ratingValue}\n            className={`h-6 w-6 cursor-pointer ${\n              (\n                hoveredRating !== null\n                  ? hoveredRating >= ratingValue\n                  : rating !== null && rating >= ratingValue\n              )\n                ? \"text-yellow-400 fill-yellow-400\"\n                : \"text-gray-300\"\n            }`}\n            onMouseEnter={() => setHoveredRating(ratingValue)}\n            onMouseLeave={() => setHoveredRating(null)}\n            onClick={() =>\n              setRating(ratingValue === rating ? null : ratingValue)\n            }\n          />\n        ))}\n      </div>\n    </CollapsibleFilter>\n  );\n}\n\nconst categories = [\n  \"Electronics\",\n  \"Clothing\",\n  \"Books\",\n  \"Home & Garden\",\n  \"Toys\",\n];\nfunction CategoryFilter() {\n  return (\n    <CollapsibleFilter title=\"Category\" icon={Tag}>\n      {categories.map((category) => (\n        <div key={category} className=\"mb-2 flex items-center space-x-3\">\n          <Checkbox id={category} />\n          <Label htmlFor={category}>{category}</Label>\n        </div>\n      ))}\n    </CollapsibleFilter>\n  );\n}\n\nconst CollapsibleFilter = ({\n  title,\n  icon: Icon,\n  children,\n}: {\n  title: string;\n  icon?: LucideIcon;\n  children: ReactNode;\n}) => (\n  <Collapsible defaultOpen>\n    <CollapsibleTrigger className=\"group flex w-full items-center justify-between py-3\">\n      <h3 className=\"flex items-center gap-2 text-sm font-semibold\">\n        {!!Icon && <Icon className=\"h-5 w-5\" />} {title}\n      </h3>\n      <ChevronDown className=\"h-4 w-4 group-data-[state=open]:rotate-180 transition-transform text-muted-foreground\" />\n    </CollapsibleTrigger>\n    <CollapsibleContent className=\"pt-1 pb-3\">{children}</CollapsibleContent>\n  </Collapsible>\n);\n\nexport default CollapsibleFilters;\n",
+      "type": "registry:component"
+    }
+  ]
+}

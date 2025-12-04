@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-05",
+  "type": "registry:component",
+  "title": "Input with Label",
+  "description": "An input with label component",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/input/input-05.tsx",
+      "content": "import { Input } from \"@/registry/ui/input\";\nimport { Label } from \"@/registry/ui/label\";\n\nexport default function InputWithLabelDemo() {\n  return (\n    <div className=\"w-full max-w-xs\">\n      <Label htmlFor=\"email\">Email</Label>\n      <Input id=\"email\" type=\"email\" placeholder=\"Email\" className=\"mt-0.5\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

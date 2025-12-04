@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-04",
+  "type": "registry:component",
+  "title": "Rounded Progress",
+  "description": "A progress component with rounded styling",
+  "registryDependencies": [
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/progress/progress-04.tsx",
+      "content": "\"use client\";\n\nimport { Progress } from \"@/registry/ui/progress\";\nimport * as React from \"react\";\n\nexport default function RoundedLinearProgressDemo() {\n  const [progress, setProgress] = React.useState(13);\n\n  React.useEffect(() => {\n    const timer = setTimeout(() => setProgress(66), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <Progress value={progress} className=\"w-[60%] [&>div]:rounded-r-full\" />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

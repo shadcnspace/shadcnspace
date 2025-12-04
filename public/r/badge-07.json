@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-07",
+  "type": "registry:component",
+  "title": "Gradient Outline Badge",
+  "description": "A gradient outline badge component",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/badge/badge-07.tsx",
+      "content": "import { Badge } from \"@/registry/ui/badge\";\n\nconst BadgeGradientOutlineDemo = () => {\n  return (\n    <div className=\"bg-linear-to-r from-sky-400 to-indigo-600 rounded-full p-0.5 flex items-center justify-center\">\n      <Badge className=\"bg-background text-foreground rounded-full border-none\">\n        Gradient Outline\n      </Badge>\n    </div>\n  );\n};\n\nexport default BadgeGradientOutlineDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

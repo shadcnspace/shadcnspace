@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-01",
+  "type": "registry:component",
+  "title": "Default Spinner",
+  "description": "A default spinner component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/spinner/spinner-01.tsx",
+      "content": "import { LoaderIcon } from \"lucide-react\";\n\nexport default function SpinnerDemo() {\n  return <LoaderIcon className=\"animate-spin\" />;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

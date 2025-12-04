@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-17",
+  "type": "registry:component",
+  "title": "Full Width Button",
+  "description": "A full width button component",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-17.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { StarIcon } from \"lucide-react\";\n\nconst FullWidthButtonDemo = () => (\n  <Button className=\"w-full\">\n    <StarIcon /> Star\n  </Button>\n);\n\nexport default FullWidthButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-02",
+  "type": "registry:component",
+  "title": "Destructive Alert",
+  "description": "A destructive alert component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/alert/alert-02.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/registry/ui/alert\";\nimport { OctagonAlertIcon } from \"lucide-react\";\n\nexport default function DestructiveAlertDemo() {\n  return (\n    <Alert variant=\"destructive\">\n      <OctagonAlertIcon className=\"size-4\" />\n      <AlertTitle>Something Went Wrong</AlertTitle>\n      <AlertDescription>\n        An error occurred while processing your request.\n      </AlertDescription>\n    </Alert>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

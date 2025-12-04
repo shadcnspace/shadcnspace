@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-09",
+  "type": "registry:component",
+  "title": "Radio Group with Cards (Style 3)",
+  "description": "A radio group component with card-style options (style 3)",
+  "registryDependencies": [
+    "radio-group",
+    "card",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/radio-group/radio-group-09.tsx",
+      "content": "import {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/ui/card\";\nimport { Label } from \"@/registry/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/ui/radio-group\";\n\nconst RadioCardsDemo = () => {\n  return (\n    <Card className=\"max-w-xs shadow-xs\">\n      <CardHeader>\n        <CardTitle>Plan Options</CardTitle>\n        <CardDescription>\n          Select your preferred subscription plan\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <RadioGroup defaultValue=\"standard\">\n          <div className=\"flex items-start space-x-2 mb-4\">\n            <RadioGroupItem value=\"free\" id=\"free\" />\n            <Label htmlFor=\"free\" className=\"flex flex-col items-start\">\n              <span className=\"font-semibold\">Free</span>\n              <span className=\"text-sm text-muted-foreground\">\n                Basic features, no cost\n              </span>\n            </Label>\n          </div>\n          <div className=\"flex items-start space-x-2 mb-4\">\n            <RadioGroupItem value=\"standard\" id=\"standard\" />\n            <Label htmlFor=\"standard\" className=\"flex flex-col items-start\">\n              <span className=\"font-semibold\">Standard</span>\n              <span className=\"text-sm text-muted-foreground\">\n                Advanced features, $9.99/month\n              </span>\n            </Label>\n          </div>\n          <div className=\"flex items-start space-x-2\">\n            <RadioGroupItem value=\"premium\" id=\"premium\" />\n            <Label htmlFor=\"premium\" className=\"flex flex-col items-start\">\n              <span className=\"font-semibold\">Premium</span>\n              <span className=\"text-sm text-muted-foreground\">\n                All features, $19.99/month\n              </span>\n            </Label>\n          </div>\n        </RadioGroup>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport default RadioCardsDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

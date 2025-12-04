@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-13",
+  "type": "registry:component",
+  "title": "Vertical Tabs",
+  "description": "Tabs with vertical orientation",
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/tabs/tabs-13.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/ui/tabs\";\n\nconst tabs = [\n  {\n    name: \"Home\",\n    value: \"home\",\n  },\n  {\n    name: \"Profile\",\n    value: \"profile\",\n  },\n  {\n    name: \"Messages\",\n    value: \"messages\",\n  },\n  {\n    name: \"Settings\",\n    value: \"settings\",\n  },\n];\n\nexport default function VerticalTabsDemo() {\n  return (\n    <Tabs\n      orientation=\"vertical\"\n      defaultValue={tabs[0].value}\n      className=\"max-w-md w-full flex flex-row items-start gap-4 justify-center\"\n    >\n      <TabsList className=\"shrink-0 grid grid-cols-1 h-auto w-fit gap-1\">\n        {tabs.map((tab) => (\n          <TabsTrigger key={tab.value} value={tab.value} className=\"py-1.5\">\n            {tab.name}\n          </TabsTrigger>\n        ))}\n      </TabsList>\n\n      <div className=\"h-40 flex items-center justify-center max-w-xs w-full border rounded-md font-medium text-muted-foreground\">\n        {tabs.map((tab) => (\n          <TabsContent\n            key={tab.value}\n            value={tab.value}\n            className=\"flex items-center justify-center h-full\"\n          >\n            {tab.name} Content\n          </TabsContent>\n        ))}\n      </div>\n    </Tabs>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

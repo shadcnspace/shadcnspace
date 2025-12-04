@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-05",
+  "type": "registry:component",
+  "title": "Radio Group with Custom Size",
+  "description": "A radio group component with custom size options",
+  "registryDependencies": [
+    "radio-group",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/radio-group/radio-group-05.tsx",
+      "content": "import { Label } from \"@/registry/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/ui/radio-group\";\n\nexport default function RadioGroupSizeDemo() {\n  return (\n    <RadioGroup defaultValue=\"default\" className=\"flex items-center gap-3\">\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem value=\"default\" id=\"size-default\" />\n        <Label htmlFor=\"size-default\">Default</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem\n          value=\"medium\"\n          className=\"h-5 w-5 [&_svg]:h-3.5 [&_svg]:w-3.5\"\n          id=\"size-medium\"\n        />\n        <Label htmlFor=\"size-medium\">Medium</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem\n          value=\"big\"\n          className=\"h-6 w-6 [&_svg]:h-4 [&_svg]:w-4\"\n          id=\"size-large\"\n        />\n        <Label htmlFor=\"size-large\">Large</Label>\n      </div>\n    </RadioGroup>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

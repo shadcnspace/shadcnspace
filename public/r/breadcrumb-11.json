@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-11",
+  "type": "registry:component",
+  "title": "Tabs Breadcrumb",
+  "description": "A tabs breadcrumb component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "breadcrumb",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/breadcrumb/breadcrumb-11.tsx",
+      "content": "import { Badge } from \"@/registry/ui/badge\";\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/ui/breadcrumb\";\nimport { ChevronsRight } from \"lucide-react\";\n\nconst BreadcrumbTabsDemo = () => {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"#\">\n            <Badge\n              variant=\"secondary\"\n              className=\"font-medium shadow-none rounded-full\"\n            >\n              Home\n            </Badge>\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator>\n          <ChevronsRight />\n        </BreadcrumbSeparator>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"#/components\">\n            <Badge\n              variant=\"secondary\"\n              className=\"font-medium shadow-none rounded-full\"\n            >\n              Components\n            </Badge>\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator>\n          <ChevronsRight />\n        </BreadcrumbSeparator>\n        <BreadcrumbItem>\n          <BreadcrumbPage>\n            <Badge className=\"shadow-none rounded-full\">Breadcrumb</Badge>\n          </BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n};\n\nexport default BreadcrumbTabsDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

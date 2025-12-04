@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-09",
+  "type": "registry:component",
+  "title": "Avatar Fallback",
+  "description": "Avatar with fallback component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/avatar/avatar-09.tsx",
+      "content": "import { Avatar, AvatarFallback } from \"@/registry/ui/avatar\";\nimport { BuildingIcon, StoreIcon, UserRoundIcon } from \"lucide-react\";\n\nexport default function AvatarFallbackDemo() {\n  return (\n    <div className=\"grid gap-5\">\n      <div className=\"flex items-center gap-4\">\n        <Avatar>\n          <AvatarFallback className=\"bg-indigo-500/25 text-indigo-500\">\n            C\n          </AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-indigo-500/25 text-indigo-500\">\n            CN\n          </AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-indigo-500/25 text-indigo-500\">\n            <UserRoundIcon className=\"size-4.5\" />\n          </AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-indigo-500/25 text-indigo-500\">\n            <BuildingIcon className=\"size-4.5\" />\n          </AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarFallback className=\"bg-indigo-500/25 text-indigo-500\">\n            <StoreIcon className=\"size-4.5\" />\n          </AvatarFallback>\n        </Avatar>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

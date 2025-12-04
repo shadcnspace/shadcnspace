@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-23",
+  "type": "registry:component",
+  "title": "Button with Tap Animation",
+  "description": "A button with tap animation component",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-23.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport * as motion from \"framer-motion/client\";\nimport { StarIcon } from \"lucide-react\";\n\nconst ButtonsWithTapAnimation = () => (\n  <div className=\"flex items-center gap-2 flex-wrap\">\n    <Button asChild>\n      <motion.button whileTap={{ scale: 0.85 }}>Tap</motion.button>\n    </Button>\n    <Button asChild size=\"icon\">\n      <motion.button whileTap={{ scale: 0.85 }}>\n        <StarIcon />\n      </motion.button>\n    </Button>\n    <Button asChild>\n      <motion.button whileTap={{ scale: 0.85 }}>\n        <StarIcon /> Star\n      </motion.button>\n    </Button>\n  </div>\n);\n\nexport default ButtonsWithTapAnimation;\n",
+      "type": "registry:component"
+    }
+  ]
+}

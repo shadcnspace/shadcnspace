@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-02",
+  "type": "registry:component",
+  "title": "Horizontal Radio Group",
+  "description": "A radio group component with horizontal layout",
+  "registryDependencies": [
+    "radio-group",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/radio-group/radio-group-02.tsx",
+      "content": "import { Label } from \"@/registry/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/registry/ui/radio-group\";\n\nexport default function RadioGroupOrientationDemo() {\n  return (\n    <RadioGroup defaultValue=\"comfortable\" className=\"flex items-center gap-3\">\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem value=\"default\" id=\"r1-horizontal\" />\n        <Label htmlFor=\"r1-horizontal\">Default</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem value=\"comfortable\" id=\"r2-horizontal\" />\n        <Label htmlFor=\"r2-horizontal\">Comfortable</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem value=\"compact\" id=\"r3-horizontal\" />\n        <Label htmlFor=\"r3-horizontal\">Compact</Label>\n      </div>\n    </RadioGroup>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

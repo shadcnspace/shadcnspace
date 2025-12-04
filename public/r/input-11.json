@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-11",
+  "type": "registry:component",
+  "title": "File Input",
+  "description": "A file input component",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/input/input-11.tsx",
+      "content": "import { Input } from \"@/registry/ui/input\";\nimport { Label } from \"@/registry/ui/label\";\n\nexport default function FileInputDemo() {\n  return (\n    <div className=\"w-full max-w-xs\">\n      <Label htmlFor=\"picture\">Profile Picture</Label>\n      <Input id=\"picture\" type=\"file\" className=\"mt-1 file:pt-0.5\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

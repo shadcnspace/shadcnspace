@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-01",
+  "type": "registry:component",
+  "title": "Default Accordion",
+  "description": "A default accordion component",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/accordion/accordion-01.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/ui/accordion\";\n\nconst items = [\n  {\n    title: \"Is it accessible?\",\n    content: \"Yes. It adheres to the WAI-ARIA design pattern.\",\n  },\n  {\n    title: \"Is it styled?\",\n    content:\n      \"Yes. It comes with default styles that matches the other components' aesthetic.\",\n  },\n  {\n    title: \"Is it animated?\",\n    content:\n      \"Yes. It's animated by default, but you can disable it if you prefer.\",\n  },\n];\n\nexport default function AccordionDemo() {\n  return (\n    <Accordion type=\"single\" collapsible className=\"max-w-lg my-4 w-full\">\n      {items.map(({ title, content }, index) => (\n        <AccordionItem key={index} value={`item-${index}`}>\n          <AccordionTrigger>{title}</AccordionTrigger>\n          <AccordionContent>{content}</AccordionContent>\n        </AccordionItem>\n      ))}\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

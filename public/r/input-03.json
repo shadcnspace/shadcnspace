@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-03",
+  "type": "registry:component",
+  "title": "Filled Input",
+  "description": "A filled input component",
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/input/input-03.tsx",
+      "content": "import { Input } from \"@/registry/ui/input\";\n\nexport default function FilledInputDemo() {\n  return (\n    <Input\n      type=\"email\"\n      placeholder=\"Email\"\n      className=\"bg-secondary border-none shadow-none max-w-xs\"\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

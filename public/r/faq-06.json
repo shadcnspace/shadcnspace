@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faq-06",
+  "type": "registry:block",
+  "title": "FAQ 06",
+  "description": "A simple FAQ component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/faq-06/components/faq.tsx",
+      "content": "import {\n  BadgeDollarSign,\n  Route,\n  ShieldCheck,\n  Truck,\n  Undo2,\n  UserRoundCheck,\n} from \"lucide-react\";\n\nconst faq = [\n  {\n    icon: Undo2,\n    question: \"What is your return policy?\",\n    answer:\n      \"You can return unused items in their original packaging within 30 days for a refund or exchange. Contact support for assistance.\",\n  },\n  {\n    icon: Route,\n    question: \"How do I track my order?\",\n    answer:\n      \"Track your order using the link provided in your confirmation email, or log into your account to view tracking details.\",\n  },\n  {\n    icon: Truck,\n    question: \"Do you ship internationally?\",\n    answer:\n      \"Yes, we ship worldwide. Shipping fees and delivery times vary by location, and customs duties may apply for some countries.\",\n  },\n  {\n    icon: BadgeDollarSign,\n    question: \"What payment methods do you accept?\",\n    answer:\n      \"We accept Visa, MasterCard, American Express, PayPal, Apple Pay, and Google Pay, ensuring secure payment options for all customers.\",\n  },\n  {\n    icon: ShieldCheck,\n    question: \"What if I receive a damaged item?\",\n    answer:\n      \"Please contact our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund.\",\n  },\n  {\n    icon: UserRoundCheck,\n    question: \"How can I contact customer support?\",\n    answer:\n      \"Reach out via email at support@example.com or call us at 1-800-123-4567 for assistance with any inquiries.\",\n  },\n];\n\nconst FAQ = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center px-6 py-12\">\n      <div className=\"max-w-(--breakpoint-lg)\">\n        <h2 className=\"text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-[-0.035em] text-center\">\n          Frequently Asked Questions\n        </h2>\n        <p className=\"mt-3 text-xl text-center text-muted-foreground\">\n          Quick answers to common questions about our products and services.\n        </p>\n\n        <div className=\"mt-12 grid md:grid-cols-2 rounded-xl overflow-hidden outline-solid outline-[1px] outline-background -outline-offset-1\">\n          {faq.map(({ question, answer, icon: Icon }) => (\n            <div key={question} className=\"border p-6 -mt-px -ml-px\">\n              <div className=\"h-10 w-10 flex items-center justify-center rounded-full bg-accent\">\n                <Icon />\n              </div>\n              <div className=\"mt-3 mb-2 flex items-start gap-2 text-[1.35rem] font-semibold tracking-[-0.02em]\">\n                <span>{question}</span>\n              </div>\n              <p className=\"text-foreground/70\">{answer}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default FAQ;\n",
+      "type": "registry:component"
+    }
+  ]
+}

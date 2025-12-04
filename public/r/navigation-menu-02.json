@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-02",
+  "type": "registry:component",
+  "title": "Navigation Menu with Icon",
+  "description": "A navigation menu with icon integration",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "navigation-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/navigation-menu/navigation-menu-02.tsx",
+      "content": "import {\n  NavigationMenu,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  navigationMenuTriggerStyle,\n} from \"@/registry/ui/navigation-menu\";\nimport { BookOpen, Home, Rss } from \"lucide-react\";\nimport Link from \"next/link\";\n\nconst navigationMenuItems = [\n  { title: \"Home\", href: \"#\", icon: Home },\n  { title: \"Blog\", href: \"#blog\", icon: Rss },\n  { title: \"Docs\", href: \"#docs\", icon: BookOpen },\n];\n\nexport default function NavigationMenuWithIcon() {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        {navigationMenuItems.map((item) => (\n          <NavigationMenuItem key={item.title}>\n            <NavigationMenuLink\n              className={navigationMenuTriggerStyle()}\n              asChild\n            >\n              <Link href={item.href} className=\"flex-row items-center gap-2.5\">\n                <item.icon className=\"h-5 w-5 shrink-0\" />\n                {item.title}\n              </Link>\n            </NavigationMenuLink>\n          </NavigationMenuItem>\n        ))}\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

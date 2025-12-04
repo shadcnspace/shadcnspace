@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-17",
+  "type": "registry:component",
+  "title": "Vertical Bordered Tabs",
+  "description": "Vertical tabs with borders",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/tabs/tabs-17.tsx",
+      "content": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/registry/ui/tabs\";\nimport { cn } from \"@/lib/utils\";\nimport { Bot, Settings, User } from \"lucide-react\";\nimport React from \"react\";\n\nconst tabs = [\n  {\n    value: \"profile\",\n    icon: User,\n  },\n  {\n    value: \"chat\",\n    icon: Bot,\n  },\n  {\n    value: \"settings\",\n    icon: Settings,\n  },\n];\n\nconst VerticalBorderedTabs = () => {\n  return (\n    <Tabs\n      defaultValue={tabs[0].value}\n      orientation=\"vertical\"\n      className=\"w-full flex flex-row items-start justify-center gap-2\"\n    >\n      <TabsList className=\"grid grid-cols-1 h-auto w-fit p-0 divide-y border shrink-0\">\n        {tabs.map((item) => (\n          <TabsTrigger\n            key={item.value}\n            value={item.value}\n            className={cn(\n              \"rounded-none first:rounded-t-md last:rounded-b-md bg-background h-10 w-11 p-0\",\n              \"data-[state=active]:bg-primary data-[state=active]:text-primary-foreground\"\n            )}\n          >\n            <item.icon className=\"h-5 w-5\" />\n          </TabsTrigger>\n        ))}\n      </TabsList>\n\n      <div className=\"grow w-full max-w-48 aspect-square flex items-center justify-center border rounded-lg p-6\">\n        {tabs.map((item) => (\n          <TabsContent key={item.value} value={item.value}>\n            <div className=\"mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-muted\">\n              <item.icon />\n            </div>\n            <p className=\"text-center text-lg mt-4 font-medium text-muted-foreground tracking-tight capitalize\">\n              {item.value}\n            </p>\n          </TabsContent>\n        ))}\n      </div>\n    </Tabs>\n  );\n};\n\nexport default VerticalBorderedTabs;\n",
+      "type": "registry:component"
+    }
+  ]
+}

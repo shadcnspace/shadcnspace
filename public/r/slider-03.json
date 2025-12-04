@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-03",
+  "type": "registry:component",
+  "title": "Slider Size",
+  "description": "A slider component with different sizes",
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/slider/slider-03.tsx",
+      "content": "import * as React from \"react\";\nimport { Slider as SliderPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\nimport { cva, VariantProps } from \"class-variance-authority\";\n\nconst sliderTrackVariants = cva(\n  \"relative w-full grow overflow-hidden rounded-full bg-primary/20\",\n  {\n    variants: {\n      size: {\n        base: \"h-1.5\",\n        medium: \"h-2\",\n        large: \"h-2.5\",\n      },\n    },\n    defaultVariants: {\n      size: \"base\",\n    },\n  }\n);\nconst sliderThumbVariants = cva(\n  \"block rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50\",\n  {\n    variants: {\n      size: {\n        base: \"h-4 w-4\",\n        medium: \"h-5 w-5\",\n        large: \"h-6 w-6\",\n      },\n    },\n    defaultVariants: {\n      size: \"base\",\n    },\n  }\n);\n\ntype SliderProps = React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> &\n  VariantProps<typeof sliderTrackVariants>;\n\nconst Slider = React.forwardRef<\n  React.ElementRef<typeof SliderPrimitive.Root>,\n  SliderProps\n>(({ className, size, ...props }, ref) => (\n  <SliderPrimitive.Root\n    ref={ref}\n    className={cn(\n      \"relative flex w-full touch-none select-none items-center\",\n      className\n    )}\n    {...props}\n  >\n    <SliderPrimitive.Track className={cn(sliderTrackVariants({ size }))}>\n      <SliderPrimitive.Range className=\"absolute h-full bg-primary\" />\n    </SliderPrimitive.Track>\n    <SliderPrimitive.Thumb className={cn(sliderThumbVariants({ size }))} />\n  </SliderPrimitive.Root>\n));\nSlider.displayName = SliderPrimitive.Root.displayName;\n\nexport default function SliderSizeDemo() {\n  return (\n    <div className=\"grid gap-6 max-w-sm w-full mx-auto\">\n      <Slider defaultValue={[50]} max={100} step={1} size=\"base\" />\n      <Slider defaultValue={[50]} max={100} step={1} size=\"medium\" />\n      <Slider defaultValue={[50]} max={100} step={1} size=\"large\" />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-14",
+  "type": "registry:component",
+  "title": "Table Pagination",
+  "description": "A pagination component designed for tables",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pagination",
+    "button",
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/pagination/pagination-14.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/ui/button\";\nimport { Label } from \"@/registry/ui/label\";\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n} from \"@/registry/ui/pagination\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/registry/ui/select\";\nimport { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport React from \"react\";\n\nexport default function TablePagination() {\n  const [rowsPerPage, setRowsPerPage] = React.useState(10);\n  const [page] = React.useState(1);\n  const TOTAL_ITEMS = 100;\n\n  return (\n    <div className=\"w-full flex items-center justify-between gap-2\">\n      <div className=\"flex items-center gap-2\">\n        <Label className=\"whitespace-nowrap\">Rows per page:</Label>\n        <Select\n          value={rowsPerPage.toString()}\n          onValueChange={(rowsPerPage) => setRowsPerPage(+rowsPerPage)}\n        >\n          <SelectTrigger>\n            <SelectValue />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectItem value=\"10\">10</SelectItem>\n            <SelectItem value=\"20\">20</SelectItem>\n            <SelectItem value=\"50\">50</SelectItem>\n            <SelectItem value=\"100\">100</SelectItem>\n          </SelectContent>\n        </Select>\n      </div>\n\n      <div className=\"flex items-center gap-2\">\n        <span className=\"text-sm text-muted-foreground whitespace-nowrap\">\n          {(page - 1) * rowsPerPage + 1}-{page * rowsPerPage} of {TOTAL_ITEMS}\n        </span>\n\n        <Pagination>\n          <PaginationContent>\n            <PaginationItem>\n              <Button\n                aria-label=\"Go to previous page\"\n                size=\"icon\"\n                variant=\"ghost\"\n                disabled={page === 1}\n              >\n                <ChevronLeftIcon className=\"h-4 w-4\" />\n              </Button>\n            </PaginationItem>\n            <PaginationItem>\n              <Button\n                aria-label=\"Go to next page\"\n                size=\"icon\"\n                variant=\"ghost\"\n                disabled={page * rowsPerPage >= TOTAL_ITEMS}\n              >\n                <ChevronRightIcon className=\"h-4 w-4\" />\n              </Button>\n            </PaginationItem>\n          </PaginationContent>\n        </Pagination>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

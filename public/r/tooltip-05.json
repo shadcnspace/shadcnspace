@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-05",
+  "type": "registry:component",
+  "title": "Tooltip with Delay",
+  "description": "A tooltip component with delay settings",
+  "registryDependencies": [
+    "tooltip",
+    "button",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/tooltip/tooltip-05.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/registry/ui/button\";\nimport { Input } from \"@/registry/ui/input\";\nimport { Label } from \"@/registry/ui/label\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/ui/tooltip\";\nimport { ChangeEvent, useState } from \"react\";\n\nexport default function WithDelayTooltipDemo() {\n  const [delayDuration, setDelayDuration] = useState<number | undefined>(500);\n\n  const handleDelayDurationChange = (e: ChangeEvent<HTMLInputElement>) => {\n    setDelayDuration(\n      e.target.value === \"\" ? undefined : Math.max(0, +e.target.value)\n    );\n  };\n\n  return (\n    <div className=\"flex flex-col gap-6 items-center\">\n      <TooltipProvider>\n        <Tooltip delayDuration={delayDuration}>\n          <TooltipTrigger asChild>\n            <Button variant=\"outline\">Hover</Button>\n          </TooltipTrigger>\n          <TooltipContent>\n            <p>Hello there!</p>\n          </TooltipContent>\n        </Tooltip>\n      </TooltipProvider>\n\n      <div>\n        <Label>Delay</Label>\n        <Input\n          type=\"number\"\n          className=\"mt-2\"\n          value={delayDuration}\n          onChange={handleDelayDurationChange}\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

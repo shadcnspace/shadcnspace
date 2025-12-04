@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blog-03",
+  "type": "registry:block",
+  "title": "Blog 03",
+  "description": "A simple blog post list",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/blog-03/components/blog.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\nimport { Card, CardContent } from \"@/components/ui/card\";\nimport {\n  BadgeDollarSign,\n  Bike,\n  BookHeart,\n  BriefcaseBusiness,\n  Calendar,\n  ClockIcon,\n  Cpu,\n  FlaskRound,\n  HeartPulse,\n  Scale,\n} from \"lucide-react\";\n\nconst categories = [\n  {\n    name: \"Technology\",\n    totalPosts: 10,\n    icon: Cpu,\n  },\n  {\n    name: \"Business\",\n    totalPosts: 5,\n    icon: BriefcaseBusiness,\n  },\n  {\n    name: \"Finance\",\n    totalPosts: 8,\n    icon: BadgeDollarSign,\n  },\n  {\n    name: \"Health\",\n    totalPosts: 12,\n    icon: HeartPulse,\n  },\n  {\n    name: \"Lifestyle\",\n    totalPosts: 15,\n    icon: BookHeart,\n  },\n  {\n    name: \"Politics\",\n    totalPosts: 20,\n    icon: Scale,\n  },\n  {\n    name: \"Science\",\n    totalPosts: 25,\n    icon: FlaskRound,\n  },\n  {\n    name: \"Sports\",\n    totalPosts: 30,\n    icon: Bike,\n  },\n];\n\nconst Blog = () => {\n  return (\n    <div className=\"max-w-(--breakpoint-xl) mx-auto py-10 lg:py-16 px-6 xl:px-0 flex flex-col lg:flex-row items-start gap-12\">\n      <div>\n        <div className=\"space-y-12\">\n          {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (\n            <Card\n              key={i}\n              className=\"flex flex-col sm:flex-row sm:items-center shadow-none overflow-hidden rounded-md border-none py-0\"\n            >\n              <div className=\"shrink-0 aspect-video grow sm:w-56 sm:aspect-square bg-muted rounded-lg\" />\n              <CardContent className=\"px-0 sm:px-6 py-0 flex flex-col\">\n                <div className=\"flex items-center gap-6\">\n                  <Badge className=\"bg-primary/5 text-primary hover:bg-primary/5 shadow-none\">\n                    Technology\n                  </Badge>\n                </div>\n\n                <h3 className=\"mt-4 text-2xl font-semibold tracking-tight\">\n                  A beginner&apos;s guide to blockchain for engineers\n                </h3>\n                <p className=\"mt-2 text-muted-foreground line-clamp-3 text-ellipsis\">\n                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa\n                  consequatur minus dicta accusantium quos, ratione suscipit id\n                  adipisci voluptatibus. Nulla sint repudiandae fugiat tenetur\n                  dolores.\n                </p>\n                <div className=\"mt-4 flex items-center gap-6 text-muted-foreground text-sm font-medium\">\n                  <div className=\"flex items-center gap-2\">\n                    <ClockIcon className=\"h-4 w-4\" /> 5 min read\n                  </div>\n                  <div className=\"flex items-center gap-2\">\n                    <Calendar className=\"h-4 w-4\" /> Nov 20, 2024\n                  </div>\n                </div>\n              </CardContent>\n            </Card>\n          ))}\n        </div>\n      </div>\n      <aside className=\"sticky top-8 shrink-0 lg:max-w-sm w-full\">\n        <h3 className=\"text-xl font-semibold tracking-tight\">Categories</h3>\n        <div className=\"mt-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-2\">\n          {categories.map((category) => (\n            <div\n              key={category.name}\n              className=\"flex items-center justify-between gap-2 bg-muted p-3 rounded-md bg-opacity-15 dark:bg-opacity-25\"\n            >\n              <div className=\"flex items-center gap-3\">\n                <category.icon className=\"h-5 w-5\" />\n                <span className=\"font-medium\">{category.name}</span>\n              </div>\n              <Badge className=\"px-1.5 rounded-full bg-foreground/7 text-foreground\">\n                {category.totalPosts}\n              </Badge>\n            </div>\n          ))}\n        </div>\n      </aside>\n    </div>\n  );\n};\n\nexport default Blog;\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-07",
+  "type": "registry:component",
+  "title": "Switch Customization",
+  "description": "A customized switch component",
+  "dependencies": [
+    "lucide-react",
+    "radix-ui"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/switch/switch-07.tsx",
+      "content": "\"use client\";\n\nimport { Switch as SwitchPrimitive } from \"radix-ui\";\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\nimport { MoonIcon, SunMediumIcon } from \"lucide-react\";\n\n// Replace the `Switch` component in `@components/ui/switch` with below component and use it here to support this customization.\nconst Switch = React.forwardRef<\n  React.ElementRef<typeof SwitchPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root> & {\n    icon?: React.ReactNode;\n    thumbClassName?: string;\n  }\n>(({ className, icon, thumbClassName, ...props }, ref) => (\n  <SwitchPrimitive.Root\n    className={cn(\n      \"peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input\",\n      className\n    )}\n    {...props}\n    ref={ref}\n  >\n    <SwitchPrimitive.Thumb\n      className={cn(\n        \"pointer-events-none flex h-4 w-4 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0 items-center justify-center\",\n        thumbClassName\n      )}\n    >\n      {icon ? icon : null}\n    </SwitchPrimitive.Thumb>\n  </SwitchPrimitive.Root>\n));\nSwitch.displayName = SwitchPrimitive.Root.displayName;\n\nconst SwitchCustomizationDemo = () => {\n  const [isDarkMode, setIsDarkMode] = React.useState(false);\n\n  return (\n    <Switch\n      icon={\n        isDarkMode ? (\n          <MoonIcon className=\"h-4 w-4\" />\n        ) : (\n          <SunMediumIcon className=\"h-4 w-4\" />\n        )\n      }\n      checked={isDarkMode}\n      onCheckedChange={setIsDarkMode}\n      className=\"h-7 w-12\"\n      thumbClassName=\"h-6 w-6 data-[state=checked]:translate-x-5\"\n    />\n  );\n};\n\nexport default SwitchCustomizationDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

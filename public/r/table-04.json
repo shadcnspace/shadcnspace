@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-04",
+  "type": "registry:component",
+  "title": "Rounded Corners Table",
+  "description": "A table with rounded corners",
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/table/table-04.tsx",
+      "content": "import {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/registry/ui/table\";\n\nconst products = [\n  {\n    id: 101,\n    name: \"Wireless Headphones\",\n    category: \"Electronics\",\n    price: 59.99,\n    rating: 4.5,\n  },\n  {\n    id: 102,\n    name: \"Yoga Mat\",\n    category: \"Sports & Fitness\",\n    price: 25.0,\n    rating: 4.8,\n  },\n  {\n    id: 103,\n    name: \"Coffee Maker\",\n    category: \"Home Appliances\",\n    price: 80.0,\n    rating: 4.2,\n  },\n  {\n    id: 104,\n    name: \"Running Shoes\",\n    category: \"Sportswear\",\n    price: 70.0,\n    rating: 4.6,\n  },\n  {\n    id: 105,\n    name: \"Smartwatch\",\n    category: \"Electronics\",\n    price: 120.0,\n    rating: 4.7,\n  },\n];\n\nexport default function RoundedCornersTableDemo() {\n  return (\n    <div className=\"w-full border rounded-md overflow-hidden\">\n      <Table>\n        <TableHeader>\n          <TableRow>\n            <TableHead className=\"pl-4\">ID</TableHead>\n            <TableHead>Product Name</TableHead>\n            <TableHead>Category</TableHead>\n            <TableHead>Price (USD)</TableHead>\n            <TableHead>Rating</TableHead>\n          </TableRow>\n        </TableHeader>\n        <TableBody>\n          {products.map((product) => (\n            <TableRow key={product.id} className=\"odd:bg-muted/50\">\n              <TableCell className=\"pl-4\">{product.id}</TableCell>\n              <TableCell className=\"font-medium\">{product.name}</TableCell>\n              <TableCell>{product.category}</TableCell>\n              <TableCell>{product.price}</TableCell>\n              <TableCell>{product.rating}</TableCell>\n            </TableRow>\n          ))}\n        </TableBody>\n      </Table>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

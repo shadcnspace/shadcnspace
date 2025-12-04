@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "features-01",
+  "type": "registry:block",
+  "title": "Features 01",
+  "description": "A simple features block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/registry/blocks/features-01/components/features.tsx",
+      "content": "import {\n  Blocks,\n  Bot,\n  ChartPie,\n  Film,\n  MessageCircle,\n  Settings2,\n} from \"lucide-react\";\n\nconst features = [\n  {\n    icon: Settings2,\n    title: \"Customizable Layouts\",\n    description:\n      \"Design your space with drag-and-drop simplicity—create grids, lists, or galleries in seconds.\",\n  },\n  {\n    icon: Blocks,\n    title: \"Interactive Widgets\",\n    description:\n      \"Embed polls, quizzes, or forms to keep your audience engaged.\",\n  },\n  {\n    icon: Bot,\n    title: \"AI-Powered Tools\",\n    description:\n      \"Generate summaries, auto-format content, or translate into multiple languages seamlessly.\",\n  },\n  {\n    icon: Film,\n    title: \"Media Integrations\",\n    description:\n      \"Connect with Spotify, Instagram, or your own media library for dynamic visuals and sound.\",\n  },\n  {\n    icon: ChartPie,\n    title: \"Advanced Analytics\",\n    description:\n      \"Track engagement, clicks, and user activity with intuitive charts and reports.\",\n  },\n  {\n    icon: MessageCircle,\n    title: \"Seamless Collaboration\",\n    description:\n      \"Comment, tag, and assign tasks directly within your documents.\",\n  },\n];\n\nconst Features = () => {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center py-12\">\n      <div>\n        <h2 className=\"text-4xl sm:text-5xl font-semibold tracking-tight text-center\">\n          Unleash Your Creativity\n        </h2>\n        <div className=\"mt-10 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-(--breakpoint-lg) mx-auto px-6\">\n          {features.map((feature) => (\n            <div\n              key={feature.title}\n              className=\"flex flex-col border rounded-xl py-6 px-5\"\n            >\n              <div className=\"mb-4 h-10 w-10 flex items-center justify-center bg-muted rounded-full\">\n                <feature.icon className=\"size-5\" />\n              </div>\n              <span className=\"text-lg font-semibold\">{feature.title}</span>\n              <p className=\"mt-1 text-foreground/80 text-[15px]\">\n                {feature.description}\n              </p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Features;\n",
+      "type": "registry:component"
+    }
+  ]
+}

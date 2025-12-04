@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-05",
+  "type": "registry:component",
+  "title": "Rounded Badge",
+  "description": "A rounded badge component",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/badge/badge-05.tsx",
+      "content": "import { Badge } from \"@/registry/ui/badge\";\n\nconst BadgeRoundedDemo = () => {\n  return <Badge className=\"rounded-full\">Rounded</Badge>;\n};\n\nexport default BadgeRoundedDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-12",
+  "type": "registry:component",
+  "title": "Disabled Item Accordion",
+  "description": "An accordion with disabled items",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/accordion/accordion-12.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/ui/accordion\";\nimport { cn } from \"@/lib/utils\";\nimport { Contrast, Palette, Zap } from \"lucide-react\";\n\nconst items = [\n  {\n    title: \"Is it accessible?\",\n    content: \"Yes. It adheres to the WAI-ARIA design pattern.\",\n    icon: Contrast,\n  },\n  {\n    title: \"Is it styled?\",\n    content:\n      \"Yes. It comes with default styles that matches the other components' aesthetic.\",\n    icon: Palette,\n    disabled: true,\n  },\n  {\n    title: \"Is it animated?\",\n    content:\n      \"Yes. It's animated by default, but you can disable it if you prefer.\",\n    icon: Zap,\n  },\n];\n\nexport default function AccordionItemDisabledDemo() {\n  return (\n    <Accordion\n      defaultValue=\"item-0\"\n      type=\"single\"\n      collapsible\n      className=\"max-w-lg my-4 w-full\"\n    >\n      {items.map(({ title, content, icon: Icon, disabled }, index) => (\n        <AccordionItem key={index} value={`item-${index}`}>\n          <AccordionTrigger\n            disabled={disabled}\n            className={cn({\n              \"opacity-50\": disabled,\n            })}\n          >\n            <div className=\"flex items-start gap-3\">\n              <Icon />\n              {title}\n            </div>\n          </AccordionTrigger>\n          <AccordionContent>{content}</AccordionContent>\n        </AccordionItem>\n      ))}\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

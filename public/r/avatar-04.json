@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-04",
+  "type": "registry:component",
+  "title": "Avatar with Text",
+  "description": "An avatar with text component",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/avatar/avatar-04.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/registry/ui/avatar\";\n\nexport default function AvatarDemo() {\n  return (\n    <div className=\"flex items-start gap-3\">\n      <Avatar className=\"size-9\">\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n        <AvatarFallback>CN</AvatarFallback>\n      </Avatar>\n      <div className=\"flex flex-col gap-1\">\n        <span className=\"font-semibold tracking-tight leading-none\">\n          shadcn\n        </span>\n        <span className=\"leading-none text-sm text-muted-foreground\">\n          Shadcn UI\n        </span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-08",
+  "type": "registry:component",
+  "title": "Testimonial Card",
+  "description": "A testimonial card component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/card/card-08.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/registry/ui/avatar\";\nimport { Card, CardContent, CardHeader } from \"@/registry/ui/card\";\nimport { Quote } from \"lucide-react\";\nimport React from \"react\";\n\nconst TestimonialCard = () => {\n  return (\n    <Card className=\"relative w-full max-w-sm bg-muted/70 shadow-none border-none gap-0 pt-0 pb-4\">\n      <Quote className=\"absolute top-3 right-2 h-16 w-16 text-foreground/10 stroke-[1.5px]\" />\n      <CardHeader className=\"py-5\">\n        <div className=\"flex items-center gap-3\">\n          <Avatar className=\"h-12 w-12\">\n            <AvatarImage src=\"https://github.com/shadcn.png\" />\n            <AvatarFallback>CN</AvatarFallback>\n          </Avatar>\n          <div className=\"flex flex-col gap-1\">\n            <span className=\"text-[15px] leading-none font-semibold\">\n              shadcn\n            </span>\n            <span className=\"text-sm leading-none text-muted-foreground\">\n              @shadcn\n            </span>\n          </div>\n        </div>\n      </CardHeader>\n      <CardContent>\n        <p className=\"text-[15px] text-muted-foreground\">\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis\n          ullamcorper, augue at commodo interdum, erat dolor egestas eros, eu\n          finibus turpis nunc at purus. Sed elementum rutrum nibh, a egestas\n          turpis porttitor eu.\n        </p>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport default TestimonialCard;\n",
+      "type": "registry:component"
+    }
+  ]
+}

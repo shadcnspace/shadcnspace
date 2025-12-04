@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-08",
+  "type": "registry:component",
+  "title": "Bootstrap Alert",
+  "description": "A bootstrap-styled alert component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/alert/alert-08.tsx",
+      "content": "import { Alert, AlertTitle } from \"@/registry/ui/alert\";\nimport {\n  CircleFadingArrowUpIcon,\n  OctagonAlert,\n  ShieldAlert,\n} from \"lucide-react\";\n\nexport default function AlertCalloutDemo() {\n  return (\n    <div className=\"w-full space-y-4\">\n      <Alert className=\"bg-emerald-600/10 dark:bg-emerald-600/15 text-emerald-500 border-emerald-500/50 dark:border-emerald-600/50\">\n        <CircleFadingArrowUpIcon className=\"size-4\" />\n        <AlertTitle>Your action has been completed successfully.</AlertTitle>\n      </Alert>\n      <Alert className=\"bg-blue-500/10 dark:bg-blue-600/20 text-blue-500 dark:text-blue-400 border-blue-400/50 dark:border-blue-600/60\">\n        <CircleFadingArrowUpIcon className=\"size-4\" />\n        <AlertTitle>A new version of the app is now available.</AlertTitle>\n      </Alert>\n      <Alert className=\"bg-amber-600/10 dark:bg-amber-600/15 text-amber-500 border-amber-500/50 dark:border-amber-600/50\">\n        <ShieldAlert className=\"size-4\" />\n        <AlertTitle>Changes will overwrite existing data.</AlertTitle>\n      </Alert>\n      <Alert className=\"bg-destructive/10 dark:bg-destructive/15 text-destructive border-destructive/30 dark:border-destructive/50\">\n        <OctagonAlert className=\"size-4\" />\n        <AlertTitle>\n          Unable to process your request. Please try again later.\n        </AlertTitle>\n      </Alert>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

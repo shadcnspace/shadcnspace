@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-08",
+  "type": "registry:component",
+  "title": "Breadcrumb with Icon and Label (Alternate)",
+  "description": "An alternate breadcrumb with icon and label component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/breadcrumb/breadcrumb-08.tsx",
+      "content": "import {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/registry/ui/breadcrumb\";\nimport { ChevronsRight, Component, Home, Route } from \"lucide-react\";\n\nconst BreadcrumbsSteps = () => {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList className=\"gap-5!\">\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"#\">\n            <div className=\"flex flex-col items-center gap-1\">\n              <Home className=\"h-4 w-4\" />\n              Home\n            </div>\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator>\n          <ChevronsRight />\n        </BreadcrumbSeparator>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"#/components\">\n            <div className=\"flex flex-col items-center gap-1\">\n              <Component className=\"h-4 w-4\" />\n              Components\n            </div>\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator>\n          <ChevronsRight />\n        </BreadcrumbSeparator>\n        <BreadcrumbItem>\n          <BreadcrumbPage>\n            <div className=\"flex flex-col items-center gap-1\">\n              <Route className=\"h-4 w-4\" />\n              Breadcrumb\n            </div>\n          </BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n};\n\nexport default BreadcrumbsSteps;\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-03",
+  "type": "registry:component",
+  "title": "Horizontal Separator with Chip",
+  "description": "A horizontal separator with chip component",
+  "registryDependencies": [
+    "separator",
+    "button",
+    "input",
+    "label",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/separator/separator-03.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/ui/card\";\nimport { Input } from \"@/registry/ui/input\";\nimport { Label } from \"@/registry/ui/label\";\nimport { Separator } from \"@/registry/ui/separator\";\n\nexport default function HorizontalSeparatorWithChip() {\n  return (\n    <Card className=\"w-[350px]\">\n      <CardHeader>\n        <CardTitle className=\"text-\">Create an account</CardTitle>\n        <CardDescription>\n          Start your free 30 days trials. Cancel at anytime.\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <form>\n          <div className=\"grid w-full items-center gap-4\">\n            <div className=\"flex flex-col space-y-1.5\">\n              <Label htmlFor=\"email\">Email</Label>\n              <Input id=\"email\" type=\"email\" placeholder=\"Enter your email\" />\n            </div>\n            <Button>Get Started</Button>\n          </div>\n          <div className=\"relative my-4 flex items-center justify-center overflow-hidden\">\n            <Separator />\n            <div className=\"py-1 px-2 border rounded-full text-center bg-muted text-xs mx-1\">\n              OR\n            </div>\n            <Separator />\n          </div>\n          <div className=\"grid w-full gap-2\">\n            <Button variant=\"outline\">\n              <svg\n                stroke=\"currentColor\"\n                fill=\"currentColor\"\n                strokeWidth=\"0\"\n                viewBox=\"0 0 488 512\"\n                height=\"1em\"\n                width=\"1em\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n                className=\"h-5 w-5\"\n              >\n                <path d=\"M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z\"></path>\n              </svg>\n              Sign up with Google\n            </Button>\n            <Button variant=\"outline\">\n              <svg\n                stroke=\"currentColor\"\n                fill=\"currentColor\"\n                strokeWidth=\"0\"\n                viewBox=\"0 0 512 512\"\n                height=\"1em\"\n                width=\"1em\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n              >\n                <path d=\"M391.17,103.47H352.54v109.7h38.63ZM285,103H246.37V212.75H285ZM120.83,0,24.31,91.42V420.58H140.14V512l96.53-91.42h77.25L487.69,256V0ZM449.07,237.75l-77.22,73.12H294.61l-67.6,64v-64H140.14V36.58H449.07Z\"></path>\n              </svg>\n              Sign up with Twitch\n            </Button>\n            <Button variant=\"outline\">\n              <svg\n                stroke=\"currentColor\"\n                fill=\"currentColor\"\n                strokeWidth=\"0\"\n                viewBox=\"0 0 512 512\"\n                height=\"1em\"\n                width=\"1em\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n              >\n                <path d=\"M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z\"></path>\n              </svg>\n              Sign up with Twitter\n            </Button>\n          </div>\n        </form>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

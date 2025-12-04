@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-06",
+  "type": "registry:component",
+  "title": "Controlled Switch",
+  "description": "A controlled switch component",
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/switch/switch-06.tsx",
+      "content": "\"use client\";\n\nimport { Switch } from \"@/registry/ui/switch\";\nimport React, { useState } from \"react\";\n\nconst ControlledSwitchDemo = () => {\n  const [checked, setChecked] = useState<boolean>();\n\n  return <Switch checked={checked} onCheckedChange={setChecked} />;\n};\n\nexport default ControlledSwitchDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

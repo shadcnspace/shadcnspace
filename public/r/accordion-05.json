@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-05",
+  "type": "registry:component",
+  "title": "Box Contained Accordion",
+  "description": "A box-contained accordion component",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/accordion/accordion-05.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/ui/accordion\";\n\nconst items = [\n  {\n    title: \"Is it accessible?\",\n    content: \"Yes. It adheres to the WAI-ARIA design pattern.\",\n  },\n  {\n    title: \"Is it styled?\",\n    content:\n      \"Yes. It comes with default styles that matches the other components' aesthetic.\",\n  },\n  {\n    title: \"Is it animated?\",\n    content:\n      \"Yes. It's animated by default, but you can disable it if you prefer.\",\n  },\n];\n\nexport default function AccordionBoxContainedDemo() {\n  return (\n    <Accordion type=\"single\" collapsible className=\"max-w-lg my-4 w-full\">\n      {items.map(({ title, content }, index) => (\n        <AccordionItem\n          key={index}\n          value={`item-${index}`}\n          className=\"last:border-none first:rounded-t-md last:rounded-b-md px-4 bg-muted\"\n        >\n          <AccordionTrigger>{title}</AccordionTrigger>\n          <AccordionContent>{content}</AccordionContent>\n        </AccordionItem>\n      ))}\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

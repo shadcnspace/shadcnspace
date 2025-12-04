@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-21",
+  "type": "registry:component",
+  "title": "Button with Badge",
+  "description": "A button with badge component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-21.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { BellIcon } from \"lucide-react\";\n\nconst ButtonsWithBadge = () => (\n  <div className=\"flex items-center gap-2\">\n    <div className=\"relative\">\n      <Button variant=\"outline\" size=\"icon\">\n        <BellIcon />\n      </Button>\n      <span className=\"absolute top-0 right-0 px-1 min-w-4 translate-x-1/2 -translate-y-1/2 origin-center flex items-center justify-center rounded-full text-xs bg-destructive text-white\">\n        2\n      </span>\n    </div>\n  </div>\n);\n\nexport default ButtonsWithBadge;\n",
+      "type": "registry:component"
+    }
+  ]
+}

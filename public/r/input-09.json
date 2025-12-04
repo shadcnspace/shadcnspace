@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-09",
+  "type": "registry:component",
+  "title": "Input with Error Message",
+  "description": "An input with error message component",
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/input/input-09.tsx",
+      "content": "import { Input } from \"@/registry/ui/input\";\nimport { Label } from \"@/registry/ui/label\";\n\nexport default function InputWithErrorMessageDemo() {\n  return (\n    <div className=\"w-full max-w-xs space-y-1.5\">\n      <Label htmlFor=\"email-address\" className=\"text-destructive\">\n        Email Address\n      </Label>\n      <Input\n        id=\"email-address\"\n        type=\"email\"\n        placeholder=\"Email\"\n        className=\"border-destructive focus-visible:ring-destructive\"\n      />\n      <p className=\"text-[0.8rem] text-destructive\">This email is invalid.</p>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

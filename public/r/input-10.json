@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-10",
+  "type": "registry:component",
+  "title": "Input with Form",
+  "description": "An input with form component",
+  "dependencies": [
+    "@hookform/resolvers"
+  ],
+  "registryDependencies": [
+    "input",
+    "form",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/input/input-10.tsx",
+      "content": "\"use client\";\n\nimport { InputHTMLAttributes } from \"react\";\nimport { useForm, useFormContext } from \"react-hook-form\";\nimport { z } from \"zod\";\nimport { Input } from \"@/registry/ui/input\";\nimport {\n  FormControl,\n  FormItem,\n  FormField,\n  FormMessage,\n  FormLabel,\n  Form,\n} from \"@/registry/ui/form\";\nimport { Button } from \"@/registry/ui/button\";\nimport { cn } from \"@/lib/utils\";\nimport { zodResolver } from \"@hookform/resolvers/zod\";\n\nconst schema = z.object({\n  email: z.string().email(\"Invalid email address\"),\n});\n\ntype schemaType = z.infer<typeof schema>;\n\nexport default function InputWithFormDemo() {\n  const form = useForm<schemaType>({\n    resolver: zodResolver(schema),\n    defaultValues: {\n      email: \"hello@example.com\",\n    },\n    mode: \"onBlur\",\n  });\n\n  const onSubmit = (data: schemaType) => {\n    console.log(data);\n  };\n\n  return (\n    <Form {...form}>\n      <form onSubmit={form.handleSubmit(onSubmit)} className=\"space-y-4\">\n        <InputWithForm<schemaType>\n          name=\"email\"\n          title=\"Email\"\n          placeholder=\"Enter your email\"\n        />\n        <Button type=\"submit\">Submit</Button>\n      </form>\n    </Form>\n  );\n}\n\ntype InputWithFormProps<K> = {\n  name: keyof K & string;\n  title?: string;\n  className?: string;\n} & InputHTMLAttributes<HTMLInputElement>;\n\nexport function InputWithForm<K>({\n  title,\n  name,\n  className,\n  ...props\n}: InputWithFormProps<K>) {\n  const form = useFormContext();\n\n  return (\n    <FormField\n      control={form.control}\n      name={name}\n      render={({ field }) => (\n        <FormItem>\n          {title && <FormLabel htmlFor={`${name}-${title}`}>{title}</FormLabel>}\n          <FormControl>\n            <Input\n              id={`${name}-${title}`}\n              {...field}\n              {...props}\n              className={cn(\n                \"aria-invalid:border-destructive aria-invalid:ring-destructive\",\n                className\n              )}\n            />\n          </FormControl>\n          <FormMessage />\n        </FormItem>\n      )}\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

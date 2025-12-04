@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-08",
+  "type": "registry:component",
+  "title": "Ghost Button",
+  "description": "A ghost button component",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-08.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\n\nconst GhostButtonDemo = () => <Button variant=\"ghost\">Ghost</Button>;\n\nexport default GhostButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

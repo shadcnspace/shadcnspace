@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-07",
+  "type": "registry:component",
+  "title": "Product Card",
+  "description": "A product card component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/card/card-07.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { Card, CardContent, CardFooter, CardHeader } from \"@/registry/ui/card\";\nimport { ArrowRight, Shapes } from \"lucide-react\";\nimport React from \"react\";\n\nconst ProductCard = () => {\n  return (\n    <Card className=\"max-w-xs shadow-none gap-0 pt-0\">\n      <CardHeader className=\"py-4 px-5 flex flex-row items-center gap-3 font-semibold\">\n        <div className=\"h-8 w-8 flex items-center justify-center bg-primary text-primary-foreground rounded-full\">\n          <Shapes className=\"h-5 w-5\" />\n        </div>\n        Shadcn UI Blocks\n      </CardHeader>\n\n      <CardContent className=\"mt-1 text-[15px] text-muted-foreground px-5\">\n        <p>\n          Explore a collection of Shadcn UI blocks and components, ready to\n          preview and copy.\n        </p>\n        <div className=\"mt-5 w-full aspect-video bg-muted rounded-xl\" />\n      </CardContent>\n\n      <CardFooter className=\"mt-6\">\n        <Button className=\"/blocks\">\n          Explore Blocks <ArrowRight />\n        </Button>\n      </CardFooter>\n    </Card>\n  );\n};\n\nexport default ProductCard;\n",
+      "type": "registry:component"
+    }
+  ]
+}

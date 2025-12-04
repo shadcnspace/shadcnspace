@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-06",
+  "type": "registry:component",
+  "title": "Input with Button",
+  "description": "An input with button component",
+  "registryDependencies": [
+    "input",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/input/input-06.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport { Input } from \"@/registry/ui/input\";\n\nexport default function InputWithButtonDemo() {\n  return (\n    <div className=\"w-full max-w-xs flex items-center gap-2\">\n      <Input type=\"email\" placeholder=\"Email\" />\n      <Button className=\"shadow\">Subscribe</Button>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

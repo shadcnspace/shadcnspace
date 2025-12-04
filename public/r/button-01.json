@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-01",
+  "type": "registry:component",
+  "title": "Primary Button",
+  "description": "A primary button component",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/button/button-01.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\n\nconst PrimaryButtonDemo = () => <Button>Primary</Button>;\n\nexport default PrimaryButtonDemo;\n",
+      "type": "registry:component"
+    }
+  ]
+}

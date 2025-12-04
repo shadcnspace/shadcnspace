@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-08",
+  "type": "registry:component",
+  "title": "Audio Slider",
+  "description": "A slider component designed for audio controls",
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/slider/slider-08.tsx",
+      "content": "\"use client\";\n\nimport { Slider } from \"@/registry/ui/slider\";\nimport * as React from \"react\";\n\nconst formatDuration = (duration: number) => {\n  const minutes = Math.floor(duration / 60);\n  const seconds = duration % 60;\n\n  return `${minutes}:${seconds < 10 ? \"0\" : \"\"}${seconds}`;\n};\n\nexport default function AudioSliderDemo() {\n  const duration = 145;\n  const [playbackTime, setPlaybackTime] = React.useState([78]);\n\n  return (\n    <div className=\"max-w-sm w-full\">\n      <Slider\n        defaultValue={playbackTime}\n        max={duration}\n        step={1}\n        onValueChange={setPlaybackTime}\n      />\n      <div className=\"mt-1 flex justify-between text-xs font-medium text-muted-foreground\">\n        <span>{formatDuration(playbackTime[0])}</span>\n        <span>{formatDuration(duration)}</span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-03",
+  "type": "registry:component",
+  "title": "Tooltip Directions",
+  "description": "A tooltip component with different directions",
+  "registryDependencies": [
+    "tooltip",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/tooltip/tooltip-03.tsx",
+      "content": "import { Button } from \"@/registry/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/registry/ui/tooltip\";\n\nexport default function TooltipDirectionsDemo() {\n  return (\n    <TooltipProvider>\n      <div className=\"flex gap-2 flex-wrap\">\n        <Tooltip>\n          <TooltipTrigger asChild>\n            <Button variant=\"outline\">Left</Button>\n          </TooltipTrigger>\n          <TooltipContent side=\"left\">\n            <p>Hey there!</p>\n          </TooltipContent>\n        </Tooltip>\n\n        <Tooltip>\n          <TooltipTrigger asChild>\n            <Button variant=\"outline\">Top</Button>\n          </TooltipTrigger>\n          <TooltipContent side=\"top\">\n            <p>Hey there!</p>\n          </TooltipContent>\n        </Tooltip>\n\n        <Tooltip>\n          <TooltipTrigger asChild>\n            <Button variant=\"outline\">Bottom</Button>\n          </TooltipTrigger>\n          <TooltipContent side=\"bottom\">\n            <p>Hey there!</p>\n          </TooltipContent>\n        </Tooltip>\n\n        <Tooltip>\n          <TooltipTrigger asChild>\n            <Button variant=\"outline\">Right</Button>\n          </TooltipTrigger>\n          <TooltipContent side=\"right\">\n            <p>Hey there!</p>\n          </TooltipContent>\n        </Tooltip>\n      </div>\n    </TooltipProvider>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

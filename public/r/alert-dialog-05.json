@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-05",
+  "type": "registry:component",
+  "title": "Customized Header Alert Dialog",
+  "description": "An alert dialog with customized header",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/customized/alert-dialog/alert-dialog-05.tsx",
+      "content": "import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/ui/alert-dialog\";\nimport { Button, buttonVariants } from \"@/registry/ui/button\";\nimport { OctagonAlert, X } from \"lucide-react\";\nimport { AlertDialog as AlertDialogPrimitive } from \"radix-ui\";\n\nexport default function AlertDialogWithCustomizedHeader() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger asChild>\n        <Button variant=\"outline\">Show Dialog</Button>\n      </AlertDialogTrigger>\n      <AlertDialogContent>\n        <div className=\"-mt-3 -mx-6 border-b pb-3 px-6 flex justify-between items-center\">\n          <AlertDialogTitle>Delete Account</AlertDialogTitle>\n          <AlertDialogPrimitive.Cancel\n            className={buttonVariants({\n              variant: \"ghost\",\n              size: \"icon\",\n              className: \"h-7! w-7!\",\n            })}\n          >\n            <X />\n          </AlertDialogPrimitive.Cancel>\n        </div>\n        <AlertDialogHeader className=\"pt-2\">\n          <AlertDialogTitle>\n            <div className=\"mx-auto sm:mx-0 mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-destructive/10\">\n              <OctagonAlert className=\"h-5 w-5 text-destructive\" />\n            </div>\n            Are you absolutely sure?\n          </AlertDialogTitle>\n          <AlertDialogDescription className=\"text-[15px]\">\n            This action cannot be undone. This will permanently delete your\n            account and remove your data from our servers.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter className=\"mt-2\">\n          <AlertDialogCancel>Cancel</AlertDialogCancel>\n          <AlertDialogAction>Continue</AlertDialogAction>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}
