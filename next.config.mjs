@@ -27,6 +27,9 @@ const nextConfig = {
         hostname: "github.com",
       },
     ],
+    domains: [
+      "matdash-nextjs-main.vercel.app"
+    ],
   },
   outputFileTracingIncludes: {
     "/blocks/*": ["./src/**/*.{js,ts,tsx}"],
