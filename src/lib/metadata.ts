@@ -22,8 +22,8 @@ export const constructMetadata = (metadata: Metadata): Metadata => {
     },
     authors: [
       {
-        name: "Akash Moradiya",
-        url: "https://twitter.com/akash_3444",
+        name: "Shadcn Space",
+        url: "https://twitter.com/",
       },
     ],
     manifest: "/site.webmanifest",

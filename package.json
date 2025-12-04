@@ -1,5 +1,5 @@
 {
-  "name": "shadcn-ui-blocks",
+  "name": "shadcnspace",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
-    "@iconify/react": "^6.0.2",
     "@radix-ui/react-visually-hidden": "^1.1.2",
     "@shikijs/transformers": "^1.24.0",
     "@tanstack/react-table": "^8.20.6",

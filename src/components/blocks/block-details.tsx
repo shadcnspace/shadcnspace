@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function BlockDetails() {
   return (
     <section className="dark:prose-invert mt-12 prose prose-h2:text-3xl prose-h2:tracking-tight prose-p:text-xl prose-p:leading-loose prose-li:text-xl prose-li:leading-loose mx-auto">
-      <h2 id="what-is-shadcn-ui-blocks-">What is Shadcn Space?</h2>
+      <h2 id="what-is-shadcnspace-">What is Shadcn Space?</h2>
       <p>
         In the world of modern web development, UI components play a crucial
         role in building interactive and visually appealing applications.{" "}
@@ -17,7 +17,7 @@ export default function BlockDetails() {
         blocks available with all their functionalities.
       </p>
       <hr />
-      <h2 id="how-shadcn-ui-blocks-works">How Shadcn Space Works</h2>
+      <h2 id="how-shadcnspace-works">How Shadcn Space Works</h2>
       <p>
         Shadcn Space is designed to be a{" "}
         <strong>one-stop solution for developers</strong> looking for
@@ -50,7 +50,7 @@ export default function BlockDetails() {
         existing codebases.
       </p>
       <hr />
-      <h2 id="benefits-of-using-shadcn-ui-blocks">
+      <h2 id="benefits-of-using-shadcnspace">
         Benefits of Using Shadcn Space
       </h2>
       <h3 id="1-saves-development-time-">
@@ -127,7 +127,7 @@ export default function BlockDetails() {
         })}
       </ol>
       <hr />
-      <h2 id="how-to-use-shadcn-ui-blocks">How to Use Shadcn Space</h2>
+      <h2 id="how-to-use-shadcnspace">How to Use Shadcn Space</h2>
       <p>Using Shadcn Space in your project is a simple process:</p>
       <ol>
         <li>

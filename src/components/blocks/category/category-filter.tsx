@@ -28,7 +28,6 @@ const CategoryFilter = () => {
     router.push(`/blocks/categories/${value}?${searchParams.toString()}`);
   };
 
-
   return (
     <Select value={category} onValueChange={handleSelect}>
       <SelectTrigger className="w-[180px] bg-background">

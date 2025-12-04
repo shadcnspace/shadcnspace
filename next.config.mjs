@@ -8,7 +8,7 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "shadcn-ui-blocks.akashmoradiya.com",
+            value: "shadcnspace.com",
           },
         ],
         permanent: true,
@@ -27,9 +27,6 @@ const nextConfig = {
         hostname: "github.com",
       },
     ],
-    domains: [
-      "matdash-nextjs-main.vercel.app"
-    ]
   },
   outputFileTracingIncludes: {
     "/blocks/*": ["./src/**/*.{js,ts,tsx}"],

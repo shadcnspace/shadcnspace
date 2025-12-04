@@ -32,7 +32,7 @@ export const templates = [
     description:
       "A beautifully designed landing page template with a clean and modern look.",
     image: "/images/templates/homeguardian-landing-page.png",
-    repo: "akash3444/homeguardian-shadcn-landing-page",
+    repo: "shadcnspace/homeguardian-shadcn-landing-page",
     slug: "homeguardian",
     category: categoriesMap.landingPage,
     url: "https://homeguardian-shadcn-landing-page.vercel.app/",
@@ -60,7 +60,7 @@ export const templates = [
     description:
       "A beautifully designed landing page template with a clean and modern look.",
     image: "/images/templates/minimalist-landing-page.png",
-    repo: "akash3444/shadcn-ui-landing-page",
+    repo: "shadcnspace/shadcn-ui-landing-page",
     slug: "minimalist-landing-page",
     category: categoriesMap.landingPage,
     url: "https://shadcn-ui-landing-page.vercel.app/",
@@ -81,7 +81,7 @@ export const templates = [
     description:
       "A beautifully designed landing page template with a clean and modern look.",
     image: "/images/templates/pure-landing.png",
-    repo: "akash3444/pure-landing-shadcnui-template",
+    repo: "shadcnspace/pure-landing-shadcnui-template",
     slug: "pure-landing",
     category: categoriesMap.landingPage,
     url: "https://pure-landing-shadcnui-template.vercel.app/",
@@ -102,7 +102,7 @@ export const templates = [
     description:
       "A beautifully designed developer portfolio template with a clean and modern look.",
     image: "/images/templates/minimal-portfolio.png",
-    repo: "akash3444/portfolio-template",
+    repo: "shadcnspace/portfolio-template",
     slug: "minimal-portfolio",
     category: categoriesMap.portfolio,
     url: "https://shadcn-portfolio-template.vercel.app/",

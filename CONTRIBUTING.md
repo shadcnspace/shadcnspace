@@ -19,9 +19,9 @@ You can contribute to this project in the following ways:
 First, fork the repository (if applicable) and clone it to your local machine:
 
 ```bash
-git clone https://github.com/akash3444/shadcn-ui-blocks.git
+git clone https://github.com/shadcnspace/shadcnspace.git
 
-cd shadcn-ui-blocks
+cd shadcnspace
 ```
 
 ### 2. Install Dependencies

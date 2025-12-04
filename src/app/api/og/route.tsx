@@ -111,7 +111,7 @@ export async function GET(req: Request) {
                   strokeLinejoin="round"
                 />
               </svg>
-              <div tw="flex ml-2">github.com/akash3444/shadcn-ui-blocks</div>
+              <div tw="flex ml-2">github.com/shadcnspace/shadcnspace</div>
             </div>
           </div>
         </div>
