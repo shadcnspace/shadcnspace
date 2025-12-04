@@ -13,13 +13,12 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <div className="relative bg-primary/3">
-        <Navbar className="shadow-xl shadow-primary/2 dark:shadow-primary/3 border-primary/11" />
+      <div className="relative">
+        <Navbar />
         <div className="-mt-24">
           <Hero />
         </div>
       </div>
-      <Features />
       <Footer />
     </>
   );

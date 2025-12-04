@@ -8,15 +8,16 @@ import { Logo } from "../logo";
 import { GithubLogo, TwitterLogo } from "../ui/icons";
 
 const footerSections = [
+
   {
     title: "Components",
-    links: components.slice(0, components.length / 2).map(({ title, url }) => ({
+    links: components.slice(components.length / 2).map(({ title, url }) => ({
       title,
       href: url,
     })),
   },
   {
-    title: "Components",
+    title: "Templates",
     links: components.slice(components.length / 2).map(({ title, url }) => ({
       title,
       href: url,
@@ -34,34 +35,30 @@ const footerSections = [
     title: "Products",
     links: [
       {
-        title: "Shadcn Space Pro",
-        href: "https://pro.shadcnui-blocks.com/",
+        title: "Shadcn Space",
+        href: "",
       },
-      {
-        title: "basecn",
-        href: "https://basecn.dev/",
-      },
+
     ],
   },
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-muted/50 border-t">
+    <footer className="border-t">
       <div className="max-w-(--breakpoint-xl) mx-auto">
         <div className="py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-x-8 gap-y-10 px-6 xl:px-0">
           <div className="col-span-full lg:col-span-2">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5">
               <Logo />
-              <span className="font-semibold text-lg tracking-tight">
-                Shadcn Space
-              </span>
+
             </Link>
 
             <p className="mt-4 text-muted-foreground">
-              A collection of customized Shadcn Space and components, ready
-              for preview and copy.
+              Craft modern UIs faster
+              with Shadcn components,
+              blocks & templates
             </p>
           </div>
 

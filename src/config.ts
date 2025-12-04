@@ -6,6 +6,6 @@ export const config = {
       : "localhost:3000",
   social: {
     github: "https://github.com/shadcnspace/shadcnspace",
-    twitter: "https://twitter.com/shadcnui_blocks",
+    twitter: "https://twitter.com/",
   },
 };

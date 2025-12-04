@@ -14,16 +14,14 @@ export const Navbar = ({ className }: { className?: string }) => {
     <nav className="px-6 lg:px-0 bg-background ps-4 pe-2 border-b">
       <div
         className={cn(
-          "h-14 flex items-center justify-between relative z-20 max-w-(--breakpoint-lg) mx-auto text-foreground border-primary/8 shadow shadow-primary/1",
+          "h-14 flex items-center justify-between relative z-20 max-w-(--breakpoint-xl) mx-auto text-foreground border-primary/8 shadow shadow-primary/1",
           className
         )}
       >
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
             <Logo className="font-bold" />
-            <span className="font-semibold hidden lg:block text-lg tracking-tight">
-              Shadcn Space
-            </span>
+
           </Link>
         </div>
 

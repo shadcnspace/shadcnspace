@@ -35,18 +35,13 @@ export const metadata: Metadata = {
   keywords: [
     "Shadcn Space",
     "Shadcn UI components",
-    "Shadcn UI previews",
+
     "UI blocks for developers",
     "Shadcn UI code snippets",
     "Shadcn UI examples",
     "Shadcn UI customization",
-    "Free Shadcn Space",
-    "Preview Shadcn UI components",
-    "Shadcn UI examples for websites",
-    "Copy Shadcn UI code snippets",
-    "UI design components",
-    "UI design blocks",
-    "Customized Shadcn Space",
+    "Free Shadcn ui",
+
     "Custom Shadcn UI components",
   ],
   icons: [
@@ -57,7 +52,7 @@ export const metadata: Metadata = {
     },
     {
       sizes: "16x16",
-      url: "/images/favicon-16x16.png",
+      url: "/images/favicon-32x32.png",
       type: "image/png",
       rel: "icon",
     },
