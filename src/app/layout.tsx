@@ -29,13 +29,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Customized Shadcn Space & Components | Preview & Copy",
+  title: "Craft modern UIs faster with Shadcn components, blocks & templates",
   description:
-    "Explore a curated collection of customized Shadcn Space and components. Preview, customize, and copy ready-to-use code snippets to streamline your web development workflow. Perfect for creating responsive, high-quality Shadcn UI designs with ease.",
+    "Craft modern UIs faster with Shadcn components, blocks & templates",
   keywords: [
     "Shadcn Space",
     "Shadcn UI components",
-
     "UI blocks for developers",
     "Shadcn UI code snippets",
     "Shadcn UI examples",
@@ -64,9 +63,9 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "Customized Shadcn Space & Components | Preview & Copy",
+    title: "Craft modern UIs faster with Shadcn components, blocks & templates",
     description:
-      "Explore a curated collection of customized Shadcn Space and components. Preview, customize, and copy ready-to-use code snippets to streamline your web development workflow. Perfect for creating responsive, high-quality Shadcn UI designs with ease.",
+      "Craft modern UIs faster with Shadcn components, blocks & templates",
     type: "website",
     images: [
       {
@@ -94,12 +93,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          defer
-          data-website-id="67bf0ef528e2eaab259e0c50"
-          data-domain="www.shadcnui-blocks.com"
-          src="https://datafa.st/js/script.js"
-        />
+
       </head>
       <body className={cn(inter.variable, geistMono.variable, "antialiased")}>
         <script
