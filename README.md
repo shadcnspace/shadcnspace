@@ -97,7 +97,7 @@ Explore the collection:
 - [Components](https://myshadcnspace.vercel.app/components)  
 - [Blocks](https://myshadcnspace.vercel.app/blocks)  
 - [Templates](https://myshadcnspace.vercel.app/templates)  
-- [MCP Server](https://myshadcnspace.vercel.app/mcp)  
+- [MCP Server](https://myshadcnspace.vercel.app/docs/getting-started/mcp-server-docs)
 
 With these features, shadcnspace doesn’t just provide components — it **streamlines your workflow, reduces repetitive work, and helps you ship faster with confidence**.
 
