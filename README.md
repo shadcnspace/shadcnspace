@@ -12,7 +12,7 @@
 It focuses on **real-world UI patterns**, clean code, and seamless integration with modern React & Next.js projects. ⚡
 
 <p>
-  <a href="/blob/main/LICENSE">
+  <a href="/LICENSE.md">
     <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License">
   </a>
   <a href="https://x.com/ShadcnSpace" target="_blank">
@@ -175,7 +175,7 @@ Join the shadcnspace community to discuss the library, ask questions, and share 
 
 ## License ©
 
-- Licensed under [MIT](/blob/main/LICENSE.md)
+- Licensed under [MIT](/LICENSE.md)
 
 ## Useful Links 🎁
 
