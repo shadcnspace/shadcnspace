@@ -195,7 +195,7 @@ For comprehensive documentation, please visit [shadcnspace.com](https://shadcnsp
 
 ## Available Blocks 
 
-shadcnspace provides an open-source collection of copy-and-paste Shadcn Components designed to accelerate your project development. Below is a summary of the available component categories:
+shadcnspace provides an open-source collection of copy-and-paste Shadcn Blocks designed to accelerate your project development. Below is a summary of the available block categories:
 
 
 ### Blocks Examples
