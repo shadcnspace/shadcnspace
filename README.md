@@ -186,17 +186,17 @@ shadcnspace provides an open-source collection of copy-and-paste Shadcn Blocks d
 
   <tr>
     <td width="33.3333%" align="center">
-    <a href="https://myshadcnspace.vercel.app/blocks/marketing/hero-section">
+    <a href="https://shadcnspace.com/blocks/marketing/hero-section">
         <img alt="Shadcnspace Avatar" src="https://images.shadcnspace.com/assets/blocks-images/marketing/hero-section.webp" />
     </a>
     </td>
     <td width="33.3333%" align="center">
-    <a href="https://myshadcnspace.vercel.app/blocks/marketing/team-section">
+    <a href="https://shadcnspace.com/blocks/marketing/team-section">
         <img alt="Shadcnspace Accordion" src="https://images.shadcnspace.com/assets/blocks-images/marketing/team-section.webp" />
         </a>
     </td>
     <td width="33.3333%" align="center">
-    <a href="https://myshadcnspace.vercel.app/blocks/marketing/cta-section">
+    <a href="https://shadcnspace.com/blocks/marketing/cta-section">
         <img alt="Shadcnspace Tooltip" src="https://images.shadcnspace.com/assets/blocks-images/marketing/cta-section.webp" />
         </a>
     </td>
@@ -209,17 +209,17 @@ shadcnspace provides an open-source collection of copy-and-paste Shadcn Blocks d
   
   <tr>
     <td width="33.3333%" align="center">
-    <a href="https://myshadcnspace.vercel.app/blocks/marketing/about-us-section">
+    <a href="https://shadcnspace.com/blocks/marketing/about-us-section">
         <img alt="Shadcnspace Avatar" src="https://images.shadcnspace.com/assets/blocks-images/marketing/about-us-section.webp">
         </a>
     </td>
     <td width="33.3333%" align="center">
-    <a href="https://myshadcnspace.vercel.app/blocks/marketing/pricing-section">
+    <a href="https://shadcnspace.com/blocks/marketing/pricing-section">
         <img alt="Shadcnspace Accordion" src="https://images.shadcnspace.com/assets/blocks-images/marketing/pricing-section.webp">
         </a>
     </td>
     <td width="33.3333%" align="center">
-    <a href="https://myshadcnspace.vercel.app/blocks/marketing/testimonials-section">
+    <a href="https://shadcnspace.com/blocks/marketing/testimonials-section">
         <img alt="Shadcnspace Tooltip" src="https://images.shadcnspace.com/assets/blocks-images/marketing/testimonial-section.webp">
         </a>
     </td>
@@ -248,7 +248,7 @@ Join the shadcnspace community to discuss the library, ask questions, and share 
 ## Useful Links 
 
 - [**Website**](https://shadcnspace.com)
-- [**Documentation**](https://shadcnspace.com/docs)
+- [**Documentation**](https://shadcnspace.com/docs/getting-started/introduction)
 - [**Components**](https://shadcnspace.com/components)
 - [**UI Blocks**](https://shadcnspace.com/blocks)
 - [**Templates**](https://shadcnspace.com/templates)
