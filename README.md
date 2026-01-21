@@ -24,24 +24,6 @@ Build websites, dashboards, SaaS products, admin panels, landing pages, and inte
   </a>
 </p>
 
-## Table of Contents 
-
-- [Table of Contents ](#table-of-contents-)
-- [What's Included ](#what's-included-)
-    - [UI Components](#ui-components-)
-    - [UI Blocks](#ui-blocks-)
-    - [Templates and Dashboard Layouts](#templates-and-dashboard-layouts-)
-
-- [Not a standard library, but a distribution of components](#not-a-standard-library-but-a-distribution-of-components-)
-- [Why should I use shadcnspace?](#why-should-i-use-shadcnspace-)
-- [This is where shadcnspace shines](#this-is-where-shadcnspace-shines-)
-- [Features](#features-)
-- [Documentation](#documentation-)
-- [Available Blocks](#available-blocks-)
-  - [Block Examples](#block-examples)
-- [Community](#community-)
-- [License ©](#license-)
-- [Useful Links](#useful-links-)
 
 ---
 
