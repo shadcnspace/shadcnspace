@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-11",
+  "type": "registry:component",
+  "title": "Input-11 - Input with end inline button",
+  "description": "Input component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-11.tsx",
+      "content": "\"use client\";\r\nimport { useId, useState } from \"react\";\r\n\r\nimport { SendHorizonalIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { cn } from '@/lib/utils'\r\n\r\nconst EMAIL_REGEX = /^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$/\r\n\r\nconst InputEndInlineButtonDemo = () => {\r\n  const id = useId();\r\n  const [success, setSuccess] = useState(\"\");\r\n  const [error, setError] = useState(\"\");\r\n  const [email, setEmail] = useState(\"\");\r\n\r\n  const handleSubmit = () => {\r\n    setError(\"\");\r\n    setSuccess(\"\");\r\n\r\n    if (!EMAIL_REGEX.test(email)) {\r\n      setError(\"Please enter a valid email address\");\r\n      return;\r\n    }\r\n    setSuccess(\"Email sent successfully !\");\r\n    setEmail(\"\");\r\n  };\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id}>Input with end inline button</Label>\r\n      <div className=\"relative\">\r\n        <Input\r\n          id={id}\r\n          type='email'\r\n          placeholder='Email address'\r\n          value={email}\r\n          onChange={(e) => setEmail(e.target.value)}\r\n          className={cn(\r\n            'pr-9',\r\n            error && 'border-destructive focus-visible:ring-destructive'\r\n          )}\r\n        />\r\n        <Button\r\n          variant=\"ghost\"\r\n          size=\"icon\"\r\n          onClick={handleSubmit}\r\n          className=\"text-muted-foreground focus-visible:ring-ring/50 absolute inset-y-0 right-0 rounded-l-none hover:bg-transparent\"\r\n        >\r\n          <SendHorizonalIcon className=\"text-sky-400\" />\r\n          <span className=\"sr-only\">Subscribe</span>\r\n        </Button>\r\n      </div>\r\n      {success && <p className=\"text-sm text-emerald-500\">{success}</p>}\r\n      {error && <p className=\"text-sm text-red-500\">{error}</p>}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputEndInlineButtonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-11.tsx"
+    }
+  ]
+}

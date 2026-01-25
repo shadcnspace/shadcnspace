@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-03",
+  "type": "registry:component",
+  "title": "Calendar 03 - Time calendar",
+  "description": "Calendar component",
+  "dependencies": [
+    ""
+  ],
+  "registryDependencies": [
+    "calendar",
+    "scrollarea",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/calendar/calendar-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Calendar } from \"@/components/ui/calendar\";\r\nimport { ScrollArea } from \"@/components/ui/scroll-area\";\r\n\r\nexport const title = \"Calendar as Appointment Picker\";\r\n\r\nconst CalendarThree = () => {\r\n  const [date, setDate] = useState<Date | undefined>(new Date());\r\n  const [selectedTime, setSelectedTime] = useState<string | null>(null);\r\n\r\n  const availableTimes = [\r\n    \"09:00 AM\",\r\n    \"09:30 AM\",\r\n    \"10:00 AM\",\r\n    \"10:30 AM\",\r\n    \"11:00 AM\",\r\n    \"11:30 AM\",\r\n    \"01:00 PM\",\r\n    \"01:30 PM\",\r\n    \"02:00 PM\",\r\n    \"02:30 PM\",\r\n    \"03:00 PM\",\r\n    \"03:30 PM\",\r\n    \"04:00 PM\",\r\n    \"04:30 PM\",\r\n  ];\r\n  return (\r\n    <div className=\"flex items-center justify-center px-4\">\r\n      <div className=\"flex divide-x overflow-hidden rounded-md border bg-background\">\r\n        <Calendar mode=\"single\" onSelect={setDate} selected={date} />\r\n        <div className=\"relative w-[249px] overflow-hidden\">\r\n          <div className=\"absolute inset-0 grid gap-4\">\r\n            <div className=\"space-y-2 px-4 pt-4\">\r\n              <p className=\"text-center text-sm font-medium\">Available Times</p>\r\n            </div>\r\n            <ScrollArea className=\"h-full overflow-y-auto\">\r\n              <div className=\"grid grid-cols-1 gap-2 px-4 pb-4\">\r\n                {availableTimes.map((time) => (\r\n                  <Button\r\n                    key={time}\r\n                    onClick={() => setSelectedTime(time)}\r\n                    size=\"sm\"\r\n                    variant={selectedTime === time ? \"default\" : \"outline\"}\r\n                  >\r\n                    {time}\r\n                  </Button>\r\n                ))}\r\n              </div>\r\n            </ScrollArea>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CalendarThree;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/calendar/calendar-03.tsx"
+    }
+  ]
+}

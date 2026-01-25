@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-32",
+  "type": "registry:block",
+  "title": "Statistics 32",
+  "description": "A profit & expenses statistics block",
+  "dependencies": [
+    "react-apexcharts",
+    "@iconify/react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "card",
+    "button",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-32/page.tsx",
+      "content": "import Statistics32 from \"@/components/shadcn-space/blocks/statistics-32/statistics32\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics32 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-32/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-32/statistics32.tsx",
+      "content": "'use client'\r\n\r\nimport dynamic from 'next/dynamic'\r\nimport { HiOutlineDotsVertical } from 'react-icons/hi'\r\nimport { Icon } from '@iconify/react'\r\nimport { Card } from '@/components/ui/card'\r\nimport { Button } from '@/components/ui/button'\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuTrigger,\r\n  DropdownMenuItem,\r\n  DropdownMenuContent,\r\n} from '@/components/ui/dropdown-menu'\r\nimport \"./styles/style.css\";\r\n\r\nconst Chart = dynamic(() => import('react-apexcharts'), { ssr: false })\r\n\r\nconst Statistics32 = () => {\r\n  const dropdownItems = ['Action', 'Another action', 'Something else']\r\n\r\n  const ChartData: any = {\r\n    series: [\r\n      {\r\n        name: 'Profit',\r\n        data: [60, 40, 37, 35, 35, 20, 30, 20],\r\n      },\r\n      {\r\n        name: 'Expenses',\r\n        data: [15, 30, 15, 35, 25, 30, 30, 40],\r\n      },\r\n    ],\r\n    labels: ['2024', '2023', '2022'],\r\n    chart: {\r\n      height: 300,\r\n      stacked: true,\r\n      type: 'bar',\r\n      fontFamily: 'inherit',\r\n      foreColor: '#adb0bb',\r\n      toolbar: {\r\n        show: false,\r\n      },\r\n    },\r\n    colors: ['var(--color-blue-500)', 'var(--color-red-500)'],\r\n    plotOptions: {\r\n      bar: {\r\n        horizontal: false,\r\n        columnWidth: '27%',\r\n        borderRadius: 6,\r\n      },\r\n    },\r\n    dataLabels: {\r\n      enabled: false,\r\n    },\r\n    stroke: {\r\n      show: false,\r\n    },\r\n\r\n    legend: {\r\n      show: false,\r\n    },\r\n    grid: {\r\n      borderColor: 'var(--color-muted)',\r\n      padding: { top: 0, bottom: -8, left: 20, right: 20 },\r\n    },\r\n    xaxis: {\r\n      categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'March'],\r\n      axisBorder: {\r\n        show: false,\r\n      },\r\n      axisTicks: {\r\n        show: false,\r\n      },\r\n    },\r\n    yaxis: {\r\n      min: 0,\r\n      max: 80,\r\n      tickAmount: 4, // (80 - 0) / 20 = 4 intervals\r\n      labels: {\r\n        formatter: function (val: number) {\r\n          return val.toFixed(0)\r\n        },\r\n      },\r\n    },\r\n    fill: {\r\n      opacity: 1,\r\n    },\r\n\r\n    tooltip: {\r\n      theme: 'dark',\r\n      fillSeriesColor: false,\r\n      y: {\r\n        formatter: function (value: number) {\r\n          return `$${value.toLocaleString()}K`\r\n        },\r\n      },\r\n    },\r\n  }\r\n\r\n  const stats = [\r\n    {\r\n      title: '$63,489.50',\r\n      subtitle: 'Profit',\r\n      color: 'bg-blue-500/10 text-blue-500',\r\n      profit: false,\r\n      icon: 'solar:graph-new-up-bold',\r\n    },\r\n    {\r\n      title: '$48,820.00',\r\n      subtitle: 'Expenses',\r\n      color: 'bg-red-500/10 text-red-500',\r\n      profit: true,\r\n      icon: 'solar:pie-chart-2-bold',\r\n    },\r\n    {\r\n      title: '$103,582.50',\r\n      subtitle: 'Overall earnings',\r\n      color: 'bg-teal-400/10 text-teal-400',\r\n      profit: false,\r\n      icon: 'solar:archive-up-minimlistic-bold',\r\n    },\r\n  ]\r\n  return (\r\n    <>\r\n      <div className='min-h-screen flex flex-col items-center justify-center'>\r\n        <Card className='w-full max-w-3xl p-6'>\r\n          <div className='flex justify-between align-baseline'>\r\n            <h5 className='text-lg font-semibold text-foreground'>Profit & Expenses</h5>\r\n            <div>\r\n              <DropdownMenu>\r\n                <DropdownMenuTrigger className='outline-none'>\r\n                  <span className='h-9 w-9 flex justify-center items-center rounded-full hover:bg-accent hover:text-accent-foreground cursor-pointer'>\r\n                    <HiOutlineDotsVertical size={22} />\r\n                  </span>\r\n                </DropdownMenuTrigger>\r\n                <DropdownMenuContent>\r\n                  {dropdownItems.map((items, index) => {\r\n                    return (\r\n                      <DropdownMenuItem\r\n                        key={index}\r\n                        className='font-normal cursor-pointer'>\r\n                        {items}\r\n                      </DropdownMenuItem>\r\n                    )\r\n                  })}\r\n                </DropdownMenuContent>\r\n              </DropdownMenu>\r\n            </div>\r\n          </div>\r\n\r\n          <div className='grid grid-cols-12 gap-6'>\r\n            <div className='md:col-span-8 col-span-12'>\r\n              <div className='mt-3 rounded-bars -ms-3 h-[300px]'>\r\n                <Chart\r\n                  options={ChartData}\r\n                  series={ChartData.series}\r\n                  type='bar'\r\n                  height='300px'\r\n                  width='100%'\r\n                />\r\n              </div>\r\n            </div>\r\n            <div className='md:col-span-4 col-span-12 pt-8 pe-4'>\r\n              <div className='flex flex-col gap-7'>\r\n                {stats.map((item, index) => (\r\n                  <div\r\n                    className='flex items-center justify-between'\r\n                    key={index}>\r\n                    <div className='items-center gap-4'>\r\n                      <p className='text-sm font-medium text-muted-foreground'>{item.subtitle}</p>\r\n                      <h5 className='text-base font-semibold text-foreground flex gap-2 items-baseline'>\r\n                        {item.title}{' '}\r\n                      </h5>\r\n                    </div>\r\n\r\n                    <div\r\n                      className={`h-10 w-10 rounded-full flex justify-center items-center ${item.color}`}>\r\n                      <Icon\r\n                        icon={item.icon}\r\n                        height='22'\r\n                      />\r\n                    </div>\r\n                  </div>\r\n                ))}\r\n                <Button className='bg-blue-500 hover:bg-blue-500/90 text-white rounded-full cursor-pointer'>View Full Report</Button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </Card>\r\n      </div>\r\n    </>\r\n  )\r\n}\r\n\r\nexport default Statistics32\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-32/statistics32.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-32/styles/style.css",
+      "content": ".rounded-bars .apexcharts-bar-series.apexcharts-plot-series .apexcharts-series path {\r\n    clip-path: inset(0 0 5% 0 round 20px);\r\n}",
+      "type": "registry:style",
+      "target": "components/shadcn-space/blocks/statistics-32/styles/style.css"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-05",
+  "type": "registry:component",
+  "title": "Button-05 - Get Figma File",
+  "description": "Get Figma File button component",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-05.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst ButtonFigmaDemo = () => {\r\n  return (\r\n    <>\r\n      <span className=\"inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#F24E1E] via-[#A259FF] to-[#1ABCFE] py-[1px] px-[0.5px]\">\r\n        <Button className=\"bg-background hover:bg-background text-foreground\">\r\n          <img\r\n            src=\"https://images.shadcnspace.com/assets/svgs/icon-figma.svg\"\r\n            alt=\"figma\"\r\n            className=\"h-4 w-4\"\r\n          />\r\n          Get Figma File\r\n        </Button>\r\n      </span>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default ButtonFigmaDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-05.tsx"
+    }
+  ]
+}

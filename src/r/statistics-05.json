@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-05",
+  "type": "registry:block",
+  "title": "Statistics 05",
+  "description": "A simple statistics block",
+  "dependencies": [
+    "@iconify/react",
+    "react-apexcharts"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-05/page.tsx",
+      "content": "import Statistics05 from \"@/components/shadcn-space/blocks/statistics-05/statistics05\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics05 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-05/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-05/statistics05.tsx",
+      "content": "\"use client\";\r\nimport { Card } from \"@/components/ui/card\";\r\nimport dynamic from \"next/dynamic\";\r\nconst Chart = dynamic(() => import(\"react-apexcharts\"), { ssr: false });\r\nconst ChartData: any = {\r\n    series: [50, 80, 30],\r\n    labels: [\"36%\", \"10%\", \"36%\"],\r\n    chart: {\r\n        type: \"radialBar\",\r\n        height: 230,\r\n        fontFamily: \"inherit\",\r\n        foreColor: \"#c6d1e9\",\r\n    },\r\n    plotOptions: {\r\n        radialBar: {\r\n            inverseOrder: false,\r\n            startAngle: 0,\r\n            endAngle: 270,\r\n            hollow: {\r\n                margin: 1,\r\n                size: \"40%\",\r\n            },\r\n            dataLabels: {\r\n                show: false,\r\n            },\r\n        },\r\n    },\r\n    legend: {\r\n        show: false,\r\n    },\r\n    stroke: { width: 1, lineCap: \"round\" },\r\n    tooltip: {\r\n        enabled: false,\r\n        fillSeriesColor: false,\r\n    },\r\n    colors: [\r\n        \"var(--color-blue-500)\", \"var(--color-teal-400)\", \"var(--color-red-500)\"\r\n    ],\r\n};\r\n\r\nconst Statistics05 = () => {\r\n    return (\r\n        <div className=\"min-h-screen mx-10 flex flex-col items-center justify-center\">\r\n            <Card className=\"p-7 overflow-hidden\">\r\n                <div>\r\n                    <h5 className=\"text-xl font-semibold text-foreground\">Sales Overview</h5>\r\n                    <p className=\"text-sm font-medium text-muted-foreground\">Last 7 days</p>\r\n                </div>\r\n                <div className=\" relative\">\r\n                    <Chart\r\n                        options={ChartData}\r\n                        series={ChartData.series}\r\n                        type=\"radialBar\"\r\n                        height=\"230px\"\r\n                        width=\"100%\"\r\n                    />\r\n                    <span className=\"absolute top-0 mx-auto left-0 right-0 w-5 text-sm opacity-90\">0%</span>\r\n                    <span className=\"absolute top-1/2 right-0 me-2 w-5 text-sm opacity-90\">25%</span>\r\n                    <span className=\"absolute bottom-0 mx-auto left-0 right-0 w-5 text-sm opacity-90\">50%</span>\r\n                    <span className=\"absolute top-1/2 left-0 ms-2 w-5 text-sm opacity-90\">75%</span>\r\n                </div>\r\n            </Card>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Statistics05;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-05/statistics05.tsx"
+    }
+  ]
+}

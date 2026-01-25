@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-04",
+  "type": "registry:block",
+  "title": "Statistics 04",
+  "description": "A simple statistics block",
+  "dependencies": [
+    "@iconify/react",
+    "react-apexcharts"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-04/page.tsx",
+      "content": "import Statistics04 from \"@/components/shadcn-space/blocks/statistics-04/statistics04\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics04 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-04/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-04/statistics04.tsx",
+      "content": "\"use client\";\r\nimport { Card } from \"@/components/ui/card\";\r\nimport dynamic from \"next/dynamic\";\r\nconst Chart = dynamic(() => import(\"react-apexcharts\"), { ssr: false });\r\nconst ChartData: any = {\r\n    series: [\r\n        {\r\n            name: \"April 07 \",\r\n            data: [0, 20, 15, 19, 14, 25, 30],\r\n        },\r\n        {\r\n            name: \"Last Week\",\r\n            data: [0, 8, 19, 13, 26, 16, 25],\r\n        },\r\n    ],\r\n    chart: {\r\n        fontFamily: \"inherit\",\r\n        height: 100,\r\n        type: \"line\",\r\n        toolbar: {\r\n            show: false,\r\n        },\r\n        sparkline: {\r\n            enabled: true,\r\n        },\r\n    },\r\n    colors: [\"var(--color-blue-500)\", \"var(--color-blue-100)\"],\r\n    grid: {\r\n        show: false,\r\n    },\r\n    stroke: {\r\n        curve: \"smooth\",\r\n        colors: [\"var(--color-blue-500)\", \"var(--color-blue-100)\"],\r\n        width: 2,\r\n    },\r\n    markers: {\r\n        colors: [\"var(--color-blue-500)\", \"var(--color-blue-100)\"],\r\n        strokeColors: \"transparent\",\r\n    },\r\n    tooltip: {\r\n        theme: \"dark\",\r\n        x: {\r\n            show: false,\r\n        },\r\n        followCursor: true,\r\n    },\r\n};\r\nconst Statistics04 = () => {\r\n    return (\r\n        <div className=\"min-h-screen mx-10 flex flex-col items-center justify-center\">\r\n            <Card className=\"p-7 overflow-hidden\">\r\n                <div className=\"flex justify-between align-baseline\">\r\n                    <div>\r\n                        <h5 className=\"text-xl font-semibold text-foreground\">Customers</h5>\r\n                        <p className=\"text-sm font-medium text-muted-foreground\">Last 7 days</p>\r\n                    </div>\r\n                    <span className=\"text-sm font-medium text-teal-400\">+26.5%</span>\r\n                </div>\r\n                <div className=\"mt-5\">\r\n                    <Chart\r\n                        options={ChartData}\r\n                        series={ChartData.series}\r\n                        type=\"line\"\r\n                        height=\"100px\"\r\n                        width=\"100%\"\r\n                    />\r\n                </div>\r\n                <div className=\"mt-8\">\r\n                    <div className=\"flex justify-between\">\r\n                        <div className=\"flex gap-2 text-sm items-center\">\r\n                            <span className=\"bg-blue-500 rounded-full h-2 w-2\"></span>\r\n                            <h6 className=\"text-sm font-medium text-foreground\">April 07 - April 14</h6>\r\n                        </div>\r\n                        <h6 className=\"text-sm font-medium text-foreground\">6,380</h6>\r\n                    </div>\r\n                    <div className=\"flex justify-between mt-2\">\r\n                        <div className=\"flex gap-2 text-sm  items-center\">\r\n                            <span className=\"bg-[#3B82F63a] rounded-full h-2 w-2\"></span>\r\n                            <h6 className=\"text-sm font-medium text-foreground\">Last Week</h6>\r\n                        </div>\r\n                        <h6 className=\"text-sm font-medium text-foreground\">4,298</h6>\r\n                    </div>\r\n                </div>\r\n            </Card>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Statistics04;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-04/statistics04.tsx"
+    }
+  ]
+}

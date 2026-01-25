@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-17",
+  "type": "registry:component",
+  "title": "Input-17 - Input with label",
+  "description": "Input component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-17.tsx",
+      "content": "import { Input } from \"@/components/ui/input\"\r\nimport { Label } from \"@/components/ui/label\"\r\n\r\nconst InputWithLabelDemo = () => {\r\n    return (\r\n        <div className=\"grid w-full max-w-sm items-center gap-1.5\">\r\n            <Label htmlFor=\"email\">Label</Label>\r\n            <Input type=\"email\" id=\"email\" placeholder=\"example@shadcnspace.com\" />\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default InputWithLabelDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-17.tsx"
+    }
+  ]
+}

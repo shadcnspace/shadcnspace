@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-04",
+  "type": "registry:component",
+  "title": "Badge-04 - With Icon",
+  "description": "Badge component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/badge/badge-04.tsx",
+      "content": "'use client'\r\nimport { StarIcon } from 'lucide-react'\r\nimport { Badge } from '@/components/ui/badge'\r\n\r\nconst BadgeWithIconDemo = () => {\r\n  return (\r\n    <Badge className='bg-teal-200 text-teal-900'>\r\n      <StarIcon className='size-3' />\r\n      With Icon\r\n    </Badge>\r\n  )\r\n}\r\n\r\nexport default BadgeWithIconDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/badge/badge-04.tsx"
+    }
+  ]
+}

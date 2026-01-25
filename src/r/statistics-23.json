@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-23",
+  "type": "registry:block",
+  "title": "Statistics 23",
+  "description": "A products statistics block",
+  "dependencies": [
+    "react-apexcharts"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-23/page.tsx",
+      "content": "import Statistics23 from \"@/components/shadcn-space/blocks/statistics-23/statistics23\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics23 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-23/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-23/statistics23.tsx",
+      "content": "'use client'\r\n\r\nimport dynamic from 'next/dynamic'\r\nimport { Card } from '@/components/ui/card'\r\nimport { Badge } from '@/components/ui/badge'\r\n\r\nconst Chart = dynamic(() => import('react-apexcharts'), { ssr: false })\r\n\r\nconst Statistics23 = () => {\r\n  const ChartData: any = {\r\n    color: '#adb5bd',\r\n    series: [70, 18, 12],\r\n    labels: ['2024', '2023', '2022'],\r\n    chart: {\r\n      height: 175,\r\n      type: 'donut',\r\n      fontFamily: 'inherit',\r\n      foreColor: '#adb0bb',\r\n    },\r\n    plotOptions: {\r\n      pie: {\r\n        startAngle: 0,\r\n        endAngle: 360,\r\n        donut: {\r\n          size: '85%',\r\n        },\r\n      },\r\n    },\r\n    stroke: {\r\n      show: true,\r\n      colors: ['transparent'],\r\n      width: 3,\r\n    },\r\n    dataLabels: {\r\n      enabled: false,\r\n    },\r\n    legend: {\r\n      show: false,\r\n    },\r\n    colors: ['var(--color-sky-400)', 'var(--color-teal-400)', 'var(--color-red-500)'],\r\n    tooltip: {\r\n      theme: 'dark',\r\n      fillSeriesColor: false,\r\n    },\r\n  }\r\n  return (\r\n    <>\r\n      <div className='min-h-screen flex flex-col items-center justify-center'>\r\n        <Card className='w-full max-w-xs p-6 gap-4'>\r\n          <div className='flex items-baseline  justify-between'>\r\n            <div>\r\n              <h5 className='text-lg font-semibold text-foreground'>\r\n                Products\r\n              </h5>\r\n              <p className='text-sm font-medium text-muted-foreground'>\r\n                Last 7 days\r\n              </p>\r\n            </div>\r\n            <div className='text-end'>\r\n              <h5 className='text-base font-semibold text-foreground'>\r\n                12,389\r\n              </h5>\r\n              <Badge className='bg-teal-400/10 text-teal-400 tracking-wide'>\r\n                +26.5%\r\n              </Badge>\r\n            </div>\r\n          </div>\r\n          <div className='h-[175px]'>\r\n            <Chart\r\n              options={ChartData}\r\n              series={ChartData.series}\r\n              type='donut'\r\n              height='175px'\r\n              width='100%'\r\n              className='my-4'\r\n            />\r\n          </div>\r\n          <p className='text-xs font-normal text-center text-muted-foreground'>\r\n            Profit more than last month\r\n          </p>\r\n        </Card>\r\n      </div>\r\n    </>\r\n  )\r\n}\r\n\r\nexport default Statistics23\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-23/statistics23.tsx"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-15",
+  "type": "registry:component",
+  "title": "Input-15 - Required Input",
+  "description": "Input component",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-15.tsx",
+      "content": "import { useId } from 'react'\r\n\r\nimport { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\nimport { Mail } from 'lucide-react'\r\n\r\nconst InputRequiredDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n       <Label htmlFor={id} className='gap-1'>\r\n        Required input <span className='text-destructive'>*</span>\r\n      </Label>\r\n      <div className='relative'>\r\n        <div className='text-muted-foreground pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-3 peer-disabled:opacity-50'>\r\n          <Mail className='size-4' />\r\n          <span className='sr-only'>Mail</span>\r\n        </div>\r\n        <Input id={id} type='email' placeholder='Email address' className='peer pl-9' />\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default InputRequiredDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-15.tsx"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-11",
+  "type": "registry:component",
+  "title": "Button-11 - Cancel",
+  "description": "Cancel button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-11.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { X } from \"lucide-react\";\r\n\r\nconst ButtonCancelDemo = () => {\r\n  return (\r\n    <Button className=\"hover:-translate-y-1 transition-transform duration-200 bg-red-500 text-white hover:bg-red-500/80\">\r\n      <X className=\"size-4\" />\r\n      Cancel\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default ButtonCancelDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-11.tsx"
+    }
+  ]
+}

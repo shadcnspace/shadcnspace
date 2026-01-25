@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-05",
+  "type": "registry:component",
+  "title": "Avatar-05 - Counter",
+  "description": "Counter avatar component",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/avatar/avatar-05.tsx",
+      "content": "\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nconst CounterAvatarDemo = () => {\r\n  return (\r\n    <div className=\"flex items-center justify-center px-4\">\r\n      <div className=\"relative w-fit\">\r\n        <Avatar>\r\n          <AvatarImage\r\n            alt=\"user\"\r\n            src=\"https://images.shadcnspace.com/assets/profiles/user-6.jpg\"\r\n          />\r\n          <AvatarFallback>HB</AvatarFallback>\r\n        </Avatar>\r\n        <span className=\"absolute -top-2 -right-2 flex size-5 items-center justify-center rounded-full border-2 border-background bg-red-500 text-xs font-medium text-white\">\r\n         5\r\n        </span>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CounterAvatarDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/avatar/avatar-05.tsx"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-01",
+  "type": "registry:component",
+  "title": "Avatar-01 - Default",
+  "description": "Default avatar component",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/avatar/avatar-01.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nconst DefaultAvatarDemo = () => {\r\n  return (\r\n    <div className=\"flex items-center justify-center px-4\">\r\n      <div className=\"flex flex-row justify-center items-center gap-3\">\r\n        <Avatar>\r\n          <AvatarImage\r\n            src=\"https://images.shadcnspace.com/assets/profiles/user-1.jpg\"\r\n            alt=\"user\"\r\n          />\r\n          <AvatarFallback className=\"text-sm font-medium\">CN</AvatarFallback>\r\n        </Avatar>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default DefaultAvatarDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/avatar/avatar-01.tsx"
+    }
+  ]
+}

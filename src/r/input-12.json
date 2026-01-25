@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-12",
+  "type": "registry:component",
+  "title": "Input-12 - Input with end button",
+  "description": "Input component",
+  "dependencies": [],
+  "registryDependencies": [
+    "button",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-12.tsx",
+      "content": "import { useId } from 'react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\nimport { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst InputEndButtonDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Input with end button</Label>\r\n      <div className='flex rounded-md shadow-xs'>\r\n        <Input\r\n          id={id}\r\n          type='email'\r\n          placeholder='Email address'\r\n          className='-me-px rounded-r-none shadow-none focus-visible:z-1'\r\n        />\r\n        <Button className='rounded-l-none'>Subscribe</Button>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default InputEndButtonDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-12.tsx"
+    }
+  ]
+}

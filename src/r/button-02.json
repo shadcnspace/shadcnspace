@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-02",
+  "type": "registry:component",
+  "title": "Button-02 - Shiny Text",
+  "description": "Shiny Text button component",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-02.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport \"@/components/shadcn-space/button/button-02.css\";\r\n\r\nconst ButtonShinyTextDemo = () => {\r\n  return (\r\n    <Button className=\"transition-all\">\r\n      <div className=\"shiny inline-block bg-[linear-gradient(120deg,rgba(255,255,255,0)_40%,rgba(255,255,255,0.8)_50%,rgba(255,255,255,0)_60%)] dark:bg-[linear-gradient(120deg,rgba(0,0,0,0)_40%,rgba(0,0,0,0.8)_50%,rgba(0,0,0,0)_60%)] bg-[length:200%_100%] bg-clip-text text-base font-medium text-white/70 dark:text-background/60\">\r\n        Shiny Button Text\r\n      </div>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default ButtonShinyTextDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-02.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/button/button-02.css",
+      "content": ".shiny {\r\n  animation: shine 3s linear infinite;\r\n}\r\n\r\n@keyframes shine {\r\n  0% {\r\n    background-position: 100%;\r\n  }\r\n  100% {\r\n    background-position: -100%;\r\n  }\r\n}\r\n",
+      "type": "registry:style",
+      "target": "components/shadcn-space/button/button-02.css"
+    }
+  ]
+}

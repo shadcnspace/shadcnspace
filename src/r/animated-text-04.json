@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-text-04",
+  "type": "registry:component",
+  "title": "Animated Text-04 - Rolling Text",
+  "description": "Animated Rolling Text component",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/animated-text/animated-text-04.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useState } from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst greetings = [\r\n  { text: \"Initializing ...\", color: \"text-blue-500\" },\r\n  { text: \"Fetching Data...\", color: \"text-orange-400\" },\r\n  { text: \"Rendering...\", color: \"text-teal-400\" },\r\n  { text: \"System Ready \", color: \"text-sky-500\" },\r\n];\r\n\r\nconst AnimatedTextRoller = () => {\r\n  const [index, setIndex] = useState(0);\r\n\r\n  useEffect(() => {\r\n    const interval = setInterval(() => {\r\n      setIndex((prev) => (prev + 1) % greetings.length);\r\n    }, 2000);\r\n    return () => clearInterval(interval);\r\n  }, []);\r\n\r\n  return (\r\n    <div className=\"flex items-center gap-2 flex-wrap\">\r\n      <p className=\"text-xl sm:text-2xl text-foreground\">\r\n        Hello, Shadcnspace\r\n      </p>\r\n      <div className=\"overflow-hidden h-8 text-center\">\r\n        <div\r\n          className=\"transition-transform duration-700 ease-in-out\"\r\n          style={{ transform: `translateY(-${index * 2}rem)` }}\r\n        >\r\n          {greetings.map((g, i) => (\r\n            <p\r\n              key={i}\r\n              className={cn(\r\n                \"h-8 flex items-center justify-start text-xl sm:text-2xl\",\r\n                g.color,\r\n              )}\r\n            >\r\n              {g.text}\r\n            </p>\r\n          ))}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default AnimatedTextRoller;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/animated-text/animated-text-04.tsx"
+    }
+  ]
+}

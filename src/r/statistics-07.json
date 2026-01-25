@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-07",
+  "type": "registry:block",
+  "title": "Statistics 07",
+  "description": "A simple statistics block",
+  "dependencies": [
+    "@iconify/react",
+    "react-apexcharts"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-07/page.tsx",
+      "content": "import Statistics07 from \"@/components/shadcn-space/blocks/statistics-07/statistics07\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics07 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-07/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-07/statistics07.tsx",
+      "content": "\"use client\";\r\nimport { Card } from \"@/components/ui/card\";\r\nimport { Icon } from \"@iconify/react\";\r\nimport dynamic from \"next/dynamic\";\r\nconst Chart = dynamic(() => import(\"react-apexcharts\"), { ssr: false });\r\nconst ChartData: any = {\r\n    series: [\r\n        {\r\n            name: \"Site A\",\r\n            data: [29, 52, 38, 47, 56, 41, 46],\r\n        },\r\n        {\r\n            name: \"Site B\",\r\n            data: [71, 71, 71, 71, 71, 71, 71],\r\n        },\r\n    ],\r\n    chart: {\r\n        fontFamily: \"inherit\",\r\n        foreColor: \"#adb0bb\",\r\n        type: \"bar\",\r\n        height: 98,\r\n        stacked: true,\r\n        offsetX: 0,\r\n        toolbar: {\r\n            show: false,\r\n        },\r\n        sparkline: {\r\n            enabled: true,\r\n        },\r\n    },\r\n    colors: [\"var(--color-white)\", \"rgba(255,255,255,0.5)\"],\r\n    plotOptions: {\r\n        bar: {\r\n            horizontal: false,\r\n            columnWidth: \"26%\",\r\n            borderRadius: [3],\r\n            borderRadiusApplication: \"end\",\r\n            borderRadiusWhenStacked: \"all\",\r\n        },\r\n    },\r\n    dataLabels: {\r\n        enabled: false,\r\n    },\r\n    tooltip: {\r\n        theme: \"dark\",\r\n    },\r\n    legend: {\r\n        show: false,\r\n    },\r\n};\r\nconst Statistics07 = () => {\r\n    return (\r\n        <div className=\"min-h-screen mx-10 flex flex-col items-center justify-center\">\r\n            <Card className=\"p-7 border-0 bg-red-500/10\">\r\n                <div className=\"flex justify-between\">\r\n                    <div>\r\n                        <p className=\"text-base font-normal text-muted-foreground mb-2\">Subscriptions</p>\r\n                        <div className=\"flex gap-3 align-self mb-4\">\r\n                            <h5 className=\"text-2xl font-semibold text-foreground\">78,298</h5>\r\n                            <span className=\"text-sm font-normal pt-1 text-muted-foreground\">-12%</span>\r\n                        </div>\r\n                    </div>\r\n                    <span className=\"h-12 w-12 shrink-0 flex items-center justify-center bg-white dark:bg-dark rounded-lg\">\r\n                        <Icon\r\n                            icon=\"solar:layers-linear\"\r\n                            className=\"text-red-500\"\r\n                            height={20}\r\n                        />\r\n                    </span>\r\n                </div>\r\n                <div className=\"rounded-bars\">\r\n                    <Chart\r\n                        options={ChartData}\r\n                        series={ChartData.series}\r\n                        type=\"bar\"\r\n                        height=\"100px\"\r\n                        width=\"100%\"\r\n                    />\r\n                </div>\r\n            </Card>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Statistics07;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-07/statistics07.tsx"
+    }
+  ]
+}

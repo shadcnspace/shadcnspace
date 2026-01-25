@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-02",
+  "type": "registry:component",
+  "title": "Switch-02 - With Icon",
+  "description": "Switch component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "switch",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/switch/switch-02.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, useId } from \"react\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { BellOff, BellRing } from \"lucide-react\";\r\n\r\nconst SwitchWithIconDemo = () => {\r\n  const id = useId();\r\n  const [enabled, setEnabled] = useState(false);\r\n\r\n  return (\r\n    <div className=\"flex items-center space-x-2\">\r\n      <Switch\r\n        id={id}\r\n        checked={enabled}\r\n        onCheckedChange={setEnabled}\r\n        className=\"cursor-pointer\"\r\n      />\r\n      <Label htmlFor={id} className=\"cursor-pointer\">\r\n        Notifications{\" \"}\r\n        {enabled ? (\r\n          <BellOff className=\"size-4\" />\r\n        ) : (\r\n          <BellRing className=\"size-4\" />\r\n        )}\r\n      </Label>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SwitchWithIconDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/switch/switch-02.tsx"
+    }
+  ]
+}

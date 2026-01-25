@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-05",
+  "type": "registry:component",
+  "title": "Textarea-05 - Auto growing textarea",
+  "description": "Textarea component",
+  "dependencies": [],
+  "registryDependencies": [
+    "textarea",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/textarea/textarea-05.tsx",
+      "content": "import { useId } from 'react'\r\n\r\nimport { Label } from '@/components/ui/label'\r\nimport { Textarea } from '@/components/ui/textarea'\r\n\r\nconst TextareaAutoGrowDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Feedback</Label>\r\n      <Textarea\r\n        id={id}\r\n        placeholder='Share your feedback here'\r\n        className='field-sizing-content max-h-30 min-h-0 resize-none py-1.75'\r\n      />\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default TextareaAutoGrowDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/textarea/textarea-05.tsx"
+    }
+  ]
+}

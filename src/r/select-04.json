@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-04",
+  "type": "registry:component",
+  "title": "Select-04 - Select with timezone",
+  "description": "Select component",
+  "dependencies": [],
+  "registryDependencies": [
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/select/select-04.tsx",
+      "content": "\"use client\";\r\nimport { useId, useState } from 'react'\r\n\r\nimport { Label } from '@/components/ui/label'\r\nimport { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue, } from '@/components/ui/select'\r\n\r\nconst SelectProgrammingDemo = () => {\r\n  const id = useId()\r\n  const [value, setValue] = useState('React')\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id}>Primary Tech Stack</Label>\r\n\r\n      <Select value={value} onValueChange={(val) => val && setValue(val)}>\r\n        <SelectTrigger id={id} className=\"w-full\">\r\n          <SelectValue />\r\n        </SelectTrigger>\r\n\r\n        <SelectContent className=\"max-h-100 data-[state=open]:slide-in-from-bottom-8 data-[state=open]:zoom-in-100 duration-400\">\r\n          <SelectGroup>\r\n            <SelectLabel>Frontend</SelectLabel>\r\n            <SelectItem value=\"React\">React</SelectItem>\r\n            <SelectItem value=\"Next.js\">Next.js</SelectItem>\r\n            <SelectItem value=\"Vue.js\">Vue.js</SelectItem>\r\n            <SelectItem value=\"Svelte\">Svelte</SelectItem>\r\n            <SelectItem value=\"Angular\">Angular</SelectItem>\r\n          </SelectGroup>\r\n\r\n          <SelectGroup>\r\n            <SelectLabel>Backend</SelectLabel>\r\n            <SelectItem value=\"Node.js\">Node.js</SelectItem>\r\n            <SelectItem value=\"NestJS\">NestJS</SelectItem>\r\n            <SelectItem value=\"Django\">Django</SelectItem>\r\n            <SelectItem value=\"Spring Boot\">Spring Boot</SelectItem>\r\n            <SelectItem value=\"Laravel\">Laravel</SelectItem>\r\n          </SelectGroup>\r\n\r\n          <SelectGroup>\r\n            <SelectLabel>Languages</SelectLabel>\r\n            <SelectItem value=\"JavaScript\">JavaScript</SelectItem>\r\n            <SelectItem value=\"TypeScript\">TypeScript</SelectItem>\r\n            <SelectItem value=\"Python\">Python</SelectItem>\r\n            <SelectItem value=\"Java\">Java</SelectItem>\r\n            <SelectItem value=\"Go\">Go</SelectItem>\r\n          </SelectGroup>\r\n\r\n          <SelectGroup>\r\n            <SelectLabel>Databases</SelectLabel>\r\n            <SelectItem value=\"PostgreSQL\">PostgreSQL</SelectItem>\r\n            <SelectItem value=\"MySQL\">MySQL</SelectItem>\r\n            <SelectItem value=\"MongoDB\">MongoDB</SelectItem>\r\n            <SelectItem value=\"Redis\">Redis</SelectItem>\r\n            <SelectItem value=\"Firebase\">Firebase</SelectItem>\r\n          </SelectGroup>\r\n\r\n          <SelectGroup>\r\n            <SelectLabel>DevOps & Tools</SelectLabel>\r\n            <SelectItem value=\"Docker\">Docker</SelectItem>\r\n            <SelectItem value=\"Kubernetes\">Kubernetes</SelectItem>\r\n            <SelectItem value=\"GitHub Actions\">GitHub Actions</SelectItem>\r\n            <SelectItem value=\"Vercel\">Vercel</SelectItem>\r\n            <SelectItem value=\"AWS\">AWS</SelectItem>\r\n          </SelectGroup>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default SelectProgrammingDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/select/select-04.tsx"
+    }
+  ]
+}

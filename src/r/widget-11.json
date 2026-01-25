@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "widget-11",
+  "type": "registry:block",
+  "title": "Widget 11",
+  "description": "A new goals widget block",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "card",
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/widget-11/page.tsx",
+      "content": "import Widget11 from \"@/components/shadcn-space/blocks/widget-11/widget11\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Widget11 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/widget-11/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/widget-11/widget11.tsx",
+      "content": "'use client'\r\n\r\nimport { useState, useEffect, useRef } from 'react'\r\nimport { Card } from '@/components/ui/card'\r\nimport { Progress } from '@/components/ui/progress'\r\nimport {\r\n  useMotionValue,\r\n  animate,\r\n  useTransform,\r\n  useInView,\r\n} from 'motion/react'\r\n\r\n// -------------------- Animated Counter --------------------\r\nfunction AnimatedCounter({\r\n  value,\r\n  prefix = '',\r\n  suffix = '',\r\n  isInView = true,\r\n}: {\r\n  value: number\r\n  prefix?: string\r\n  suffix?: string\r\n  isInView?: boolean\r\n}) {\r\n  const count = useMotionValue(0)\r\n  const rounded = useTransform(count, (latest) => Math.round(latest))\r\n  const [current, setCurrent] = useState(0)\r\n\r\n  useEffect(() => {\r\n    if (isInView) {\r\n      const controls = animate(count, value, {\r\n        duration: 2,\r\n        ease: 'easeOut',\r\n        onUpdate(latest) {\r\n          setCurrent(Math.round(latest))\r\n        },\r\n      })\r\n      return controls.stop\r\n    }\r\n  }, [isInView, value, count])\r\n\r\n  return (\r\n    <span>\r\n      {prefix}\r\n      {current.toLocaleString()}\r\n      {suffix}\r\n    </span>\r\n  )\r\n}\r\n\r\n// -------------------- Animated Progress --------------------\r\nconst AnimatedProgress = ({\r\n  value,\r\n  color,\r\n}: {\r\n  value: number\r\n  color: string\r\n}) => {\r\n  const ref = useRef<HTMLDivElement>(null)\r\n  const isInView = useInView(ref, { once: true, amount: 0.5 })\r\n  const progress = useMotionValue(0)\r\n  const [current, setCurrent] = useState(0)\r\n\r\n  useEffect(() => {\r\n    if (isInView) {\r\n      const controls = animate(progress, value, {\r\n        duration: 1.5,\r\n        ease: 'easeOut',\r\n        onUpdate(latest) {\r\n          setCurrent(latest)\r\n        },\r\n      })\r\n      return controls.stop\r\n    }\r\n  }, [isInView, value, progress])\r\n\r\n  return (\r\n    <div ref={ref}>\r\n      <Progress\r\n        value={current}\r\n        className={`h-1.5 ${color} transition-all duration-500 ease-out`}\r\n      />\r\n    </div>\r\n  )\r\n}\r\n\r\nconst Widget11 = () => {\r\n  const ref = useRef(null)\r\n  const isInView = useInView(ref, { once: true, amount: 0.3 })\r\n\r\n  return (\r\n    <div className='min-h-screen flex flex-col items-center justify-center'>\r\n      <Card\r\n        ref={ref}\r\n        className='w-full max-w-xs relative p-6 bg-sky-400/20 overflow-hidden border-none'>\r\n        <div\r\n          className={`h-12 w-12 rounded-full flex justify-center items-center bg-sky-400`}>\r\n          <img\r\n            src={\r\n              'https://images.shadcnspace.com/assets/svgs/icon-idea.svg'\r\n            }\r\n            className='h-6 w-6'\r\n            alt='image'\r\n          />\r\n        </div>\r\n        <div className='mt-6'>\r\n          <div className='flex items-center justify-between mb-2'>\r\n            <h6 className='text-base font-semibold'>New Goals</h6>\r\n            <p className='font-normal text-sky-400'>\r\n              <AnimatedCounter value={83} suffix='%' isInView={isInView} />\r\n            </p>\r\n          </div>\r\n          <AnimatedProgress value={83} color='**:data-[slot=progress-indicator]:bg-sky-400' />\r\n        </div>\r\n        <img\r\n          src={\r\n            'https://images.shadcnspace.com/assets/backgrounds/top-info-shape.png'\r\n          }\r\n          className='absolute top-0 end-0 rtl:transform rtl:scale-x-[-1]'\r\n        />\r\n      </Card>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Widget11\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/widget-11/widget11.tsx"
+    }
+  ]
+}

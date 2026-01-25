@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marquee",
+  "type": "registry:component",
+  "title": "Marquee",
+  "description": "Marquee component",
+  "dependencies": [
+    "motion",
+    "@iconify/react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/marquee/marquee.tsx",
+      "content": "\"use client\";\r\n\r\nimport { motion } from \"motion/react\";\r\nimport { Icon } from \"@iconify/react\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nexport default function Marquee() {\r\n  const data = [\r\n    {\r\n      bg: \"bg-indigo-100\",\r\n      icon: \"solar:dollar-minimalistic-linear\",\r\n      color: \"bg-indigo-500\",\r\n      title: \"Total Orders\",\r\n      price: \"16,689\",\r\n      link: \"#\",\r\n    },\r\n    {\r\n      bg: \"bg-rose-100\",\r\n      icon: \"ic:baseline-sync-problem\",\r\n      color: \"bg-rose-400\",\r\n      title: \"Cancel Orders\",\r\n      price: \"64\",\r\n      link: \"#\",\r\n    },\r\n    {\r\n      bg: \"bg-green-100\",\r\n      icon: \"ic:outline-forest\",\r\n      color: \"bg-green-500\",\r\n      title: \"Total Income \",\r\n      price: \"$36,715\",\r\n      link: \"#\",\r\n    },\r\n  ];\r\n\r\n  return (\r\n    <div className=\"overflow-hidden flex items-center justify-center max-w-5xl\">\r\n      <motion.div\r\n        animate={{ x: [\"0%\", \"-29%\"] }}\r\n        transition={{\r\n          duration: 10,\r\n          ease: \"linear\",\r\n          repeat: Infinity,\r\n        }}\r\n        className=\"flex flex-nowrap gap-4\"\r\n      >\r\n        {data.map((item, index) => (\r\n          <div className=\"shrink-0\" key={index}>\r\n            <div className={`text-center px-5 py-7 rounded-lg w-64 ${item.bg}`}>\r\n              <span\r\n                className={`h-12 w-12 mx-auto flex items-center justify-center rounded-lg ${item.color}`}\r\n              >\r\n                <Icon icon={item.icon} className=\"text-white\" height={24} />\r\n              </span>\r\n              <p className=\"text-sm font-normal mt-4 mb-2\">{item.title}</p>\r\n              <h4 className=\"text-base! font-medium!\">{item.price}</h4>\r\n              <Button\r\n                size=\"sm\"\r\n                className=\"w-fit mx-auto mt-5 bg-white hover:bg-neutral-800 text-ld font-semibold hover:text-white shadow-sm py-1 px-3 dark:bg-neutral-800 dark:hover:bg-neutral-700\"\r\n              >\r\n                <a href={item.link}>View Details</a>\r\n              </Button>\r\n            </div>\r\n          </div>\r\n        ))}\r\n        {data.map((item, index) => (\r\n          <div className=\"shrink-0 \" key={index}>\r\n            <div className={`text-center px-5 py-7 rounded-lg w-64 ${item.bg}`}>\r\n              <span\r\n                className={`h-12 w-12 mx-auto flex items-center justify-center rounded-lg ${item.color}`}\r\n              >\r\n                <Icon icon={item.icon} className=\"text-white\" height={24} />\r\n              </span>\r\n              <p className=\"text-sm font-normal mt-4 mb-2\">{item.title}</p>\r\n              <h4 className=\"text-base! font-medium!\">{item.price}</h4>\r\n              <Button\r\n                size=\"sm\"\r\n                className=\"w-fit mx-auto mt-5 bg-white hover:bg-neutral-800 text-ld font-semibold hover:text-white shadow-sm py-1 px-3 dark:bg-neutral-800 dark:hover:bg-neutral-700\"\r\n              >\r\n                <a href={item.link}>View Details</a>\r\n              </Button>\r\n            </div>\r\n          </div>\r\n        ))}\r\n      </motion.div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/marquee/marquee.tsx"
+    }
+  ]
+}

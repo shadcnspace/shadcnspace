@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-02",
+  "type": "registry:component",
+  "title": "Checkbox-02 - Checkbox with vertical group",
+  "description": "Checkbox component",
+  "dependencies": [],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/checkbox/checkbox-02.tsx",
+      "content": "import { Dribbble, Facebook, Instagram } from 'lucide-react'\r\nimport { Checkbox } from '@/components/ui/checkbox'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst socials = [\r\n  { label: 'Dribble', icon: Dribbble },\r\n  { label: 'Facebook', icon: Facebook },\r\n  { label: 'Instagram', icon: Instagram }\r\n]\r\n\r\nconst CheckboxVerticalGroupDemo = () => {\r\n  return (\r\n    <div className='space-y-4'>\r\n      <Label>Let's Get Social</Label>\r\n      <div className='flex flex-col gap-4'>\r\n        {socials.map(({ label, icon: Icon }) => (\r\n          <div key={label} className='flex items-center gap-2'>\r\n            <Checkbox id={label} />\r\n            <Label htmlFor={label}>\r\n              <Icon className='size-4' aria-hidden='true' />\r\n              {label}\r\n            </Label>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default CheckboxVerticalGroupDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/checkbox/checkbox-02.tsx"
+    }
+  ]
+}

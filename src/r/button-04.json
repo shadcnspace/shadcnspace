@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-04",
+  "type": "registry:component",
+  "title": "Button-04 - Heartbeat Effect",
+  "description": "Heartbeat Effect button component",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-04.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport \"@/components/shadcn-space/button/button-04.css\";\r\n\r\nconst ButtonHeartbeatEffectDemo = () => {\r\n  return (\r\n    <>\r\n      <Button variant=\"destructive\" className=\"heartbeateffect\">\r\n        Heartbeat Effect\r\n      </Button>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default ButtonHeartbeatEffectDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-04.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/button/button-04.css",
+      "content": ".heartbeateffect {\r\n  animation: heartbeat 2s ease-in-out infinite;\r\n}\r\n\r\n@keyframes heartbeat {\r\n  0% {\r\n    box-shadow: 0 0 0 0 var(--heartbeat-color, var(--destructive));\r\n    transform: scale(1);\r\n  }\r\n  50% {\r\n    box-shadow: 0 0 0 7px transparent;\r\n    transform: scale(1.05);\r\n  }\r\n  100% {\r\n    box-shadow: 0 0 0 0 transparent;\r\n    transform: scale(1);\r\n  }\r\n}\r\n",
+      "type": "registry:style",
+      "target": "components/shadcn-space/button/button-04.css"
+    }
+  ]
+}

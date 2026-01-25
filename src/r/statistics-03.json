@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-03",
+  "type": "registry:block",
+  "title": "Statistics 03",
+  "description": "A simple statistics block",
+  "dependencies": [
+    "@iconify/react",
+    "react-apexcharts"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-03/page.tsx",
+      "content": "import Statistics03 from \"@/components/shadcn-space/blocks/statistics-03/statistics03\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics03 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-03/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-03/statistics03.tsx",
+      "content": "\"use client\";\r\nimport { Card } from \"@/components/ui/card\";\r\nimport dynamic from \"next/dynamic\";\r\nconst Chart = dynamic(() => import(\"react-apexcharts\"), { ssr: false });\r\n\r\nconst ChartData: any = {\r\n    series: [\r\n        {\r\n            name: \"Project\",\r\n            data: [3, 5, 5, 7, 6, 5, 3, 5, 3],\r\n            labels: [\"2012\", \"2013\", \"2014\", \"2015\", \"2016\", \"2017\"],\r\n        },\r\n    ],\r\n\r\n    chart: {\r\n        fontFamily: \"inherit\",\r\n        height: 55,\r\n        type: \"bar\",\r\n        offsetX: -3,\r\n        toolbar: {\r\n            show: false,\r\n        },\r\n        sparkline: {\r\n            enabled: true,\r\n        },\r\n    },\r\n    colors: [\"#fff\"],\r\n    plotOptions: {\r\n        bar: {\r\n            horizontal: false,\r\n            columnWidth: \"55%\",\r\n            endingShape: \"flat\",\r\n            borderRadius: 4,\r\n        },\r\n    },\r\n    tooltip: {\r\n        theme: \"dark\",\r\n        followCursor: true,\r\n    },\r\n};\r\n\r\nconst Statistics03 = () => {\r\n    return (\r\n        <div className=\"min-h-screen mx-10 flex flex-col items-center justify-center\">\r\n            <Card className=\"shadow-none p-0 overflow-hidden border-0 bg-red-500/10\">\r\n                <div className=\"p-6\">\r\n                    <p className=\"text-sm font-normal text-muted-foreground mb-2\">Projects</p>\r\n                    <div className=\"flex gap-3 align-self mb-4\">\r\n                        <h5 className=\"text-foreground text-2xl font-semibold\">78,298</h5>\r\n                        <span className=\"text-sm font-normal pt-1 text-muted-foreground\">+31.8%</span>\r\n                    </div>\r\n                    <Chart\r\n                        options={ChartData}\r\n                        series={ChartData.series}\r\n                        type=\"bar\"\r\n                        height=\"55px\"\r\n                        width=\"100%\"\r\n                    />\r\n                </div>\r\n            </Card>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Statistics03;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-03/statistics03.tsx"
+    }
+  ]
+}

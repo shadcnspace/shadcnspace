@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-25",
+  "type": "registry:block",
+  "title": "Statistics 25",
+  "description": "A return on investment statistics block",
+  "dependencies": [
+    "react-apexcharts",
+    "@iconify/react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "card",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-25/page.tsx",
+      "content": "import Statistics25 from \"@/components/shadcn-space/blocks/statistics-25/statistics25\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics25 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-25/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-25/statistics25.tsx",
+      "content": "'use client'\r\n\r\nimport dynamic from 'next/dynamic'\r\nimport { Icon } from '@iconify/react'\r\nimport { HiOutlineDotsVertical } from 'react-icons/hi'\r\nimport { Card } from '@/components/ui/card'\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuTrigger,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n} from '@/components/ui/dropdown-menu'\r\n\r\n\r\nconst Chart = dynamic(() => import('react-apexcharts'), { ssr: false })\r\n\r\nconst Statistics25 = () => {\r\n  const dropdownItems = ['Action', 'Another action', 'Something else']\r\n  const ChartData: any = {\r\n    series: [\r\n      {\r\n        name: '',\r\n        data: [128, 193, 150, 120, 174, 150],\r\n      },\r\n    ],\r\n    chart: {\r\n      toolbar: {\r\n        show: false,\r\n      },\r\n      height: 230,\r\n      type: 'bar',\r\n      fontFamily: 'inherit',\r\n      foreColor: '#adb0bb',\r\n    },\r\n    colors: [\r\n      'rgba(0,0,0,0.1)',\r\n      '#38BDF8',\r\n      'rgba(0,0,0,0.1)',\r\n      'rgba(0,0,0,0.1)',\r\n      'rgba(0,0,0,0.1)',\r\n      'rgba(0,0,0,0.1)',\r\n    ],\r\n    plotOptions: {\r\n      bar: {\r\n        borderRadius: 12,\r\n        columnWidth: '59%',\r\n        distributed: true,\r\n        endingShape: 'rounded',\r\n      },\r\n    },\r\n\r\n    dataLabels: {\r\n      enabled: false,\r\n    },\r\n    legend: {\r\n      show: false,\r\n    },\r\n    grid: {\r\n      yaxis: {\r\n        lines: {\r\n          show: false,\r\n        },\r\n      },\r\n      xaxis: {\r\n        lines: {\r\n          show: false,\r\n        },\r\n      },\r\n    },\r\n    xaxis: {\r\n      categories: [['JAN'], ['FEB'], ['MAR'], ['APR'], ['MAY'], ['JUN']],\r\n      axisBorder: {\r\n        show: false,\r\n      },\r\n      axisTicks: {\r\n        show: false,\r\n      },\r\n    },\r\n    yaxis: {\r\n      labels: {\r\n        show: false,\r\n      },\r\n    },\r\n    tooltip: {\r\n      theme: 'dark',\r\n    },\r\n  }\r\n  return (\r\n    <>\r\n      <div className='min-h-screen flex flex-col items-center justify-center'>\r\n        <Card className='bg-sky-400/10 w-full max-w-sm p-6 border-none'>\r\n          <div className='flex items-center justify-between'>\r\n            <h5 className='text-lg font-semibold text-foreground'>Return On Investment</h5>\r\n            <div>\r\n              <DropdownMenu>\r\n                <DropdownMenuTrigger className='outline-none'>\r\n                  <span className='h-9 w-9 flex justify-center items-center rounded-full cursor-pointer'>\r\n                    <HiOutlineDotsVertical size={22} />\r\n                  </span>\r\n                </DropdownMenuTrigger>\r\n                <DropdownMenuContent>\r\n                  {dropdownItems.map((items, index) => {\r\n                    return (\r\n                      <DropdownMenuItem\r\n                        key={index}\r\n                        className='font-normal cursor-pointer'>\r\n                        {items}\r\n                      </DropdownMenuItem>\r\n                    )\r\n                  })}\r\n                </DropdownMenuContent>\r\n              </DropdownMenu>\r\n            </div>\r\n          </div>\r\n\r\n          <div className='flex items-center pt-4'>\r\n            <span className='w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-black/20'>\r\n              <Icon icon='solar:course-up-line-duotone' height={24} />\r\n            </span>\r\n            <div className='flex items-center'>\r\n              <div className='px-6'>\r\n                <h4 className='text-xl font-semibold text-foreground'>283%</h4>\r\n                <p className='text-sm font-normal text-muted-foreground'>ROI</p>\r\n              </div>\r\n              <div className='px-6 border-s border-border'>\r\n                <h4 className='text-lg font-semibold text-sky-400'>+24%</h4>\r\n                <p className='text-sm font-normal text-muted-foreground'>January</p>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div className='-ms-3 h-[230px]'>\r\n            <Chart\r\n              options={ChartData}\r\n              series={ChartData.series}\r\n              type='bar'\r\n              height='230px'\r\n              width='100%'\r\n            />\r\n          </div>\r\n        </Card>\r\n      </div>\r\n    </>\r\n  )\r\n}\r\n\r\nexport default Statistics25\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-25/statistics25.tsx"
+    }
+  ]
+}

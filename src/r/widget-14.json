@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "widget-14",
+  "type": "registry:block",
+  "title": "Widget 14",
+  "description": "A upcoming schedule widget block",
+  "dependencies": [
+    "@iconify/react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/widget-14/page.tsx",
+      "content": "import Widget14 from \"@/components/shadcn-space/blocks/widget-14/widget14\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Widget14 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/widget-14/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/widget-14/widget14.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Card } from \"@/components/ui/card\";\r\nimport { Icon } from \"@iconify/react\";\r\nimport { motion } from \"motion/react\";\r\n\r\nconst Widget14 = () => {\r\n    return (\r\n        <div className=\"min-h-screen flex flex-col items-center justify-center mx-5\">\r\n            <motion.div\r\n                style={{ opacity: 0, y: 40 }}\r\n                animate={{ opacity: 1, y: 0 }}\r\n                transition={{ duration: 0.6, easing: \"ease-out\" }}\r\n            >\r\n                <Card className=\"p-7 gap-0 bg-linear-to-l from-indigo-400 to-indigo-600 relative overflow-hidden shadow-none min-w-xl w-full\">\r\n                    <motion.div\r\n                        style={{ opacity: 0, y: 10 }}\r\n                        animate={{ opacity: 1, y: 0 }}\r\n                        transition={{ duration: 0.5, delay: 0.2 }}\r\n                        className=\"bg-neutral-300/10 px-3 py-1.5 rounded-md w-fit\"\r\n                    >\r\n                        <div className=\"flex items-center gap-2 text-white\">\r\n                            <Icon icon=\"solar:check-circle-outline\" height={18} />\r\n                            This month <span className=\"font-semibold\">+15% Profit</span>\r\n                        </div>\r\n                    </motion.div>\r\n\r\n                    <motion.div\r\n                        style={{ opacity: 0, y: 15 }}\r\n                        animate={{ opacity: 1, y: 0 }}\r\n                        transition={{ duration: 0.5, delay: 0.35 }}\r\n                        className=\"pt-20 relative z-10\"\r\n                    >\r\n                        <h5 className=\"text-2xl text-white\">\r\n                            Hey,<span className=\"font-bold\"> David McMichael</span>\r\n                        </h5>\r\n\r\n                        <motion.p\r\n                            style={{ opacity: 0 }}\r\n                            animate={{ opacity: 1 }}\r\n                            transition={{ duration: 0.6, delay: 0.45 }}\r\n                            className=\"font-normal opacity-75 text-white text-sm mt-1\"\r\n                        >\r\n                            Aenean vel libero id metus sollicitudin\r\n                        </motion.p>\r\n                    </motion.div>\r\n\r\n                    <motion.div\r\n                        style={{ opacity: 0, scale: 0.9 }}\r\n                        animate={{ opacity: 1, scale: 1 }}\r\n                        transition={{ duration: 0.6, delay: 0.5 }}\r\n                    >\r\n                        <motion.div\r\n                            animate={{ y: [-4, 4, -4] }}\r\n                            transition={{\r\n                                duration: 4,\r\n                                repeat: Infinity,\r\n                                easing: \"ease-in-out\",\r\n                            }}\r\n                            className=\"absolute -bottom-2 end-0 rtl:scale-x-[-1]\"\r\n                        >\r\n                            <img\r\n                                src=\"https://images.shadcnspace.com/assets/backgrounds/welcome-bg2.png\"\r\n                                alt=\"background\"\r\n                                width={285}\r\n                                height={179}\r\n                            />\r\n                        </motion.div>\r\n                    </motion.div>\r\n\r\n                </Card>\r\n            </motion.div>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Widget14;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/widget-14/widget14.tsx"
+    }
+  ]
+}

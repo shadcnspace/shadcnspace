@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-09",
+  "type": "registry:component",
+  "title": "Checkbox-09 - Checkbox with tree",
+  "description": "Checkbox component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/checkbox/checkbox-09.tsx",
+      "content": "'use client'\r\n \r\nimport { useEffect, useState, type ComponentProps } from 'react'\r\nimport { CheckIcon, MinusIcon } from 'lucide-react'\r\nimport { Checkbox as CheckboxPrimitive } from '@base-ui/react/checkbox'\r\nimport { Label } from '@/components/ui/label'\r\n \r\nconst items = ['Nike', 'Adidas', 'Puma']\r\n \r\ntype CheckedState = boolean | 'indeterminate'\r\n \r\ninterface CheckboxProps extends Omit<ComponentProps<typeof CheckboxPrimitive.Root>, 'checked' | 'defaultChecked' | 'onCheckedChange'> {\r\n  checked?: CheckedState\r\n  defaultChecked?: CheckedState\r\n  onCheckedChange?: (checked: CheckedState) => void\r\n}\r\n \r\nconst Checkbox = ({ checked, defaultChecked, onCheckedChange, ...props }: CheckboxProps) => {\r\n  return (\r\n    <CheckboxPrimitive.Root\r\n      data-slot='checkbox'\r\n      checked={checked === 'indeterminate' ? undefined : checked}\r\n      indeterminate={checked === 'indeterminate'}\r\n      defaultChecked={defaultChecked === 'indeterminate' ? false : defaultChecked}\r\n      onCheckedChange={(c) => {\r\n        onCheckedChange?.(c)\r\n      }}\r\n      className='peer border-input dark:bg-input/30 data-[checked]:bg-primary data-[checked]:text-primary-foreground data-[indeterminate]:text-foreground dark:data-[checked]:bg-primary data-[checked]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive group size-4 shrink-0 rounded-[4px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50'\r\n      {...props}\r\n    >\r\n      <CheckboxPrimitive.Indicator\r\n        data-slot='checkbox-indicator'\r\n        className='flex items-center justify-center text-current transition-none'\r\n      >\r\n        <MinusIcon className='hidden size-2.5 group-data-[indeterminate]:block' />\r\n        <CheckIcon className='hidden size-3.5 group-data-[checked]:block' />\r\n      </CheckboxPrimitive.Indicator>\r\n    </CheckboxPrimitive.Root>\r\n  )\r\n}\r\n \r\nconst CheckboxTreeDemo = () => {\r\n  const [checked, setChecked] = useState<CheckedState>('indeterminate')\r\n  const [selected, setSelected] = useState<string[]>(['Child 1', 'Child 2'])\r\n \r\n  useEffect(() => {\r\n    if (selected.length === items.length) {\r\n      setChecked(true)\r\n    } else if (selected.length > 0) {\r\n      setChecked('indeterminate')\r\n    } else {\r\n      setChecked(false)\r\n    }\r\n  }, [selected])\r\n \r\n  const handleCheckedChange = (checked: CheckedState) => {\r\n    setChecked(checked)\r\n \r\n    if (checked === true) {\r\n      setSelected([...items])\r\n    } else if (checked === false) {\r\n      setSelected([])\r\n    }\r\n  }\r\n \r\n  return (\r\n    <div className='flex flex-col gap-4'>\r\n      <div className='flex items-center gap-2'>\r\n        <Checkbox id='Brands' checked={checked} onCheckedChange={handleCheckedChange} />\r\n        <Label htmlFor='Brands'>Brands</Label>\r\n      </div>\r\n      <div className='flex flex-col gap-2 pl-6'>\r\n        {items.map(label => (\r\n          <div key={label} className='flex items-center gap-2'>\r\n            <Checkbox\r\n              id={label}\r\n              checked={selected.includes(label)}\r\n              onCheckedChange={checked =>\r\n                setSelected(checked ? [...selected, label] : selected.filter(item => item !== label))\r\n              }\r\n            />\r\n            <Label htmlFor={label} className='text-muted-foreground'>{label}</Label>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n \r\nexport default CheckboxTreeDemo",
+      "type": "registry:component",
+      "target": "components/shadcn-space/checkbox/checkbox-09.tsx"
+    }
+  ]
+}

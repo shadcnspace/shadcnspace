@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "widget-07",
+  "type": "registry:block",
+  "title": "Widget 07",
+  "description": "A sales from locations widget block",
+  "dependencies": [
+    "devextreme-react/vector-map",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card",
+    "progress",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/widget-07/page.tsx",
+      "content": "import Widget07 from \"@/components/shadcn-space/blocks/widget-07/widget07\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Widget07 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/widget-07/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/widget-07/widget07.tsx",
+      "content": "'use client'\r\n\r\nimport { useRef, useEffect, useState } from 'react'\r\nimport { motion, useMotionValue, animate, useTransform, useInView } from 'motion/react'\r\nimport { Card } from '@/components/ui/card'\r\nimport { Progress } from '@/components/ui/progress'\r\nimport VectorMap, { Layer, Tooltip, LoadingIndicator, Size } from 'devextreme-react/vector-map'\r\nimport './styles/style.css'\r\n\r\nconst markers = [\r\n  { coordinates: [-118.245003, 34.053501], attributes: { name: 'Los Angeles' } },\r\n  { coordinates: [-74.007118, 40.71455], attributes: { name: 'New York' } },\r\n  { coordinates: [-84.423058, 33.763191], attributes: { name: 'Atlanta' } },\r\n  { coordinates: [-87.632408, 41.884151], attributes: { name: 'Chicago' } },\r\n]\r\n\r\nconst mapsData = require('devextreme/dist/js/vectormap-data/usa.js')\r\nconst bounds = [-110, 52, -80, 20]\r\n\r\n// Tooltip template for map markers\r\nfunction TooltipTemplate(info: any) {\r\n  return <div>{info.attribute('name')}</div>\r\n}\r\n\r\n// Animated ShadCN Progress Component\r\nconst AnimatedProgress = ({ value, color }: { value: number; color: string }) => {\r\n  const ref = useRef<HTMLDivElement>(null)\r\n  const isInView = useInView(ref, { once: true, amount: 0.5 })\r\n  const progress = useMotionValue(0)\r\n  const [current, setCurrent] = useState(0)\r\n\r\n  useEffect(() => {\r\n    if (isInView) {\r\n      const controls = animate(progress, value, {\r\n        duration: 1.5,\r\n        ease: 'easeOut',\r\n        onUpdate(latest) {\r\n          setCurrent(latest)\r\n        },\r\n      })\r\n      return controls.stop\r\n    }\r\n  }, [isInView, value, progress])\r\n\r\n  return (\r\n    <div ref={ref}>\r\n      <Progress\r\n        value={current}\r\n        className={`h-1 ${color} transition-all duration-500 ease-out`}\r\n      />\r\n    </div>\r\n  )\r\n}\r\n\r\n// Animated numeric counter\r\nfunction AnimatedCounter({ value, prefix = '', suffix = '', isInView = true }: { value: number; prefix?: string; suffix?: string; isInView?: boolean }) {\r\n  const count = useMotionValue(0)\r\n  const rounded = useTransform(count, (latest) => Math.round(latest).toLocaleString())\r\n\r\n  useEffect(() => {\r\n    if (isInView) {\r\n      const controls = animate(count, value, { duration: 1.5, ease: 'easeOut' })\r\n      return controls.stop\r\n    }\r\n  }, [count, value, isInView])\r\n\r\n  return (\r\n    <motion.span>\r\n      {prefix}\r\n      <motion.span>{rounded}</motion.span>\r\n      {suffix}\r\n    </motion.span>\r\n  )\r\n}\r\n\r\nconst Widget07 = () => {\r\n  const SalesFromLocationData = [\r\n    { name: 'LA', percentage: 28, color: '**:data-[slot=progress-indicator]:bg-sky-400' },\r\n    { name: 'NY', percentage: 21, color: '**:data-[slot=progress-indicator]:bg-blue-500' },\r\n    { name: 'KA', percentage: 18, color: '**:data-[slot=progress-indicator]:bg-amber-300' },\r\n    { name: 'AZ', percentage: 12, color: '**:data-[slot=progress-indicator]:bg-red-500' },\r\n  ]\r\n\r\n  const ref = useRef(null)\r\n  const isInView = useInView(ref, { once: true, amount: 0.2 })\r\n\r\n  return (\r\n    <div ref={ref} className='min-h-screen flex items-center justify-center px-6'>\r\n      <Card className='w-full max-w-sm gap-5 p-6'>\r\n        <div>\r\n          <h5 className='text-lg font-semibold text-foreground'>Sales from Locations</h5>\r\n          <p className='text-sm font-medium text-muted-foreground'>United States</p>\r\n\r\n          <div>\r\n            <VectorMap id='vector-map' height={260} bounds={bounds}>\r\n              <Size height={230} width='100%' />\r\n              <Layer dataSource={mapsData.usa} hoverEnabled borderColor='#ffffff' />\r\n              <Layer dataSource={markers} />\r\n              <LoadingIndicator show={false} />\r\n              <Tooltip enabled={false} contentRender={TooltipTemplate} />\r\n            </VectorMap>\r\n          </div>\r\n\r\n          <div className='border-t border-ld pt-8'>\r\n            {SalesFromLocationData.map((item, index) => (\r\n              <div key={index} className='grid grid-cols-12 gap-[15px] items-center mb-4'>\r\n                <div className='xl:col-span-2 lg:col-span-2 sm:col-span-2 col-span-2'>\r\n                  <h6 className='text-sm font-semibold text-foreground'>{item.name}</h6>\r\n                </div>\r\n                <div className='xl:col-span-8 lg:col-span-6 col-span-7'>\r\n                  <AnimatedProgress value={item.percentage} color={item.color} />\r\n                </div>\r\n                <div className='xl:col-span-2 lg:col-span-3 sm:col-span-3 col-span-3 text-end'>\r\n                  <h6 className='text-sm font-semibold text-foreground'>\r\n                    <AnimatedCounter value={item.percentage} suffix='%' isInView={isInView} />\r\n                  </h6>\r\n                </div>\r\n              </div>\r\n            ))}\r\n          </div>\r\n        </div>\r\n      </Card>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Widget07\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/widget-07/widget07.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/widget-07/styles/style.css",
+      "content": "#vector-map svg .dxm-background {\r\n  stroke: transparent !important;\r\n}\r\n#vector-map svg path {\r\n  fill: #c9d6de !important;\r\n  stroke-width: 0.2px;\r\n}\r\n.dxm-tooltip svg path {\r\n  fill: var(--color-dark) !important;\r\n  stroke-width: 0;\r\n}\r\n.dxm-tooltip div {\r\n  color: #fff !important;\r\n  font-family: inherit !important;\r\n}\r\n\r\n.dark #vector-map svg .dxm-background {\r\n  fill: transparent !important;\r\n}\r\n\r\n.dark #vector-map svg path {\r\n  stroke-width: 0;\r\n}",
+      "type": "registry:style",
+      "target": "components/shadcn-space/blocks/widget-07/styles/style.css"
+    }
+  ]
+}

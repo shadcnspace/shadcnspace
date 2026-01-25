@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-18",
+  "type": "registry:component",
+  "title": "Input-18 - Disabled",
+  "description": "Input component",
+  "dependencies": [],
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-18.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst InputDisabledDemo = () => {\r\n  return (\r\n    <div className=\"grid w-full max-w-sm items-center gap-1.5\">\r\n      <Label htmlFor=\"disabled-input\">Account Number</Label>\r\n      <Input\r\n        type=\"text\"\r\n        id=\"disabled-input\"\r\n        value=\"ACC-987654321\"\r\n        placeholder=\"ACC-987654321\"\r\n        disabled\r\n      />\r\n      <p className=\"text-xs text-muted-foreground\">\r\n        This field cannot be edited.\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputDisabledDemo;",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-18.tsx"
+    }
+  ]
+}

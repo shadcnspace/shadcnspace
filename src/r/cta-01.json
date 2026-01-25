@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cta-01",
+  "type": "registry:block",
+  "title": "CTA 01 - Gradient Call-to-Action Banner",
+  "description": "A minimal full width CTA section with soft gradient background, persuasive headline, and primary action button, perfect for converting visitors into leads at the end of any page.",
+  "dependencies": [
+    "@iconify/react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/cta-01/page.tsx",
+      "content": "import CTA from \"@/components/shadcn-space/blocks/cta-01/cta\";\r\n\r\nexport default function Page() {\r\n    return (\r\n        <main>\r\n            <CTA />\r\n        </main>\r\n    )\r\n}",
+      "type": "registry:page",
+      "target": "app/cta-01/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/cta-01/cta.tsx",
+      "content": "\"use client\";\r\nimport { useRef } from \"react\";\r\nimport { motion } from \"motion/react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ArrowUpRight } from \"lucide-react\";\r\n\r\ntype CTAProps = {\r\n  className?: string;\r\n};\r\n\r\nconst CTA = ({ className }: CTAProps) => {\r\n  const ref = useRef(null);\r\n\r\n  const bottomAnimation = {\r\n    initial: { y: \"5%\", opacity: 0 },\r\n    animate: { y: 0, opacity: 1 },\r\n    transition: { duration: 1, delay: 0.8 },\r\n  };\r\n\r\n  return (\r\n    <section>\r\n      <div className=\"sm:py-20 py-8\">\r\n        <div className=\"max-w-7xl mx-auto sm:px-16 px-4\">\r\n          <div\r\n            ref={ref}\r\n            className=\"relative overflow-hidden min-h-96 flex items-center justify-center px-6 border border-border rounded-3xl before:absolute before:w-full before:h-4/5 before:bg-linear-to-r before:from-sky-100 before:from-15% before:via-white before:via-55% before:to-amber-100 before:to-90% before:rounded-full before:top-24 before:blur-3xl before:-z-10 dark:before:from-sky-400/10 dark:before:from-40% dark:before:via-black dark:before:via-55% dark:before:to-amber-300/10 dark:before:to-60% dark:before:rounded-full dark:before:-z-10\"\r\n          >\r\n            <motion.div\r\n              {...bottomAnimation}\r\n              className=\"flex flex-col gap-6 items-center mx-auto\"\r\n            >\r\n              <div className=\"flex flex-col gap-3 items-center text-center\">\r\n                <h2 className=\"text-3xl md:text-5xl font-medium\">\r\n                  Innovative solutions for bold brands\r\n                </h2>\r\n                <p className=\"max-w-2xl mx-auto\">\r\n                  Looking to elevate your brand? We craft immersive experiences\r\n                  that captivate, engage, and make your business unforgettable\r\n                  in every interaction.\r\n                </p>\r\n              </div>\r\n              <Button className=\"relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden\">\r\n                <span className=\"relative z-10 transition-all duration-500\">\r\n                  Let's craft together\r\n                </span>\r\n                <div className=\"absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45\">\r\n                  <ArrowUpRight size={16} />\r\n                </div>\r\n              </Button>\r\n            </motion.div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n  );\r\n};\r\n\r\nexport default CTA;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/cta-01/cta.tsx"
+    }
+  ]
+}

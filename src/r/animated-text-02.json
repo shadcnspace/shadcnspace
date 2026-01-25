@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-text-02",
+  "type": "registry:component",
+  "title": "Animated Text-02 - Gradient Text",
+  "description": "Animated Gradient Text component",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/animated-text/animated-text-02.tsx",
+      "content": "\"use client\";\r\n\r\nimport { motion } from \"motion/react\";\r\n\r\nconst AnimatedTextGradientMotion = () => {\r\n  return (\r\n    <>\r\n      <motion.p\r\n        className=\"text-xl sm:text-2xl font-bold text-start bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent\"\r\n        animate={{\r\n          backgroundImage: [\r\n            \"linear-gradient(to right, hsl(172 66% 50%), hsl(27 96% 61%))\",\r\n            \"linear-gradient(to right, hsl(27 96% 61%), hsl(172 66% 50%))\",\r\n          ],\r\n        }}\r\n        transition={{\r\n          duration: 2,\r\n          repeat: Infinity,\r\n          repeatType: \"reverse\",\r\n          ease: \"linear\",\r\n        }}\r\n      >\r\n        Animated Gradient Text\r\n      </motion.p>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default AnimatedTextGradientMotion;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/animated-text/animated-text-02.tsx"
+    }
+  ]
+}

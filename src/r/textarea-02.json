@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-02",
+  "type": "registry:component",
+  "title": "Textarea-02 - Textarea with icon",
+  "description": "Textarea component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "textarea",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/textarea/textarea-02.tsx",
+      "content": "import { useId } from 'react'\r\nimport { HomeIcon } from 'lucide-react'\r\nimport { Textarea } from '@/components/ui/textarea'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst TextareaIconDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Address</Label>\r\n      <div className='relative'>\r\n        <div className='text-muted-foreground pointer-events-none absolute top-2.5 left-0 flex items-center justify-center pl-3 peer-disabled:opacity-50'>\r\n          <HomeIcon className='size-4' />\r\n          <span className='sr-only'>Address</span>\r\n        </div>\r\n        <Textarea id={id} placeholder='123 Main St, Anytown, USA' className='peer pl-9' />\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default TextareaIconDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/textarea/textarea-02.tsx"
+    }
+  ]
+}

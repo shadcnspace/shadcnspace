@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-05",
+  "type": "registry:component",
+  "title": "Checkbox-05 - Checkbox with list group",
+  "description": "Checkbox component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/checkbox/checkbox-05.tsx",
+      "content": "import { Gamepad2, MapPinned, Music2 } from 'lucide-react'\r\nimport { Checkbox } from '@/components/ui/checkbox'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst skills = [\r\n  { label: 'Music & Singing', icon: Music2  },\r\n  { label: 'Gaming', icon: Gamepad2 },\r\n  { label: 'Traveling', icon: MapPinned },\r\n]\r\n\r\nconst CheckboxListGroupDemo = () => {\r\n  return (\r\n    <ul className='flex w-full flex-col divide-y rounded-md border'>\r\n      {skills.map(({ label, icon: Icon }) => (\r\n        <li key={label}>\r\n          <Label htmlFor={label} className='flex items-center justify-between gap-2 px-5 py-3'>\r\n            <span className='flex items-center gap-2'>\r\n              <Icon className='size-4' /> {label}\r\n            </span>\r\n            <Checkbox id={label} />\r\n          </Label>\r\n        </li>\r\n      ))}\r\n    </ul>\r\n  )\r\n}\r\n\r\nexport default CheckboxListGroupDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/checkbox/checkbox-05.tsx"
+    }
+  ]
+}

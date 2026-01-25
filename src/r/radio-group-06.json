@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-06",
+  "type": "registry:component",
+  "title": "Radio Group-06 - Radio Group with tree",
+  "description": "Radio Group component",
+  "dependencies": [],
+  "registryDependencies": [
+    "badge",
+    "label",
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/radio-group/radio-group-06.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst RadioGroupListGroupDemo = () => {\r\n  const id = useId();\r\n  type PlanType = \"1\" | \"2\" | \"3\";\r\n  const [value, setValue] = useState<PlanType>(\"2\");\r\n\r\n  const items = [\r\n    { value: \"1\", label: \"Pro\", price: \"$39/mo\" },\r\n    { value: \"2\", label: \"Team\", price: \"$69/mo\" },\r\n    { value: \"3\", label: \"Enterprise\", price: \"Custom\" },\r\n  ];\r\n\r\n  return (\r\n    <RadioGroup\r\n      value={value}\r\n      onValueChange={(value) => setValue(value as PlanType)}\r\n      className=\"w-full max-w-96 gap-0 -space-y-px rounded-md shadow-xs\"\r\n    >\r\n      {items.map((item) => (\r\n        <div\r\n          key={`${id}-${item.value}`}\r\n          onClick={() => setValue(item.value as PlanType)}\r\n          className={cn(\r\n            \"border-input relative flex cursor-pointer flex-col gap-4 border p-4 outline-none first:rounded-t-md last:rounded-b-md\",\r\n            value === item.value && \"bg-accent border-border z-10\",\r\n          )}\r\n        >\r\n          <div className=\"flex items-center justify-between\">\r\n            <div className=\"flex items-center gap-2\">\r\n              <Label\r\n                htmlFor={`${id}-${item.value}`}\r\n                className=\"flex items-center gap-2 cursor-pointer font-semibold\"\r\n              >\r\n                {item.label}\r\n                <Badge\r\n                  id={`${id}-${item.value}-price`}\r\n                  className=\"text-xs font-normal bg-blue-500/10 text-blue-500\"\r\n                >\r\n                  {item.price}\r\n                </Badge>\r\n              </Label>\r\n            </div>\r\n\r\n            <RadioGroupItem\r\n              id={`${id}-${item.value}`}\r\n              value={item.value}\r\n              className=\"pointer-events-none\"\r\n              aria-describedby={`${id}-${item.value}-price`}\r\n            />\r\n          </div>\r\n        </div>\r\n      ))}\r\n    </RadioGroup>\r\n  );\r\n};\r\n\r\nexport default RadioGroupListGroupDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/radio-group/radio-group-06.tsx"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-04",
+  "type": "registry:component",
+  "title": "Tabs-04 - With Count",
+  "description": "Tabs component",
+  "dependencies": [],
+  "registryDependencies": [
+    "tabs",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/tabs/tabs-04.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";\r\n\r\ntype TabsWithCountProps = {\r\n  tabs: {\r\n    name: string;\r\n    value: string;\r\n    count: number;\r\n    content: React.ReactNode;\r\n  }[];\r\n};\r\n\r\nconst tabs: TabsWithCountProps[\"tabs\"] = [\r\n  {\r\n    name: \"My details\",\r\n    value: \"my-details\",\r\n    count: 5,\r\n    content: (\r\n      <>\r\n        Manage your personal{\" \"}\r\n        <span className=\"text-foreground font-semibold\">account details</span> .\r\n        Keep everything up to date so we can serve you better.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: \"Profile\",\r\n    value: \"profile\",\r\n    count: 3,\r\n    content: (\r\n      <>\r\n        Customize how others see you. Update your{\" \"}\r\n        <span className=\"text-foreground font-semibold\">\r\n          profile information\r\n        </span>\r\n        , bio, and preferences to reflect who you are.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: \"Password\",\r\n    value: \"password\",\r\n    count: 7,\r\n    content: (\r\n      <>\r\n        Keep your account{\" \"}\r\n        <span className=\"text-foreground font-semibold\">secure</span> by\r\n        updating your password regularly. Choose a strong password to protect\r\n        your data.\r\n      </>\r\n    ),\r\n  },\r\n  {\r\n    name: \"Team\",\r\n    value: \"team\",\r\n    count: 9,\r\n    content: (\r\n      <>\r\n        Manage your{\" \"}\r\n        <span className=\"text-foreground font-semibold\">team members</span>,\r\n        invite new collaborators, assign roles, and control access permissions\r\n        from one place.\r\n      </>\r\n    ),\r\n  },\r\n];\r\n\r\nconst TabsWithIconDemo = () => {\r\n  return (\r\n    <div className=\"w-full max-w-md\">\r\n      <Tabs defaultValue=\"explore\" className=\"gap-4\">\r\n        <TabsList>\r\n          {tabs.map(({ name, value, count }) => (\r\n            <TabsTrigger\r\n              key={value}\r\n              value={value}\r\n              className=\"flex items-center gap-1 px-2.5 sm:px-3\"\r\n            >\r\n              {name}\r\n              <Badge className=\"h-5 w-5\">{count}</Badge>\r\n            </TabsTrigger>\r\n          ))}\r\n        </TabsList>\r\n\r\n        {tabs.map((tab) => (\r\n          <TabsContent key={tab.value} value={tab.value}>\r\n            <p className=\"text-muted-foreground text-sm\">{tab.content}</p>\r\n          </TabsContent>\r\n        ))}\r\n      </Tabs>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default TabsWithIconDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/tabs/tabs-04.tsx"
+    }
+  ]
+}

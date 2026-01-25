@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "widget-15",
+  "type": "registry:block",
+  "title": "Widget 15",
+  "description": "A upcoming schedule widget block",
+  "dependencies": [
+    "@iconify/react"
+  ],
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/widget-15/page.tsx",
+      "content": "import Widget15 from \"@/components/shadcn-space/blocks/widget-15/widget15\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Widget15 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/widget-15/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/widget-15/widget15.tsx",
+      "content": "'use client'\r\n\r\nimport { useEffect, useState } from 'react'\r\nimport { Icon } from '@iconify/react'\r\nimport { Card } from '@/components/ui/card'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst Widget15 = () => {\r\n    const [greeting, setGreeting] = useState('')\r\n\r\n    useEffect(() => {\r\n        const hour = new Date().getHours()\r\n\r\n        if (hour >= 5 && hour < 12) {\r\n            setGreeting('Good Morning')\r\n        } else if (hour >= 12 && hour < 17) {\r\n            setGreeting('Good Afternoon')\r\n        } else if (hour >= 17 && hour < 21) {\r\n            setGreeting('Good Evening')\r\n        } else {\r\n            setGreeting('Good Night')\r\n        }\r\n    }, [])\r\n\r\n    const getGreetingIcon = () => {\r\n        if (greeting === 'Good Morning' || greeting === 'Good Afternoon') {\r\n            return (\r\n                <Icon\r\n                    icon='line-md:sunny-filled-loop'\r\n                    color='orange'\r\n                    width='25'\r\n                    height='25'\r\n                />\r\n            )\r\n        } else {\r\n            return (\r\n                <Icon\r\n                    icon='line-md:moon-filled-alt-loop'\r\n                    color='white'\r\n                    width='25'\r\n                    height='25'\r\n                />\r\n            )\r\n        }\r\n    }\r\n\r\n    return (\r\n        <>\r\n            <div className='min-h-screen flex flex-col items-center justify-center'>\r\n                <Card className='w-full max-w-xl relative p-6'>\r\n                    <div className='flex flex-col gap-8'>\r\n                        <div>\r\n                            <h5 className='text-lg font-semibold text-foreground flex items-center gap-2'>\r\n                                {greeting}, Mike\r\n                                {getGreetingIcon()}\r\n                            </h5>\r\n                            <p className='text-sm font-medium text-muted-foreground'>Welcome to shadcnspace!</p>\r\n                        </div>\r\n                        <div>\r\n                            <Button className='w-fit rounded-full cursor-pointer'>Visit Now</Button>\r\n                        </div>\r\n                    </div>\r\n                    <img\r\n                        src='https://images.shadcnspace.com/assets/backgrounds/welcome-bg-3.png'\r\n                        className='hidden sm:block sm:absolute -end-3 bottom-0 rtl:transform rtl:scale-x-[-1]'\r\n                        alt='image'\r\n                    />\r\n                </Card>\r\n            </div>\r\n        </>\r\n    )\r\n}\r\n\r\nexport default Widget15\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/widget-15/widget15.tsx"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gallery-01",
+  "type": "registry:block",
+  "title": "Gallery 01 - Image Gallery Section",
+  "description": "Explore a curated collection of breathtaking destinations and unforgettable experiences from around the world.",
+  "dependencies": [],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/gallery-01/page.tsx",
+      "content": "import Gallery from \"@/components/shadcn-space/blocks/gallery-01/gallery\";\r\n\r\nconst Page = () => {\r\n  return <Gallery/>;\r\n};\r\n\r\nexport default Page;",
+      "type": "registry:page",
+      "target": "app/gallery-01/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/gallery-01/gallery.tsx",
+      "content": "import { Card } from \"@/components/ui/card\";\r\n\r\nconst Gallery = () => {\r\n  return (\r\n    <>\r\n      <div className=\"min-h-screen flex items-center justify-center w-full\">\r\n        <div className=\"max-w-7xl mx-auto px-4 lg:px-8 xl:px-16 py-10 w-full\">\r\n          <div className=\"grid grid-cols-1 gap-6 md:grid-cols-2\">\r\n            {/* LEFT – Large card */}\r\n            <Card className=\"group relative  overflow-hidden rounded-lg border-none p-0 \">\r\n              <img\r\n                src=\"https://images.shadcnspace.com/assets/gallery/destinations-1.webp\"\r\n                alt=\"Hiking Adventure\"\r\n                className=\"object-cover transition-transform duration-500 group-hover:scale-105 h-full w-full\"\r\n              />\r\n              {/* <div className=\"absolute inset-0 bg-black/30\" /> */}\r\n              <div className=\"absolute bottom-0 ps-8 pb-8 z-10 flex flex-col gap-1\">\r\n                <h3 className=\"text-2xl font-semibold text-white\">\r\n                  Hiking Adventure\r\n                </h3>\r\n                <p className=\"text-white/80 text-sm\">306 Destinations</p>\r\n              </div>\r\n            </Card>\r\n\r\n            {/* RIGHT SIDE */}\r\n            <div className=\"grid grid-rows-2 gap-6\">\r\n              {/* Top wide card */}\r\n              <Card className=\"group relative  overflow-hidden rounded-lg border-none p-0 \">\r\n                <img\r\n                  src=\"https://images.shadcnspace.com/assets/gallery/destinations-2.webp\"\r\n                  alt=\"Outdoor Adventure\"\r\n                  className=\"object-cover transition-transform duration-500 group-hover:scale-105 h-full w-full\"\r\n                />\r\n\r\n                <div className=\"absolute bottom-0 ps-8 pb-8 z-10 flex flex-col gap-1\">\r\n                  <h3 className=\"text-xl font-semibold text-white\">\r\n                    Outdoor Adventure\r\n                  </h3>\r\n                  <p className=\"text-white/80\">418 Destinations</p>\r\n                </div>\r\n              </Card>\r\n\r\n              {/* Bottom two cards */}\r\n              <div className=\"grid grid-cols-2 gap-6\">\r\n                <Card className=\"group relative  overflow-hidden rounded-lg border-none p-0\">\r\n                  <img\r\n                    src=\"https://images.shadcnspace.com/assets/gallery/destinations-3.webp\"\r\n                    alt=\"Beach Adventure\"\r\n                    className=\"object-cover transition-transform duration-500 group-hover:scale-105 h-full w-full\"\r\n                  />\r\n\r\n                  <div className=\"absolute bottom-0 ps-8 pb-8 z-10 flex flex-col gap-1\">\r\n                    <h3 className=\"text-lg font-semibold text-white\">\r\n                      Beach Adventure\r\n                    </h3>\r\n                    <p className=\"text-sm text-white/80\">85 Destinations</p>\r\n                  </div>\r\n                </Card>\r\n\r\n                <Card className=\"group relative  overflow-hidden rounded-lg border-none p-0\">\r\n                  <img\r\n                    src=\"https://images.shadcnspace.com/assets/gallery/destinations-4.webp\"\r\n                    alt=\"Pilgrimage Destination\"\r\n                    className=\"object-cover transition-transform duration-500 group-hover:scale-105 h-full w-full\"\r\n                  />\r\n\r\n                  <div className=\"absolute bottom-0 ps-8 pb-8 z-10 flex flex-col gap-1\">\r\n                    <h3 className=\"text-lg font-semibold text-white\">\r\n                      Pilgrimage Destination\r\n                    </h3>\r\n                    <p className=\"text-sm text-white/80\">29 Destinations</p>\r\n                  </div>\r\n                </Card>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Gallery;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/gallery-01/gallery.tsx"
+    }
+  ]
+}

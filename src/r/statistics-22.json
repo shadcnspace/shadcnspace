@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-22",
+  "type": "registry:block",
+  "title": "Statistics 22",
+  "description": "A customer traffic statistics block",
+  "dependencies": [
+    "react-apexcharts"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-22/page.tsx",
+      "content": "import Statistics22 from \"@/components/shadcn-space/blocks/statistics-22/statistics22\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics22 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-22/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-22/statistics22.tsx",
+      "content": "'use client'\r\n\r\nimport dynamic from 'next/dynamic'\r\nimport { Badge } from '@/components/ui/badge'\r\nimport { Card } from '@/components/ui/card'\r\n\r\nconst Chart = dynamic(() => import('react-apexcharts'), { ssr: false })\r\n\r\nconst Statistics22 = () => {\r\n  const ChartData: any = {\r\n    series: [\r\n      {\r\n        name: 'monthly earnings',\r\n        color: '#38BDF8',\r\n        data: [15, 18, 66, 20, 40, 12, 30],\r\n      },\r\n    ],\r\n    chart: {\r\n      type: 'area',\r\n      stacked: true,\r\n      sparkline: {\r\n        enabled: true,\r\n      },\r\n      group: 'sparklines',\r\n      fontFamily: 'inherit',\r\n      foreColor: '#38BDF8',\r\n    },\r\n    stroke: {\r\n      curve: 'smooth',\r\n      width: 2,\r\n    },\r\n    fill: {\r\n      type: 'gradient',\r\n      color: '#38BDF8',\r\n\r\n      gradient: {\r\n        shadeIntensity: 0,\r\n        inverseColors: false,\r\n        opacityFrom: 0.3,\r\n        opacityTo: 0,\r\n        stops: [100],\r\n      },\r\n    },\r\n    markers: {\r\n      size: 0,\r\n    },\r\n    tooltip: {\r\n      theme: 'dark',\r\n      x: {\r\n        show: false,\r\n      },\r\n    },\r\n  }\r\n  return (\r\n    <>\r\n      <div className='min-h-screen flex flex-col items-center justify-center'>\r\n        <Card className='w-full max-w-sm p-6'>\r\n          <div className='flex items-baseline justify-between'>\r\n            <div>\r\n              <h5 className='text-lg font-semibold text-foreground'>\r\n                Customers\r\n              </h5>\r\n              <p className='text-sm font-medium text-muted-foreground'>\r\n                Last 7 days\r\n              </p>\r\n            </div>\r\n            <div className='text-end'>\r\n              <h5 className='text-base font-semibold text-foreground'>6,380</h5>\r\n              <Badge className='bg-teal-400/10 text-teal-400 tracking-wide'>\r\n                +26.5%\r\n              </Badge>\r\n            </div>\r\n          </div>\r\n\r\n          <div className='h-[103px]'>\r\n            <Chart\r\n              options={ChartData}\r\n              series={ChartData.series}\r\n              type='area'\r\n              height='103px'\r\n              width='100%'\r\n            />\r\n          </div>\r\n\r\n          <div className='flex flex-col gap-2'>\r\n            <div className='flex justify-between align-center'>\r\n              <div className='flex items-center gap-2'>\r\n                <span className='bg-sky-400 rounded-full w-5 h-2.5'></span>\r\n                <p className='text-sm font-normal text-muted-foreground'>Apr 07 - Apr 14</p>\r\n              </div>\r\n              <p className='text-sm font-normal text-muted-foreground'>6,380</p>\r\n            </div>\r\n            <div className='flex justify-between align-center'>\r\n              <div className='flex items-center gap-2'>\r\n                <span className='bg-stone-200 dark:bg-stone-600 rounded-full w-5 h-2.5'></span>\r\n                <p className='text-sm font-normal text-muted-foreground'>Last Week</p>\r\n              </div>\r\n              <p className='text-sm font-normal text-muted-foreground'>4,298</p>\r\n            </div>\r\n          </div>\r\n        </Card>\r\n      </div>\r\n    </>\r\n  )\r\n}\r\n\r\nexport default Statistics22\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-22/statistics22.tsx"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-14",
+  "type": "registry:component",
+  "title": "Button-14 - Size sm",
+  "description": "Size sm button component",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-14.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst ButtonSizeDemo = () => {\r\n  return (\r\n    <Button\r\n      variant=\"default\"\r\n      size={\"sm\"}\r\n      className=\"hover:-translate-y-1 transition-transform duration-200\"\r\n    >\r\n      Button Size: sm\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default ButtonSizeDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-14.tsx"
+    }
+  ]
+}

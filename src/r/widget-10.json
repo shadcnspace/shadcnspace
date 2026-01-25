@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "widget-10",
+  "type": "registry:block",
+  "title": "Widget 10",
+  "description": "A upcoming events widget block",
+  "dependencies": [
+    "@iconify/react",
+    "simplebar-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/widget-10/page.tsx",
+      "content": "import Widget10 from \"@/components/shadcn-space/blocks/widget-10/widget10\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Widget10 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/widget-10/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/widget-10/widget10.tsx",
+      "content": "\"use client\";\r\nimport { Icon } from \"@iconify/react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport Link from \"next/link\";\r\nimport SimpleBar from \"simplebar-react\";\r\nimport { Card } from \"@/components/ui/card\";\r\nimport \"./styles/style.css\";\r\nconst ColorboxData = [\r\n    {\r\n        bg: \"primary-gradient\",\r\n        icon: \"solar:dollar-minimalistic-linear\",\r\n        color: \"bg-blue-500\",\r\n        title: \"Total Orders\",\r\n        price: \"16,689\",\r\n        link: \"#\",\r\n    },\r\n    {\r\n        bg: \"warning-gradient\",\r\n        icon: \"solar:recive-twice-square-linear\",\r\n        color: \"bg-amber-300\",\r\n        title: \"Return Item\",\r\n        price: \"148\",\r\n        link: \"#\",\r\n    },\r\n    {\r\n        bg: \"secondary-gradient\",\r\n        icon: \"ic:outline-backpack\",\r\n        color: \"bg-teal-400\",\r\n        title: \"Annual Budget\",\r\n        price: \"$156K\",\r\n        link: \"#\",\r\n    },\r\n    {\r\n        bg: \"error-gradient\",\r\n        icon: \"ic:baseline-sync-problem\",\r\n        color: \"bg-red-500\",\r\n        title: \"Cancel Orders\",\r\n        price: \"64\",\r\n        link: \"#\",\r\n    },\r\n    {\r\n        bg: \"success-gradient\",\r\n        icon: \"ic:outline-forest\",\r\n        color: \"bg-sky-400\",\r\n        title: \"Total Income \",\r\n        price: \"$36,715\",\r\n        link: \"#\",\r\n    },\r\n];\r\n\r\nconst Widget10 = () => {\r\n    return (\r\n        <div className='min-h-screen flex items-center justify-center px-6'>\r\n            <Card className=\"p-7 w-full gap-5 border-0\">\r\n                <div className=\"overflow-x-auto\">\r\n                    <SimpleBar>\r\n                        <div className=\"flex  gap-7\">\r\n                            {ColorboxData.map((item, index) => (\r\n                                <div className=\"lg:basis-1/5 md:basis-1/4 basis-full lg:shrink shrink-0\" key={index}>\r\n                                    <div className={`text-center px-5 py-7 rounded-lg ${item.bg}`}>\r\n                                        <span className={`h-12 w-12 mx-auto flex items-center justify-center rounded-lg ${item.color}`}>\r\n                                            <Icon icon={item.icon}\r\n                                                className=\"text-white\"\r\n                                                height={24}\r\n                                            />\r\n                                        </span>\r\n                                        <p className=\"text-sm font-normal mt-4 mb-2\">\r\n                                            {item.title}\r\n                                        </p>\r\n                                        <h4 className=\"text-base! font-medium!\">{item.price}</h4>\r\n                                        <Button\r\n                                            size=\"sm\"\r\n                                            className=\"w-fit mx-auto mt-5 bg-white hover:bg-neutral-800 text-ld font-semibold hover:text-white shadow-sm py-1 px-3 dark:bg-neutral-800 dark:hover:bg-neutral-700\"\r\n                                        >\r\n                                            <Link href={item.link}>View Details</Link>\r\n                                        </Button>\r\n                                    </div>\r\n                                </div>\r\n                            ))}\r\n                        </div>\r\n                    </SimpleBar>\r\n                </div>\r\n            </Card>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Widget10;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/widget-10/widget10.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/widget-10/styles/style.css",
+      "content": ".primary-gradient {\r\n    background: linear-gradient(180deg, #3B82F61F 0%, #3B82F608 100%);\r\n}\r\n\r\n.warning-gradient {\r\n    background: linear-gradient(180deg, #FCD34D1F 0%, #FCD34D08 100%);\r\n}\r\n\r\n.secondary-gradient {\r\n    background: linear-gradient(180deg, #2DD4BF1F 0%, #2DD4BF08 100%);\r\n}\r\n\r\n.error-gradient {\r\n    background: linear-gradient(180deg, #EF44441F 0%, #EF444408 100%);\r\n}\r\n\r\n.success-gradient {\r\n    background: linear-gradient(180deg, #38BDF81F 0%, #38BDF808 100%);\r\n}",
+      "type": "registry:style",
+      "target": "components/shadcn-space/blocks/widget-10/styles/style.css"
+    }
+  ]
+}

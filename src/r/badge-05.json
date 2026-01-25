@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-05",
+  "type": "registry:component",
+  "title": "Badge-05 - Link",
+  "description": "Badge component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/badge/badge-05.tsx",
+      "content": "'use client'\r\nimport { ArrowRightIcon } from 'lucide-react'\r\nimport { Badge } from '@/components/ui/badge'\r\n\r\nconst BadgeLinkDemo = () => {\r\n  return (\r\n    <Badge >\r\n      <a href='#' className='focus-visible:ring-ring/50 focus-visible:ring-2 focus-visible:outline-0 flex items-center gap-1'>\r\n        Link <ArrowRightIcon className='size-3' />\r\n      </a>\r\n    </Badge>\r\n  )\r\n}\r\n\r\nexport default BadgeLinkDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/badge/badge-05.tsx"
+    }
+  ]
+}

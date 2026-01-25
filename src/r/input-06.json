@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-06",
+  "type": "registry:component",
+  "title": "Input-06 - Input with character counter",
+  "description": "Input component",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-06.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState, type ChangeEvent } from \"react\";\r\n\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst maxLength = 50;\r\nconst initialValue = \"\";\r\n\r\nconst InputCharacterLimitDemo = () => {\r\n  const [value, setValue] = useState(initialValue);\r\n  const [characterCount, setCharacterCount] = useState(initialValue.length);\r\n\r\n  const id = useId();\r\n\r\n  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {\r\n    if (e.target.value.length <= maxLength) {\r\n      setValue(e.target.value);\r\n      setCharacterCount(e.target.value.length);\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id}>Input with character limit</Label>\r\n      <div className=\"relative\">\r\n        <Input\r\n          id={id}\r\n          type=\"text\"\r\n          placeholder=\"Tell us something...\"\r\n          value={value}\r\n          maxLength={maxLength}\r\n          onChange={handleChange}\r\n          className=\"peer pr-14\"\r\n        />\r\n        <span\r\n          className={`pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center pr-3 text-xs tabular-nums peer-disabled:opacity-50 ${\r\n            characterCount === maxLength\r\n              ? \"text-teal-400\"\r\n              : \"text-muted-foreground\"\r\n          }`}\r\n        >\r\n          {characterCount}/{maxLength}\r\n        </span>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputCharacterLimitDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-06.tsx"
+    }
+  ]
+}

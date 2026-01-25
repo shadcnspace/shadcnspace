@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-06",
+  "type": "registry:component",
+  "title": "Button-06 - Animated Border",
+  "description": "Animated Border button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-06.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { Gem } from \"lucide-react\";\r\n\r\nconst ButtonAnimatedBorderDemo = () => {\r\n  return (\r\n    <>\r\n      <span className=\"relative inline-flex rounded-md\">\r\n        {/* Button */}\r\n        <Button\r\n          variant=\"outline\"\r\n          className=\"relative z-10 shadow-none rounded-md border-border/50 bg-background dark:bg-background hover:bg-background dark:hover:bg-background\"\r\n        >\r\n          <Gem className=\"size-4\" />\r\n          Get Pro\r\n        </Button>\r\n\r\n        {/* Gradient border on top */}\r\n        <span className=\"absolute inset-0 rounded-md pointer-events-none overflow-hidden\">\r\n          <span className=\"absolute -inset-full animate-spin [animation-duration:4s] bg-[conic-gradient(from_0deg,_#2b7fff_0deg,_#2b7fff_40deg,_transparent_60deg)]\" />\r\n        </span>\r\n      </span>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default ButtonAnimatedBorderDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-06.tsx"
+    }
+  ]
+}

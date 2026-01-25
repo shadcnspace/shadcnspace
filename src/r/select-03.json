@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-03",
+  "type": "registry:component",
+  "title": "Select-03 - Select with status",
+  "description": "Select component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/select/select-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, useId } from \"react\";\r\nimport { CircleIcon } from \"lucide-react\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\";\r\n\r\nconst statuses = [\r\n  {\r\n    value: \"In Progress\",\r\n    label: \"In Progress\",\r\n    color: \"text-violet-500 fill-violet-500\",\r\n  },\r\n  {\r\n    value: \"Pending\",\r\n    label: \"Pending\",\r\n    color: \"text-amber-300 fill-amber-300\",\r\n  },\r\n  {\r\n    value: \"Completed\",\r\n    label: \"Completed\",\r\n    color: \"text-teal-600 fill-teal-600\",\r\n  },\r\n  {\r\n    value: \"Cancelled\",\r\n    label: \"Cancelled\",\r\n    color: \"text-gray-500 fill-gray-500\",\r\n  },\r\n  {\r\n    value: \"Rejected\",\r\n    label: \"Rejected\",\r\n    color: \"text-red-500 fill-red-500\",\r\n  },\r\n];\r\n\r\nconst SelectStatusDemo = () => {\r\n  const id = useId();\r\n  const [value, setValue] = useState(\"In Progress\");\r\n\r\n  const selectedStatus = statuses.find((s) => s.value === value);\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id}>Status</Label>\r\n\r\n      <Select value={value} onValueChange={(val) => val && setValue(val)}>\r\n        <SelectTrigger\r\n          id={id}\r\n          className=\"w-full [&>span]:flex [&>span]:items-center [&>span]:gap-2\"\r\n        >\r\n          {selectedStatus && (\r\n            <CircleIcon className={`size-2 ${selectedStatus.color}`} />\r\n          )}\r\n          <SelectValue />\r\n        </SelectTrigger>\r\n\r\n        <SelectContent align=\"start\" alignItemWithTrigger={false} className=\"data-[state=open]:slide-in-from-bottom-8 data-[state=open]:zoom-in-100 duration-400\">\r\n          {statuses.map((status) => (\r\n            <SelectItem\r\n              key={status.value}\r\n              value={status.value}\r\n              className=\"flex items-center gap-2\"\r\n            >\r\n              <div className=\"flex items-center gap-2\">\r\n                <CircleIcon className={`size-2 ${status.color}`} />\r\n                <span className=\"truncate\">{status.label}</span>\r\n              </div>\r\n            </SelectItem>\r\n          ))}\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SelectStatusDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/select/select-03.tsx"
+    }
+  ]
+}

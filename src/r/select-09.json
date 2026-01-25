@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-09",
+  "type": "registry:component",
+  "title": "Select-09 - Select with separator",
+  "description": "Select component",
+  "dependencies": [],
+  "registryDependencies": [
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/select/select-09.tsx",
+      "content": "import { useId } from 'react'\r\nimport { Label } from '@/components/ui/label'\r\nimport { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue } from '@/components/ui/select'\r\n\r\nconst SelectWithSeparatorDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Select Your Focus Area</Label>\r\n      <Select defaultValue='Leadership'>\r\n        <SelectTrigger id={id} className='w-full'>\r\n          <SelectValue />\r\n        </SelectTrigger>\r\n        <SelectContent className=\"data-[state=open]:slide-in-from-bottom-8 data-[state=open]:zoom-in-100 duration-400\">\r\n          <SelectGroup>\r\n            <SelectLabel>Professional Skills</SelectLabel>\r\n            <SelectItem value='Leadership'>Leadership</SelectItem>\r\n            <SelectItem value='Communication'>Communication</SelectItem>\r\n            <SelectItem value='Project Management'>Project Management</SelectItem>\r\n          </SelectGroup>\r\n          <SelectSeparator />\r\n          <SelectGroup>\r\n            <SelectLabel>Personal Growth</SelectLabel>\r\n            <SelectItem value='Mindfulness'>Mindfulness</SelectItem>\r\n            <SelectItem value='Time Management'>Time Management</SelectItem>\r\n            <SelectItem value='Creativity'>Creativity</SelectItem>\r\n          </SelectGroup>\r\n          <SelectSeparator />\r\n          <SelectGroup>\r\n            <SelectLabel>Technology & Innovation</SelectLabel>\r\n            <SelectItem value='AI & Machine Learning'>AI & Machine Learning</SelectItem>\r\n            <SelectItem value='Blockchain'>Blockchain</SelectItem>\r\n            <SelectItem value='Web Development'>Web Development</SelectItem>\r\n          </SelectGroup>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default SelectWithSeparatorDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/select/select-09.tsx"
+    }
+  ]
+}

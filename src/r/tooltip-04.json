@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-04",
+  "type": "registry:component",
+  "title": "Tooltip-04 - Rounded Tooltip",
+  "description": "Tooltip component",
+  "dependencies": [],
+  "registryDependencies": [
+    "tooltip",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/tooltip/tooltip-04.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nconst RoundedTooltipDemo = () => {\r\n  return (\r\n     <Tooltip>\r\n      <TooltipTrigger>\r\n        <Button variant='outline'>\r\n          Rounded\r\n        </Button>\r\n      </TooltipTrigger>\r\n      <TooltipContent className='rounded-full'>\r\n        <p>This tooltip is rounded</p>\r\n      </TooltipContent>\r\n    </Tooltip>\r\n  );\r\n};\r\n\r\nexport default RoundedTooltipDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/tooltip/tooltip-04.tsx"
+    }
+  ]
+}

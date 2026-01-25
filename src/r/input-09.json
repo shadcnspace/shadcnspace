@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-09",
+  "type": "registry:component",
+  "title": "Input-09 - Input with floating label",
+  "description": "Input component",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-09.tsx",
+      "content": "import { useId } from 'react'\r\n\r\nimport { Input } from '@/components/ui/input'\r\n\r\nconst InputFloatingLabelDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='group relative w-full max-w-xs'>\r\n      <label\r\n        htmlFor={id}\r\n        className='origin-start text-muted-foreground group-focus-within:text-foreground has-[+input:not(:placeholder-shown)]:text-foreground absolute top-1/2 block -translate-y-1/2 cursor-text px-2 text-sm transition-all group-focus-within:pointer-events-none group-focus-within:top-0 group-focus-within:cursor-default group-focus-within:text-xs group-focus-within:font-medium has-[+input:not(:placeholder-shown)]:pointer-events-none has-[+input:not(:placeholder-shown)]:top-0 has-[+input:not(:placeholder-shown)]:cursor-default has-[+input:not(:placeholder-shown)]:text-xs has-[+input:not(:placeholder-shown)]:font-medium'\r\n      >\r\n        <span className='bg-background inline-flex px-1'>Input with floating label</span>\r\n      </label>\r\n      <Input id={id} type='name' placeholder='Username' className='dark:bg-background' />\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default InputFloatingLabelDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-09.tsx"
+    }
+  ]
+}

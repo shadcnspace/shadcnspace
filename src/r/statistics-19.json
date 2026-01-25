@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-19",
+  "type": "registry:block",
+  "title": "Statistics 19",
+  "description": "A payments statistics block",
+  "dependencies": [
+    "react-apexcharts",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-19/page.tsx",
+      "content": "import Statistics19 from \"@/components/shadcn-space/blocks/statistics-19/statistics19\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics19 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-19/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-19/statistics19.tsx",
+      "content": "'use client'\r\n\r\nimport dynamic from 'next/dynamic'\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuTrigger,\r\n} from '@/components/ui/dropdown-menu'\r\nimport { HiOutlineDotsVertical } from 'react-icons/hi'\r\nimport { Card } from '@/components/ui/card'\r\nimport { Badge } from '@/components/ui/badge'\r\n\r\nconst Chart = dynamic(() => import('react-apexcharts'), { ssr: false })\r\n\r\nconst Statistics19 = () => {\r\n  const dropdownItems = ['Action', 'Another action', 'Something else']\r\n\r\n  const ChartData: any = {\r\n    series: [\r\n      {\r\n        name: 'Paypal',\r\n        data: [29, 52, 38, 47, 56, 41, 46],\r\n      },\r\n      {\r\n        name: 'Credit Card',\r\n        data: [71, 71, 71, 71, 71, 71, 71],\r\n      },\r\n    ],\r\n\r\n    chart: {\r\n      fontFamily: 'inherit',\r\n      foreColor: '#adb0bb',\r\n      type: 'bar',\r\n      height: 150,\r\n      stacked: true,\r\n      offsetX: -5,\r\n      toolbar: {\r\n        show: false,\r\n      },\r\n    },\r\n    grid: {\r\n      show: false,\r\n      borderColor: 'rgba(0,0,0,0.1)',\r\n      strokeDashArray: 1,\r\n      xaxis: {\r\n        lines: {\r\n          show: false,\r\n        },\r\n      },\r\n      yaxis: {\r\n        lines: {\r\n          show: true,\r\n        },\r\n      },\r\n      padding: {\r\n        top: 0,\r\n        right: 0,\r\n        bottom: 0,\r\n        left: 0,\r\n      },\r\n    },\r\n    colors: ['var(--color-sky-400)', 'var(--color-neutral-100)'],\r\n    plotOptions: {\r\n      bar: {\r\n        horizontal: false,\r\n        columnWidth: '26%',\r\n        borderRadius: [3],\r\n        borderRadiusApplication: 'end',\r\n        borderRadiusWhenStacked: 'all',\r\n      },\r\n    },\r\n    dataLabels: {\r\n      enabled: false,\r\n    },\r\n    xaxis: {\r\n      categories: [['M'], ['T'], ['W'], ['T'], ['F'], ['S'], ['S']],\r\n      axisBorder: {\r\n        show: false,\r\n      },\r\n      axisTicks: {\r\n        show: false,\r\n      },\r\n    },\r\n    yaxis: {\r\n      labels: {\r\n        show: false,\r\n      },\r\n    },\r\n    tooltip: {\r\n      theme: 'dark',\r\n    },\r\n    legend: {\r\n      show: false,\r\n    },\r\n  }\r\n  return (\r\n    <>\r\n      <div className='min-h-screen flex flex-col items-center justify-center'>\r\n        <Card className='w-full max-w-xs p-6'>\r\n          <div className='flex items-center justify-between'>\r\n            <h5 className='text-lg font-semibold text-foreground'>Payments</h5>\r\n            <div>\r\n              <DropdownMenu>\r\n                <DropdownMenuTrigger className='outline-none'>\r\n                  <span className='h-9 w-9 flex justify-center items-center rounded-full hover:bg-accent  hover:text-accent-foreground cursor-pointer'>\r\n                    <HiOutlineDotsVertical size={22} />\r\n                  </span>\r\n                </DropdownMenuTrigger>\r\n                <DropdownMenuContent>\r\n                  {dropdownItems.map((items, index) => {\r\n                    return (\r\n                      <DropdownMenuItem\r\n                        key={index}\r\n                        className='font-normal cursor-pointer'>\r\n                        {items}\r\n                      </DropdownMenuItem>\r\n                    )\r\n                  })}\r\n                </DropdownMenuContent>\r\n              </DropdownMenu>\r\n            </div>\r\n          </div>\r\n\r\n          <div>\r\n            <h6 className='text-xl font-semibold text-foreground flex items-center'>\r\n              12,389\r\n              <Badge className='ms-2 bg-red-500/10 text-red-500'>-3.8%</Badge>\r\n            </h6>\r\n            <p className='text-sm text-muted-foreground'>Last 7 days</p>\r\n          </div>\r\n          <div className='rounded-bars -ms-3 -me-2 h-[150px]'>\r\n            <Chart\r\n              options={ChartData}\r\n              series={ChartData.series}\r\n              type='bar'\r\n              height='150px'\r\n              width='100%'\r\n            />\r\n          </div>\r\n\r\n          <div className='flex flex-col gap-2'>\r\n            <div className='flex justify-between align-center '>\r\n              <div className='flex items-center gap-2'>\r\n                <span className='bg-sky-400 rounded-full w-5 h-2.5'></span>\r\n                <p className='text-sm font-normal text-muted-foreground'>Paypal</p>\r\n              </div>\r\n              <p className='text-sm font-normal text-muted-foreground'>52%</p>\r\n            </div>\r\n            <div className='flex justify-between align-center'>\r\n              <div className='flex items-center gap-2'>\r\n                <span className='bg-stone-200 dark:bg-stone-600 rounded-full w-5 h-2.5'></span>\r\n                <p className='text-sm font-normal text-muted-foreground'>Credit Card</p>\r\n              </div>\r\n              <p className='text-sm font-normal text-muted-foreground'>48%</p>\r\n            </div>\r\n          </div>\r\n        </Card>\r\n      </div>\r\n    </>\r\n  )\r\n}\r\n\r\nexport default Statistics19\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-19/statistics19.tsx"
+    }
+  ]
+}

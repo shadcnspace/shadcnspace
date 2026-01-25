@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-04",
+  "type": "registry:component",
+  "title": "Checkbox-04 - Checkbox with todo list",
+  "description": "Checkbox component",
+  "dependencies": [],
+  "registryDependencies": [
+    "checkbox",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/checkbox/checkbox-04.tsx",
+      "content": "import { useId } from 'react'\r\n\r\nimport { Checkbox } from '@/components/ui/checkbox'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst CheckboxTodoListDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='flex items-center gap-2'>\r\n      <Checkbox id={id} defaultChecked />\r\n      <Label htmlFor={id} className='peer-data-[checked]:line-through'>\r\n        One step closer to your goal\r\n      </Label>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default CheckboxTodoListDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/checkbox/checkbox-04.tsx"
+    }
+  ]
+}

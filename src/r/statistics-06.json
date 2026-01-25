@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-06",
+  "type": "registry:block",
+  "title": "Statistics 06",
+  "description": "A simple statistics block",
+  "dependencies": [
+    "@iconify/react",
+    "react-apexcharts"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-06/page.tsx",
+      "content": "import Statistics06 from \"@/components/shadcn-space/blocks/statistics-06/statistics06\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics06 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-06/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-06/statistics06.tsx",
+      "content": "\"use client\";\r\nimport { Card } from \"@/components/ui/card\";\r\nimport { Icon } from \"@iconify/react\";\r\nimport dynamic from \"next/dynamic\";\r\nconst Chart = dynamic(() => import(\"react-apexcharts\"), { ssr: false });\r\nconst ChartData: any = {\r\n    series: [\r\n        {\r\n            name: \"settlements\",\r\n            data: [\r\n                40, 40, 80, 80, 30, 30, 10, 10, 30, 30, 100, 100, 20, 20, 140, 140,\r\n            ],\r\n        },\r\n    ],\r\n    chart: {\r\n        fontFamily: \"inherit\",\r\n        type: \"line\",\r\n        height: 315,\r\n        toolbar: { show: !1 },\r\n    },\r\n    legend: { show: !1 },\r\n    dataLabels: { enabled: !1 },\r\n    stroke: {\r\n        curve: \"smooth\",\r\n        show: !0,\r\n        width: 2,\r\n        colors: [\"var(--color-blue-500)\"],\r\n    },\r\n    xaxis: {\r\n        categories: [\r\n            \"1W\",\r\n            \"\",\r\n            \"3W\",\r\n            \"\",\r\n            \"5W\",\r\n            \"6W\",\r\n            \"7W\",\r\n            \"8W\",\r\n            \"9W\",\r\n            \"\",\r\n            \"11W\",\r\n            \"\",\r\n            \"13W\",\r\n            \"\",\r\n            \"15W\",\r\n        ],\r\n        axisBorder: { show: !1 },\r\n        axisTicks: { show: !1 },\r\n        tickAmount: 6,\r\n        labels: {\r\n            rotate: 0,\r\n            rotateAlways: !0,\r\n            style: { fontSize: \"10px\", colors: \"#98A4AE\", fontWeight: \"600\" },\r\n        },\r\n    },\r\n    yaxis: {\r\n        show: false,\r\n        tickAmount: 3,\r\n    },\r\n    tooltip: {\r\n        theme: \"dark\",\r\n    },\r\n    colors: [\"var(--color-blue-500)\"],\r\n    grid: {\r\n        borderColor: \"var(--color-muted)\",\r\n        strokeDashArray: 4,\r\n\r\n        xaxis: {\r\n            lines: {\r\n                show: false,\r\n            },\r\n        },\r\n        yaxis: {\r\n            lines: {\r\n                show: false,\r\n            },\r\n        },\r\n    },\r\n    markers: {\r\n        strokeColor: [\"var(--color-blue-500)\"],\r\n        strokeWidth: 3,\r\n    },\r\n};\r\nconst Statistics06 = () => {\r\n    return (\r\n        <div className=\"min-h-screen mx-10 flex flex-col items-center justify-center\">\r\n            <Card className=\"p-7 border-0 overflow-hidden bg-blue-500/10  h-full\">\r\n                <div className=\"flex gap-4 items-center\">\r\n                    <span className=\"h-12 w-12 shrink-0 flex items-center justify-center bg-white rounded-lg\">\r\n                        <Icon\r\n                            icon=\"solar:box-linear\"\r\n                            className=\"text-blue-500\"\r\n                            height={24}\r\n                        />\r\n                    </span>\r\n                    <div>\r\n                        <p className=\"text-sm font-normal mb-1 text-muted-foreground\">Total settlements</p>\r\n                        <h5 className=\"text-lg text-foreground font-semibold\">$122,580</h5>\r\n                    </div>\r\n                </div>\r\n                <div>\r\n                    <Chart\r\n                        options={ChartData}\r\n                        series={ChartData.series}\r\n                        type=\"line\"\r\n                        height=\"305px\"\r\n                        width=\"100%\"\r\n                    />\r\n                </div>\r\n                <div className=\"grid grid-cols-12\">\r\n                    <div className=\"col-span-6 text-center\">\r\n                        <p className=\"text-sm font-normal mb-1 text-muted-foreground\">Total balance</p>\r\n                        <h5 className=\"text-lg text-foreground font-semibold\">$122,580</h5>\r\n                    </div>\r\n                    <div className=\"col-span-6 text-center\">\r\n                        <p className=\"text-sm font-normal mb-1 text-muted-foreground\">Withdrawals</p>\r\n                        <h5 className=\"text-lg text-foreground font-semibold\">$31,640</h5>\r\n                    </div>\r\n                </div>\r\n            </Card>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Statistics06;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-06/statistics06.tsx"
+    }
+  ]
+}

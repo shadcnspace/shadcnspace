@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-02",
+  "type": "registry:component",
+  "title": "Radio Group-02 - Radio Group with tree",
+  "description": "Radio Group component",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/radio-group/radio-group-02.tsx",
+      "content": "import { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\n\r\nconst RadioGroupColorsDemo = () => {\r\n  return (\r\n    <>\r\n      <RadioGroup\r\n        defaultValue=\"destructive\"\r\n        className=\"flex items-center gap-4 justify-center\"\r\n      >\r\n        <div className=\"flex items-center gap-2\">\r\n          <RadioGroupItem\r\n            value=\"destructive\"\r\n            id=\"color-destructive\"\r\n            className=\"border-destructive text-destructive [&_svg]:fill-destructive focus-visible:ring-destructive/20 focus-visible:border-destructive dark:focus-visible:ring-destructive/40\"\r\n          />\r\n          <Label htmlFor=\"color-destructive\" className=\"text-red-500\">\r\n            Error\r\n          </Label>\r\n        </div>\r\n        <div className=\"flex items-center gap-2\">\r\n          <RadioGroupItem\r\n            value=\"success\"\r\n            id=\"color-success\"\r\n            className=\"border-teal-400 text-teal-400 focus-visible:border-teal-400 focus-visible:ring-teal-400/20 dark:border-teal-400 dark:text-teal-400 dark:focus-visible:border-teal-400 dark:focus-visible:ring-teal-400/40 [&_svg]:fill-teal-400 dark:[&_svg]:fill-teal-400\"\r\n          />\r\n          <Label htmlFor=\"color-success\" className=\"text-teal-400\">\r\n            Approved\r\n          </Label>\r\n        </div>\r\n        <div className=\"flex items-center gap-2\">\r\n          <RadioGroupItem\r\n            value=\"info\"\r\n            id=\"color-info\"\r\n            className=\"border-amber-300 text-amber-300 focus-visible:border-amber-300 focus-visible:ring-amber-300/20 dark:border-amber-400 dark:text-amber-400 dark:focus-visible:border-amber-400 dark:focus-visible:ring-amber-400/40 [&_svg]:fill-amber-300 dark:[&_svg]:fill-amber-400\"\r\n          />\r\n          <Label htmlFor=\"color-info\" className=\"text-amber-400\">\r\n            Alert\r\n          </Label>\r\n        </div>\r\n      </RadioGroup>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default RadioGroupColorsDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/radio-group/radio-group-02.tsx"
+    }
+  ]
+}

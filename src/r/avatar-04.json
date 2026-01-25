@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-04",
+  "type": "registry:component",
+  "title": "Avatar-04 - Border",
+  "description": "Border avatar component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/avatar/avatar-04.tsx",
+      "content": "\"use client\";\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { CheckIcon } from \"lucide-react\";\r\nconst BorderAvatarDemo = () => {\r\n  return (\r\n    <div className=\"flex items-center justify-center px-4\">\r\n      <div className=\"relative w-fit\">\r\n        <Avatar className=\"ring-offset-background ring-2 ring-teal-600 ring-offset-2 dark:ring-teal-400\">\r\n          <AvatarImage\r\n            src=\"https://images.shadcnspace.com/assets/profiles/user-2.jpg\"\r\n            alt=\"border avatar\"\r\n          />\r\n          <AvatarFallback className=\"text-xs\">HR</AvatarFallback>\r\n        </Avatar>\r\n        <span className=\"absolute -right-1.5 -bottom-1.5 inline-flex size-4 items-center justify-center rounded-full bg-teal-600 dark:bg-teal-400\">\r\n          <CheckIcon className=\"size-3 text-white\" />\r\n        </span>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default BorderAvatarDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/avatar/avatar-04.tsx"
+    }
+  ]
+}

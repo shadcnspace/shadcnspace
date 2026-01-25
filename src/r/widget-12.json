@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "widget-12",
+  "type": "registry:block",
+  "title": "Widget 12",
+  "description": "A developer card widget block",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/widget-12/page.tsx",
+      "content": "import Widget12 from \"@/components/shadcn-space/blocks/widget-12/widget12\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Widget12 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/widget-12/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/widget-12/widget12.tsx",
+      "content": "'use client'\r\n\r\nimport { useEffect, useRef, useState } from 'react'\r\nimport { motion, useInView } from 'motion/react'\r\nimport { Card } from '@/components/ui/card'\r\nimport { cn } from '@/lib/utils'\r\n\r\ntype EncryptedTextProps = {\r\n  text: string\r\n  className?: string\r\n  revealDelayMs?: number\r\n  flipDelayMs?: number\r\n  charset?: string\r\n  encryptedClassName?: string\r\n  revealedClassName?: string\r\n}\r\n\r\nconst DEFAULT_CHARSET =\r\n  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}[];:,.<>/?'\r\n\r\nconst randomChar = (charset: string) =>\r\n  charset[Math.floor(Math.random() * charset.length)]\r\n\r\nfunction EncryptedText({\r\n  text,\r\n  className,\r\n  revealDelayMs = 50,\r\n  flipDelayMs = 50,\r\n  charset = DEFAULT_CHARSET,\r\n  encryptedClassName,\r\n  revealedClassName,\r\n}: EncryptedTextProps) {\r\n  const ref = useRef<HTMLSpanElement>(null)\r\n  const inView = useInView(ref, { once: true })\r\n\r\n  const [revealed, setRevealed] = useState(0)\r\n  const scramble = useRef<string[]>([])\r\n  const start = useRef(0)\r\n  const lastFlip = useRef(0)\r\n\r\n  useEffect(() => {\r\n    if (!inView || !text) return\r\n\r\n    scramble.current = text\r\n      .split('')\r\n      .map((c) => (c === ' ' ? ' ' : randomChar(charset)))\r\n    start.current = performance.now()\r\n    lastFlip.current = start.current\r\n    setRevealed(0)\r\n\r\n    let raf: number\r\n    const animate = (now: number) => {\r\n      const nextReveal = Math.min(\r\n        text.length,\r\n        Math.floor((now - start.current) / revealDelayMs)\r\n      )\r\n      setRevealed(nextReveal)\r\n\r\n      if (now - lastFlip.current >= flipDelayMs) {\r\n        scramble.current = scramble.current.map((c, i) =>\r\n          i < nextReveal || text[i] === ' ' ? c : randomChar(charset)\r\n        )\r\n        lastFlip.current = now\r\n      }\r\n\r\n      if (nextReveal < text.length) raf = requestAnimationFrame(animate)\r\n    }\r\n\r\n    raf = requestAnimationFrame(animate)\r\n    return () => cancelAnimationFrame(raf)\r\n  }, [inView, text, revealDelayMs, flipDelayMs, charset])\r\n\r\n  if (!text) return null\r\n\r\n  return (\r\n    <motion.span ref={ref} className={className} aria-label={text}>\r\n      {text.split('').map((char, i) => (\r\n        <span\r\n          key={i}\r\n          className={cn(i < revealed ? revealedClassName : encryptedClassName)}>\r\n          {i < revealed ? char : scramble.current[i]}\r\n        </span>\r\n      ))}\r\n    </motion.span>\r\n  )\r\n}\r\n\r\nconst Widget12 = () => {\r\n  return (\r\n    <div className='min-h-screen flex flex-col items-center justify-center'>\r\n      <Card className='w-full max-w-xs relative p-6'>\r\n        <div className='flex justify-between items-center'>\r\n          <img\r\n            src='https://images.shadcnspace.com/assets/profiles/user-3.jpg'\r\n            className='h-15 w-15 rounded-full'\r\n          />\r\n          <h6>\r\n            <EncryptedText\r\n              text='#1 in DevOps'\r\n              revealedClassName='text-amber-300 font-medium'\r\n              encryptedClassName='text-muted-foreground'\r\n              revealDelayMs={60}\r\n              flipDelayMs={50}\r\n            />\r\n          </h6>\r\n        </div>\r\n        <div className='mt-4'>\r\n          <h5 className='text-lg font-semibold text-foreground'>\r\n            Adam Johnson\r\n          </h5>\r\n          <p className='text-sm font-medium text-muted-foreground'>\r\n            Top Developer\r\n          </p>\r\n        </div>\r\n      </Card>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Widget12\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/widget-12/widget12.tsx"
+    }
+  ]
+}

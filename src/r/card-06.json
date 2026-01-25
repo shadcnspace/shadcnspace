@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-06",
+  "type": "registry:component",
+  "title": "Card-06 - Statistics Card",
+  "description": "Card component",
+  "dependencies": [
+    "iconify/react"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/card/card-06.tsx",
+      "content": "\"use client\"\r\nimport { Icon } from '@iconify/react';\r\nimport { Card, CardContent } from '@/components/ui/card';\r\nimport { Badge } from '@/components/ui/badge';\r\n\r\nconst StatisticsCard = () => {\r\n    const EcommerceActions = [\r\n        {\r\n            title: 'Orders',\r\n            subtitle: '5868',\r\n            cardIcon: 'solar:bag-4-line-duotone',\r\n            badgeColor: 'bg-teal-400/10',\r\n            statusValue: '+18%',\r\n            statusIcon: 'solar:course-up-line-duotone',\r\n        },\r\n        {\r\n            title: 'Sales',\r\n            subtitle: '$96,850',\r\n            cardIcon: 'solar:box-line-duotone',\r\n            badgeColor: 'bg-orange-400/10',\r\n            statusValue: '-5%',\r\n            statusIcon: 'solar:course-down-line-duotone',\r\n        },\r\n        {\r\n            title: 'Profit',\r\n            subtitle: '$82,906',\r\n            cardIcon: 'solar:chart-square-line-duotone',\r\n            badgeColor: 'bg-teal-400/10',\r\n            statusValue: '+18%',\r\n            statusIcon: 'solar:course-up-line-duotone',\r\n        },\r\n        {\r\n            title: 'Expense',\r\n            subtitle: '$14,653',\r\n            cardIcon: 'solar:star-line-duotone',\r\n            badgeColor: 'bg-teal-400/10',\r\n            statusValue: '+18%',\r\n            statusIcon: 'solar:course-up-line-duotone',\r\n        },\r\n    ];\r\n\r\n    return (\r\n        <div className=\"max-w-7xl mx-auto px-4 w-full\">\r\n            <Card className=\"p-0\">\r\n                <CardContent className=\"flex items-center w-full lg:flex-nowrap flex-wrap px-0\">\r\n                    {EcommerceActions.map((item, index) => {\r\n                        return (\r\n                            <div\r\n                                className=\"lg:w-3/12 md:w-6/12 w-full border-e border-border last:border-e-0\"\r\n                                key={index}\r\n                            >\r\n                                <div className=\"p-6\">\r\n                                    <div className=\"flex flex-col gap-1\">\r\n                                        <div className=\"flex justify-between items-start\">\r\n                                            <h5 className=\"text-base font-medium\">{item.title}</h5>\r\n                                            <div className={`p-3 rounded-full outline outline-border text-primary`}>\r\n                                                <Icon icon={item.cardIcon} width={16} height={16} />\r\n                                            </div>\r\n                                        </div>\r\n                                        <div className=\"flex flex-col gap-1\">\r\n                                            <h5 className=\"text-2xl font-semibold\">{item.subtitle}</h5>\r\n                                            <div className=\"flex items-center gap-2\">\r\n                                                <p className=\"text-xs text-muted-foreground\">Last 7 days</p>\r\n                                                <Badge className={`${item.badgeColor} text-muted-foreground`}>\r\n                                                    <div className=\"flex items-center gap-1\">\r\n                                                        {item.statusValue}\r\n                                                        <Icon icon={item.statusIcon} width={14} height={14} />\r\n                                                    </div>\r\n                                                </Badge>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        );\r\n                    })}\r\n                </CardContent>\r\n            </Card>\r\n        </div>\r\n    );\r\n}\r\nexport default StatisticsCard;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/card/card-06.tsx"
+    }
+  ]
+}

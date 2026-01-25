@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-01",
+  "type": "registry:block",
+  "title": "Dialog 01 - Newsletter Subscription Dialog",
+  "description": "A modern modal popup for capturing newsletter signups with a friendly hero image, email field, opt-out checkbox, and clear call-to-action to boost conversions.",
+  "dependencies": [
+    ""
+  ],
+  "registryDependencies": [
+    "dialog",
+    "button",
+    "input",
+    "field",
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/dialog-01/page.tsx",
+      "content": "import DialogBlock from \"@/components/shadcn-space/blocks/dialog-01/dialog\";\r\n\r\nconst Page = () => {\r\n  return <DialogBlock/>;\r\n};\r\n\r\nexport default Page;",
+      "type": "registry:page",
+      "target": "app/dialog-01/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/dialog-01/dialog.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { Checkbox } from \"@/components/ui/checkbox\";\r\nimport { Dialog, DialogContent, DialogTrigger } from \"@/components/ui/dialog\";\r\nimport { FieldLabel } from \"@/components/ui/field\";\r\nimport { Input } from \"@/components/ui/input\";\r\n\r\nconst DialogBlock = () => {\r\n  return (\r\n    <section className=\"py-10 md:py-20 bg-primary dark:bg-background min-h-screen flex justify-center items-center\">\r\n      <div className=\"max-w-7xl xl:px-16 lg:px-8 px-4 mx-auto\">\r\n        <Dialog defaultOpen>\r\n          <DialogTrigger>\r\n            <Button variant=\"outline\">Open Dialog</Button>\r\n          </DialogTrigger>\r\n          <DialogContent className=\"md:max-w-4xl p-0 rounded-none\">\r\n            <div className=\"flex md:flex-row flex-col\">\r\n              <div className=\"md:max-w-md w-full\">\r\n                <img\r\n                  src=\"https://images.shadcnspace.com/assets/backgrounds/newsletter-image.webp\"\r\n                  alt=\"newsletter-image\"\r\n                  className=\"w-full object-cover sm:h-full h-40\"\r\n                />\r\n              </div>\r\n              <div className=\"md:p-16 p-6 w-full \">\r\n                <div className=\"flex flex-col gap-6\">\r\n                  <div className=\"flex flex-col gap-4\">\r\n                    <h2 className=\"text-card-foreground text-3xl font-medium\">\r\n                      Subscribe to the latest updates of Shadcn Space\r\n                    </h2>\r\n                    <p className=\"text-muted-foreground text-base font-normal\">\r\n                      Subscribe our newsletters and get the latest business\r\n                      updates\r\n                    </p>\r\n                  </div>\r\n                  <form className=\"flex flex-col gap-4\">\r\n                    <div className=\"flex flex-col gap-3\">\r\n                      <Input\r\n                        id=\"email\"\r\n                        type=\"email\"\r\n                        placeholder=\"example@shadcnspace.com\"\r\n                        required\r\n                        className=\"dark:bg-background rounded-lg\"\r\n                      />\r\n                      <Button\r\n                        type=\"submit\"\r\n                        size={\"lg\"}\r\n                        className=\"rounded-lg h-10\"\r\n                      >\r\n                        Subscribe now\r\n                      </Button>\r\n                    </div>\r\n                    <div className=\"flex flex-row items-center justify-between w-full\">\r\n                      <div className=\"flex items-center gap-3 \">\r\n                        <Checkbox id=\"newsletter\" className=\"cursor-pointer\" />\r\n                        <FieldLabel\r\n                          htmlFor=\"newsletter\"\r\n                          className=\"text-sm text-primary font-normal cursor-pointer\"\r\n                        >\r\n                          Don’t show this popup again\r\n                        </FieldLabel>\r\n                      </div>\r\n                    </div>\r\n                  </form>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </DialogContent>\r\n        </Dialog>\r\n      </div>\r\n    </section>\r\n  );\r\n};\r\n\r\nexport default DialogBlock;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/dialog-01/dialog.tsx"
+    }
+  ]
+}

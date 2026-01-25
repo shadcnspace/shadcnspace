@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-07",
+  "type": "registry:component",
+  "title": "Input-07 - Input with controls",
+  "description": "Input component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-07.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Minus, Plus } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nexport const title = \"Number Input with Controls\";\r\n\r\nconst InputWithControlsDemo = () => {\r\n  const [value, setValue] = useState(1);\r\n\r\n  return (\r\n    <div className=\"w-full max-w-52 space-y-2\">\r\n      <Label htmlFor=\"quantity\">Quantity</Label>\r\n      <div className=\"flex gap-2\">\r\n        <Button\r\n          onClick={() => setValue(Math.max(1, value - 1))}\r\n          size={\"sm\"}\r\n          type=\"button\"\r\n          variant=\"outline\"\r\n        >\r\n          <Minus className=\"h-4 w-4\" />\r\n        </Button>\r\n        <Input\r\n          className=\"bg-background text-center h-8\"\r\n          id=\"quantity\"\r\n          min=\"1\"\r\n          onChange={(e) => setValue(Number(e.target.value))}\r\n          type=\"number\"\r\n          value={value}\r\n        />\r\n        <Button\r\n          onClick={() => setValue(value + 1)}\r\n          size={\"sm\"}\r\n          type=\"button\"\r\n          variant=\"outline\"\r\n        >\r\n          <Plus className=\"h-4 w-4\" />\r\n        </Button>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputWithControlsDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-07.tsx"
+    }
+  ]
+}

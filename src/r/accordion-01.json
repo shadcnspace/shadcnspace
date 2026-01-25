@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-01",
+  "type": "registry:component",
+  "title": "Accordion-01 - Default",
+  "description": "Default accordion component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/accordion/accordion-01.tsx",
+      "content": "import {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/components/ui/accordion\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { FileText, Folder, LucideIcon, Settings, Users } from \"lucide-react\";\r\n\r\nconst data: {\r\n  value: string;\r\n  title: string;\r\n  subtitle: string;\r\n  content: string;\r\n  icon: LucideIcon;\r\n  textColor: string;\r\n  bgColor: string;\r\n}[] = [\r\n  {\r\n    value: \"documents\",\r\n    title: \"Documents\",\r\n    subtitle: \"Manage your files\",\r\n    content:\r\n      \"View, upload, and organize all your documents in one place. Keep everything structured and easy to find.\",\r\n    icon: FileText,\r\n    textColor: \"text-blue-500\",\r\n    bgColor: \"bg-blue-500/10\",\r\n  },\r\n  {\r\n    value: \"projects\",\r\n    title: \"Projects\",\r\n    subtitle: \"Organize your work\",\r\n    content:\r\n      \"Group related files and tasks into projects to keep your workflow clean and efficient.\",\r\n    icon: Folder,\r\n    textColor: \"text-orange-400\",\r\n    bgColor: \"bg-orange-400/10\",\r\n  },\r\n  {\r\n    value: \"settings\",\r\n    title: \"Settings\",\r\n    subtitle: \"Customize your experience\",\r\n    content:\r\n      \"Adjust preferences, update account details, and configure application behavior.\",\r\n    icon: Settings,\r\n    textColor: \"text-teal-400\",\r\n    bgColor: \"bg-teal-400/10\",\r\n  },\r\n  {\r\n    value: \"team\",\r\n    title: \"Team Members\",\r\n    subtitle: \"Manage users and roles\",\r\n    content:\r\n      \"Invite new members, assign roles, and control access permissions for your team.\",\r\n    icon: Users,\r\n    textColor: \"text-red-500\",\r\n    bgColor: \"bg-red-500/10\",\r\n  },\r\n];\r\n\r\nconst AccordionDemo = () => (\r\n  <div className=\"flex items-center justify-center max-w-md w-full\">\r\n    <Accordion className=\"w-full -space-y-px\" defaultValue={[data[0].value]}>\r\n      {data.map((item) => {\r\n        const Icon = item.icon;\r\n        return (\r\n          <AccordionItem\r\n            key={item.value}\r\n            value={item.value}\r\n            className=\" border bg-background px-4 first:rounded-t-lg last:rounded-b-lg last:border-b\"\r\n          >\r\n            <AccordionTrigger className=\"hover:no-underline\">\r\n              <div className=\"flex items-center gap-3\">\r\n                <div\r\n                  className={cn(\r\n                    \"p-2.5 rounded-xl\",\r\n                    item.bgColor,\r\n                    item.textColor,\r\n                  )}\r\n                >\r\n                  <Icon size={20} className=\"size-5\" />\r\n                </div>\r\n                <div className=\"flex flex-col items-start text-left\">\r\n                  <span>{item.title}</span>\r\n                  <span className=\"text-sm text-muted-foreground\">\r\n                    {item.subtitle}\r\n                  </span>\r\n                </div>\r\n              </div>\r\n            </AccordionTrigger>\r\n            <AccordionContent className=\"ps-14\">\r\n              <p className=\"text-muted-foreground\">{item.content}</p>\r\n            </AccordionContent>\r\n          </AccordionItem>\r\n        );\r\n      })}\r\n    </Accordion>\r\n  </div>\r\n);\r\n\r\nexport default AccordionDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/accordion/accordion-01.tsx"
+    }
+  ]
+}

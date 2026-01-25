@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-02",
+  "type": "registry:component",
+  "title": "Select-02 - Select with icon",
+  "description": "Select component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/select/select-02.tsx",
+      "content": "\"use client\"\r\nimport { useState } from 'react'\r\nimport { Label } from '@/components/ui/label'\r\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'\r\nimport { Dribbble, Facebook, Instagram, Twitter } from 'lucide-react'\r\n\r\nconst socials = [\r\n  {\r\n    value: 'Dribbble',\r\n    label: 'Dribbble',\r\n    icon: Dribbble,\r\n  },\r\n  {\r\n    value: 'Facebook',\r\n    label: 'Facebook',\r\n    icon: Facebook,\r\n  },\r\n  {\r\n    value: 'Instagram',\r\n    label: 'Instagram',\r\n    icon: Instagram,\r\n  },\r\n  {\r\n    value: 'Twitter',\r\n    label: 'Twitter',\r\n    icon: Twitter,\r\n  },\r\n]\r\n\r\nconst SelectwithIconDemo = () => {\r\n  const [value, setValue] = useState(\"Dribbble\")\r\n  const selectedSocial = socials.find((s) => s.value === value)\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor=\"Socials\" className=\"gap-1\">\r\n        Socials\r\n      </Label>\r\n\r\n      <Select value={value} onValueChange={(val) => val && setValue(val)}>\r\n        <SelectTrigger id=\"Socials\" className=\"w-full\">\r\n          <div className=\"flex items-center gap-2\">\r\n            {selectedSocial && <selectedSocial.icon className=\"h-4 w-4\" />}\r\n            <SelectValue />\r\n          </div>\r\n        </SelectTrigger>\r\n\r\n        <SelectContent align=\"start\" alignItemWithTrigger={false} className=\"data-[state=open]:slide-in-from-bottom-8 data-[state=open]:zoom-in-100 duration-400\">\r\n          {socials.map((item) => (\r\n            <SelectItem key={item.value} value={item.value}>\r\n              <item.icon className=\"h-4 w-4\" />\r\n              <span className=\"truncate\">{item.label}</span>\r\n            </SelectItem>\r\n          ))}\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default SelectwithIconDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/select/select-02.tsx"
+    }
+  ]
+}

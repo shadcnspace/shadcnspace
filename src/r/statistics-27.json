@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-27",
+  "type": "registry:block",
+  "title": "Statistics 27",
+  "description": "A total income statistics block",
+  "dependencies": [
+    "react-apexcharts",
+    "@iconify/react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "card",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-27/page.tsx",
+      "content": "import Statistics27 from \"@/components/shadcn-space/blocks/statistics-27/statistics27\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics27 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-27/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-27/statistics27.tsx",
+      "content": "'use client'\r\n\r\nimport dynamic from 'next/dynamic'\r\nimport { Icon } from '@iconify/react'\r\nimport { HiOutlineDotsVertical } from 'react-icons/hi'\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuTrigger,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n} from '@/components/ui/dropdown-menu'\r\nimport { Card } from '@/components/ui/card'\r\n\r\nconst Chart = dynamic(() => import('react-apexcharts'), { ssr: false })\r\n\r\nconst Statistics27 = () => {\r\n  const Action = [\r\n    {\r\n      icon: 'solar:add-circle-outline',\r\n      listtitle: 'Add',\r\n    },\r\n    {\r\n      icon: 'solar:pen-new-square-broken',\r\n      listtitle: 'Edit',\r\n    },\r\n    {\r\n      icon: 'solar:trash-bin-minimalistic-outline',\r\n      listtitle: 'Delete',\r\n    },\r\n  ]\r\n\r\n  const ChartData: any = {\r\n    series: [\r\n      {\r\n        name: 'monthly earnings',\r\n        color: 'var(--color-blue-500)',\r\n        data: [25, 66, 20, 40, 12, 58, 20],\r\n      },\r\n    ],\r\n    chart: {\r\n      id: 'total-income',\r\n      type: 'area',\r\n      height: 70,\r\n      sparkline: {\r\n        enabled: true,\r\n      },\r\n      group: 'sparklines',\r\n      fontFamily: 'inherit',\r\n      foreColor: 'var(--color-blue-500)',\r\n    },\r\n    stroke: {\r\n      curve: 'smooth',\r\n      width: 2,\r\n    },\r\n    fill: {\r\n      type: 'gradient',\r\n      gradient: {\r\n        shadeIntensity: 0,\r\n        inverseColors: false,\r\n        opacityFrom: 0,\r\n        opacityTo: 0,\r\n        stops: [20, 180],\r\n      },\r\n    },\r\n\r\n    markers: {\r\n      size: 0,\r\n    },\r\n    tooltip: {\r\n      theme: 'dark',\r\n      x: {\r\n        show: false,\r\n      },\r\n    },\r\n  }\r\n  return (\r\n    <>\r\n      <div className='min-h-screen flex flex-col items-center justify-center'>\r\n        <Card className='w-full max-w-sm p-6 gap-8 bg-blue-500/10 dark:bg-blue-500/12 border-none'>\r\n          <div className='flex items-center justify-between'>\r\n            <div className='flex items-center gap-3'>\r\n              <span className='w-10 h-10 rounded-full flex items-center justify-center bg-blue-500 text-white'>\r\n                <Icon icon='solar:wallet-2-line-duotone' height={24} />\r\n              </span>\r\n              <h5 className='text-base font-semibold text-foreground/70'>Total Income</h5>\r\n            </div>\r\n            <div>\r\n              <DropdownMenu>\r\n                <DropdownMenuTrigger >\r\n                  <span className='h-9 w-9 flex justify-center items-center rounded-full cursor-pointer'>\r\n                    <HiOutlineDotsVertical size={22} />\r\n                  </span>\r\n                </DropdownMenuTrigger>\r\n                <DropdownMenuContent className=' p-1'>\r\n                  {Action.map((items, index) => (\r\n                    <DropdownMenuItem key={index} className='flex gap-3 font-normal cursor-pointer'>\r\n                      <Icon icon={`${items.icon}`} height={18} className='text-inherit' />\r\n                      <span>{items.listtitle}</span>\r\n                    </DropdownMenuItem>\r\n                  ))}\r\n                </DropdownMenuContent>\r\n              </DropdownMenu>\r\n            </div>\r\n          </div>\r\n\r\n          <div className='grid grid-cols-12 gap-[24px] items-end'>\r\n            <div className='xl:col-span-6 col-span-7'>\r\n              <h4 className='text-3xl font-semibold text-foreground mb-3'>$6,280</h4>\r\n              <span className='font-semibold border rounded-full border-border py-0.5 px-[10px] leading-[normal] text-xs text-foreground/70'>\r\n                +18% last month\r\n              </span>\r\n            </div>\r\n            <div className='xl:col-span-6 col-span-5'>\r\n              <div className='rounded-bars md:ps-7 h-[70px]'>\r\n                <Chart\r\n                  options={ChartData}\r\n                  series={ChartData.series}\r\n                  type='area'\r\n                  height='70px'\r\n                  width='100%'\r\n                />\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </Card>\r\n      </div>\r\n    </>\r\n  )\r\n}\r\n\r\nexport default Statistics27\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-27/statistics27.tsx"
+    }
+  ]
+}

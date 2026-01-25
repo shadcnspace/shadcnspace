@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-08",
+  "type": "registry:component",
+  "title": "Input-08 - Input with add-ons",
+  "description": "Input component",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-08.tsx",
+      "content": "import { useId } from 'react'\r\n\r\nimport { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst InputAddOnsDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Input with add-ons</Label>\r\n      <div className='flex rounded-md shadow-xs'>\r\n        <span className='border-input text-muted-foreground inline-flex items-center rounded-l-md border px-3 text-sm'>\r\n          https://\r\n        </span>\r\n        <Input id={id} type='text' placeholder='ShadcnSpace' className='-mx-px rounded-none shadow-none' />\r\n        <span className='border-input text-muted-foreground inline-flex items-center rounded-r-md border px-3 text-sm'>\r\n          .com\r\n        </span>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default InputAddOnsDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-08.tsx"
+    }
+  ]
+}

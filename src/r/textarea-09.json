@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-09",
+  "type": "registry:component",
+  "title": "Textarea-09 - Disabled Textarea",
+  "description": "Textarea component",
+  "dependencies": [],
+  "registryDependencies": [
+    "textarea",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/textarea/textarea-09.tsx",
+      "content": "import { Label } from '@/components/ui/label'\r\nimport { Textarea } from '@/components/ui/textarea'\r\n\r\nconst TextareaDisabledDemo = () => {\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor=\"message\">Message</Label>\r\n      <Textarea placeholder='Drop your message here !' disabled id=\"message\" />\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default TextareaDisabledDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/textarea/textarea-09.tsx"
+    }
+  ]
+}

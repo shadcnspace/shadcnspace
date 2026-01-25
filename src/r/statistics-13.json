@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-13",
+  "type": "registry:block",
+  "title": "Statistics 13",
+  "description": "A simple statistics block",
+  "dependencies": [
+    "moment",
+    "react-apexcharts"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-13/page.tsx",
+      "content": "import Statistics13 from \"@/components/shadcn-space/blocks/statistics-13/statistics13\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics13 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-13/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-13/statistics13.tsx",
+      "content": "\"use client\";\r\nimport dynamic from \"next/dynamic\";\r\nimport moment from \"moment\";\r\nimport { Card } from \"@/components/ui/card\";\r\nimport \"./styles/style.css\";\r\nconst Chart = dynamic(() => import(\"react-apexcharts\"), { ssr: false });\r\nconst ChartData: any = {\r\n    series: [\r\n        {\r\n            data: [\r\n                {\r\n                    x: \"Sun\",\r\n                    y: [\r\n                        new Date(\"2024-02-27\").getTime(),\r\n                        new Date(\"2024-03-04\").getTime(),\r\n                    ],\r\n                    fillColor: \"var(--color-blue-500)\",\r\n                },\r\n                {\r\n                    x: \"Mon\",\r\n                    y: [\r\n                        new Date(\"2024-03-04\").getTime(),\r\n                        new Date(\"2024-03-10\").getTime(),\r\n                    ],\r\n                    fillColor: \"var(--color-neutral-800)\",\r\n                },\r\n                {\r\n                    x: \"Tue\",\r\n                    y: [\r\n                        new Date(\"2024-03-01\").getTime(),\r\n                        new Date(\"2024-03-06\").getTime(),\r\n                    ],\r\n                    fillColor: \"var(--color-red-500)\",\r\n                },\r\n            ],\r\n        },\r\n    ],\r\n\r\n    chart: {\r\n        id: \"sparkline3\",\r\n        type: \"rangeBar\",\r\n        fontFamily: \"inherit\",\r\n        foreColor: \"#adb0bb\",\r\n        height: 300,\r\n        toolbar: {\r\n            show: false,\r\n        },\r\n    },\r\n    plotOptions: {\r\n        bar: {\r\n            horizontal: true,\r\n            distributed: true,\r\n            dataLabels: {\r\n                hideOverflowingLabels: false,\r\n            },\r\n        },\r\n    },\r\n    dataLabels: {\r\n        enabled: true,\r\n        background: {\r\n            borderRadius: 20,\r\n        },\r\n        formatter: function (\r\n            val: moment.MomentInput[],\r\n            opts: {\r\n                w: { globals: { labels: { [x: string]: any } } };\r\n                dataPointIndex: string | number;\r\n            }\r\n        ) {\r\n            var label = opts.w.globals.labels[opts.dataPointIndex];\r\n            var a = moment(val[0]);\r\n            var b = moment(val[1]);\r\n            return label + \": \" + \"Meeting with Sunil\";\r\n        },\r\n    },\r\n    xaxis: {\r\n        type: \"datetime\",\r\n        axisBorder: {\r\n            show: false,\r\n        },\r\n        axisTicks: {\r\n            show: false,\r\n        },\r\n        labels: {\r\n            style: { fontSize: \"13px\", colors: \"#adb0bb\", fontWeight: \"400\" },\r\n        },\r\n    },\r\n    yaxis: {\r\n        axisBorder: {\r\n            show: false,\r\n        },\r\n        axisTicks: {\r\n            show: false,\r\n        },\r\n        labels: {\r\n            style: { fontSize: \"13px\", colors: \"#adb0bb\", fontWeight: \"400\" },\r\n        },\r\n    },\r\n    grid: {\r\n        borderColor: \"var(--color-muted)\",\r\n    },\r\n    tooltip: {\r\n        theme: \"dark\",\r\n    },\r\n};\r\nconst Statistics13 = () => {\r\n    return (\r\n        <div className=\"min-h-screen mx-7 flex flex-col items-center justify-center\">\r\n            <Card className=\"h-full p-7 max-w-3xl w-full border-0\">\r\n                <div>\r\n                    <h5 className=\"text-lg font-semibold\">Weekly Scheduels</h5>\r\n                </div>\r\n                <div className=\"rounded-pill-bars\">\r\n                    <Chart\r\n                        options={ChartData}\r\n                        series={ChartData.series}\r\n                        type=\"rangeBar\"\r\n                        height=\"303px\"\r\n                        width=\"100%\"\r\n                    />\r\n                </div>\r\n            </Card>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Statistics13;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-13/statistics13.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-13/styles/style.css",
+      "content": ".rounded-pill-bars .apexcharts-rangebar-area {\r\n    clip-path: inset(9% 0 11% round 24px);\r\n}",
+      "type": "registry:style",
+      "target": "components/shadcn-space/blocks/statistics-13/styles/style.css"
+    }
+  ]
+}

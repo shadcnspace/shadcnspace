@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-35",
+  "type": "registry:block",
+  "title": "Statistics 35",
+  "description": "A traffic distribution statistics block",
+  "dependencies": [
+    "@iconify/react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-35/page.tsx",
+      "content": "import Statistics35 from \"@/components/shadcn-space/blocks/statistics-35/statistics35\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics35 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-35/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-35/statistics35.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Card } from \"@/components/ui/card\";\r\nimport { Icon } from \"@iconify/react\";\r\nimport {\r\n    animate,\r\n    motion,\r\n    useInView,\r\n    useMotionValue,\r\n    useTransform\r\n} from \"motion/react\";\r\nimport { useEffect, useRef } from \"react\";\r\n\r\nfunction AnimatedCounter({\r\n    value,\r\n    prefix = \"\",\r\n    suffix = \"\",\r\n    isInView = true,\r\n}: {\r\n    value: number;\r\n    prefix?: string;\r\n    suffix?: string;\r\n    isInView?: boolean;\r\n}) {\r\n    const count = useMotionValue(0);\r\n    const rounded = useTransform(count, (latest) =>\r\n        Math.round(latest).toLocaleString()\r\n    );\r\n\r\n    useEffect(() => {\r\n        if (isInView) {\r\n            const controls = animate(count, value, { duration: 1.5 });\r\n            return controls.stop;\r\n        }\r\n    }, [value, isInView]);\r\n\r\n    return (\r\n        <span>\r\n            {prefix}\r\n            <motion.span>{rounded}</motion.span>\r\n            {suffix}\r\n        </span>\r\n    );\r\n}\r\n\r\nconst Statistics35 = () => {\r\n    const ref = useRef(null);\r\n    const isInView = useInView(ref, { once: true, amount: 0.2 });\r\n\r\n    return (\r\n        <div className=\"min-h-screen flex flex-col items-center justify-center\">\r\n            <motion.div\r\n                ref={ref}\r\n                initial={{ opacity: 0, y: 40 }}\r\n                animate={isInView ? { opacity: 1, y: 0 } : {}}\r\n                transition={{ duration: 0.6, ease: \"easeOut\" }}\r\n            >\r\n                <Card className=\"p-7 bg-blue-500 dark:bg-blue-500 pb-0 max-w-[500px] mx-auto my-auto relative overflow-hidden\">\r\n                    <div className=\"grid grid-cols-12\">\r\n                        {/* LEFT SIDE */}\r\n                        <div className=\"md:col-span-7 col-span-12\">\r\n                            <div className=\"flex gap-4 items-center\">\r\n                                <div className=\"h-12 w-12 rounded-xl bg-white flex items-center justify-center shrink-0\">\r\n                                    <Icon\r\n                                        icon=\"solar:course-up-outline\"\r\n                                        className=\"text-neutral-600\"\r\n                                        height={24}\r\n                                    />\r\n                                </div>\r\n\r\n                                <h5 className=\"text-xl text-white\">Welcome Back David</h5>\r\n                            </div>\r\n\r\n                            {/* COUNTERS */}\r\n                            <div className=\"flex w-full xl:mt-12 sm:mt-12 lg:mt-6 mt-6\">\r\n                                <div className=\"border-e border-white/20 pe-4\">\r\n                                    <p className=\"text-white opacity-75 text-sm mb-1\">Budget</p>\r\n                                    <h2 className=\"text-white text-2xl!\">\r\n                                        <AnimatedCounter value={98450} isInView={isInView} prefix=\"$\" />\r\n                                    </h2>\r\n                                </div>\r\n\r\n                                <div className=\"ps-4\">\r\n                                    <p className=\"text-white opacity-75 text-sm mb-1\">Expenses</p>\r\n                                    <h2 className=\"text-white text-2xl!\">\r\n                                        <AnimatedCounter value={2440} isInView={isInView} prefix=\"$\" />\r\n                                    </h2>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n\r\n                        {/* IMAGE RIGHT */}\r\n                        <div className=\"md:col-span-5 col-span-12 md:ms-auto ms-auto me-auto\">\r\n                            <img\r\n                                src=\"https://images.shadcnspace.com/assets/backgrounds/welcome-bg-1.png\"\r\n                                alt=\"background\"\r\n                                className=\"-mb-n5 xl:max-w-[170px] lg:max-w-36 md:max-w-36 max-w-32 lg:ps-4 md:pt-0 pt-6\"\r\n                                width={1024}\r\n                                height={195}\r\n                            />\r\n                        </div>\r\n                    </div>\r\n                </Card>\r\n            </motion.div>\r\n        </div>\r\n    );\r\n}\r\n\r\nexport default Statistics35;\r\n\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-35/statistics35.tsx"
+    }
+  ]
+}

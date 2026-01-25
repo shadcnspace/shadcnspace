@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "statistics-31",
+  "type": "registry:block",
+  "title": "Statistics 31",
+  "description": "A earning statistics block",
+  "dependencies": [
+    "react-apexcharts",
+    "@iconify/react",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-31/page.tsx",
+      "content": "import Statistics31 from \"@/components/shadcn-space/blocks/statistics-31/statistics31\"\r\n\r\nexport default function Page() {\r\n    return (\r\n        <div>\r\n            <Statistics31 />\r\n        </div>\r\n    )\r\n}\r\n",
+      "type": "registry:page",
+      "target": "app/statistics-31/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-31/statistics31.tsx",
+      "content": "'use client'\r\n\r\nimport dynamic from 'next/dynamic'\r\nimport { Card } from '@/components/ui/card'\r\nimport { Badge } from '@/components/ui/badge'\r\nimport { Icon } from '@iconify/react'\r\nimport \"./styles/style.css\";\r\n\r\nconst Chart = dynamic(() => import('react-apexcharts'), { ssr: false })\r\n\r\nconst ChartData: any = {\r\n  series: [\r\n    {\r\n      name: 'Paypal',\r\n      data: [29, 52, 38, 47, 56, 41, 46],\r\n    },\r\n    {\r\n      name: 'Amazone',\r\n      data: [71, 71, 71, 71, 71, 71, 71],\r\n    },\r\n  ],\r\n\r\n  chart: {\r\n    fontFamily: 'inherit',\r\n    foreColor: '#adb0bb',\r\n    type: 'bar',\r\n    height: 150,\r\n    stacked: true,\r\n    offsetX: -5,\r\n    toolbar: {\r\n      show: false,\r\n    },\r\n  },\r\n  grid: {\r\n    show: false,\r\n    borderColor: 'rgba(0,0,0,0.1)',\r\n    strokeDashArray: 1,\r\n    xaxis: {\r\n      lines: {\r\n        show: false,\r\n      },\r\n    },\r\n    yaxis: {\r\n      lines: {\r\n        show: true,\r\n      },\r\n    },\r\n    padding: {\r\n      top: 0,\r\n      right: 0,\r\n      bottom: 0,\r\n      left: 0,\r\n    },\r\n  },\r\n  colors: ['var(--color-sky-400)', 'var(--color-neutral-100)'],\r\n  plotOptions: {\r\n    bar: {\r\n      horizontal: false,\r\n      columnWidth: '26%',\r\n      borderRadius: [3],\r\n      borderRadiusApplication: 'end',\r\n      borderRadiusWhenStacked: 'all',\r\n    },\r\n  },\r\n  dataLabels: {\r\n    enabled: false,\r\n  },\r\n  xaxis: {\r\n    categories: [['M'], ['T'], ['W'], ['T'], ['F'], ['S'], ['S']],\r\n    axisBorder: {\r\n      show: false,\r\n    },\r\n    axisTicks: {\r\n      show: false,\r\n    },\r\n  },\r\n  yaxis: {\r\n    labels: {\r\n      show: false,\r\n    },\r\n  },\r\n  tooltip: {\r\n    theme: 'dark',\r\n  },\r\n  legend: {\r\n    show: false,\r\n  },\r\n}\r\n\r\nconst Statistics31 = () => {\r\n  return (\r\n    <div className='min-h-screen flex flex-col items-center justify-center'>\r\n      <Card className='w-full max-w-2xs p-6'>\r\n        <div className='flex justify-between align-baseline'>\r\n          <div>\r\n            <h5 className='text-lg font-semibold text-foreground'>Earning</h5>\r\n            <p className='text-sm font-medium text-muted-foreground'>Last 7 days</p>\r\n          </div>\r\n          <div>\r\n            <h5 className='text-lg font-semibold text-foreground'>12,389</h5>\r\n            <Badge className='bg-amber-300/10 text-amber-300 border-amber-300'>-3.8%</Badge>\r\n          </div>\r\n        </div>\r\n\r\n        <div className='mt-3 -ms-4 h-[150px] rounded-bars'>\r\n          <Chart\r\n            options={ChartData}\r\n            series={ChartData.series}\r\n            type='bar'\r\n            height='150px'\r\n            width='100%'\r\n          />\r\n        </div>\r\n        <h6 className='flex justify-between text-sm font-normal text-muted-foreground'>\r\n          <span className='flex gap-3 items-center'>\r\n            <Icon icon={'tabler:circle'} width={16} height={16} className='text-sky-400' /> Paypal\r\n          </span>\r\n          52%\r\n        </h6>\r\n        <h6 className='flex justify-between text-sm font-normal text-muted-foreground'>\r\n          <span className='flex gap-3 items-center'>\r\n            <Icon icon={'tabler:circle'} width={16} height={16} /> Amazon\r\n          </span>\r\n          48%\r\n        </h6>\r\n      </Card>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default Statistics31\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/statistics-31/statistics31.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/statistics-31/styles/style.css",
+      "content": ".rounded-bars .apexcharts-bar-series.apexcharts-plot-series .apexcharts-series path {\r\n    clip-path: inset(0 0 5% 0 round 20px);\r\n}",
+      "type": "registry:style",
+      "target": "components/shadcn-space/blocks/statistics-31/styles/style.css"
+    }
+  ]
+}

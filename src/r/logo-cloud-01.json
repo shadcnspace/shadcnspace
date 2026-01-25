@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "logo-cloud-01",
+  "type": "registry:block",
+  "title": "Logo Cloud 01",
+  "description": "A simple logo cloud built with Shadcn styling, using a subtle background, underlined heading, and a flexible grid of brand images that adapts smoothly across screen sizes.",
+  "dependencies": [
+    ""
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/logo-cloud-01/page.tsx",
+      "content": "import LogoCloudDemo from \"@/components/shadcn-space/blocks/logo-cloud-01/logo-cloud\";\r\n\r\nconst page = () => {\r\n  return <LogoCloudDemo />;\r\n};\r\n\r\nexport default page;\r\n",
+      "type": "registry:page",
+      "target": "app/logo-cloud-01/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/logo-cloud-01/logo-cloud.tsx",
+      "content": "import { Marquee } from \"@/components/shadcn-space/animations/marquee\";\r\n\r\ntype BrandList = {\r\n  image: string;\r\n  lightimg: string;\r\n  name: string;\r\n};\r\n\r\nconst LogoCloudDemo = () => {\r\n  const brandList: BrandList[] = [\r\n    {\r\n      image: \"https://images.shadcnspace.com/assets/brand-logo/logoipsum-1.svg\",\r\n      lightimg:\r\n        \"https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-1.svg\",\r\n      name: \"Brand 1\",\r\n    },\r\n    {\r\n      image: \"https://images.shadcnspace.com/assets/brand-logo/logoipsum-2.svg\",\r\n      lightimg:\r\n        \"https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-2.svg\",\r\n      name: \"Brand 2\",\r\n    },\r\n    {\r\n      image: \"https://images.shadcnspace.com/assets/brand-logo/logoipsum-3.svg\",\r\n      lightimg:\r\n        \"https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-3.svg\",\r\n      name: \"Brand 3\",\r\n    },\r\n    {\r\n      image: \"https://images.shadcnspace.com/assets/brand-logo/logoipsum-4.svg\",\r\n      lightimg:\r\n        \"https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-4.svg\",\r\n      name: \"Brand 4\",\r\n    },\r\n    {\r\n      image: \"https://images.shadcnspace.com/assets/brand-logo/logoipsum-5.svg\",\r\n      lightimg:\r\n        \"https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-5.svg\",\r\n      name: \"Brand 5\",\r\n    },\r\n  ];\r\n\r\n  return (\r\n    <>\r\n      <div className=\"min-h-screen flex items-center justify-center relative overflow-hidden\">\r\n        <Marquee pauseOnHover className=\"[--duration:20s] p-0\">\r\n          {brandList.map((brand, index) => (\r\n            <div key={index}>\r\n              <img\r\n                src={brand.image}\r\n                alt={brand.name}\r\n                className=\"w-36 h-8 mr-6 lg:mr-20 dark:hidden\"\r\n              />\r\n              <img\r\n                src={brand.lightimg}\r\n                alt={brand.name}\r\n                className=\"hidden dark:block w-36 h-8 mr-12 lg:mr-20\"\r\n              />\r\n            </div>\r\n          ))}\r\n        </Marquee>\r\n\r\n        {/* Left blur */}\r\n        <div className=\"pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background to-transparent\" />\r\n\r\n        {/* Right blur */}\r\n        <div className=\"pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background to-transparent\" />\r\n      </div>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default LogoCloudDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/logo-cloud-01/logo-cloud.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/animations/marquee.tsx",
+      "content": "\"use client\";\r\n\r\nimport { ComponentPropsWithoutRef } from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface MarqueeProps extends ComponentPropsWithoutRef<\"div\"> {\r\n  className?: string;\r\n  reverse?: boolean;\r\n  pauseOnHover?: boolean;\r\n  children: React.ReactNode;\r\n  vertical?: boolean;\r\n  repeat?: number;\r\n  duration?: string;\r\n  gap?: string;\r\n}\r\n\r\nexport function Marquee({\r\n  className,\r\n  reverse = false,\r\n  pauseOnHover = false,\r\n  vertical = false,\r\n  repeat = 4,\r\n  duration = \"40s\",\r\n  gap = \"1rem\",\r\n  children,\r\n  ...props\r\n}: MarqueeProps) {\r\n  // Repeat children inline for seamless scrolling\r\n  const repeatedChildren = Array(repeat)\r\n    .fill(0)\r\n    .map((_, i) => (\r\n      <div key={i} className=\"flex shrink-0\" style={{ gap }}>\r\n        {children}\r\n      </div>\r\n    ));\r\n\r\n  return (\r\n    <>\r\n      {/* Inline CSS */}\r\n      <style>{`\r\n        @keyframes marquee {\r\n          from { transform: translateX(0); }\r\n          to { transform: translateX(calc(-100% - ${gap})); }\r\n        }\r\n        @keyframes marquee-vertical {\r\n          from { transform: translateY(0); }\r\n          to { transform: translateY(calc(-100% - ${gap})); }\r\n        }\r\n\r\n        .marquee {\r\n          display: flex;\r\n          animation: marquee ${duration} linear infinite;\r\n          animation-direction: ${reverse ? \"reverse\" : \"normal\"};\r\n        }\r\n\r\n        .marquee-vertical {\r\n          display: flex;\r\n          flex-direction: column;\r\n          animation: marquee-vertical ${duration} linear infinite;\r\n          animation-direction: ${reverse ? \"reverse\" : \"normal\"};\r\n        }\r\n\r\n        .marquee-hover:hover,\r\n        .marquee-vertical-hover:hover {\r\n          animation-play-state: paused;\r\n        }\r\n      `}</style>\r\n\r\n      <div\r\n        {...props}\r\n        className={cn(\r\n          \"overflow-hidden flex\",\r\n          vertical ? \"flex-col\" : \"flex-row\",\r\n          className,\r\n        )}\r\n      >\r\n        <div\r\n          className={cn(\r\n            vertical\r\n              ? pauseOnHover\r\n                ? \"marquee-vertical-hover marquee-vertical\"\r\n                : \"marquee-vertical\"\r\n              : pauseOnHover\r\n                ? \"marquee-hover marquee\"\r\n                : \"marquee\",\r\n          )}\r\n        >\r\n          {repeatedChildren}\r\n        </div>\r\n      </div>\r\n    </>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/animations/marquee.tsx"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-03",
+  "type": "registry:component",
+  "title": "Card-03 - Product Card",
+  "description": "Card component",
+  "dependencies": [],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/card/card-03.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport { Card, CardHeader, CardTitle, CardContent } from \"@/components/ui/card\";\r\nimport { Progress } from \"@/components/ui/progress\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst ProductCard = () => {\r\n    return (\r\n        <Card className=\"overflow-hidden h-full bg-blue-500 max-w-sm w-full\">\r\n            <CardHeader>\r\n                <CardTitle className=\"text-lg font-medium text-white\">Best Selling Products</CardTitle>\r\n            </CardHeader>\r\n            <CardContent>\r\n                <div className=\"flex justify-center mt-3\">\r\n                    <img src={'https://images.shadcnspace.com/assets/backgrounds/best-selling-bg.png'} width={251} height={162} alt=\"best-selling-bg\" className=\"w-full\" />\r\n                </div>\r\n                <div className=\"bg-card p-5 flex flex-col gap-5 rounded-xl\">\r\n                    <div>\r\n                        <div className=\"flex justify-between items-baseline mb-3\">\r\n                            <div>\r\n                                <h6 className=\"text-base font-medium\">MaterialPro Dashboard</h6>\r\n                                <p className=\"text-sm text-muted-foreground\">$23,568</p>\r\n                            </div>\r\n                            <Badge className=\"text-sm bg-blue-500/10 text-blue-500 h-auto\">\r\n                                55%\r\n                            </Badge>\r\n                        </div>\r\n                        <Progress value={55} className={cn(\"w-full\", \"**:data-[slot=progress-indicator]:bg-blue-500\", \"**:data-[slot=progress-track]:bg-blue-500/10\")} />\r\n                    </div>\r\n                    <div>\r\n                        <div className=\"flex justify-between items-baseline mb-3\">\r\n                            <div>\r\n                                <h6 className=\"text-base font-medium\">Flexy Admin Template</h6>\r\n                                <p className=\"text-sm text-muted-foreground\">$24,468</p>\r\n                            </div>\r\n                            <div>\r\n                                <Badge className=\"text-sm bg-sky-400/10 text-sky-400 h-auto\">\r\n                                    65%\r\n                                </Badge>\r\n                            </div>\r\n                        </div>\r\n                        <Progress value={65} className={cn(\"w-full\", \"**:data-[slot=progress-indicator]:bg-sky-400\", \"**:data-[slot=progress-track]:bg-sky-400/10\")} />\r\n                    </div>\r\n                </div>\r\n            </CardContent>\r\n        </Card>\r\n    );\r\n};\r\n\r\nexport default ProductCard",
+      "type": "registry:component",
+      "target": "components/shadcn-space/card/card-03.tsx"
+    }
+  ]
+}
