@@ -57,7 +57,7 @@ const ContactInfo = () => {
             We can help
           </p>
         </div>
-        <p className="text-4xl font-medium text-foreground">
+        <p className="text-3xl  md:text-4xl font-medium text-foreground">
           Let’s discuss about your project and take it the next level.
         </p>
       </div>
