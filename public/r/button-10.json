@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-10",
+  "type": "registry:component",
+  "title": "Button-10 - Save",
+  "description": "Save button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-10.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { CheckCheck } from \"lucide-react\";\r\n\r\nconst ButtonSaveDemo = () => {\r\n  return (\r\n    <Button className=\"hover:-translate-y-1 transition-transform duration-200 bg-green-500 text-white hover:bg-green-500/80 rounded-m\">\r\n      <CheckCheck className=\"size-4\" />\r\n      Save Changes\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default ButtonSaveDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-10.tsx"
+    }
+  ]
+}

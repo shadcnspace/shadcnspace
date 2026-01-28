@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-15",
+  "type": "registry:component",
+  "title": "Button-15 - Size lg",
+  "description": "Size lg button component",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-15.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst ButtonSizeDemo = () => {\r\n  return (\r\n    <Button\r\n      variant=\"default\"\r\n      size={\"lg\"}\r\n      className=\"px-6 hover:-translate-y-1 transition-transform duration-200\"\r\n    >\r\n      Button Size: lg\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default ButtonSizeDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-15.tsx"
+    }
+  ]
+}

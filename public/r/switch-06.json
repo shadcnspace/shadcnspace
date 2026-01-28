@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-06",
+  "type": "registry:component",
+  "title": "Switch-06 - Custom Colors",
+  "description": "Switch component",
+  "dependencies": [],
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/switch/switch-06.tsx",
+      "content": "import { Switch } from \"@/components/ui/switch\";\r\n\r\nconst SwitchCustomColorDemo = () => {\r\n  return (\r\n    <div className=\"flex gap-2\">\r\n      <Switch className={\"data-checked:bg-blue-500\"} defaultChecked />\r\n      <Switch className={\"data-checked:bg-teal-400\"} defaultChecked />\r\n      <Switch className={\"data-checked:bg-orange-400\"} defaultChecked />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SwitchCustomColorDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/switch/switch-06.tsx"
+    }
+  ]
+}

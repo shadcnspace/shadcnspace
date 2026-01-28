@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-03",
+  "type": "registry:component",
+  "title": "Switch-03 - Toggle theme",
+  "description": "Switch toggle theme component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/switch/switch-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { MoonIcon, SunIcon } from \"lucide-react\";\r\n\r\nconst SwitchToggleThemeDemo = () => {\r\n  const id = useId();\r\n  const [isDark, setIsDark] = useState(true);\r\n\r\n  return (\r\n    <div className=\"group inline-flex items-center gap-2\">\r\n      <span\r\n        id={`${id}-light`}\r\n        className={cn(\r\n          \"cursor-pointer text-left text-sm font-medium\",\r\n          isDark && \"text-foreground/50\",\r\n        )}\r\n        aria-controls={id}\r\n        onClick={() => setIsDark(false)}\r\n      >\r\n        <SunIcon className=\"size-4\" aria-hidden=\"true\" />\r\n      </span>\r\n\r\n      <Switch\r\n        id={id}\r\n        checked={isDark}\r\n        onCheckedChange={setIsDark}\r\n        aria-labelledby={`${id}-light ${id}-dark`}\r\n        aria-label=\"Toggle between dark and light mode\"\r\n        className={\"h-14 w-14\"}\r\n      />\r\n\r\n      <span\r\n        id={`${id}-dark`}\r\n        className={cn(\r\n          \"cursor-pointer text-right text-sm font-medium\",\r\n          isDark || \"text-foreground/50\",\r\n        )}\r\n        aria-controls={id}\r\n        onClick={() => setIsDark(true)}\r\n      >\r\n        <MoonIcon className=\"size-4\" aria-hidden=\"true\" />\r\n      </span>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SwitchToggleThemeDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/switch/switch-03.tsx"
+    }
+  ]
+}

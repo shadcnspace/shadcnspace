@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-03",
+  "type": "registry:component",
+  "title": "Input-03 - Input with currency",
+  "description": "Input component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { DollarSign } from \"lucide-react\";\r\n\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nexport const title = \"Currency Input\";\r\n\r\nconst InputCurrencyDemo = () => (\r\n  <div className=\"w-full max-w-sm space-y-2\">\r\n    <Label htmlFor=\"currency-input\">Amount</Label>\r\n    <div className=\"relative\">\r\n      <DollarSign className=\"absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\r\n      <Input\r\n        className=\"bg-background pl-9\"\r\n        id=\"currency-input\"\r\n        min=\"0\"\r\n        placeholder=\"0.00\"\r\n        step=\"0.01\"\r\n        type=\"number\"\r\n      />\r\n    </div>\r\n    <p className=\"text-xs text-muted-foreground\">Enter amount in USD</p>\r\n  </div>\r\n);\r\n\r\nexport default InputCurrencyDemo;\r\n\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-03.tsx"
+    }
+  ]
+}

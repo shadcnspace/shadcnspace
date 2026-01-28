@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-05",
+  "type": "registry:component",
+  "title": "Select-05 - Select with overlapping label",
+  "description": "Select component",
+  "dependencies": [],
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/select/select-05.tsx",
+      "content": "import { useId } from 'react'\r\n\r\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'\r\n\r\nconst SelectWithOverlappingLabelDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='group relative w-full max-w-xs'>\r\n      <label\r\n        htmlFor={id}\r\n        className='bg-background text-foreground absolute top-0 left-2 z-10 block -translate-y-1/2 px-1 text-xs font-medium group-has-disabled:opacity-50'\r\n      >\r\n        Country\r\n      </label>\r\n      <Select defaultValue=\"New York\">\r\n        <SelectTrigger id={id} className='dark:!bg-background w-full'>\r\n          <SelectValue />\r\n        </SelectTrigger>\r\n        <SelectContent className={\"data-[state=open]:slide-in-from-bottom-8 data-[state=open]:zoom-in-100 duration-400\"}>\r\n          <SelectItem value='New York'>New York</SelectItem>\r\n          <SelectItem value='London'>London</SelectItem>\r\n          <SelectItem value='Tokyo'>Tokyo</SelectItem>\r\n          <SelectItem value='Paris'>Paris</SelectItem>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default SelectWithOverlappingLabelDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/select/select-05.tsx"
+    }
+  ]
+}

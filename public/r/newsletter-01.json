@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "newsletter-01",
+  "type": "registry:block",
+  "title": "Newsletter 01 - Newsletter Subscription CTA",
+  "description": "A minimal newsletter signup section with bold headline, social-proof subtext, and inline email form, ideal for capturing leads and growing your audience with a frictionless experience.",
+  "dependencies": [
+    "@iconify/react"
+  ],
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/newsletter-01/page.tsx",
+      "content": "import Newsletter from \"@/components/shadcn-space/blocks/newsletter-01/newsletter\";\r\n\r\nexport default function Page() {\r\n    return <Newsletter />;\r\n}",
+      "type": "registry:page",
+      "target": "app/newsletter-01/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/newsletter-01/newsletter.tsx",
+      "content": "import { Icon } from \"@iconify/react\";\r\nimport {\r\n    InputGroup,\r\n    InputGroupAddon,\r\n    InputGroupButton,\r\n    InputGroupInput,\r\n} from \"@/components/ui/input-group\"\r\n\r\n\r\nexport default function Newsletter() {\r\n    return (\r\n        <section>\r\n            <div className=\"max-w-7xl mx-auto px-4 md:px-6 lg:px-8 md:py-20 py-8\">\r\n                <div className=\"bg-teal-400/20 py-24 relative overflow-hidden\">\r\n                    <img src=\"https://images.shadcnspace.com/assets/svgs/newsletter-flake.svg\" alt=\"newsletter-flake\" className=\"absolute animate-spin [animation-duration:1500ms] w-80 h-80 -top-2/4 right-0 -z-1\" />\r\n                    <div className=\"flex flex-col gap-10 relative z-0\">\r\n                        <div className=\"flex flex-col gap-6 text-center\">\r\n                            <h2 className=\"sm:text-5xl text-3xl font-semibold animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both\">\r\n                                Subscribe to Newsletter\r\n                            </h2>\r\n                            <p className=\"text-base text-muted-foreground max-w-xl mx-auto animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-200 ease-in-out fill-mode-both\">\r\n                                Join 1,000,000+ subscribers receiving expert tips on earning more, investing\r\n                                smarter and living better, all in our free newsletter.\r\n                            </p>\r\n                        </div>\r\n                        <InputGroup className=\"bg-background! rounded-full overflow-hidden max-w-xl mx-auto flex items-center gap-6 w-full h-auto animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300 ease-in-out fill-mode-both\">\r\n                            <InputGroupInput type=\"email\" placeholder=\"Email address\" className=\"ps-8\" />\r\n                            <InputGroupAddon align=\"inline-end\" className=\"py-2 pe-2.5\">\r\n                                <InputGroupButton variant=\"secondary\" className=\"bg-primary flex gap-2 lg:gap-3 justify-between items-center rounded-full w-fit ps-5 h-auto border-0 text-primary-foreground text-sm font-medium py-3.5 px-6 me-1 hover:bg-primary/80 [&>svg:not([class*='size-'])]:size-4\">\r\n                                    Subscribe\r\n                                    <Icon\r\n                                        icon=\"lucide:arrow-right\"\r\n                                        width={16}\r\n                                        height={16}\r\n                                    /></InputGroupButton>\r\n                            </InputGroupAddon>\r\n                        </InputGroup>\r\n                    </div>\r\n                    <img src=\"https://images.shadcnspace.com/assets/svgs/newsletter-flake.svg\" alt=\"newsletter-flake\" className=\"absolute animate-spin [animation-duration:2500ms] top-1/3 -z-1\" />\r\n                </div>\r\n            </div>\r\n        </section>\r\n    );\r\n}",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/newsletter-01/newsletter.tsx"
+    }
+  ]
+}

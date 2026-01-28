@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-02",
+  "type": "registry:component",
+  "title": "Calendar 02 - Style calendar",
+  "description": "Calendar component",
+  "dependencies": [
+    "faker"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/calendar/calendar-02.tsx",
+      "content": "\"use client\";\r\n\r\nimport { faker } from \"@faker-js/faker\";\r\nimport { type ComponentProps, useState } from \"react\";\r\n\r\nimport { Calendar } from \"@/components/ui/calendar\";\r\n\r\nexport const title = \"Calendar with Custom Select Day Style\";\r\n\r\nconst now = new Date();\r\nconst startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);\r\nconst endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);\r\n\r\nconst bookedDays = [\r\n  faker.date.between({\r\n    from: startOfMonth,\r\n    to: new Date(now.getFullYear(), now.getMonth(), 10),\r\n  }),\r\n  faker.date.between({\r\n    from: new Date(now.getFullYear(), now.getMonth(), 11),\r\n    to: new Date(now.getFullYear(), now.getMonth(), 20),\r\n  }),\r\n  faker.date.between({\r\n    from: new Date(now.getFullYear(), now.getMonth(), 21),\r\n    to: endOfMonth,\r\n  }),\r\n];\r\n\r\nconst CalendarTwo = () => {\r\n  const [date, setDate] = useState<Date | undefined>(new Date());\r\n\r\n  const modifiers = {\r\n    booked: bookedDays,\r\n  };\r\n\r\n  const modifiersStyles: ComponentProps<typeof Calendar>[\"modifiersStyles\"] = {\r\n    booked: {\r\n      backgroundColor: \"var(--color-amber-200)\",\r\n      color: \"var(--color-amber-900)\",\r\n      fontWeight: \"bold\",\r\n    },\r\n  };\r\n  return (\r\n    <div className=\"flex items-center justify-center px-4\">\r\n      <Calendar\r\n        className=\"rounded-md border\"\r\n        classNames={{\r\n          day_button: \"rounded-full\",\r\n          day: \"rounded-full\",\r\n          today: \"rounded-full\",\r\n        }}\r\n        mode=\"single\"\r\n        modifiers={modifiers}\r\n        modifiersStyles={modifiersStyles}\r\n        onSelect={setDate}\r\n        selected={date}\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CalendarTwo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/calendar/calendar-02.tsx"
+    }
+  ]
+}

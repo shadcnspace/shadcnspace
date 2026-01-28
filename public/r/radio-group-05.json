@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-05",
+  "type": "registry:component",
+  "title": "Radio Group-05 - Radio Group with tree",
+  "description": "Radio Group component",
+  "dependencies": [],
+  "registryDependencies": [
+    "label",
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/radio-group/radio-group-05.tsx",
+      "content": "import { Label } from '@/components/ui/label'\r\nimport { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'\r\n\r\nconst RadioGroupDashedDemo = () => {\r\n  return (\r\n    <RadioGroup defaultValue='economy' className='max-w-64'>\r\n      <div className='flex items-center gap-2'>\r\n        <RadioGroupItem\r\n          value='economy'\r\n          id='economy'\r\n          className='border-primary focus-visible:border-primary border-dashed'\r\n        />\r\n        <Label htmlFor='economy'>Economy Shipping</Label>\r\n      </div>\r\n      <div className='flex items-center gap-2'>\r\n        <RadioGroupItem\r\n          value='priority'\r\n          id='priority'\r\n          className='border-primary focus-visible:border-primary border-dashed'\r\n        />\r\n        <Label htmlFor='priority'>Priority Shipping</Label>\r\n      </div>\r\n      <div className='flex items-center gap-2'>\r\n        <RadioGroupItem\r\n          value='next-day'\r\n          id='next-day'\r\n          className='border-primary focus-visible:border-primary border-dashed'\r\n        />\r\n        <Label htmlFor='next-day'>Next-Day Delivery</Label>\r\n      </div>\r\n    </RadioGroup>\r\n  )\r\n}\r\n\r\nexport default RadioGroupDashedDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/radio-group/radio-group-05.tsx"
+    }
+  ]
+}

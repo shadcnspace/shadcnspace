@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-02",
+  "type": "registry:component",
+  "title": "Card-02 - Preview Card",
+  "description": "Card component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/card/card-02.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport { Card } from \"@/components/ui/card\";\r\nimport { ArrowRight, Bath, BedDouble, Expand } from \"lucide-react\";\r\n\r\nconst PreviewCard = () => (\r\n  <Card className=\"relative gap-0 py-0 rounded-2xl group hover:shadow-3xl duration-300\">\r\n    <div className=\"overflow-hidden rounded-t-2xl\">\r\n      <a href=\"#\">\r\n        <div className=\"w-full h-72\">\r\n          <img\r\n            src=\"https://images.shadcnspace.com/assets/card/property-cover-1.jpg\"\r\n            alt=\"Serenity Residential Home\"\r\n            width={440}\r\n            height={300}\r\n            className=\"w-full h-full object-cover rounded-t-2xl group-hover:brightness-50 group-hover:scale-125 transition duration-300 delay-75\"\r\n          />\r\n        </div>\r\n      </a>\r\n\r\n      <div className=\"absolute top-6 right-6 hidden p-4 bg-white rounded-full group-hover:block\">\r\n        <ArrowRight className=\"text-card-foreground\" />\r\n      </div>\r\n    </div>\r\n\r\n    <div className=\"p-6\">\r\n      <div className=\"flex justify-between gap-5 mb-6\">\r\n        <div>\r\n          <a href=\"#\">\r\n            <h3 className=\"text-xl font-medium duration-300 group-hover:text-primary\">\r\n              Serenity Residential Home\r\n            </h3>\r\n          </a>\r\n          <p className=\"text-base font-normal text-muted-foreground\">\r\n            15 S Aurora Ave, Miami\r\n          </p>\r\n        </div>\r\n\r\n        <Badge className=\"px-5 py-4 text-base font-normal rounded-full bg-teal-500/10 text-teal-500\">\r\n          $570,000\r\n        </Badge>\r\n      </div>\r\n\r\n      <div className=\"flex\">\r\n        <div className=\"flex flex-col gap-2 xs:pr-4 pr-8 border-e border-border\">\r\n          <BedDouble size={20}/>\r\n          <p className=\"text-sm sm:text-base\">5 Bedrooms</p>\r\n        </div>\r\n\r\n        <div className=\"flex flex-col gap-2 xs:px-4 px-8 border-e border-border\">\r\n          <Bath size={20}/>\r\n          <p className=\"text-sm sm:text-base\">3 Bathrooms</p>\r\n        </div>\r\n\r\n        <div className=\"flex flex-col gap-2 xs:pl-4 pl-8\">\r\n          <Expand size={20}/>\r\n          <p className=\"text-sm sm:text-base\">\r\n            120m<sup>2</sup>\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </Card>\r\n);\r\n\r\nexport default PreviewCard;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/card/card-02.tsx"
+    }
+  ]
+}

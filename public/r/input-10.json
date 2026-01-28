@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-10",
+  "type": "registry:component",
+  "title": "Input-10 - Input with clear button",
+  "description": "Input component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-10.tsx",
+      "content": "'use client'\r\n\r\nimport { useId, useRef, useState } from 'react'\r\n\r\nimport { CircleXIcon } from 'lucide-react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\nimport { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst InputClearDemo = () => {\r\n  const [value, setValue] = useState('Click to clear')\r\n\r\n  const inputRef = useRef<HTMLInputElement>(null)\r\n\r\n  const id = useId()\r\n\r\n  const handleClearInput = () => {\r\n    setValue('')\r\n\r\n    if (inputRef.current) {\r\n      inputRef.current.focus()\r\n    }\r\n  }\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Input with clear button</Label>\r\n      <div className='relative'>\r\n        <Input\r\n          ref={inputRef}\r\n          id={id}\r\n          type='text'\r\n          placeholder='Type something...'\r\n          value={value}\r\n          onChange={e => setValue(e.target.value)}\r\n          className='pr-9'\r\n        />\r\n        {value && (\r\n          <Button\r\n            variant='ghost'\r\n            size='icon'\r\n            onClick={handleClearInput}\r\n            className='text-muted-foreground focus-visible:ring-ring/50 absolute inset-y-0 right-0 rounded-l-none hover:bg-transparent'\r\n          >\r\n            <CircleXIcon className='text-red-500'/>\r\n            <span className='sr-only'>Clear input</span>\r\n          </Button>\r\n        )}\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default InputClearDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-10.tsx"
+    }
+  ]
+}

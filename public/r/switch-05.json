@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-05",
+  "type": "registry:component",
+  "title": "Switch-05 - With label",
+  "description": "Switch component",
+  "dependencies": [],
+  "registryDependencies": [
+    "switch",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/switch/switch-05.tsx",
+      "content": "import { Label } from \"@/components/ui/label\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst SwitchWithNormalLabelDemo = () => {\r\n  return (\r\n    <div className=\"flex items-center space-x-2\">\r\n      <Switch id=\"airplane-mode\" className=\"cursor-pointer\" />\r\n      <Label htmlFor=\"airplane-mode\" className=\"cursor-pointer\">\r\n        Airplane Mode\r\n      </Label>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SwitchWithNormalLabelDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/switch/switch-05.tsx"
+    }
+  ]
+}

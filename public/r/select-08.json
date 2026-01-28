@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-08",
+  "type": "registry:component",
+  "title": "Select-08 - Select with leading text",
+  "description": "Select component",
+  "dependencies": [],
+  "registryDependencies": [
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/select/select-08.tsx",
+      "content": "import { useId } from 'react'\r\nimport { Label } from '@/components/ui/label'\r\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'\r\n\r\nconst SelectWithLeadingTextDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Ride of Choice</Label>\r\n      <Select defaultValue='Tesla Model S'>\r\n        <SelectTrigger id={id} className='w-full'>\r\n          <span className='flex items-center gap-2'>\r\n            Your Wheels: <SelectValue />\r\n          </span>\r\n        </SelectTrigger>\r\n        <SelectContent align=\"start\" alignItemWithTrigger={false} className=\"data-[state=open]:slide-in-from-bottom-8 data-[state=open]:zoom-in-100 duration-400\">\r\n          <SelectItem value='Tesla Model S'>Tesla Model S</SelectItem>\r\n          <SelectItem value='BMW M4'>BMW M4</SelectItem>\r\n          <SelectItem value='Audi R8'>Audi R8</SelectItem>\r\n          <SelectItem value='Lamborghini Huracán'>Lamborghini Huracán</SelectItem>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default SelectWithLeadingTextDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/select/select-08.tsx"
+    }
+  ]
+}

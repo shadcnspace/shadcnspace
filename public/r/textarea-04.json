@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-04",
+  "type": "registry:component",
+  "title": "Textarea-04 - Textarea with button",
+  "description": "Textarea component",
+  "dependencies": [],
+  "registryDependencies": [
+    "textarea",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/textarea/textarea-04.tsx",
+      "content": "import { useId } from 'react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\nimport { Label } from '@/components/ui/label'\r\nimport { Textarea } from '@/components/ui/textarea'\r\n\r\nconst TextareaWithButtonDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Feedback</Label>\r\n      <Textarea id={id} placeholder='Share your feedback here' />\r\n      <Button size='sm'>Submit</Button>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default TextareaWithButtonDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/textarea/textarea-04.tsx"
+    }
+  ]
+}

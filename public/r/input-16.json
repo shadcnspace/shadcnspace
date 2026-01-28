@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-16",
+  "type": "registry:component",
+  "title": "Input-16 - Standard Input",
+  "description": "Input component",
+  "dependencies": [],
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-16.tsx",
+      "content": "import { Input } from \"@/components/ui/input\";\r\n\r\nconst InputDefaultDemo = () => {\r\n  return (\r\n    <div className=\"w-full max-w-sm\">\r\n      <Input type=\"email\" placeholder=\"example@shadcnspace.com\" />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputDefaultDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-16.tsx"
+    }
+  ]
+}

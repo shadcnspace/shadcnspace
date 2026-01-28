@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-08",
+  "type": "registry:component",
+  "title": "Button-08 - Social Icon",
+  "description": "Social Icon button component",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-08.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst ButtonSocialIconDemo = () => {\r\n  return (\r\n    <div className=\"flex items-center justify-center gap-4 flex-wrap\">\r\n      {/* google */}\r\n      <Button\r\n        variant=\"outline\"\r\n        type=\"button\"\r\n        className=\"rounded-lg hover:scale-120 transition-all duration-300\"\r\n      >\r\n        <img\r\n          src=\"https://images.shadcnspace.com/assets/svgs/icon-google.svg\"\r\n          alt=\"google icon\"\r\n          className=\"h-4 w-4\"\r\n        />\r\n      </Button>\r\n      {/* github */}\r\n      <Button\r\n        variant=\"outline\"\r\n        type=\"button\"\r\n        className=\"rounded-lg hover:scale-120 transition-all duration-300\"\r\n      >\r\n        <img\r\n          src=\"https://images.shadcnspace.com/assets/svgs/icon-github.svg\"\r\n          alt=\"github icon\"\r\n          className=\"dark:hidden h-4 w-4\"\r\n        />\r\n        <img\r\n          src=\"https://images.shadcnspace.com/assets/svgs/icon-github-white.svg\"\r\n          alt=\"github icon\"\r\n          className=\"hidden dark:block h-4 w-4\"\r\n        />\r\n      </Button>\r\n      {/* linkedin */}\r\n      <Button\r\n        variant=\"outline\"\r\n        type=\"button\"\r\n        className=\"rounded-lg hover:scale-120 transition-all duration-300\"\r\n      >\r\n        <img\r\n          src=\"https://images.shadcnspace.com/assets/svgs/icon-linkedin.svg\"\r\n          alt=\"linkedin icon\"\r\n          className=\"h-4 w-4\"\r\n        />\r\n      </Button>\r\n      {/* facebook */}\r\n      <Button\r\n        variant=\"outline\"\r\n        type=\"button\"\r\n        className=\"rounded-lg hover:scale-120 transition-all duration-300\"\r\n      >\r\n        <img\r\n          src=\"https://images.shadcnspace.com/assets/svgs/icon-facebook.svg\"\r\n          alt=\"facebook icon\"\r\n          className=\"h-4 w-4\"\r\n        />\r\n      </Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ButtonSocialIconDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-08.tsx"
+    }
+  ]
+}

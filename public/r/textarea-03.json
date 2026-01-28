@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-03",
+  "type": "registry:component",
+  "title": "Textarea-03 - Required Textarea",
+  "description": "Textarea component",
+  "dependencies": [],
+  "registryDependencies": [
+    "textarea",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/textarea/textarea-03.tsx",
+      "content": "import { useId } from 'react'\r\n\r\nimport { Label } from '@/components/ui/label'\r\nimport { Textarea } from '@/components/ui/textarea'\r\n\r\nconst TextareaRequiredDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>\r\n        Feedback <span className='text-destructive'>*</span>\r\n      </Label>\r\n      <Textarea placeholder='Share your feedback here' id={id} required />\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default TextareaRequiredDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/textarea/textarea-03.tsx"
+    }
+  ]
+}

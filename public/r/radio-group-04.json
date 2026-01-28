@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-04",
+  "type": "registry:component",
+  "title": "Radio Group-04 - Radio Group with tree",
+  "description": "Radio Group component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "label",
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/radio-group/radio-group-04.tsx",
+      "content": "import { useId } from \"react\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\nimport { SwatchBook, WandSparkles } from \"lucide-react\";\r\n\r\nconst plans = [\r\n  {\r\n    value: \"1\",\r\n    title: \"Brand Strategy\",\r\n    description: \"Perfect for individual creators.\",\r\n    icon: SwatchBook,\r\n    backgroundColor: \"bg-blue-500/10\",\r\n    color: \"text-blue-500\",\r\n  },\r\n  {\r\n    value: \"2\",\r\n    title: \"UX/UI Design\",\r\n    description: \"Built for collaboration and growing teams.\",\r\n    icon: WandSparkles,\r\n    backgroundColor: \"bg-orange-400/10\",\r\n    color: \"text-orange-400\",\r\n  },\r\n];\r\n\r\nconst RadioGroupCardVerticalRadioDemo = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <RadioGroup\r\n      defaultValue=\"1\"\r\n      className=\"w-full max-w-72 justify-items-center sm:grid-cols-2\"\r\n    >\r\n      {plans.map((plan) => {\r\n        const Icon = plan.icon;\r\n        const radioId = `${id}-${plan.value}`;\r\n\r\n        return (\r\n          <Label\r\n            key={plan.value}\r\n            htmlFor={radioId}\r\n            className={`border-input cursor-pointer relative flex w-full max-w-44 flex-col items-center gap-3 rounded-md border p-5 shadow-xs transition ${plan.backgroundColor}`}\r\n          >\r\n            <div className=\"w-full flex flex-col justify-items-start gap-9 text-start\">\r\n              <div className=\"w-full flex items-center justify-between gap-2\">\r\n                <Icon className={plan.color} />\r\n                <div className=\"bg-background p-px rounded-full\">\r\n                  <RadioGroupItem\r\n                    id={radioId}\r\n                    value={plan.value}\r\n                    className=\"order-0 size-5 [&_svg]:size-3\"\r\n                    aria-describedby={`${radioId}-description`}\r\n                  />\r\n                </div>\r\n              </div>\r\n              <span className=\"text-base font-medium\">{plan.title}</span>\r\n            </div>\r\n          </Label>\r\n        );\r\n      })}\r\n    </RadioGroup>\r\n  );\r\n};\r\n\r\nexport default RadioGroupCardVerticalRadioDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/radio-group/radio-group-04.tsx"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-03",
+  "type": "registry:component",
+  "title": "Checkbox-03 - Checkbox with colors",
+  "description": "Checkbox component",
+  "dependencies": [],
+  "registryDependencies": [
+    "checkbox",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/checkbox/checkbox-03.tsx",
+      "content": "import { Checkbox } from \"@/components/ui/checkbox\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst CheckboxColorsDemo = () => {\r\n  return (\r\n    <div className=\"flex flex-col items-start gap-4\">\r\n      <Label className=\"font-semibold\">Alert Indicators</Label>\r\n      <div className=\"flex flex-col items-start gap-2.5\">\r\n        <div key=\"destructive\" className=\"flex items-center gap-2\">\r\n          <Checkbox\r\n            className=\"data-checked:bg-red-500! data-checked:border-red-500! focus-visible:ring-red-500/20 dark:focus-visible:ring-red-500/40 dark:text-white\"\r\n            aria-label=\"Color destructive\"\r\n            defaultChecked\r\n          />\r\n          <Label htmlFor=\"destructive\" className=\"text-red-400\">\r\n            Oops! Error\r\n          </Label>\r\n        </div>\r\n        <div key=\"success\" className=\"flex items-center gap-2\">\r\n          <Checkbox\r\n            className=\"data-checked:bg-teal-400! data-checked:border-teal-400! focus-visible:ring-teal-400/20 dark:focus-visible:ring-teal-400/40 dark:text-white\"\r\n            aria-label=\"Color success\"\r\n            defaultChecked\r\n          />\r\n          <Label htmlFor=\"success\" className=\"text-teal-400\">\r\n            Approved\r\n          </Label>\r\n        </div>\r\n        <div key=\"warning\" className=\"flex items-center gap-2\">\r\n          <Checkbox\r\n            className=\"data-checked:bg-amber-500! data-checked:border-amber-500! focus-visible:ring-amber-500/20 dark:focus-visible:ring-amber-500/40 dark:text-white\"\r\n            aria-label=\"Color warning\"\r\n            defaultChecked\r\n          />\r\n          <Label htmlFor=\"warning\" className=\"text-amber-400\">\r\n            Caution\r\n          </Label>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CheckboxColorsDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/checkbox/checkbox-03.tsx"
+    }
+  ]
+}

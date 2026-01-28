@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-01",
+  "type": "registry:component",
+  "title": "Radio Group-01 - Radio Group with tree",
+  "description": "Radio Group component",
+  "dependencies": [],
+  "registryDependencies": [
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/radio-group/radio-group-01.tsx",
+      "content": "import { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/motion-radio-group\";\r\n \r\nconst RadioGroupAnimatedDemo = () => {\r\n  return (\r\n    <RadioGroup defaultValue=\"system\">\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem value=\"light\" id=\"theme-light\" className=\"flex items-center justify-center\" />\r\n        <Label htmlFor=\"theme-light\">Light</Label>\r\n      </div>\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem value=\"dark\" id=\"theme-dark\" className=\"flex items-center justify-center\" />\r\n        <Label htmlFor=\"theme-dark\">Dark</Label>\r\n      </div>\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem value=\"system\" id=\"theme-system\" className=\"flex items-center justify-center\" />\r\n        <Label htmlFor=\"theme-system\">System</Label>\r\n      </div>\r\n    </RadioGroup>\r\n  );\r\n};\r\n \r\nexport default RadioGroupAnimatedDemo;",
+      "type": "registry:component",
+      "target": "components/shadcn-space/radio-group/radio-group-01.tsx"
+    },
+    {
+      "path": "src/components/ui/motion-radio-group.tsx",
+      "content": "'use client'\r\n \r\nimport * as React from 'react'\r\nimport { RadioGroup as BaseRadioGroup } from '@base-ui/react/radio-group'\r\nimport { Radio as BaseRadio } from '@base-ui/react/radio'\r\nimport { AnimatePresence, motion, type HTMLMotionProps, type Transition } from 'motion/react'\r\nimport { CircleIcon } from 'lucide-react'\r\n \r\nimport { cn } from '@/lib/utils'\r\ntype RadioGroupItemProps = React.ComponentProps<typeof BaseRadio.Root> &\r\n  HTMLMotionProps<'button'> & {\r\n    transition?: Transition\r\n  }\r\nfunction RadioGroup({ className, ...props }: React.ComponentProps<typeof BaseRadioGroup>) {\r\n  return <BaseRadioGroup data-slot='radio-group' className={cn('grid gap-3', className)} {...props} />\r\n}\r\n \r\nfunction RadioGroupItem({\r\n  className,\r\n  transition = { type: 'spring', stiffness: 200, damping: 16 },\r\n  ...props\r\n}: RadioGroupItemProps) {\r\n  return (\r\n    <BaseRadio.Root {...props}>\r\n      <motion.button\r\n        data-slot='radio-group-item'\r\n        className={cn(\r\n          'border-input text-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 aspect-square size-5 shrink-0 rounded-full border shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50',\r\n          className\r\n        )}\r\n        whileHover={{ scale: 1.05 }}\r\n        whileTap={{ scale: 0.95 }}\r\n      >\r\n        <BaseRadio.Indicator\r\n          data-slot='radio-group-indicator'\r\n          className='relative flex items-center justify-center'\r\n        >\r\n          <AnimatePresence>\r\n            <motion.div\r\n              key='radio-group-indicator-circle'\r\n              data-slot='radio-group-indicator-circle'\r\n              initial={{ opacity: 0, scale: 0 }}\r\n              animate={{ opacity: 1, scale: 1 }}\r\n              exit={{ opacity: 0, scale: 0 }}\r\n              transition={transition}\r\n            >\r\n              <CircleIcon className='size-3 fill-current text-current' />\r\n            </motion.div>\r\n          </AnimatePresence>\r\n        </BaseRadio.Indicator>\r\n      </motion.button>\r\n    </BaseRadio.Root>\r\n  )\r\n}\r\n \r\nexport { RadioGroup, RadioGroupItem }",
+      "type": "registry:component",
+      "target": "components/ui/motion-radio-group.tsx"
+    }
+  ]
+}

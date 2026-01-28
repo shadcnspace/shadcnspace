@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-02",
+  "type": "registry:block",
+  "title": "Feature 02 - Three Columns Feature with Icons",
+  "description": "A clean three card feature grid with icons and concise copy, built for product or SaaS pages to communicate core benefits clearly while maintaining a developer friendly, scalable layout.",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/feature-02/page.tsx",
+      "content": "import Feature02 from \"@/components/shadcn-space/blocks/feature-02/index\"\r\n\r\nconst page = () => {\r\n  return (\r\n    <Feature02/>\r\n  )\r\n}\r\n\r\nexport default page",
+      "type": "registry:page",
+      "target": "app/feature-02/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/feature-02/index.tsx",
+      "content": "\"use client\";\r\nimport Feature from \"@/components/shadcn-space/blocks/feature-02/feature\";\r\nimport {\r\n    Box,\r\n    CirclePlay,\r\n    CodeXml,\r\n} from \"lucide-react\"\r\n\r\nconst featureData = [\r\n    {\r\n      icon: Box,\r\n      title: \"Streamline your international payroll.\",\r\n      content: \"Launch faster with modular tools that automate workflows, centralize data, and scale securely, helping teams build, deploy, and manage products.\",\r\n    },\r\n    {\r\n      icon: CirclePlay,\r\n      title: \"Easily track your spend and growth analytics.\",\r\n      content: \"Power your business with real-time analytics, seamless integrations, and cloud-ready architecture designed to reduce costs, boost productivity.\",\r\n    },\r\n    {\r\n      icon: CodeXml,\r\n      title: \"Build better products in half the time.\",\r\n      content: \"All-in-one SaaS platform offering automation, collaboration, and performance monitoring so growing teams can optimize operations.\",\r\n    }\r\n];\r\n\r\nconst Feature02 = () => {\r\n  return (\r\n    <>\r\n      <Feature featureData={featureData} />\r\n    </>\r\n  );\r\n};\r\n\r\nexport default Feature02;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/feature-02/index.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/feature-02/feature.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Card, CardContent } from \"@/components/ui/card\";\r\nimport { Asterisk, LucideIcon } from \"lucide-react\";\r\nimport { motion } from \"motion/react\";\r\n\r\ntype Features = {\r\n  icon: LucideIcon;\r\n  title: string;\r\n  content: string;\r\n}[];\r\n\r\nconst Feature = ({ featureData }: { featureData: Features }) => {\r\n  return (\r\n    <section>\r\n      <div className=\"min-h-screen flex items-center justify-center\">\r\n        <div className=\"mx-auto max-w-7xl px-4 sm:px-8 py-8 sm:py-12\">\r\n          <div className=\"flex flex-col gap-8 md:gap-16\">\r\n            <motion.div\r\n              initial={{ y: -10, opacity: 0 }}\r\n              whileInView={{ y: 0, opacity: 1 }}\r\n              viewport={{ once: true }}\r\n              transition={{\r\n                duration: 0.8,\r\n                ease: [0.21, 0.47, 0.32, 0.98],\r\n              }}\r\n              className=\"flex flex-col items-center justify-center gap-4 max-w-lg mx-auto\"\r\n            >\r\n              <Badge variant={\"outline\"} className=\"px-3 py-1 h-auto text-sm\">\r\n                Features\r\n              </Badge>\r\n              <h1 className=\"text-3xl md:text-4xl font-semibold text-center tracking-[-1px]\">\r\n                Designed for Developer Flow Helping them to Get Started\r\n              </h1>\r\n            </motion.div>\r\n            <motion.div\r\n              variants={{\r\n                hidden: { opacity: 0 },\r\n                show: {\r\n                  opacity: 1,\r\n                  transition: {\r\n                    staggerChildren: 0.1,\r\n                  },\r\n                },\r\n              }}\r\n              initial=\"hidden\"\r\n              whileInView=\"show\"\r\n              viewport={{ once: true }}\r\n              className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6\"\r\n            >\r\n              {featureData.map((value, index) => {\r\n                return (\r\n                  <motion.div\r\n                    key={index}\r\n                    variants={{\r\n                      hidden: { opacity: 0, y: 30, filter: \"blur(4px)\" },\r\n                      show: { opacity: 1, y: 0, filter: \"blur(0px)\" },\r\n                    }}\r\n                    transition={{\r\n                      duration: 0.8,\r\n                      ease: [0.21, 0.47, 0.32, 0.98],\r\n                    }}\r\n                  >\r\n                    <Card className=\"py-10 h-full border-t-4 border-t-transparent transition-all duration-300 hover:border-t-primary hover:shadow-lg\">\r\n                      <CardContent className=\"px-8 flex flex-col gap-6\">\r\n                        <value.icon\r\n                          className=\"w-8 h-8 text-primary\"\r\n                          strokeWidth={1.2}\r\n                        />\r\n                        <div className=\"flex flex-col gap-3\">\r\n                          <h6 className=\"text-xl font-semibold\">\r\n                            {value.title}\r\n                          </h6>\r\n                          <p className=\"text-base font-normal text-muted-foreground\">\r\n                            {value.content}\r\n                          </p>\r\n                        </div>\r\n                      </CardContent>\r\n                    </Card>\r\n                  </motion.div>\r\n                );\r\n              })}\r\n            </motion.div>\r\n            <motion.div\r\n              initial={{ y: 20, opacity: 0 }}\r\n              whileInView={{ y: 0, opacity: 1 }}\r\n              viewport={{ once: true }}\r\n              transition={{\r\n                duration: 0.8,\r\n                ease: [0.21, 0.47, 0.32, 0.98],\r\n              }}\r\n              className=\"flex flex-col items-center justify-center gap-5\"\r\n            >\r\n              <div className=\"flex items-center gap-2 text-muted-foreground\">\r\n                <Asterisk size={16} />\r\n                <p className=\"font-normal text-sm\">\r\n                  Launch faster with modular designs by Shadcn Space now\r\n                </p>\r\n              </div>\r\n              <Button className=\"rounded-full px-5 py-2.5 shadow-xs h-full\">\r\n                <a href=\"#\">Browse more block</a>\r\n              </Button>\r\n            </motion.div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </section>\r\n  );\r\n};\r\n\r\nexport default Feature;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/feature-02/feature.tsx"
+    }
+  ]
+}

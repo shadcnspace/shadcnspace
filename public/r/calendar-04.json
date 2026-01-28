@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-04",
+  "type": "registry:component",
+  "title": "Calendar 04 - Dialog calendar",
+  "description": "Calendar component",
+  "dependencies": [
+    "faker",
+    "daterange"
+  ],
+  "registryDependencies": [
+    "calendar",
+    "dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/calendar/calendar-04.tsx",
+      "content": "\"use client\";\r\n\r\nimport { faker } from \"@faker-js/faker\";\r\nimport { useState } from \"react\";\r\nimport type { DateRange } from \"react-day-picker\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Calendar } from \"@/components/ui/calendar\";\r\nimport {\r\n  Dialog,\r\n  DialogContent,\r\n  DialogHeader,\r\n  DialogTitle,\r\n  DialogTrigger,\r\n} from \"@/components/ui/dialog\";\r\n\r\nexport const title = \"Calendar with Range in Dialog\";\r\n\r\nconst now = new Date();\r\nconst startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);\r\nconst endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);\r\n\r\nconst from = faker.date.between({\r\n  from: startOfMonth,\r\n  to: new Date(now.getFullYear(), now.getMonth(), 15),\r\n});\r\nconst to = faker.date.between({\r\n  from: new Date(now.getFullYear(), now.getMonth(), 16),\r\n  to: endOfMonth,\r\n});\r\n\r\nconst CalendarDialog = () => {\r\n  const [date, setDate] = useState<DateRange | undefined>({\r\n    from,\r\n    to,\r\n  });\r\n\r\n  return (\r\n    <div className=\"flex items-center justify-center px-4\">\r\n      <Dialog>\r\n        <DialogTrigger>\r\n          <Button variant=\"outline\">Select Date Range</Button>\r\n        </DialogTrigger>\r\n        <DialogContent className=\"max-w-fit!\">\r\n          <DialogHeader>\r\n            <DialogTitle>Select Date Range</DialogTitle>\r\n          </DialogHeader>\r\n          <Calendar\r\n            className=\"rounded-md border\"\r\n            mode=\"range\"\r\n            numberOfMonths={2}\r\n            onSelect={setDate}\r\n            selected={date}\r\n          />\r\n        </DialogContent>\r\n      </Dialog>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CalendarDialog;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/calendar/calendar-04.tsx"
+    }
+  ]
+}

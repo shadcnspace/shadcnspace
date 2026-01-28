@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-02",
+  "type": "registry:block",
+  "title": "Dropdown 02 - Notifications Dropdown",
+  "description": "A real-time notifications dropdown displaying upcoming events, meetings, and reminders with timestamps and unread count—keeping users informed without leaving their workflow.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "badge",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/dropdown-02/page.tsx",
+      "content": "import Dropdown from \"@/components/shadcn-space/blocks/dropdown-02/dropdown\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { BellRing } from \"lucide-react\";\r\n\r\nconst page = () => {\r\n  return (\r\n    <Dropdown\r\n      defaultOpen={true}\r\n      align=\"center\"\r\n      trigger={\r\n        <Button className=\"rounded-full h-5 w-5\">\r\n          <BellRing className=\"size-4\" />\r\n        </Button>\r\n      }\r\n    />\r\n  );\r\n};\r\n\r\nexport default page;\r\n",
+      "type": "registry:page",
+      "target": "app/dropdown-02/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/dropdown-02/dropdown.tsx",
+      "content": "\"use client\";\r\n\r\nimport type { ReactNode } from \"react\";\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuGroup,\r\n  DropdownMenuItem,\r\n  DropdownMenuLabel,\r\n  DropdownMenuTrigger,\r\n} from \"@/components/ui/dropdown-menu\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport {\r\n  Headset,\r\n  LucideIcon,\r\n  Salad,\r\n  ScanText,\r\n  SquareStar,\r\n  Video,\r\n} from \"lucide-react\";\r\n\r\ntype Props = {\r\n  trigger: ReactNode;\r\n  defaultOpen?: boolean;\r\n  align?: \"start\" | \"center\" | \"end\";\r\n};\r\n\r\ntype MenuItem = {\r\n  textColor: string;\r\n  bgColor: string;\r\n  icon: LucideIcon;\r\n  title: string;\r\n  desc: string;\r\n  time: string;\r\n};\r\n\r\nconst PROFILE_ITEMS: MenuItem[] = [\r\n  {\r\n    textColor: \"text-blue-500\",\r\n    bgColor: \"bg-blue-500/10\",\r\n    icon: SquareStar,\r\n    title: \"Event Today\",\r\n    desc: \"Just reminder that you have to\",\r\n    time: \"9:00 AM\",\r\n  },\r\n  {\r\n    textColor: \"text-orange-400\",\r\n    bgColor: \"bg-orange-400/10\",\r\n    icon: Video,\r\n    title: \"Team Meeting\",\r\n    desc: \"Discuss project updates and next steps\",\r\n    time: \"10:00 AM\",\r\n  },\r\n  {\r\n    textColor: \"text-teal-400\",\r\n    bgColor: \"bg-teal-400/10\",\r\n    icon: Salad,\r\n    title: \"Lunch Break\",\r\n    desc: \"Take a break and recharge\",\r\n    time: \"12:30 PM\",\r\n  },\r\n  {\r\n    textColor: \"text-red-500\",\r\n    bgColor: \"bg-red-500/10\",\r\n    icon: Headset,\r\n    title: \"Client Call\",\r\n    desc: \"Monthly check-in with the client\",\r\n    time: \"3:00 PM\",\r\n  },\r\n  {\r\n    textColor: \"text-sky-400\",\r\n    bgColor: \"bg-sky-400/10\",\r\n    icon: ScanText,\r\n    title: \"Project Review\",\r\n    desc: \"Review project deliverables with client\",\r\n    time: \"4:00 PM\",\r\n  },\r\n];\r\n\r\nconst Dropdown = ({ trigger, defaultOpen, align = \"end\" }: Props) => {\r\n  return (\r\n    <div className=\"flex items-center justify-center p-8\">\r\n      <DropdownMenu defaultOpen={defaultOpen}>\r\n        <DropdownMenuTrigger>{trigger}</DropdownMenuTrigger>\r\n\r\n        <DropdownMenuContent\r\n          align={align}\r\n          className=\"p-0 w-sm rounded-2xl data-open:slide-in-from-top-20! data-closed:slide-out-to-top-20 data-open:fade-in-0 data-closed:fade-out-0 data-closed:zoom-out-100 duration-400\"\r\n        >\r\n          {/* title */}\r\n          <DropdownMenuLabel className=\"flex items-center justify-between p-4\">\r\n            <p className=\"text-base font-medium text-popover-foreground\">\r\n              Notifications\r\n            </p>\r\n            <Badge className=\"font-normal leading-0\">5 New</Badge>\r\n          </DropdownMenuLabel>\r\n\r\n          {/* Notifications */}\r\n          <DropdownMenuGroup>\r\n            {PROFILE_ITEMS.map(\r\n              ({ bgColor, textColor, icon: Icon, title, desc, time }) => (\r\n                <DropdownMenuItem\r\n                  key={title}\r\n                  className={\r\n                    \"mx-1.5 my-1 p-2 flex items-center justify-between cursor-pointer\"\r\n                  }\r\n                >\r\n                  <div className=\"flex items-center gap-3\">\r\n                    <div className={cn(\"p-2.5 rounded-xl\", bgColor, textColor)}>\r\n                      <Icon size={20} className=\"size-5\" />\r\n                    </div>\r\n                    <div>\r\n                      <p className=\"text-sm font-medium text-popover-foreground\">\r\n                        {title}\r\n                      </p>\r\n                      <p className=\"max-w-52 truncate text-sm text-muted-foreground\">\r\n                        {desc}\r\n                      </p>\r\n                    </div>\r\n                  </div>\r\n                  <p className=\"text-xs text-muted-foreground\">{time}</p>\r\n                </DropdownMenuItem>\r\n              )\r\n            )}\r\n          </DropdownMenuGroup>\r\n\r\n          {/* button */}\r\n          <div className=\"mx-1.5 my-1 p-2\">\r\n            <Button className=\"rounded-xl w-full\">See All Notifications</Button>\r\n          </div>\r\n        </DropdownMenuContent>\r\n      </DropdownMenu>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Dropdown;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/dropdown-02/dropdown.tsx"
+    }
+  ]
+}

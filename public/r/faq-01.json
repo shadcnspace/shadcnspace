@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faq-01",
+  "type": "registry:block",
+  "title": "FAQ 01 - Expandable FAQ Section",
+  "description": "A clean accordion style FAQ section with expandable answers, ideal for agencies or SaaS sites to address common questions, reduce friction, and improve user confidence before conversion.",
+  "dependencies": [
+    "@iconify/react"
+  ],
+  "registryDependencies": [
+    "badge",
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/faq-01/page.tsx",
+      "content": "import Faq from \"@/components/shadcn-space/blocks/faq-01/faq\"\r\n\r\nexport default function FaqPage() {\r\n    return (\r\n        <Faq />\r\n    )\r\n}",
+      "type": "registry:page",
+      "target": "app/faq-01/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/faq-01/faq.tsx",
+      "content": "import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from \"@/components/ui/accordion\"\r\nimport { Badge } from \"@/components/ui/badge\"\r\nimport { PlusIcon } from \"lucide-react\"\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst FAQ_DATA = [\r\n    {\r\n        question: \"What services does Shadcn Space offer?\",\r\n        answer: \"We offer a wide range of services including web development, app development, and digital marketing.\",\r\n    },\r\n    {\r\n        question: \"How long does a typical project take?\",\r\n        answer: \"The time it takes to complete a project depends on the complexity of the project and the scope of the work.\",\r\n    },\r\n    {\r\n        question: \"How is pricing structured at Awake Agency?\",\r\n        answer: \"Pricing is based on the complexity of the project and the scope of the work.\",\r\n    },\r\n    {\r\n        question: \"Do you offer ongoing support after project completion?\",\r\n        answer: \"Absolutely! We offer comprehensive post-launch support to ensure a seamless implementation and provide ongoing maintenance packages tailored to clients who need regular updates or technical assistance. Our commitment doesn’t end at launch — we’re here to help you every step of the way.\",\r\n    },\r\n    {\r\n        question: \"How often will I receive updates on my project?\",\r\n        answer: \"We provide updates on a regular basis to ensure that your project is running smoothly and that you are aware of any changes or updates to the project.\",\r\n    }\r\n]\r\n\r\nexport default function Faq() {\r\n    return (\r\n        <section>\r\n            <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:py-24 py-8 flex flex-col gap-16\">\r\n                <div className=\"flex flex-col gap-4 items-center animate-in fade-in slide-in-from-top-10 duration-1000 delay-100 ease-in-out fill-mode-both\">\r\n                    <Badge variant=\"outline\" className=\"text-sm h-auto py-1 px-3 border-0 outline outline-border\">FAQs</Badge>\r\n                    <h2 className=\"text-5xl font-medium text-center max-w-lg\">\r\n                        Got questions? We’ve got answers ready\r\n                    </h2>\r\n                </div>\r\n                <div>\r\n                    <Accordion className=\"w-full flex flex-col gap-6\">\r\n                        {FAQ_DATA.map((faq, index) => (\r\n                            <AccordionItem\r\n                                key={`item-${index}`}\r\n                                value={`item-${index}`}\r\n                                className={cn(\r\n                                    \"p-6 border border-border rounded-2xl flex flex-col gap-3 group/item data-[open]:bg-accent transition-colors animate-in fade-in slide-in-from-bottom-8 duration-700 fill-mode-both\",\r\n                                    index === 0 && \"delay-100\",\r\n                                    index === 1 && \"delay-200\",\r\n                                    index === 2 && \"delay-300\",\r\n                                    index === 3 && \"delay-400\",\r\n                                    index === 4 && \"delay-500\"\r\n                                )}\r\n                            >\r\n                                <AccordionTrigger className=\"p-0 text-xl font-medium hover:no-underline [&_svg[data-slot=accordion-trigger-icon]]:!hidden\">\r\n                                    {faq.question}\r\n                                    <PlusIcon className=\"w-6 h-6 shrink-0 transition-transform duration-200 group-aria-expanded/accordion-trigger:rotate-45\" />\r\n                                </AccordionTrigger>\r\n                                <AccordionContent className=\"p-0 text-muted-foreground text-base\">\r\n                                    {faq.answer}\r\n                                </AccordionContent>\r\n                            </AccordionItem>\r\n                        ))}\r\n                    </Accordion>\r\n                </div>\r\n            </div>\r\n        </section>\r\n    )\r\n}",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/faq-01/faq.tsx"
+    }
+  ]
+}

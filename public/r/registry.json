@@ -1,0 +1,3603 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Shadcn Space",
+  "homepage": "https://shadcnspace.com",
+  "items": [
+    {
+      "name": "hero-01",
+      "title": "Hero 01 - Agency Hero Section",
+      "description": "Clean agency hero section designed for SaaS and startup websites, featuring bold headline, gradient background, trust badges, client logos, and high converting CTAs for lead generation.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "button",
+        "sheet",
+        "navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/hero-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/hero-01/page.tsx"
+        },
+        {
+          "path": "src/assets/logo/logo.tsx",
+          "type": "registry:component",
+          "target": "assets/logo/logo.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-01/index.tsx",
+          "type": "registry:page",
+          "target": "components/shadcn-space/blocks/hero-01/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-01/hero.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-01/hero.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-01/header.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-01/header.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-01/brand-slider.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-01/brand-slider.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/animations/splash-cursor.jsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animations/splash-cursor.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animations/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-02",
+      "title": "Hero 02 - Real Estate Hero Section",
+      "description": "Luxury real estate hero section crafted for property listings, featuring immersive imagery, location highlight, key amenities, pricing details, and prominent Schedule a tour CTA for faster inquiries.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "sheet",
+        "button",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/hero-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/hero-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-02/hero.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-02/hero.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-02/seamless-cloud.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-02/seamless-cloud.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-02/navbar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-02/navbar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animations/marquee.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-02/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero-03",
+      "title": "Hero 03 - Digital Agency Hero Section",
+      "description": "High-impact digital agency hero section with cinematic background video, bold typography, brand driven headline, and clear CTA, perfect for creative studios and performance-focused marketing websites.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/hero-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/hero-03/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-03/hero.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-03/hero.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-03/navbar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-03/navbar.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-03/navlink.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-03/navlink.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/hero-03/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/hero-03/index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-01",
+      "title": "Feature 01 - Feature with Testimonials",
+      "description": "A trust focused feature section combining a highlighted customer testimonial with supporting benefit cards, perfect for product or SaaS pages to showcase social proof and reinforce key advantages.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/feature-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/feature-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/feature-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/feature-01/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/feature-01/feature.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/feature-01/feature.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-02",
+      "title": "Feature 02 - Three Columns Feature with Icons",
+      "description": "A clean three card feature grid with icons and concise copy, built for product or SaaS pages to communicate core benefits clearly while maintaining a developer friendly, scalable layout.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/feature-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/feature-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/feature-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/feature-02/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/feature-02/feature.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/feature-02/feature.tsx"
+        }
+      ]
+    },
+    {
+      "name": "about-us-section-01",
+      "title": "About Us 01 - Impact Metrics",
+      "description": "A bold about us section combining value pillars, headline messaging, and performance counters, perfect for agencies or studios to highlight expertise, achievements, and credibility at a glance.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/about-us-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/about-us-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/about-us-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/about-us-01/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/about-us-01/about-us.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/about-us-01/about-us.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-01",
+      "title": "Pricing 01 - Startup Pricing Plans",
+      "description": "A clean two tier pricing section with feature comparison, highlighted plans, and strong CTAs, suited for agencies, Startups & SaaS to convert visitors by clearly presenting value and monthly subscription options.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "separator",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/pricing-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/pricing-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/pricing-01/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/pricing-01/pricing.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-02",
+      "title": "Pricing 02 - Scalable Pricing Table",
+      "description": "A three tier pricing layout with a highlighted recommended plan, feature checklists, and clear CTAs, perfect for any website having pricing section to guide users toward the most valuable subscription option.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "separator",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/pricing-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/pricing-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/pricing-02/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/pricing-02/pricing.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-01",
+      "title": "Testimonial 01 - Bentro Grid Testimonials",
+      "description": "A multi card testimonial section combining customer quotes, imagery, and performance stats, ideal for showcasing social proof, building trust, and reinforcing brand credibility across product or agency websites.",
+      "type": "registry:block",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/testimonial-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/testimonial-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/testimonial-01/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/testimonial-01/testimonial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-02",
+      "title": "Testimonial 02 - Testimonial Slider Showcase",
+      "description": "A clean testimonial slider with customer photo, detailed quote, navigation controls, and partner logos—perfect for highlighting success stories and building instant trust on landing pages.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "badge",
+        "carousel"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/testimonial-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/testimonial-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/testimonial-02/testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/testimonial-02/testimonial.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/testimonial-02/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/testimonial-02/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/testimonial-02/brand-slider.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/testimonial-02/brand-slider.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animations/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "portfolio-01",
+      "title": "Portfolio 01 - Clean Portfolio Grid",
+      "description": "A modern portfolio section displaying featured projects with tags, visuals, and categories, ideal for agencies or freelancers to showcase real-world transformations, expertise, and design impact.",
+      "type": "registry:block",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/portfolio-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/portfolio-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/portfolio-01/portfolio.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/portfolio-01/portfolio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-01",
+      "title": "Team 01 - Creative Team Showcase",
+      "description": "A vibrant team section featuring profile cards with roles and social links, perfect for agencies or startups to humanize their brand, highlight talent, and build authentic connections.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/team-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/team-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/team-01/team.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/team-01/team.tsx"
+        }
+      ]
+    },
+    {
+      "name": "team-02",
+      "title": "Team 02 - Modern Team Grid",
+      "description": "A clean team grid with large profile cards, roles, and social icons, ideal for agencies or SaaS companies to introduce key members and strengthen brand authenticity.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/team-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/team-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/team-02/team.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/team-02/team.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-01",
+      "title": "CTA 01 - Gradient Call-to-Action Banner",
+      "description": "A minimal full width CTA section with soft gradient background, persuasive headline, and primary action button, perfect for converting visitors into leads at the end of any page.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/cta-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/cta-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/cta-01/cta.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/cta-01/cta.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-02",
+      "title": "CTA 02 - Video Background CTA",
+      "description": "A high impact call-to-action section with autoplay background video, bold overlay headline, primary button, and rotating ticker text, perfect for luxury brands or real estate to capture attention instantly.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react"
+      ],
+      "registryDependencies": [
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/cta-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/cta-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/cta-02/cta.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/cta-02/cta.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animations/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "services-01",
+      "title": "Services 01 - Creative Services Overview",
+      "description": "A colorful services section with icon cards and dual CTAs, perfect for agencies to present core offerings, guide visitors to portfolios, and drive collaboration with clear next steps.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/services-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/services-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/services-01/services.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/services-01/services.tsx"
+        }
+      ]
+    },
+    {
+      "name": "services-02",
+      "title": "Services 02 - Services Animated Block",
+      "description": "A premium dark mode services section with interactive list, visual preview, and detailed descriptions, ideal for creative agencies to showcase capabilities while maintaining a bold, modern brand presence.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/services-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/services-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/services-02/services.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/services-02/services.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-01",
+      "title": "FAQ 01 - Expandable FAQ Section",
+      "description": "A clean accordion style FAQ section with expandable answers, ideal for agencies or SaaS sites to address common questions, reduce friction, and improve user confidence before conversion.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/faq-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/faq-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/faq-01/faq.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/faq-01/faq.tsx"
+        }
+      ]
+    },
+    {
+      "name": "newsletter-01",
+      "title": "Newsletter 01 - Newsletter Subscription CTA",
+      "description": "A minimal newsletter signup section with bold headline, social-proof subtext, and inline email form, ideal for capturing leads and growing your audience with a frictionless experience.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react"
+      ],
+      "registryDependencies": [
+        "input-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/newsletter-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/newsletter-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/newsletter-01/newsletter.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/newsletter-01/newsletter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "blog-01",
+      "title": "Blog 01 - Latest Blog & News Grid",
+      "description": "A modern blog section with featured posts, large thumbnails, publish dates, and headlines, ideal for sharing agency updates, design insights, and thought leadership to keep visitors engaged.",
+      "type": "registry:block",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/blog-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/blog-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/blog-01/blog.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/blog-01/blog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "contact-01",
+      "title": "Contact 01 - Project Inquiry Contact Form",
+      "description": "A conversion focused contact section with project inquiry form, contact details, and trust badges, ideal for agencies or freelancers to capture qualified leads and start meaningful client conversations.",
+      "type": "registry:block",
+      "dependencies": [
+        ""
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "input",
+        "textarea",
+        "checkbox",
+        "label",
+        "select",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/contact-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/contact-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/contact-01/index.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/contact-01/index.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/contact-01/contact-info.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/contact-01/contact-info.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/contact-01/contact-form.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/contact-01/contact-form.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animations/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navbar-01",
+      "title": "Navbar 01 - Minimal Agency Navbar",
+      "description": "A clean top navigation bar with logo, page links, and standout CTA button, ideal for agency or SaaS websites to guide users and drive collaboration effortlessly.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/navbar-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/navbar-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/navbar-01/navbar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/navbar-01/navbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-01",
+      "title": "Footer 01 - Agency Footer Layout",
+      "description": "A clean multi column footer with brand summary, sitemap links, legal pages, contact details, and social icons, perfect for agencies to provide clarity, trust, and easy navigation.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/footer-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/footer-01/page.tsx"
+        },
+        {
+          "path": "src/assets/logo/logo.tsx",
+          "type": "registry:component",
+          "target": "assets/logo/logo.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/footer-01/footer.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/footer-01/footer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer-02",
+      "title": "Footer 02 - Dark Conversion Footer",
+      "description": "A bold dark themed footer with newsletter signup, strong contact CTA, navigation links, and legal pages, ideal for real estate or SaaS websites to drive engagement at the page end.",
+      "type": "registry:block",
+      "dependencies": [],
+      "registryDependencies": [
+        "button",
+        "input",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/footer-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/footer-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/footer-02/footer.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/footer-02/footer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-01",
+      "title": "Sidebar 01 - Admin Dashboard Sidebar",
+      "description": "A collapsible sidebar navigation with grouped menus, icons, and upgrade CTA, perfect for admin dashboards to organize pages, widgets, and apps while keeping workflows fast and intuitive.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "sidebar",
+        "scroll-area",
+        "collapsible",
+        "card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/sidebar-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/sidebar-01/page.tsx"
+        },
+        {
+          "path": "src/assets/logo/logo.tsx",
+          "type": "registry:component",
+          "target": "assets/logo/logo.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/sidebar-01/nav-main.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/sidebar-01/nav-main.tsx"
+        }
+      ]
+    },
+    {
+      "name": "statistics-01",
+      "title": "Statistics 01 - KPI Summary Cards",
+      "description": "A compact statistics section with KPI cards highlighting earnings, expenses, weekly sales, and orders, ideal for admin dashboards to surface key business metrics at a glance.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/statistics-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/statistics-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/statistics-01/statistics.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/statistics-01/statistics.tsx"
+        }
+      ]
+    },
+    {
+      "name": "statistics-02",
+      "title": "Statistics 02 - Business Metrics Bar",
+      "description": "A horizontal KPI bar displaying orders, sales, profit, and expenses with weekly change indicators, ideal for dashboards to monitor short-term performance and trends at a glance.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/statistics-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/statistics-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/statistics-02/statistics.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/statistics-02/statistics.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-01",
+      "title": "Chart 01 - Sales Performance Bar Chart",
+      "description": "An interactive stacked bar chart displaying monthly earnings, profit, and expenses, ideal for admin dashboards to visualize financial trends, track growth, and support data-driven business decisions.",
+      "type": "registry:block",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/chart-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/chart-01/chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/chart-01/chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-02",
+      "title": "Chart 02 - Earnings Pie Chart",
+      "description": "A clean donut chart widget summarizing total earnings with source-wise breakdown, perfect for admin dashboards to compare revenue streams, monitor growth, and highlight performance insights.",
+      "type": "registry:block",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/chart-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/chart-02/chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/chart-02/chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart-03",
+      "title": "Chart 03 - Yearly Sales Comparison",
+      "description": "A smooth line chart comparing this year versus last year sales with summary stats, ideal for dashboards to visualize performance trends and identify seasonal growth patterns quickly.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "chart",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/chart-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-03/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/chart-03/chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/chart-03/chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "charts-04",
+      "title": "Chart 04 - Weekly Sales",
+      "description": "A compact bar chart widget showing daily sales for the past week with trend indicator, perfect for dashboards to highlight short-term performance and spot high-activity days instantly.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/chart-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/chart-04/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/chart-04/chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/chart-04/chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bentogrid-01",
+      "title": "Bento Grid 01 - Bento Grid Section",
+      "description": "A visually rich bento grid that brings the world closer—highlighting stunning locations, cultural moments, and unforgettable experiences in a dynamic, bite-sized layout.",
+      "type": "registry:block",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/bento-grid-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/bento-grid-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/bento-grid-01/bentogrid.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/bento-grid-01/bentogrid.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/bento-grid-01/AnimatedUiBlock.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/bento-grid-01/AnimatedUiBlock.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/bento-grid-01/ReminderAnimation.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/bento-grid-01/ReminderAnimation.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-shell-01",
+      "title": "Dashboard Shell 01",
+      "description": "A modern dashboard shell with a sidebar and header, ideal for admin dashboards to organize and navigate through different sections.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "recharts",
+        "motion"
+      ],
+      "registryDependencies": [
+        "sidebar",
+        "scroll-area",
+        "card",
+        "button",
+        "badge",
+        "chart",
+        "collapsible",
+        "dropdown-menu",
+        "separator",
+        "checkbox",
+        "progress",
+        "table"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard-shell-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-01/salesbycountrywidget.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-01/salesbycountrywidget.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-01/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-01/site-header.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-01/top-product-table.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-01/top-product-table.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-01/statistics.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-01/statistics.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-01/sales-overview-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-01/sales-overview-chart.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-01/nav-main.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-01/nav-main.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-01/earning-report-chart.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-01/earning-report-chart.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dashboard-shell-01/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dashboard-shell-01/app-sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog-01",
+      "title": "Dialog 01 - Newsletter Subscription Dialog",
+      "description": "A modern modal popup for capturing newsletter signups with a friendly hero image, email field, opt-out checkbox, and clear call-to-action to boost conversions.",
+      "type": "registry:block",
+      "dependencies": [
+        ""
+      ],
+      "registryDependencies": [
+        "dialog",
+        "button",
+        "input",
+        "field",
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/dialog-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/dialog-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dialog-01/dialog.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dialog-01/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-01",
+      "title": "Dropdown 01 - User Account Dropdown",
+      "description": "A compact user profile dropdown with quick access to subscriptions, invoices, account settings, and secure sign out, designed to improve navigation within modern SaaS dashboards.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/dropdown-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/dropdown-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dropdown-01/dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dropdown-01/dropdown.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-02",
+      "title": "Dropdown 02 - Notifications Dropdown",
+      "description": "A real-time notifications dropdown displaying upcoming events, meetings, and reminders with timestamps and unread count—keeping users informed without leaving their workflow.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/dropdown-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/dropdown-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/dropdown-02/dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/dropdown-02/dropdown.tsx"
+        }
+      ]
+    },
+    {
+      "name": "forgot-password-01",
+      "title": "Forgot Password 01 - Forgot Your Password Page",
+      "description": "A minimal password recovery page that lets users request a secure reset link via email, helping reduce friction and support issues in authentication flows.",
+      "type": "registry:block",
+      "dependencies": [
+        ""
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/forgot-password-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/forgot-password-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/forgot-password-01/forgot-password.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/forgot-password-01/forgot-password.tsx"
+        }
+      ]
+    },
+    {
+      "name": "forms-01",
+      "title": "Forms 01 - Edit Profile Form",
+      "description": "A user-friendly profile editing form with avatar upload, personal details, privacy controls, and action toggles, perfect for managing account information inside modern SaaS dashboards.",
+      "type": "registry:block",
+      "dependencies": [],
+      "registryDependencies": [
+        "card",
+        "button",
+        "input",
+        "field",
+        "switch",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/forms-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/forms-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/forms-01/profile-form.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/forms-01/profile-form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "gallery-01",
+      "title": "Gallery 01 - Image Gallery Section",
+      "description": "Explore a curated collection of breathtaking destinations and unforgettable experiences from around the world.",
+      "type": "registry:block",
+      "dependencies": [],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/gallery-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/gallery-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/gallery-01/gallery.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/gallery-01/gallery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-01",
+      "title": "Login 01 - Developer-Friendly Login Page",
+      "description": "A clean, secure login page with Google and GitHub authentication, remember-me support, and password recovery, built for modern SaaS products using shadcn UI.",
+      "type": "registry:block",
+      "dependencies": [
+        ""
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "input",
+        "checkbox",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/login-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/login-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/login-01/login.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/login-01/login.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud-01",
+      "title": "Logo Cloud 01",
+      "description": "A simple logo cloud built with Shadcn styling, using a subtle background, underlined heading, and a flexible grid of brand images that adapts smoothly across screen sizes.",
+      "type": "registry:block",
+      "dependencies": [
+        ""
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/logo-cloud-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/logo-cloud-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/logo-cloud-01/logo-cloud.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/logo-cloud-01/logo-cloud.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animations/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "register-01",
+      "title": "Register 01 - Simple & Secure Signup Page",
+      "description": "A streamlined signup page with Google and GitHub authentication, clean form fields, and conversion-focused layout, perfect for SaaS onboarding built with shadcn UI.",
+      "type": "registry:block",
+      "dependencies": [
+        ""
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "input",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/register-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/register-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/register-01/register.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/register-01/register.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-01",
+      "title": "Table 01 - Project Management Table",
+      "description": "A sortable projects table with manager, team avatars, progress indicators, search, and pagination, ideal for admin dashboards to track project status and streamline team workflows efficiently.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "simplebar-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "progress",
+        "checkbox",
+        "table",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/table-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/table-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/table-01/table.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/table-01/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "topbar-01",
+      "title": "Topbar 01",
+      "description": "A simple topbar block",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react"
+      ],
+      "registryDependencies": [
+        "sidebar",
+        "button",
+        "separator",
+        "avatar",
+        "dropdown-menu",
+        "navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/topbar-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/topbar-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/topbar-01/dropdown-language.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/topbar-01/dropdown-language.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/topbar-01/dropdown-profile.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/topbar-01/dropdown-profile.tsx"
+        }
+      ]
+    },
+    {
+      "name": "two-factor-authentication-01",
+      "title": "Two Factor Authentication 01 - Two-Factor Authentication Page",
+      "description": "A secure two-factor authentication screen with one-time code inputs and resend option, adding an extra protection layer to your SaaS login and user accounts.",
+      "type": "registry:block",
+      "dependencies": [
+        ""
+      ],
+      "registryDependencies": [
+        "card",
+        "button",
+        "field",
+        "inputotp"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/two-factor-authentication-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/two-factor-authentication-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/two-factor-authentication-01/two-factor-auth.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/two-factor-authentication-01/two-factor-auth.tsx"
+        }
+      ]
+    },
+    {
+      "name": "verify-email-01",
+      "title": "Verify Email 01 - Email Verification Page",
+      "description": "A clean email verification screen that confirms account activation, guides users to check their inbox, and offers resend functionality for a smooth onboarding experience.",
+      "type": "registry:block",
+      "dependencies": [
+        ""
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "field"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/verify-email-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/verify-email-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/verify-email-01/verify-email.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/verify-email-01/verify-email.tsx"
+        }
+      ]
+    },
+    {
+      "name": "widget-01",
+      "title": "Widget 01 - Analytics Overview Widget",
+      "description": "A compact analytics widget displaying earnings and expenses with growth indicators, perfect for admin dashboards to provide quick financial insights without overwhelming the interface.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react"
+      ],
+      "registryDependencies": [
+        "card",
+        "separator",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/widget-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/widget-01/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/widget-01/widget.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/widget-01/widget.tsx"
+        }
+      ]
+    },
+    {
+      "name": "widget-02",
+      "title": "Widget 02 - Sales by Country Widget",
+      "description": "A ranked country wise sales widget with flags, revenue values, and growth indicators, ideal for dashboards to monitor geographic performance and spot emerging market trends quickly.",
+      "type": "registry:block",
+      "dependencies": [
+        "@iconify/react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "dropdown-menu",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/widget-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/widget-02/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/widget-02/widget.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/widget-02/widget.tsx"
+        }
+      ]
+    },
+    {
+      "name": "apple-dock",
+      "title": "Default",
+      "description": "Apple Dock component",
+      "type": "registry:component",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/apple-dock/apple-dock.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/apple-dock/apple-dock.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbiting-circles",
+      "title": "Default",
+      "description": "Orbiting Circles component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/orbiting-circles/orbiting-circles.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/orbiting-circles/orbiting-circles.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/orbiting-circles/orbiting-circles.css",
+          "type": "registry:style",
+          "target": "components/shadcn-space/orbiting-circles/orbiting-circles.css"
+        }
+      ]
+    },
+    {
+      "name": "animated-list",
+      "title": "Default",
+      "description": "Animated List component",
+      "type": "registry:component",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/animated-list/animated-list.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animated-list/animated-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marquee-02",
+      "title": "Marquee-02 - Brands",
+      "description": "Brands marquee component",
+      "type": "registry:component",
+      "dependencies": [
+        ""
+      ],
+      "registryDependencies": [
+        ""
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/marquee/marquee-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/marquee/marquee-02.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/animations/marquee.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animations/marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion-01",
+      "title": "Accordion-01 - Default",
+      "description": "Default accordion component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/accordion/accordion-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/accordion/accordion-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion-02",
+      "title": "Accordion-02 - Multi-level",
+      "description": "Multi-level accordion component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "accordion",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/accordion/accordion-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/accordion/accordion-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-01",
+      "title": "Avatar-01 - Default",
+      "description": "Default avatar component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/avatar/avatar-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/avatar/avatar-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-02",
+      "title": "Avatar-02 - Group",
+      "description": "Group avatar component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/avatar/avatar-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/avatar/avatar-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-03",
+      "title": "Avatar-03 - Badge",
+      "description": "Badge avatar component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/avatar/avatar-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/avatar/avatar-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-04",
+      "title": "Avatar-04 - Border",
+      "description": "Border avatar component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/avatar/avatar-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/avatar/avatar-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-05",
+      "title": "Avatar-05 - Counter",
+      "description": "Counter avatar component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/avatar/avatar-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/avatar/avatar-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar-06",
+      "title": "Avatar-06 - Fallback",
+      "description": "Fallback avatar component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/avatar/avatar-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/avatar/avatar-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-01",
+      "title": "Button-01 - With Icon",
+      "description": "With Icon button component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-02",
+      "title": "Button-02 - Shiny Text",
+      "description": "Shiny Text button component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-02.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/button/button-02.css",
+          "type": "registry:style",
+          "target": "components/shadcn-space/button/button-02.css"
+        }
+      ]
+    },
+    {
+      "name": "button-03",
+      "title": "Button-03 - Shine Hover",
+      "description": "Shine Hover button component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-04",
+      "title": "Button-04 - Heartbeat Effect",
+      "description": "Heartbeat Effect button component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-04.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/button/button-04.css",
+          "type": "registry:style",
+          "target": "components/shadcn-space/button/button-04.css"
+        }
+      ]
+    },
+    {
+      "name": "button-05",
+      "title": "Button-05 - Get Figma File",
+      "description": "Get Figma File button component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-06",
+      "title": "Button-06 - Animated Border",
+      "description": "Animated Border button component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-07",
+      "title": "Button-07 - Social",
+      "description": "Social button component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-08",
+      "title": "Button-08 - Social Icon",
+      "description": "Social Icon button component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-09",
+      "title": "Button-09 - Outline With Icon",
+      "description": "Outline With Icon button component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-10",
+      "title": "Button-10 - Save",
+      "description": "Save button component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-11",
+      "title": "Button-11 - Cancel",
+      "description": "Cancel button component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-12",
+      "title": "Button-12 - Default",
+      "description": "Default button component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-12.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-12.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-13",
+      "title": "Button-13 - Size xs",
+      "description": "Size xs button component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-13.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-14",
+      "title": "Button-14 - Size sm",
+      "description": "Size sm button component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-14.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-14.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-15",
+      "title": "Button-15 - Size lg",
+      "description": "Size lg button component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/button/button-15.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/button/button-15.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge-01",
+      "title": "Badge-01 - Default",
+      "description": "Badge component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/badge/badge-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/badge/badge-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge-02",
+      "title": "Badge-02 - Count",
+      "description": "Badge component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/badge/badge-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/badge/badge-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge-03",
+      "title": "Badge-03 - Outline",
+      "description": "Badge component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/badge/badge-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/badge/badge-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge-04",
+      "title": "Badge-04 - With Icon",
+      "description": "Badge component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/badge/badge-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/badge/badge-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge-05",
+      "title": "Badge-05 - Link",
+      "description": "Badge component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/badge/badge-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/badge/badge-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge-06",
+      "title": "Badge-06 - Error",
+      "description": "Badge component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/badge/badge-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/badge/badge-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar-01",
+      "title": "Calendar 01 - Standard calendar",
+      "description": "Calendar component",
+      "type": "registry:component",
+      "dependencies": [
+        "faker"
+      ],
+      "registryDependencies": [
+        "calendar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/calendar/calendar-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/calendar/calendar-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar-02",
+      "title": "Calendar 02 - Style calendar",
+      "description": "Calendar component",
+      "type": "registry:component",
+      "dependencies": [
+        "faker"
+      ],
+      "registryDependencies": [
+        "calendar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/calendar/calendar-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/calendar/calendar-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar-03",
+      "title": "Calendar 03 - Time calendar",
+      "description": "Calendar component",
+      "type": "registry:component",
+      "dependencies": [
+        ""
+      ],
+      "registryDependencies": [
+        "calendar",
+        "scrollarea",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/calendar/calendar-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/calendar/calendar-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar-04",
+      "title": "Calendar 04 - Dialog calendar",
+      "description": "Calendar component",
+      "type": "registry:component",
+      "dependencies": [
+        "faker",
+        "daterange"
+      ],
+      "registryDependencies": [
+        "calendar",
+        "dialog",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/calendar/calendar-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/calendar/calendar-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-01",
+      "title": "Tooltip-01 - Hover Blog Card",
+      "description": "Tooltip component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucid"
+      ],
+      "registryDependencies": [
+        "tooltip",
+        "hover-card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tooltip/tooltip-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tooltip/tooltip-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-02",
+      "title": "Tooltip-02 - Content Tooltip",
+      "description": "Tooltip component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucid"
+      ],
+      "registryDependencies": [
+        "tooltip",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tooltip/tooltip-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tooltip/tooltip-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-03",
+      "title": "Tooltip-03 - Animated Tooltip",
+      "description": "Animated Tooltip component",
+      "type": "registry:component",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tooltip/tooltip-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tooltip/tooltip-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-04",
+      "title": "Tooltip-04 - Rounded Tooltip",
+      "description": "Tooltip component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "tooltip",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tooltip/tooltip-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tooltip/tooltip-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-05",
+      "title": "Tooltip-05 - Tooltip Position",
+      "description": "Tooltip component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "tooltip",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tooltip/tooltip-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tooltip/tooltip-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-06",
+      "title": "Tooltip-06 - Avatar Tooltip",
+      "description": "Tooltip component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "tooltip",
+        "button",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tooltip/tooltip-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tooltip/tooltip-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-07",
+      "title": "Tooltip-07 - Error Tooltip",
+      "description": "Tooltip component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "tooltip",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tooltip/tooltip-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tooltip/tooltip-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-text-01",
+      "title": "Animated Text-01 - Shiny Text",
+      "description": "Animated Text component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/animated-text/animated-text-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animated-text/animated-text-01.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/animated-text/animated-text-01.css",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animated-text/animated-text-01.css"
+        }
+      ]
+    },
+    {
+      "name": "animated-text-02",
+      "title": "Animated Text-02 - Gradient Text",
+      "description": "Animated Gradient Text component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/animated-text/animated-text-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animated-text/animated-text-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-text-03",
+      "title": "Animated Text-03 - Typing",
+      "description": "Animated Typing component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/animated-text/animated-text-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animated-text/animated-text-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-text-04",
+      "title": "Animated Text-04 - Rolling Text",
+      "description": "Animated Rolling Text component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/animated-text/animated-text-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animated-text/animated-text-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "animated-text-05",
+      "title": "Animated Text-05 - Shimmer Text",
+      "description": "Animated Shimmer Text component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/animated-text/animated-text-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/animated-text/animated-text-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-01",
+      "title": "Input-01 - Input with date",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-02",
+      "title": "Input-02 - Input with time",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-03",
+      "title": "Input-03 - Input with currency",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-04",
+      "title": "Input-04 - Real Time Validation",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-05",
+      "title": "Input-05 - Input with start select",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "select",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-06",
+      "title": "Input-06 - Input with character counter",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-07",
+      "title": "Input-07 - Input with controls",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-08",
+      "title": "Input-08 - Input with add-ons",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-09",
+      "title": "Input-09 - Input with floating label",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-10",
+      "title": "Input-10 - Input with clear button",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-10.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-10.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-11",
+      "title": "Input-11 - Input with end inline button",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-11.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-11.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-12",
+      "title": "Input-12 - Input with end button",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-12.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-12.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-13",
+      "title": "Input-13 - Input with file",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-13.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-13.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-14",
+      "title": "Input-14 - Input with error",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-14.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-14.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-15",
+      "title": "Input-15 - Required Input",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-15.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-15.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-16",
+      "title": "Input-16 - Standard Input",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "input"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-16.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-16.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-17",
+      "title": "Input-17 - Input with label",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-17.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-17.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-18",
+      "title": "Input-18 - Disabled",
+      "description": "Input component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "input"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/input/input-18.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/input/input-18.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-01",
+      "title": "Textarea-01 - Feedback Textarea",
+      "description": "Textarea component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/textarea/textarea-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/textarea/textarea-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-02",
+      "title": "Textarea-02 - Textarea with icon",
+      "description": "Textarea component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "textarea",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/textarea/textarea-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/textarea/textarea-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-03",
+      "title": "Textarea-03 - Required Textarea",
+      "description": "Textarea component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "textarea",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/textarea/textarea-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/textarea/textarea-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-04",
+      "title": "Textarea-04 - Textarea with button",
+      "description": "Textarea component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "textarea",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/textarea/textarea-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/textarea/textarea-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-05",
+      "title": "Textarea-05 - Auto growing textarea",
+      "description": "Textarea component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "textarea",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/textarea/textarea-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/textarea/textarea-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-06",
+      "title": "Textarea-06 - Textarea with characters left",
+      "description": "Textarea component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "textarea",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/textarea/textarea-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/textarea/textarea-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-07",
+      "title": "Textarea-07 - Textarea with floating label",
+      "description": "Textarea component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "textarea",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/textarea/textarea-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/textarea/textarea-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-08",
+      "title": "Textarea-08 - Textarea with helper text",
+      "description": "Textarea component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "textarea",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/textarea/textarea-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/textarea/textarea-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea-09",
+      "title": "Textarea-09 - Disabled Textarea",
+      "description": "Textarea component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "textarea",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/textarea/textarea-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/textarea/textarea-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-01",
+      "title": "Select-01 - Required select",
+      "description": "Select component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "select",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/select/select-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/select/select-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-02",
+      "title": "Select-02 - Select with icon",
+      "description": "Select component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "select",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/select/select-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/select/select-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-03",
+      "title": "Select-03 - Select with status",
+      "description": "Select component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "select",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/select/select-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/select/select-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-04",
+      "title": "Select-04 - Select with timezone",
+      "description": "Select component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "select",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/select/select-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/select/select-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-05",
+      "title": "Select-05 - Select with overlapping label",
+      "description": "Select component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "select"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/select/select-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/select/select-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-06",
+      "title": "Select-06 - Select with multiple options",
+      "description": "Select component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "label",
+        "multi-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/select/select-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/select/select-06.tsx"
+        },
+        {
+          "path": "src/components/ui/multi-select.tsx",
+          "type": "registry:component",
+          "target": "components/ui/multi-select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-07",
+      "title": "Select-07 - Select with avatars",
+      "description": "Select component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "select",
+        "label",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/select/select-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/select/select-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-08",
+      "title": "Select-08 - Select with leading text",
+      "description": "Select component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "select",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/select/select-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/select/select-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-09",
+      "title": "Select-09 - Select with separator",
+      "description": "Select component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "select",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/select/select-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/select/select-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-01",
+      "title": "Checkbox-01 - Checkbox with sizes",
+      "description": "Checkbox component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/checkbox/checkbox-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/checkbox/checkbox-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-02",
+      "title": "Checkbox-02 - Checkbox with vertical group",
+      "description": "Checkbox component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/checkbox/checkbox-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/checkbox/checkbox-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-03",
+      "title": "Checkbox-03 - Checkbox with colors",
+      "description": "Checkbox component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "checkbox",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/checkbox/checkbox-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/checkbox/checkbox-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-04",
+      "title": "Checkbox-04 - Checkbox with todo list",
+      "description": "Checkbox component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "checkbox",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/checkbox/checkbox-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/checkbox/checkbox-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-05",
+      "title": "Checkbox-05 - Checkbox with list group",
+      "description": "Checkbox component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "checkbox",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/checkbox/checkbox-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/checkbox/checkbox-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-06",
+      "title": "Checkbox-06 - Checkbox with form",
+      "description": "Checkbox component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "checkbox",
+        "label",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/checkbox/checkbox-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/checkbox/checkbox-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-07",
+      "title": "Checkbox-07 - Checkbox with custom icons",
+      "description": "Checkbox component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "checkbox"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/checkbox/checkbox-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/checkbox/checkbox-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-08",
+      "title": "Checkbox-08 - Checkbox with dashed border",
+      "description": "Checkbox component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "checkbox",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/checkbox/checkbox-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/checkbox/checkbox-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-09",
+      "title": "Checkbox-09 - Checkbox with tree",
+      "description": "Checkbox component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "checkbox",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/checkbox/checkbox-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/checkbox/checkbox-09.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-01",
+      "title": "Radio Group-01 - Radio Group with tree",
+      "description": "Radio Group component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/radio-group/radio-group-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/radio-group/radio-group-01.tsx"
+        },
+        {
+          "path": "src/components/ui/motion-radio-group.tsx",
+          "type": "registry:component",
+          "target": "components/ui/motion-radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-02",
+      "title": "Radio Group-02 - Radio Group with tree",
+      "description": "Radio Group component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "label",
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/radio-group/radio-group-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/radio-group/radio-group-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-03",
+      "title": "Radio Group-03 - Radio Group with tree",
+      "description": "Radio Group component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "label",
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/radio-group/radio-group-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/radio-group/radio-group-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-04",
+      "title": "Radio Group-04 - Radio Group with tree",
+      "description": "Radio Group component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "label",
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/radio-group/radio-group-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/radio-group/radio-group-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-05",
+      "title": "Radio Group-05 - Radio Group with tree",
+      "description": "Radio Group component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "label",
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/radio-group/radio-group-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/radio-group/radio-group-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group-06",
+      "title": "Radio Group-06 - Radio Group with tree",
+      "description": "Radio Group component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "badge",
+        "label",
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/radio-group/radio-group-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/radio-group/radio-group-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-01",
+      "title": "Switch-01 - Active effect",
+      "description": "Switch with active effect component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "switch",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/switch/switch-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/switch/switch-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-02",
+      "title": "Switch-02 - With Icon",
+      "description": "Switch component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "switch",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/switch/switch-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/switch/switch-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-03",
+      "title": "Switch-03 - Toggle theme",
+      "description": "Switch toggle theme component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/switch/switch-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/switch/switch-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-04",
+      "title": "Switch-04 - With Description",
+      "description": "Switch component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "switch",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/switch/switch-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/switch/switch-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-05",
+      "title": "Switch-05 - With label",
+      "description": "Switch component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "switch",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/switch/switch-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/switch/switch-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch-06",
+      "title": "Switch-06 - Custom Colors",
+      "description": "Switch component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/switch/switch-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/switch/switch-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-01",
+      "title": "Tabs-01 - Animated",
+      "description": "Tabs component",
+      "type": "registry:component",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tabs/tabs-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tabs/tabs-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-02",
+      "title": "Tabs-02 - Transition",
+      "description": "Tabs component",
+      "type": "registry:component",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tabs/tabs-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tabs/tabs-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-03",
+      "title": "Tabs-03 - With Icon",
+      "description": "Tabs component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tabs/tabs-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tabs/tabs-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs-04",
+      "title": "Tabs-04 - With Count",
+      "description": "Tabs component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "tabs",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/tabs/tabs-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/tabs/tabs-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-01",
+      "title": "Card-01 - ArticlePreviewCard",
+      "description": "Card component",
+      "type": "registry:component",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/card/card-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/card/card-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-02",
+      "title": "Card-02 - Preview Card",
+      "description": "Card component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/card/card-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/card/card-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-03",
+      "title": "Card-03 - Product Card",
+      "description": "Card component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "progress"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/card/card-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/card/card-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-04",
+      "title": "Card-04 - Welcome Card",
+      "description": "Card component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/card/card-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/card/card-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-05",
+      "title": "Card-05 - Analytics Card",
+      "description": "Card component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "card",
+        "badge",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/card/card-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/card/card-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-06",
+      "title": "Card-06 - Statistics Card",
+      "description": "Card component",
+      "type": "registry:component",
+      "dependencies": [
+        "iconify/react"
+      ],
+      "registryDependencies": [
+        "card",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/card/card-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/card/card-06.tsx"
+        }
+      ]
+    }
+  ]
+}

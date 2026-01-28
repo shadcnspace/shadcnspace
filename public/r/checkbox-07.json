@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-07",
+  "type": "registry:component",
+  "title": "Checkbox-07 - Checkbox with custom icons",
+  "description": "Checkbox component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/checkbox/checkbox-07.tsx",
+      "content": "import { HeartIcon, StarIcon, Send } from \"lucide-react\";\r\nimport { Checkbox as CheckboxPrimitive } from \"@base-ui/react/checkbox\";\r\n\r\nconst CheckboxCustomIconsDemo = () => {\r\n  return (\r\n    <div className=\"flex items-center gap-6\">\r\n      <CheckboxPrimitive.Root\r\n        data-slot=\"checkbox\"\r\n        defaultChecked\r\n        className=\"group focus-visible:ring-ring/50 rounded-sm outline-none focus-visible:ring-3 flex items-center gap-1.5\"\r\n        aria-label=\"Heart\"\r\n      >\r\n        <span className=\"group-data-[checked]:hidden\">\r\n          <HeartIcon className=\"stroke-1\" />\r\n        </span>\r\n        <span className=\"group-data-[unchecked]:hidden\">\r\n          <HeartIcon className=\"fill-destructive stroke-destructive stroke-1\" />\r\n        </span>\r\n        <span className=\"text-sm font-medium text-muted-foreground group-data-[checked]:text-destructive\">\r\n          15k\r\n        </span>\r\n      </CheckboxPrimitive.Root>\r\n      <CheckboxPrimitive.Root\r\n        data-slot=\"checkbox\"\r\n        defaultChecked\r\n        className=\"group focus-visible:ring-ring/50 rounded-sm outline-none focus-visible:ring-3 flex items-center gap-1.5\"\r\n        aria-label=\"Star\"\r\n      >\r\n        <span className=\"group-data-[checked]:hidden\">\r\n          <StarIcon className=\"stroke-1\" />\r\n        </span>\r\n        <span className=\"group-data-[unchecked]:hidden\">\r\n          <StarIcon className=\"fill-amber-300 stroke-amber-300 stroke-1 dark:fill-amber-300 dark:stroke-amber-300\" />\r\n        </span>\r\n        <span className=\"text-sm font-medium text-muted-foreground group-data-[checked]:text-amber-400\">\r\n          20k\r\n        </span>\r\n      </CheckboxPrimitive.Root>\r\n      <CheckboxPrimitive.Root\r\n        data-slot=\"checkbox\"\r\n        defaultChecked\r\n        className=\"group focus-visible:ring-ring/50 rounded-sm outline-none focus-visible:ring-3 flex items-center gap-1.5\"\r\n        aria-label=\"Send\"\r\n      >\r\n        <span className=\"group-data-[checked]:hidden\">\r\n          <Send className=\"stroke-1\" />\r\n        </span>\r\n        <span className=\"group-data-[unchecked]:hidden\">\r\n          <Send className=\"fill-sky-400 stroke-sky-400 stroke-1 dark:fill-sky-400 dark:stroke-sky-400\" />\r\n        </span>\r\n        <span className=\"text-sm font-medium text-muted-foreground group-data-[checked]:text-sky-500\">\r\n          24k\r\n        </span>\r\n      </CheckboxPrimitive.Root>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CheckboxCustomIconsDemo;",
+      "type": "registry:component",
+      "target": "components/shadcn-space/checkbox/checkbox-07.tsx"
+    }
+  ]
+}

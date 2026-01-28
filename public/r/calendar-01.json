@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-01",
+  "type": "registry:component",
+  "title": "Calendar 01 - Standard calendar",
+  "description": "Calendar component",
+  "dependencies": [
+    "faker"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/calendar/calendar-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { faker } from \"@faker-js/faker\";\r\nimport { useState } from \"react\";\r\n\r\nimport { Calendar } from \"@/components/ui/calendar\";\r\n\r\nexport const title = \"Calendar with Multiple Day Selection\";\r\n\r\nconst now = new Date();\r\nconst startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);\r\nconst endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);\r\n\r\nconst selectedDates = [\r\n  faker.date.between({\r\n    from: startOfMonth,\r\n    to: new Date(now.getFullYear(), now.getMonth(), 10),\r\n  }),\r\n  faker.date.between({\r\n    from: new Date(now.getFullYear(), now.getMonth(), 11),\r\n    to: new Date(now.getFullYear(), now.getMonth(), 20),\r\n  }),\r\n  faker.date.between({\r\n    from: new Date(now.getFullYear(), now.getMonth(), 21),\r\n    to: endOfMonth,\r\n  }),\r\n];\r\n\r\nconst CalendarOne = () => {\r\n  const [dates, setDates] = useState<Date[] | undefined>(selectedDates);\r\n\r\n  return (\r\n    <div className=\"flex items-center justify-center px-4\">\r\n      <Calendar\r\n        className=\"rounded-md border\"\r\n        mode=\"multiple\"\r\n        onSelect={setDates}\r\n        selected={dates}\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CalendarOne;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/calendar/calendar-01.tsx"
+    }
+  ]
+}

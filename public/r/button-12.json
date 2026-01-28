@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-12",
+  "type": "registry:component",
+  "title": "Button-12 - Default",
+  "description": "Default button component",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-12.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst ButtonDefaultDemo = () => {\r\n  return (\r\n    <Button className=\"hover:-translate-y-1 transition-transform duration-200\">\r\n      Default\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default ButtonDefaultDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-12.tsx"
+    }
+  ]
+}

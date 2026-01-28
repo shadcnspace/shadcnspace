@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-02",
+  "type": "registry:component",
+  "title": "Badge-02 - Count",
+  "description": "Badge component",
+  "dependencies": [],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/badge/badge-02.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nconst CountBadgeDemo = () => (\r\n  <Badge className=\"flex size-6 items-center justify-center rounded-full p-0 bg-amber-200 text-amber-900\">\r\n    3\r\n  </Badge>\r\n);\r\n\r\nexport default CountBadgeDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/badge/badge-02.tsx"
+    }
+  ]
+}

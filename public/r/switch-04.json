@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-04",
+  "type": "registry:component",
+  "title": "Switch-04 - With Description",
+  "description": "Switch component",
+  "dependencies": [],
+  "registryDependencies": [
+    "switch",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/switch/switch-04.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst SwitchWithDescriptionDemo = () => (\r\n  <div className=\"flex items-center justify-between gap-4\">\r\n    <div className=\"flex flex-col gap-1\">\r\n      <Label htmlFor=\"notifications\">Newsletter</Label>\r\n      <p className=\"text-sm text-muted-foreground\">\r\n        Receive newsletter on your registered email\r\n      </p>\r\n    </div>\r\n    <Switch id=\"notifications\" />\r\n  </div>\r\n);\r\n\r\nexport default SwitchWithDescriptionDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/switch/switch-04.tsx"
+    }
+  ]
+}

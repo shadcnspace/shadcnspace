@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-06",
+  "type": "registry:component",
+  "title": "Badge-06 - Error",
+  "description": "Badge component",
+  "dependencies": [],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/badge/badge-06.tsx",
+      "content": "\r\nimport { Badge } from '@/components/ui/badge'\r\n\r\nconst ErrorBadgeDemo = () => {\r\n  return (\r\n    <Badge variant='destructive'>Error</Badge>\r\n  )\r\n}\r\n\r\nexport default ErrorBadgeDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/badge/badge-06.tsx"
+    }
+  ]
+}

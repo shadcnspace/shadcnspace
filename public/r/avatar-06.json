@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-06",
+  "type": "registry:component",
+  "title": "Avatar-06 - Fallback",
+  "description": "Fallback avatar component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/avatar/avatar-06.tsx",
+      "content": "\r\nimport { Avatar, AvatarFallback } from \"@/components/ui/avatar\";\r\nconst FallbackDemo = () => {\r\n  return (\r\n    <div className=\"flex items-center justify-center px-4\">\r\n      <Avatar>\r\n        <AvatarFallback className=\"bg-blue-200 text-blue-500 font-medium\">WP</AvatarFallback>\r\n      </Avatar>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default FallbackDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/avatar/avatar-06.tsx"
+    }
+  ]
+}

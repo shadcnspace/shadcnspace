@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-01",
+  "type": "registry:component",
+  "title": "Button-01 - With Icon",
+  "description": "With Icon button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-01.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { ArrowUpRight } from \"lucide-react\";\r\n\r\nconst ButtonWithIconDemo = () => {\r\n  return (\r\n    <Button className=\"relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden\">\r\n      <span className=\"relative z-10 transition-all duration-500\">\r\n        Let's Collaborate\r\n      </span>\r\n      <div className=\"absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45\">\r\n        <ArrowUpRight size={16} />\r\n      </div>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default ButtonWithIconDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-01.tsx"
+    }
+  ]
+}

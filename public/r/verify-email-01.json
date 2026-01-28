@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "verify-email-01",
+  "type": "registry:block",
+  "title": "Verify Email 01 - Email Verification Page",
+  "description": "A clean email verification screen that confirms account activation, guides users to check their inbox, and offers resend functionality for a smooth onboarding experience.",
+  "dependencies": [
+    ""
+  ],
+  "registryDependencies": [
+    "button",
+    "card",
+    "field"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/verify-email-01/page.tsx",
+      "content": "import VerifyEmail from \"@/components/shadcn-space/blocks/verify-email-01/verify-email\";\r\n\r\nconst Page = () => {\r\n  return <VerifyEmail />;\r\n};\r\n\r\nexport default Page;\r\n",
+      "type": "registry:page",
+      "target": "app/verify-email-01/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/verify-email-01/verify-email.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/components/ui/card\";\r\nimport { Field, FieldDescription, FieldGroup } from \"@/components/ui/field\";\r\n\r\nconst VerifyEmail = () => {\r\n  return (\r\n    <section className=\"bg-primary dark:bg-background min-h-screen flex items-center relative\">\r\n      <div className=\"pointer-events-none absolute inset-0 right-0 overflow-hidden md:block hidden\">\r\n        {/* Outer big circle */}\r\n        <div className=\"absolute left-1/1 top-0 h-[2600px] w-[2600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10\" />\r\n        {/* Inner circle */}\r\n        <div className=\"absolute left-1/1 top-0 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary dark:bg-background\" />\r\n      </div>\r\n      <div className=\"py-10 md:py-20 max-w-lg px-4 sm:px-0 mx-auto w-full\">\r\n        <Card className=\"px-6 py-8 sm:p-12 relative\">\r\n          <CardHeader className=\"text-center gap-6 p-0\">\r\n            <div className=\"mx-auto\">\r\n              <a href=\"\">\r\n                <img\r\n                  src=\"https://images.shadcnspace.com/assets/logo/logo-icon-black.svg\"\r\n                  alt=\"shadcnspace\"\r\n                  className=\"dark:hidden h-10 w-10\"\r\n                />\r\n                <img\r\n                  src=\"https://images.shadcnspace.com/assets/logo/logo-icon-white.svg\"\r\n                  alt=\"shadcnspace\"\r\n                  className=\"hidden dark:block h-10 w-10\"\r\n                />\r\n              </a>\r\n            </div>\r\n            <div className=\"flex flex-col gap-1\">\r\n              <CardTitle className=\"text-2xl font-medium text-card-foreground\">\r\n                Verify your email\r\n              </CardTitle>\r\n              <CardDescription className=\"text-sm font-normal text-muted-foreground\">\r\n                An activation link has been sent to your email address:\r\n                hello@example.com. Please check your inbox and click on the link\r\n                to complete the activation process.\r\n              </CardDescription>\r\n            </div>\r\n          </CardHeader>\r\n          <CardContent className=\"p-0\">\r\n            <form>\r\n              <FieldGroup>\r\n                <Field className=\"gap-4\">\r\n                  <Button type=\"submit\" size={\"lg\"} className=\"rounded-xl\">\r\n                    Verify Now\r\n                  </Button>\r\n                  <FieldDescription className=\"text-center text-sm font-normal text-muted-foreground\">\r\n                    Didn&apos;t get the email?{\" \"}\r\n                    <a\r\n                      href=\"#\"\r\n                      className=\"font-medium text-card-foreground !no-underline\"\r\n                    >\r\n                      Resend\r\n                    </a>\r\n                  </FieldDescription>\r\n                </Field>\r\n              </FieldGroup>\r\n            </form>\r\n          </CardContent>\r\n        </Card>\r\n      </div>\r\n    </section>\r\n  );\r\n};\r\n\r\nexport default VerifyEmail;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/verify-email-01/verify-email.tsx"
+    }
+  ]
+}

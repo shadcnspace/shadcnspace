@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-02",
+  "type": "registry:component",
+  "title": "Avatar-02 - Group",
+  "description": "Group avatar component",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/avatar/avatar-02.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nconst GroupAvatarDemo = () => {\r\n  return (\r\n    <div className=\"flex items-center justify-center px-4\">\r\n        <div className=\"flex flex-row justify-center items-center gap-6\">\r\n          <div className=\"*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 \">\r\n            <Avatar >\r\n              <AvatarImage src=\"https://images.shadcnspace.com/assets/profiles/user-1.jpg\" alt=\"user\" />\r\n              <AvatarFallback>CN</AvatarFallback>\r\n            </Avatar>\r\n            <Avatar >\r\n              <AvatarImage\r\n                src=\"https://images.shadcnspace.com/assets/profiles/user-2.jpg\"\r\n                alt=\"user\"\r\n              />\r\n              <AvatarFallback>LR</AvatarFallback>\r\n            </Avatar>\r\n            <Avatar >\r\n              <AvatarImage\r\n                src=\"https://images.shadcnspace.com/assets/profiles/user-3.jpg\"\r\n                alt=\"user\"\r\n              />\r\n              <AvatarFallback>ER</AvatarFallback>\r\n            </Avatar>\r\n            <Avatar >\r\n              <AvatarFallback className=\"text-card-foreground font-medium text-sm\">+4</AvatarFallback>\r\n            </Avatar>\r\n          </div>\r\n        </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default GroupAvatarDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/avatar/avatar-02.tsx"
+    }
+  ]
+}

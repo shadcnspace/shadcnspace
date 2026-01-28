@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-02",
+  "type": "registry:component",
+  "title": "Tooltip-02 - Content Tooltip",
+  "description": "Tooltip component",
+  "dependencies": [
+    "lucid"
+  ],
+  "registryDependencies": [
+    "tooltip",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/tooltip/tooltip-02.tsx",
+      "content": "\"use client\";\r\nimport { InfoIcon } from \"lucide-react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nconst ContentTooltipDemo = () => {\r\n  return (\r\n    \r\n      <Tooltip>\r\n        <TooltipTrigger>\r\n          <Button variant=\"outline\">Content Tooltip</Button>\r\n        </TooltipTrigger>\r\n        <TooltipContent className=\"max-w-64 py-3 text-pretty\">\r\n          <div className=\"space-y-1\">\r\n            <div className=\"flex items-center gap-2\">\r\n              <InfoIcon className=\"size-4\" />\r\n              <p className=\"text-sm font-medium\">Design for Everyone</p>\r\n            </div>\r\n            <p className=\"text-background/80\">\r\n             Use tooltips as helpful guidance, not as a dependency. Important content should always be easy to find and understand.\r\n            </p>\r\n          </div>\r\n        </TooltipContent>\r\n      </Tooltip>\r\n   \r\n  );\r\n};\r\n\r\nexport default ContentTooltipDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/tooltip/tooltip-02.tsx"
+    }
+  ]
+}

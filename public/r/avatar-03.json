@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-03",
+  "type": "registry:component",
+  "title": "Avatar-03 - Badge",
+  "description": "Badge avatar component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/avatar/avatar-03.tsx",
+      "content": "\"use client\";\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { VerifiedIcon } from \"lucide-react\";\r\nconst BadgeAvatarDemo = () => {\r\n  return (\r\n    <div className=\"flex items-center justify-center px-4\">\r\n      <div className=\"flex flex-row justify-center items-center gap-3\">\r\n        <div className=\"relative w-fit\">\r\n          <Avatar >\r\n            <AvatarImage\r\n              alt=\"user\"\r\n              src=\"https://images.shadcnspace.com/assets/profiles/user-3.jpg\"\r\n            />\r\n            <AvatarFallback>SS</AvatarFallback>\r\n          </Avatar>\r\n          <span className=\"absolute -right-1 -bottom-1 flex size-3 items-center justify-center rounded-full bg-background\">\r\n            <VerifiedIcon className=\"size-full fill-blue-500 text-white\" />\r\n          </span>\r\n        </div>\r\n        \r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default BadgeAvatarDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/avatar/avatar-03.tsx"
+    }
+  ]
+}

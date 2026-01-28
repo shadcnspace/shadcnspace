@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-01",
+  "type": "registry:block",
+  "title": "Dropdown 01 - User Account Dropdown",
+  "description": "A compact user profile dropdown with quick access to subscriptions, invoices, account settings, and secure sign out, designed to improve navigation within modern SaaS dashboards.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/dropdown-01/page.tsx",
+      "content": "import Dropdown from \"@/components/shadcn-space/blocks/dropdown-01/dropdown\";\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nconst page = () => {\r\n  return (\r\n    <Dropdown\r\n      defaultOpen={true}\r\n      align=\"center\"\r\n      trigger={\r\n        <button className=\"rounded-full\">\r\n          <Avatar className=\"size-10 cursor-pointer\">\r\n            <AvatarImage\r\n              src=\"https://images.shadcnspace.com/assets/profiles/user-11.jpg\"\r\n              alt=\"David McMichael\"\r\n            />\r\n            <AvatarFallback>DM</AvatarFallback>\r\n          </Avatar>\r\n        </button>\r\n      }\r\n    />\r\n  );\r\n};\r\n\r\nexport default page;",
+      "type": "registry:page",
+      "target": "app/dropdown-01/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/dropdown-01/dropdown.tsx",
+      "content": "\"use client\";\r\n\r\nimport type { ReactNode } from \"react\";\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuGroup,\r\n  DropdownMenuItem,\r\n  DropdownMenuLabel,\r\n  DropdownMenuSeparator,\r\n  DropdownMenuTrigger,\r\n} from \"@/components/ui/dropdown-menu\";\r\nimport {\r\n  LucideIcon,\r\n  CircleUserRound,\r\n  CreditCard,\r\n  ReceiptText,\r\n  Settings,\r\n  LogOut,\r\n} from \"lucide-react\";\r\n\r\ntype Props = {\r\n  trigger: ReactNode;\r\n  defaultOpen?: boolean;\r\n  align?: \"start\" | \"center\" | \"end\";\r\n};\r\n\r\ntype MenuItem = {\r\n  label: string;\r\n  icon: LucideIcon;\r\n  destructive?: boolean;\r\n};\r\n\r\nconst PROFILE_ITEMS: MenuItem[] = [\r\n  { label: \"My Profile\", icon: CircleUserRound },\r\n  { label: \"My Subscription\", icon: CreditCard },\r\n  { label: \"My Invoice\", icon: ReceiptText },\r\n];\r\n\r\nconst SETTINGS_ITEMS: MenuItem[] = [\r\n  { label: \"Account Settings\", icon: Settings },\r\n];\r\n\r\nconst LOGOUT_ITEM: MenuItem = {\r\n  label: \"Signout\",\r\n  icon: LogOut,\r\n  destructive: true,\r\n};\r\n\r\nconst itemClass =\r\n  \"p-2 text-sm font-medium text-popover-foreground cursor-pointer gap-2\";\r\n\r\nconst Dropdown = ({ trigger, defaultOpen, align = \"end\" }: Props) => {\r\n  return (\r\n    <div className=\"flex items-center justify-center p-8\">\r\n      <DropdownMenu defaultOpen={defaultOpen}>\r\n        <DropdownMenuTrigger>{trigger}</DropdownMenuTrigger>\r\n\r\n        <DropdownMenuContent\r\n          align={align}\r\n          className=\"w-3xs rounded-2xl data-open:slide-in-from-bottom-20! data-closed:slide-out-to-bottom-20 data-open:fade-in-0 data-closed:fade-out-0 data-closed:zoom-out-100 duration-400\"\r\n        >\r\n          {/* User Info */}\r\n          <DropdownMenuLabel className=\"flex items-center gap-3 px-4 py-3\">\r\n            <div className=\"relative\">\r\n              <Avatar className=\"size-10\">\r\n                <AvatarImage\r\n                  src=\"https://images.shadcnspace.com/assets/profiles/user-11.jpg\"\r\n                  alt=\"David McMichael\"\r\n                />\r\n                <AvatarFallback>DM</AvatarFallback>\r\n              </Avatar>\r\n              <span className=\"ring-card absolute right-0 bottom-0 size-2 rounded-full bg-green-600 ring-2\" />\r\n            </div>\r\n\r\n            <div className=\"flex flex-col\">\r\n              <span className=\"text-popover-foreground text-sm font-medium\">\r\n                David McMichael\r\n              </span>\r\n              <span className=\"text-muted-foreground text-sm\">\r\n                david@shadcnspace.com\r\n              </span>\r\n            </div>\r\n          </DropdownMenuLabel>\r\n\r\n          <DropdownMenuSeparator />\r\n\r\n          {/* Main Links */}\r\n          <DropdownMenuGroup>\r\n            {PROFILE_ITEMS.map(({ label, icon: Icon }) => (\r\n              <DropdownMenuItem key={label} className={itemClass}>\r\n                <Icon size={20} />\r\n                <span>{label}</span>\r\n              </DropdownMenuItem>\r\n            ))}\r\n          </DropdownMenuGroup>\r\n\r\n          <DropdownMenuSeparator />\r\n\r\n          {/* Settings */}\r\n          <DropdownMenuGroup>\r\n            {SETTINGS_ITEMS.map(({ label, icon: Icon }) => (\r\n              <DropdownMenuItem key={label} className={itemClass}>\r\n                <Icon size={20} />\r\n                <span>{label}</span>\r\n              </DropdownMenuItem>\r\n            ))}\r\n          </DropdownMenuGroup>\r\n\r\n          <DropdownMenuSeparator />\r\n\r\n          {/* Logout */}\r\n          <DropdownMenuItem variant=\"destructive\" className={itemClass}>\r\n            <LOGOUT_ITEM.icon size={20} />\r\n            <span>{LOGOUT_ITEM.label}</span>\r\n          </DropdownMenuItem>\r\n        </DropdownMenuContent>\r\n      </DropdownMenu>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Dropdown;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/dropdown-01/dropdown.tsx"
+    }
+  ]
+}

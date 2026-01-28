@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-06",
+  "type": "registry:component",
+  "title": "Tooltip-06 - Avatar Tooltip",
+  "description": "Tooltip component",
+  "dependencies": [],
+  "registryDependencies": [
+    "tooltip",
+    "button",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/tooltip/tooltip-06.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipProvider,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nconst AvatarGroupTooltipDemo = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-2\">\r\n      <div className=\"flex flex-row justify-center items-center gap-6\">\r\n        <TooltipProvider>\r\n          <div className=\"*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2\">\r\n            <Tooltip>\r\n              <TooltipTrigger >\r\n                <Avatar>\r\n                  <AvatarImage\r\n                    src=\"https://images.shadcnspace.com/assets/profiles/user-1.jpg\"\r\n                    alt=\"user\"\r\n                  />\r\n                  <AvatarFallback>CN</AvatarFallback>\r\n                </Avatar>\r\n              </TooltipTrigger>\r\n              <TooltipContent>\r\n                <p>Chris Nolan</p>\r\n              </TooltipContent>\r\n            </Tooltip>\r\n\r\n            <Tooltip>\r\n              <TooltipTrigger >\r\n                <Avatar>\r\n                  <AvatarImage\r\n                    src=\"https://images.shadcnspace.com/assets/profiles/user-2.jpg\"\r\n                    alt=\"user\"\r\n                  />\r\n                  <AvatarFallback>LR</AvatarFallback>\r\n                </Avatar>\r\n              </TooltipTrigger>\r\n              <TooltipContent>\r\n                <p>Laura Ross</p>\r\n              </TooltipContent>\r\n            </Tooltip>\r\n\r\n            <Tooltip>\r\n              <TooltipTrigger >\r\n                <Avatar>\r\n                  <AvatarImage\r\n                    src=\"https://images.shadcnspace.com/assets/profiles/user-3.jpg\"\r\n                    alt=\"user\"\r\n                  />\r\n                  <AvatarFallback>ER</AvatarFallback>\r\n                </Avatar>\r\n              </TooltipTrigger>\r\n              <TooltipContent>\r\n                <p>John Roberts</p>\r\n              </TooltipContent>\r\n            </Tooltip>\r\n\r\n            <Tooltip>\r\n              <TooltipTrigger >\r\n                <Avatar>\r\n                  <AvatarFallback className=\"text-card-foreground font-medium text-sm\">\r\n                    +4\r\n                  </AvatarFallback>\r\n                </Avatar>\r\n              </TooltipTrigger>\r\n              <TooltipContent>\r\n                <p>4 more members</p>\r\n              </TooltipContent>\r\n            </Tooltip>\r\n          </div>\r\n        </TooltipProvider>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default AvatarGroupTooltipDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/tooltip/tooltip-06.tsx"
+    }
+  ]
+}

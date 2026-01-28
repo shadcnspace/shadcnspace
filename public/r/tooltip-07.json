@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-07",
+  "type": "registry:component",
+  "title": "Tooltip-07 - Error Tooltip",
+  "description": "Tooltip component",
+  "dependencies": [],
+  "registryDependencies": [
+    "tooltip",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/tooltip/tooltip-07.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipTrigger,\r\n} from \"@/components/ui/tooltip\";\r\n\r\nconst ErrorTooltipDemo = () => {\r\n  return (\r\n    <Tooltip>\r\n      <TooltipTrigger>\r\n        <Button variant=\"outline\">Error Tooltip</Button>\r\n      </TooltipTrigger>\r\n      <TooltipContent className=\"bg-destructive text-white [&>*:last-child]:bg-destructive! [&>*:last-child]:fill-destructive!\">\r\n        <p>This is an error tooltip</p>\r\n      </TooltipContent>\r\n    </Tooltip>\r\n  );\r\n};\r\n\r\nexport default ErrorTooltipDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/tooltip/tooltip-07.tsx"
+    }
+  ]
+}

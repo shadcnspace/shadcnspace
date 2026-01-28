@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-05",
+  "type": "registry:component",
+  "title": "Input-05 - Input with start select",
+  "description": "Input component",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-05.tsx",
+      "content": "import { useId } from \"react\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/components/ui/select\";\r\n\r\nconst InputStartSelectDemo = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor={id}>Phone Number</Label>\r\n      <div className=\"flex rounded-md shadow-xs\">\r\n        <Select defaultValue=\"+91\">\r\n          <SelectTrigger\r\n            id={id}\r\n            className=\"rounded-r-none shadow-none focus-visible:z-1\"\r\n          >\r\n            <SelectValue />\r\n          </SelectTrigger>\r\n          <SelectContent>\r\n            <SelectItem value=\"+91\" className=\"pr-2 [&_svg]:hidden\">\r\n              +91\r\n            </SelectItem>\r\n            <SelectItem value=\"+1\" className=\"pr-2 [&_svg]:hidden\">\r\n              +1\r\n            </SelectItem>\r\n            <SelectItem value=\"+44\" className=\"pr-2 [&_svg]:hidden\">\r\n              +44\r\n            </SelectItem>\r\n            <SelectItem value=\"+971\" className=\"pr-2 [&_svg]:hidden\">\r\n              +971\r\n            </SelectItem>\r\n            <SelectItem value=\"+91\" className=\"pr-2 [&_svg]:hidden\">\r\n              +91\r\n            </SelectItem>\r\n            <SelectItem value=\"+1\" className=\"pr-2 [&_svg]:hidden\">\r\n              +1\r\n            </SelectItem>\r\n          </SelectContent>\r\n        </Select>\r\n        <Input\r\n          id={id}\r\n          className=\"-ms-px rounded-l-none shadow-none\"\r\n          placeholder=\"1234567890\"\r\n          type=\"tel\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputStartSelectDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-05.tsx"
+    }
+  ]
+}

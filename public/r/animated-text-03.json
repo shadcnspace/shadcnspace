@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-text-03",
+  "type": "registry:component",
+  "title": "Animated Text-03 - Typing",
+  "description": "Animated Typing component",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/animated-text/animated-text-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useState } from \"react\";\r\n\r\nconst AnimatedTypingMotion = () => {\r\n  const words = [\"Hello, World!\", \"Welcome to my website!\", \"This is a typewriter effect.\"];\r\n  const [i, setI] = useState(0); \r\n  const [j, setJ] = useState(0); \r\n  const [isDeleting, setIsDeleting] = useState(false);\r\n  const [text, setText] = useState(\"\");\r\n\r\n  useEffect(() => {\r\n    const currentWord = words[i];\r\n\r\n    const timeout = setTimeout(() => {\r\n      if (isDeleting) {\r\n        setText(currentWord.substring(0, j - 1));\r\n        setJ(j - 1);\r\n\r\n        if (j === 0) {\r\n          setIsDeleting(false);\r\n          setI((prev) => (prev + 1) % words.length);\r\n        }\r\n      } else {\r\n        setText(currentWord.substring(0, j + 1));\r\n        setJ(j + 1);\r\n\r\n        if (j === currentWord.length) {\r\n          setIsDeleting(true);\r\n        }\r\n      }\r\n    }, 100);\r\n\r\n    return () => clearTimeout(timeout);\r\n  }, [j, i, isDeleting, words]);\r\n\r\n  return (\r\n    <div className=\"w-full flex justify-start items-center\">\r\n      <p className=\"text-xl sm:text-2xl font-medium text-foreground\">{text}</p>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default AnimatedTypingMotion;\r\n\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/animated-text/animated-text-03.tsx"
+    }
+  ]
+}

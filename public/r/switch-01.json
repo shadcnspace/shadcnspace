@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-01",
+  "type": "registry:component",
+  "title": "Switch-01 - Active effect",
+  "description": "Switch with active effect component",
+  "dependencies": [],
+  "registryDependencies": [
+    "switch",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/switch/switch-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst SwitchActiveEffectDemo = () => {\r\n  const id = useId();\r\n  const [checked, setChecked] = useState(false);\r\n\r\n  const toggle = () => setChecked((prev) => !prev);\r\n\r\n  return (\r\n    <div\r\n      className=\"border border-input has-data-checked:border-primary/50 relative flex w-full items-start justify-between gap-2 rounded-md p-4 outline-none\"\r\n      onClick={toggle}\r\n    >\r\n      <div className=\"flex flex-col gap-2 grow\">\r\n        <Label htmlFor={id} onClick={toggle}>\r\n          Remember me\r\n        </Label>\r\n        <p id={`${id}-description`} className=\"text-muted-foreground text-xs\">\r\n          Save my login details for next time.\r\n        </p>\r\n      </div>\r\n      <Switch\r\n        id={id}\r\n        checked={checked}\r\n        onCheckedChange={setChecked}\r\n        className=\"cursor-pointer\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SwitchActiveEffectDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/switch/switch-01.tsx"
+    }
+  ]
+}

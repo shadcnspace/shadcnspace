@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-01",
+  "type": "registry:component",
+  "title": "Input-01 - Input with date",
+  "description": "Input component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Calendar } from \"lucide-react\";\r\n\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nexport const title = \"Date Input\";\r\n\r\nconst InputDateDemo = () => (\r\n  <div className=\"w-full max-w-sm space-y-2\">\r\n    <Label htmlFor=\"date-input\">Launching Date</Label>\r\n    <div className=\"relative\">\r\n      <Calendar className=\"absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\r\n      <Input className=\"bg-background pl-9\" id=\"date-input\" type=\"date\" />\r\n    </div>\r\n  </div>\r\n);\r\n\r\nexport default InputDateDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-01.tsx"
+    }
+  ]
+}

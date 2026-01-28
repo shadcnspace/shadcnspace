@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-01",
+  "type": "registry:component",
+  "title": "Tooltip-01 - Hover Blog Card",
+  "description": "Tooltip component",
+  "dependencies": [
+    "lucid"
+  ],
+  "registryDependencies": [
+    "tooltip",
+    "hover-card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/tooltip/tooltip-01.tsx",
+      "content": "\"use client\";\r\nimport { ChevronRightIcon } from \"lucide-react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  HoverCard,\r\n  HoverCardContent,\r\n  HoverCardTrigger,\r\n} from \"@/components/ui/hover-card\";\r\n\r\nconst HoverCardTooltipDemo = () => {\r\n  return (\r\n   \r\n      <HoverCard >\r\n        <HoverCardTrigger>\r\n          <Button variant='outline'>Hover Blog Tooltip</Button>\r\n        </HoverCardTrigger>\r\n        <HoverCardContent className=\"p-0 overflow-hidden\">\r\n          <div>\r\n            <img\r\n              src=\"https://images.shadcnspace.com/assets/blog/blog-img9.jpg\"\r\n              alt=\"Tooltip image\"\r\n              className=\"w-full\"\r\n            />\r\n            <div className=\"p-3 flex flex-col gap-2\">\r\n              <p className=\"text-sm font-medium\">About Blog</p>\r\n              <p className=\"text-muted-foreground text-xs\">\r\n                This blog is a space where ideas, insights, and practical\r\n                knowledge come together.\r\n              </p>\r\n            </div>\r\n          </div>\r\n        </HoverCardContent>\r\n      </HoverCard>\r\n    \r\n  );\r\n};\r\n\r\nexport default HoverCardTooltipDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/tooltip/tooltip-01.tsx"
+    }
+  ]
+}

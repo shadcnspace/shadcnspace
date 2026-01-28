@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-01",
+  "type": "registry:component",
+  "title": "Select-01 - Required select",
+  "description": "Select component",
+  "dependencies": [],
+  "registryDependencies": [
+    "select",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/select/select-01.tsx",
+      "content": "import { Label } from '@/components/ui/label'\r\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'\r\n\r\nconst SelectRequiredDemo = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xs space-y-2\">\r\n      <Label htmlFor=\"country\" className=\"gap-1\">\r\n        Country <span className=\"text-destructive\">*</span>\r\n      </Label>\r\n\r\n      <Select defaultValue=\"United States\" required>\r\n        <SelectTrigger id=\"country\" className=\"w-full\">\r\n          <SelectValue />\r\n        </SelectTrigger>\r\n\r\n        <SelectContent className={\"data-[state=open]:!zoom-in-0 origin-center duration-400\"}>\r\n          <SelectItem value=\"United States\">United States</SelectItem>\r\n          <SelectItem value=\"Japan\">Japan</SelectItem>\r\n          <SelectItem value=\"Australia\">Australia</SelectItem>\r\n          <SelectItem value=\"Brazil\">Brazil</SelectItem>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default SelectRequiredDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/select/select-01.tsx"
+    }
+  ]
+}

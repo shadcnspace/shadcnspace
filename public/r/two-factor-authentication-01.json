@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "two-factor-authentication-01",
+  "type": "registry:block",
+  "title": "Two Factor Authentication 01 - Two-Factor Authentication Page",
+  "description": "A secure two-factor authentication screen with one-time code inputs and resend option, adding an extra protection layer to your SaaS login and user accounts.",
+  "dependencies": [
+    ""
+  ],
+  "registryDependencies": [
+    "card",
+    "button",
+    "field",
+    "inputotp"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/two-factor-authentication-01/page.tsx",
+      "content": "import TwoFactorAuthForm from \"@/components/shadcn-space/blocks/two-factor-authentication-01/two-factor-auth\";\r\n\r\nconst Page = () => {\r\n  return <TwoFactorAuthForm/>;\r\n};\r\n\r\nexport default Page;",
+      "type": "registry:page",
+      "target": "app/two-factor-authentication-01/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/two-factor-authentication-01/two-factor-auth.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/components/ui/card\";\r\nimport { Field, FieldDescription, FieldGroup } from \"@/components/ui/field\";\r\nimport {\r\n  InputOTP,\r\n  InputOTPGroup,\r\n  InputOTPSlot,\r\n} from \"@/components/ui/input-otp\";\r\n\r\nconst TwoFactorAuthForm = () => {\r\n  return (\r\n    <section className=\"bg-primary dark:bg-background min-h-screen relative flex items-center justify-center relative\">\r\n      <div className=\"pointer-events-none absolute inset-0 right-0 overflow-hidden md:block hidden\">\r\n        {/* Outer big circle */}\r\n        <div className=\"absolute left-1/1 top-0 h-[2600px] w-[2600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10\" />\r\n        {/* Inner circle */}\r\n        <div className=\"absolute left-1/1 top-0 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary dark:bg-background\" />\r\n      </div>\r\n\r\n      <div className=\"py-10 md:py-20 max-w-lg px-4 sm:px-0 mx-auto w-full\">\r\n        <Card className=\"px-6 py-8 sm:p-12 relative\">\r\n          <CardHeader className=\"text-center gap-6 p-0\">\r\n            <div className=\"mx-auto\">\r\n              <a href=\"\">\r\n                <img\r\n                  src=\"https://images.shadcnspace.com/assets/logo/logo-icon-black.svg\"\r\n                  alt=\"shadcnspace\"\r\n                  className=\"dark:hidden h-10 w-10\"\r\n                />\r\n                <img\r\n                  src=\"https://images.shadcnspace.com/assets/logo/logo-icon-white.svg\"\r\n                  alt=\"shadcnspace\"\r\n                  className=\"hidden dark:block h-10 w-10\"\r\n                />\r\n              </a>\r\n            </div>\r\n            <div className=\"flex flex-col gap-1\">\r\n              <CardTitle className=\"text-2xl font-medium text-card-foreground\">\r\n                Two Factor Authentication\r\n              </CardTitle>\r\n              <CardDescription className=\"text-sm text-muted-foreground font-normal\">\r\n                Please confirm access to your account by entering the code\r\n                provided by your authenticator application\r\n              </CardDescription>\r\n            </div>\r\n          </CardHeader>\r\n          <CardContent className=\"p-0\">\r\n            <form>\r\n              <FieldGroup className=\"gap-6\">\r\n                <div className=\"flex flex-col items-center gap-4\">\r\n                  <InputOTP maxLength={6} id=\"otp\" required>\r\n                    <InputOTPGroup className=\"gap-1 *:data-[slot=input-otp-slot]:rounded-xl *:data-[slot=input-otp-slot]:border\">\r\n                      <InputOTPSlot index={0} />\r\n                      <InputOTPSlot index={1} />\r\n                      <InputOTPSlot index={2} />\r\n                      <InputOTPSlot index={3} />\r\n                      <InputOTPSlot index={4} />\r\n                      <InputOTPSlot index={5} />\r\n                    </InputOTPGroup>\r\n                  </InputOTP>\r\n\r\n                  <Field className=\"gap-6\">\r\n                    <FieldDescription className=\"text-center text-sm font-normal text-muted-foreground\">\r\n                      Didn't get the code?{\" \"}\r\n                      <a\r\n                        href=\"#\"\r\n                        className=\"font-medium text-card-foreground !no-underline\"\r\n                      >\r\n                        Resend code\r\n                      </a>\r\n                    </FieldDescription>\r\n                    <Button type=\"submit\" size={\"lg\"} className=\"rounded-lg\">\r\n                      Confirm\r\n                    </Button>\r\n                  </Field>\r\n                </div>\r\n              </FieldGroup>\r\n            </form>\r\n          </CardContent>\r\n        </Card>\r\n      </div>\r\n    </section>\r\n  );\r\n};\r\n\r\nexport default TwoFactorAuthForm;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/two-factor-authentication-01/two-factor-auth.tsx"
+    }
+  ]
+}

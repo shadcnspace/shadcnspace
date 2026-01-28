@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-06",
+  "type": "registry:component",
+  "title": "Checkbox-06 - Checkbox with form",
+  "description": "Checkbox component",
+  "dependencies": [],
+  "registryDependencies": [
+    "checkbox",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/checkbox/checkbox-06.tsx",
+      "content": "import { useId } from \"react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Checkbox } from \"@/components/ui/checkbox\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst CheckboxFormDemo = () => {\r\n  const id = useId();\r\n\r\n  return (\r\n    <div className=\"flex items-start gap-2\">\r\n      <Checkbox id={id} defaultChecked />\r\n      <div className=\"grid gap-3\">\r\n        <div className=\"flex flex-col gap-1\">\r\n          <Label htmlFor={id} className=\"gap-1 leading-4\">\r\n            Subscribe to our newsletter\r\n          </Label>\r\n          <p className=\"text-muted-foreground text-xs\">\r\n            Get weekly updates, product tips, and exclusive offers.\r\n          </p>\r\n        </div>\r\n        <Button size=\"sm\" className=\"w-fit\">\r\n          Subscribe\r\n        </Button>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CheckboxFormDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/checkbox/checkbox-06.tsx"
+    }
+  ]
+}

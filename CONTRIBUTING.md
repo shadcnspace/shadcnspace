@@ -1,110 +1,134 @@
-# Contributing to shadcnspace
+# Contributing to Shadcn Space
 
-Thank you for considering contributing to **shadcnspace**! We welcome contributions of all kinds: bug fixes, new components, blocks, templates, documentation improvements, and enhancements to our MCP server integration.  
+First of all—thank you for considering contributing to **Shadcn Space**! 💖  
+Your support, ideas, and code help make this open-source project better for the entire developer community.
 
-Following these guidelines will help us review your contribution faster and keep the project consistent and high-quality.
+Shadcn Space is built to showcase beautiful, production-ready **Shadcn UI blocks and components**, and we welcome all kinds of contributions—from new blocks to documentation improvements.
 
 ---
 
-## How to Contribute
+## 🚀 Ways You Can Contribute
 
-### 1. Fork the repository
-Click the **Fork** button at the top-right of the repo and clone your fork locally:
+You can help Shadcn Space grow in many ways:
 
-```bash
-git clone https://github.com/<your-username>/shadcn-space.git
-cd shadcn-space
-```
+- ✅ **Add New Blocks**  
+  Submit new Shadcn UI components, sections, or layouts.
 
-### 2. Install dependencies
-Install all required packages:
-```bash
-npm install
-```
+- ✅ **Improve Existing Blocks**  
+  Enhance UI, accessibility, performance, or responsiveness.
 
-### 3. Create a branch
-Use a descriptive name for your branch:
-```bash
-git checkout -b feature/add-new-component
-```
+- ✅ **Fix Bugs & Issues**  
+  Resolve broken layouts, styling issues, or functional bugs.
 
-### 4. Make your changes
+- ✅ **Suggest New Features**  
+  Propose tools, filters, categories, or UI improvements.
 
-- Add new components, blocks, or templates under the appropriate folders.
-- Follow the existing file structure and naming conventions.
-- Update documentation if necessary.
-- For MCP server changes, ensure your code integrates cleanly with existing workflows.
+- ✅ **Improve Documentation**  
+  Improve README files, guides, or developer instructions.
 
+---
 
-### 5. Test your changes
+## 🛠 Getting Started
 
-- Verify component previews are working.
-- Ensure templates and blocks render correctly.
-- Run any existing tests and consider adding new ones if you add functionality.
+### 1️⃣ Clone the Repository
+
+First, fork the repository (if required), then clone it locally:
 
 ```bash
-npm run dev
-```
-
-### 6. Commit your changes
-
-Write clear, descriptive commit messages:
-
-```bash
-git add .
-git commit -m "Add new modal component with variants"
-```
+git clone https://github.com/shadcnspace/shadcnspace.git
+cd shadcnspace
 
 
-### 7. Push and create a pull request
+### 2. Install Dependencies
 
-Push your branch to your fork and submit a pull request:
+Install the required packages using pnpm:
 
 ```bash
-git push origin feature/add-new-component
+pnpm install
 ```
 
-- Use a descriptive PR title.
-- Include context, screenshots, or code snippets if relevant.
-- Reference any issues your PR resolves with Fixes #<issue-number>.
+### 3. Run the Project Locally
+
+Start the development server:
+
+```bash
+pnpm run dev
+```
+
+The website should now be accessible at `http://localhost:3000`.
+
+### 4. Make Changes
+
+- Add or edit blocks in the respective component directories.
+- Test your changes locally to ensure they work as expected.
+
+### 5. Commit and Push
+
+Follow these steps to commit your changes:
+
+1. Stage your changes:
+
+   ```bash
+   git add .
+   ```
+
+2. Write a clear and descriptive commit message:
+
+   ```bash
+   git commit -m "feat: add new block"
+   ```
+
+3. Push your changes:
+   ```bash
+   git push origin <your-branch-name>
+   ```
+
+### Submit a Pull Request (PR)
+
+Once pushed, create a Pull Request to the main repository and include:
+
+✅ Clear description of what you added or fixed
+
+✅ Screenshots or previews (if UI-related)
+
+✅ Any related issue numbers (if applicable)
+
+We review PRs as quickly as possible and might suggest improvements before merging.
 
 ## Contribution Guidelines
 
-- Follow consistent code style (Tailwind CSS, Shadcn conventions, React best practices).
-- Make atomic PRs — one feature, one bug fix, or one documentation update per PR.
-- Include comments for complex logic, especially in MCP server or AI workflows.
-- Ensure components are accessible and follow best practices (ARIA, semantic HTML).
-- Keep MCP server code modular for easy integration with new components or blocks.
+To keep Shadcn Space high-quality and consistent:
 
+Follow the existing folder & component structure
+
+Write clean, readable, and maintainable code
+
+Format your code with Prettier
+👉 https://prettier.io/
+
+Avoid unnecessary dependencies
+
+Test all UI changes before submitting
 
 ## Code of Conduct
 
-We aim to maintain a welcoming and respectful community. By contributing to this project, you agree to abide by the Code of Conduct
+We are committed to providing a safe, welcoming, and respectful space for everyone.
+Be kind, inclusive, and professional in all discussions and contributions.
 
+## ❓ Need Help?
 
-## Reporting Issues
-Before opening a new issue, please first search for existing issues to avoid duplicates.
-Provide detailed reports with as much context as possible, including steps to reproduce the issue, your environment, and any relevant logs or screenshots.
+If you’re confused about anything:
 
-For hard-to-reproduce bugs, please include a minimal reproducible repository or detailed steps to recreate the issue.
+Open an Issue
 
-## Fixing Existing Issues
-Help us by fixing existing issues.
-Avoid working on issues already assigned to others to prevent duplicate efforts.
+Start a Discussion
 
-If you're interested in working on an issue, please add a comment to request assignment before starting work. This helps maintainers track who's working on what and prevents duplication of effort.
+Or directly reach out to the maintainers
 
-Use the following commit message format for fixes: fix(<issue-subject>): #<issue_number> [description]. For eg. fix(avatar): #3 fix bg-color of default avatar
+We’re happy to help! 😊
 
-## Feature Requests
-Please note that not all feature requests will be accepted, as some may not align with the vision or scope of the project. Don't take it personally if a request is rejected.
+## ❤️ Thank You!
 
-## Pull Requests
-Pull requests should address an open issue that is assigned to you. If no issue exists, create one first. If an issue is not assigned to you, please request assignment in the comments before submitting a PR. This ensures we avoid duplicate efforts.
-
-For minor changes like fixing typos, an issue is not required. Feel free to directly open a pull request.
-
-For documentation fixes, including updates to the website, you can also submit a pull request without opening an issue first.
-
-**Thank you for helping make shadcnspace better! Your contributions directly help developers ship faster and build high-quality UIs.**
+Your contributions help make Shadcn Space one of the best open-source UI block platforms for the Shadcn ecosystem.
+We truly appreciate your effort—happy building! 🚀
 

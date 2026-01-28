@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-03",
+  "type": "registry:component",
+  "title": "Radio Group-03 - Radio Group with tree",
+  "description": "Radio Group component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "label",
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/radio-group/radio-group-03.tsx",
+      "content": "import { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { Gem, HeartHandshake, Rocket } from \"lucide-react\";\r\nimport { color } from \"motion/react\";\r\n\r\nexport const title = \"RadioGroup with Cards\";\r\n\r\nconst Example = () => (\r\n  <RadioGroup defaultValue=\"card-1\" className=\"grid gap-2 max-w-sm\">\r\n    {[\r\n      {\r\n        id: \"card-1\",\r\n        title: \"Launch Plan\",\r\n        desc: \"Essential tools to get started.\",\r\n        price: \"Free\",\r\n        icon: Rocket,\r\n        color: \"text-blue-500\",\r\n        background: \"bg-blue-500/10\",\r\n      },\r\n      {\r\n        id: \"card-2\",\r\n        title: \"Grow Plan\",\r\n        desc: \"Advanced features for growing teams.\",\r\n        price: \"$19.00\",\r\n        icon: HeartHandshake,\r\n        color: \"text-orange-400\",\r\n        background: \"bg-orange-400/10\",\r\n      },\r\n      {\r\n        id: \"card-3\",\r\n        title: \"Scale Plan\",\r\n        desc: \"Enterprise power and priority support.\",\r\n        price: \"$49.00\",\r\n        icon: Gem,\r\n        color: \"text-red-500\",\r\n        background: \"bg-red-500/10\",\r\n      },\r\n    ].map((item) => {\r\n      const Icon = item.icon;\r\n      return (\r\n        <Label\r\n          key={item.id}\r\n          htmlFor={item.id}\r\n          className={cn(\r\n            \"flex cursor-pointer items-start gap-3 rounded-lg border p-4 shadow-xs transition-all\",\r\n            \"hover:bg-accent\",\r\n            \"has-data-checked:bg-accent\",\r\n          )}\r\n        >\r\n          <div className={`${item.background} p-1.5 rounded-lg`}>\r\n            <Icon className={item.color} />\r\n          </div>\r\n          <div className=\"w-full flex gap-2 items-start justify-between\">\r\n            <div className=\"grid gap-1.5\">\r\n              <p className=\"font-medium leading-none\">{item.title}</p>\r\n              <p className=\"text-xs text-muted-foreground font-normal\">\r\n                {item.desc}\r\n              </p>\r\n            </div>\r\n            <span className=\"text-muted-foreground text-xs font-normal\">\r\n              {item.price}\r\n            </span>\r\n          </div>\r\n          <RadioGroupItem value={item.id} id={item.id} />\r\n        </Label>\r\n      );\r\n    })}\r\n  </RadioGroup>\r\n);\r\n\r\nexport default Example;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/radio-group/radio-group-03.tsx"
+    }
+  ]
+}

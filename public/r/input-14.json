@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-14",
+  "type": "registry:component",
+  "title": "Input-14 - Input with error",
+  "description": "Input component",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-14.tsx",
+      "content": "import { useId } from 'react'\r\n\r\nimport { Input } from '@/components/ui/input'\r\n\r\nconst InputErrorDemo = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Input\r\n        id={id}\r\n        type='email'\r\n        placeholder='Email address'\r\n        className=\"border-red-400 bg-background focus-visible:border-red-400 focus-visible:ring-red-400/50\"\r\n        defaultValue='invalid@email.com'\r\n      />\r\n      <Input\r\n      className=\"border-teal-400 bg-background focus-visible:border-teal-400 focus-visible:ring-teal-400/50\"\r\n      defaultValue=\"shadcnspace@gmail.com\"\r\n      id={id}\r\n      placeholder=\"shadcnspace@gmail.com\"\r\n    />\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default InputErrorDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-14.tsx"
+    }
+  ]
+}

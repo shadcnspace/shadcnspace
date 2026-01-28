@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-03",
+  "type": "registry:component",
+  "title": "Tooltip-03 - Animated Tooltip",
+  "description": "Animated Tooltip component",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/tooltip/tooltip-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { motion, useTransform, useMotionValue, useSpring } from \"motion/react\";\r\n\r\ntype Item = {\r\n  id: number;\r\n  name: string;\r\n  designation: string;\r\n  image: string;\r\n};\r\n\r\nconst TooltipItem = ({ item }: { item: Item }) => {\r\n  const x = useMotionValue(0);\r\n\r\n  const rotate = useSpring(useTransform(x, [-100, 100], [-45, 45]), {\r\n    stiffness: 100,\r\n    damping: 15,\r\n  });\r\n\r\n  const translateX = useSpring(useTransform(x, [-100, 100], [-50, 50]), {\r\n    stiffness: 100,\r\n    damping: 15,\r\n  });\r\n\r\n  return (\r\n    <div className=\"group relative\">\r\n      <motion.div\r\n        style={{ translateX, rotate }}\r\n        className=\"pointer-events-none absolute -top-16 left-1/2 hidden -translate-x-1/2 flex-col items-center rounded-md bg-blue-500 px-4 py-2 text-xs shadow-xl group-hover:flex\"\r\n      >\r\n        <p className=\"whitespace-nowrap text-sm font-medium text-white\">\r\n          {item.name}\r\n        </p>\r\n        <p className=\"whitespace-nowrap text-xs text-white/50\">\r\n          {item.designation}\r\n        </p>\r\n      </motion.div>\r\n\r\n      <img\r\n        onMouseMove={(e) =>\r\n          x.set(e.nativeEvent.offsetX - e.currentTarget.offsetWidth / 2)\r\n        }\r\n        src={item.image}\r\n        alt={item.name}\r\n        width={32}\r\n        height={32}\r\n        className=\"h-8 w-8 rounded-full object-cover object-top transition duration-500 group-hover:z-30 group-hover:scale-105\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nconst AnimatedTooltipMotion = () => {\r\n  const items: Item[] = [\r\n    {\r\n      id: 1,\r\n      name: \"Aarav Mehta\",\r\n      designation: \"AI Researcher\",\r\n      image: \"https://images.shadcnspace.com/assets/profiles/user-1.jpg\",\r\n    },\r\n    {\r\n      id: 2,\r\n      name: \"Sofia Martinez\",\r\n      designation: \"Cloud Architect\",\r\n      image: \"https://images.shadcnspace.com/assets/profiles/user-2.jpg\",\r\n    },\r\n    {\r\n      id: 3,\r\n      name: \"Kenji Tanaka\",\r\n      designation: \"Cybersecurity Analyst\",\r\n      image: \"https://images.shadcnspace.com/assets/profiles/user-3.jpg\",\r\n    },\r\n    {\r\n      id: 4,\r\n      name: \"Amelia Rossi\",\r\n      designation: \"UX Strategist\",\r\n      image: \"https://images.shadcnspace.com/assets/profiles/user-4.jpg\",\r\n    },\r\n  ];\r\n\r\n  return (\r\n    <div className=\"flex items-center justify-center -space-x-2\">\r\n      {items.map((item) => (\r\n        <TooltipItem key={item.id} item={item} />\r\n      ))}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default AnimatedTooltipMotion;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/tooltip/tooltip-03.tsx"
+    }
+  ]
+}
