@@ -69,6 +69,8 @@ npx shadcn@latest add @shadcn-space/button-06
 
 This command adds the component source code directly to the project. You can edit, extend, or restructure it as needed.
 
+For More Components and Blocks Visit : [**Shadcn Space**](https://shadcnspace.com)
+
 ### Manual Usage
 
 You can also copy components, blocks, or layouts directly from this repository.
