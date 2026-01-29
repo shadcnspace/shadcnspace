@@ -52,7 +52,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-72 md:w-full">
+    <div className="w-full">
       <Card className="ring-0 p-8 gap-6 md:gap-8 border rounded-2xl animate-in fade-in slide-in-from-right-10 duration-1000 delay-100 ease-in-out fill-mode-both">
         <CardHeader className="p-0">
           <CardTitle className="text-2xl font-semibold text-primary">
