@@ -64,10 +64,12 @@ You can add components directly to the project and keep full ownership of the co
 Install components, blocks, or templates using a CLI-based workflow that integrates with existing shadcn/ui projects.
 
 ```bash
-npx shadcn@latest add @shadcn-space/button
+npx shadcn@latest add @shadcn-space/button-06
 ```
 
 This command adds the component source code directly to the project. You can edit, extend, or restructure it as needed.
+
+For More Components and Blocks Visit : [**Shadcn Space**](https://shadcnspace.com)
 
 ### Manual Usage
 
