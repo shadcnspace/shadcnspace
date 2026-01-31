@@ -109,7 +109,7 @@ While preserving the copy-and-paste, open-code approach, Shadcn Space aims to of
 
 ## Features
 
-Built for **real production use**, every component, block, and layout follows shadcn/ui conventions and Base UI foundations.
+Built for **real production use**, every [Shadcn components](https://shadcnspace.com/components), block, and layout follows shadcn/ui conventions and Base UI foundations.
 
 - **Extraordinary design** :
   Clean layouts, balanced spacing, and consistent visual structure across all components, blocks, and templates.
@@ -147,7 +147,7 @@ For comprehensive documentation, please visit [Shadcn Space](https://shadcnspace
 
 ## Available Blocks
 
-Shadcn Space provides an open-source collection of copy-and-paste Shadcn Blocks designed to accelerate your project development. Below is a summary of the available block categories:
+Shadcn Space provides an open-source collection of copy-and-paste [Shadcn Blocks](https://shadcnspace.com/blocks) designed to accelerate your project development. Below is a summary of the available block categories:
 
 ### Blocks Examples
 
