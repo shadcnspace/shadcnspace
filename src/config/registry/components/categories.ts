@@ -169,4 +169,58 @@ export const categories = {
     metaDescription:
       "Shadcn UI Tooltip component that displays contextual information on hover or focus. Accessible popup tooltips with keyboard and mouse support for React apps.",
   },
+
+  "shine-border": {
+    name: "shine-border",
+    title: "Shine Border",
+    metaKeyword: "shadcn shine border",
+    metaTitle: "Shadcn Shine Border - UI Components and Variants",
+    metaDescription:
+      "Shadcn UI Shine Border component that displays a glowing border around an element. Supports custom colors, animations, and responsive layouts for React apps.",
+  },
+
+  "number-ticker": {
+    name: "number-ticker",
+    title: "Number Ticker",
+    metaKeyword: "shadcn number ticker",
+    metaTitle: "Shadcn Number Ticker - UI Components and Variants",
+    metaDescription:
+      "Shadcn UI Number Ticker component that displays a number that animates to a target value. Supports custom colors, animations, and responsive layouts for React apps.",
+  },
+
+  "spinning-text": {
+    name: "spinning-text",
+    title: "Spinning Text",
+    metaKeyword: "shadcn spinning text",
+    metaTitle: "Shadcn Spinning Text - UI Components and Variants",
+    metaDescription:
+      "Shadcn UI Spinning Text component that displays a text that animates to a target value. Supports custom colors, animations, and responsive layouts for React apps.",
+  },
+
+  "date-picker": {
+    name: "date-picker",
+    title: "Date Picker",
+    metaKeyword: "shadcn date picker",
+    metaTitle: "Shadcn Date Picker Component for React & Next.js",
+    metaDescription:
+      "Add a clean and customizable Shadcn Date Picker to your React or Next.js project. Built with Tailwind CSS and shadcn/ui for modern forms and booking systems.",
+  },
+
+  "file-upload": {
+    name: "file-upload",
+    title: "File Upload",
+    metaKeyword: "shadcn file upload",
+    metaTitle: "Shadcn File Upload - UI Components and Variants",
+    metaDescription:
+      "Shadcn UI File Upload component for uploading files. Includes file upload blocks, file upload patterns, and interactive file selection for React applications.",
+  },
+  
+  "button-group": {
+    name: "button-group",
+    title: "Button Group",
+    metaKeyword: "shadcn button group",
+    metaTitle: "Shadcn Button Group - UI Components and Variants",
+    metaDescription:
+      "Shadcn UI Button Group component for selecting multiple options from a list. Includes button group blocks, button group patterns, and interactive button selection for React applications.",
+  },
 } as const;

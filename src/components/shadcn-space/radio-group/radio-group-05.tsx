@@ -8,7 +8,7 @@ const RadioGroupDashedDemo = () => {
         <RadioGroupItem
           value='economy'
           id='economy'
-          className='border-primary focus-visible:border-primary border-dashed'
+          className='border-primary data-checked:border-background border-dashed'
         />
         <Label htmlFor='economy'>Economy Shipping</Label>
       </div>
@@ -16,7 +16,7 @@ const RadioGroupDashedDemo = () => {
         <RadioGroupItem
           value='priority'
           id='priority'
-          className='border-primary focus-visible:border-primary border-dashed'
+          className='border-primary data-checked:border-background border-dashed'
         />
         <Label htmlFor='priority'>Priority Shipping</Label>
       </div>
@@ -24,7 +24,7 @@ const RadioGroupDashedDemo = () => {
         <RadioGroupItem
           value='next-day'
           id='next-day'
-          className='border-primary focus-visible:border-primary border-dashed'
+          className='border-primary data-checked:border-background border-dashed'
         />
         <Label htmlFor='next-day'>Next-Day Delivery</Label>
       </div>

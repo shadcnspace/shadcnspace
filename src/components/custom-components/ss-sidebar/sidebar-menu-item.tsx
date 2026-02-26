@@ -28,7 +28,9 @@ const AppSidebarMenuItem = ({
 }: AppSidebarMenuItemProps) => {
   const fileCount = item.blockName
     ? components.filter((comp) => comp.category.name === item.blockName).length
-    : null;
+    : 0;
+  const categoryComponents = components.filter((comp) => comp.category.name === item.blockName);
+  const newComponentsCount = categoryComponents.filter((comp) => comp.isNew).length;
 
   return (
     <SidebarMenuSubItem {...props}>
@@ -46,21 +48,22 @@ const AppSidebarMenuItem = ({
           <span className="font-medium capitalize">{item.title}</span>
 
           {showFileCount && (
-            item.isNew ? (
-              <Badge className="ms-auto py-0 rounded-full px-1.5">
-                New
+            !!fileCount && (
+              <Badge
+                className="py-0 px-1 min-w-[18px] inline-flex justify-center rounded-full bg-foreground/5"
+                variant="outline"
+              >
+                {fileCount}
               </Badge>
-            ) : (
-              !!fileCount && (
-                <Badge
-                  className="py-0 px-1 min-w-[18px] inline-flex justify-center rounded-full bg-foreground/5"
-                  variant="outline"
-                >
-                  {fileCount}
-                </Badge>
-              )
             )
           )}
+          {
+            newComponentsCount > 0 && (
+              <Badge variant={"default"} className="text-xs rounded-sm font-medium px-1.5">
+                + {newComponentsCount} New
+              </Badge>
+            )
+          }
         </Link>
       </AppSidebarMenuButton>
     </SidebarMenuSubItem>

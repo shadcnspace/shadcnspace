@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-06",
+  "type": "registry:component",
+  "title": "Button Group-06 - Vercel",
+  "description": "Vercel style button group component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button-group/button-group-06.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\nimport { ListFilter, BookOpen } from \"lucide-react\";\r\n\r\nexport default function VercelButtonGroupDemo() {\r\n  return (\r\n    <>\r\n      <ButtonGroup>\r\n        <Button \r\n          variant=\"outline\" \r\n          className=\"h-9 px-3 gap-2 bg-background border-border hover:bg-accent hover:text-accent-foreground rounded-md shadow-sm transition-all cursor-pointer\"\r\n        >\r\n          <ListFilter className=\"size-4 shrink-0\" />\r\n          <span className=\"text-sm font-medium\">Deployments</span>\r\n        </Button>\r\n        <Button \r\n          variant=\"outline\" \r\n          size=\"icon\"\r\n          className=\"h-9 w-9 bg-background border-border hover:bg-accent hover:text-accent-foreground rounded-md shadow-sm transition-all cursor-pointer\"\r\n        >\r\n          <BookOpen className=\"size-4\" />\r\n        </Button>\r\n      </ButtonGroup>\r\n    </>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button-group/button-group-06.tsx"
+    }
+  ]
+}

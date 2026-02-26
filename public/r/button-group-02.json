@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-02",
+  "type": "registry:component",
+  "title": "Button Group-02 - Vertical",
+  "description": "Vertical button group component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button-group/button-group-02.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\nimport { LayoutGrid, List, Table } from \"lucide-react\";\r\n\r\nexport default function VerticalButtonGroupDemo() {\r\n  return (\r\n    <>\r\n      <ButtonGroup orientation=\"vertical\">\r\n        <Button variant=\"outline\" className=\"justify-start gap-2 cursor-pointer\">\r\n          <LayoutGrid className=\"size-4\" />\r\n          Grid View\r\n        </Button>\r\n        <Button variant=\"outline\" className=\"justify-start gap-2 cursor-pointer\">\r\n          <List className=\"size-4\" />\r\n          List View\r\n        </Button>\r\n        <Button variant=\"outline\" className=\"justify-start gap-2 cursor-pointer\">\r\n          <Table className=\"size-4\" />\r\n          Table View\r\n        </Button>\r\n      </ButtonGroup>\r\n    </>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button-group/button-group-02.tsx"
+    }
+  ]
+}

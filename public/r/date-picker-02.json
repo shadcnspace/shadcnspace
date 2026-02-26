@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker-02",
+  "type": "registry:component",
+  "title": "Date Picker-02 - Date Range",
+  "description": "A professional appointment booking card with date and time range selection.",
+  "dependencies": [
+    "date-fns",
+    "lucide-react",
+    "react-day-picker"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "label",
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/date-picker/date-picker-02.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport { CalendarIcon, ChevronDown } from \"lucide-react\";\r\nimport { addDays, format } from \"date-fns\";\r\nimport { DateRange } from \"react-day-picker\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Calendar } from \"@/components/ui/calendar\";\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/components/ui/popover\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst DateRangePickerDemo = () => {\r\n  const [date, setDate] = React.useState<DateRange | undefined>({\r\n    from: new Date(),\r\n    to: addDays(new Date(), 7),\r\n  });\r\n\r\n  return (\r\n    <div className=\"grid gap-3 max-w-sm mx-auto\">\r\n      <Label htmlFor=\"date-range\" className=\"text-sm font-medium px-1\">\r\n        Select Travel Dates\r\n      </Label>\r\n      <div className={cn(\"grid gap-2\")}>\r\n        <Popover>\r\n          <PopoverTrigger\r\n            render={\r\n              <Button\r\n                id=\"date-range\"\r\n                variant={\"outline\"}\r\n                className={cn(\r\n                  \"w-full justify-start text-left font-normal h-11 transition-all hover:bg-muted/50 focus:ring-2 focus:ring-primary/20 cursor-pointer\",\r\n                  !date && \"text-muted-foreground\",\r\n                )}\r\n              >\r\n                <CalendarIcon className=\"mr-2 h-4 w-4 opacity-70\" />\r\n                {date?.from ? (\r\n                  date.to ? (\r\n                    <>\r\n                      {format(date.from, \"LLL dd, y\")} -{\" \"}\r\n                      {format(date.to, \"LLL dd, y\")}\r\n                    </>\r\n                  ) : (\r\n                    format(date.from, \"LLL dd, y\")\r\n                  )\r\n                ) : (\r\n                  <span>Pick a range</span>\r\n                )}\r\n                <ChevronDown className=\"ml-auto h-4 w-4 opacity-50\" />\r\n              </Button>\r\n            }\r\n          />\r\n          <PopoverContent\r\n            className=\"w-auto p-0 border-muted/20 shadow-xl\"\r\n            align=\"start\"\r\n          >\r\n            <Calendar\r\n              mode=\"range\"\r\n              defaultMonth={date?.from}\r\n              selected={date}\r\n              onSelect={setDate}\r\n              numberOfMonths={2}\r\n              className=\"p-3\"\r\n            />\r\n          </PopoverContent>\r\n        </Popover>\r\n      </div>\r\n      <p className=\"text-xs text-muted-foreground px-1\">\r\n        {date?.from && date?.to\r\n          ? `Stay duration: ${Math.round((date.to.getTime() - date.from.getTime()) / (1000 * 60 * 60 * 24))} nights`\r\n          : \"Please select a valid date range.\"}\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default DateRangePickerDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/date-picker/date-picker-02.tsx"
+    }
+  ]
+}

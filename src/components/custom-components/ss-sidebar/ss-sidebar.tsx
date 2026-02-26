@@ -20,7 +20,7 @@ interface SSidebarProps {
     label: string;
     items: any[];
   }[];
-  collapsible?: "icon" | "none" | "offExamples";
+  collapsible?: "icon" | "none" | "offcanvas";
   sort?: boolean;
   showFileCount?: boolean;
 }
@@ -74,7 +74,7 @@ export function SSidebar({
                 {label}
               </SidebarGroupLabel>
               <SidebarGroupContent className="">
-                <SidebarMenu>
+                <SidebarMenu className="gap-1">
                   {(sort
                     ? [...items].sort((a, b) => a.title.localeCompare(b.title))
                     : items
