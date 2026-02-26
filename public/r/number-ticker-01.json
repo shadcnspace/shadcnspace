@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-ticker-01",
+  "type": "registry:component",
+  "title": "Number Ticker-01 - Basic",
+  "description": "Number Ticker component",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/number-ticker/number-ticker-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useRef, useState } from \"react\";\r\n\r\ntype NumberTickerProps = {\r\n  end: number;\r\n  start?: number;\r\n  duration?: number;\r\n  decimals?: number\r\n  prefix?: string;\r\n  suffix?: string;\r\n  className?: string;\r\n};\r\n\r\nfunction NumberTicker({\r\n  end,\r\n  start = 0,\r\n  duration = 2,\r\n  decimals = 0,\r\n  prefix = \"\",\r\n  suffix = \"\",\r\n  className,\r\n}: NumberTickerProps) {\r\n  const [value, setValue] = useState(start);\r\n  const startTimeRef = useRef<number | null>(null);\r\n\r\n  useEffect(() => {\r\n    let frame: number;\r\n\r\n    const animate = (timestamp: number) => {\r\n      if (!startTimeRef.current) startTimeRef.current = timestamp;\r\n\r\n      const progress = timestamp - startTimeRef.current;\r\n      const percent = Math.min(progress / (duration * 1000), 1);\r\n\r\n      // ease-out cubic for smooth animation\r\n      const eased = 1 - Math.pow(1 - percent, 3);\r\n\r\n      const current = start + (end - start) * eased;\r\n      setValue(current);\r\n\r\n      if (percent < 1) {\r\n        frame = requestAnimationFrame(animate);\r\n      }\r\n    };\r\n\r\n    frame = requestAnimationFrame(animate);\r\n\r\n    return () => cancelAnimationFrame(frame);\r\n  }, [start, end, duration]);\r\n\r\n  return (\r\n    <span className={className}>\r\n      {prefix}\r\n      {value.toFixed(decimals)}\r\n      {suffix}\r\n    </span>\r\n  );\r\n}\r\n\r\nconst NumberTickerDemo = () => {\r\n  return (\r\n    <div>\r\n      <NumberTicker end={100} duration={4} className=\"text-foreground font-medium lg:text-5xl sm:text-4xl text-3xl\" />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default NumberTickerDemo;",
+      "type": "registry:component",
+      "target": "components/shadcn-space/number-ticker/number-ticker-01.tsx"
+    }
+  ]
+}

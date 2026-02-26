@@ -102,7 +102,7 @@ export const componentsMap: ComponentsMap = {
     columns: 1,
     description:
       "Discover Our Apple Dock component, a floating and interactive navigation bar inspired by macOS. Built with Shadcn, Nextjs, React and Tailwind CSS, it’s customizable, accessible, and perfect for dashboards, SaaS apps, and modern web interfaces.",
-    image: "/images/components/accordion.png",
+    image: "https://images.shadcnspace.com/assets/components/apple-dock.webp",
     component: React.lazy(
       () => import("@/app/(site)/docs/component-info/apple-dock"),
     ),
@@ -303,6 +303,87 @@ export const componentsMap: ComponentsMap = {
     image: "https://images.shadcnspace.com/assets/components/card.webp",
     component: React.lazy(
       () => import("@/app/(site)/docs/component-info/card"),
+    ),
+  },
+  "shine-border": {
+    title: "Shine Border",
+    headingTitle: "Shadcn Shine Border",
+    url: "/components/shine-border",
+    blockName: "shine-border",
+    icon: AppWindowMac,
+    columns: 1,
+    description:"Explore a collection of awesome Shadcn Shine Border components featuring multiple customizable and interactive shine border variants built with React and Tailwind CSS.",
+    image: "https://images.shadcnspace.com/assets/components/shine-border.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/shine-border"),
+    ),
+  },
+  "number-ticker": {
+    title: "Number Ticker",
+    headingTitle: "Shadcn Number Ticker",
+    url: "/components/number-ticker",
+    blockName: "number-ticker",
+    icon: AppWindowMac,
+    columns: 1,
+    description:"Explore a collection of awesome Shadcn Number Ticker components featuring multiple customizable and interactive number ticker variants built with React and Tailwind CSS.",
+    image: "https://images.shadcnspace.com/assets/components/number-ticker.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/number-ticker"),
+    ),
+  },
+  "spinning-text": {
+    title: "Spinning Text",
+    headingTitle: "Shadcn Spinning Text",
+    url: "/components/spinning-text",
+    blockName: "spinning-text",
+    icon: AppWindowMac,
+    columns: 1,
+    description:"Explore a collection of awesome Shadcn Spinning Text components featuring multiple customizable and interactive spinning text variants built with React and Tailwind CSS.",
+    image: "https://images.shadcnspace.com/assets/components/spinning-text.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/spinning-text"),
+    ),
+  },
+  "date-picker": {
+    title: "Date Picker",
+    headingTitle: "Shadcn Date Picker",
+    url: "/components/date-picker",
+    blockName: "date-picker",
+    icon: CalendarDays,
+    columns: 2,
+    description:
+      "Discover a curated collection of Shadcn Date Picker components with 2 customizable and interactive date picker variants built using React and Tailwind CSS.",
+    image: "https://images.shadcnspace.com/assets/components/date-picker.webp",
+    component: React.lazy(
+      () => import('@/app/(site)/docs/component-info/date-picker')
+    ),
+  },
+  "file-upload": {
+    title: "File Upload",
+    headingTitle: "Shadcn File Upload",
+    url: "/components/file-upload",
+    blockName: "file-upload",
+    icon: AppWindowMac,
+    columns: 1,
+    description:
+      "Discover a curated collection of Shadcn File Upload components with 2 customizable and interactive file upload variants built using React and Tailwind CSS.",
+    image: "https://images.shadcnspace.com/assets/components/file-upload.webp",
+    component: React.lazy(
+      () => import('@/app/(site)/docs/component-info/file-upload')
+    ),
+  },
+  "button-group": {
+    title: "Button Group",
+    headingTitle: "Shadcn Button Group",
+    url: "/components/button-group",
+    blockName: "button-group",
+    icon: AppWindowMac,
+    columns: 2,
+    description:
+      "Discover a curated collection of Shadcn Button Group components with 6+ customizable and interactive button group variants built using React and Tailwind CSS.",
+    image: "https://images.shadcnspace.com/assets/components/button-group.webp",
+    component: React.lazy(
+      () => import('@/app/(site)/docs/component-info/button-group')
     ),
   },
 };

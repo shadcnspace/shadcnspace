@@ -3,43 +3,55 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 const RadioGroupColorsDemo = () => {
   return (
-    <>
-      <RadioGroup
-        defaultValue="destructive"
-        className="flex items-center gap-4 justify-center"
-      >
-        <div className="flex items-center gap-2">
-          <RadioGroupItem
-            value="destructive"
-            id="color-destructive"
-            className="border-destructive text-destructive [&_svg]:fill-destructive focus-visible:ring-destructive/20 focus-visible:border-destructive dark:focus-visible:ring-destructive/40"
-          />
-          <Label htmlFor="color-destructive" className="text-red-500">
-            Error
-          </Label>
-        </div>
-        <div className="flex items-center gap-2">
-          <RadioGroupItem
-            value="success"
-            id="color-success"
-            className="border-teal-400 text-teal-400 focus-visible:border-teal-400 focus-visible:ring-teal-400/20 dark:border-teal-400 dark:text-teal-400 dark:focus-visible:border-teal-400 dark:focus-visible:ring-teal-400/40 [&_svg]:fill-teal-400 dark:[&_svg]:fill-teal-400"
-          />
-          <Label htmlFor="color-success" className="text-teal-400">
-            Approved
-          </Label>
-        </div>
-        <div className="flex items-center gap-2">
-          <RadioGroupItem
-            value="info"
-            id="color-info"
-            className="border-amber-300 text-amber-300 focus-visible:border-amber-300 focus-visible:ring-amber-300/20 dark:border-amber-400 dark:text-amber-400 dark:focus-visible:border-amber-400 dark:focus-visible:ring-amber-400/40 [&_svg]:fill-amber-300 dark:[&_svg]:fill-amber-400"
-          />
-          <Label htmlFor="color-info" className="text-amber-400">
-            Alert
-          </Label>
-        </div>
-      </RadioGroup>
-    </>
+    <RadioGroup
+      defaultValue="destructive"
+      className="flex items-center gap-6 justify-center"
+    >
+      {/* Error / Destructive */}
+      <div className="flex items-center gap-2">
+        <RadioGroupItem
+          value="destructive"
+          id="color-destructive"
+          className="text-destructive border-destructive data-checked:bg-transparent! data-checked:border-destructive! [&_span[data-slot]]:bg-transparent! [&_span:not([data-slot])]:bg-destructive! focus-visible:ring-destructive/20 focus-visible:border-destructive cursor-pointer"
+        />
+        <Label
+          htmlFor="color-destructive"
+          className="text-destructive cursor-pointer font-medium leading-none"
+        >
+          Error
+        </Label>
+      </div>
+
+      {/* Approved / Success */}
+      <div className="flex items-center gap-2">
+        <RadioGroupItem
+          value="success"
+          id="color-success"
+          className="text-teal-500 border-teal-500 data-checked:bg-transparent! data-checked:border-teal-500! [&_span[data-slot]]:bg-transparent! [&_span:not([data-slot])]:bg-teal-500! focus-visible:border-teal-500 focus-visible:ring-teal-500/20 cursor-pointer"
+        />
+        <Label
+          htmlFor="color-success"
+          className="text-teal-500 cursor-pointer font-medium leading-none"
+        >
+          Approved
+        </Label>
+      </div>
+
+      {/* Alert / Warning */}
+      <div className="flex items-center gap-2">
+        <RadioGroupItem
+          value="info"
+          id="color-info"
+          className="text-amber-500 border-amber-500 data-checked:bg-transparent! data-checked:border-amber-500! [&_span[data-slot]]:bg-transparent! [&_span:not([data-slot])]:bg-amber-500! focus-visible:border-amber-500 focus-visible:ring-amber-500/20 cursor-pointer"
+        />
+        <Label
+          htmlFor="color-info"
+          className="text-amber-500 cursor-pointer font-medium leading-none"
+        >
+          Alert
+        </Label>
+      </div>
+    </RadioGroup>
   );
 };
 

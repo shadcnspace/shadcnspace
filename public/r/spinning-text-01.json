@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinning-text-01",
+  "type": "registry:component",
+  "title": "Spinning Text-01 - Basic",
+  "description": "Spinning Text component",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/spinning-text/spinning-text-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\nimport React from \"react\";\r\n\r\ntype SpinningTextProps = {\r\n  text: string;\r\n  radius?: number;\r\n  textClassName?: string;\r\n  speed?: number;\r\n  direction?: \"normal\" | \"reverse\";\r\n  className?: string;\r\n};\r\n\r\nconst SpinningText: React.FC<SpinningTextProps> = ({\r\n  text,\r\n  radius = 37,\r\n  textClassName = \"text-[8px]\",\r\n  speed = 10,\r\n  direction = \"normal\",\r\n  className,\r\n}) => {\r\n  // Generate a unique ID for the path to allow multiple instances\r\n  const pathId = `circlePath-${Math.random().toString(36).substring(2, 9)}`;\r\n\r\n  return (\r\n    <div className={className}>\r\n      <svg viewBox=\"0 0 100 100\" className=\"w-full h-full\">\r\n        <g\r\n          className=\"origin-center animate-spin\"\r\n          style={{\r\n            animationDuration: `${speed}s`,\r\n            animationDirection: direction,\r\n          }}\r\n        >\r\n          <path\r\n            id={pathId}\r\n            d={`\r\n              M 50,50\r\n              m -${radius},0\r\n              a ${radius},${radius} 0 1,1 ${radius * 2},0\r\n              a ${radius},${radius} 0 1,1 -${radius * 2},0\r\n            `}\r\n            fill=\"none\"\r\n          />\r\n          <text\r\n            className={cn(\r\n              `uppercase font-normal fill-muted-foreground tracking-widest`,\r\n              textClassName,\r\n            )}\r\n          >\r\n            <textPath xlinkHref={`#${pathId}`} startOffset=\"0%\">\r\n              {text}\r\n            </textPath>\r\n          </text>\r\n        </g>\r\n      </svg>\r\n    </div>\r\n  );\r\n};\r\n\r\nconst SpinningTextDemo = () => {\r\n  return (\r\n    <>\r\n      <SpinningText\r\n        text=\"JOIN CRYPTO TRENDS • EXPLORE • JOIN CRYPTO TRENDS • EXPLORE •\"\r\n        radius={25}\r\n        textClassName=\"text-[4px]\"\r\n        speed={12}\r\n        direction=\"normal\"\r\n      />\r\n    </>\r\n  );\r\n};\r\n\r\nexport default SpinningTextDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/spinning-text/spinning-text-01.tsx"
+    }
+  ]
+}

@@ -456,6 +456,108 @@ export const components = [
     category: categories["button"],
   },
   {
+    name: "button-group-01",
+    title: "Button Group-01 - Basic",
+    description: "Basic button group component",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/button-group/button-group-01.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/button-group/button-group-01.tsx",
+      },
+    ],
+    category: categories["button-group"],
+    isNew: true
+  },
+  {
+    name: "button-group-02",
+    title: "Button Group-02 - Vertical",
+    description: "Vertical button group component",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/button-group/button-group-02.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/button-group/button-group-02.tsx",
+      },
+    ],
+    category: categories["button-group"],
+    isNew: true
+  },
+  {
+    name: "button-group-03",
+    title: "Button Group-03 - Pagination",
+    description: "Pagination style button group component",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/button-group/button-group-03.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/button-group/button-group-03.tsx",
+      },
+    ],
+    category: categories["button-group"],
+    isNew: true
+  },
+  {
+    name: "button-group-04",
+    title: "Button Group-04 - Separator",
+    description: "Button group with separators",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/button-group/button-group-04.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/button-group/button-group-04.tsx",
+      },
+    ],
+    category: categories["button-group"],
+    isNew: true
+  },
+  {
+    name: "button-group-05",
+    title: "Button Group-05 - Currency",
+    description: "Currency style button group component",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/button-group/button-group-05.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/button-group/button-group-05.tsx",
+      },
+    ],
+    category: categories["button-group"],
+    isNew: true
+  },
+  {
+    name: "button-group-06",
+    title: "Button Group-06 - Vercel",
+    description: "Vercel style button group component",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/button-group/button-group-06.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/button-group/button-group-06.tsx",
+      },
+    ],
+    category: categories["button-group"],
+    isNew: true
+  },
+  {
     name: "badge-01",
     title: "Badge-01 - Default",
     description: "Badge component",
@@ -1901,5 +2003,107 @@ export const components = [
       },
     ],
     category: categories["card"],
+  },
+  {
+    name: "shine-border-01",
+    title: "Shine Border-01 - Basic",
+    description: "Shine Border component",
+    type: "registry:component",
+    registryDependencies: ["card", "button", "badge", "separator"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/shine-border/shine-border-01.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/shine-border/shine-border-01.tsx',
+      }
+    ],
+    category: categories["shine-border"],
+    isNew: true
+  },
+  {
+    name: "number-ticker-01",
+    title: "Number Ticker-01 - Basic",
+    description: "Number Ticker component",
+    type: "registry:component",
+    registryDependencies: [],
+    dependencies: [],
+    files: [
+      {
+        path: 'src/components/shadcn-space/number-ticker/number-ticker-01.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/number-ticker/number-ticker-01.tsx',
+      }
+    ],
+    category: categories["number-ticker"],
+    isNew: true
+  },
+  {
+    name: "spinning-text-01",
+    title: "Spinning Text-01 - Basic",
+    description: "Spinning Text component",
+    type: "registry:component",
+    registryDependencies: [],
+    dependencies: [],
+    files: [
+      {
+        path: 'src/components/shadcn-space/spinning-text/spinning-text-01.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/spinning-text/spinning-text-01.tsx',
+      }
+    ],
+    category: categories["spinning-text"],
+    isNew: true
+  },
+  {
+    name: "date-picker-01",
+    title: "Date Picker-01 - Data & Time Picker",
+    description: "A professional appointment booking card with date and time range selection.",
+    type: "registry:component",
+    registryDependencies: ["button", "calendar", "input", "label", "popover"],
+    dependencies: ["date-fns", "lucide-react"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/date-picker/date-picker-01.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/date-picker/date-picker-01.tsx',
+      }
+    ],
+    category: categories["date-picker"],
+    isNew: true
+  },
+  {
+    name: "date-picker-02",
+    title: "Date Picker-02 - Date Range",
+    description: "A professional appointment booking card with date and time range selection.",
+    type: "registry:component",
+    registryDependencies: ["button", "calendar", "label", "popover"],
+    dependencies: ["date-fns", "lucide-react", "react-day-picker"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/date-picker/date-picker-02.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/date-picker/date-picker-02.tsx',
+      }
+    ],
+    category: categories["date-picker"],
+    isNew: true
+  },
+  {
+    name: "file-upload-01",
+    title: "File Upload-01 - Animated File Upload",
+    description: "File Upload component",
+    type: "registry:component",
+    registryDependencies: [],
+    dependencies: ["lucide-react", "react-dropzone", "motion/react"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/file-upload/file-upload-01.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/file-upload/file-upload-01.tsx',
+      }
+    ],
+    category: categories["file-upload"],
+    isNew: true
   },
 ];

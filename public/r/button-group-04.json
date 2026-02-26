@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-04",
+  "type": "registry:component",
+  "title": "Button Group-04 - Separator",
+  "description": "Button group with separators",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button-group/button-group-04.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup, ButtonGroupSeparator } from \"@/components/ui/button-group\";\r\nimport { Save, X, MoreHorizontal } from \"lucide-react\";\r\n\r\nexport default function ButtonGroupSeparatorDemo() {\r\n  return (\r\n    <div className=\"flex flex-col items-center gap-4\">\r\n      <ButtonGroup>\r\n        <Button className=\"gap-2 cursor-pointer\">\r\n          <Save className=\"size-4\" />\r\n          Save Changes\r\n        </Button>\r\n        <ButtonGroupSeparator />\r\n        <Button variant=\"outline\" size=\"icon\" className=\"cursor-pointer\">\r\n          <MoreHorizontal className=\"size-4\" />\r\n        </Button>\r\n      </ButtonGroup>\r\n      \r\n      <ButtonGroup>\r\n        <Button variant=\"outline\" className=\"gap-2 cursor-pointer\">\r\n          <X className=\"size-4\" />\r\n          Discard\r\n        </Button>\r\n        <ButtonGroupSeparator />\r\n        <Button variant=\"default\" className=\"gap-2 cursor-pointer\">\r\n          <Save className=\"size-4\" />\r\n          Publish\r\n        </Button>\r\n      </ButtonGroup>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button-group/button-group-04.tsx"
+    }
+  ]
+}

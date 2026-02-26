@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-03",
+  "type": "registry:component",
+  "title": "Button Group-03 - Pagination",
+  "description": "Pagination style button group component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button-group/button-group-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup, ButtonGroupText } from \"@/components/ui/button-group\";\r\nimport { ChevronLeft, ChevronRight } from \"lucide-react\";\r\n\r\nexport default function PaginationButtonGroupDemo() {\r\n  const [page, setPage] = useState(1);\r\n  const totalPages = 10;\r\n\r\n  const handlePrevious = () => {\r\n    setPage((prev) => Math.max(1, prev - 1));\r\n  };\r\n\r\n  const handleNext = () => {\r\n    setPage((prev) => Math.min(totalPages, prev + 1));\r\n  };\r\n\r\n  return (\r\n    <>\r\n      <ButtonGroup>\r\n        <Button \r\n          variant=\"outline\" \r\n          size=\"icon\" \r\n          onClick={handlePrevious}\r\n          disabled={page === 1}\r\n          className=\"cursor-pointer\"\r\n        >\r\n          <ChevronLeft className=\"size-4\" />\r\n        </Button>\r\n        <ButtonGroupText className=\"px-4 min-w-32 justify-center\">\r\n          Page {page} of {totalPages}\r\n        </ButtonGroupText>\r\n        <Button \r\n          variant=\"outline\" \r\n          size=\"icon\" \r\n          onClick={handleNext}\r\n          disabled={page === totalPages}\r\n          className=\"cursor-pointer\"\r\n        >\r\n          <ChevronRight className=\"size-4\" />\r\n        </Button>\r\n      </ButtonGroup>\r\n    </>\r\n  );\r\n}\r\n\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button-group/button-group-03.tsx"
+    }
+  ]
+}

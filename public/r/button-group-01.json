@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-01",
+  "type": "registry:component",
+  "title": "Button Group-01 - Basic",
+  "description": "Basic button group component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button-group/button-group-01.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\nimport { Edit2, Copy, Trash2 } from \"lucide-react\";\r\n\r\nexport default function BasicButtonGroupDemo() {\r\n  return (\r\n    <>\r\n      <ButtonGroup>\r\n        <Button variant=\"outline\" size=\"icon\" className=\"cursor-pointer\">\r\n          <Edit2 className=\"size-4\" />\r\n        </Button>\r\n        <Button variant=\"outline\" size=\"icon\" className=\"cursor-pointer\">\r\n          <Copy className=\"size-4\" />\r\n        </Button>\r\n        <Button variant=\"outline\" size=\"icon\" className=\"cursor-pointer\">\r\n          <Trash2 className=\"size-4 text-destructive\" />\r\n        </Button>\r\n      </ButtonGroup>\r\n    </>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button-group/button-group-01.tsx"
+    }
+  ]
+}

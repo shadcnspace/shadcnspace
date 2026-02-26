@@ -22,7 +22,7 @@ const plans = [
   },
 ];
 
-const RadioGroupCardVerticalRadioDemo = () => {
+const RadioGroupCardVerticalDemo = () => {
   const id = useId();
 
   return (
@@ -47,7 +47,6 @@ const RadioGroupCardVerticalRadioDemo = () => {
                   <RadioGroupItem
                     id={radioId}
                     value={plan.value}
-                    className="order-0 size-5 [&_svg]:size-3"
                     aria-describedby={`${radioId}-description`}
                   />
                 </div>
@@ -61,4 +60,4 @@ const RadioGroupCardVerticalRadioDemo = () => {
   );
 };
 
-export default RadioGroupCardVerticalRadioDemo;
+export default RadioGroupCardVerticalDemo;

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-05",
+  "type": "registry:component",
+  "title": "Button Group-05 - Currency",
+  "description": "Currency style button group component",
+  "dependencies": [],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button-group/button-group-05.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup, ButtonGroupText } from \"@/components/ui/button-group\";\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/components/ui/select\";\r\n\r\nconst currencies = [\r\n  { code: \"USD\", symbol: \"$\" },\r\n  { code: \"EUR\", symbol: \"€\" },\r\n  { code: \"GBP\", symbol: \"£\" },\r\n  { code: \"JPY\", symbol: \"¥\" },\r\n  { code: \"INR\", symbol: \"₹\" },\r\n];\r\n\r\nexport default function ButtonGroupCurrencyDemo() {\r\n  const [currency, setCurrency] = useState(currencies[0]);\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-center gap-4\">\r\n      <ButtonGroup className=\"shadow-lg\">\r\n        <Button \r\n          className=\"bg-background hover:bg-muted font-bold h-9 w-10 p-0 text-base border border-border text-foreground cursor-pointer\"\r\n        >\r\n          {currency.symbol}\r\n        </Button>\r\n        <ButtonGroupText className=\"bg-background border-x-0 font-mono font-medium min-w-24 justify-center text-lg h-9\">\r\n          1,499.00\r\n        </ButtonGroupText>\r\n        <Select \r\n          value={currency.code} \r\n          onValueChange={(value) => {\r\n            const selected = currencies.find(c => c.code === value);\r\n            if (selected) setCurrency(selected);\r\n          }}\r\n        >\r\n          <SelectTrigger className=\"rounded-l-none h-9 min-w-20 font-bold cursor-pointer\">\r\n            <SelectValue />\r\n          </SelectTrigger>\r\n          <SelectContent align=\"end\">\r\n            {currencies.map((c) => (\r\n              <SelectItem key={c.code} value={c.code}>\r\n                {c.code} ({c.symbol})\r\n              </SelectItem>\r\n            ))}\r\n          </SelectContent>\r\n        </Select>\r\n      </ButtonGroup>\r\n\r\n      <div className=\"text-xs text-muted-foreground font-medium\">\r\n        Interactive Currency Selection\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button-group/button-group-05.tsx"
+    }
+  ]
+}
