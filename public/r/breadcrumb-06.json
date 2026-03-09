@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-06",
+  "type": "registry:component",
+  "title": "breadcrumb-06 - Breadcrumb",
+  "description": "Breadcrumb component",
+  "dependencies": [],
+  "registryDependencies": [
+    "breadcrumb",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/breadcrumb/breadcrumb-06.tsx",
+      "content": "import { Breadcrumb,BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage,BreadcrumbSeparator} from \"@/components/ui/breadcrumb\";\r\nimport {DropdownMenu,DropdownMenuContent,DropdownMenuItem,DropdownMenuTrigger} from \"@/components/ui/dropdown-menu\";\r\n\r\nexport default function Component() {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href=\"#\">Home</BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <DropdownMenu>\r\n            <DropdownMenuTrigger className=\"hover:text-foreground\">\r\n              <BreadcrumbEllipsis />\r\n              <span className=\"sr-only\">Toggle menu</span>\r\n            </DropdownMenuTrigger>\r\n            <DropdownMenuContent align=\"start\">\r\n              <DropdownMenuItem>\r\n                <a href=\"#\">Design System</a>\r\n              </DropdownMenuItem>\r\n              <DropdownMenuItem>\r\n                <a href=\"#\">Accessibility</a>\r\n              </DropdownMenuItem>\r\n              <DropdownMenuItem>\r\n                <a href=\"#\">Guidelines</a>\r\n              </DropdownMenuItem>\r\n            </DropdownMenuContent>\r\n          </DropdownMenu>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href=\"#\">Components</BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator />\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  );\r\n}",
+      "type": "registry:component",
+      "target": "components/shadcn-space/breadcrumb/breadcrumb-06.tsx"
+    }
+  ]
+}

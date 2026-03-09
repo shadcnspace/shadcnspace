@@ -1,4 +1,5 @@
 import CategoryBlockHeader from "@/components/blocks/category/CategoryBlockHeader";
+import { categorizedBlocks } from "@/components/blocks/utils";
 import ComponentCard from "@/components/custom-components/componentCard";
 import { components } from "@/config/registry/components";
 import { componentsMap } from "@/config/registry/components/sidebar-data";
@@ -14,7 +15,16 @@ export default function Page() {
                 <div className="container">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {Object.values(componentsMap).map((component) => {
-                            const count = components.filter((comp) => comp.category.name === component.blockName).length;
+                            const componentCount = components.filter(
+                        (comp) => comp.category.name === component.blockName,
+                        ).length;
+
+                        const blockCount =
+                        component.blockName && (categorizedBlocks as any)[component.blockName]
+                            ? (categorizedBlocks as any)[component.blockName].length
+                            : 0;
+
+                        const count = componentCount || blockCount;
                             return (
                                 <ComponentCard
                                     key={component.title}

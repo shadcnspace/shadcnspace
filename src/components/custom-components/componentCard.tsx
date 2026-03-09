@@ -20,9 +20,11 @@ export default function ComponentCard({ title, href, image, count }: ComponentCa
                     <div className="flex items-center justify-between">
                         <h2 className="text-lg! font-semibold">{title}</h2>
                         <div className="">
-                            <p className="text-base text-muted-foreground">
-                                {count ? `${count}` : null}
-                            </p>
+                            {count !== undefined && count > 0 && (
+                                <p className="text-base text-muted-foreground">
+                                {count ? `${count}` : ""}
+                                </p>
+                            )}
                         </div>
                     </div>
                 </div>

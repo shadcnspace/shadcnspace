@@ -386,6 +386,109 @@ export const componentsMap: ComponentsMap = {
       () => import('@/app/(site)/docs/component-info/button-group')
     ),
   },
+  "combobox": {
+    title: "Combobox",
+    headingTitle: "Shadcn Combobox",
+    url: "/components/combobox",
+    blockName: "combobox",
+    icon: AppWindowMac,
+    columns: 3,
+    description:
+      "Discover our Shadcn Combobox component designed for customizable and interactive selection interfaces built with React, Next.js, and Tailwind CSS.",
+    image: "https://images.shadcnspace.com/assets/components/combobox.webp",
+    component: React.lazy(
+      () => import('@/app/(site)/docs/component-info/combobox')
+    ),
+  },
+  "carousel": {
+    title: "Carousel",
+    headingTitle: "Shadcn Carousel",
+    url: "/components/carousel",
+    blockName: "carousel",
+    icon: AppWindowMac,
+    columns: 2,
+    description:
+      "Discover our Shadcn Carousel component, designed for customizable and interactive UI sections built with React, Next.js, and Tailwind CSS.",
+    image: "https://images.shadcnspace.com/assets/components/carousel.webp",
+    component: React.lazy(
+      () => import('@/app/(site)/docs/component-info/carousel')
+    ),
+  },
+  "alert": {
+    title: "Alert",
+    headingTitle: "Shadcn Alert",
+    url: "/components/alert",
+    blockName: "alert",
+    icon: AppWindowMac,
+    columns: 2,
+    description: "Discover our Shadcn Alert component, designed to show important messages clearly in your interface.It is built using React, Next.js, and Tailwind CSS, making it a good fit for websites, forms, dashboards, and admin panels.",
+    image: "https://images.shadcnspace.com/assets/components/alert.webp",
+    component: React.lazy(
+      () => import('@/app/(site)/docs/component-info/alert')
+    ),
+  },
+  "breadcrumb": {
+    title: "Breadcrumb",
+    headingTitle: "Shadcn Breadcrumb",
+    url: "/components/breadcrumb",
+    blockName: "breadcrumb",
+    icon: AppWindowMac,
+    columns: 2,
+    description: "Discover our Shadcn Breadcrumb component designed to help users understand where they are on a website.",
+    image: "https://images.shadcnspace.com/assets/components/breadcrumb.webp",
+    component: React.lazy(
+      () => import('@/app/(site)/docs/component-info/breadcrumb')
+    ),
+  },
+  form: {
+    title: "Form",
+    headingTitle: "Shadcn Form",
+    url: "/blocks/dashboard-ui/forms",
+    blockName: "forms",
+    image: "https://images.shadcnspace.com/assets/blocks-images/dashboard/form-blocks.webp",
+  },
+  sidebar: {
+    title: "Sidebar",
+    url: "/blocks/dashboard-ui/sidebars",
+    headingTitle: "Shadcn Sidebar",
+    blockName: "sidebars",
+    image: "https://images.shadcnspace.com/assets/blocks-images/dashboard/sidebar-blocks.webp",
+  },
+  navbar: {
+    title: "Navbar",
+    url: "/blocks/marketing/navbar-section",
+    headingTitle: "Shadcn Navbar",
+    blockName: "navbar-section",
+    image: "https://images.shadcnspace.com/assets/blocks-images/marketing/navbar-section.webp",
+  },
+  dialog: {
+    title: "Dialog",
+    url: "/blocks/dashboard-ui/dialog",
+    headingTitle: "Shadcn Dialog",
+    blockName: "dialog",
+    image: "https://images.shadcnspace.com/assets/blocks-images/dashboard/dialog-blocks.webp",
+  },
+  dropdown: {
+    title: "Dropdown",
+    url: "/blocks/dashboard-ui/dropdown",
+    headingTitle: "Shadcn Dropdown",
+    blockName: "dropdown",
+    image: "https://images.shadcnspace.com/assets/blocks-images/dashboard/dropdown-blocks.webp",
+  },
+  topbar: {
+    title: "Topbar",
+    url: "/blocks/dashboard-ui/topbars",
+    headingTitle: "Shadcn Topbar",
+    blockName: "topbars",
+    image: "https://images.shadcnspace.com/assets/blocks-images/dashboard/top-bar-blocks.webp",
+  },
+  table: {
+    title: "Table",
+    url: "/blocks/dashboard-ui/tables",
+    headingTitle: "Shadcn Table",
+    blockName: "tables",
+    image: "https://images.shadcnspace.com/assets/blocks-images/dashboard/tables-blocks.webp",
+  },
 };
 
 export const components = Object.values(componentsMap);

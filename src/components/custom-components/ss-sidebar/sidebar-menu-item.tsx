@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { SidebarMenuSubItem } from "@/components/ui/sidebar";
 import AppSidebarMenuButton from "./sidebar-menu-button";
 import { Icon } from "@iconify/react";
+import { categorizedBlocks } from "@/components/blocks/utils";
 
 interface SidebarItem {
   icon?: string | LucideIcon;
@@ -26,11 +27,23 @@ const AppSidebarMenuItem = ({
   showFileCount,
   ...props
 }: AppSidebarMenuItemProps) => {
-  const fileCount = item.blockName
+  const componentCount = item.blockName
     ? components.filter((comp) => comp.category.name === item.blockName).length
     : 0;
-  const categoryComponents = components.filter((comp) => comp.category.name === item.blockName);
-  const newComponentsCount = categoryComponents.filter((comp) => comp.isNew).length;
+
+  const blockCount =
+    item.blockName && (categorizedBlocks as any)[item.blockName]
+      ? (categorizedBlocks as any)[item.blockName].length
+      : 0;
+
+  const fileCount = componentCount || blockCount;
+
+  const categoryComponents = components.filter(
+    (comp) => comp.category.name === item.blockName,
+  );
+  const newComponentsCount = categoryComponents.filter(
+    (comp) => comp.isNew,
+  ).length;
 
   return (
     <SidebarMenuSubItem {...props}>

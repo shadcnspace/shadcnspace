@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-02",
+  "type": "registry:component",
+  "title": "Alert-02 - Alert with User Detail",
+  "description": "Alert component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-02.tsx",
+      "content": "import { CircleAlertIcon } from 'lucide-react'\r\n\r\nimport { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\n\r\nconst AlertWithUserDetailDemo = () => {\r\n  return (\r\n    <Alert className='flex items-center justify-between cursor-pointer hover:scale-105 ease-in-out duration-300 max-w-md'>\r\n      <Avatar className='rounded-sm'>\r\n        <AvatarImage\r\n          src='https://images.shadcnspace.com/assets/profiles/rough.webp'\r\n          alt='Rough Richards'\r\n          className='rounded-sm'\r\n        />\r\n        <AvatarFallback className='text-xs'>RR</AvatarFallback>\r\n      </Avatar>\r\n      <div className='flex-1 flex-col justify-center gap-1'>\r\n        <AlertTitle className='flex-1'>Rough just dropped a reply on your image.</AlertTitle>\r\n        <AlertDescription>12 unread <a href='#' className='text-teal-400 hover:text-teal-400/80! no-underline!'>Tap to see.</a></AlertDescription>\r\n      </div>\r\n      <CircleAlertIcon className='text-teal-400!'/>\r\n    </Alert>\r\n  )\r\n}\r\n\r\nexport default AlertWithUserDetailDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-02.tsx"
+    }
+  ]
+}

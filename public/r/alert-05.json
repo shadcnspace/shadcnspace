@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-05",
+  "type": "registry:component",
+  "title": "Alert-05 - Dark Alert",
+  "description": "Alert component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-05.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { Check, XIcon } from 'lucide-react'\r\nimport { Alert, AlertTitle } from '@/components/ui/alert'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst AlertDarkDemo = () => {\r\n  const [isActive, setIsActive] = useState(true)\r\n\r\n  if (!isActive) return null\r\n\r\n  return (\r\n    <Alert className='bg-gray-950 text-primary-foreground flex flex-col gap-4 justify-between border-none max-w-xs'>\r\n      <div className='flex items-start justify-between gap-2 w-full'>\r\n        <div className='flex items-start gap-2'>\r\n          <div className='bg-teal-400/40 p-1 rounded-full w-fit h-fit'>\r\n            <Check size={16} className='text-teal-400' />\r\n          </div>\r\n          <div className='flex flex-1 flex-col gap-4'>\r\n            <div className='flex-1 flex-col justify-center gap-1'>\r\n              <AlertTitle className='text-base font-normal text-gray-50'>New location created successfully!</AlertTitle>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <button className='size-4 cursor-pointer' onClick={() => setIsActive(false)}>\r\n          <XIcon className='size-4 text-gray-50' />\r\n          <span className='sr-only'>Close</span>\r\n        </button>\r\n      </div>\r\n\r\n      <div className='grid grid-cols-2 items-center gap-4'>\r\n        <Button className=\"h-auto px-5 py-2.5 rounded-lg bg-teal-400/20 text-teal-400 hover:bg-teal-400/25\">View Location</Button>\r\n        <Button variant={\"outline\"} className=\"h-auto px-5 py-2.5 rounded-lg bg-transparent hover:bg-gray-200/10 border border-gray-200/20 text-gray-50 hover:text-gray-50\">Dismiss</Button>\r\n      </div>\r\n    </Alert>\r\n  )\r\n}\r\n\r\nexport default AlertDarkDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-05.tsx"
+    }
+  ]
+}

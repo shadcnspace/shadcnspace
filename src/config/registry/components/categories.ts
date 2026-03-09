@@ -223,4 +223,38 @@ export const categories = {
     metaDescription:
       "Shadcn UI Button Group component for selecting multiple options from a list. Includes button group blocks, button group patterns, and interactive button selection for React applications.",
   },
+
+  "combobox": {
+    name: "combobox",
+    title: "Combobox",
+    metaKeyword: "shadcn combobox",
+    metaTitle: "6+ Shadcn Combobox Component for React & Next.js",
+    metaDescription:
+      "Add a searchable and accessible Shadcn Combobox to your React or Next.js project. Supports single and multi-select, async search, and full Tailwind CSS customization.",
+  },
+
+  "carousel": {
+    name: "carousel",
+    title: "Carousel",
+    metaKeyword: "shadcn carousel",
+    metaTitle: "4+ Shadcn Carousel Components for React & Next.js",
+    metaDescription:
+      "Create smooth and responsive sliders using our Shadcn Carousel component. Supports touch gestures, keyboard navigation, and flexible layout control with Tailwind CSS.",
+  },
+
+  "alert": {
+    name: "alert",
+    title: "Alert",
+    metaKeyword: "shadcn alert",
+    metaTitle: "5+ Shadcn Alert Components for React & Next.js",
+    metaDescription: "Show important messages using 5+ Shadcn Alert components to display success, error, warning, and info messages in React and Next.js forms, dashboards, and admin panels."
+  },
+  
+  "breadcrumb": {
+    name: "breadcrumb",
+    title: "Breadcrumb",
+    metaKeyword: "shadcn breadcrumb",
+    metaTitle: "5+ Shadcn Breadcrumb Navigation Components",
+    metaDescription: "Discover 5+ Shadcn Breadcrumb components to create clear navigation paths in React and Next.js applications. Simple, customizable, and developer-friendly."
+  }
 } as const;

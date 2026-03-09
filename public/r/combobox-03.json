@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-03",
+  "type": "registry:component",
+  "title": "Combobox-03 - With Add Button",
+  "description": "Combobox component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "combobox",
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/combobox/combobox-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\n\r\nimport { CheckIcon, ChevronsUpDownIcon, PlusIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Command,\r\n  CommandEmpty,\r\n  CommandGroup,\r\n  CommandInput,\r\n  CommandItem,\r\n  CommandList,\r\n  CommandSeparator,\r\n} from \"@/components/ui/command\";\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/components/ui/popover\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst organizations = [\r\n  {\r\n    value: \"vercel\",\r\n    label: \"Vercel\",\r\n  },\r\n  {\r\n    value: \"github\",\r\n    label: \"GitHub\",\r\n  },\r\n  {\r\n    value: \"openai\",\r\n    label: \"OpenAI\",\r\n  },\r\n  {\r\n    value: \"stripe\",\r\n    label: \"Stripe\",\r\n  },\r\n];\r\n\r\nconst ComboboxWithAddButtonDemo = () => {\r\n  const id = useId();\r\n  const [open, setOpen] = useState<boolean>(false);\r\n  const [value, setValue] = useState<string>(\"vercel\");\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs\">\r\n      <Popover open={open} onOpenChange={setOpen}>\r\n        <PopoverTrigger\r\n          render={\r\n            <Button\r\n              id={id}\r\n              variant=\"outline\"\r\n              role=\"combobox\"\r\n              aria-expanded={open}\r\n              className=\"bg-background hover:bg-background border-input w-full justify-between px-3 font-normal outline-offset-0 outline-none focus-visible:outline-[3px]\"\r\n            >\r\n              <span\r\n                className={cn(\"truncate\", !value && \"text-muted-foreground\")}\r\n              >\r\n                {value ? (\r\n                  organizations.find((org) => org.value === value)?.label\r\n                ) : (\r\n                  <span className=\"text-muted-foreground\">\r\n                    Select organization\r\n                  </span>\r\n                )}\r\n              </span>\r\n              <ChevronsUpDownIcon\r\n                className=\"text-muted-foreground/80 shrink-0 size-4 opacity-50\"\r\n                aria-hidden=\"true\"\r\n              />\r\n            </Button>\r\n          }\r\n        />\r\n        <PopoverContent className=\"border-input w-full p-0\" align=\"start\">\r\n          <Command>\r\n            <CommandInput placeholder=\"Find organization...\" />\r\n            <CommandList>\r\n              <CommandEmpty>No organization found.</CommandEmpty>\r\n              <CommandGroup>\r\n                {organizations.map((org) => (\r\n                  <CommandItem\r\n                    key={org.value}\r\n                    value={org.value}\r\n                    onSelect={(currentValue) => {\r\n                      setValue(currentValue === value ? \"\" : currentValue);\r\n                      setOpen(false);\r\n                    }}\r\n                    className=\"[&>svg:last-of-type]:hidden\"\r\n                  >\r\n                    {org.label}\r\n                    {value === org.value && (\r\n                      <CheckIcon\r\n                        className=\"ml-auto size-4\"\r\n                        aria-hidden=\"true\"\r\n                      />\r\n                    )}\r\n                  </CommandItem>\r\n                ))}\r\n              </CommandGroup>\r\n              <CommandSeparator />\r\n              <CommandGroup>\r\n                <Button\r\n                  variant=\"ghost\"\r\n                  className=\"w-full justify-start font-normal\"\r\n                >\r\n                  <PlusIcon className=\"-ms-2 opacity-60\" aria-hidden=\"true\" />\r\n                  New organization\r\n                </Button>\r\n              </CommandGroup>\r\n            </CommandList>\r\n          </Command>\r\n        </PopoverContent>\r\n      </Popover>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ComboboxWithAddButtonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/combobox/combobox-03.tsx"
+    }
+  ]
+}

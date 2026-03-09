@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-03",
+  "type": "registry:component",
+  "title": "Alert-03 - Social Alert",
+  "description": "Alert component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-03.tsx",
+      "content": "import { Alert, AlertDescription } from \"@/components/ui/alert\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ConfettiButton } from \"@/components/ui/confetti\";\r\nimport { Check, X } from \"lucide-react\";\r\n\r\nexport default function AlertSocialComponent() {\r\n  return (\r\n    <Alert className=\"flex items-center justify-between\">\r\n      <AlertDescription className=\"text-sm font-medium\">Your connection request has been sent.</AlertDescription>\r\n      <div className=\"flex gap-2\">\r\n        <ConfettiButton className=\"rounded-lg! px-3 py-1 bg-teal-400/20 hover:bg-teal-400/25 text-teal-400\">\r\n          <Check className=\"text-teal-400\"/>\r\n          <span>Accept</span>\r\n        </ConfettiButton>\r\n        <Button variant={\"destructive\"} className=\"\"><X/></Button>\r\n      </div>\r\n    </Alert>\r\n  );\r\n}",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-03.tsx"
+    },
+    {
+      "path": "src/components/ui/confetti.tsx",
+      "content": "\"use client\"\r\n\r\nimport type { ReactNode } from \"react\"\r\nimport React, {\r\n  createContext,\r\n  forwardRef,\r\n  useCallback,\r\n  useEffect,\r\n  useImperativeHandle,\r\n  useMemo,\r\n  useRef,\r\n} from \"react\"\r\nimport type {\r\n  GlobalOptions as ConfettiGlobalOptions,\r\n  CreateTypes as ConfettiInstance,\r\n  Options as ConfettiOptions,\r\n} from \"canvas-confetti\"\r\nimport confetti from \"canvas-confetti\"\r\n\r\nimport { Button } from \"@/components/ui/button\"\r\n\r\ntype Api = {\r\n  fire: (options?: ConfettiOptions) => void\r\n}\r\n\r\ntype Props = React.ComponentPropsWithRef<\"canvas\"> & {\r\n  options?: ConfettiOptions\r\n  globalOptions?: ConfettiGlobalOptions\r\n  manualstart?: boolean\r\n  children?: ReactNode\r\n}\r\n\r\nexport type ConfettiRef = Api | null\r\n\r\nconst ConfettiContext = createContext<Api>({} as Api)\r\n\r\n// Define component first\r\nconst ConfettiComponent = forwardRef<ConfettiRef, Props>((props, ref) => {\r\n  const {\r\n    options,\r\n    globalOptions = { resize: true, useWorker: true },\r\n    manualstart = false,\r\n    children,\r\n    ...rest\r\n  } = props\r\n  const instanceRef = useRef<ConfettiInstance | null>(null)\r\n\r\n  const canvasRef = useCallback(\r\n    (node: HTMLCanvasElement) => {\r\n      if (node !== null) {\r\n        if (instanceRef.current) return\r\n        instanceRef.current = confetti.create(node, {\r\n          ...globalOptions,\r\n          resize: true,\r\n        })\r\n      } else {\r\n        if (instanceRef.current) {\r\n          instanceRef.current.reset()\r\n          instanceRef.current = null\r\n        }\r\n      }\r\n    },\r\n    [globalOptions]\r\n  )\r\n\r\n  const fire = useCallback(\r\n    async (opts = {}) => {\r\n      try {\r\n        await instanceRef.current?.({ ...options, ...opts })\r\n      } catch (error) {\r\n        console.error(\"Confetti error:\", error)\r\n      }\r\n    },\r\n    [options]\r\n  )\r\n\r\n  const api = useMemo(\r\n    () => ({\r\n      fire,\r\n    }),\r\n    [fire]\r\n  )\r\n\r\n  useImperativeHandle(ref, () => api, [api])\r\n\r\n  useEffect(() => {\r\n    if (!manualstart) {\r\n      ;(async () => {\r\n        try {\r\n          await fire()\r\n        } catch (error) {\r\n          console.error(\"Confetti effect error:\", error)\r\n        }\r\n      })()\r\n    }\r\n  }, [manualstart, fire])\r\n\r\n  return (\r\n    <ConfettiContext.Provider value={api}>\r\n      <canvas ref={canvasRef} {...rest} />\r\n      {children}\r\n    </ConfettiContext.Provider>\r\n  )\r\n})\r\n\r\n// Set display name immediately\r\nConfettiComponent.displayName = \"Confetti\"\r\n\r\n// Export as Confetti\r\nexport const Confetti = ConfettiComponent\r\n\r\ninterface ConfettiButtonProps extends React.ComponentProps<\"button\"> {\r\n  options?: ConfettiOptions &\r\n    ConfettiGlobalOptions & { canvas?: HTMLCanvasElement }\r\n}\r\n\r\nconst ConfettiButtonComponent = ({\r\n  options,\r\n  children,\r\n  ...props\r\n}: ConfettiButtonProps) => {\r\n  const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {\r\n    try {\r\n      const rect = event.currentTarget.getBoundingClientRect()\r\n      const x = rect.left + rect.width / 2\r\n      const y = rect.top + rect.height / 2\r\n      await confetti({\r\n        ...options,\r\n        origin: {\r\n          x: x / window.innerWidth,\r\n          y: y / window.innerHeight,\r\n        },\r\n      })\r\n    } catch (error) {\r\n      console.error(\"Confetti button error:\", error)\r\n    }\r\n  }\r\n\r\n  return (\r\n    <Button onClick={handleClick} {...props}>\r\n      {children}\r\n    </Button>\r\n  )\r\n}\r\n\r\nConfettiButtonComponent.displayName = \"ConfettiButton\"\r\n\r\nexport const ConfettiButton = ConfettiButtonComponent\r\n",
+      "type": "registry:component",
+      "target": "components/ui/confetti.tsx"
+    }
+  ]
+}

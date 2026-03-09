@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-02",
+  "type": "registry:component",
+  "title": "breadcrumb-02 - Breadcrumb",
+  "description": "Breadcrumb component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/breadcrumb/breadcrumb-02.tsx",
+      "content": "import { HomeIcon } from 'lucide-react'\r\nimport { Breadcrumb,BreadcrumbItem,BreadcrumbLink,BreadcrumbList,BreadcrumbPage,BreadcrumbSeparator } from '@/components/ui/breadcrumb'\r\n\r\nconst BreadcrumbSlashSeparatorDemo = () => {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href='#' className='flex items-center gap-2'>\r\n            <HomeIcon className='size-4' />\r\n            Home\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator> / </BreadcrumbSeparator>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href='#'>Profile</BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator> / </BreadcrumbSeparator>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage>Settings</BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n\r\nexport default BreadcrumbSlashSeparatorDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/breadcrumb/breadcrumb-02.tsx"
+    }
+  ]
+}

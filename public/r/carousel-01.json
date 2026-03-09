@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel-01",
+  "type": "registry:component",
+  "title": "Carousel-01 - Custom Dots",
+  "description": "Carousel component",
+  "dependencies": [],
+  "registryDependencies": [
+    "carousel"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/carousel/carousel-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, useEffect } from \"react\";\r\nimport {\r\n  Carousel,\r\n  CarouselContent,\r\n  CarouselItem,\r\n  CarouselNext,\r\n  CarouselPrevious,\r\n  type CarouselApi,\r\n} from \"@/components/ui/carousel\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst images = [\r\n  \"https://images.shadcnspace.com/assets/gallery/destinations-1.webp\",\r\n  \"https://images.shadcnspace.com/assets/gallery/destinations-2.webp\",\r\n  \"https://images.shadcnspace.com/assets/gallery/destinations-3.webp\",\r\n  \"https://images.shadcnspace.com/assets/gallery/destinations-4.webp\",\r\n];\r\n\r\nconst CarouselCustomDots = () => {\r\n  const [api, setApi] = useState<CarouselApi>();\r\n  const [current, setCurrent] = useState(0);\r\n  const [count, setCount] = useState(0);\r\n\r\n  useEffect(() => {\r\n    if (!api) {\r\n      return;\r\n    }\r\n\r\n    setCount(api.scrollSnapList().length);\r\n    setCurrent(api.selectedScrollSnap() + 1);\r\n\r\n    api.on(\"select\", () => {\r\n      setCurrent(api.selectedScrollSnap() + 1);\r\n    });\r\n  }, [api]);\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs\">\r\n      <Carousel setApi={setApi} className=\"w-full\">\r\n        <CarouselContent>\r\n          {images.map((src, index) => (\r\n            <CarouselItem key={index}>\r\n              <figure>\r\n                <img\r\n                  src={src}\r\n                  alt={`img ${index + 1}`}\r\n                  width={800}\r\n                  height={600}\r\n                  className=\"aspect-4/3 rounded-lg object-cover\"\r\n                />\r\n              </figure>\r\n            </CarouselItem>\r\n          ))}\r\n        </CarouselContent>\r\n        <CarouselPrevious />\r\n        <CarouselNext />\r\n      </Carousel>\r\n      <div className=\"mt-5 flex justify-center gap-2\">\r\n        {Array.from({ length: count }).map((_, index) => (\r\n          <button\r\n            key={index}\r\n            onClick={() => api?.scrollTo(index)}\r\n            className={cn(\"h-2 rounded-full transition-all duration-300\", {\r\n              \"bg-primary w-6\": index + 1 === current,\r\n              \"bg-muted-foreground/30 w-2 hover:bg-muted-foreground/50\": index + 1 !== current,\r\n            })}\r\n            aria-label={`Slide ${index + 1}`}\r\n          />\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CarouselCustomDots;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/carousel/carousel-01.tsx"
+    }
+  ]
+}

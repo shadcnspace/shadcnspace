@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-04",
+  "type": "registry:component",
+  "title": "Alert-04 - Indicator Destructive Alert",
+  "description": "Alert component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-04.tsx",
+      "content": "import { OctagonAlert, Star } from 'lucide-react'\r\nimport { Alert, AlertTitle } from '@/components/ui/alert'\r\n\r\nconst AlertIndicatorDestructiveDemo = () => {\r\n    return (\r\n        <div className='flex flex-col gap-4 w-full'>\r\n            <Alert className='border-amber-300 bg-amber-300/10 text-amber-300 rounded-none border-0 border-l-4'>\r\n                <OctagonAlert />\r\n                <AlertTitle className='flex items-center gap-1.5 font-normal'>\r\n                    <span className='text-amber-500'>Warning</span>\r\n                    You have no credits left !\r\n                </AlertTitle>\r\n            </Alert>\r\n\r\n            <Alert className='border-sky-400 bg-sky-400/10 text-sky-400 rounded-none border-0 border-l-4'>\r\n                <Star />\r\n                <AlertTitle className='flex items-center gap-1.5 font-normal'>\r\n                    <span className='text-sky-500'>Did tou Know?</span>\r\n                    Here's something you'd like to know\r\n                </AlertTitle>\r\n            </Alert>\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default AlertIndicatorDestructiveDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-04.tsx"
+    }
+  ]
+}

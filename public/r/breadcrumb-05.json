@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-05",
+  "type": "registry:component",
+  "title": "breadcrumb-05 - Breadcrumb",
+  "description": "Breadcrumb component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "breadcrumb",
+    "badge",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/breadcrumb/breadcrumb-05.tsx",
+      "content": "import { ChevronDownIcon, ChevronsLeft, Command, HomeIcon, TriangleAlert } from 'lucide-react'\r\nimport { Badge } from '@/components/ui/badge'\r\nimport { Breadcrumb,BreadcrumbItem,BreadcrumbLink,BreadcrumbList,BreadcrumbPage,BreadcrumbSeparator } from '@/components/ui/breadcrumb'\r\nimport { DropdownMenu,DropdownMenuContent,DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'\r\n\r\nconst BreadcrumbWithDropdownDemo = () => {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href='#'>\r\n            <Badge variant='outline' className='text-muted-foreground hover:text-foreground'>\r\n              <HomeIcon className='size-3' />\r\n              Home\r\n            </Badge>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator> / </BreadcrumbSeparator>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href='#'>\r\n            <Badge variant='outline' className='text-muted-foreground hover:text-foreground'>\r\n              Design System\r\n            </Badge>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator> / </BreadcrumbSeparator>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage>\r\n            <DropdownMenu>\r\n              <DropdownMenuTrigger className='flex items-center gap-1'>\r\n                Components\r\n                <ChevronDownIcon className='size-4' />\r\n              </DropdownMenuTrigger>\r\n              <DropdownMenuContent align='start'>\r\n                <DropdownMenuItem className=\"cursor-pointer\"><TriangleAlert size={16}/>Alert</DropdownMenuItem>\r\n                <DropdownMenuItem className=\"cursor-pointer\"><Command size={16}/>Buttons</DropdownMenuItem>\r\n                <DropdownMenuItem className=\"cursor-pointer\"><ChevronsLeft size={16}/>Breadcrumb</DropdownMenuItem>\r\n              </DropdownMenuContent>\r\n            </DropdownMenu>\r\n          </BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n\r\nexport default BreadcrumbWithDropdownDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/breadcrumb/breadcrumb-05.tsx"
+    }
+  ]
+}

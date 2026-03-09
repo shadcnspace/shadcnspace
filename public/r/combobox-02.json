@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-02",
+  "type": "registry:component",
+  "title": "Combobox-02 - With Custom Check Icon",
+  "description": "Combobox component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "combobox",
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/combobox/combobox-02.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\n\r\nimport { CheckIcon, ChevronsUpDownIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Command,\r\n  CommandEmpty,\r\n  CommandGroup,\r\n  CommandInput,\r\n  CommandItem,\r\n  CommandList,\r\n} from \"@/components/ui/command\";\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/components/ui/popover\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst regions = [\r\n  {\r\n    value: \"us-east-1\",\r\n    label: \"US East (N. Virginia)\",\r\n  },\r\n  {\r\n    value: \"us-east-2\",\r\n    label: \"US East (Ohio)\",\r\n  },\r\n  {\r\n    value: \"us-west-1\",\r\n    label: \"US West (N. California)\",\r\n  },\r\n  {\r\n    value: \"us-west-2\",\r\n    label: \"US West (Oregon)\",\r\n  },\r\n  {\r\n    value: \"eu-west-1\",\r\n    label: \"EU (Ireland)\",\r\n  },\r\n  {\r\n    value: \"eu-central-1\",\r\n    label: \"EU (Frankfurt)\",\r\n  },\r\n  {\r\n    value: \"ap-northeast-1\",\r\n    label: \"Asia Pacific (Tokyo)\",\r\n  },\r\n  {\r\n    value: \"sa-east-1\",\r\n    label: \"South America (São Paulo)\",\r\n  },\r\n];\r\n\r\nconst ComboboxDeploymentRegionDemo = () => {\r\n  const id = useId();\r\n  const [open, setOpen] = useState(false);\r\n  const [value, setValue] = useState(\"\");\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs\">\r\n      <Popover open={open} onOpenChange={setOpen}>\r\n        <PopoverTrigger\r\n          render={\r\n            <Button\r\n              id={id}\r\n              variant=\"outline\"\r\n              role=\"combobox\"\r\n              aria-expanded={open}\r\n              className=\"w-full max-w-xs justify-between font-normal\"\r\n            >\r\n              {value ? (\r\n                regions.find((region) => region.value === value)?.label\r\n              ) : (\r\n                <span className=\"text-muted-foreground\">\r\n                  Select server region\r\n                </span>\r\n              )}\r\n              <ChevronsUpDownIcon className=\"opacity-50 size-4\" />\r\n            </Button>\r\n          }\r\n        />\r\n        <PopoverContent className=\"w-full p-0\">\r\n          <Command>\r\n            <CommandInput placeholder=\"Search regions...\" className=\"h-9\" />\r\n            <CommandList>\r\n              <CommandEmpty>No region found.</CommandEmpty>\r\n              <CommandGroup>\r\n                {regions.map((region) => (\r\n                  <CommandItem\r\n                    key={region.value}\r\n                    value={region.value}\r\n                    onSelect={(currentValue) => {\r\n                      setValue(currentValue === value ? \"\" : currentValue);\r\n                      setOpen(false);\r\n                    }}\r\n                    className=\"[&>svg:last-of-type]:hidden\"\r\n                  >\r\n                    {region.label}\r\n                    {value === region.value && (\r\n                      <CheckIcon\r\n                        className={cn(\r\n                          \"ml-auto size-4 text-blue-500 transition-all duration-200 scale-100 block\"\r\n                        )}\r\n                      />\r\n                    )}\r\n                  </CommandItem>\r\n                ))}\r\n              </CommandGroup>\r\n            </CommandList>\r\n          </Command>\r\n        </PopoverContent>\r\n      </Popover>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ComboboxDeploymentRegionDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/combobox/combobox-02.tsx"
+    }
+  ]
+}
