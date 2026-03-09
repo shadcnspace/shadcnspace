@@ -470,7 +470,6 @@ export const components = [
       },
     ],
     category: categories["button-group"],
-    isNew: true
   },
   {
     name: "button-group-02",
@@ -487,7 +486,6 @@ export const components = [
       },
     ],
     category: categories["button-group"],
-    isNew: true
   },
   {
     name: "button-group-03",
@@ -504,7 +502,6 @@ export const components = [
       },
     ],
     category: categories["button-group"],
-    isNew: true
   },
   {
     name: "button-group-04",
@@ -521,7 +518,6 @@ export const components = [
       },
     ],
     category: categories["button-group"],
-    isNew: true
   },
   {
     name: "button-group-05",
@@ -538,7 +534,6 @@ export const components = [
       },
     ],
     category: categories["button-group"],
-    isNew: true
   },
   {
     name: "button-group-06",
@@ -555,7 +550,6 @@ export const components = [
       },
     ],
     category: categories["button-group"],
-    isNew: true
   },
   {
     name: "badge-01",
@@ -2019,7 +2013,6 @@ export const components = [
       }
     ],
     category: categories["shine-border"],
-    isNew: true
   },
   {
     name: "number-ticker-01",
@@ -2036,7 +2029,6 @@ export const components = [
       }
     ],
     category: categories["number-ticker"],
-    isNew: true
   },
   {
     name: "spinning-text-01",
@@ -2053,7 +2045,6 @@ export const components = [
       }
     ],
     category: categories["spinning-text"],
-    isNew: true
   },
   {
     name: "date-picker-01",
@@ -2104,6 +2095,384 @@ export const components = [
       }
     ],
     category: categories["file-upload"],
+  },
+  {
+    name: "combobox-01",
+    title: "Combobox-01 - With Icons",
+    description: "Combobox component with icons",
+    type: "registry:component",
+    registryDependencies: ["button", "combobox", "popover"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/combobox/combobox-01.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/combobox/combobox-01.tsx',
+      }
+    ],
+    category: categories["combobox"],
     isNew: true
+  },
+  {
+    name: "combobox-02",
+    title: "Combobox-02 - With Custom Check Icon",
+    description: "Combobox component",
+    type: "registry:component",
+    registryDependencies: ["button", "combobox", "popover"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/combobox/combobox-02.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/combobox/combobox-02.tsx',
+      }
+    ],
+    category: categories["combobox"],
+    isNew: true
+  },
+  {
+    name: "combobox-03",
+    title: "Combobox-03 - With Add Button",
+    description: "Combobox component",
+    type: "registry:component",
+    registryDependencies: ["button", "combobox", "popover"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/combobox/combobox-03.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/combobox/combobox-03.tsx',
+      }
+    ],
+    category: categories["combobox"],
+    isNew: true
+  },
+  {
+    name: "combobox-04",
+    title: "Combobox-04 - Timezone",
+    description: "Combobox component",
+    type: "registry:component",
+    registryDependencies: ["button", "combobox", "popover"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/combobox/combobox-04.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/combobox/combobox-04.tsx',
+      }
+    ],
+    category: categories["combobox"],
+    isNew: true
+  },
+  {
+    name: "combobox-05",
+    title: "Combobox-05 - Users",
+    description: "Combobox component",
+    type: "registry:component",
+    registryDependencies: ["avatar", "button", "combobox", "popover"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/combobox/combobox-05.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/combobox/combobox-05.tsx',
+      }
+    ],
+    category: categories["combobox"],
+    isNew: true
+  },
+  {
+    name: "combobox-06",
+    title: "Combobox-06 - With Flag",
+    description: "Combobox component",
+    type: "registry:component",
+    registryDependencies: ["button", "combobox", "popover"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/combobox/combobox-06.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/combobox/combobox-06.tsx',
+      }
+    ],
+    category: categories["combobox"],
+    isNew: true
+  },
+  {
+    name: "carousel-01",
+    title: "Carousel-01 - Custom Dots",
+    description: "Carousel component",
+    type: "registry:component",
+    registryDependencies: ["carousel"],
+    dependencies: [],
+    files: [
+      {
+        path: 'src/components/shadcn-space/carousel/carousel-01.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/carousel/carousel-01.tsx',
+      }
+    ],
+    category: categories["carousel"],
+    isNew: true
+  },
+  {
+    name: "carousel-02",
+    title: "Carousel-02 - Custom Navigation",
+    description: "Carousel component",
+    type: "registry:component",
+    registryDependencies: ["carousel", "button"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: 'src/components/shadcn-space/carousel/carousel-02.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/carousel/carousel-02.tsx',
+      }
+    ],
+    category: categories["carousel"],
+    isNew: true
+  },
+  {
+    name: "carousel-03",
+    title: "Carousel-03 - Index",
+    description: "Carousel component",
+    type: "registry:component",
+    registryDependencies: ["carousel"],
+    dependencies: [],
+    files: [
+      {
+        path: 'src/components/shadcn-space/carousel/carousel-03.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/carousel/carousel-03.tsx',
+      }
+    ],
+    category: categories["carousel"],
+    isNew: true
+  },
+  {
+    name: "carousel-04",
+    title: "Carousel-04 - Cards",
+    description: "Carousel component",
+    type: "registry:component",
+    registryDependencies: ["carousel", "card"],
+    dependencies: [],
+    files: [
+      {
+        path: 'src/components/shadcn-space/carousel/carousel-04.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/carousel/carousel-04.tsx',
+      }
+    ],
+    category: categories["carousel"],
+    isNew: true
+  },
+  {
+    name: "alert-01",
+    title: "Alert-01 - Alert with Password Detail",
+    description: "Alert component",
+    type: "registry:component",
+    registryDependencies: ["alert"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/alert/alert-01.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/alert/alert-01.tsx',
+      }
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+  {
+    name: "alert-02",
+    title: "Alert-02 - Alert with User Detail",
+    description: "Alert component",
+    type: "registry:component",
+    registryDependencies: ["alert","avatar"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/alert/alert-02.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/alert/alert-02.tsx',
+      }
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+   {
+    name: "alert-03",
+    title: "Alert-03 - Social Alert",
+    description: "Alert component",
+    type: "registry:component",
+    registryDependencies: ["alert","button"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/alert/alert-03.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/alert/alert-03.tsx',
+      },
+      {
+        path: 'src/components/ui/confetti.tsx',
+        type: "registry:component",
+        target: 'components/ui/confetti.tsx'
+      }
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+  {
+    name: "alert-04",
+    title: "Alert-04 - Indicator Destructive Alert",
+    description: "Alert component",
+    type: "registry:component",
+    registryDependencies: ["alert"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/alert/alert-04.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/alert/alert-04.tsx',
+      }
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+  {
+    name: "alert-05",
+    title: "Alert-05 - Dark Alert",
+    description: "Alert component",
+    type: "registry:component",
+    registryDependencies: ["alert","button"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/alert/alert-05.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/alert/alert-05.tsx',
+      }
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+  {
+    name: "alert-06",
+    title: "Alert-06 - Gradient Alert",
+    description: "Alert component",
+    type: "registry:component",
+    registryDependencies: ["alert","button"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/alert/alert-06.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/alert/alert-06.tsx',
+      }
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+  {
+    name: "breadcrumb-01",
+    title: "breadcrumb-01 - Breadcrumb",
+    description: "Breadcrumb component",
+    type: "registry:component",
+    registryDependencies: ["breadcrumb"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/breadcrumb/breadcrumb-01.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/breadcrumb/breadcrumb-01.tsx',
+      }
+    ],
+    category: categories["breadcrumb"],
+    isNew: true,
+  },
+  {
+    name: "breadcrumb-02",
+    title: "breadcrumb-02 - Breadcrumb",
+    description: "Breadcrumb component",
+    type: "registry:component",
+    registryDependencies: ["breadcrumb"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/breadcrumb/breadcrumb-02.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/breadcrumb/breadcrumb-02.tsx',
+      }
+    ],
+    category: categories["breadcrumb"],
+    isNew: true,
+  },
+  {
+    name: "breadcrumb-03",
+    title: "breadcrumb-03 - Breadcrumb",
+    description: "Breadcrumb component",
+    type: "registry:component",
+    registryDependencies: ["breadcrumb"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/breadcrumb/breadcrumb-03.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/breadcrumb/breadcrumb-03.tsx',
+      }
+    ],
+    category: categories["breadcrumb"],
+    isNew: true,
+  },
+  {
+    name: "breadcrumb-04",
+    title: "breadcrumb-04 - Breadcrumb",
+    description: "Breadcrumb component",
+    type: "registry:component",
+    registryDependencies: ["breadcrumb","dropdown-menu"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/breadcrumb/breadcrumb-04.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/breadcrumb/breadcrumb-04.tsx',
+      }
+    ],
+    category: categories["breadcrumb"],
+    isNew: true,
+  },
+  {
+    name: "breadcrumb-05",
+    title: "breadcrumb-05 - Breadcrumb",
+    description: "Breadcrumb component",
+    type: "registry:component",
+    registryDependencies: ["breadcrumb","badge","dropdown-menu"],
+    dependencies: ["lucide-react"],
+     files: [
+      {
+        path: 'src/components/shadcn-space/breadcrumb/breadcrumb-05.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/breadcrumb/breadcrumb-05.tsx',
+      }
+    ],
+    category: categories["breadcrumb"],
+    isNew: true,
+  },
+  {
+    name: "breadcrumb-06",
+    title: "breadcrumb-06 - Breadcrumb",
+    description: "Breadcrumb component",
+    type: "registry:component",
+    registryDependencies: ["breadcrumb","dropdown-menu"],
+    dependencies: [],
+     files: [
+      {
+        path: 'src/components/shadcn-space/breadcrumb/breadcrumb-06.tsx',
+        type: "registry:component",
+        target: 'components/shadcn-space/breadcrumb/breadcrumb-06.tsx',
+      }
+    ],
+    category: categories["breadcrumb"],
+    isNew: true,
   },
 ];

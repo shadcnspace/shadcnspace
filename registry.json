@@ -3835,6 +3835,444 @@
           "target": "components/shadcn-space/file-upload/file-upload-01.tsx"
         }
       ]
+    },
+    {
+      "name": "combobox-01",
+      "title": "Combobox-01 - With Icons",
+      "description": "Combobox component with icons",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "combobox",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/combobox/combobox-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/combobox/combobox-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox-02",
+      "title": "Combobox-02 - With Custom Check Icon",
+      "description": "Combobox component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "combobox",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/combobox/combobox-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/combobox/combobox-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox-03",
+      "title": "Combobox-03 - With Add Button",
+      "description": "Combobox component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "combobox",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/combobox/combobox-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/combobox/combobox-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox-04",
+      "title": "Combobox-04 - Timezone",
+      "description": "Combobox component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "combobox",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/combobox/combobox-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/combobox/combobox-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox-05",
+      "title": "Combobox-05 - Users",
+      "description": "Combobox component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "combobox",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/combobox/combobox-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/combobox/combobox-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox-06",
+      "title": "Combobox-06 - With Flag",
+      "description": "Combobox component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "combobox",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/combobox/combobox-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/combobox/combobox-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel-01",
+      "title": "Carousel-01 - Custom Dots",
+      "description": "Carousel component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "carousel"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/carousel/carousel-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/carousel/carousel-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel-02",
+      "title": "Carousel-02 - Custom Navigation",
+      "description": "Carousel component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "carousel",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/carousel/carousel-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/carousel/carousel-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel-03",
+      "title": "Carousel-03 - Index",
+      "description": "Carousel component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "carousel"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/carousel/carousel-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/carousel/carousel-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel-04",
+      "title": "Carousel-04 - Cards",
+      "description": "Carousel component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "carousel",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/carousel/carousel-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/carousel/carousel-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-01",
+      "title": "Alert-01 - Alert with Password Detail",
+      "description": "Alert component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/alert/alert-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/alert/alert-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-02",
+      "title": "Alert-02 - Alert with User Detail",
+      "description": "Alert component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/alert/alert-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/alert/alert-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-03",
+      "title": "Alert-03 - Social Alert",
+      "description": "Alert component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/alert/alert-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/alert/alert-03.tsx"
+        },
+        {
+          "path": "src/components/ui/confetti.tsx",
+          "type": "registry:component",
+          "target": "components/ui/confetti.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-04",
+      "title": "Alert-04 - Indicator Destructive Alert",
+      "description": "Alert component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/alert/alert-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/alert/alert-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-05",
+      "title": "Alert-05 - Dark Alert",
+      "description": "Alert component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/alert/alert-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/alert/alert-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-06",
+      "title": "Alert-06 - Gradient Alert",
+      "description": "Alert component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "alert",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/alert/alert-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/alert/alert-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-01",
+      "title": "breadcrumb-01 - Breadcrumb",
+      "description": "Breadcrumb component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/breadcrumb/breadcrumb-01.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/breadcrumb/breadcrumb-01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-02",
+      "title": "breadcrumb-02 - Breadcrumb",
+      "description": "Breadcrumb component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/breadcrumb/breadcrumb-02.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/breadcrumb/breadcrumb-02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-03",
+      "title": "breadcrumb-03 - Breadcrumb",
+      "description": "Breadcrumb component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/breadcrumb/breadcrumb-03.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/breadcrumb/breadcrumb-03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-04",
+      "title": "breadcrumb-04 - Breadcrumb",
+      "description": "Breadcrumb component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "breadcrumb",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/breadcrumb/breadcrumb-04.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/breadcrumb/breadcrumb-04.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-05",
+      "title": "breadcrumb-05 - Breadcrumb",
+      "description": "Breadcrumb component",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "breadcrumb",
+        "badge",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/breadcrumb/breadcrumb-05.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/breadcrumb/breadcrumb-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-06",
+      "title": "breadcrumb-06 - Breadcrumb",
+      "description": "Breadcrumb component",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "breadcrumb",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/breadcrumb/breadcrumb-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/breadcrumb/breadcrumb-06.tsx"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-04",
+  "type": "registry:component",
+  "title": "breadcrumb-04 - Breadcrumb",
+  "description": "Breadcrumb component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "breadcrumb",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/breadcrumb/breadcrumb-04.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { ChevronsRightIcon, FolderIcon, FolderOpenIcon, HomeIcon } from 'lucide-react'\r\nimport { Breadcrumb,BreadcrumbItem,BreadcrumbLink,BreadcrumbList,BreadcrumbPage,BreadcrumbSeparator } from '@/components/ui/breadcrumb'\r\nimport { DropdownMenu,DropdownMenuContent,DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'\r\n\r\nconst BreadcrumbWithIconDemo = () => {\r\n  const [open, setOpen] = useState(false)\r\n\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink href='#'>\r\n            <HomeIcon className='size-4' />\r\n            <span className='sr-only'>Home</span>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator>\r\n          <ChevronsRightIcon />\r\n        </BreadcrumbSeparator>\r\n        <BreadcrumbItem className='flex items-center gap-2'>\r\n          <DropdownMenu open={open} onOpenChange={setOpen}>\r\n            <DropdownMenuTrigger className='flex cursor-pointer items-center gap-1'>\r\n              {open ? <FolderOpenIcon className='size-4 text-amber-300' /> : <FolderIcon className='size-4' />}\r\n              <span className='sr-only'>{open ? 'Open' : 'Close'}</span>\r\n            </DropdownMenuTrigger>\r\n            <DropdownMenuContent align='start'>\r\n              <DropdownMenuItem>Investor</DropdownMenuItem>\r\n              <DropdownMenuItem>Developer</DropdownMenuItem>\r\n              <DropdownMenuItem>Marketers</DropdownMenuItem>\r\n            </DropdownMenuContent>\r\n          </DropdownMenu>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator>\r\n          <ChevronsRightIcon />\r\n        </BreadcrumbSeparator>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage>Account</BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n\r\nexport default BreadcrumbWithIconDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/breadcrumb/breadcrumb-04.tsx"
+    }
+  ]
+}

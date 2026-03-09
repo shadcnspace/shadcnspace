@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-06",
+  "type": "registry:component",
+  "title": "Alert-06 - Gradient Alert",
+  "description": "Alert component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-06.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { CircleAlertIcon, XIcon } from 'lucide-react'\r\nimport { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'\r\nimport { Button } from '@/components/ui/button'\r\n\r\nconst AlertGradientDemo = () => {\r\n    const [isActive, setIsActive] = useState(true)\r\n\r\n    if (!isActive) return null\r\n\r\n    return (\r\n        <div className='flex flex-col gap-2'>\r\n            <Alert className='border-none shadow-xs from-sky-300/10 text-accent-foreground flex gap-2 items-center justify-between bg-linear-to-b to-transparent to-80%'>\r\n                <div className='p-2 shadow-sm rounded-full bg-sky-200/20 shrink-0'>\r\n                    <CircleAlertIcon size={16} className='text-sky-400' />\r\n                </div>\r\n                <div className='flex flex-1 gap-2 items-center overflow-hidden'>\r\n                    <div className='flex flex-1 gap-2 items-center overflow-hidden'>\r\n                        <AlertTitle className=\"shrink-0 mb-0\">Alert notice</AlertTitle>\r\n                        <AlertDescription className='text-accent-foreground/60'>\r\n                           {\"Alert notice communicate system status and provide feedback to users about their actions and options.\".slice(0, 25)}...\r\n                        </AlertDescription>\r\n                    </div>\r\n                </div>\r\n                <Button className=\"w-fit bg-sky-400 hover:bg-sky-400/80 text-white text-xs cursor-pointer shrink-0\">Action</Button>\r\n            </Alert>\r\n            \r\n            <Alert className='border-none shadow-xs from-sky-300/10 text-accent-foreground flex gap-2 items-start justify-between bg-linear-to-b to-transparent to-80%'>\r\n                <div className='p-2 shadow-sm rounded-full bg-sky-200/20'>\r\n                    <CircleAlertIcon size={16} className='text-sky-400' />\r\n                </div>\r\n                <div className='flex flex-col gap-2'>\r\n                    <div className='flex flex-1 flex-col gap-0.5'>\r\n                        <AlertTitle>Alert notice</AlertTitle>\r\n                        <AlertDescription className='text-accent-foreground/60'>\r\n                            Alert notice communicate system status and provide feedback to users about their actions and options.\r\n                        </AlertDescription>\r\n                    </div>\r\n                    <Button className=\"w-fit bg-sky-400 hover:bg-sky-400/80 text-white text-xs cursor-pointer\">Action</Button>\r\n                </div>\r\n                <button className='cursor-pointer' onClick={() => setIsActive(false)}>\r\n                    <XIcon className='size-4' />\r\n                    <span className='sr-only'>Close</span>\r\n                </button>\r\n            </Alert>\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default AlertGradientDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-06.tsx"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-06",
+  "type": "registry:component",
+  "title": "Combobox-06 - With Flag",
+  "description": "Combobox component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "combobox",
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/combobox/combobox-06.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\n\r\nimport { CheckIcon, ChevronDownIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Command,\r\n  CommandEmpty,\r\n  CommandInput,\r\n  CommandItem,\r\n  CommandList,\r\n} from \"@/components/ui/command\";\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/components/ui/popover\";\r\n\r\nconst countries = [\r\n  {\r\n    value: \"1\",\r\n    label: \"United States\",\r\n    flag: \"https://images.shadcnspace.com/assets/flags/flag-us.svg\",\r\n  },\r\n  {\r\n    value: \"2\",\r\n    label: \"India\",\r\n    flag: \"https://images.shadcnspace.com/assets/flags/flag-india.svg\",\r\n  },\r\n  {\r\n    value: \"3\",\r\n    label: \"France\",\r\n    flag: \"https://images.shadcnspace.com/assets/flags/flag-france.svg\",\r\n  },\r\n  {\r\n    value: \"4\",\r\n    label: \"China\",\r\n    flag: \"https://images.shadcnspace.com/assets/flags/flag-china.svg\",\r\n  },\r\n  {\r\n    value: \"5\",\r\n    label: \"Australia\",\r\n    flag: \"https://images.shadcnspace.com/assets/flags/flag-australia.svg\",\r\n  },\r\n  {\r\n    value: \"6\",\r\n    label: \"Brazil\",\r\n    flag: \"https://images.shadcnspace.com/assets/flags/flag-brazil.svg\",\r\n  },\r\n];\r\n\r\nconst ComboboxCountryFlagDemo = () => {\r\n  const id = useId();\r\n  const [open, setOpen] = useState<boolean>(false);\r\n  const [value, setValue] = useState<string>(\"\");\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs\">\r\n      <Popover open={open} onOpenChange={setOpen}>\r\n        <PopoverTrigger\r\n          render={\r\n            <Button\r\n              id={id}\r\n              variant=\"outline\"\r\n              role=\"combobox\"\r\n              aria-expanded={open}\r\n              className=\"bg-background hover:bg-background border-input w-full justify-between px-3 font-normal outline-offset-0 outline-none focus-visible:outline-[3px]\"\r\n            >\r\n              {value ? (\r\n                <span className=\"flex min-w-0 items-center gap-2\">\r\n                  <img\r\n                    src={countries.find((item) => item.label === value)?.flag}\r\n                    alt={value}\r\n                    className=\"h-4 w-5\"\r\n                  />\r\n                  <span className=\"truncate\">{value}</span>\r\n                </span>\r\n              ) : (\r\n                <span className=\"text-muted-foreground\">Select country</span>\r\n              )}\r\n              <ChevronDownIcon\r\n                className=\"text-muted-foreground/80 shrink-0\"\r\n                aria-hidden=\"true\"\r\n              />\r\n            </Button>\r\n          }\r\n        />\r\n        <PopoverContent className=\"border-input w-full p-0\" align=\"start\">\r\n          <Command>\r\n            <CommandInput placeholder=\"Search country...\" />\r\n            <CommandList>\r\n              <CommandEmpty>No country found.</CommandEmpty>\r\n              {countries.map((country) => (\r\n                <CommandItem\r\n                  key={country.value}\r\n                  value={country.label}\r\n                  onSelect={(currentValue) => {\r\n                    setValue(currentValue);\r\n                    setOpen(false);\r\n                  }}\r\n                  className=\"[&>svg:last-of-type]:hidden\"\r\n                >\r\n                  <img\r\n                    src={country.flag}\r\n                    alt={`${country.label} flag`}\r\n                    className=\"h-4 w-4 rounded-full\"\r\n                  />\r\n                  {country.label}\r\n                  {value === country.value && (\r\n                    <CheckIcon size={16} className=\"ml-auto\" />\r\n                  )}\r\n                </CommandItem>\r\n              ))}\r\n            </CommandList>\r\n          </Command>\r\n        </PopoverContent>\r\n      </Popover>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ComboboxCountryFlagDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/combobox/combobox-06.tsx"
+    }
+  ]
+}

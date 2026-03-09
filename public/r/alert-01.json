@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-01",
+  "type": "registry:component",
+  "title": "Alert-01 - Alert with Password Detail",
+  "description": "Alert component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-01.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\nimport { AlertCircleIcon } from \"lucide-react\";\r\n\r\nexport default function AlertPassWordDemo() {\r\n  return (\r\n    <Alert variant=\"destructive\">\r\n      <AlertCircleIcon className=\"size-4\" />\r\n      <AlertTitle>Password does not meet requirements:</AlertTitle>\r\n      <AlertDescription>\r\n        <ul className=\"list-inside list-disc text-sm\">\r\n          <li>Minimum 8 characters</li>\r\n          <li className=\"text-teal-400!\">At least one uppercase letter</li>\r\n          <li className=\"text-teal-400!\">At least one lowercase letter</li>\r\n        </ul>\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n}",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-01.tsx"
+    }
+  ]
+}
