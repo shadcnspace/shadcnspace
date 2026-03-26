@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-03",
+  "type": "registry:component",
+  "title": "Accordion-03 - Numbered FAQ",
+  "description": "FAQ accordion with numbered items, background fill on open, and +/- toggle",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/accordion/accordion-03.tsx",
+      "content": "import {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/components/ui/accordion\";\r\nimport { MinusIcon, PlusIcon } from \"lucide-react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst FAQ_DATA = [\r\n  {\r\n    question: \"How do I get started with the component library?\",\r\n    answer:\r\n      \"Getting started is simple — install the package, import the components you need, and drop them into your project. Each component follows shadcn/ui conventions, so it works seamlessly with your existing setup.\",\r\n  },\r\n  {\r\n    question: \"Can I customize the styles to match my brand?\",\r\n    answer:\r\n      \"Absolutely. All components are built with Tailwind CSS and shadcn design tokens, so you can override colors, spacing, and typography through your `globals.css` or by passing a `className` prop directly to any component.\",\r\n  },\r\n  {\r\n    question: \"Are the components accessible by default?\",\r\n    answer:\r\n      \"Yes. Every component is built on top of Radix UI primitives, which handle keyboard navigation, focus management, and ARIA attributes out of the box, ensuring WCAG-compliant accessibility from day one.\",\r\n  },\r\n];\r\n\r\nconst AccordionFaqDemo = () => (\r\n  <div className=\"flex items-center justify-center w-full max-w-lg\">\r\n    <Accordion defaultValue={[\"item-0\"]} className=\"w-full flex flex-col gap-4\">\r\n      {FAQ_DATA.map((faq, index) => (\r\n        <AccordionItem\r\n          key={`item-${index}`}\r\n          value={`item-${index}`}\r\n          className={cn(\r\n            \"border border-border rounded-2xl flex flex-col group/item data-open:bg-accent data-open:border-transparent transition-colors animate-in fade-in slide-in-from-bottom-6 duration-700 fill-mode-both\",\r\n            index === 0 && \"delay-100\",\r\n            index === 1 && \"delay-200\",\r\n            index === 2 && \"delay-300\"\r\n          )}\r\n        >\r\n          <AccordionTrigger className=\"px-4 py-3 items-center text-base font-semibold hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden cursor-pointer\">\r\n            <div className=\"flex gap-6 items-center text-left\">\r\n              <span className=\"text-muted-foreground tabular-nums shrink-0\">\r\n                {String(index + 1).padStart(2, \"0\")}\r\n              </span>\r\n              {faq.question}\r\n            </div>\r\n            <PlusIcon className=\"w-5 h-5 shrink-0 text-muted-foreground group-aria-expanded/accordion-trigger:hidden\" />\r\n            <MinusIcon className=\"w-5 h-5 shrink-0 text-muted-foreground hidden group-aria-expanded/accordion-trigger:inline\" />\r\n          </AccordionTrigger>\r\n          <AccordionContent className=\"px-4 pb-5 ps-16 text-muted-foreground\">\r\n            {faq.answer}\r\n          </AccordionContent>\r\n        </AccordionItem>\r\n      ))}\r\n    </Accordion>\r\n  </div>\r\n);\r\n\r\nexport default AccordionFaqDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/accordion/accordion-03.tsx"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-ticker-05",
+  "type": "registry:component",
+  "title": "Number Ticker-05 - Real-Time Metrics Counter",
+  "description": "A high-fidelity statistics counter for displaying large numbers clearly. Designed for user counts, page views, or total downloads with an 'active' pulse indicator.",
+  "dependencies": [
+    "@number-flow/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/number-ticker/number-ticker-05.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useState } from \"react\";\r\nimport NumberFlow, { type Value } from \"@number-flow/react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ntype NumberTickerProps = {\r\n  value: Value;\r\n  label?: string;\r\n  decimals?: number;\r\n  className?: string;\r\n};\r\n\r\n/**\r\n * NumberTicker 05 - Stats Counter\r\n * High-fidelity statistics tracker.\r\n */\r\nfunction NumberTicker({\r\n  value,\r\n  label,\r\n  decimals = 0,\r\n  className,\r\n}: NumberTickerProps) {\r\n  return (\r\n    <div className={cn(\"inline-flex items-center gap-3\", className)}>\r\n      <span className=\"relative flex h-3 w-3\">\r\n        <span className=\"animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75\"></span>\r\n        <span className=\"relative inline-flex rounded-full h-3 w-3 bg-emerald-500\"></span>\r\n      </span>\r\n      <NumberFlow\r\n        value={value}\r\n        format={{\r\n          notation: \"standard\",\r\n          compactDisplay: \"short\",\r\n          minimumFractionDigits: decimals,\r\n          maximumFractionDigits: decimals,\r\n        }}\r\n        className={className}\r\n      />\r\n      {label && (\r\n        <span className=\"text-muted-foreground text-sm font-medium\">\r\n          {label}\r\n        </span>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n\r\nconst NumberTickerDemo = () => {\r\n  const [val, setVal] = useState(48250);\r\n\r\n  useEffect(() => {\r\n    const interval = setInterval(() => {\r\n      setVal((v) => Number(v) + Math.floor(Math.random() * 50));\r\n    }, 2000);\r\n    return () => clearInterval(interval);\r\n  }, []);\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-center gap-4\">\r\n      <NumberTicker\r\n        value={val}\r\n        label=\"active users\"\r\n        className=\"text-foreground font-medium lg:text-5xl sm:text-4xl text-3xl tabular-nums\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default NumberTickerDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/number-ticker/number-ticker-05.tsx"
+    }
+  ]
+}

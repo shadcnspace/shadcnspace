@@ -496,7 +496,7 @@ export const blocks: RegistryBlock[] = [
     description:
       "A clean team grid with large profile cards, roles, and social icons, ideal for agencies or SaaS companies to introduce key members and strengthen brand authenticity.",
     type: "registry:block",
-    dependencies: ["lucide-react"],
+    dependencies: [],
     registryDependencies: ["badge"],
     iframeHeight: "800px",
     files: [
@@ -805,7 +805,7 @@ export const blocks: RegistryBlock[] = [
     figmaLink: "https://www.figma.com/design/xN0ICHXEd4moz5sfE5no4r/shadcnspace-figma-uikit-free?node-id=2683-5671&t=s6w7yYhqg5U0ajyZ-1",
     description: 'A clean multi column footer with brand summary, sitemap links, legal pages, contact details, and social icons, perfect for agencies to provide clarity, trust, and easy navigation.',
     type: "registry:block",
-    dependencies: ["lucide-react"],
+    dependencies: [],
     registryDependencies: [
       "separator",
     ],

@@ -16,6 +16,7 @@
     "@base-ui/react": "^1.0.0",
     "@faker-js/faker": "^10.2.0",
     "@iconify/react": "^6.0.2",
+    "@number-flow/react": "^0.6.0",
     "@shikijs/transformers": "^1.24.0",
     "@types/canvas-confetti": "^1.9.0",
     "class-variance-authority": "^0.7.0",

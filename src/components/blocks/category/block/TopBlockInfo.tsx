@@ -1,5 +1,10 @@
-import { Icon } from "@iconify/react";
-import Link from "next/link";
+export function isNew(dateString: string): boolean {
+  const inputDate = new Date(dateString);
+  const today = new Date();
+  const diffMs = today.getTime() - inputDate.getTime();
+  const diffDays = diffMs / (1000 * 60 * 60 * 24);
+  return diffDays <= 14;
+}
 
 const TopBlockInfo = ({
   title,
@@ -12,13 +17,6 @@ const TopBlockInfo = ({
   isPro: boolean;
   created_at: string;
 }) => {
-  function isNew(dateString: string): boolean {
-    const inputDate = new Date(dateString);
-    const today = new Date();
-    const diffMs = today.getTime() - inputDate.getTime();
-    const diffDays = diffMs / (1000 * 60 * 60 * 24);
-    return diffDays <= 14;
-  }
 
   return (
     <div className="flex flex-col gap-3 lg:col-span-7">

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-09",
+  "type": "registry:component",
+  "title": "Card-09 - Invite Member Card",
+  "description": "Card component",
+  "dependencies": [],
+  "registryDependencies": [
+    "card",
+    "button",
+    "empty",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/card/card-09.tsx",
+      "content": "import { Avatar, AvatarGroup, AvatarImage } from \"@/components/ui/avatar\"\r\nimport { Button } from \"@/components/ui/button\"\r\nimport { Card, CardContent } from \"@/components/ui/card\"\r\nimport { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from \"@/components/ui/empty\"\r\n\r\nconst InviteMemberCard = () => {\r\n    return (\r\n        <div className=\"max-w-sm mx-auto px-4 w-full\">\r\n            <Card>\r\n                <CardContent>\r\n                    <Empty className=\"h-56 border border-dashed\">\r\n                        <EmptyHeader>\r\n                            <EmptyMedia>\r\n                                <AvatarGroup>\r\n                                    <Avatar size=\"lg\">\r\n                                        <AvatarImage src=\"https://images.shadcnspace.com/assets/profiles/jenny.webp\" alt=\"@shadcn\" />\r\n                                    </Avatar>\r\n                                    <Avatar size=\"lg\">\r\n                                        <AvatarImage src=\"https://images.shadcnspace.com/assets/profiles/albert.webp\" alt=\"@maxleiter\" />\r\n                                    </Avatar>\r\n                                    <Avatar size=\"lg\">\r\n                                        <AvatarImage src=\"https://images.shadcnspace.com/assets/profiles/jessica.webp\" alt=\"@evilrabbit\" />\r\n                                    </Avatar>\r\n                                </AvatarGroup>\r\n                            </EmptyMedia>\r\n                            <EmptyTitle>No Team Members</EmptyTitle>\r\n                            <EmptyDescription>\r\n                                Invite your team to collaborate on this project.\r\n                            </EmptyDescription>\r\n                        </EmptyHeader>\r\n                        <EmptyContent>\r\n                            <Button size=\"sm\" className=\"cursor-pointer hover:bg-primary/80\">\r\n                                Invite Members\r\n                            </Button>\r\n                        </EmptyContent>\r\n                    </Empty>\r\n                </CardContent>\r\n            </Card>\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default InviteMemberCard",
+      "type": "registry:component",
+      "target": "components/shadcn-space/card/card-09.tsx"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-ticker-03",
+  "type": "registry:component",
+  "title": "Number Ticker-03 - Countdown Counter",
+  "description": "An animated time and chronometer counter formatted as HH:MM:SS. Perfect for session timers, countdowns, workout durations, or any time-tracking feature.",
+  "dependencies": [
+    "@number-flow/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/number-ticker/number-ticker-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useState } from \"react\";\r\nimport NumberFlow, { type Value, NumberFlowGroup } from \"@number-flow/react\";\r\n\r\ntype NumberTickerProps = {\r\n  seconds: number;\r\n  className?: string;\r\n  showHours?: boolean;\r\n};\r\n\r\n/**\r\n * NumberTicker 03 - Time Chronometer\r\n * Specialized HH:MM:SS timer with per-segment rolling.\r\n */\r\nfunction NumberTicker({\r\n  seconds,\r\n  className,\r\n  showHours = true,\r\n}: NumberTickerProps) {\r\n  const h = Math.floor(seconds / 3600);\r\n  const m = Math.floor((seconds % 3600) / 60);\r\n  const s = seconds % 60;\r\n\r\n  return (\r\n    <div className={`${className} inline-flex items-center gap-2`}>\r\n      <NumberFlowGroup>\r\n        {showHours && (\r\n          <>\r\n            <NumberFlow value={h} format={{ minimumIntegerDigits: 2 }} />\r\n            <span className=\"\">:</span>\r\n          </>\r\n        )}\r\n        <NumberFlow value={m} format={{ minimumIntegerDigits: 2 }} />\r\n        <span className=\"\">:</span>\r\n        <NumberFlow value={s} format={{ minimumIntegerDigits: 2 }} />\r\n      </NumberFlowGroup>\r\n    </div>\r\n  );\r\n}\r\n\r\nconst NumberTickerDemo = () => {\r\n  const [sec, setSec] = useState(3665); // 01:01:05\r\n\r\n  useEffect(() => {\r\n    const timer = setInterval(() => {\r\n      setSec((prev) => (prev > 0 ? prev - 1 : 0));\r\n    }, 1000);\r\n    return () => clearInterval(timer);\r\n  }, []);\r\n\r\n  return (\r\n    <div>\r\n      <NumberTicker\r\n        seconds={sec}\r\n        className=\"text-foreground font-medium lg:text-5xl sm:text-4xl text-3xl tabular-nums tracking-tighter\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default NumberTickerDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/number-ticker/number-ticker-03.tsx"
+    }
+  ]
+}

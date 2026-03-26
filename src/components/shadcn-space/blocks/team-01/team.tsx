@@ -1,7 +1,20 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
-import { Globe, Linkedin } from "lucide-react";
+import { Globe } from "lucide-react";
 import { motion } from "motion/react";
+
+const LinkedinIcon = ({ size = 16 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip-linkedin-team01)">
+      <path d="M13.633 13.633h-2.37V9.92c0-.885-.017-2.025-1.234-2.025-1.235 0-1.424.965-1.424 1.96v3.778h-2.37V5.998H8.51v1.043h.031a2.5 2.5 0 0 1 2.246-1.233c2.403 0 2.846 1.58 2.846 3.637zM3.56 4.954a1.376 1.376 0 1 1 0-2.751 1.376 1.376 0 0 1 0 2.751m1.185 8.679H2.372V5.998h2.373zM14.815.001H1.18A1.17 1.17 0 0 0 0 1.154v13.691A1.17 1.17 0 0 0 1.18 16h13.635A1.17 1.17 0 0 0 16 14.845V1.153A1.17 1.17 0 0 0 14.815 0" fill="currentColor" />
+    </g>
+    <defs>
+      <clipPath id="clip-linkedin-team01">
+        <rect width="16" height="16" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
 
 type team = {
   name: string;
@@ -55,8 +68,8 @@ const teamData: team = [
 const Team = () => {
   return (
     <section>
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-16 py-8 lg:py-12 flex flex-col items-center justify-center gap-8 md:gap-16">
+      <div className="lg:py-20 sm:py-16 py-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-16 flex flex-col items-center justify-center gap-8 md:gap-16">
           <motion.div
               initial={{ y: -40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -116,7 +129,7 @@ const Team = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <Linkedin size={16} />
+                        <LinkedinIcon size={16} />
                       </a>
                     </div>
                   </div>

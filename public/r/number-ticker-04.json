@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-ticker-04",
+  "type": "registry:component",
+  "title": "Number Ticker-04 - Growth Metrics Counter",
+  "description": "A percentage-based growth counter that indicates trends with color shifting and icons. Best for stock trends, quarterly growth, or KPI improvements.",
+  "dependencies": [
+    "@number-flow/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/number-ticker/number-ticker-04.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useState } from \"react\";\r\nimport NumberFlow, { type Value } from \"@number-flow/react\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { ArrowUpRight, ArrowDownRight } from \"lucide-react\";\r\n\r\ntype NumberTickerProps = {\r\n  value: Value;\r\n  decimals?: number;\r\n  className?: string;\r\n  showSign?: boolean;\r\n};\r\n\r\n/**\r\n * NumberTicker 04 - Growth Indicator\r\n * Specialized in color-shifting and dynamic icons based on value.\r\n */\r\nfunction NumberTicker({\r\n  value,\r\n  decimals = 1,\r\n  className,\r\n  showSign = true,\r\n}: NumberTickerProps) {\r\n  const isPositive = Number(value) >= 0;\r\n\r\n  return (\r\n    <div\r\n      className={cn(\r\n        \"inline-flex items-center gap-1 transition-colors duration-500\",\r\n        isPositive ? \"text-emerald-500\" : \"text-rose-500\",\r\n        className\r\n      )}\r\n    >\r\n      {isPositive ? (\r\n        <ArrowUpRight className=\"w-[1em] h-[1em]\" />\r\n      ) : (\r\n        <ArrowDownRight className=\"w-[1em] h-[1em]\" />\r\n      )}\r\n      <NumberFlow\r\n        value={value}\r\n        format={{\r\n          style: \"percent\",\r\n          signDisplay: showSign ? \"always\" : \"auto\",\r\n          minimumFractionDigits: decimals,\r\n          maximumFractionDigits: decimals,\r\n        }}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n\r\nconst NumberTickerDemo = () => {\r\n  const [val, setVal] = useState(0.184); // +18.4%\r\n\r\n  useEffect(() => {\r\n    const interval = setInterval(() => {\r\n      setVal((prev) => (prev > 0 ? -0.057 : 0.184));\r\n    }, 4000);\r\n    return () => clearInterval(interval);\r\n  }, []);\r\n\r\n  return (\r\n    <div className=\"flex items-center gap-2\">\r\n      <NumberTicker\r\n        value={val}\r\n        className=\"font-medium lg:text-5xl sm:text-4xl text-3xl \"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default NumberTickerDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/number-ticker/number-ticker-04.tsx"
+    }
+  ]
+}

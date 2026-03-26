@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-12",
+  "type": "registry:component",
+  "title": "Card-12 - Weekly Card",
+  "description": "Card component",
+  "dependencies": [],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/card/card-12.tsx",
+      "content": "\"use client\"\r\nimport { Card, CardHeader, CardTitle, CardDescription, CardContent } from \"@/components/ui/card\"\r\n\r\nconst data = [\r\n  { day: \"M\", value: 84 },\r\n  { day: \"T\", value: 52 },\r\n  { day: \"W\", value: 73 },\r\n  { day: \"T\", value: 66 },\r\n  { day: \"F\", value: 91 },\r\n  { day: \"S\", value: 48 },\r\n  { day: \"S\", value: 61 },\r\n]\r\n\r\nconst WeeklyCard = () => {\r\n    return (\r\n        <div className=\"max-w-sm mx-auto px-4 w-full\">\r\n            <Card className=\"w-full max-w-md\">\r\n                <CardHeader>\r\n                    <CardTitle>Weekly Fitness Summary</CardTitle>\r\n                    <CardDescription>\r\n                        Calories and workout load by day\r\n                    </CardDescription>\r\n                </CardHeader>\r\n\r\n                <CardContent>\r\n                    <div className=\"grid grid-cols-7 gap-1.5\">\r\n                        {data.map((item, index) => (\r\n                            <div\r\n                                key={index}\r\n                                className=\"rounded-md p-1.5 text-center ring-1 ring-border\"\r\n                            >\r\n                                <div className=\"text-sm text-muted-foreground\">\r\n                                    {item.day}\r\n                                </div>\r\n\r\n                                <div className=\"relative mt-1 h-16 overflow-hidden rounded-sm bg-muted\">\r\n                                    <div\r\n                                        className=\"absolute inset-x-0 bottom-0 rounded-sm bg-chart-3\"\r\n                                        style={{ height: `${item.value}%` }}\r\n                                    />\r\n                                </div>\r\n                            </div>\r\n                        ))}\r\n                    </div>\r\n                </CardContent>\r\n            </Card>\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default WeeklyCard",
+      "type": "registry:component",
+      "target": "components/shadcn-space/card/card-12.tsx"
+    }
+  ]
+}
