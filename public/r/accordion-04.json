@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-04",
+  "type": "registry:component",
+  "title": "Accordion-04 - Card",
+  "description": "Accordion wrapped in a rounded card with left-aligned +/- icons and border dividers",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/accordion/accordion-04.tsx",
+      "content": "import {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/components/ui/accordion\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { MinusIcon, PlusIcon } from \"lucide-react\";\r\n\r\nconst items = [\r\n  {\r\n    question: \"How many team members can I add?\",\r\n    answer:\r\n      \"There is no hard limit on team members. Each plan has different seat allocations, with options to add more as your team grows.\",\r\n  },\r\n  {\r\n    question: \"Can teams work together in real time?\",\r\n    answer:\r\n      \"Yes — our platform supports real-time collaboration with live updates, shared workspaces, and instant notifications.\",\r\n  },\r\n  {\r\n    question: \"Do you support role-based permissions?\",\r\n    answer:\r\n      \"Yes — you can assign different roles and permission levels to team members to control access across your workspace.\",\r\n  },\r\n];\r\n\r\nconst AccordionCardDemo = () => (\r\n  <div className=\"flex items-center justify-center w-full max-w-lg\">\r\n    <div className=\"bg-background border border-border rounded-3xl w-full\">\r\n      <Accordion defaultValue={[\"item-0\"]} className=\"w-full flex flex-col\">\r\n        {items.map((item, index) => (\r\n          <AccordionItem\r\n            key={`item-${index}`}\r\n            value={`item-${index}`}\r\n            className={cn(\r\n              \"flex flex-col group/item transition-colors border-b border-border last:border-b-0 animate-in fade-in slide-in-from-bottom-6 duration-700 fill-mode-both\",\r\n              index === 0 && \"delay-100\",\r\n              index === 1 && \"delay-200\",\r\n              index === 2 && \"delay-300\",\r\n              index === 3 && \"delay-400\"\r\n            )}\r\n          >\r\n            <AccordionTrigger className=\"px-4 py-3 hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden cursor-pointer gap-6 items-start\">\r\n              <span className=\"shrink-0 mt-0.5\">\r\n                <PlusIcon className=\"w-5 h-5 group-aria-expanded/accordion-trigger:hidden\" />\r\n                <MinusIcon className=\"w-5 h-5 hidden group-aria-expanded/accordion-trigger:inline\" />\r\n              </span>\r\n              <span className=\"flex-1 text-base font-semibold text-foreground text-left\">\r\n                {item.question}\r\n              </span>\r\n            </AccordionTrigger>\r\n            <AccordionContent className=\"ps-16 px-4 pb-5 text-muted-foreground\">\r\n              {item.answer}\r\n            </AccordionContent>\r\n          </AccordionItem>\r\n        ))}\r\n      </Accordion>\r\n    </div>\r\n  </div>\r\n);\r\n\r\nexport default AccordionCardDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/accordion/accordion-04.tsx"
+    }
+  ]
+}

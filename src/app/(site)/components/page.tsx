@@ -5,39 +5,76 @@ import { components } from "@/config/registry/components";
 import { componentsMap } from "@/config/registry/components/sidebar-data";
 
 export default function Page() {
-    return (
-        <>
-            <CategoryBlockHeader
-                title={<>Shadcn UI Components</>}
-                description={<>Speed up your build process with production-ready, fully customizable Shadcn UI <span className="font-semibold">components</span>, <span className="font-semibold">blocks</span>, <span className="font-semibold">kits</span> and <span className="font-semibold">templates</span>.</>}
-            />
-            <section className="py-12 sm:py-14 lg:py-16 border-t border-border bg-muted dark:bg-muted/20" >
-                <div className="container">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {Object.values(componentsMap).map((component) => {
-                            const componentCount = components.filter(
-                        (comp) => comp.category.name === component.blockName,
-                        ).length;
 
-                        const blockCount =
-                        component.blockName && (categorizedBlocks as any)[component.blockName]
-                            ? (categorizedBlocks as any)[component.blockName].length
-                            : 0;
+    function getNewBlocksCount(blocks: any) {
+    const now = new Date();
+    return blocks.filter((block: any) => {
+      const createdDate = new Date(block.created_at);
+      const diffMs = now.getTime() - createdDate.getTime();
+      const diffDays = diffMs / (1000 * 60 * 60 * 24);
+      return diffDays <= 14;
+    }).length;
+  }
 
-                        const count = componentCount || blockCount;
-                            return (
-                                <ComponentCard
-                                    key={component.title}
-                                    title={component.title}
-                                    href={component.url}
-                                    image={component.image}
-                                    count={count}
-                                />
-                            )
-                        })}
-                    </div>
-                </div>
-            </section>
-        </>
-    );
+  return (
+    <>
+      <CategoryBlockHeader
+        title={<>Shadcn UI Components</>}
+        description={
+          <>
+            Speed up your build process with production-ready, fully
+            customizable Shadcn UI{" "}
+            <span className="font-semibold">components</span>,{" "}
+            <span className="font-semibold">blocks</span>,{" "}
+            <span className="font-semibold">kits</span> and{" "}
+            <span className="font-semibold">templates</span>.
+          </>
+        }
+      />
+      <section className="py-12 sm:py-14 lg:py-16 border-t border-border bg-muted dark:bg-muted/20">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Object.values(componentsMap).map((component) => {
+              const componentCount = components.filter(
+                (comp) => comp.category.name === component.blockName,
+              ).length;
+
+              const newComponentsCount = components.filter(
+                (comp) =>
+                  comp.category.name === component.blockName &&
+                  (comp as any).isNew,
+              ).length;
+
+              const blockCount =
+                component.blockName &&
+                (categorizedBlocks as any)[component.blockName]
+                  ? (categorizedBlocks as any)[component.blockName].length
+                  : 0;
+
+              const newBlocksCount =
+                component.blockName &&
+                (categorizedBlocks as any)[component.blockName]
+                  ? getNewBlocksCount(
+                      (categorizedBlocks as any)[component.blockName],
+                    )
+                  : 0;
+
+              const count = componentCount || blockCount;
+              const newCount = newComponentsCount || newBlocksCount;
+              return (
+                <ComponentCard
+                  key={component.title}
+                  title={component.title}
+                  href={component.url}
+                  image={component.image}
+                  count={count}
+                  newCount={newCount}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }

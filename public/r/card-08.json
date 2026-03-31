@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-08",
+  "type": "registry:component",
+  "title": "Card-08 - Invite Card",
+  "description": "Card component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "button",
+    "input",
+    "select",
+    "separator",
+    "label",
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/card/card-08.tsx",
+      "content": "import { Button } from \"@/components/ui/button\"\r\nimport { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from \"@/components/ui/card\"\r\nimport { Input } from \"@/components/ui/input\"\r\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\r\nimport { Separator } from \"@/components/ui/separator\"\r\nimport { Label } from \"@/components/ui/label\"\r\nimport { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from \"@/components/ui/input-group\"\r\nimport { Plus, Copy } from \"lucide-react\"\r\n\r\nconst InviteCard = () => {\r\n    return (\r\n        <div className=\"max-w-sm mx-auto px-4 w-full\">\r\n            <Card className=\"flex flex-col\">\r\n                <CardHeader className=\"grid auto-rows-min items-start gap-1\">\r\n                    <CardTitle>Invite Team</CardTitle>\r\n                    <CardDescription>Add members to your workspace</CardDescription>\r\n                </CardHeader>\r\n                <CardContent className=\"flex flex-col gap-4\">\r\n                    <div className=\"flex flex-col gap-3\">\r\n                        <div className=\"flex items-center gap-2\">\r\n                            <Input\r\n                                className=\"flex-1\"\r\n                                defaultValue=\"shadcnspace@example.com\"\r\n                                placeholder=\"Email address\"\r\n                            />\r\n                            <Select defaultValue=\"admin\">\r\n                                <SelectTrigger className=\"w-24\">\r\n                                    <SelectValue />\r\n                                </SelectTrigger>\r\n                                <SelectContent>\r\n                                    <SelectItem className=\"cursor-pointer\" value=\"admin\">Admin</SelectItem>\r\n                                    <SelectItem className=\"cursor-pointer\" value=\"editor\">Editor</SelectItem>\r\n                                    <SelectItem className=\"cursor-pointer\" value=\"viewer\">Viewer</SelectItem>\r\n                                </SelectContent>\r\n                            </Select>\r\n                        </div>\r\n                        <div className=\"flex items-center gap-2\">\r\n                            <Input\r\n                                className=\"flex-1\"\r\n                                defaultValue=\"ss@example.com\"\r\n                                placeholder=\"Email address\"\r\n                            />\r\n                            <Select defaultValue=\"editor\">\r\n                                <SelectTrigger className=\"w-24\">\r\n                                    <SelectValue />\r\n                                </SelectTrigger>\r\n                                <SelectContent>\r\n                                    <SelectItem className=\"cursor-pointer\" value=\"admin\">Admin</SelectItem>\r\n                                    <SelectItem className=\"cursor-pointer\" value=\"editor\">Editor</SelectItem>\r\n                                    <SelectItem className=\"cursor-pointer\" value=\"viewer\">Viewer</SelectItem>\r\n                                </SelectContent>\r\n                            </Select>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <Button variant=\"outline\" className=\"w-full cursor-pointer\">\r\n                        <Plus className=\"size-4\" />\r\n                        Add another\r\n                    </Button>\r\n\r\n                    <Separator />\r\n\r\n                    <div className=\"space-y-2\">\r\n                        <Label htmlFor=\"invite-link\">Or share invite link</Label>\r\n                        <InputGroup>\r\n                            <InputGroupInput\r\n                                id=\"invite-link\"\r\n                                readOnly\r\n                                defaultValue=\"https://app.co/invite/x8f2k\"\r\n                            />\r\n                            <InputGroupAddon align=\"inline-end\">\r\n                                <InputGroupButton size=\"icon-xs\" variant=\"ghost\" aria-label=\"Copy link\">\r\n                                    <Copy className=\"size-4\" />\r\n                                </InputGroupButton>\r\n                            </InputGroupAddon>\r\n                        </InputGroup>\r\n                    </div>\r\n                </CardContent>\r\n                <CardFooter>\r\n                    <Button className=\"w-full cursor-pointer hover:bg-primary/80\">Send Invites</Button>\r\n                </CardFooter>\r\n            </Card>\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default InviteCard",
+      "type": "registry:component",
+      "target": "components/shadcn-space/card/card-08.tsx"
+    }
+  ]
+}

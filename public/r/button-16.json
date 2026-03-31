@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-16",
+  "type": "registry:component",
+  "title": "Button-16 - Ripple Spotlight",
+  "description": "Mouse-tracking ripple spotlight effect button",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-16.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useRef } from \"react\";\r\nimport { Button as ButtonPrimitive } from \"@base-ui/react/button\";\r\nimport { buttonVariants } from \"@/components/ui/button\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { motion, useMotionValue, useSpring } from \"motion/react\";\r\n\r\nconst ButtonDemo = () => {\r\n  const buttonRef = useRef<HTMLButtonElement>(null);\r\n  const mouseX = useMotionValue(0);\r\n  const mouseY = useMotionValue(0);\r\n\r\n  // Smooth springs for the spotlight movement to give it a premium, fluid feel\r\n  const springConfig = { damping: 25, stiffness: 200 };\r\n  const spotlightX = useSpring(mouseX, springConfig);\r\n  const spotlightY = useSpring(mouseY, springConfig);\r\n\r\n  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {\r\n    if (buttonRef.current) {\r\n      const rect = buttonRef.current.getBoundingClientRect();\r\n      mouseX.set(e.clientX - rect.left);\r\n      mouseY.set(e.clientY - rect.top);\r\n    }\r\n  };\r\n\r\n  return (\r\n    <ButtonPrimitive\r\n      ref={buttonRef}\r\n      onMouseMove={handleMouseMove}\r\n      className={cn(\r\n        buttonVariants({ variant: \"outline\" }),\r\n        \"relative overflow-hidden group px-8 py-4 h-auto rounded-full cursor-pointer border border-border/80 transition-all duration-300 hover:border-primary/50\"\r\n      )}\r\n    >\r\n      {/* Interactive Spotlight Glow */}\r\n      <motion.span\r\n        className=\"absolute w-48 h-48 rounded-full bg-primary/10 blur-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500\"\r\n        style={{\r\n          left: spotlightX,\r\n          top: spotlightY,\r\n          x: \"-50%\",\r\n          y: \"-50%\",\r\n        }}\r\n      />\r\n\r\n      {/* Radial Scaling Reveal */}\r\n      <motion.span\r\n        className=\"absolute w-12 h-12 rounded-full bg-primary scale-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-[18] pointer-events-none\"\r\n        style={{\r\n          left: spotlightX,\r\n          top: spotlightY,\r\n          x: \"-50%\",\r\n          y: \"-50%\",\r\n        }}\r\n      />\r\n\r\n      <span className=\"relative z-10 transition-colors duration-500 pointer-events-none group-hover:text-primary-foreground font-semibold tracking-tight\">\r\n        Get Started\r\n      </span>\r\n    </ButtonPrimitive>\r\n  );\r\n};\r\n\r\nexport default ButtonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-16.tsx"
+    }
+  ]
+}

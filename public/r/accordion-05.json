@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-05",
+  "type": "registry:component",
+  "title": "Accordion-05 - Media",
+  "description": "Accordion with icon trigger, description, and an image revealed on open",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/accordion/accordion-05.tsx",
+      "content": "import {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/components/ui/accordion\";\r\nimport { MonitorIcon, PaletteIcon, RocketIcon } from \"lucide-react\";\r\n\r\nconst items = [\r\n  {\r\n    icon: RocketIcon,\r\n    title: \"How do you support early-stage startups?\",\r\n    content:\r\n      \"We guide your team through setup, so you can focus on what matters most — from tooling to workflows, we handle the groundwork.\",\r\n    media:\r\n      \"https://images.shadcnspace.com/assets/services/services-10-img-5.webp\",\r\n  },\r\n  {\r\n    icon: MonitorIcon,\r\n    title: \"What does your web design process look like?\",\r\n    content:\r\n      \"We design and develop high-performing websites focused on user experience, from wireframes to a fully production-ready build.\",\r\n    media:\r\n      \"https://images.shadcnspace.com/assets/services/services-10-img-3.webp\",\r\n  },\r\n  {\r\n    icon: PaletteIcon,\r\n    title: \"Can you help define our brand identity?\",\r\n    content:\r\n      \"We create distinctive visual identities and design systems that make your brand stand out and stay consistent across every touchpoint.\",\r\n    media:\r\n      \"https://images.shadcnspace.com/assets/services/services-10-img-4.webp\",\r\n  },\r\n];\r\n\r\nconst AccordionMediaDemo = () => (\r\n  <div className=\"flex items-center justify-center w-full max-w-lg\">\r\n    <Accordion\r\n      defaultValue={[\"item-0\"]}\r\n      className=\"w-full\"\r\n    >\r\n      {items.map((item, index) => (\r\n        <AccordionItem key={index} value={`item-${index}`}>\r\n          <AccordionTrigger className=\"px-4 py-3 cursor-pointer hover:no-underline items-center\">\r\n            <span className=\"flex items-center gap-4\">\r\n              <item.icon className=\"size-4 shrink-0 text-muted-foreground\" />\r\n              <span>{item.title}</span>\r\n            </span>\r\n          </AccordionTrigger>\r\n          <AccordionContent className=\"space-y-4\">\r\n            <p className=\"text-muted-foreground\">{item.content}</p>\r\n            <img\r\n              src={item.media}\r\n              alt={item.title}\r\n              width={520}\r\n              height={200}\r\n              className=\"w-full h-40 rounded-lg object-cover\"\r\n            />\r\n          </AccordionContent>\r\n        </AccordionItem>\r\n      ))}\r\n    </Accordion>\r\n  </div>\r\n);\r\n\r\nexport default AccordionMediaDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/accordion/accordion-05.tsx"
+    }
+  ]
+}

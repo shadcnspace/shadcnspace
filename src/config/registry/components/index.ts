@@ -104,7 +104,78 @@ export const components = [
     ],
     category: categories["accordion"],
   },
-
+  {
+    name: "accordion-03",
+    title: "Accordion-03 - Numbered FAQ",
+    description:
+      "FAQ accordion with numbered items, background fill on open, and +/- toggle",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["accordion"],
+    files: [
+      {
+        path: "src/components/shadcn-space/accordion/accordion-03.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/accordion/accordion-03.tsx",
+      },
+    ],
+    category: categories["accordion"],
+    isNew: true,
+  },
+  {
+    name: "accordion-04",
+    title: "Accordion-04 - Card",
+    description:
+      "Accordion wrapped in a rounded card with left-aligned +/- icons and border dividers",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["accordion"],
+    files: [
+      {
+        path: "src/components/shadcn-space/accordion/accordion-04.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/accordion/accordion-04.tsx",
+      },
+    ],
+    category: categories["accordion"],
+    isNew: true,
+  },
+  {
+    name: "accordion-05",
+    title: "Accordion-05 - Media",
+    description:
+      "Accordion with icon trigger, description, and an image revealed on open",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["accordion"],
+    files: [
+      {
+        path: "src/components/shadcn-space/accordion/accordion-05.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/accordion/accordion-05.tsx",
+      },
+    ],
+    category: categories["accordion"],
+    isNew: true,
+  },
+  {
+    name: "accordion-06",
+    title: "Accordion-06 - Filled Trigger",
+    description:
+      "Accordion with a filled accent background on the trigger header",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: ["accordion"],
+    files: [
+      {
+        path: "src/components/shadcn-space/accordion/accordion-06.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/accordion/accordion-06.tsx",
+      },
+    ],
+    category: categories["accordion"],
+    isNew: true,
+  },
   {
     name: "avatar-01",
     title: "Avatar-01 - Default",
@@ -454,6 +525,23 @@ export const components = [
       },
     ],
     category: categories["button"],
+  },
+  {
+    name: "button-16",
+    title: "Button-16 - Ripple Spotlight",
+    description: "Mouse-tracking ripple spotlight effect button",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "src/components/shadcn-space/button/button-16.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/button/button-16.tsx",
+      },
+    ],
+    category: categories["button"],
+    isNew: true
   },
   {
     name: "button-group-01",
@@ -1999,6 +2087,133 @@ export const components = [
     category: categories["card"],
   },
   {
+    name: "card-07",
+    title: "Card-07 - Audio Frequency Visualizer",
+    description: "Card component",
+    type: "registry:component",
+    registryDependencies: ["card", "button"],
+    dependencies: [],
+    files: [
+      {
+        path: "src/components/shadcn-space/card/card-07.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/card/card-07.tsx",
+      },
+    ],
+    category: categories["card"],
+    isNew: true,
+  },
+  {
+    name: "card-08",
+    title: "Card-08 - Invite Card",
+    description: "Card component",
+    type: "registry:component",
+    registryDependencies: [
+      "card",
+      "button",
+      "input",
+      "select",
+      "separator",
+      "label",
+      "input-group",
+    ],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/card/card-08.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/card/card-08.tsx",
+      },
+    ],
+    category: categories["card"],
+    isNew: true,
+  },
+  {
+    name: "card-09",
+    title: "Card-09 - Invite Member Card",
+    description: "Card component",
+    type: "registry:component",
+    registryDependencies: ["card", "button", "empty", "avatar"],
+    dependencies: [],
+    files: [
+      {
+        path: "src/components/shadcn-space/card/card-09.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/card/card-09.tsx",
+      },
+    ],
+    category: categories["card"],
+    isNew: true,
+  },
+  {
+    name: "card-10",
+    title: "Card-10 - Appointment Card",
+    description: "Card component",
+    type: "registry:component",
+    registryDependencies: ["card", "toggle-group", "alert", "label", "button"],
+    dependencies: [],
+    files: [
+      {
+        path: "src/components/shadcn-space/card/card-10.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/card/card-10.tsx",
+      },
+    ],
+    category: categories["card"],
+    isNew: true,
+  },
+  {
+    name: "card-11",
+    title: "Card-11 - Assign Task Card",
+    description: "Card component",
+    type: "registry:component",
+    registryDependencies: ["card", "combobox", "avatar", "button"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/card/card-11.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/card/card-11.tsx",
+      },
+    ],
+    category: categories["card"],
+    isNew: true,
+  },
+  {
+    name: "card-12",
+    title: "Card-12 - Weekly Card",
+    description: "Card component",
+    type: "registry:component",
+    registryDependencies: ["card"],
+    dependencies: [],
+    files: [
+      {
+        path: "src/components/shadcn-space/card/card-12.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/card/card-12.tsx",
+      },
+    ],
+    category: categories["card"],
+    isNew: true,
+  },
+  {
+    name: "card-13",
+    title: "Card-13 - Contributed Card",
+    description: "Card component",
+    type: "registry:component",
+    registryDependencies: ["card", "badge", "avatar"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/card/card-13.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/card/card-13.tsx",
+      },
+    ],
+    category: categories["card"],
+    isNew: true,
+  },
+  {
     name: "shine-border-01",
     title: "Shine Border-01 - Basic",
     description: "Shine Border component",
@@ -2015,6 +2230,60 @@ export const components = [
     category: categories["shine-border"],
   },
   {
+    name: "shine-border-02",
+    title: "Shine Border-02 - Security Card",
+    description:
+      "A laser scanner shine border with a vertical gradient sweep animation wrapping an identity verification card.",
+    type: "registry:component",
+    registryDependencies: ["card", "button", "badge", "avatar"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/shine-border/shine-border-02.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/shine-border/shine-border-02.tsx",
+      },
+    ],
+    category: categories["shine-border"],
+    isNew: true,
+  },
+  {
+    name: "shine-border-03",
+    title: "Shine Border-03 - Feature Card",
+    description:
+      "An interactive mouse-tracking spotlight shine border that reveals a gradient glow on hover, wrapping a feature highlight card.",
+    type: "registry:component",
+    registryDependencies: ["card", "button", "badge"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/shine-border/shine-border-03.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/shine-border/shine-border-03.tsx",
+      },
+    ],
+    category: categories["shine-border"],
+    isNew: true,
+  },
+  {
+    name: "shine-border-04",
+    title: "Shine Border-04 - Stats Card",
+    description:
+      "A rotating meteor beam shine border with a conic gradient animation wrapping a live business stats dashboard card.",
+    type: "registry:component",
+    registryDependencies: ["card", "button", "badge"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/shine-border/shine-border-04.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/shine-border/shine-border-04.tsx",
+      },
+    ],
+    category: categories["shine-border"],
+    isNew: true,
+  },
+  {
     name: "number-ticker-01",
     title: "Number Ticker-01 - Basic",
     description: "Number Ticker component",
@@ -2029,6 +2298,78 @@ export const components = [
       }
     ],
     category: categories["number-ticker"],
+  },
+  {
+    name: "number-ticker-02",
+    title: "Number Ticker-02 - Currency Counter",
+    description:
+      "A specialized animated counter for currency and financial data. Ideal for showing bank balances, product prices, or real-time transaction values with smooth transitions.",
+    type: "registry:component",
+    registryDependencies: [],
+    dependencies: ["@number-flow/react", "lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/number-ticker/number-ticker-02.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/number-ticker/number-ticker-02.tsx",
+      },
+    ],
+    category: categories["number-ticker"],
+    isNew: true,
+  },
+  {
+    name: "number-ticker-03",
+    title: "Number Ticker-03 - Countdown Counter",
+    description:
+      "An animated time and chronometer counter formatted as HH:MM:SS. Perfect for session timers, countdowns, workout durations, or any time-tracking feature.",
+    type: "registry:component",
+    registryDependencies: [],
+    dependencies: ["@number-flow/react", "lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/number-ticker/number-ticker-03.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/number-ticker/number-ticker-03.tsx",
+      },
+    ],
+    category: categories["number-ticker"],
+    isNew: true,
+  },
+  {
+    name: "number-ticker-04",
+    title: "Number Ticker-04 - Growth Metrics Counter",
+    description:
+      "A percentage-based growth counter that indicates trends with color shifting and icons. Best for stock trends, quarterly growth, or KPI improvements.",
+    type: "registry:component",
+    registryDependencies: [],
+    dependencies: ["@number-flow/react", "lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/number-ticker/number-ticker-04.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/number-ticker/number-ticker-04.tsx",
+      },
+    ],
+    category: categories["number-ticker"],
+    isNew: true,
+  },
+  {
+    name: "number-ticker-05",
+    title: "Number Ticker-05 - Real-Time Metrics Counter",
+    description:
+      "A high-fidelity statistics counter for displaying large numbers clearly. Designed for user counts, page views, or total downloads with an 'active' pulse indicator.",
+    type: "registry:component",
+    registryDependencies: [],
+    dependencies: ["@number-flow/react", "lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/number-ticker/number-ticker-05.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/number-ticker/number-ticker-05.tsx",
+      },
+    ],
+    category: categories["number-ticker"],
+    isNew: true,
   },
   {
     name: "spinning-text-01",

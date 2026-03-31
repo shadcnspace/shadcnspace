@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-11",
+  "type": "registry:component",
+  "title": "Card-11 - Assign Task Card",
+  "description": "Card component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "combobox",
+    "avatar",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/card/card-11.tsx",
+      "content": "\"use client\"\r\nimport { Avatar, AvatarImage } from \"@/components/ui/avatar\"\r\nimport { Button } from \"@/components/ui/button\"\r\nimport { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from \"@/components/ui/card\"\r\nimport { Combobox, ComboboxChip, ComboboxChips, ComboboxChipsInput, ComboboxContent, ComboboxEmpty, ComboboxItem, ComboboxList, ComboboxValue, useComboboxAnchor } from \"@/components/ui/combobox\"\r\nimport { PlusIcon } from \"lucide-react\"\r\n\r\ninterface User {\r\n  value: string;\r\n  label: string;\r\n  avatar: string;\r\n}\r\n\r\nconst users: User[] = [\r\n  {\r\n    value: \"shadcnspace\",\r\n    label: \"shadcnspace\",\r\n    avatar: \"https://images.shadcnspace.com/assets/profiles/user-1.jpg\"\r\n  },\r\n  {\r\n    value: \"sarahlee\",\r\n    label: \"sarahlee\",\r\n    avatar: \"https://images.shadcnspace.com/assets/profiles/user-2.jpg\"\r\n  },\r\n  {\r\n    value: \"danielross\",\r\n    label: \"danielross\",\r\n    avatar: \"https://images.shadcnspace.com/assets/profiles/user-3.jpg\"\r\n  },\r\n  {\r\n    value: \"emilyclark\",\r\n    label: \"emilyclark\",\r\n    avatar: \"https://images.shadcnspace.com/assets/profiles/user-4.jpg\"\r\n  },\r\n  {\r\n    value: \"michaelstone\",\r\n    label: \"michaelstone\",\r\n    avatar: \"https://images.shadcnspace.com/assets/profiles/user-5.jpg\"\r\n  }\r\n]\r\n\r\nconst AssignTaskCard = () => {\r\n  const anchor = useComboboxAnchor()\r\n\r\n  return (\r\n    <div className=\"max-w-sm mx-auto px-4 w-full\">\r\n      <Card size=\"sm\">\r\n        <CardHeader className=\"border-b\">\r\n          <CardTitle>Assign Issue</CardTitle>\r\n          <CardDescription>Select users to assign to this issue.</CardDescription>\r\n          <CardAction>\r\n            <Button variant=\"outline\" size=\"icon-xs\" className=\"cursor-pointer\">\r\n              <PlusIcon />\r\n            </Button>\r\n          </CardAction>\r\n        </CardHeader>\r\n\r\n        <CardContent>\r\n          <Combobox multiple items={users} defaultValue={[users[0]]}>\r\n            <ComboboxChips ref={anchor} className=\"w-full\">\r\n\r\n              <ComboboxValue>\r\n                {(values: User[]) => (\r\n                  <>\r\n                    {values.map((user) => (\r\n                      <ComboboxChip key={user.value}>\r\n                        <Avatar className=\"size-4 mr-1\">\r\n                          <AvatarImage src={user.avatar} />\r\n                        </Avatar>\r\n                        {user.label}\r\n                      </ComboboxChip>\r\n                    ))}\r\n                    <ComboboxChipsInput />\r\n                  </>\r\n                )}\r\n              </ComboboxValue>\r\n\r\n            </ComboboxChips>\r\n\r\n            <ComboboxContent anchor={anchor}>\r\n              <ComboboxEmpty>No users found.</ComboboxEmpty>\r\n\r\n              <ComboboxList>\r\n                {(user: User) => (\r\n                  <ComboboxItem key={user.value} value={user}>\r\n                    <div className=\"flex items-center gap-2\">\r\n                      <Avatar className=\"size-5\">\r\n                        <AvatarImage src={user.avatar} />\r\n                      </Avatar>\r\n                      {user.label}\r\n                    </div>\r\n                  </ComboboxItem>\r\n                )}\r\n              </ComboboxList>\r\n\r\n            </ComboboxContent>\r\n          </Combobox>\r\n        </CardContent>\r\n      </Card>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default AssignTaskCard",
+      "type": "registry:component",
+      "target": "components/shadcn-space/card/card-11.tsx"
+    }
+  ]
+}

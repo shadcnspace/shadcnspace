@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-ticker-02",
+  "type": "registry:component",
+  "title": "Number Ticker-02 - Currency Counter",
+  "description": "A specialized animated counter for currency and financial data. Ideal for showing bank balances, product prices, or real-time transaction values with smooth transitions.",
+  "dependencies": [
+    "@number-flow/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/number-ticker/number-ticker-02.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useState } from \"react\";\r\nimport NumberFlow, { type Value } from \"@number-flow/react\";\r\n\r\ntype NumberTickerProps = {\r\n  value: Value;\r\n  currency?: string;\r\n  decimals?: number;\r\n  className?: string;\r\n};\r\n\r\n/**\r\n * NumberTicker 02 - Money Flow\r\n * Premium currency display with smooth high-fidelity rolls.\r\n */\r\nfunction NumberTicker({\r\n  value,\r\n  currency = \"USD\",\r\n  decimals = 2,\r\n  className,\r\n}: NumberTickerProps) {\r\n  return (\r\n    <div className=\"inline-flex items-center gap-3\">\r\n      <NumberFlow\r\n        value={value}\r\n        format={{\r\n          style: \"currency\",\r\n          currency: currency,\r\n          minimumFractionDigits: decimals,\r\n          maximumFractionDigits: decimals,\r\n        }}\r\n        className={className}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n\r\nconst NumberTickerDemo = () => {\r\n  const [val, setVal] = useState(1284.5);\r\n\r\n  useEffect(() => {\r\n    const interval = setInterval(() => {\r\n      setVal((prev) => prev + (Math.random() * 50 - 20));\r\n    }, 2500);\r\n    return () => clearInterval(interval);\r\n  }, []);\r\n\r\n  return (\r\n    <div>\r\n      <NumberTicker\r\n        value={val}\r\n        className=\"text-foreground font-medium lg:text-5xl sm:text-4xl text-3xl tracking-tight\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default NumberTickerDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/number-ticker/number-ticker-02.tsx"
+    }
+  ]
+}

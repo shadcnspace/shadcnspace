@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-06",
+  "type": "registry:component",
+  "title": "Accordion-06 - Filled Trigger",
+  "description": "Accordion with a filled accent background on the trigger header",
+  "dependencies": [],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/accordion/accordion-06.tsx",
+      "content": "import {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/components/ui/accordion\";\r\n\r\nconst items = [\r\n  {\r\n    title: \"What services does Shadcn Space offer?\",\r\n    content:\r\n      \"We offer a wide range of services including web development, app development, and digital marketing tailored to help your business grow and scale effectively.\",\r\n  },\r\n  {\r\n    title: \"How long does a typical project take?\",\r\n    content:\r\n      \"The time it takes to complete a project depends on the complexity and scope of the work. Most projects range from 4–8 weeks, and we'll give you a clear timeline upfront.\",\r\n  },\r\n  {\r\n    title: \"Do you offer ongoing support after project completion?\",\r\n    content:\r\n      \"Absolutely! We offer comprehensive post-launch support to ensure a seamless implementation and provide ongoing maintenance packages tailored to clients who need regular updates or technical assistance. Our commitment doesn't end at launch — we're here to help you every step of the way.\",\r\n  },\r\n];\r\n\r\nconst AccordionFilledDemo = () => (\r\n  <div className=\"flex items-center justify-center w-full max-w-lg\">\r\n    <Accordion\r\n      defaultValue={[\"item-0\"]}\r\n      className=\"w-full space-y-2\"\r\n    >\r\n      {items.map((item, index) => (\r\n        <AccordionItem\r\n          key={index}\r\n          value={`item-${index}`}\r\n          className=\"rounded-lg border!\"\r\n        >\r\n          <AccordionTrigger className=\"bg-accent px-4 py-3 aria-expanded:rounded-b-none cursor-pointer hover:no-underline items-center\">\r\n            {item.title}\r\n          </AccordionTrigger>\r\n          <AccordionContent className=\"text-muted-foreground px-5 pt-4\">\r\n            {item.content}\r\n          </AccordionContent>\r\n        </AccordionItem>\r\n      ))}\r\n    </Accordion>\r\n  </div>\r\n);\r\n\r\nexport default AccordionFilledDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/accordion/accordion-06.tsx"
+    }
+  ]
+}

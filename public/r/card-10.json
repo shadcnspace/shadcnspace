@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-10",
+  "type": "registry:component",
+  "title": "Card-10 - Appointment Card",
+  "description": "Card component",
+  "dependencies": [],
+  "registryDependencies": [
+    "card",
+    "toggle-group",
+    "alert",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/card/card-10.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\"\r\nimport { Button } from \"@/components/ui/button\"\r\nimport { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from \"@/components/ui/card\"\r\nimport { Label } from \"@/components/ui/label\"\r\nimport { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\"\r\n\r\nconst AppointmentCard = () => {\r\n    return (\r\n        <div className=\"max-w-sm mx-auto px-4 w-full\">\r\n            <Card>\r\n                <CardHeader>\r\n                    <CardTitle>Book Appointment</CardTitle>\r\n                    <CardDescription>Dr. Michael Tan · Dermatology</CardDescription>\r\n                </CardHeader>\r\n                <CardContent className=\"flex flex-col gap-4\">\r\n                    <div className=\"space-y-3\">\r\n                        <Label className=\"text-muted-foreground\">Available on March 18, 2026</Label>\r\n                        <ToggleGroup defaultValue={[\"9:00\"]} spacing={2} className=\"flex-wrap\">\r\n                            <ToggleGroupItem value=\"9:00\" className=\"cursor-pointer\">9:00 AM</ToggleGroupItem>\r\n                            <ToggleGroupItem value=\"10:30\" className=\"cursor-pointer\">10:30 AM</ToggleGroupItem>\r\n                            <ToggleGroupItem value=\"11:00\" className=\"cursor-pointer\">11:00 AM</ToggleGroupItem>\r\n                            <ToggleGroupItem value=\"1:30\" className=\"cursor-pointer\">1:30 PM</ToggleGroupItem>\r\n                        </ToggleGroup>\r\n                    </div>\r\n\r\n                    <Alert>\r\n                        <AlertTitle>New patient?</AlertTitle>\r\n                        <AlertDescription>\r\n                            Please arrive 15 minutes early.\r\n                        </AlertDescription>\r\n                    </Alert>\r\n                </CardContent>\r\n                <CardFooter>\r\n                    <Button className=\"w-full cursor-pointer hover:bg-primary/80\">Book Appointment</Button>\r\n                </CardFooter>\r\n            </Card>\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default AppointmentCard",
+      "type": "registry:component",
+      "target": "components/shadcn-space/card/card-10.tsx"
+    }
+  ]
+}
