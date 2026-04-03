@@ -14,7 +14,8 @@ export default function DatePickerData() {
     },
     {
       title: "Is the Date Picker accessible for keyboard users?",
-      content: "Is the Date Picker accessible for keyboard users.",
+      content:
+        "Yes, the Date Picker supports keyboard navigation, including moving between days and selecting dates without a mouse. This improves accessibility and helps ensure a better experience for all users.",
     },
     {
       title: "Can I use this Date Picker inside a modal or popover?",
