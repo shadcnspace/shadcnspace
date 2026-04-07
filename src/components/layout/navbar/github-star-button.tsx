@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
+import GithubIcon from "@/components/custom-components/custom-icons/social-media-icons/github-icon";
 
 const OWNER = "shadcnspace";
 const REPO = "shadcnspace";
@@ -18,7 +18,8 @@ export const GithubStarButton = ({
       {...props}
     >
       <Link href={`https://github.com/${OWNER}/${REPO}`} target="_blank" className="flex gap-2 items-center">
-        <Icon icon={"tabler:brand-github"} className="w-5! h-5!" width={20} height={20} />
+        {/* <Icon icon={"tabler:brand-github"} className="w-5! h-5!" width={20} height={20} /> */}
+        <GithubIcon className="w-5! h-5! pointer-events-auto!" size={20}/>
         <span className="sm:inline hidden">
           Github
         </span>

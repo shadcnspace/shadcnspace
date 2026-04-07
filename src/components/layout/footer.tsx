@@ -7,6 +7,9 @@ import { capitalize } from "@/lib/utils";
 import Link from "next/link";
 import { Logo } from "../common/logo/logo";
 import { GithubLogo, TwitterLogo } from "../ui/icons";
+import GithubIcon from "../custom-components/custom-icons/social-media-icons/github-icon";
+import XIcon from "../custom-components/custom-icons/social-media-icons/x-icon";
+import DiscordIcon from "../custom-components/custom-icons/social-media-icons/discord-icon";
 
 const TemplatesData = templates.flatMap(template =>
   template.items.slice(0, 3).map(item => ({
@@ -101,10 +104,16 @@ const Footer = () => {
 
           <div className="flex items-center gap-5 text-muted-foreground">
             <Link href={config.social.github} target="_blank">
-              <GithubLogo className="h-5 w-5" />
+              {/* <GithubLogo className="h-5 w-5" /> */}
+              <GithubIcon className="w-5! h-5!"/>
             </Link>
             <Link href={config.social.twitter} target="_blank">
-              <TwitterLogo className="h-5 w-5" />
+              {/* <TwitterLogo className="h-5 w-5" /> */}
+              <XIcon className="w-5! h-5!"/>
+            </Link>
+            <Link href="#" target="_blank">
+              {/* <TwitterLogo className="h-5 w-5" /> */}
+              <DiscordIcon className="w-5! h-5!"/>
             </Link>
           </div>
         </div>

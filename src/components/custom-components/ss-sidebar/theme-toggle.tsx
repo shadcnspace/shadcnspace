@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import MoonIcon from "../custom-icons/theme-icons/moon-icon";
+import SunLowIcon from "../custom-icons/theme-icons/sun-low-icon";
 
 export const ThemeToggle = ({
   className,
@@ -38,7 +40,12 @@ export const ThemeToggle = ({
 
   return (
     <Button onClick={toggleTheme} variant="ghost" {...props} className="cursor-pointer w-auto! h-auto! p-3 text-lg">
-      <Icon icon={resolvedTheme === "light" ? "solar:moon-linear" : "solar:sun-linear"} width={20} height={20} className="w-5! h-5!" />
+      {/* <Icon icon={resolvedTheme === "light" ? "solar:moon-linear" : "solar:sun-linear"} width={20} height={20} className="w-5! h-5!" /> */}
+      {resolvedTheme === "light" ? (
+        <MoonIcon className="w-5! h-5! pointer-events-auto!" size={20} />
+      ) : (
+        <SunLowIcon className="w-5! h-5! pointer-events-auto!" size={20} />
+      )}
     </Button>
   );
 };
