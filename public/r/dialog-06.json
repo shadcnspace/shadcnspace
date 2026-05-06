@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-06",
-  "type": "registry:component",
   "title": "Dialog 06 - Zoom Out",
   "description": "Dialog that shrinks into place from a larger scale — ideal for announcements and feature highlights.",
   "dependencies": [
@@ -16,7 +15,8 @@
       "path": "src/components/shadcn-space/dialog/dialog-06.tsx",
       "content": "\"use client\";\r\n\r\nimport { SparklesIcon } from \"lucide-react\";\r\nimport {\r\n  Dialog,\r\n  DialogTrigger,\r\n  DialogContent,\r\n  DialogHeader,\r\n  DialogTitle,\r\n  DialogDescription,\r\n  DialogClose,\r\n} from \"@/components/ui/dialog\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nexport default function Dialog06() {\r\n  return (\r\n    <Dialog>\r\n      <DialogTrigger render={<Button variant=\"outline\" className=\"cursor-pointer\" />}>\r\n        What's New\r\n      </DialogTrigger>\r\n      <DialogContent\r\n        className=\"data-open:zoom-in-150! data-closed:zoom-out-150 duration-300\"\r\n        showCloseButton={false}\r\n      >\r\n        <div className=\"flex flex-col gap-4\">\r\n          <div className=\"flex items-center gap-2\">\r\n            <SparklesIcon size={16} className=\"text-primary\" />\r\n            <span className=\"text-xs font-medium uppercase tracking-wider text-muted-foreground\">\r\n              New Release\r\n            </span>\r\n          </div>\r\n          <DialogHeader>\r\n            <DialogTitle>Introducing v2.0</DialogTitle>\r\n            <DialogDescription>\r\n              A faster, smarter, and more beautiful experience. We've redesigned\r\n              everything from the ground up.\r\n            </DialogDescription>\r\n          </DialogHeader>\r\n          <ul className=\"flex flex-col gap-1.5\">\r\n            {[\r\n              \"Redesigned dashboard with real-time updates\",\r\n              \"New collaboration tools for your team\",\r\n              \"Improved performance and reliability\",\r\n            ].map((feature) => (\r\n              <li key={feature} className=\"flex items-center gap-2 text-sm text-muted-foreground\">\r\n                <span className=\"size-1.5 rounded-full bg-primary shrink-0\" />\r\n                {feature}\r\n              </li>\r\n            ))}\r\n          </ul>\r\n          <div className=\"flex gap-2\">\r\n            <DialogClose\r\n              render={<Button variant=\"outline\" className=\"flex-1 cursor-pointer\" />}\r\n            >\r\n              Later\r\n            </DialogClose>\r\n            <DialogClose render={<Button className=\"flex-1 cursor-pointer hover:bg-primary/80\" />}>\r\n              Explore\r\n            </DialogClose>\r\n          </div>\r\n        </div>\r\n      </DialogContent>\r\n    </Dialog>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/dialog/dialog-06.tsx"
+      "target": "@components/shadcn-space/dialog/dialog-06.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

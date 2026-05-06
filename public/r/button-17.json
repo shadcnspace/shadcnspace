@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-17",
-  "type": "registry:component",
   "title": "Button-17 - Blob Fill",
   "description": "Circle blob expands from bottom center on hover to fill the button",
   "dependencies": [],
@@ -13,7 +12,8 @@
       "path": "src/components/shadcn-space/button/button-17.tsx",
       "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst ButtonDemo = () => {\r\n  return (\r\n    <Button className=\"relative overflow-hidden group px-4 py-2 h-auto rounded-full font-medium text-base cursor-pointer border border-primary transition-all\">\r\n      <span className=\"absolute left-1/2 -translate-x-1/2 top-full -translate-y-1/2 w-8 h-8 bg-white dark:bg-gray-950 rounded-full scale-0 transition-transform duration-700 ease-in-out group-hover:scale-[18]\" />\r\n      <span className=\"relative z-10 transition-colors duration-500 group-hover:text-gray-950 dark:group-hover:text-white\">\r\n        Get Started\r\n      </span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default ButtonDemo;\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/button/button-17.tsx"
+      "target": "@components/shadcn-space/button/button-17.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

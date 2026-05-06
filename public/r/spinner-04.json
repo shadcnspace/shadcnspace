@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner-04",
-  "type": "registry:component",
   "title": "Spinner 04 - Circle Filled",
   "description": "Circular arc spinner with a dim background ring and rotating filled arc.",
   "dependencies": [],
@@ -9,9 +8,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/spinner/spinner-04.tsx",
-      "content": "export default function SpinnerCircleFilled() {\n  const r = 9;\n  const c = +(2 * Math.PI * r).toFixed(2);\n\n  return (\n    <>\n      <style>{`\n        .spinner-circle-arc {\n          transform-box: fill-box;\n          transform-origin: center;\n          animation: spinner-circle-spin 1s linear infinite;\n        }\n        @keyframes spinner-circle-spin {\n          from { transform: rotate(-90deg); }\n          to { transform: rotate(270deg); }\n        }\n      `}</style>\n      <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" className=\"text-foreground\">\n        <circle cx=\"12\" cy=\"12\" r={r} stroke=\"currentColor\" strokeWidth=\"2.5\" strokeOpacity=\"0.2\" />\n        <circle\n          cx=\"12\"\n          cy=\"12\"\n          r={r}\n          stroke=\"currentColor\"\n          strokeWidth=\"2.5\"\n          strokeLinecap=\"round\"\n          strokeDasharray={`${+(c * 0.25).toFixed(2)} ${+(c * 0.75).toFixed(2)}`}\n          className=\"spinner-circle-arc\"\n        />\n      </svg>\n    </>\n  );\n}\n",
+      "content": "export default function SpinnerCircleFilled() {\r\n  const r = 9;\r\n  const c = +(2 * Math.PI * r).toFixed(2);\r\n\r\n  return (\r\n    <>\r\n      <style>{`\r\n        .spinner-circle-arc {\r\n          transform-box: fill-box;\r\n          transform-origin: center;\r\n          animation: spinner-circle-spin 1s linear infinite;\r\n        }\r\n        @keyframes spinner-circle-spin {\r\n          from { transform: rotate(-90deg); }\r\n          to { transform: rotate(270deg); }\r\n        }\r\n      `}</style>\r\n      <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" className=\"text-foreground\">\r\n        <circle cx=\"12\" cy=\"12\" r={r} stroke=\"currentColor\" strokeWidth=\"2.5\" strokeOpacity=\"0.2\" />\r\n        <circle\r\n          cx=\"12\"\r\n          cy=\"12\"\r\n          r={r}\r\n          stroke=\"currentColor\"\r\n          strokeWidth=\"2.5\"\r\n          strokeLinecap=\"round\"\r\n          strokeDasharray={`${+(c * 0.25).toFixed(2)} ${+(c * 0.75).toFixed(2)}`}\r\n          className=\"spinner-circle-arc\"\r\n        />\r\n      </svg>\r\n    </>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/spinner/spinner-04.tsx"
+      "target": "@components/shadcn-space/spinner/spinner-04.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

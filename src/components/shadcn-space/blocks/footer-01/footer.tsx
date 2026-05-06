@@ -1,4 +1,4 @@
-import Logo from "@/assets/logo/logo";
+import Logo from "@/components/assets/logo/logo";
 import { Separator } from "@/components/ui/separator";
 
 const TwitterIcon = () => (

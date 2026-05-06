@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "scroll-area-03",
-  "type": "registry:component",
   "title": "Scroll Area 03 - Vertical Image Gallery",
   "description": "A vertically scrollable image gallery with fade mask edges, built with ScrollArea and project portfolio images.",
   "dependencies": [],
@@ -11,9 +10,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/scroll-area/scroll-area-03.tsx",
-      "content": "import { ScrollArea } from \"@/components/ui/scroll-area\";\n\nexport default function VerticalImageGallery() {\n  return (\n    <div className=\"border rounded-md overflow-hidden\">\n      <ScrollArea className=\"h-72 w-48 **:data-[slot=scroll-area-viewport]:mask-[linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-20px),transparent)]\">\n        <div className=\"flex w-max flex-col gap-4 p-4 overflow-hidden\">\n          {[\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-1.webp\",\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-2.webp\",\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-3.webp\",\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-4.webp\",\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-5.webp\",\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-6.webp\",\n          ].map((src, i) => (\n            <div\n              key={i}\n              className=\"relative h-36 w-40 shrink-0 overflow-hidden rounded-md\"\n            >\n              <img\n                src={src}\n                alt={`Portfolio ${i + 1}`}\n                className=\"h-full w-full object-cover\"\n              />\n            </div>\n          ))}\n        </div>\n      </ScrollArea>\n    </div>\n  );\n}\n",
+      "content": "import { ScrollArea } from \"@/components/ui/scroll-area\";\r\n\r\nexport default function VerticalImageGallery() {\r\n  return (\r\n    <div className=\"border rounded-md overflow-hidden\">\r\n      <ScrollArea className=\"h-72 w-48 **:data-[slot=scroll-area-viewport]:mask-[linear-gradient(to_bottom,transparent,black_20px,black_calc(100%-20px),transparent)]\">\r\n        <div className=\"flex w-max flex-col gap-4 p-4 overflow-hidden\">\r\n          {[\r\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-1.webp\",\r\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-2.webp\",\r\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-3.webp\",\r\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-4.webp\",\r\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-5.webp\",\r\n            \"https://images.shadcnspace.com/assets/portfolio/portfolio-5-img-6.webp\",\r\n          ].map((src, i) => (\r\n            <div\r\n              key={i}\r\n              className=\"relative h-36 w-40 shrink-0 overflow-hidden rounded-md\"\r\n            >\r\n              <img\r\n                src={src}\r\n                alt={`Portfolio ${i + 1}`}\r\n                className=\"h-full w-full object-cover\"\r\n              />\r\n            </div>\r\n          ))}\r\n        </div>\r\n      </ScrollArea>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/scroll-area/scroll-area-03.tsx"
+      "target": "@components/shadcn-space/scroll-area/scroll-area-03.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

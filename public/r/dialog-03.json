@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-03",
-  "type": "registry:component",
   "title": "Dialog 03 - Slide from Left",
   "description": "Dialog that slides in from the left — ideal for subscription forms and quick inputs.",
   "dependencies": [
@@ -17,7 +16,8 @@
       "path": "src/components/shadcn-space/dialog/dialog-03.tsx",
       "content": "\"use client\";\r\n\r\nimport { MailIcon } from \"lucide-react\";\r\nimport {\r\n  Dialog,\r\n  DialogTrigger,\r\n  DialogContent,\r\n  DialogHeader,\r\n  DialogTitle,\r\n  DialogDescription,\r\n  DialogClose,\r\n} from \"@/components/ui/dialog\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Input } from \"@/components/ui/input\";\r\n\r\nexport default function Dialog03() {\r\n  return (\r\n    <Dialog>\r\n      <DialogTrigger render={<Button variant=\"outline\" className=\"cursor-pointer\" />}>\r\n        Subscribe\r\n      </DialogTrigger>\r\n      <DialogContent className=\"data-open:slide-in-from-left-8 data-closed:slide-out-to-left-8 data-open:zoom-in-100 data-closed:zoom-out-100 duration-300\">\r\n        <div className=\"flex items-center justify-center size-10 rounded-lg bg-primary/10 text-primary mb-1\">\r\n          <MailIcon size={18} />\r\n        </div>\r\n        <DialogHeader>\r\n          <DialogTitle>Stay in the loop</DialogTitle>\r\n          <DialogDescription>\r\n            Get the latest updates, articles, and resources delivered straight\r\n            to your inbox.\r\n          </DialogDescription>\r\n        </DialogHeader>\r\n        <div className=\"flex flex-col gap-3\">\r\n          <Input\r\n            type=\"email\"\r\n            placeholder=\"Enter your email address\"\r\n            className=\"h-9\"\r\n          />\r\n          <DialogClose render={<Button className=\"w-full cursor-pointer hover:bg-primary/80\" />}>\r\n            Subscribe Now\r\n          </DialogClose>\r\n          <p className=\"text-xs text-muted-foreground text-center\">\r\n            No spam, unsubscribe anytime.\r\n          </p>\r\n        </div>\r\n      </DialogContent>\r\n    </Dialog>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/dialog/dialog-03.tsx"
+      "target": "@components/shadcn-space/dialog/dialog-03.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

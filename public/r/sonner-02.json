@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sonner-02",
-  "type": "registry:component",
   "title": "Sonner 02 - Delete Project",
   "description": "A clean, minimal toast notification for confirming permanent project deletion.",
   "dependencies": [],
@@ -12,9 +11,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/sonner/sonner-02.tsx",
-      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"@/components/ui/button\";\n\nexport default function ToastComponent() {\n  const handleDelete = () => {\n    toast.warning(\"Delete project?\", {\n      description: \"This action will permanently remove the project and all its data.\",\n      action: {\n        label: \"Delete\",\n        onClick: () =>\n          toast.error(\"Project deleted\", {\n            description: \"The project has been permanently removed.\"\n          })\n      },\n      cancel: {\n        label: \"Cancel\",\n        onClick: () => toast.info(\"Deletion cancelled.\")\n      }\n    });\n  };\n\n  return (\n    <Button variant=\"outline\" onClick={handleDelete} className=\"cursor-pointer\">\n      Delete Project\n    </Button>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { toast } from \"sonner\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nexport default function ToastComponent() {\r\n  const handleDelete = () => {\r\n    toast.warning(\"Delete project?\", {\r\n      description: \"This action will permanently remove the project and all its data.\",\r\n      action: {\r\n        label: \"Delete\",\r\n        onClick: () =>\r\n          toast.error(\"Project deleted\", {\r\n            description: \"The project has been permanently removed.\"\r\n          })\r\n      },\r\n      cancel: {\r\n        label: \"Cancel\",\r\n        onClick: () => toast.info(\"Deletion cancelled.\")\r\n      }\r\n    });\r\n  };\r\n\r\n  return (\r\n    <Button variant=\"outline\" onClick={handleDelete} className=\"cursor-pointer\">\r\n      Delete Project\r\n    </Button>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/sonner/sonner-02.tsx"
+      "target": "@components/shadcn-space/sonner/sonner-02.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

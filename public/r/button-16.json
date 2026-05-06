@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-16",
-  "type": "registry:component",
   "title": "Button-16 - Ripple Spotlight",
   "description": "Mouse-tracking ripple spotlight effect button",
   "dependencies": [],
@@ -13,7 +12,8 @@
       "path": "src/components/shadcn-space/button/button-16.tsx",
       "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst ButtonDemo = () => {\r\n  const [pos, setPos] = useState({ x: 0, y: 0 });\r\n\r\n  const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {\r\n    const rect = e.currentTarget.getBoundingClientRect();\r\n    setPos({\r\n      x: e.clientX - rect.left,\r\n      y: e.clientY - rect.top,\r\n    });\r\n  };\r\n\r\n  return (\r\n    <Button\r\n      onMouseEnter={handleMouseEnter}\r\n      variant=\"outline\"\r\n      className=\"relative overflow-hidden group px-6 py-3 h-auto rounded-full cursor-pointer border border-border transition-all duration-300\"\r\n    >\r\n      <span\r\n        className={cn(\r\n          \"absolute w-10 h-10 rounded-full scale-0 transition-transform duration-700 ease-in-out group-hover:scale-[15] pointer-events-none\",\r\n          \"bg-primary\"\r\n        )}\r\n        style={{\r\n          left: pos.x - 20,\r\n          top: pos.y - 20,\r\n        }}\r\n      />\r\n      <span className=\"relative z-10 transition-colors duration-500 pointer-events-none group-hover:text-primary-foreground\">\r\n        Get Started\r\n      </span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default ButtonDemo;\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/button/button-16.tsx"
+      "target": "@components/shadcn-space/button/button-16.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

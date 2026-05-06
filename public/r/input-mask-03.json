@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-mask-03",
-  "type": "registry:component",
   "title": "Input Mask 03 - MAC Address",
   "description": "MAC address input mask with ##:##:##:##:##:## format.",
   "dependencies": [
@@ -14,9 +13,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/input-mask/input-mask-03.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Wifi } from \"lucide-react\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport const title = \"MAC Address Input Mask\";\n\nconst formatMac = (value: string): string => {\n  const hex = value.replace(/[^0-9a-fA-F]/g, \"\").slice(0, 12).toUpperCase();\n  return hex.match(/.{1,2}/g)?.join(\":\") ?? hex;\n};\n\nconst MacAddressInputMask = () => {\n  const [value, setValue] = useState(\"\");\n\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    setValue(formatMac(e.target.value));\n  };\n\n  return (\n    <div className=\"w-full max-w-sm space-y-2\">\n      <Label htmlFor=\"mac-input\">MAC Address</Label>\n      <div className=\"relative\">\n        <Wifi className=\"absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\n        <Input\n          id=\"mac-input\"\n          className=\"bg-background pl-9 font-mono\"\n          placeholder=\"00:1B:44:11:3A:B7\"\n          value={value}\n          onChange={handleChange}\n          maxLength={17}\n        />\n      </div>\n    </div>\n  );\n};\n\nexport default MacAddressInputMask;\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Wifi } from \"lucide-react\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nexport const title = \"MAC Address Input Mask\";\r\n\r\nconst formatMac = (value: string): string => {\r\n  const hex = value.replace(/[^0-9a-fA-F]/g, \"\").slice(0, 12).toUpperCase();\r\n  return hex.match(/.{1,2}/g)?.join(\":\") ?? hex;\r\n};\r\n\r\nconst MacAddressInputMask = () => {\r\n  const [value, setValue] = useState(\"\");\r\n\r\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\r\n    setValue(formatMac(e.target.value));\r\n  };\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor=\"mac-input\">MAC Address</Label>\r\n      <div className=\"relative\">\r\n        <Wifi className=\"absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\r\n        <Input\r\n          id=\"mac-input\"\r\n          className=\"bg-background pl-9 font-mono\"\r\n          placeholder=\"00:1B:44:11:3A:B7\"\r\n          value={value}\r\n          onChange={handleChange}\r\n          maxLength={17}\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default MacAddressInputMask;\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/input-mask/input-mask-03.tsx"
+      "target": "@components/shadcn-space/input-mask/input-mask-03.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

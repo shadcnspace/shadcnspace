@@ -1,5 +1,5 @@
 "use client";
-import Logo from "@/assets/logo/logo";
+import Logo from "@/components/assets/logo/logo";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,

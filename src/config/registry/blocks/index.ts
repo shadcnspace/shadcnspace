@@ -51,39 +51,39 @@ export const blocks: RegistryBlock[] = [
         target: 'app/hero-01/page.tsx',
       },
       {
-        path: 'src/assets/logo/logo.tsx',
+        path: 'src/components/assets/logo/logo.tsx',
         type: "registry:component",
-        target: 'assets/logo/logo.tsx',
+        target: '@components/assets/logo/logo.tsx',
       },
       {
         path: 'src/components/shadcn-space/blocks/hero-01/index.tsx',
         type: "registry:page",
-        target: 'components/shadcn-space/blocks/hero-01/index.tsx',
+        target: '@components/shadcn-space/blocks/hero-01/index.tsx',
       },
       {
         path: 'src/components/shadcn-space/blocks/hero-01/hero.tsx',
         type: "registry:component",
-        target: 'components/shadcn-space/blocks/hero-01/hero.tsx',
+        target: '@components/shadcn-space/blocks/hero-01/hero.tsx',
       },
       {
         path: 'src/components/shadcn-space/blocks/hero-01/header.tsx',
         type: "registry:component",
-        target: 'components/shadcn-space/blocks/hero-01/header.tsx',
+        target: '@components/shadcn-space/blocks/hero-01/header.tsx',
       },
       {
         path: 'src/components/shadcn-space/blocks/hero-01/brand-slider.tsx',
         type: "registry:component",
-        target: 'components/shadcn-space/blocks/hero-01/brand-slider.tsx',
+        target: '@components/shadcn-space/blocks/hero-01/brand-slider.tsx',
       },
       {
         path: 'src/components/shadcn-space/animations/splash-cursor.jsx',
         type: "registry:component",
-        target: 'components/shadcn-space/animations/splash-cursor.tsx',
+        target: '@components/shadcn-space/animations/splash-cursor.tsx',
       },
       {
         path: 'src/components/shadcn-space/animations/marquee.tsx',
         type: "registry:component",
-        target: 'components/shadcn-space/animations/marquee.tsx',
+        target: '@components/shadcn-space/animations/marquee.tsx',
       }
     ],
     component: React.lazy(
@@ -111,27 +111,27 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/hero-02/hero.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/hero-02/hero.tsx',
+      target: '@components/shadcn-space/blocks/hero-02/hero.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/hero-02/seamless-cloud.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/hero-02/seamless-cloud.tsx',
+      target: '@components/shadcn-space/blocks/hero-02/seamless-cloud.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/hero-02/navbar.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/hero-02/navbar.tsx',
+      target: '@components/shadcn-space/blocks/hero-02/navbar.tsx',
     },
     {
       path: 'src/components/shadcn-space/animations/marquee.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/animations/marquee.tsx',
+      target: '@components/shadcn-space/animations/marquee.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/hero-02/index.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/hero-02/index.tsx',
+      target: '@components/shadcn-space/blocks/hero-02/index.tsx',
     }],
     component: React.lazy(
       () => import('@/components/shadcn-space/blocks/hero-02/page')
@@ -160,22 +160,22 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/hero-03/hero.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/hero-03/hero.tsx',
+      target: '@components/shadcn-space/blocks/hero-03/hero.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/hero-03/navbar.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/hero-03/navbar.tsx',
+      target: '@components/shadcn-space/blocks/hero-03/navbar.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/hero-03/navlink.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/hero-03/navlink.tsx',
+      target: '@components/shadcn-space/blocks/hero-03/navlink.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/hero-03/index.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/hero-03/index.tsx',
+      target: '@components/shadcn-space/blocks/hero-03/index.tsx',
     },
     ],
     component: React.lazy(
@@ -207,12 +207,12 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/feature-01/index.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/feature-01/index.tsx',
+      target: '@components/shadcn-space/blocks/feature-01/index.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/feature-01/feature.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/feature-01/feature.tsx',
+      target: '@components/shadcn-space/blocks/feature-01/feature.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/feature-01/page.tsx')),
@@ -243,12 +243,12 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/feature-02/index.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/feature-02/index.tsx',
+      target: '@components/shadcn-space/blocks/feature-02/index.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/feature-02/feature.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/feature-02/feature.tsx',
+      target: '@components/shadcn-space/blocks/feature-02/feature.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/feature-02/page.tsx')),
@@ -274,12 +274,12 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/about-us-01/index.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/about-us-01/index.tsx',
+      target: '@components/shadcn-space/blocks/about-us-01/index.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/about-us-01/about-us.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/about-us-01/about-us.tsx',
+      target: '@components/shadcn-space/blocks/about-us-01/about-us.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/about-us-01/page')),
@@ -310,7 +310,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/pricing-01/pricing.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/pricing-01/pricing.tsx',
+      target: '@components/shadcn-space/blocks/pricing-01/pricing.tsx',
     },
     ],
     component: React.lazy(
@@ -340,7 +340,7 @@ export const blocks: RegistryBlock[] = [
       {
         path: "src/components/shadcn-space/blocks/pricing-02/pricing.tsx",
         type: "registry:component",
-        target: "components/shadcn-space/blocks/pricing-02/pricing.tsx",
+        target: "@components/shadcn-space/blocks/pricing-02/pricing.tsx",
       },
     ],
     component: React.lazy(
@@ -372,7 +372,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/testimonial-01/testimonial.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/testimonial-01/testimonial.tsx',
+      target: '@components/shadcn-space/blocks/testimonial-01/testimonial.tsx',
     },
     ],
     component: React.lazy(
@@ -403,22 +403,22 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/testimonial-02/testimonial.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/testimonial-02/testimonial.tsx',
+      target: '@components/shadcn-space/blocks/testimonial-02/testimonial.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/testimonial-02/index.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/testimonial-02/index.tsx',
+      target: '@components/shadcn-space/blocks/testimonial-02/index.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/testimonial-02/brand-slider.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/testimonial-02/brand-slider.tsx',
+      target: '@components/shadcn-space/blocks/testimonial-02/brand-slider.tsx',
     },
     {
       path: 'src/components/shadcn-space/animations/marquee.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/animations/marquee.tsx',
+      target: '@components/shadcn-space/animations/marquee.tsx',
     }],
     iframeHeight: "800px",
     component: React.lazy(() => import('@/components/shadcn-space/blocks/testimonial-02/page')),
@@ -448,7 +448,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/portfolio-01/portfolio.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/portfolio-01/portfolio.tsx',
+      target: '@components/shadcn-space/blocks/portfolio-01/portfolio.tsx',
     },
     ],
     component: React.lazy(
@@ -478,7 +478,7 @@ export const blocks: RegistryBlock[] = [
       {
         path: "src/components/shadcn-space/blocks/team-01/team.tsx",
         type: "registry:component",
-        target: "components/shadcn-space/blocks/team-01/team.tsx",
+        target: "@components/shadcn-space/blocks/team-01/team.tsx",
       },
     ],
     component: React.lazy(
@@ -508,7 +508,7 @@ export const blocks: RegistryBlock[] = [
       {
         path: "src/components/shadcn-space/blocks/team-02/team.tsx",
         type: "registry:component",
-        target: "components/shadcn-space/blocks/team-02/team.tsx",
+        target: "@components/shadcn-space/blocks/team-02/team.tsx",
       },
     ],
     component: React.lazy(
@@ -536,7 +536,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/cta-01/cta.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/cta-01/cta.tsx',
+      target: '@components/shadcn-space/blocks/cta-01/cta.tsx',
     }],
     iframeHeight: "550px",
     component: React.lazy(() => import('@/components/shadcn-space/blocks/cta-01/page')),
@@ -562,12 +562,12 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/cta-02/cta.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/cta-02/cta.tsx',
+      target: '@components/shadcn-space/blocks/cta-02/cta.tsx',
     },
     {
       path: 'src/components/shadcn-space/animations/marquee.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/animations/marquee.tsx',
+      target: '@components/shadcn-space/animations/marquee.tsx',
     }],
     iframeHeight: "620px",
     component: React.lazy(() => import('@/components/shadcn-space/blocks/cta-02/page')),
@@ -597,7 +597,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/services-01/services.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/services-01/services.tsx',
+      target: '@components/shadcn-space/blocks/services-01/services.tsx',
     },
     ],
     component: React.lazy(
@@ -625,7 +625,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/services-02/services.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/services-02/services.tsx',
+      target: '@components/shadcn-space/blocks/services-02/services.tsx',
     }],
     iframeHeight: "950px",
     component: React.lazy(() => import('@/components/shadcn-space/blocks/services-02/page')),
@@ -651,7 +651,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/faq-01/faq.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/faq-01/faq.tsx',
+      target: '@components/shadcn-space/blocks/faq-01/faq.tsx',
     }],
     iframeHeight: "900px",
     component: React.lazy(() => import('@/components/shadcn-space/blocks/faq-01/page')),
@@ -677,7 +677,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/newsletter-01/newsletter.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/newsletter-01/newsletter.tsx',
+      target: '@components/shadcn-space/blocks/newsletter-01/newsletter.tsx',
     }],
     iframeHeight: "578px",
     component: React.lazy(() => import('@/components/shadcn-space/blocks/newsletter-01/page')),
@@ -707,7 +707,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/blog-01/blog.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/blog-01/blog.tsx',
+      target: '@components/shadcn-space/blocks/blog-01/blog.tsx',
     },
     ],
     component: React.lazy(
@@ -744,22 +744,22 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/contact-01/index.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/contact-01/index.tsx',
+      target: '@components/shadcn-space/blocks/contact-01/index.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/contact-01/contact-info.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/contact-01/contact-info.tsx',
+      target: '@components/shadcn-space/blocks/contact-01/contact-info.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/contact-01/contact-form.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/contact-01/contact-form.tsx',
+      target: '@components/shadcn-space/blocks/contact-01/contact-form.tsx',
     },
     {
       path: 'src/components/shadcn-space/animations/marquee.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/animations/marquee.tsx',
+      target: '@components/shadcn-space/animations/marquee.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/contact-01/page.tsx')),
@@ -785,9 +785,14 @@ export const blocks: RegistryBlock[] = [
         target: "app/navbar-01/page.tsx",
       },
       {
+        path: 'src/components/assets/logo/logo.tsx',
+        type: "registry:component",
+        target: '@components/assets/logo/logo.tsx',
+      },
+      {
         path: "src/components/shadcn-space/blocks/navbar-01/navbar.tsx",
         type: "registry:component",
-        target: "components/shadcn-space/blocks/navbar-01/navbar.tsx",
+        target: "@components/shadcn-space/blocks/navbar-01/navbar.tsx",
       },
     ],
     component: React.lazy(
@@ -816,14 +821,14 @@ export const blocks: RegistryBlock[] = [
       target: 'app/footer-01/page.tsx',
     },
     {
-      path: 'src/assets/logo/logo.tsx',
+      path: 'src/components/assets/logo/logo.tsx',
       type: "registry:component",
-      target: 'assets/logo/logo.tsx',
+      target: '@components/assets/logo/logo.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/footer-01/footer.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/footer-01/footer.tsx',
+      target: '@components/shadcn-space/blocks/footer-01/footer.tsx',
     },
     ],
     component: React.lazy(
@@ -851,7 +856,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/footer-02/footer.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/footer-02/footer.tsx',
+      target: '@components/shadcn-space/blocks/footer-02/footer.tsx',
     }],
     iframeHeight: "656px",
     component: React.lazy(() => import('@/components/shadcn-space/blocks/footer-02/page')),
@@ -877,14 +882,14 @@ export const blocks: RegistryBlock[] = [
         target: "app/sidebar-01/page.tsx",
       },
       {
-        path: "src/assets/logo/logo.tsx",
+        path: "src/components/assets/logo/logo.tsx",
         type: "registry:component",
-        target: "assets/logo/logo.tsx",
+        target: "@components/assets/logo/logo.tsx",
       },
       {
         path: "src/components/shadcn-space/blocks/sidebar-01/nav-main.tsx",
         type: "registry:component",
-        target: "components/shadcn-space/blocks/sidebar-01/nav-main.tsx",
+        target: "@components/shadcn-space/blocks/sidebar-01/nav-main.tsx",
       },
     ],
     component: React.lazy(
@@ -913,7 +918,7 @@ export const blocks: RegistryBlock[] = [
       {
         path: 'src/components/shadcn-space/blocks/statistics-01/statistics.tsx',
         type: "registry:component",
-        target: 'components/shadcn-space/blocks/statistics-01/statistics.tsx',
+        target: '@components/shadcn-space/blocks/statistics-01/statistics.tsx',
       },
     ],
     component: React.lazy(
@@ -943,7 +948,7 @@ export const blocks: RegistryBlock[] = [
       {
         path: 'src/components/shadcn-space/blocks/statistics-02/statistics.tsx',
         type: "registry:component",
-        target: 'components/shadcn-space/blocks/statistics-02/statistics.tsx'
+        target: '@components/shadcn-space/blocks/statistics-02/statistics.tsx'
       },
     ],
     component: React.lazy(
@@ -972,7 +977,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/chart-01/chart.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/chart-01/chart.tsx',
+      target: '@components/shadcn-space/blocks/chart-01/chart.tsx',
     }],
     component: React.lazy(
       () =>
@@ -1000,7 +1005,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/chart-02/chart.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/chart-02/chart.tsx',
+      target: '@components/shadcn-space/blocks/chart-02/chart.tsx',
     }],
     component: React.lazy(
       () =>
@@ -1027,7 +1032,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/chart-03/chart.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/chart-03/chart.tsx',
+      target: '@components/shadcn-space/blocks/chart-03/chart.tsx',
     }],
     component: React.lazy(
       () =>
@@ -1055,7 +1060,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/chart-04/chart.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/chart-04/chart.tsx',
+      target: '@components/shadcn-space/blocks/chart-04/chart.tsx',
     }],
     component: React.lazy(
       () =>
@@ -1083,17 +1088,17 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/bento-grid-01/bentogrid.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/bento-grid-01/bentogrid.tsx',
+      target: '@components/shadcn-space/blocks/bento-grid-01/bentogrid.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/bento-grid-01/AnimatedUiBlock.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/bento-grid-01/AnimatedUiBlock.tsx',
+      target: '@components/shadcn-space/blocks/bento-grid-01/AnimatedUiBlock.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/bento-grid-01/ReminderAnimation.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/bento-grid-01/ReminderAnimation.tsx',
+      target: '@components/shadcn-space/blocks/bento-grid-01/ReminderAnimation.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/bento-grid-01/page')),
@@ -1110,7 +1115,7 @@ export const blocks: RegistryBlock[] = [
     description: "A modern dashboard shell with a sidebar and header, ideal for admin dashboards to organize and navigate through different sections.",
     type: "registry:block",
     dependencies: ["lucide-react", "recharts", "motion"],
-    registryDependencies: ["sidebar", "scroll-area", "card", "button", "badge", "chart", "collapsible", "dropdown-menu", "separator", "checkbox", "progress", "table"],
+    registryDependencies: ["sidebar", "scroll-area", "card", "button", "badge", "chart", "collapsible", "dropdown-menu", "separator", "checkbox", "progress", "table", "avatar", "input-group"],
     files: [{
       path: 'src/components/shadcn-space/blocks/dashboard-shell-01/page.tsx',
       type: "registry:page",
@@ -1119,42 +1124,57 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/dashboard-shell-01/salesbycountrywidget.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/dashboard-shell-01/salesbycountrywidget.tsx',
+      target: '@components/shadcn-space/blocks/dashboard-shell-01/salesbycountrywidget.tsx',
+    },
+    {
+      path: 'src/components/shadcn-space/blocks/dashboard-shell-01/notification-dropdown.tsx',
+      type: "registry:component",
+      target: '@components/shadcn-space/blocks/dashboard-shell-01/notification-dropdown.tsx',
+    },
+    {
+      path: 'src/components/shadcn-space/blocks/dashboard-shell-01/user-dropdown.tsx',
+      type: "registry:component",
+      target: '@components/shadcn-space/blocks/dashboard-shell-01/user-dropdown.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/dashboard-shell-01/site-header.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/dashboard-shell-01/site-header.tsx',
+      target: '@components/shadcn-space/blocks/dashboard-shell-01/site-header.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/dashboard-shell-01/top-product-table.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/dashboard-shell-01/top-product-table.tsx',
+      target: '@components/shadcn-space/blocks/dashboard-shell-01/top-product-table.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/dashboard-shell-01/statistics.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/dashboard-shell-01/statistics.tsx',
+      target: '@components/shadcn-space/blocks/dashboard-shell-01/statistics.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/dashboard-shell-01/sales-overview-chart.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/dashboard-shell-01/sales-overview-chart.tsx',
+      target: '@components/shadcn-space/blocks/dashboard-shell-01/sales-overview-chart.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/dashboard-shell-01/nav-main.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/dashboard-shell-01/nav-main.tsx',
+      target: '@components/shadcn-space/blocks/dashboard-shell-01/nav-main.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/dashboard-shell-01/earning-report-chart.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/dashboard-shell-01/earning-report-chart.tsx',
+      target: '@components/shadcn-space/blocks/dashboard-shell-01/earning-report-chart.tsx',
+    },
+    {
+      path: 'src/components/assets/logo/logo.tsx',
+      type: "registry:component",
+      target: '@components/assets/logo/logo.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/dashboard-shell-01/app-sidebar.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/dashboard-shell-01/app-sidebar.tsx',
+      target: '@components/shadcn-space/blocks/dashboard-shell-01/app-sidebar.tsx',
     },
     ],
     iframeHeight: "656px",
@@ -1188,7 +1208,7 @@ export const blocks: RegistryBlock[] = [
       {
         path: "src/components/shadcn-space/blocks/dialog-block-01/dialog.tsx",
         type: "registry:component",
-        target: "components/shadcn-space/blocks/dialog-block-01/dialog.tsx",
+        target: "@components/shadcn-space/blocks/dialog-block-01/dialog.tsx",
       },
 
     ],
@@ -1219,7 +1239,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/dropdown-01/dropdown.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/dropdown-01/dropdown.tsx',
+      target: '@components/shadcn-space/blocks/dropdown-01/dropdown.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/dropdown-01/page')),
@@ -1250,7 +1270,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/dropdown-02/dropdown.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/dropdown-02/dropdown.tsx',
+      target: '@components/shadcn-space/blocks/dropdown-02/dropdown.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/dropdown-02/page')),
@@ -1281,7 +1301,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/forgot-password-01/forgot-password.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/forgot-password-01/forgot-password.tsx',
+      target: '@components/shadcn-space/blocks/forgot-password-01/forgot-password.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/forgot-password-01/page')),
@@ -1315,7 +1335,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/forms-01/profile-form.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/forms-01/profile-form.tsx',
+      target: '@components/shadcn-space/blocks/forms-01/profile-form.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/forms-01/page')),
@@ -1341,7 +1361,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/gallery-01/gallery.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/gallery-01/gallery.tsx',
+      target: '@components/shadcn-space/blocks/gallery-01/gallery.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/gallery-01/page')),
@@ -1374,7 +1394,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/login-01/login.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/login-01/login.tsx',
+      target: '@components/shadcn-space/blocks/login-01/login.tsx',
     },
 
     ],
@@ -1401,12 +1421,12 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/logo-cloud-01/logo-cloud.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/logo-cloud-01/logo-cloud.tsx',
+      target: '@components/shadcn-space/blocks/logo-cloud-01/logo-cloud.tsx',
     },
     {
       path: 'src/components/shadcn-space/animations/marquee.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/animations/marquee.tsx',
+      target: '@components/shadcn-space/animations/marquee.tsx',
     }
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/logo-cloud-01/page')),
@@ -1438,7 +1458,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/register-01/register.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/register-01/register.tsx',
+      target: '@components/shadcn-space/blocks/register-01/register.tsx',
     },
 
     ],
@@ -1465,7 +1485,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/table-01/table.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/table-01/table.tsx',
+      target: '@components/shadcn-space/blocks/table-01/table.tsx',
     }],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/table-01/table')),
     created_at: '2025-12-10T18:53:10+05:30',
@@ -1489,12 +1509,12 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/topbar-01/dropdown-language.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/topbar-01/dropdown-language.tsx',
+      target: '@components/shadcn-space/blocks/topbar-01/dropdown-language.tsx',
     },
     {
       path: 'src/components/shadcn-space/blocks/topbar-01/dropdown-profile.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/topbar-01/dropdown-profile.tsx',
+      target: '@components/shadcn-space/blocks/topbar-01/dropdown-profile.tsx',
     }],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/topbar-01/page')),
     created_at: '2025-12-30T18:53:10+05:30',
@@ -1525,7 +1545,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/two-factor-authentication-01/two-factor-auth.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/two-factor-authentication-01/two-factor-auth.tsx',
+      target: '@components/shadcn-space/blocks/two-factor-authentication-01/two-factor-auth.tsx',
     },
 
     ],
@@ -1556,7 +1576,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/verify-email-01/verify-email.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/verify-email-01/verify-email.tsx',
+      target: '@components/shadcn-space/blocks/verify-email-01/verify-email.tsx',
     },
     ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/verify-email-01/page')),
@@ -1582,7 +1602,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/widget-01/widget.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/widget-01/widget.tsx',
+      target: '@components/shadcn-space/blocks/widget-01/widget.tsx',
     }],
     component: React.lazy(
       () =>
@@ -1610,7 +1630,7 @@ export const blocks: RegistryBlock[] = [
     {
       path: 'src/components/shadcn-space/blocks/widget-02/widget.tsx',
       type: "registry:component",
-      target: 'components/shadcn-space/blocks/widget-02/widget.tsx',
+      target: '@components/shadcn-space/blocks/widget-02/widget.tsx',
     }],
     component: React.lazy(
       () =>

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-08",
-  "type": "registry:component",
   "title": "Avatar-08 - Avatar stack",
   "description": "Stacked avatar group with overflow count and popularity indicator",
   "dependencies": [],
@@ -13,7 +12,8 @@
       "path": "src/components/shadcn-space/avatar/avatar-08.tsx",
       "content": "import {\r\n  Avatar,\r\n  AvatarFallback,\r\n  AvatarImage,\r\n  AvatarGroup,\r\n  AvatarGroupCount,\r\n} from \"@/components/ui/avatar\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface AvatarStackItem {\r\n  name: string;\r\n  src?: string;\r\n  fallback?: string;\r\n}\r\n\r\ninterface AvatarStackProps {\r\n  avatars: AvatarStackItem[];\r\n  max?: number;\r\n  className?: string;\r\n}\r\n\r\nfunction getInitials(name: string) {\r\n  return name\r\n    .trim()\r\n    .split(/\\s+/)\r\n    .map((n) => n[0])\r\n    .slice(0, 2)\r\n    .join(\"\")\r\n    .toUpperCase();\r\n}\r\n\r\nexport function AvatarStack({ avatars, max = 4, className }: AvatarStackProps) {\r\n  const visible = avatars.slice(0, max);\r\n  const overflow = avatars.length - max;\r\n\r\n  return (\r\n    <AvatarGroup className={cn(className)}>\r\n      {visible.map((avatar, i) => (\r\n        <Avatar key={i} className=\"transition-transform hover:-translate-y-0.5\">\r\n          <AvatarImage src={avatar.src} alt={avatar.name} />\r\n          <AvatarFallback>\r\n            {avatar.fallback ?? getInitials(avatar.name)}\r\n          </AvatarFallback>\r\n        </Avatar>\r\n      ))}\r\n      {overflow > 0 && <AvatarGroupCount className=\"text-foreground font-medium\">+{overflow}</AvatarGroupCount>}\r\n    </AvatarGroup>\r\n  );\r\n}\r\n\r\nconst avatars: AvatarStackItem[] = [\r\n  { name: \"Olivia Sparks\", src: \"https://images.shadcnspace.com/assets/profiles/rough.webp\", fallback: \"OS\" },\r\n  { name: \"Hallie Richards\", src: \"https://images.shadcnspace.com/assets/profiles/jessica.webp\", fallback: \"HR\" },\r\n  { name: \"Howard Lloyd\", src: \"https://images.shadcnspace.com/assets/profiles/albert.webp\", fallback: \"HL\" },\r\n  { name: \"Jenny Wilson\", src: \"https://images.shadcnspace.com/assets/profiles/jenny.webp\", fallback: \"JW\" },\r\n  { name: \"Daniel Park\", src: \"https://images.shadcnspace.com/assets/profiles/user-4.jpg\", fallback: \"DP\" },\r\n  { name: \"Alice Morgan\", src: \"https://images.shadcnspace.com/assets/profiles/user-3.jpg\", fallback: \"AM\" },\r\n];\r\n\r\nexport default function AvatarStackDemo() {\r\n  return (\r\n    <div className=\"bg-background flex flex-wrap items-center justify-center rounded-full border p-1\">\r\n      <AvatarStack avatars={avatars} max={3} />\r\n      <p className=\"text-muted-foreground px-2 text-xs\">\r\n        Loved by <strong className=\"text-foreground font-medium\">30K+</strong> developers.\r\n      </p>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/avatar/avatar-08.tsx"
+      "target": "@components/shadcn-space/avatar/avatar-08.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

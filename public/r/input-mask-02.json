@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-mask-02",
-  "type": "registry:component",
   "title": "Input Mask 02 - Card Expiry Date",
   "description": "Card expiry date input mask with MM/YY format.",
   "dependencies": [
@@ -14,9 +13,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/input-mask/input-mask-02.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { CreditCard } from \"lucide-react\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport const title = \"Card Expiry Input Mask\";\n\nconst formatExpiry = (value: string): string => {\n  const digits = value.replace(/\\D/g, \"\").slice(0, 4);\n  if (digits.length < 3) return digits;\n  return `${digits.slice(0, 2)}/${digits.slice(2)}`;\n};\n\nconst CardExpiryInputMask = () => {\n  const [value, setValue] = useState(\"\");\n\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    setValue(formatExpiry(e.target.value));\n  };\n\n  return (\n    <div className=\"w-full max-w-sm space-y-2\">\n      <Label htmlFor=\"expiry-input\">Expiry Date</Label>\n      <div className=\"relative\">\n        <CreditCard className=\"absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\n        <Input\n          id=\"expiry-input\"\n          className=\"bg-background pl-9\"\n          placeholder=\"MM/YY\"\n          value={value}\n          onChange={handleChange}\n          inputMode=\"numeric\"\n          maxLength={5}\n        />\n      </div>\n    </div>\n  );\n};\n\nexport default CardExpiryInputMask;\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { CreditCard } from \"lucide-react\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nexport const title = \"Card Expiry Input Mask\";\r\n\r\nconst formatExpiry = (value: string): string => {\r\n  const digits = value.replace(/\\D/g, \"\").slice(0, 4);\r\n  if (digits.length < 3) return digits;\r\n  return `${digits.slice(0, 2)}/${digits.slice(2)}`;\r\n};\r\n\r\nconst CardExpiryInputMask = () => {\r\n  const [value, setValue] = useState(\"\");\r\n\r\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\r\n    setValue(formatExpiry(e.target.value));\r\n  };\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor=\"expiry-input\">Expiry Date</Label>\r\n      <div className=\"relative\">\r\n        <CreditCard className=\"absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\r\n        <Input\r\n          id=\"expiry-input\"\r\n          className=\"bg-background pl-9\"\r\n          placeholder=\"MM/YY\"\r\n          value={value}\r\n          onChange={handleChange}\r\n          inputMode=\"numeric\"\r\n          maxLength={5}\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CardExpiryInputMask;\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/input-mask/input-mask-02.tsx"
+      "target": "@components/shadcn-space/input-mask/input-mask-02.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

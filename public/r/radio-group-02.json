@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radio-group-02",
-  "type": "registry:component",
   "title": "Radio Group-02 - Radio Group with tree",
   "description": "Radio Group component",
   "dependencies": [],
@@ -14,7 +13,8 @@
       "path": "src/components/shadcn-space/radio-group/radio-group-02.tsx",
       "content": "import { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\n\r\nconst RadioGroupColorsDemo = () => {\r\n  return (\r\n    <RadioGroup\r\n      defaultValue=\"destructive\"\r\n      className=\"flex items-center gap-6 justify-center\"\r\n    >\r\n      {/* Error / Destructive */}\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem\r\n          value=\"destructive\"\r\n          id=\"color-destructive\"\r\n          className=\"text-destructive border-destructive data-checked:bg-transparent! data-checked:border-destructive! [&_span[data-slot]]:bg-transparent! [&_span:not([data-slot])]:bg-destructive! focus-visible:ring-destructive/20 focus-visible:border-destructive cursor-pointer\"\r\n        />\r\n        <Label\r\n          htmlFor=\"color-destructive\"\r\n          className=\"text-destructive cursor-pointer font-medium leading-none\"\r\n        >\r\n          Error\r\n        </Label>\r\n      </div>\r\n\r\n      {/* Approved / Success */}\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem\r\n          value=\"success\"\r\n          id=\"color-success\"\r\n          className=\"text-teal-500 border-teal-500 data-checked:bg-transparent! data-checked:border-teal-500! [&_span[data-slot]]:bg-transparent! [&_span:not([data-slot])]:bg-teal-500! focus-visible:border-teal-500 focus-visible:ring-teal-500/20 cursor-pointer\"\r\n        />\r\n        <Label\r\n          htmlFor=\"color-success\"\r\n          className=\"text-teal-500 cursor-pointer font-medium leading-none\"\r\n        >\r\n          Approved\r\n        </Label>\r\n      </div>\r\n\r\n      {/* Alert / Warning */}\r\n      <div className=\"flex items-center gap-2\">\r\n        <RadioGroupItem\r\n          value=\"info\"\r\n          id=\"color-info\"\r\n          className=\"text-amber-500 border-amber-500 data-checked:bg-transparent! data-checked:border-amber-500! [&_span[data-slot]]:bg-transparent! [&_span:not([data-slot])]:bg-amber-500! focus-visible:border-amber-500 focus-visible:ring-amber-500/20 cursor-pointer\"\r\n        />\r\n        <Label\r\n          htmlFor=\"color-info\"\r\n          className=\"text-amber-500 cursor-pointer font-medium leading-none\"\r\n        >\r\n          Alert\r\n        </Label>\r\n      </div>\r\n    </RadioGroup>\r\n  );\r\n};\r\n\r\nexport default RadioGroupColorsDemo;\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/radio-group/radio-group-02.tsx"
+      "target": "@components/shadcn-space/radio-group/radio-group-02.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

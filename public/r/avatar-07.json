@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-07",
-  "type": "registry:component",
   "title": "Avatar-07 - Selectable Avatar",
   "description": "Animated selectable avatar button with optional badge and name label",
   "dependencies": [
@@ -16,7 +15,8 @@
       "path": "src/components/shadcn-space/avatar/avatar-07.tsx",
       "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport { motion, type HTMLMotionProps } from \"motion/react\";\r\nimport { Avatar, AvatarImage, AvatarFallback } from \"@/components/ui/avatar\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { Plus } from \"lucide-react\";\r\n\r\ninterface SelectableAvatarProps extends HTMLMotionProps<\"button\"> {\r\n  name: string;\r\n  src?: string;\r\n  isSelected?: boolean;\r\n  badge?: React.ReactNode;\r\n}\r\n\r\nfunction getInitials(name: string) {\r\n  return name\r\n    .trim()\r\n    .split(/\\s+/)\r\n    .map((n) => n[0])\r\n    .slice(0, 2)\r\n    .join(\"\")\r\n    .toUpperCase();\r\n}\r\n\r\nexport const SelectableAvatar = React.forwardRef<\r\n  HTMLButtonElement,\r\n  SelectableAvatarProps\r\n>(({ name, src, isSelected = false, badge, className, ...props }, ref) => (\r\n  <motion.button\r\n    ref={ref}\r\n    type=\"button\"\r\n    aria-label={name}\r\n    aria-pressed={isSelected}\r\n    whileHover={{ scale: 1.05 }}\r\n    whileTap={{ scale: 0.95 }}\r\n    transition={{ type: \"spring\", stiffness: 400, damping: 25 }}\r\n    className={cn(\r\n      \"group relative inline-flex flex-col items-center gap-1.5 outline-none\",\r\n      className\r\n    )}\r\n    {...props}\r\n  >\r\n    <Avatar\r\n      className={cn(\r\n        \"w-12 h-12 transition-all duration-200\",\r\n        \"group-focus-visible:ring-2 group-focus-visible:ring-ring group-focus-visible:ring-offset-2\",\r\n        !isSelected\r\n        && \"opacity-50 group-hover:opacity-75\"\r\n      )}\r\n    >\r\n      <AvatarImage\r\n        src={src}\r\n        alt={name}\r\n        className={cn(!isSelected && \"grayscale\")}\r\n      />\r\n      <AvatarFallback\r\n        className={cn(\r\n          isSelected\r\n            ? \"bg-primary/10 text-primary\"\r\n            : \"bg-muted text-muted-foreground\"\r\n        )}\r\n      >\r\n        {getInitials(name)}\r\n      </AvatarFallback>\r\n    </Avatar>\r\n\r\n    {badge && !isSelected && (\r\n      <div className=\"absolute bottom-6 right-0 w-4 h-4 rounded-full bg-primary flex items-center justify-center shadow-sm\">\r\n        {badge}\r\n      </div>\r\n    )}\r\n\r\n    <span\r\n      className={cn(\r\n        \"text-xs font-medium truncate max-w-15\",\r\n        isSelected ? \"text-foreground\" : \"text-muted-foreground\"\r\n      )}\r\n    >\r\n      {name.trim().split(/\\s+/)[0]}\r\n    </span>\r\n  </motion.button>\r\n));\r\n\r\nSelectableAvatar.displayName = \"SelectableAvatar\";\r\n\r\nexport default function AvatarDemo() {\r\n  const [selected, setSelected] = React.useState(false);\r\n\r\n  return (\r\n    <SelectableAvatar\r\n      name=\"Daniel Park\"\r\n      src=\"https://images.shadcnspace.com/assets/profiles/albert.webp\"\r\n      isSelected={selected}\r\n      onClick={() => setSelected((prev) => !prev)}\r\n      badge={<Plus className=\"w-2.5 h-2.5 text-primary-foreground\" />}\r\n    />\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/avatar/avatar-07.tsx"
+      "target": "@components/shadcn-space/avatar/avatar-07.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

@@ -344,5 +344,14 @@ export const categories = {
     metaKeyword: "shadcn progress",
     metaTitle: "3+ Shadcn Progress Components for React & Next.js",
     metaDescription: "Explore our Shadcn Progress components designed for real-world use. Copy the code, customize it in your way, and use it in dashboards, forms, or any modern web project.",
+  },
+
+  logo: {
+    name: "logo",
+    title: "Logo",
+    metaKeyword: "logo",
+    metaTitle: "Logo - For Some Blocks",
+    metaDescription:
+      "Logo component that will install along with some blocks.",
   }
 } as const;

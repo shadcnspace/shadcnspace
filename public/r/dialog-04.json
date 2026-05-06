@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-04",
-  "type": "registry:component",
   "title": "Dialog 04 - Slide from Right",
   "description": "Dialog that slides in from the right — ideal for user profiles and detail panels.",
   "dependencies": [
@@ -17,7 +16,8 @@
       "path": "src/components/shadcn-space/dialog/dialog-04.tsx",
       "content": "\"use client\";\r\n\r\nimport { MailIcon, PhoneIcon, MessageSquareIcon } from \"lucide-react\";\r\nimport {\r\n  Dialog,\r\n  DialogTrigger,\r\n  DialogContent,\r\n  DialogTitle,\r\n  DialogDescription,\r\n  DialogClose,\r\n} from \"@/components/ui/dialog\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nexport default function Dialog04() {\r\n  return (\r\n    <Dialog>\r\n      <DialogTrigger render={<Button variant=\"outline\" className=\"cursor-pointer\" />}>\r\n        View Profile\r\n      </DialogTrigger>\r\n      <DialogContent className=\"data-open:slide-in-from-right-8 data-closed:slide-out-to-right-8 data-open:zoom-in-100 data-closed:zoom-out-100 duration-300\">\r\n        <div className=\"flex items-center gap-3\">\r\n          <Avatar className=\"size-12\">\r\n            <AvatarImage\r\n              src=\"https://images.shadcnspace.com/assets/hero-img/hero-team-img-8.jpg\"\r\n              alt=\"Jessica Lee\"\r\n            />\r\n            <AvatarFallback>JL</AvatarFallback>\r\n          </Avatar>\r\n          <div className=\"flex flex-col gap-0.5\">\r\n            <DialogTitle className=\"text-sm font-semibold leading-none\">\r\n              Jessica Lee\r\n            </DialogTitle>\r\n            <DialogDescription className=\"text-xs\">\r\n              Product Manager at Notion\r\n            </DialogDescription>\r\n          </div>\r\n        </div>\r\n        <div className=\"flex flex-col gap-2 rounded-lg bg-muted dark:bg-muted/50 p-3\">\r\n          <div className=\"flex items-center gap-2 text-muted-foreground\">\r\n            <MailIcon size={14} />\r\n            <span className=\"text-xs\">jessica.lee@notion.so</span>\r\n          </div>\r\n          <div className=\"flex items-center gap-2 text-muted-foreground\">\r\n            <PhoneIcon size={14} />\r\n            <span className=\"text-xs\">+1 (415) 867-5309</span>\r\n          </div>\r\n        </div>\r\n        <div className=\"grid grid-cols-3 gap-2 text-center\">\r\n          {[\r\n            { label: \"Projects\", value: \"38\" },\r\n            { label: \"Tasks\", value: \"210\" },\r\n            { label: \"Reviews\", value: \"4.9\" },\r\n          ].map((stat) => (\r\n            <div key={stat.label} className=\"rounded-lg bg-muted dark:bg-muted/50 p-2\">\r\n              <p className=\"font-semibold text-sm\">{stat.value}</p>\r\n              <p className=\"text-xs text-muted-foreground\">{stat.label}</p>\r\n            </div>\r\n          ))}\r\n        </div>\r\n        <div className=\"flex gap-2\">\r\n          <DialogClose\r\n            render={<Button variant=\"outline\" className=\"flex-1 cursor-pointer\" />}\r\n          >\r\n            Close\r\n          </DialogClose>\r\n          <DialogClose render={<Button className=\"flex-1 cursor-pointer hover:bg-primary/80\" />}>\r\n            <MessageSquareIcon size={14} />\r\n            Message\r\n          </DialogClose>\r\n        </div>\r\n      </DialogContent>\r\n    </Dialog>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/dialog/dialog-04.tsx"
+      "target": "@components/shadcn-space/dialog/dialog-04.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

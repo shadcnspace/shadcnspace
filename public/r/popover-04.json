@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "popover-04",
-  "type": "registry:component",
   "title": "Popover 04 - Volume Control",
   "description": "Popover that slides in from the top - ideal for notifications and alerts.",
   "dependencies": [
@@ -17,9 +16,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/popover/popover-04.tsx",
-      "content": "'use client'\n\nimport { useState } from 'react'\nimport { Volume1Icon, Volume2Icon, VolumeXIcon } from 'lucide-react'\nimport { Badge } from '@/components/ui/badge'\nimport { Button } from '@/components/ui/button'\nimport { Label } from '@/components/ui/label'\nimport { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'\nimport { Slider } from '@/components/ui/slider'\n\nconst PopoverVolumeDemo = () => {\n  const [value, setValue] = useState<number[]>([45])\n\n  const VolumeIcon = value[0] === 0 ? VolumeXIcon : value[0] < 50 ? Volume1Icon : Volume2Icon\n\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant='outline' size='icon' />}>\n        <VolumeIcon />\n        <span className='sr-only'>Volume control</span>\n      </PopoverTrigger>\n      <PopoverContent className='w-80'>\n        <div className='space-y-3'>\n          <div className='flex items-center justify-between gap-2'>\n            <Label className='leading-5'>Volume</Label>\n            <Badge variant='secondary'>{value[0]}%</Badge>\n          </div>\n          <div className='flex items-center gap-3'>\n            <VolumeXIcon className='size-4 shrink-0 opacity-40' />\n            <Slider\n              value={value}\n              onValueChange={(val) => {\n                setValue(Array.isArray(val) ? val : [val])\n              }}\n              max={100}\n              step={1}\n              className=\"cursor-pointer **:data-[slot=slider-track]:data-horizontal:h-1.5 **:data-[slot=slider-track]:cursor-pointer **:data-[slot=slider-thumb]:cursor-pointer\"\n            />\n            <Volume2Icon className='size-4 shrink-0 opacity-40' />\n          </div>\n        </div>\n      </PopoverContent>\n    </Popover>\n  )\n}\n\nexport default PopoverVolumeDemo",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { Volume1Icon, Volume2Icon, VolumeXIcon } from 'lucide-react'\r\nimport { Badge } from '@/components/ui/badge'\r\nimport { Button } from '@/components/ui/button'\r\nimport { Label } from '@/components/ui/label'\r\nimport { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'\r\nimport { Slider } from '@/components/ui/slider'\r\n\r\nconst PopoverVolumeDemo = () => {\r\n  const [value, setValue] = useState<number[]>([45])\r\n\r\n  const VolumeIcon = value[0] === 0 ? VolumeXIcon : value[0] < 50 ? Volume1Icon : Volume2Icon\r\n\r\n  return (\r\n    <Popover>\r\n      <PopoverTrigger render={<Button variant='outline' size='icon' />}>\r\n        <VolumeIcon />\r\n        <span className='sr-only'>Volume control</span>\r\n      </PopoverTrigger>\r\n      <PopoverContent className='w-80'>\r\n        <div className='space-y-3'>\r\n          <div className='flex items-center justify-between gap-2'>\r\n            <Label className='leading-5'>Volume</Label>\r\n            <Badge variant='secondary'>{value[0]}%</Badge>\r\n          </div>\r\n          <div className='flex items-center gap-3'>\r\n            <VolumeXIcon className='size-4 shrink-0 opacity-40' />\r\n            <Slider\r\n              value={value}\r\n              onValueChange={(val) => {\r\n                setValue(Array.isArray(val) ? val : [val])\r\n              }}\r\n              max={100}\r\n              step={1}\r\n              className=\"cursor-pointer **:data-[slot=slider-track]:data-horizontal:h-1.5 **:data-[slot=slider-track]:cursor-pointer **:data-[slot=slider-thumb]:cursor-pointer\"\r\n            />\r\n            <Volume2Icon className='size-4 shrink-0 opacity-40' />\r\n          </div>\r\n        </div>\r\n      </PopoverContent>\r\n    </Popover>\r\n  )\r\n}\r\n\r\nexport default PopoverVolumeDemo",
       "type": "registry:component",
-      "target": "components/shadcn-space/popover/popover-04.tsx"
+      "target": "@components/shadcn-space/popover/popover-04.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

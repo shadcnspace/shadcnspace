@@ -4,7 +4,7 @@ import { Sidebar, SidebarContent, SidebarHeader, SidebarMenu, SidebarMenuItem, S
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Logo from "@/assets/logo/logo";
+import Logo from "@/components/assets/logo/logo";
 import { NavMain } from "@/components/shadcn-space/blocks/dashboard-shell-01/nav-main";
 import { AlignStartVertical, ChartPie, CircleUserRound, ClipboardList, LucideIcon, Notebook, NotepadText, Table, TextInitial, Ticket, } from "lucide-react";
 import { SiteHeader } from "@/components/shadcn-space/blocks/dashboard-shell-01/site-header";

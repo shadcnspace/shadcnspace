@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner-06",
-  "type": "registry:component",
   "title": "Spinner 06 - Bars",
   "description": "Three vertical bars with staggered grow animation.",
   "dependencies": [],
@@ -9,9 +8,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/spinner/spinner-06.tsx",
-      "content": "export default function SpinnerBars() {\n  return (\n    <>\n      <style>{`\n        .spinner-bars-bar {\n          height: 6px;\n          animation: spinner-bars 0.8s ease-in-out infinite;\n        }\n        @keyframes spinner-bars {\n          0%, 100% { height: 6px; }\n          50% { height: 20px; }\n        }\n      `}</style>\n      <div className=\"flex items-end gap-1 h-5\">\n        {[0, 0.2, 0.4].map((delay, i) => (\n          <span\n            key={i}\n            className=\"w-1.5 rounded-sm bg-current spinner-bars-bar\"\n            style={{ animationDelay: `${delay}s` }}\n          />\n        ))}\n      </div>\n    </>\n  );\n}\n",
+      "content": "export default function SpinnerBars() {\r\n  return (\r\n    <>\r\n      <style>{`\r\n        .spinner-bars-bar {\r\n          height: 6px;\r\n          animation: spinner-bars 0.8s ease-in-out infinite;\r\n        }\r\n        @keyframes spinner-bars {\r\n          0%, 100% { height: 6px; }\r\n          50% { height: 20px; }\r\n        }\r\n      `}</style>\r\n      <div className=\"flex items-end gap-1 h-5\">\r\n        {[0, 0.2, 0.4].map((delay, i) => (\r\n          <span\r\n            key={i}\r\n            className=\"w-1.5 rounded-sm bg-current spinner-bars-bar\"\r\n            style={{ animationDelay: `${delay}s` }}\r\n          />\r\n        ))}\r\n      </div>\r\n    </>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/spinner/spinner-06.tsx"
+      "target": "@components/shadcn-space/spinner/spinner-06.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

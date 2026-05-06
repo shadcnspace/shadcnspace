@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "slider-01",
-  "type": "registry:component",
   "title": "Slider 01 - Volume Control",
   "description": "Volume control slider with volume icons and smooth fill animation.",
   "dependencies": [
@@ -15,7 +14,8 @@
       "path": "src/components/shadcn-space/slider/slider-01.tsx",
       "content": "\"use client\";\r\n\r\nimport React, { useRef, useState } from \"react\";\r\nimport { Slider } from \"@/components/ui/slider\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { Volume2Icon, VolumeOffIcon } from \"lucide-react\";\r\n\r\ninterface PreviewSliderProps {\r\n  defaultValue?: number;\r\n  min?: number;\r\n  max?: number;\r\n  step?: number;\r\n  className?: string;\r\n}\r\n\r\nexport default function VolumeSlider({\r\n  defaultValue = 50,\r\n  min = 0,\r\n  max = 100,\r\n  step = 1,\r\n  className,\r\n}: PreviewSliderProps) {\r\n  const [value, setValue] = useState(defaultValue);\r\n  const [preview, setPreview] = useState<number | null>(null);\r\n  const rootRef = useRef<HTMLDivElement>(null);\r\n\r\n  const toPct = (v: number) => ((v - min) / (max - min)) * 100;\r\n\r\n  const handleMouseMove = (e: React.MouseEvent) => {\r\n    const rect = rootRef.current?.getBoundingClientRect();\r\n    if (!rect) return;\r\n    const raw = ((e.clientX - rect.left) / rect.width) * (max - min) + min;\r\n    setPreview(\r\n      Math.max(min, Math.min(max, Math.round((raw - min) / step) * step + min)),\r\n    );\r\n  };\r\n\r\n  const valuePct = toPct(value);\r\n  const previewPct = preview !== null ? toPct(preview) : null;\r\n\r\n  return (\r\n    <>\r\n      <div className=\"flex items-center w-full max-w-xs gap-4 font-medium\">\r\n        <VolumeOffIcon className=\"text-muted-foreground size-5 shrink-0\" />\r\n        <div\r\n          ref={rootRef}\r\n          className={cn(\"relative w-full\", className)}\r\n          onMouseMove={handleMouseMove}\r\n          onMouseLeave={() => setPreview(null)}\r\n        >\r\n          <Slider\r\n            value={[value]}\r\n            onValueChange={(v) => {\r\n              const val = Array.isArray(v) ? v[0] : v;\r\n              if (typeof val === \"number\") setValue(val);\r\n            }}\r\n            min={min}\r\n            max={max}\r\n            step={step}\r\n            className=\"**:[[role=slider]]:transition-transform **:[[role=slider]]:hover:scale-125 **:data-[slot='slider-track']:h-2! **:data-[slot='slider-thumb']:z-2\"\r\n          />\r\n          {previewPct !== null && (\r\n            <div\r\n              className=\"pointer-events-none absolute top-1/2 h-2 -translate-y-1/2 rounded-full bg-primary/30 transition-all duration-75 z-1\"\r\n              style={{\r\n                left: `${Math.min(valuePct, previewPct)}%`,\r\n                width: `${Math.abs(previewPct - valuePct)}%`,\r\n              }}\r\n            />\r\n          )}\r\n        </div>\r\n        <Volume2Icon className=\"text-muted-foreground size-5 shrink-0\" />\r\n      </div>\r\n    </>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/slider/slider-01.tsx"
+      "target": "@components/shadcn-space/slider/slider-01.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

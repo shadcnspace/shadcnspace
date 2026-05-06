@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "pagination-01",
-  "type": "registry:component",
   "title": "Pagination 01 - Floating Pill",
   "description": "A floating pill-style pagination with smooth morphing animations.",
   "dependencies": [
@@ -15,7 +14,8 @@
       "path": "src/components/shadcn-space/pagination/pagination-01.tsx",
       "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport { motion } from \"motion/react\";\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationItem,\r\n  PaginationLink,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from \"@/components/ui/pagination\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nexport default function FloatingPill() {\r\n  const [activePage, setActivePage] = React.useState(2);\r\n  const totalPages = 5;\r\n\r\n  return (\r\n    <Pagination>\r\n      <PaginationContent className=\"bg-background/80 border p-1 rounded-full transition-all\">\r\n        <PaginationItem>\r\n          <PaginationPrevious \r\n            href=\"#\" \r\n            onClick={(e) => {\r\n              e.preventDefault();\r\n              setActivePage(prev => Math.max(1, prev - 1));\r\n            }}\r\n            className=\"rounded-full hover:bg-muted\" \r\n          />\r\n        </PaginationItem>\r\n        \r\n        <div className=\"relative flex items-center mx-1\">\r\n          {Array.from({ length: totalPages }).map((_, i) => {\r\n            const page = i + 1;\r\n            const isActive = activePage === page;\r\n            return (\r\n              <PaginationItem key={page} className=\"relative\">\r\n                <PaginationLink\r\n                  href=\"#\"\r\n                  isActive={isActive}\r\n                  onClick={(e) => {\r\n                    e.preventDefault();\r\n                    setActivePage(page);\r\n                  }}\r\n                  className={cn(\r\n                    \"relative z-10 w-9 h-9 rounded-full border-0 transition-colors uppercase text-xs font-bold tracking-tighter\",\r\n                    isActive\r\n                      ? \"bg-transparent text-primary-foreground hover:bg-transparent hover:text-primary-foreground\"\r\n                      : \"text-muted-foreground hover:text-foreground hover:bg-muted\"\r\n                  )}\r\n                >\r\n                  {page}\r\n                </PaginationLink>\r\n                {isActive && (\r\n                  <motion.div\r\n                    layoutId=\"pill-active\"\r\n                    className=\"absolute inset-0 bg-primary rounded-full shadow-md\"\r\n                    transition={{ type: \"spring\", bounce: 0.2, duration: 0.6 }}\r\n                  />\r\n                )}\r\n              </PaginationItem>\r\n            );\r\n          })}\r\n        </div>\r\n\r\n        <PaginationItem>\r\n          <PaginationNext \r\n            href=\"#\" \r\n            onClick={(e) => {\r\n              e.preventDefault();\r\n              setActivePage(prev => Math.min(totalPages, prev + 1));\r\n            }}\r\n            className=\"rounded-full hover:bg-muted transition-transform active:scale-95\" \r\n          />\r\n        </PaginationItem>\r\n      </PaginationContent>\r\n    </Pagination>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/pagination/pagination-01.tsx"
+      "target": "@components/shadcn-space/pagination/pagination-01.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

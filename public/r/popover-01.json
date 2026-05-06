@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "popover-01",
-  "type": "registry:component",
   "title": "Popover 01 - About Shadcn Space",
   "description": "Popover that slides in from the top - ideal for notifications and alerts.",
   "dependencies": [
@@ -14,9 +13,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/popover/popover-01.tsx",
-      "content": "import { InfoIcon } from 'lucide-react'\nimport { Button } from '@/components/ui/button'\nimport { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'\n\nconst PopoverAboutDemo = () => {\n  return (\n    <Popover>\n      <PopoverTrigger render={<Button variant='outline' size='icon' className=\"cursor-pointer\" />}>\n        <InfoIcon />\n        <span className='sr-only'>About Shadcn Space</span>\n      </PopoverTrigger>\n      <PopoverContent className='w-80'>\n        <div className='grid gap-4'>\n          <div className='space-y-1.5 text-center'>\n            <div className='text-lg font-semibold'>About Shadcn Space</div>\n            <p className='text-muted-foreground text-sm'>\n              Welcome to Shadcn Space - your go-to library of beautifully crafted, registry-ready UI components built on shadcn/ui.\n            </p>\n          </div>\n          <Button size='sm' render={<a href='#' />} className=\"hover:bg-primary/80 cursor-pointer\">\n            Learn More\n          </Button>\n        </div>\n      </PopoverContent>\n    </Popover>\n  )\n}\n\nexport default PopoverAboutDemo\n",
+      "content": "import { InfoIcon } from 'lucide-react'\r\nimport { Button } from '@/components/ui/button'\r\nimport { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'\r\n\r\nconst PopoverAboutDemo = () => {\r\n  return (\r\n    <Popover>\r\n      <PopoverTrigger render={<Button variant='outline' size='icon' className=\"cursor-pointer\" />}>\r\n        <InfoIcon />\r\n        <span className='sr-only'>About Shadcn Space</span>\r\n      </PopoverTrigger>\r\n      <PopoverContent className='w-80'>\r\n        <div className='grid gap-4'>\r\n          <div className='space-y-1.5 text-center'>\r\n            <div className='text-lg font-semibold'>About Shadcn Space</div>\r\n            <p className='text-muted-foreground text-sm'>\r\n              Welcome to Shadcn Space - your go-to library of beautifully crafted, registry-ready UI components built on shadcn/ui.\r\n            </p>\r\n          </div>\r\n          <Button size='sm' render={<a href='#' />} className=\"hover:bg-primary/80 cursor-pointer\">\r\n            Learn More\r\n          </Button>\r\n        </div>\r\n      </PopoverContent>\r\n    </Popover>\r\n  )\r\n}\r\n\r\nexport default PopoverAboutDemo\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/popover/popover-01.tsx"
+      "target": "@components/shadcn-space/popover/popover-01.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

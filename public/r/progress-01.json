@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "progress-01",
-  "type": "registry:component",
   "title": "Progress 01 - Simple Upload",
   "description": "A minimal, animated progress bar with status text and a reset action.",
   "dependencies": [
@@ -14,9 +13,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/progress/progress-01.tsx",
-      "content": "\"use client\";\n\nimport { useState, useEffect } from \"react\";\nimport { Progress } from \"@/components/ui/progress\";\nimport { Button } from \"@/components/ui/button\";\nimport { RefreshCw } from \"lucide-react\";\n\nexport default function FileUploadProgress() {\n  const [progress, setProgress] = useState(0);\n  const [run, setRun] = useState(0);\n\n  useEffect(() => {\n    setProgress(0);\n    const id = setInterval(() => {\n      setProgress((prev) => {\n        if (prev >= 100) { clearInterval(id); return 100; }\n        return Math.min(prev + Math.random() * 8 + 1, 100);\n      });\n    }, 180);\n    return () => clearInterval(id);\n  }, [run]);\n\n  const done = progress >= 100;\n\n  return (\n    <div className=\"w-full max-w-sm space-y-3\">\n      <div className=\"flex items-center justify-between text-xs text-muted-foreground\">\n        <span>{done ? \"Complete\" : \"Uploading...\"}</span>\n        <span>{Math.round(progress)}%</span>\n      </div>\n      <Progress value={progress} />\n      <Button\n        size=\"sm\"\n        variant=\"outline\"\n        disabled={!done}\n        onClick={() => setRun((r) => r + 1)}\n        className=\"w-full gap-2 cursor-pointer\"\n      >\n        <RefreshCw className=\"size-3.5\" />\n        Reset\n      </Button>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { useState, useEffect } from \"react\";\r\nimport { Progress } from \"@/components/ui/progress\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { RefreshCw } from \"lucide-react\";\r\n\r\nexport default function FileUploadProgress() {\r\n  const [progress, setProgress] = useState(0);\r\n  const [run, setRun] = useState(0);\r\n\r\n  useEffect(() => {\r\n    setProgress(0);\r\n    const id = setInterval(() => {\r\n      setProgress((prev) => {\r\n        if (prev >= 100) { clearInterval(id); return 100; }\r\n        return Math.min(prev + Math.random() * 8 + 1, 100);\r\n      });\r\n    }, 180);\r\n    return () => clearInterval(id);\r\n  }, [run]);\r\n\r\n  const done = progress >= 100;\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-3\">\r\n      <div className=\"flex items-center justify-between text-xs text-muted-foreground\">\r\n        <span>{done ? \"Complete\" : \"Uploading...\"}</span>\r\n        <span>{Math.round(progress)}%</span>\r\n      </div>\r\n      <Progress value={progress} />\r\n      <Button\r\n        size=\"sm\"\r\n        variant=\"outline\"\r\n        disabled={!done}\r\n        onClick={() => setRun((r) => r + 1)}\r\n        className=\"w-full gap-2 cursor-pointer\"\r\n      >\r\n        <RefreshCw className=\"size-3.5\" />\r\n        Reset\r\n      </Button>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/progress/progress-01.tsx"
+      "target": "@components/shadcn-space/progress/progress-01.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner-03",
-  "type": "registry:component",
   "title": "Spinner 03 - Pinwheel",
   "description": "6-blade pinwheel spinner with opacity gradient and continuous rotation.",
   "dependencies": [],
@@ -9,9 +8,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/spinner/spinner-03.tsx",
-      "content": "export default function SpinnerPinwheel() {\n  return (\n    <svg\n      width=\"24\"\n      height=\"24\"\n      viewBox=\"0 0 24 24\"\n      className=\"text-foreground animate-spin\"\n      style={{ animationDuration: \"0.75s\" }}\n    >\n      {[0, 60, 120, 180, 240, 300].map((deg, i) => (\n        <path\n          key={i}\n          d=\"M12,12 Q15,9 13.5,4.5 Q11,3 9.5,6.5 Q8.5,9.5 12,12Z\"\n          fill=\"currentColor\"\n          fillOpacity={+(1 - (i / 6) * 0.8).toFixed(2)}\n          transform={`rotate(${deg} 12 12)`}\n        />\n      ))}\n    </svg>\n  );\n}\n",
+      "content": "export default function SpinnerPinwheel() {\r\n  return (\r\n    <svg\r\n      width=\"24\"\r\n      height=\"24\"\r\n      viewBox=\"0 0 24 24\"\r\n      className=\"text-foreground animate-spin\"\r\n      style={{ animationDuration: \"0.75s\" }}\r\n    >\r\n      {[0, 60, 120, 180, 240, 300].map((deg, i) => (\r\n        <path\r\n          key={i}\r\n          d=\"M12,12 Q15,9 13.5,4.5 Q11,3 9.5,6.5 Q8.5,9.5 12,12Z\"\r\n          fill=\"currentColor\"\r\n          fillOpacity={+(1 - (i / 6) * 0.8).toFixed(2)}\r\n          transform={`rotate(${deg} 12 12)`}\r\n        />\r\n      ))}\r\n    </svg>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/spinner/spinner-03.tsx"
+      "target": "@components/shadcn-space/spinner/spinner-03.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

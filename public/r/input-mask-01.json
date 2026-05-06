@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-mask-01",
-  "type": "registry:component",
   "title": "Input Mask 01 - Card Number",
   "description": "Card number input mask with #### #### #### #### format.",
   "dependencies": [
@@ -14,9 +13,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/input-mask/input-mask-01.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { CreditCard } from \"lucide-react\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport const title = \"Card Number Input Mask\";\n\nconst formatCardNumber = (value: string): string => {\n  const digits = value.replace(/\\D/g, \"\").slice(0, 16);\n  return digits.match(/.{1,4}/g)?.join(\" \") || digits;\n};\n\nconst CardNumberInputMask = () => {\n  const [value, setValue] = useState(\"\");\n\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    setValue(formatCardNumber(e.target.value));\n  };\n\n  return (\n    <div className=\"w-full max-w-sm space-y-2\">\n      <Label htmlFor=\"card-input\">Card Number</Label>\n      <div className=\"relative\">\n        <CreditCard className=\"absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\n        <Input\n          id=\"card-input\"\n          className=\"bg-background pl-9\"\n          placeholder=\"0000 0000 0000 0000\"\n          value={value}\n          onChange={handleChange}\n          inputMode=\"numeric\"\n          maxLength={19}\n        />\n      </div>\n    </div>\n  );\n};\n\nexport default CardNumberInputMask;\n\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { CreditCard } from \"lucide-react\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nexport const title = \"Card Number Input Mask\";\r\n\r\nconst formatCardNumber = (value: string): string => {\r\n  const digits = value.replace(/\\D/g, \"\").slice(0, 16);\r\n  return digits.match(/.{1,4}/g)?.join(\" \") || digits;\r\n};\r\n\r\nconst CardNumberInputMask = () => {\r\n  const [value, setValue] = useState(\"\");\r\n\r\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\r\n    setValue(formatCardNumber(e.target.value));\r\n  };\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor=\"card-input\">Card Number</Label>\r\n      <div className=\"relative\">\r\n        <CreditCard className=\"absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\r\n        <Input\r\n          id=\"card-input\"\r\n          className=\"bg-background pl-9\"\r\n          placeholder=\"0000 0000 0000 0000\"\r\n          value={value}\r\n          onChange={handleChange}\r\n          inputMode=\"numeric\"\r\n          maxLength={19}\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CardNumberInputMask;\r\n\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/input-mask/input-mask-01.tsx"
+      "target": "@components/shadcn-space/input-mask/input-mask-01.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

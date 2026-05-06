@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-02",
-  "type": "registry:component",
   "title": "Dialog 02 - Slide from Bottom",
   "description": "Dialog that slides in from the bottom — ideal for confirmations and destructive actions.",
   "dependencies": [
@@ -16,7 +15,8 @@
       "path": "src/components/shadcn-space/dialog/dialog-02.tsx",
       "content": "\"use client\";\r\n\r\nimport { Trash2Icon } from \"lucide-react\";\r\nimport {\r\n  Dialog,\r\n  DialogTrigger,\r\n  DialogContent,\r\n  DialogHeader,\r\n  DialogTitle,\r\n  DialogDescription,\r\n  DialogClose,\r\n} from \"@/components/ui/dialog\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nexport default function Dialog02() {\r\n  return (\r\n    <Dialog>\r\n      <DialogTrigger render={<Button variant=\"outline\" className=\"cursor-pointer\" />}>\r\n        Delete Item\r\n      </DialogTrigger>\r\n      <DialogContent\r\n        className=\"data-open:slide-in-from-bottom-8 data-closed:slide-out-to-bottom-8 data-open:zoom-in-100 data-closed:zoom-out-100 duration-300\"\r\n        showCloseButton={false}\r\n      >\r\n        <div className=\"flex flex-col items-center text-center gap-4\">\r\n          <div className=\"flex items-center justify-center size-12 rounded-full bg-destructive/10 text-destructive\">\r\n            <Trash2Icon size={20} />\r\n          </div>\r\n          <DialogHeader className=\"items-center\">\r\n            <DialogTitle>Delete Item</DialogTitle>\r\n            <DialogDescription>\r\n              Are you sure you want to delete this item? This action cannot be\r\n              undone and the data will be permanently removed.\r\n            </DialogDescription>\r\n          </DialogHeader>\r\n          <div className=\"flex gap-2 w-full\">\r\n            <DialogClose\r\n              render={<Button variant=\"outline\" className=\"flex-1 cursor-pointer\" />}\r\n            >\r\n              Cancel\r\n            </DialogClose>\r\n            <DialogClose\r\n              render={<Button variant=\"destructive\" className=\"flex-1 cursor-pointer\" />}\r\n            >\r\n              Delete\r\n            </DialogClose>\r\n          </div>\r\n        </div>\r\n      </DialogContent>\r\n    </Dialog>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/dialog/dialog-02.tsx"
+      "target": "@components/shadcn-space/dialog/dialog-02.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

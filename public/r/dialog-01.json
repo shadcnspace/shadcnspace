@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-01",
-  "type": "registry:component",
   "title": "Dialog 01 - Slide from Top",
   "description": "Dialog that slides in from the top — ideal for notifications and alerts.",
   "dependencies": [
@@ -16,7 +15,8 @@
       "path": "src/components/shadcn-space/dialog/dialog-01.tsx",
       "content": "\"use client\";\r\n\r\nimport { BellIcon } from \"lucide-react\";\r\nimport {\r\n  Dialog,\r\n  DialogTrigger,\r\n  DialogContent,\r\n  DialogHeader,\r\n  DialogTitle,\r\n  DialogDescription,\r\n  DialogClose,\r\n} from \"@/components/ui/dialog\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nexport default function Dialog01() {\r\n  return (\r\n    <Dialog>\r\n      <DialogTrigger render={<Button variant=\"outline\" className=\"cursor-pointer\" />}>\r\n        Open Notification\r\n      </DialogTrigger>\r\n      <DialogContent\r\n        className=\"data-open:slide-in-from-top-8 data-closed:slide-out-to-top-8 data-open:zoom-in-100 data-closed:zoom-out-100 duration-300\"\r\n        showCloseButton={false}\r\n      >\r\n        <div className=\"flex flex-col items-center text-center gap-4\">\r\n          <div className=\"flex items-center justify-center size-12 rounded-full bg-primary/10 text-primary\">\r\n            <BellIcon size={20} />\r\n          </div>\r\n          <DialogHeader className=\"items-center\">\r\n            <DialogTitle>New Notification</DialogTitle>\r\n            <DialogDescription>\r\n              You have 3 unread messages from your team. Check them out before\r\n              your next meeting.\r\n            </DialogDescription>\r\n          </DialogHeader>\r\n          <div className=\"flex gap-2 w-full\">\r\n            <DialogClose\r\n              render={<Button variant=\"outline\" className=\"flex-1 cursor-pointer\" />}\r\n            >\r\n              Dismiss\r\n            </DialogClose>\r\n            <DialogClose render={<Button className=\"flex-1 cursor-pointer hover:bg-primary/80\" />}>\r\n              View Messages\r\n            </DialogClose>\r\n          </div>\r\n        </div>\r\n      </DialogContent>\r\n    </Dialog>\r\n  );\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/dialog/dialog-01.tsx"
+      "target": "@components/shadcn-space/dialog/dialog-01.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

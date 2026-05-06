@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner-01",
-  "type": "registry:component",
   "title": "Spinner 01 - Default",
   "description": "Default shadcn spinner using the Loader2 icon with animate-spin.",
   "dependencies": [],
@@ -11,9 +10,10 @@
   "files": [
     {
       "path": "src/components/shadcn-space/spinner/spinner-01.tsx",
-      "content": "import { Spinner } from \"@/components/ui/spinner\";\n\nexport default function SpinnerDefault() {\n  return <Spinner className=\"size-6\" />;\n}\n",
+      "content": "import { Spinner } from \"@/components/ui/spinner\";\r\n\r\nexport default function SpinnerDefault() {\r\n  return <Spinner className=\"size-6\" />;\r\n}\r\n",
       "type": "registry:component",
-      "target": "components/shadcn-space/spinner/spinner-01.tsx"
+      "target": "@components/shadcn-space/spinner/spinner-01.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }
