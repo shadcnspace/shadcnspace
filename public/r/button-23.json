@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-23",
+  "title": "Button 23 - Permissions Button",
+  "description": "Animated Permissions button component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-23.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ShieldXIcon, ShieldCheckIcon } from \"lucide-react\";\r\nimport { motion } from \"motion/react\";\r\n\r\nconst MotionButton = motion.create(Button);\r\nconst MotionShieldXIcon = motion.create(ShieldXIcon);\r\nconst MotionShieldCheckIcon = motion.create(ShieldCheckIcon);\r\n\r\nconst rejectIconVariants = {\r\n  initial: { rotate: 0, scale: 1 },\r\n  hover: {\r\n    rotate: [0, -10, 10, -10, 10, 0],\r\n    scale: 1.1,\r\n    transition: {\r\n      duration: 0.45,\r\n      ease: \"easeInOut\",\r\n    },\r\n  },\r\n};\r\n\r\nconst approveIconVariants = {\r\n  initial: { scale: 1, y: 0 },\r\n  hover: {\r\n    scale: 1.15,\r\n    y: [0, -4, 2, -1, 0],\r\n    transition: {\r\n      duration: 0.5,\r\n      ease: \"easeOut\",\r\n    },\r\n  },\r\n};\r\n\r\nconst PermissionsButtonDemo = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-4\">\r\n      <MotionButton\r\n        variant=\"destructive\"\r\n        className=\"cursor-pointer\"\r\n        initial=\"initial\"\r\n        whileHover=\"hover\"\r\n        whileTap=\"tap\"\r\n        variants={{\r\n          hover: { scale: 1.02 },\r\n          tap: { scale: 0.98 },\r\n        }}\r\n      >\r\n        Reject\r\n        <MotionShieldXIcon variants={rejectIconVariants} />\r\n      </MotionButton>\r\n      <MotionButton\r\n        className=\"cursor-pointer bg-teal-400/10 text-teal-400 hover:bg-teal-400/20 focus-visible:border-teal-400/40\"\r\n        initial=\"initial\"\r\n        whileHover=\"hover\"\r\n        whileTap=\"tap\"\r\n        variants={{\r\n          hover: { scale: 1.02 },\r\n          tap: { scale: 0.98 },\r\n        }}\r\n      >\r\n        Approve\r\n        <MotionShieldCheckIcon variants={approveIconVariants} />\r\n      </MotionButton>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default PermissionsButtonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-23.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

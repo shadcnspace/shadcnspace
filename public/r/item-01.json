@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-01",
+  "title": "Item 01 - Team Members List",
+  "description": "A team members list built with the Item primitive, showing avatar, name, email, role badge, and a dropdown menu with change role, view profile, and revoke access actions",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "item",
+    "button",
+    "badge",
+    "avatar",
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/item/item-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { MoreHorizontal } from \"lucide-react\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuSeparator,\r\n  DropdownMenuTrigger,\r\n} from \"@/components/ui/dropdown-menu\";\r\nimport {\r\n  Item,\r\n  ItemActions,\r\n  ItemContent,\r\n  ItemDescription,\r\n  ItemGroup,\r\n  ItemMedia,\r\n  ItemSeparator,\r\n  ItemTitle,\r\n} from \"@/components/ui/item\";\r\n\r\ntype MemberRole = \"Admin\" | \"Editor\" | \"Viewer\";\r\n\r\ntype Member = {\r\n  name: string;\r\n  email: string;\r\n  role: MemberRole;\r\n  avatar: string;\r\n  initials: string;\r\n};\r\n\r\nconst roleStyles: Record<MemberRole, string> = {\r\n  Admin: \"bg-violet-400/10 text-violet-400\",\r\n  Editor: \"bg-sky-400/10 text-sky-400\",\r\n  Viewer: \"bg-teal-400/10 text-teal-400\",\r\n};\r\n\r\nconst defaultMembers: Member[] = [\r\n  {\r\n    name: \"Jessica Thompson\",\r\n    email: \"jessica@example.com\",\r\n    role: \"Admin\",\r\n    avatar: \"https://images.shadcnspace.com/assets/profiles/jessica.webp\",\r\n    initials: \"JT\",\r\n  },\r\n  {\r\n    name: \"Jenny Wilson\",\r\n    email: \"jenny@example.com\",\r\n    role: \"Editor\",\r\n    avatar: \"https://images.shadcnspace.com/assets/profiles/jenny.webp\",\r\n    initials: \"JW\",\r\n  },\r\n  {\r\n    name: \"Linda Brown\",\r\n    email: \"linda@example.com\",\r\n    role: \"Viewer\",\r\n    avatar: \"https://images.shadcnspace.com/assets/profiles/linda.webp\",\r\n    initials: \"LB\",\r\n  },\r\n];\r\n\r\ntype TeamMembersListProps = {\r\n  members?: Member[];\r\n};\r\n\r\nconst TeamMembersListDemo = ({ members = defaultMembers }: TeamMembersListProps) => {\r\n  return (\r\n    <ItemGroup className=\"w-full max-w-md rounded-xl border border-border p-2 gap-0\">\r\n      {members.map((member, index) => (\r\n        <div key={member.email}>\r\n          <Item>\r\n            <ItemMedia variant=\"image\">\r\n              <Avatar>\r\n                <AvatarImage src={member.avatar} alt={member.name} />\r\n                <AvatarFallback>{member.initials}</AvatarFallback>\r\n              </Avatar>\r\n            </ItemMedia>\r\n            <ItemContent>\r\n              <ItemTitle>{member.name}</ItemTitle>\r\n              <ItemDescription>{member.email}</ItemDescription>\r\n            </ItemContent>\r\n            <ItemActions>\r\n              <Badge className={cn(\"border-0\", roleStyles[member.role])}>\r\n                {member.role}\r\n              </Badge>\r\n              <DropdownMenu>\r\n                <DropdownMenuTrigger\r\n                  render={\r\n                    <Button\r\n                      variant=\"ghost\"\r\n                      size=\"icon-sm\"\r\n                      className=\"cursor-pointer\"\r\n                    >\r\n                      <MoreHorizontal className=\"size-4\" />\r\n                    </Button>\r\n                  }\r\n                />\r\n                <DropdownMenuContent align=\"end\">\r\n                  <DropdownMenuItem>Change Role</DropdownMenuItem>\r\n                  <DropdownMenuItem>View Profile</DropdownMenuItem>\r\n                  <DropdownMenuSeparator />\r\n                  <DropdownMenuItem variant=\"destructive\">\r\n                    Revoke Access\r\n                  </DropdownMenuItem>\r\n                </DropdownMenuContent>\r\n              </DropdownMenu>\r\n            </ItemActions>\r\n          </Item>\r\n          {index < members.length - 1 && <ItemSeparator />}\r\n        </div>\r\n      ))}\r\n    </ItemGroup>\r\n  );\r\n};\r\n\r\nexport default TeamMembersListDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/item/item-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-03",
+  "title": "Toggle 03 - Animated Upvote Button",
+  "description": "An animated Product Hunt / Reddit style upvote button with bouncing arrow and sliding digit counter.",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/toggle/toggle-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { motion, AnimatePresence } from \"motion/react\";\r\nimport { Triangle } from \"lucide-react\";\r\n\r\nconst ToggleDemo = () => {\r\n  const [upvoted, setUpvoted] = useState(false);\r\n  const [count, setCount] = useState(42);\r\n\r\n  const handleToggle = () => {\r\n    setUpvoted((prev) => !prev);\r\n    setCount((prev) => (upvoted ? prev - 1 : prev + 1));\r\n  };\r\n\r\n  return (\r\n    <button\r\n      onClick={handleToggle}\r\n      className={`group relative flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-semibold transition-all duration-300 cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-ring ${\r\n        upvoted\r\n          ? \"border-orange-500 bg-orange-500/10 text-orange-600 dark:text-orange-500\"\r\n          : \"border-input bg-background/50 hover:bg-muted text-foreground\"\r\n      }`}\r\n      type=\"button\"\r\n    >\r\n      {/* Arrow Container */}\r\n      <motion.div\r\n        animate={\r\n          upvoted\r\n            ? {\r\n                y: [-4, 2, -1, 0],\r\n                scale: [1, 1.25, 0.95, 1],\r\n              }\r\n            : {\r\n                y: [4, -2, 1, 0],\r\n                scale: [1, 0.9, 1.05, 1],\r\n              }\r\n        }\r\n        transition={{\r\n          duration: 0.45,\r\n          ease: \"easeInOut\",\r\n        }}\r\n        className=\"flex items-center justify-center\"\r\n      >\r\n        <Triangle\r\n          className={`size-4 fill-current transition-colors duration-300 ${\r\n            upvoted ? \"text-orange-500\" : \"text-muted-foreground group-hover:text-foreground\"\r\n          }`}\r\n        />\r\n      </motion.div>\r\n\r\n      {/* Upvote Label */}\r\n      <span className=\"font-medium tracking-wide\">\r\n        {upvoted ? \"Upvoted\" : \"Upvote\"}\r\n      </span>\r\n\r\n      {/* Vertical Divider */}\r\n      <span className={`h-4 w-px transition-colors duration-300 ${\r\n        upvoted ? \"bg-orange-500/30\" : \"bg-border\"\r\n      }`} />\r\n\r\n      {/* Counter with sliding animation */}\r\n      <div className=\"relative overflow-hidden h-5 w-6 flex items-center justify-center\">\r\n        <AnimatePresence mode=\"popLayout\" initial={false}>\r\n          <motion.span\r\n            key={count}\r\n            initial={{ y: upvoted ? 16 : -16, opacity: 0 }}\r\n            animate={{ y: 0, opacity: 1 }}\r\n            exit={{ y: upvoted ? -16 : 16, opacity: 0 }}\r\n            transition={{\r\n              type: \"spring\",\r\n              stiffness: 300,\r\n              damping: 18,\r\n            }}\r\n            className=\"absolute font-mono tabular-nums text-sm font-bold\"\r\n          >\r\n            {count}\r\n          </motion.span>\r\n        </AnimatePresence>\r\n      </div>\r\n    </button>\r\n  );\r\n};\r\n\r\nexport default ToggleDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/toggle/toggle-03.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

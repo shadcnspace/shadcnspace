@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "combobox-04",
-  "title": "Combobox-04 - Timezone",
+  "title": "Combobox 04 - Timezone",
   "description": "Combobox component",
   "dependencies": [
     "lucide-react"

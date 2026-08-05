@@ -424,5 +424,77 @@ export const categories = {
     metaKeyword: "shadcn sheet",
     metaTitle: "{count}+ Modern Shadcn Sheet Components Built with React & Next.js",
     metaDescription: "Build responsive slide-out panels, sidebars, drawers, and overlays with our Shadcn Sheet Components. Created with Next.js, React, TypeScript, Tailwind CSS, Base UI, and Radix UI for modern web applications.",
+  },
+
+  "toggle": {
+    name: "toggle",
+    title: "Toggle",
+    metaKeyword: "shadcn toggle",
+    metaTitle: "{count}+ Shadcn Toggle Components & Variants",
+    metaDescription: "Explore {count}+ Shadcn UI Toggle components for toggling states on and off. Accessible toggle patterns with custom icons and animations built for React apps.",
+  },
+
+  "resizable": {
+    name: "resizable",
+    title: "Resizable",
+    metaKeyword: "shadcn resizable",
+    metaTitle: "{count}+ Shadcn Resizable Components for React & Next.js",
+    metaDescription: "Explore {count}+ Shadcn Resizable components built with React, Tailwind CSS and Base UI. Discover horizontal, vertical, dashed, labeled, gradient, and icon resizable examples for modern web projects.",
+  },
+
+  "item": {
+    name: "item",
+    title: "Item",
+    metaKeyword: "shadcn item",
+    metaTitle: "{count}+ Shadcn Item Components for React & Next.js",
+    metaDescription: "Explore {count}+ Shadcn Item components designed for real-world use. Copy the code, customize it in your way, and use it in dashboards, forms, or any modern web project.",
+  },
+
+  "field":{
+    name: "field",
+    title: "Field",
+    metaKeyword: "shadcn field",
+    metaTitle: "{count}+ Shadcn Field Components for React & Next.js",
+    metaDescription: "Explore {count}+ Shadcn Field components designed for real-world use. Copy the code, customize it in your way, and use it in dashboards, forms, or any modern web project.",
+  },
+
+  "stepper": {
+    name: "stepper",
+    title: "Stepper",
+    metaKeyword: "shadcn stepper",
+    metaTitle: "Shadcn Stepper Components & Variants",
+    metaDescription: "Explore Shadcn UI Stepper components for multi-step forms and workflows. Create guided user journeys with progress tracking, interactive steps, and accessible navigation in React.",
+  },
+
+  "input-group": {
+    name: "input-group",
+    title: "Input Group",
+    metaKeyword: "shadcn input group",
+    metaTitle: "Shadcn Input Group Components - UI Components and Variants",
+    metaDescription: "Explore Shadcn UI Input Group components for grouping inputs with buttons, icons, dropdowns, and live status elements. Fully responsive and accessible in React.",
+  },
+
+  "toggle-group": {
+    name: "toggle-group",
+    title: "Toggle Group",
+    metaKeyword: "shadcn toggle group",
+    metaTitle: "{count}+ Shadcn Toggle Group Components & Variants",
+    metaDescription: "Explore {count}+ Shadcn UI Toggle Group components to group related buttons together. Built with Radix UI and Tailwind CSS for React apps.",
+  },
+
+  "drawer": {
+    name: "drawer",
+    title: "Drawer",
+    metaKeyword: "shadcn drawer",
+    metaTitle: "Shadcn Drawer Components for React & Next.js",
+    metaDescription: "Explore Shadcn Drawer components built with vaul. Create accessible slide-in panels, onboarding checklists, and mobile-friendly bottom sheets for React and Next.js apps.",
+  },
+
+  "rating": {
+    name: "rating",
+    title: "Rating",
+    metaKeyword: "shadcn rating",
+    metaTitle: "Shadcn Rating Components for React & Next.js",
+    metaDescription: "Explore ready-to-use, animated Shadcn Rating components for star ratings, interactive review scores, feedback elements, built with Base UI, and Tailwind CSS for React and Next.js apps.",
   }
 } as const;

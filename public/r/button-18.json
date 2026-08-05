@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-18",
-  "title": "Button-18 - Promo Code Copy",
+  "title": "Button 18 - Promo Code Copy",
   "description": "Animated promo code copy button with blur transition and progress fill",
   "dependencies": [
     "lucide-react"

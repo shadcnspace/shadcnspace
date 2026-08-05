@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-01",
+  "title": "Field 01 - Sign In Form",
+  "description": "A sign in form built with the Field primitive, featuring an email field with inline validation, a password field with a forgot-password link, and social sign in buttons",
+  "dependencies": [],
+  "registryDependencies": [
+    "field",
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/field/field-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { SubmitEvent, useState } from \"react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldGroup,\r\n  FieldLabel,\r\n  FieldSeparator,\r\n} from \"@/components/ui/field\";\r\nimport { Input } from \"@/components/ui/input\";\r\n\r\nconst SignInFormDemo = () => {\r\n  const [email, setEmail] = useState(\"\");\r\n  const [error, setError] = useState<string | null>(null);\r\n\r\n  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {\r\n    event.preventDefault();\r\n    if (!email.includes(\"@\")) {\r\n      setError(\"Please enter a valid email address.\");\r\n      return;\r\n    }\r\n    setError(null);\r\n  };\r\n\r\n  return (\r\n    <form\r\n      onSubmit={handleSubmit}\r\n      className=\"w-full max-w-sm rounded-xl border border-border p-6\"\r\n    >\r\n      <FieldGroup>\r\n        <Field data-invalid={!!error}>\r\n          <FieldLabel htmlFor=\"signin-email\">Email</FieldLabel>\r\n          <Input\r\n            id=\"signin-email\"\r\n            type=\"email\"\r\n            placeholder=\"you@example.com\"\r\n            value={email}\r\n            aria-invalid={!!error}\r\n            onChange={(event) => {\r\n              setEmail(event.target.value);\r\n              if (error) setError(null);\r\n            }}\r\n          />\r\n          <FieldError errors={error ? [{ message: error }] : undefined} />\r\n        </Field>\r\n        <Field>\r\n          <div className=\"flex items-center justify-between\">\r\n            <FieldLabel htmlFor=\"signin-password\">Password</FieldLabel>\r\n            <a\r\n              href=\"#\"\r\n              className=\"text-muted-foreground text-sm underline-offset-4 hover:text-primary hover:underline\"\r\n            >\r\n              Forgot password?\r\n            </a>\r\n          </div>\r\n          <Input id=\"signin-password\" type=\"password\" placeholder=\"••••••••\" />\r\n        </Field>\r\n        <Field>\r\n          <Button type=\"submit\" className=\"hover:bg-primary/80 cursor-pointer\">Sign in</Button>\r\n          <FieldDescription className=\"text-center\">\r\n            Don&apos;t have an account? <a href=\"#\">Sign up</a>\r\n          </FieldDescription>\r\n        </Field>\r\n        <FieldSeparator>Or continue with</FieldSeparator>\r\n        <Field orientation=\"horizontal\">\r\n          <Button type=\"button\" variant=\"outline\" className=\"flex-1 cursor-pointer\">\r\n            Google\r\n          </Button>\r\n          <Button type=\"button\" variant=\"outline\" className=\"flex-1 cursor-pointer\">\r\n            GitHub\r\n          </Button>\r\n        </Field>\r\n      </FieldGroup>\r\n    </form>\r\n  );\r\n};\r\n\r\nexport default SignInFormDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/field/field-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

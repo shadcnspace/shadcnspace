@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-01",
+  "title": "Input Group 01 - Autosave Typing Indicator",
+  "description": "A premium text input field containing a real-time autosave status indicator (Saving spinner and Saved checkmark) triggered dynamically on user input.",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input-group/input-group-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, useEffect, useRef } from \"react\";\r\nimport {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n} from \"@/components/ui/input-group\";\r\nimport { Loader2, CheckCircle2 } from \"lucide-react\";\r\nimport { motion, AnimatePresence } from \"motion/react\";\r\n\r\nconst InputGroupDemo = () => {\r\n  const [value, setValue] = useState(\"\");\r\n  const [status, setStatus] = useState<\"idle\" | \"saving\" | \"saved\">(\"idle\");\r\n  const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);\r\n  const idleTimeoutRef = useRef<NodeJS.Timeout | null>(null);\r\n\r\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\r\n    setValue(e.target.value);\r\n    setStatus(\"saving\");\r\n    if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);\r\n    if (idleTimeoutRef.current) clearTimeout(idleTimeoutRef.current);\r\n    typingTimeoutRef.current = setTimeout(() => {\r\n      setStatus(\"saved\");\r\n      idleTimeoutRef.current = setTimeout(() => {\r\n        setStatus(\"idle\");\r\n      }, 2000);\r\n    }, 1000);\r\n  };\r\n\r\n  // Cleanup timeouts on unmount\r\n  useEffect(() => {\r\n    return () => {\r\n      if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);\r\n      if (idleTimeoutRef.current) clearTimeout(idleTimeoutRef.current);\r\n    };\r\n  }, []);\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-2\">\r\n      <InputGroup className=\"h-10 rounded-xl px-1\">\r\n        <InputGroupInput\r\n          placeholder=\"Type message to save...\"\r\n          value={value}\r\n          onChange={handleChange}\r\n        />\r\n        <InputGroupAddon align=\"inline-end\" className=\"pr-3\">\r\n          <AnimatePresence mode=\"wait\">\r\n            {status === \"saving\" && (\r\n              <motion.div\r\n                key=\"saving\"\r\n                initial={{ opacity: 0, scale: 0.8, y: 4 }}\r\n                animate={{ opacity: 1, scale: 1, y: 0 }}\r\n                exit={{ opacity: 0, scale: 0.8, y: -4 }}\r\n                transition={{ duration: 0.15 }}\r\n                className=\"flex items-center gap-1.5 text-xs text-muted-foreground font-medium\"\r\n              >\r\n                <Loader2 className=\"size-3.5 animate-spin text-primary\" />\r\n                <span>Saving</span>\r\n              </motion.div>\r\n            )}\r\n            {status === \"saved\" && (\r\n              <motion.div\r\n                key=\"saved\"\r\n                initial={{ opacity: 0, scale: 0.8, y: 4 }}\r\n                animate={{ opacity: 1, scale: 1, y: 0 }}\r\n                exit={{ opacity: 0, scale: 0.8, y: -4 }}\r\n                transition={{ duration: 0.15 }}\r\n                className=\"flex items-center gap-1.5 text-xs text-teal-400 font-medium\"\r\n              >\r\n                <CheckCircle2 className=\"size-3.5\" />\r\n                <span>Saved</span>\r\n              </motion.div>\r\n            )}\r\n          </AnimatePresence>\r\n        </InputGroupAddon>\r\n      </InputGroup>\r\n      <p className=\"text-xs text-muted-foreground px-1\">\r\n        Typing triggers{\" \"}\r\n        <span className=\"font-semibold text-foreground\">saving</span> state.\r\n        Stopping for 1s shows{\" \"}\r\n        <span className=\"font-semibold text-teal-400\">\r\n          saved\r\n        </span>\r\n        .\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default InputGroupDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input-group/input-group-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

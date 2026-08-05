@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-03",
-  "title": "Button-03 - Shine Hover",
+  "title": "Button 03 - Shine Hover",
   "description": "Shine Hover button component",
   "dependencies": [],
   "registryDependencies": [

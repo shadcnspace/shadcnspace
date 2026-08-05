@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-06",
-  "title": "Button-06 - Animated Border",
+  "title": "Button 06 - Animated Border",
   "description": "Animated Border button component",
   "dependencies": [
     "lucide-react"

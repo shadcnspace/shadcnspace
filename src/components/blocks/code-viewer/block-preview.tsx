@@ -8,10 +8,10 @@ import {
 } from "@/components/ui/resizable";
 import { blockScreens } from "@/components/blocks/code-viewer/blocks-screen-width";
 import { useEffect, useRef } from "react";
-import { ImperativePanelHandle } from "react-resizable-panels";
+import { PanelImperativeHandle } from "react-resizable-panels";
 
 const BlockPreview = ({ isComponent = false, height }: { isComponent?: boolean, height?: string | number }) => {
-  const resizablePanelRef = useRef<ImperativePanelHandle>(null);
+  const resizablePanelRef = useRef<PanelImperativeHandle>(null);
   const {
     block,
     screenSize: selectedScreenSize,
@@ -28,8 +28,8 @@ const BlockPreview = ({ isComponent = false, height }: { isComponent?: boolean, 
   }, [selectedScreenSize]);
 
   return (
-    <ResizablePanelGroup direction="horizontal" className="bg-muted">
-      <ResizablePanel ref={resizablePanelRef} defaultSize={120} minSize={30}>
+    <ResizablePanelGroup orientation="horizontal" className="bg-muted">
+      <ResizablePanel panelRef={resizablePanelRef} defaultSize={"100%"} minSize={425}>
         <div
           className={`w-full rounded-b-lg ${
             !height ? (isComponent ? "h-[400px]" : "h-[700px]") : ""

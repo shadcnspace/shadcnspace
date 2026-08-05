@@ -1414,29 +1414,419 @@ export const blocks: RegistryBlock[] = [
     masterCategory: MasterCatAdmin,
   },
   {
-    name: 'topbar-01',
-    title: 'Topbar 01',
-    description: 'A simple topbar block',
+    name: "topbar-01",
+    title: "Topbar 01 - Simple Navigation Topbar",
+    description:
+      "Clean navigation topbar with brand logo, navigation menu, notifications, language switcher, and user profile. Ideal for admin panels, SaaS platforms, internal tools, and business applications.",
     type: "registry:block",
-    dependencies: ["@iconify/react"],
-    registryDependencies: ["sidebar", "button", "separator", "avatar", "dropdown-menu", "navigation-menu"],
-    files: [{
-      path: 'src/components/shadcn-space/blocks/topbar-01/page.tsx',
-      type: "registry:page",
-      target: 'app/topbar-01/page.tsx',
-    },
-    {
-      path: 'src/components/shadcn-space/blocks/topbar-01/dropdown-language.tsx',
-      type: "registry:component",
-      target: 'components/shadcn-space/blocks/topbar-01/dropdown-language.tsx',
-    },
-    {
-      path: 'src/components/shadcn-space/blocks/topbar-01/dropdown-profile.tsx',
-      type: "registry:component",
-      target: 'components/shadcn-space/blocks/topbar-01/dropdown-profile.tsx',
-    }],
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "badge",
+      "sidebar",
+      "button",
+      "separator",
+      "avatar",
+      "dropdown-menu",
+      "navigation-menu",
+    ],
+    files: [
+      {
+        path: "src/components/shadcn-space/blocks/topbar-01/page.tsx",
+        type: "registry:page",
+        target: "app/topbar-01/page.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-01/dropdown-language.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-01/dropdown-language.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-01/dropdown-profile.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-01/dropdown-profile.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-01/notification-dropdown.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-01/notification-dropdown.tsx",
+      },
+    ],
     component: React.lazy(() => import('@/components/shadcn-space/blocks/topbar-01/page')),
-    created_at: '2025-12-30T18:53:10+05:30',
+    created_at: "2025-12-17T18:53:10+05:30",
+    isPro: false,
+    isDraft: false,
+    categories: [categories.topbars],
+    masterCategory: MasterCatAdmin,
+  },
+  {
+    name: "topbar-02",
+    title: "Topbar 02 - Navigation Mega Menu Topbar",
+    description:
+      "Multi level topbar with categorized navigation, quick access links, notifications, and user profile in a clean horizontal layout. Ideal for documentation sites, design systems, developer platforms, and large web applications.",
+    type: "registry:block",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "sidebar",
+      "sheet",
+      "button",
+      "separator",
+      "avatar",
+      "accordion",
+      "dropdown-menu",
+      "navigation-menu",
+      "badge",
+      "scroll-area",
+    ],
+    iframeHeight: "710px",
+    files: [
+      {
+        path: "src/components/shadcn-space/blocks/topbar-02/page.tsx",
+        type: "registry:page",
+        target: "app/topbar-02/page.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-02/data.ts",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-02/data.ts",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-02/types.ts",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-02/types.ts",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-02/header/index.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-02/header/index.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-02/header/sidebar.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-02/header/sidebar.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-02/header/desktop-nav.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-02/header/desktop-nav.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-02/header/dropdown-language.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-02/header/dropdown-language.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-02/header/dropdown-profile.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-02/header/dropdown-profile.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-02/header/notification-dropdown.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-02/header/notification-dropdown.tsx",
+      },
+    ],
+    component: React.lazy(() => import('@/components/shadcn-space/blocks/topbar-02/page')),
+    created_at: "2026-02-17T06:14:38+05:30",
+    isPro: false,
+    isDraft: false,
+    categories: [categories.topbars],
+    masterCategory: MasterCatAdmin,
+  },
+  {
+    name: "topbar-03",
+    title: "Topbar 03 - Login Action Topbar",
+    description:
+      "Navigation topbar with primary links, login action, notifications, and user profile for quick access. Ideal for SaaS products, documentation portals, developer tools, and web applications.",
+    type: "registry:block",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "sidebar",
+      "sheet",
+      "button",
+      "separator",
+      "avatar",
+      "accordion",
+      "dropdown-menu",
+      "navigation-menu",
+      "badge",
+      "scroll-area",
+    ],
+    files: [
+      {
+        path: "src/components/shadcn-space/blocks/topbar-03/page.tsx",
+        type: "registry:page",
+        target: "app/topbar-03/page.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-03/data.ts",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-03/data.ts",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-03/types.ts",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-03/types.ts",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-03/header/index.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-03/header/index.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-03/header/sidebar.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-03/header/sidebar.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-03/header/desktop-nav.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-03/header/desktop-nav.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-03/header/dropdown-language.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-03/header/dropdown-language.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-03/header/dropdown-profile.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-03/header/dropdown-profile.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-03/header/notification-dropdown.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-03/header/notification-dropdown.tsx",
+      },
+    ],
+    component: React.lazy(() => import('@/components/shadcn-space/blocks/topbar-03/page')),
+    created_at: "2026-02-17T06:15:38+05:30",
+    isPro: false,
+    isDraft: false,
+    categories: [categories.topbars],
+    masterCategory: MasterCatAdmin,
+  },
+  {
+    name: "topbar-04",
+    title: "Topbar 04 - Centered Navigation Topbar",
+    description:
+      "Centered navigation topbar with brand logo, quick access links, notifications, and profile actions. Ideal for SaaS products, documentation websites, and modern web applications.",
+    type: "registry:block",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "sidebar",
+      "sheet",
+      "button",
+      "separator",
+      "avatar",
+      "accordion",
+      "dropdown-menu",
+      "scroll-area",
+      "navigation-menu",
+      "badge",
+    ],
+    files: [
+      {
+        path: "src/components/shadcn-space/blocks/topbar-04/page.tsx",
+        type: "registry:page",
+        target: "app/topbar-04/page.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-04/data.ts",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-04/data.ts",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-04/types.ts",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-04/types.ts",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-04/header/index.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-04/header/index.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-04/header/sidebar.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-04/header/sidebar.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-04/header/desktop-nav.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-04/header/desktop-nav.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-04/header/dropdown-language.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-04/header/dropdown-language.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-04/header/dropdown-profile.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-04/header/dropdown-profile.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-04/header/notification-dropdown.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-04/header/notification-dropdown.tsx",
+      },
+    ],
+    component: React.lazy(() => import('@/components/shadcn-space/blocks/topbar-04/page')),
+    created_at: "2026-02-17T06:16:38+05:30",
+    isPro: false,
+    isDraft: false,
+    categories: [categories.topbars],
+    masterCategory: MasterCatAdmin,
+  },
+  {
+    name: "topbar-05",
+    title: "Topbar 05 - Sidebar Integrated Topbar",
+    description:
+      "Topbar paired with a collapsible sidebar, combining primary navigation, quick actions, notifications, and user controls in a unified workspace layout.",
+    type: "registry:block",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "sidebar",
+      "sheet",
+      "button",
+      "separator",
+      "avatar",
+      "accordion",
+      "dropdown-menu",
+      "scroll-area",
+      "navigation-menu",
+      "badge",
+    ],
+    files: [
+      {
+        path: "src/components/shadcn-space/blocks/topbar-05/page.tsx",
+        type: "registry:page",
+        target: "app/topbar-05/page.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-05/data.ts",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-05/data.ts",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-05/types.ts",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-05/types.ts",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-05/header/index.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-05/header/index.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-05/header/desktop-nav.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-05/header/desktop-nav.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-05/header/dropdown-language.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-05/header/dropdown-language.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-05/header/dropdown-profile.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-05/header/dropdown-profile.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-05/header/notification-dropdown.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-05/header/notification-dropdown.tsx",
+      },
+    ],
+    component: React.lazy(() => import('@/components/shadcn-space/blocks/topbar-05/page')),
+    created_at: "2026-02-17T06:17:38+05:30",
+    isPro: false,
+    isDraft: false,
+    categories: [categories.topbars],
+    masterCategory: MasterCatAdmin,
+  },
+  {
+    name: "topbar-06",
+    title: "Topbar 06 - Search Focused Topbar",
+    description:
+      "Clean topbar with a prominent search bar, sidebar toggle, notifications, and profile actions for faster navigation and content discovery.",
+    type: "registry:block",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "sidebar",
+      "sheet",
+      "button",
+      "separator",
+      "avatar",
+      "accordion",
+      "dropdown-menu",
+      "scroll-area",
+      "navigation-menu",
+      "badge",
+      "dialog",
+      "input",
+    ],
+    files: [
+      {
+        path: "src/components/shadcn-space/blocks/topbar-06/page.tsx",
+        type: "registry:page",
+        target: "app/topbar-06/page.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-06/data.ts",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-06/data.ts",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-06/header/index.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-06/header/index.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-06/header/search.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/topbar-06/header/search.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-06/header/dropdown-language.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-06/header/dropdown-language.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-06/header/dropdown-profile.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-06/header/dropdown-profile.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/topbar-06/header/notification-dropdown.tsx",
+        type: "registry:component",
+        target:
+          "components/shadcn-space/blocks/topbar-06/header/notification-dropdown.tsx",
+      },
+    ],
+    component: React.lazy(() => import('@/components/shadcn-space/blocks/topbar-06/page')),
+    created_at: "2026-02-17T06:18:38+05:30",
     isPro: false,
     isDraft: false,
     categories: [categories.topbars],
@@ -1720,5 +2110,95 @@ export const blocks: RegistryBlock[] = [
     isDraft: false,
     categories: [categories.checkout],
     masterCategory: MasterCatEcommerce,
-  }
+  },
+  {
+    name: "empty-state-01",
+    title: "Empty State 01 - No Projects Yet",
+    description:
+      "A compact, bordered card empty state with a folder icon, heading, description, and a single primary call-to-action, ideal for project lists and dashboards before anything has been created.",
+    type: "registry:block",
+    dependencies: ["motion", "lucide-react"],
+    registryDependencies: ["button", "empty"],
+    iframeHeight: "450px",
+    files: [
+      {
+        path: "src/components/shadcn-space/blocks/empty-state-01/page.tsx",
+        type: "registry:page",
+        target: "app/empty-state-01/page.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/empty-state-01/empty-state.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/empty-state-01/empty-state.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/components/shadcn-space/blocks/empty-state-01/page"),
+    ),
+    created_at: "2026-07-21T00:00:00+05:30",
+    isPro: false,
+    isDraft: false,
+    categories: [categories.emptyState],
+    masterCategory: MasterCatAdmin,
+  },
+  {
+    name: "empty-state-02",
+    title: "Empty State 02 - Invite Your Team",
+    description:
+      "A centered empty state with a custom illustration, heading, description, and two calls-to-action for inviting teammates or copying a shareable invite link, complete with an animated copy confirmation.",
+    type: "registry:block",
+    dependencies: ["motion", "lucide-react"],
+    registryDependencies: ["button", "empty"],
+    iframeHeight: "450px",
+    files: [
+      {
+        path: "src/components/shadcn-space/blocks/empty-state-02/page.tsx",
+        type: "registry:page",
+        target: "app/empty-state-02/page.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/empty-state-02/empty-state.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/empty-state-02/empty-state.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/components/shadcn-space/blocks/empty-state-02/page"),
+    ),
+    created_at: "2026-07-21T00:00:00+05:30",
+    isPro: false,
+    isDraft: false,
+    categories: [categories.emptyState],
+    masterCategory: MasterCatAdmin,
+  },
+  {
+    name: "empty-state-03",
+    title: "Empty State 03 - Chart Data Empty State",
+    description:
+      "A simple card-based empty state with a chart-themed icon, title, description, and primary connection CTA button, perfect for dashboards before metric data sources are connected.",
+    type: "registry:block",
+    dependencies: ["motion", "lucide-react"],
+    registryDependencies: ["button", "empty", "card"],
+    iframeHeight: "430px",
+    files: [
+      {
+        path: "src/components/shadcn-space/blocks/empty-state-03/page.tsx",
+        type: "registry:page",
+        target: "app/empty-state-03/page.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/blocks/empty-state-03/empty-state.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/blocks/empty-state-03/empty-state.tsx",
+      },
+    ],
+    component: React.lazy(
+      () => import("@/components/shadcn-space/blocks/empty-state-03/page"),
+    ),
+    created_at: "2026-07-21T00:00:00+05:30",
+    isPro: false,
+    isDraft: false,
+    categories: [categories.emptyState],
+    masterCategory: MasterCatAdmin,
+  },
 ];

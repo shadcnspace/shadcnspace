@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-01",
-  "title": "Button-01 - With Icon",
+  "title": "Button 01 - With Icon",
   "description": "With Icon button component",
   "dependencies": [
     "lucide-react"

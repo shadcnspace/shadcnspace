@@ -13,6 +13,8 @@ import {
   TextCursorInput,
   ToggleRight,
   AppWindowMac,
+  PanelRight,
+  CircleStar,
 } from "lucide-react";
 import React from "react";
 
@@ -709,6 +711,132 @@ export const componentsMap: ComponentsMap = {
     image: "https://images.shadcnspace.com/assets/components/sheet.webp",
     component: React.lazy(
       () => import("@/app/(site)/docs/component-info/sheet"),
+    ),
+  },
+  toggle: {
+    title: "Toggle",
+    headingTitle: "Shadcn Toggle",
+    url: "/components/toggle",
+    icon: ToggleRight,
+    blockName: "toggle",
+    columns: 3,
+    description:
+      "Explore a set of Shadcn Toggle components for Next.js and React apps, styled with Tailwind CSS and shadcn/ui. Ready to copy, customize, and use in real web projects.",
+    image: "https://images.shadcnspace.com/assets/components/toggle.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/toggle"),
+    ),
+  },
+  resizable: {
+    title: "Resizable",
+    url: "/components/resizable",
+    headingTitle: "Shadcn Resizable",
+    icon: SquareChevronUp,
+    blockName: "resizable",
+    columns: 1,
+    description:
+      "Explore ready-to-use Shadcn Resizable components built with React, Tailwind CSS and Base UI. Create cleaner layouts, organize content, and improve visual structure with customizable resizable examples.",
+    image: "https://images.shadcnspace.com/assets/components/resizable.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/resizable"),
+    ),
+  },
+  item: {
+    title: "Item",
+    url: "/components/item",
+    headingTitle: "Shadcn Item",
+    icon: SquareChevronUp,
+    blockName: "item",
+    columns: 2,
+    description:
+      "Explore ready-to-use Shadcn Item components built with React, Tailwind CSS, and Base UI. Create cleaner layouts, organize content, and improve visual structure with customizable item examples.",
+    image: "https://images.shadcnspace.com/assets/components/item.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/item"),
+    ),
+  },
+  field: {
+    title: "Field",
+    url: "/components/field",
+    headingTitle: "Shadcn Field",
+    icon: SquareChevronUp,
+    blockName: "field",
+    columns: 2,
+    description:
+      "Explore ready-to-use Shadcn Field components built with React, Tailwind CSS and Base UI. Create cleaner layouts, organize content, and improve visual structure with customizable field examples.",
+    image: "https://images.shadcnspace.com/assets/components/field.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/field"),
+    ),
+  },
+  stepper: {
+    title: "Stepper",
+    url: "/components/stepper",
+    headingTitle: "Shadcn Stepper",
+    icon: SquareChevronUp,
+    blockName: "stepper",
+    columns: 1,
+    description:
+      "Explore Shadcn UI Stepper components for multi-step forms and workflows. Create guided user journeys with progress tracking, interactive steps, and accessible navigation in React.",
+    image: "https://images.shadcnspace.com/assets/components/stepper.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/stepper"),
+    ),
+  },
+  "input-group": {
+    title: "Input Group",
+    headingTitle: "Shadcn Input Group",
+    url: "/components/input-group",
+    icon: TextCursorInput,
+    blockName: "input-group",
+    columns: 2,
+    description:
+      "Explore a set of Shadcn Input Group components for Next.js and React apps, styled with Tailwind CSS and shadcn/ui. Ready to copy, customize, and use in real web projects.",
+    image: "https://images.shadcnspace.com/assets/components/input-group.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/input-group"),
+    ),
+  },
+  "toggle-group": {
+    title: "Toggle Group",
+    headingTitle: "Shadcn Toggle Group",
+    url: "/components/toggle-group",
+    icon: ToggleRight,
+    blockName: "toggle-group",
+    columns: 2,
+    description:
+      "Explore a set of Shadcn Toggle Group components for Next.js and React apps, styled with Tailwind CSS and Shadcn. Ready to copy, customize, and use in real web projects.",
+    image: "https://images.shadcnspace.com/assets/components/toggle-group.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/toggle-group"),
+    ),
+  },
+  drawer: {
+    title: "Drawer",
+    url: "/components/drawer",
+    headingTitle: "Shadcn Drawer Components & Examples",
+    icon: PanelRight,
+    blockName: "drawer",
+    columns: 2,
+    description:
+      "Explore Shadcn Drawer components built with vaul. Create accessible slide-in panels, onboarding checklists, and mobile-friendly bottom sheets for React and Next.js apps.",
+    image: "https://images.shadcnspace.com/assets/components/drawer.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/drawer"),
+    ),
+  },
+  rating: {
+    title: "Rating",
+    headingTitle: "Shadcn Rating",
+    url: "/components/rating",
+    icon: CircleStar,
+    blockName: "rating",
+    columns: 2,
+    description:
+      "Explore ready-to-use, animated Shadcn Rating components for Next.js and React apps, built Base UI and Tailwind CSS. Ready to copy, customize, and use in real web projects.",
+    image: "https://images.shadcnspace.com/assets/components/rating.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/rating"),
     ),
   },
   form: {
