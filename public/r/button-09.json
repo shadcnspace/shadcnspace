@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-09",
-  "title": "Button-09 - Outline With Icon",
+  "title": "Button 09 - Outline With Icon",
   "description": "Outline With Icon button component",
   "dependencies": [
     "lucide-react"

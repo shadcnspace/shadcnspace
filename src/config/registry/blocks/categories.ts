@@ -442,4 +442,16 @@ export const categories = {
     metaDescription:
       "Shadcn UI form components to build forms with React Hook Form or TanStack Form. Use Zod for validation and accessible fields in dashboard and application use cases.",
   },
+
+  emptyState: {
+    name: "empty-state",
+    title: "Empty State",
+    icon: "mdi:inbox-outline",
+    image: "https://images.shadcnspace.com/assets/blocks-images/dashboard/empty-state-blocks.webp",
+    isHome: false,
+    metaKeywords: "shadcn empty state",
+    metaTitle: "Shadcn Empty State Blocks",
+    metaDescription:
+      "Explore Shadcn empty state blocks designed for no-data pages, empty search results, onboarding, error states, and first-time experiences. Guide users with clear messaging, helpful visuals, and meaningful actions.",
+  },
 } as const;

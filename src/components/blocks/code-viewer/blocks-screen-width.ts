@@ -5,17 +5,17 @@ export const blockScreens = [
   {
     name: BlockScreenSize.mobile,
     icon: SmartphoneIcon,
-    size: 30,
+    size: 425,
   },
   {
     name: BlockScreenSize.tablet,
     icon: TabletIcon,
-    size: 70,
+    size: 768,
   },
   {
     name: BlockScreenSize.desktop,
     icon: Monitor,
-    size: 100,
+    size: "100%",
   },
 ];
 

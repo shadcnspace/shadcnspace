@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "combobox-05",
-  "title": "Combobox-05 - Users",
+  "title": "Combobox 05 - Users",
   "description": "Combobox component",
   "dependencies": [
     "lucide-react"

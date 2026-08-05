@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "combobox-02",
-  "title": "Combobox-02 - With Custom Check Icon",
+  "title": "Combobox 02 - With Custom Check Icon",
   "description": "Combobox component",
   "dependencies": [
     "lucide-react"

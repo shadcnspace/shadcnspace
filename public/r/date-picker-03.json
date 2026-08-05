@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker-03",
+  "title": "Date Picker 03 - Time Picker",
+  "description": "A professional time picker with time selection.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "label",
+    "input-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/date-picker/date-picker-03.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useRef } from \"react\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n} from \"@/components/ui/input-group\";\r\nimport { Clock8Icon } from \"lucide-react\";\r\n\r\nconst TimePickerWithIconDemo = () => {\r\n  const inputRef = useRef<HTMLInputElement>(null);\r\n\r\n  const handleShowPicker = () => {\r\n    if (inputRef.current && \"showPicker\" in inputRef.current) {\r\n      try {\r\n        inputRef.current.showPicker();\r\n      } catch (error) {\r\n        console.error(\"Failed to open native picker:\", error);\r\n      }\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-2\">\r\n      <Label htmlFor=\"time-picker\">Select Slot</Label>\r\n      <InputGroup>\r\n        <InputGroupAddon\r\n          align=\"inline-start\"\r\n          className=\"cursor-pointer hover:text-foreground transition-colors\"\r\n          onClick={handleShowPicker}\r\n          title=\"Open time picker\"\r\n        >\r\n          <Clock8Icon className=\"size-4\" />\r\n        </InputGroupAddon>\r\n        <InputGroupInput\r\n          ref={inputRef}\r\n          type=\"time\"\r\n          id=\"time-picker\"\r\n          step=\"1\"\r\n          defaultValue=\"08:30:00\"\r\n          className=\"appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none\"\r\n        />\r\n      </InputGroup>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default TimePickerWithIconDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/date-picker/date-picker-03.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-17",
-  "title": "Button-17 - Blob Fill",
+  "title": "Button 17 - Blob Fill",
   "description": "Circle blob expands from bottom center on hover to fill the button",
   "dependencies": [],
   "registryDependencies": [

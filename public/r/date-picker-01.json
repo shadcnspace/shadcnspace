@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-picker-01",
-  "title": "Date Picker-01 - Data & Time Picker",
+  "title": "Date Picker 01 - Data & Time Picker",
   "description": "A professional appointment booking card with date and time range selection.",
   "dependencies": [
     "date-fns",

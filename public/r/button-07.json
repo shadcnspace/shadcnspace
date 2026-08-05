@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button-07",
-  "title": "Button-07 - Social",
+  "title": "Button 07 - Social",
   "description": "Social button component",
   "dependencies": [],
   "registryDependencies": [

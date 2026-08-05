@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-22",
+  "title": "Button 22 - Loading Button",
+  "description": "Loading button component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-22.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { Loader } from \"lucide-react\";\r\n\r\nconst LoadingButtonDemo = () => {\r\n  return (\r\n    <Button disabled>\r\n      <Loader className=\"animate-spin\" />\r\n      Loading\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default LoadingButtonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-22.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

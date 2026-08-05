@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
+'use client';
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import LanguageDropdown from "@/components/shadcn-space/blocks/topbar-01/dropdown-language";
 import ProfileDropdown from "@/components/shadcn-space/blocks/topbar-01/dropdown-profile";
-
-import { Icon } from "@iconify/react";
+import { BellRing, Globe } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import {
   NavigationMenu,
@@ -13,6 +13,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import NotificationDropdown from "@/components/shadcn-space/blocks/topbar-01/notification-dropdown";
 
 const Header = () => {
   return (
@@ -41,29 +42,29 @@ const Header = () => {
                     <NavigationMenuContent>
                       <ul className="grid w-xs gap-4">
                         <li>
-                          <NavigationMenuLink>
-                            <a href="#">
-                              <div className="font-medium">Components</div>
-                              <div className="text-muted-foreground">
+                          <NavigationMenuLink href="#">
+                            <div className="flex flex-col items-start gap-0.5!">
+                              <p className="font-medium">Components</p>
+                              <p className="text-muted-foreground">
                                 Browse all components in the library.
-                              </div>
-                            </a>
+                              </p>
+                            </div>
                           </NavigationMenuLink>
-                          <NavigationMenuLink>
-                            <a href="#">
-                              <div className="font-medium">Documentation</div>
-                              <div className="text-muted-foreground">
+                          <NavigationMenuLink href="#">
+                            <div className="flex flex-col items-start gap-0.5!">
+                              <p className="font-medium">Documentation</p>
+                              <p className="text-muted-foreground">
                                 Learn how to use the library.
-                              </div>
-                            </a>
+                              </p>
+                            </div>
                           </NavigationMenuLink>
-                          <NavigationMenuLink>
-                            <a href="#">
-                              <div className="font-medium">Blog</div>
-                              <div className="text-muted-foreground">
+                          <NavigationMenuLink href="#">
+                            <div className="flex flex-col items-start gap-0.5!">
+                              <p className="font-medium">Blog</p>
+                              <p className="text-muted-foreground">
                                 Read our latest blog posts.
-                              </div>
-                            </a>
+                              </p>
+                            </div>
                           </NavigationMenuLink>
                         </li>
                       </ul>
@@ -73,46 +74,36 @@ const Header = () => {
               </NavigationMenu>
             </div>
             <div className="flex items-center gap-2.5">
-              <Icon
-                icon="solar:moon-line-duotone"
-                width={16}
-                height={16}
-                className="cursor-pointer"
+              <NotificationDropdown
+                defaultOpen={false}
+                align="center"
+                trigger={
+                  <div className="rounded-full p-2 hover:bg-accent relative before:absolute before:bottom-0 before:left-1/2 before:z-10 before:w-2 before:h-2 before:rounded-full before:bg-red-500 before:top-1">
+                    <BellRing className="size-4" />
+                  </div>
+                }
               />
-              <div className="relative cursor-pointer">
-                <Icon
-                  icon="solar:bell-line-duotone"
-                  width={16}
-                  height={16}
-                  className="ml-2"
-                />
-                <div className="rounded-full absolute -right-1.5 -top-1.5 bg-red-400 text-[8px] px-1 py-0.4 flex justify-center items-center text-white">
-                  2
-                </div>
-              </div>
               <LanguageDropdown
                 trigger={
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="focus-visible:ring-0! focus-visible:shadow-none! rounded-full! hover:bg-accent/80! cursor-pointer"
+                  <div
+                    id="language-dropdown-trigger"
+                    className="rounded-full hover:bg-accent/80 cursor-pointer p-2"
                   >
-                    <Icon icon="solar:global-linear" width={16} height={16} />
-                  </Button>
+                    <Globe size={16} />
+                  </div>
                 }
               />
               <ProfileDropdown
                 trigger={
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="size-7 rounded-full cursor-pointer"
+                  <div
+                    id="profile-dropdown-trigger"
+                    className="rounded-full cursor-pointer"
                   >
                     <Avatar className="size-7 rounded-full">
                       <AvatarImage src="https://images.shadcnspace.com/assets/profiles/user-11.jpg" />
                       <AvatarFallback>NJ</AvatarFallback>
                     </Avatar>
-                  </Button>
+                  </div>
                 }
               />
             </div>
@@ -123,7 +114,7 @@ const Header = () => {
             {Array.from({ length: 9 }).map((_, index) => (
               <div
                 key={index}
-                className="skeleton bg-muted/50 aspect-video h-11 w-full rounded-lg"
+                className="skeleton bg-muted/50 aspect-video h-10.5 w-full rounded-lg"
               />
             ))}
           </div>

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-04",
+  "title": "Field 04 - Shipping Address",
+  "description": "A shipping address fieldset built with the Field primitive, combining responsive field orientation, inputs, a select, and a checkbox confirmation field",
+  "dependencies": [],
+  "registryDependencies": [
+    "field",
+    "input",
+    "select",
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/field/field-04.tsx",
+      "content": "import { Checkbox } from \"@/components/ui/checkbox\";\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldGroup,\r\n  FieldLabel,\r\n  FieldLegend,\r\n  FieldSet,\r\n} from \"@/components/ui/field\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/components/ui/select\";\r\n\r\nconst ShippingAddressDemo = () => {\r\n  return (\r\n    <FieldSet className=\"w-full max-w-lg\">\r\n      <FieldLegend>Shipping address</FieldLegend>\r\n      <FieldDescription>\r\n        We&apos;ll use this address for delivery and order updates.\r\n      </FieldDescription>\r\n      <FieldGroup>\r\n        <div className=\"grid grid-cols-2 gap-4\">\r\n          <Field>\r\n            <FieldLabel htmlFor=\"shipping-first-name\">First name</FieldLabel>\r\n            <Input id=\"shipping-first-name\" placeholder=\"Jane\" />\r\n          </Field>\r\n          <Field>\r\n            <FieldLabel htmlFor=\"shipping-last-name\">Last name</FieldLabel>\r\n            <Input id=\"shipping-last-name\" placeholder=\"Doe\" />\r\n          </Field>\r\n        </div>\r\n        <Field>\r\n          <FieldLabel htmlFor=\"shipping-address\">Street address</FieldLabel>\r\n          <Input id=\"shipping-address\" placeholder=\"123 Main Street\" />\r\n        </Field>\r\n        <div className=\"grid grid-cols-2 gap-4\">\r\n          <Field>\r\n            <FieldLabel htmlFor=\"shipping-city\">City</FieldLabel>\r\n            <Input id=\"shipping-city\" placeholder=\"San Francisco\" />\r\n          </Field>\r\n          <Field>\r\n            <FieldLabel htmlFor=\"shipping-state\">State</FieldLabel>\r\n            <Input id=\"shipping-state\" placeholder=\"California\" />\r\n          </Field>\r\n        </div>\r\n        <div className=\"grid grid-cols-2 gap-4\">\r\n          <Field>\r\n            <FieldLabel htmlFor=\"shipping-zip\">Postal code</FieldLabel>\r\n            <Input id=\"shipping-zip\" placeholder=\"94103\" />\r\n          </Field>\r\n          <Field>\r\n            <FieldLabel htmlFor=\"shipping-country\">Country</FieldLabel>\r\n            <Select defaultValue=\"United States\">\r\n              <SelectTrigger id=\"shipping-country\" className=\"w-full\">\r\n                <SelectValue placeholder=\"Select a country\" />\r\n              </SelectTrigger>\r\n              <SelectContent>\r\n                <SelectItem value=\"United States\">United States</SelectItem>\r\n                <SelectItem value=\"Canada\">Canada</SelectItem>\r\n                <SelectItem value=\"United Kingdom\">United Kingdom</SelectItem>\r\n                <SelectItem value=\"India\">India</SelectItem>\r\n              </SelectContent>\r\n            </Select>\r\n          </Field>\r\n        </div>\r\n        <Field orientation=\"horizontal\">\r\n          <Checkbox id=\"shipping-save\" defaultChecked />\r\n          <FieldLabel htmlFor=\"shipping-save\" className=\"font-normal\">\r\n            Save this address for future orders\r\n          </FieldLabel>\r\n        </Field>\r\n      </FieldGroup>\r\n    </FieldSet>\r\n  );\r\n};\r\n\r\nexport default ShippingAddressDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/field/field-04.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

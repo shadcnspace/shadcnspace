@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-07",
+  "title": "Button Group 07 - Alignment",
+  "description": "Alignment style button group component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button-group/button-group-07.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\nimport {\r\n  AlignCenterIcon,\r\n  AlignLeftIcon,\r\n  AlignRightIcon,\r\n  MenuIcon,\r\n} from \"lucide-react\";\r\n\r\nexport default function Pattern() {\r\n  return (\r\n    <ButtonGroup>\r\n      <Button variant=\"outline\" size=\"icon-sm\" aria-label=\"Align left\">\r\n        <AlignLeftIcon aria-hidden=\"true\" />\r\n      </Button>\r\n      <Button variant=\"outline\" size=\"icon-sm\" aria-label=\"Align center\">\r\n        <AlignCenterIcon aria-hidden=\"true\" />\r\n      </Button>\r\n      <Button variant=\"outline\" size=\"icon-sm\" aria-label=\"Align right\">\r\n        <AlignRightIcon aria-hidden=\"true\" />\r\n      </Button>\r\n      <Button variant=\"outline\" size=\"icon-sm\" aria-label=\"Align justify\">\r\n        <MenuIcon aria-hidden=\"true\" />\r\n      </Button>\r\n    </ButtonGroup>\r\n  );\r\n}",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button-group/button-group-07.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

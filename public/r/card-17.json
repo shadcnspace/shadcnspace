@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-17",
+  "title": "Card 17 - Testimonial Card",
+  "description": "An animated integration card with SVG connection paths, floating integration icons, and a pulsing center logo.",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/card/card-17.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { Card, CardContent } from \"@/components/ui/card\";\r\n\r\ninterface TestimonialCardProps {\r\n  name: string;\r\n  role: string;\r\n  review: string;\r\n  brand: string;\r\n  brandLight?: string;\r\n  imageUrl: string;\r\n}\r\n\r\nexport const TestimonialCard = ({\r\n  name,\r\n  role,\r\n  review,\r\n  brand,\r\n  brandLight,\r\n  imageUrl,\r\n}: TestimonialCardProps) => {\r\n  return (\r\n    <>\r\n      <Card className=\"max-w-92 w-full mx-auto p-8 rounded-3xl ring-0 border\">\r\n        <CardContent className=\"flex flex-col gap-10 p-0\">\r\n          <div className=\"flex flex-col gap-6\">\r\n            <div className=\"flex items-center gap-4\">\r\n              <Avatar className=\"size-12!\">\r\n                <AvatarImage src={imageUrl} />\r\n                <AvatarFallback>\r\n                  {name\r\n                    .split(\" \")\r\n                    .map((n) => n[0])\r\n                    .join(\"\")}\r\n                </AvatarFallback>\r\n              </Avatar>\r\n              <div>\r\n                <p className=\"text-lg text-foreground\">{name}</p>\r\n                <p className=\"text-sm text-muted-foreground\">{role}</p>\r\n              </div>\r\n            </div>\r\n            <p className=\"text-base text-foreground\">{review}</p>\r\n          </div>\r\n          <img\r\n            src={brand}\r\n            alt=\"brand\"\r\n            className={`w-25 h-6 block ${brandLight ? \"dark:hidden\" : \"\"}`}\r\n          />\r\n          {brandLight && (\r\n            <img\r\n              src={brandLight}\r\n              alt=\"brand\"\r\n              className=\"w-25 h-6 hidden dark:block\"\r\n            />\r\n          )}\r\n        </CardContent>\r\n      </Card>\r\n    </>\r\n  );\r\n};\r\n\r\nconst TestimonialCardDemo = () => {\r\n  return (\r\n    <TestimonialCard\r\n      imageUrl=\"https://images.shadcnspace.com/assets/profiles/jessica.webp\"\r\n      name=\"Isabella Clark\"\r\n      role=\"Finance Manager\"\r\n      review='\"Switching to one platform eliminated the need for multiple tools and reduced unnecessary back-and-forth. Collaboration became smoother, and our team is now moving faster and delivering more consistently.\"'\r\n      brand=\"https://images.shadcnspace.com/assets/brand-logo/logoipsum-1.svg\"\r\n      brandLight=\"https://images.shadcnspace.com/assets/brand-logo/logoipsum-light-1.svg\"\r\n    />\r\n  );\r\n};\r\n\r\nexport default TestimonialCardDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/card/card-17.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
