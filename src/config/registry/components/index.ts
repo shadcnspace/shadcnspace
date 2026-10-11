@@ -309,6 +309,60 @@ export const components = [
     category: categories["accordion"],    
   },
   {
+    name: "accordion-08",
+    title: "Accordion-08 - Roadmap Timeline",
+    description:
+      "Interactive product roadmap and release milestone accordion with status badges, progress indicator, and deliverable checklists.",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["accordion", "badge", "button"],
+    files: [
+      {
+        path: "src/components/shadcn-space/accordion/accordion-08.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/accordion/accordion-08.tsx",
+      },
+    ],
+    category: categories["accordion"],
+    isNew: true,
+  },
+  {
+    name: "accordion-09",
+    title: "Accordion-09 - Filterable FAQ",
+    description:
+      "Interactive knowledge base FAQ accordion with search filter, category pills, expand/collapse all toggle, and helpfulness voting.",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["accordion", "badge", "button", "input"],
+    files: [
+      {
+        path: "src/components/shadcn-space/accordion/accordion-09.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/accordion/accordion-09.tsx",
+      },
+    ],
+    category: categories["accordion"],
+    isNew: true,
+  },
+  {
+    name: "accordion-10",
+    title: "Accordion-10 - Feature Matrix",
+    description:
+      "Tiered feature comparison and technical capability matrix accordion with plan tags, check indicators, and specs.",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["accordion", "badge", "button"],
+    files: [
+      {
+        path: "src/components/shadcn-space/accordion/accordion-10.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/accordion/accordion-10.tsx",
+      },
+    ],
+    category: categories["accordion"],
+    isNew: true,
+  },
+  {
     name: "avatar-01",
     title: "Avatar-01 - Default",
     description: "Default avatar component",
@@ -1842,6 +1896,60 @@ export const components = [
     category: categories["tooltip"],
     isNew:true,
 
+  },
+  {
+    name: "tooltip-10",
+    title: "Tooltip-10 - User Profile Presence",
+    description:
+      "Interactive user profile and live presence card tooltip with avatar pulse, bio, stats, and quick follow actions.",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["tooltip", "avatar", "badge", "button"],
+    files: [
+      {
+        path: "src/components/shadcn-space/tooltip/tooltip-10.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/tooltip/tooltip-10.tsx",
+      },
+    ],
+    category: categories["tooltip"],
+    isNew: true,
+  },
+  {
+    name: "tooltip-11",
+    title: "Tooltip-11 - CLI Copy Snippet",
+    description:
+      "Interactive CLI snippet tooltip with package manager switcher (pnpm, npm, bun, yarn), shortcut hints, and instant copy feedback.",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["tooltip", "badge", "button", "kbd"],
+    files: [
+      {
+        path: "src/components/shadcn-space/tooltip/tooltip-11.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/tooltip/tooltip-11.tsx",
+      },
+    ],
+    category: categories["tooltip"],
+    isNew: true,
+  },
+  {
+    name: "tooltip-12",
+    title: "Tooltip-12 - Onboarding Tour",
+    description:
+      "Interactive product feature tour and walkthrough beacon tooltip with step progression bar, tip callouts, and navigation controls.",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["tooltip", "badge", "button"],
+    files: [
+      {
+        path: "src/components/shadcn-space/tooltip/tooltip-12.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/tooltip/tooltip-12.tsx",
+      },
+    ],
+    category: categories["tooltip"],
+    isNew: true,
   },
   {
     name: "animated-text-01",
