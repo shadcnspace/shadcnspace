@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node api.js && next dev --turbopack",
+    "build": "node api.js && next build",
+    "start": "node api.js && next start",
     "lint": "next lint",
     "generate-screenshots": "node --loader ts-node/esm src/lib/generate-block-screenshots.ts",
     "registry:merge": "node --loader ts-node/esm src/lib/scripts/updateRegistry.ts",

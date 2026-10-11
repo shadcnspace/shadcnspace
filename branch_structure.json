@@ -1,0 +1,18 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "feat/add-accordion-08-and-tooltip-10",
+    "main",
+    "origin"
+  ],
+  "parent": {
+    "feat/add-accordion-08-and-tooltip-10": "main",
+    "main": null,
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "feat/add-accordion-08-and-tooltip-10",
+    "origin"
+  ]
+}
