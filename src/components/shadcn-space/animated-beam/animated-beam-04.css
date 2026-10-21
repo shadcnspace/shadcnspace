@@ -1,0 +1,73 @@
+.animated-beam-04-pulse {
+  stroke-dasharray: 16 200;
+  stroke-dashoffset: 16;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Source beams all travel together and meet at the hub */
+.animated-beam-04-source {
+  animation-name: animated-beam-04-flow-source;
+}
+
+/* Output beam leaves the hub once the sources have arrived */
+.animated-beam-04-output {
+  animation-name: animated-beam-04-flow-output;
+}
+
+@keyframes animated-beam-04-flow-source {
+  0% {
+    stroke-dashoffset: 16;
+  }
+  35%,
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes animated-beam-04-flow-output {
+  0%,
+  35% {
+    stroke-dashoffset: 16;
+  }
+  70%,
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+/* Soft ring on the hub when the source beams land */
+.animated-beam-04-hub-ring {
+  opacity: 0;
+  animation: animated-beam-04-ring 3s ease-out infinite;
+}
+
+@keyframes animated-beam-04-ring {
+  0%,
+  28% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  55%,
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-beam-04-pulse {
+    animation: none;
+    stroke-dasharray: none;
+    opacity: 0.4;
+  }
+
+  .animated-beam-04-hub-ring {
+    display: none;
+  }
+}

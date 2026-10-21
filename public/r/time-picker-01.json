@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "time-picker-01",
+  "title": "Time Picker 01 - Scroll Columns",
+  "description": "Popover time picker with scrollable hour, minute, and AM or PM columns",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "label",
+    "popover",
+    "scroll-area"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/time-picker/time-picker-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Clock8Icon } from \"lucide-react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/components/ui/popover\";\r\nimport { ScrollArea } from \"@/components/ui/scroll-area\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst hours = Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, \"0\"));\r\nconst minutes = Array.from({ length: 12 }, (_, i) => String(i * 5).padStart(2, \"0\"));\r\nconst periods = [\"AM\", \"PM\"];\r\n\r\ntype Column = {\r\n  label: string;\r\n  options: string[];\r\n  value: string;\r\n  onChange: (value: string) => void;\r\n};\r\n\r\nexport default function TimePicker01() {\r\n  const [hour, setHour] = useState(\"09\");\r\n  const [minute, setMinute] = useState(\"30\");\r\n  const [period, setPeriod] = useState(\"AM\");\r\n\r\n  const columns: Column[] = [\r\n    { label: \"Hour\", options: hours, value: hour, onChange: setHour },\r\n    { label: \"Minute\", options: minutes, value: minute, onChange: setMinute },\r\n    { label: \"Period\", options: periods, value: period, onChange: setPeriod },\r\n  ];\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-2\">\r\n      <Label htmlFor=\"time-picker-01\">Start time</Label>\r\n      <Popover>\r\n        <PopoverTrigger\r\n          render={\r\n            <Button\r\n              id=\"time-picker-01\"\r\n              variant=\"outline\"\r\n              className=\"w-full cursor-pointer justify-start font-normal\"\r\n            />\r\n          }\r\n        >\r\n          <Clock8Icon className=\"text-muted-foreground\" />\r\n          <span className=\"tabular-nums\">\r\n            {hour}:{minute} {period}\r\n          </span>\r\n        </PopoverTrigger>\r\n        <PopoverContent align=\"start\" className=\"w-auto p-0\">\r\n          <div className=\"flex divide-x divide-border\">\r\n            {columns.map((column) => (\r\n              <div key={column.label} className=\"flex flex-col\">\r\n                <span className=\"border-b border-border px-3 py-2 text-center text-xs font-medium text-muted-foreground\">\r\n                  {column.label}\r\n                </span>\r\n                <ScrollArea className=\"h-56\">\r\n                  <div role=\"listbox\" aria-label={column.label} className=\"flex flex-col gap-1 p-1.5\">\r\n                    {column.options.map((option) => {\r\n                      const selected = option === column.value;\r\n                      return (\r\n                        <Button\r\n                          key={option}\r\n                          role=\"option\"\r\n                          aria-selected={selected}\r\n                          variant={selected ? \"default\" : \"ghost\"}\r\n                          size=\"sm\"\r\n                          className={cn(\r\n                            \"w-12 cursor-pointer tabular-nums\",\r\n                            !selected && \"text-muted-foreground\"\r\n                          )}\r\n                          onClick={() => column.onChange(option)}\r\n                        >\r\n                          {option}\r\n                        </Button>\r\n                      );\r\n                    })}\r\n                  </div>\r\n                </ScrollArea>\r\n              </div>\r\n            ))}\r\n          </div>\r\n        </PopoverContent>\r\n      </Popover>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/time-picker/time-picker-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

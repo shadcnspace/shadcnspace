@@ -1,0 +1,45 @@
+.animated-beam-02-pulse {
+  stroke-dasharray: 16 200;
+  stroke-dashoffset: 16;
+  animation-duration: 2.4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Left beam travels in the first part of the cycle and reaches the hub first */
+.animated-beam-02-source {
+  animation-name: animated-beam-02-flow-source;
+}
+
+/* Right beams leave the hub only after the left beam arrives */
+.animated-beam-02-target {
+  animation-name: animated-beam-02-flow-target;
+}
+
+@keyframes animated-beam-02-flow-source {
+  0% {
+    stroke-dashoffset: 16;
+  }
+  35%,
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes animated-beam-02-flow-target {
+  0%,
+  35% {
+    stroke-dashoffset: 16;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-beam-02-pulse {
+    animation: none;
+    stroke-dasharray: none;
+    opacity: 0.4;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-34",
+  "title": "Button 34 - Kids Play",
+  "description": "Playful chunky 3D candy button for kids websites with a press-down effect, bouncing icon, and pop-out stars on hover",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-34.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { Rocket, Star } from \"lucide-react\";\r\n\r\nconst KidsPlayButton = () => {\r\n  return (\r\n    <Button\r\n      variant=\"ghost\"\r\n      className=\"group relative h-auto rounded-2xl border-0 bg-orange-400 p-0 pb-1.5 hover:bg-orange-400 dark:hover:bg-orange-400 cursor-pointer\"\r\n    >\r\n      {/* Pop-out stars on hover */}\r\n      <Star\r\n        aria-hidden=\"true\"\r\n        className=\"absolute -top-3 -right-3 z-20 size-5 scale-0 fill-teal-400 text-teal-400 transition-transform duration-300 group-hover:scale-100 group-hover:rotate-45\"\r\n      />\r\n      <Star\r\n        aria-hidden=\"true\"\r\n        className=\"absolute -bottom-2 -left-3 z-20 size-4 scale-0 fill-blue-500 text-blue-500 transition-transform delay-75 duration-300 group-hover:scale-100 group-hover:-rotate-12\"\r\n      />\r\n\r\n      {/* Raised button face, presses down into the base on click */}\r\n      <span className=\"relative flex items-center gap-2 rounded-2xl border-2 border-orange-400 bg-amber-300 px-6 py-3 text-base font-extrabold tracking-wide text-gray-950 transition-transform duration-150 group-hover:-translate-y-0.5 group-active:translate-y-1.5\">\r\n        {/* Candy shine */}\r\n        <span\r\n          aria-hidden=\"true\"\r\n          className=\"absolute top-1.5 left-3 h-1.5 w-6 rounded-full bg-white/70\"\r\n        />\r\n        <Rocket className=\"size-5 motion-safe:group-hover:animate-bounce\" />\r\n        Let's Play!\r\n      </span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default KidsPlayButton;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-34.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

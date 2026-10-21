@@ -1,0 +1,45 @@
+.animated-beam-03-pulse {
+  stroke-dasharray: 16 200;
+  stroke-dashoffset: 16;
+  animation: animated-beam-03-flow 6s linear infinite;
+}
+
+/* Each spoke travels in a short slot of the cycle, staggered with animation-delay */
+@keyframes animated-beam-03-flow {
+  0% {
+    stroke-dashoffset: 16;
+  }
+  15%,
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+/* Soft ring on the hub every time a beam slides under it (about 0.6s into each beam) */
+.animated-beam-03-hub-ring {
+  animation: animated-beam-03-ring 1s ease-out 0.6s infinite;
+  opacity: 0;
+}
+
+@keyframes animated-beam-03-ring {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-beam-03-pulse {
+    animation: none;
+    stroke-dasharray: none;
+    opacity: 0.4;
+  }
+
+  .animated-beam-03-hub-ring {
+    display: none;
+  }
+}

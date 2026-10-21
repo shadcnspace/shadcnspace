@@ -17,6 +17,8 @@ import {
   CircleStar,
   Ratio,
   ClipboardList,
+  Workflow,
+  Clock,
 } from "lucide-react";
 import React from "react";
 
@@ -880,6 +882,35 @@ export const componentsMap: ComponentsMap = {
     blockName: "questionnaire",
     component: React.lazy(
       () => import("@/app/(site)/docs/component-info/questionnaire"),
+    ),
+  },
+
+  "animated-beam": {
+    title: "Animated Beam",
+    headingTitle: "Shadcn Animated Beam",
+    url: "/components/animated-beam",
+    icon: Workflow,
+    blockName: "animated-beam",
+    columns: 1,
+    description:
+      "Explore {count}+ Shadcn Animated Beam components that connect nodes with travelling light beams. Visualize data flows, integrations, and system architecture with React, Tailwind CSS, and SVG.",
+    image: "https://images.shadcnspace.com/assets/components/animated-beam.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/animated-beam"),
+    ),
+  },
+   "time-picker": {
+    title: "Time Picker",
+    headingTitle: "Shadcn Time Picker",
+    url: "/components/time-picker",
+    icon: Clock,
+    blockName: "time-picker",
+    columns: 2,
+    description:
+      "Explore ready-to-useShadcn Time Picker components built with React, Tailwind CSS, and shadcn/ui. Pick times with scroll columns, booking slots, an analog clock, time ranges, steppers, and time zones.",
+    image: "https://images.shadcnspace.com/assets/components/time-picker.webp",
+    component: React.lazy(
+      () => import("@/app/(site)/docs/component-info/time-picker"),
     ),
   },
   form: {

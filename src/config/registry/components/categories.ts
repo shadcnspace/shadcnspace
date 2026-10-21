@@ -520,4 +520,20 @@ export const categories = {
     metaDescription:
       "Explore ready-to-use Shadcn Questionnaire components for surveys, feedback forms, assessments, and multi-step questions, built with React, Tailwind CSS, Base UI, and Radix UI.",
   },
+  "animated-beam": {
+    name: "animated-beam",
+    title: "Animated Beam",
+    metaKeyword: "shadcn animated beam",
+    metaTitle: "Shadcn Animated Beam Components & Variants",
+    metaDescription:
+      "Explore Shadcn Animated Beam components that connect nodes with glowing light beams. Visualize data flows, integrations, and system architecture with React, Tailwind CSS, and SVG.",
+  },
+   "time-picker": {
+    name: "time-picker",
+    title: "Time Picker",
+    metaKeyword: "shadcn time picker",
+    metaTitle: "{count}+ Shadcn Time Picker Components for React & Next.js",
+    metaDescription:
+      "Explore ready-to-use Shadcn Time Picker components for React and Next.js. Pick times with scroll columns, booking slots, an analog clock, time ranges, steppers, and time zones.",
+  },
 } as const;

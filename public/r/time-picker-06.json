@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "time-picker-06",
+  "title": "Time Picker 06 - Across Time Zones",
+  "description": "Meeting time picker that converts the chosen time across cities with day and night icons and next day badges",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge",
+    "field",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/time-picker/time-picker-06.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { MoonIcon, SunIcon } from \"lucide-react\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Field, FieldLabel } from \"@/components/ui/field\";\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/components/ui/select\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst formatTime = (totalMinutes: number) => {\r\n  const minutes = ((totalMinutes % 1440) + 1440) % 1440;\r\n  const hours = Math.floor(minutes / 60);\r\n  const hour12 = hours % 12 === 0 ? 12 : hours % 12;\r\n  return `${hour12}:${String(minutes % 60).padStart(2, \"0\")} ${hours < 12 ? \"AM\" : \"PM\"}`;\r\n};\r\n\r\n// Every 30 minutes across the day\r\nconst options = Array.from({ length: 48 }, (_, i) => ({\r\n  label: formatTime(i * 30),\r\n  total: i * 30,\r\n}));\r\n\r\n// Fixed UTC offsets in minutes, standard time for the demo\r\nconst zones = [\r\n  { city: \"London\", zone: \"UTC+0\", offset: 0 },\r\n  { city: \"New York\", zone: \"UTC-5\", offset: -300 },\r\n  { city: \"Bengaluru\", zone: \"UTC+5:30\", offset: 330 },\r\n  { city: \"Tokyo\", zone: \"UTC+9\", offset: 540 },\r\n];\r\n\r\nconst BASE_OFFSET = zones[0].offset;\r\n\r\nexport default function TimePicker06() {\r\n  const [time, setTime] = useState(\"3:00 PM\");\r\n  const base = options.find((option) => option.label === time)?.total ?? 0;\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-4 rounded-xl border border-border p-4\">\r\n      <Field>\r\n        <FieldLabel htmlFor=\"time-picker-06\">Meeting time in London</FieldLabel>\r\n        <Select value={time} onValueChange={(next) => next && setTime(next)}>\r\n          <SelectTrigger id=\"time-picker-06\" className=\"w-full cursor-pointer tabular-nums\">\r\n            <SelectValue />\r\n          </SelectTrigger>\r\n          <SelectContent>\r\n            {options.map((option) => (\r\n              <SelectItem key={option.label} value={option.label} className=\"tabular-nums\">\r\n                {option.label}\r\n              </SelectItem>\r\n            ))}\r\n          </SelectContent>\r\n        </Select>\r\n      </Field>\r\n\r\n      <ul aria-live=\"polite\" className=\"divide-y divide-border rounded-lg border border-border\">\r\n        {zones.map((zone) => {\r\n          const local = base - BASE_OFFSET + zone.offset;\r\n          const dayShift = Math.floor(local / 1440);\r\n          const hour = Math.floor((((local % 1440) + 1440) % 1440) / 60);\r\n          const daytime = hour >= 7 && hour < 19;\r\n          const Icon = daytime ? SunIcon : MoonIcon;\r\n\r\n          return (\r\n            <li key={zone.city} className=\"flex items-center gap-3 px-3 py-2.5\">\r\n              <span\r\n                className={cn(\r\n                  \"flex size-8 shrink-0 items-center justify-center rounded-full\",\r\n                  daytime ? \"bg-amber-300/15 text-amber-300\" : \"bg-blue-500/15 text-blue-500\"\r\n                )}\r\n              >\r\n                <Icon aria-hidden=\"true\" className=\"size-4\" />\r\n              </span>\r\n              <div className=\"flex flex-col\">\r\n                <span className=\"text-sm font-medium text-foreground\">{zone.city}</span>\r\n                <span className=\"text-xs text-muted-foreground\">{zone.zone}</span>\r\n              </div>\r\n              <div className=\"ms-auto flex items-center gap-2\">\r\n                {dayShift !== 0 && (\r\n                  <Badge variant=\"secondary\" className=\"text-xs\">\r\n                    {dayShift > 0 ? \"+1 day\" : \"-1 day\"}\r\n                  </Badge>\r\n                )}\r\n                <span className=\"text-sm font-semibold tabular-nums text-foreground\">\r\n                  {formatTime(local)}\r\n                </span>\r\n              </div>\r\n            </li>\r\n          );\r\n        })}\r\n      </ul>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/time-picker/time-picker-06.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
