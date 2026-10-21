@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "time-picker-02",
+  "title": "Time Picker 02 - Booking Slots",
+  "description": "Grid of bookable time slots where taken slots are disabled and the chosen slot is confirmed below",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "toggle-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/time-picker/time-picker-02.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { CalendarCheckIcon } from \"lucide-react\";\r\nimport { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";\r\n\r\nconst slots = [\r\n  { time: \"09:00 AM\", booked: false },\r\n  { time: \"09:30 AM\", booked: true },\r\n  { time: \"10:00 AM\", booked: false },\r\n  { time: \"10:30 AM\", booked: false },\r\n  { time: \"11:00 AM\", booked: true },\r\n  { time: \"11:30 AM\", booked: false },\r\n  { time: \"02:00 PM\", booked: false },\r\n  { time: \"02:30 PM\", booked: true },\r\n  { time: \"03:00 PM\", booked: false },\r\n];\r\n\r\nexport default function TimePicker02() {\r\n  const [selected, setSelected] = useState<string[]>([\"10:00 AM\"]);\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-4 rounded-xl border border-border p-4\">\r\n      <div className=\"flex flex-col\">\r\n        <span className=\"text-sm font-semibold text-foreground\">\r\n          Thursday, 16 October\r\n        </span>\r\n        <span className=\"text-xs text-muted-foreground\">\r\n          30 min call, times shown in your time zone\r\n        </span>\r\n      </div>\r\n\r\n      <ToggleGroup\r\n        aria-label=\"Available time slots\"\r\n        value={selected}\r\n        onValueChange={(value) => {\r\n          if (value && value.length > 0) setSelected(value);\r\n        }}\r\n        className=\"grid w-full grid-cols-3 gap-2\"\r\n      >\r\n        {slots.map((slot) => (\r\n          <ToggleGroupItem\r\n            key={slot.time}\r\n            value={slot.time}\r\n            disabled={slot.booked}\r\n            aria-label={slot.booked ? `${slot.time}, booked` : slot.time}\r\n            className=\"h-9 cursor-pointer rounded-lg border border-border text-sm tabular-nums transition-colors hover:bg-muted aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-primary-foreground disabled:cursor-not-allowed disabled:line-through\"\r\n          >\r\n            {slot.time}\r\n          </ToggleGroupItem>\r\n        ))}\r\n      </ToggleGroup>\r\n\r\n      <div className=\"flex items-center gap-2 rounded-lg bg-teal-400/10 px-3 py-2 text-sm text-foreground\">\r\n        <CalendarCheckIcon aria-hidden=\"true\" className=\"size-4 text-teal-400\" />\r\n        <span aria-live=\"polite\">\r\n          Your slot: <span className=\"font-semibold\">{selected[0]}</span>\r\n        </span>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/time-picker/time-picker-02.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

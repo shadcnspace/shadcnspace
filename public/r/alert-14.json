@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-14",
+  "title": "Alert 14 - Logout with Profile",
+  "description": "Compact logout dialog with the user's avatar, name, and email, plus an option to log out of all devices",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "avatar",
+    "button",
+    "checkbox",
+    "field"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-14.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { LogOutIcon } from \"lucide-react\";\r\nimport {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Checkbox } from \"@/components/ui/checkbox\";\r\nimport { Field, FieldLabel } from \"@/components/ui/field\";\r\n\r\nconst user = {\r\n  name: \"Jessica Hart\",\r\n  email: \"jessica@acme.com\",\r\n  image: \"https://images.shadcnspace.com/assets/profiles/jessica.webp\",\r\n  initials: \"JH\",\r\n};\r\n\r\nexport default function Alert14() {\r\n  const [open, setOpen] = useState(false);\r\n  const [allDevices, setAllDevices] = useState(false);\r\n\r\n  const handleOpenChange = (next: boolean) => {\r\n    setOpen(next);\r\n    if (!next) setAllDevices(false);\r\n  };\r\n\r\n  return (\r\n    <AlertDialog open={open} onOpenChange={handleOpenChange}>\r\n      <AlertDialogTrigger\r\n        render={<Button variant=\"outline\" className=\"cursor-pointer ps-1.5\" />}\r\n      >\r\n        <Avatar size=\"sm\">\r\n          <AvatarImage src={user.image} alt=\"\" />\r\n          <AvatarFallback>{user.initials}</AvatarFallback>\r\n        </Avatar>\r\n        Log Out\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent\r\n        size=\"sm\"\r\n        className=\"gap-0 overflow-hidden border border-border p-0 ring-0 duration-200 data-open:zoom-in-95\"\r\n      >\r\n        <div className=\"flex flex-col items-center gap-4 px-5 pt-7 pb-5 text-center\">\r\n          <div className=\"relative\">\r\n            <Avatar className=\"size-16\">\r\n              <AvatarImage src={user.image} alt={user.name} />\r\n              <AvatarFallback>{user.initials}</AvatarFallback>\r\n            </Avatar>\r\n            <span\r\n              aria-hidden=\"true\"\r\n              className=\"absolute right-0.5 bottom-0.5 size-3.5 rounded-full bg-teal-400 ring-2 ring-background\"\r\n            />\r\n          </div>\r\n          <div className=\"flex flex-col gap-0.5\">\r\n            <span className=\"text-sm font-semibold text-foreground\">\r\n              {user.name}\r\n            </span>\r\n            <span className=\"text-xs text-muted-foreground\">{user.email}</span>\r\n          </div>\r\n          <div className=\"flex flex-col gap-1.5\">\r\n            <AlertDialogTitle className=\"text-base font-semibold\">\r\n              Log out of ShadcnSpace?\r\n            </AlertDialogTitle>\r\n            <AlertDialogDescription>\r\n              You will need to sign in again to access your workspace.\r\n            </AlertDialogDescription>\r\n          </div>\r\n          <Field\r\n            orientation=\"horizontal\"\r\n            className=\"w-full rounded-lg border border-border px-3 py-2.5\"\r\n          >\r\n            <Checkbox\r\n              id=\"alert-14-all-devices\"\r\n              checked={allDevices}\r\n              onCheckedChange={(checked) => setAllDevices(checked === true)}\r\n            />\r\n            <FieldLabel\r\n              htmlFor=\"alert-14-all-devices\"\r\n              className=\"cursor-pointer font-normal\"\r\n            >\r\n              Log out of all devices\r\n            </FieldLabel>\r\n          </Field>\r\n        </div>\r\n        <div className=\"grid grid-cols-[1fr_auto] gap-2 border-t border-border p-4\">\r\n          <AlertDialogCancel className=\"cursor-pointer\">Cancel</AlertDialogCancel>\r\n          <AlertDialogAction\r\n            className=\"cursor-pointer\"\r\n            onClick={() => handleOpenChange(false)}\r\n          >\r\n            <LogOutIcon />\r\n            {allDevices ? \"Log Out Everywhere\" : \"Log Out\"}\r\n          </AlertDialogAction>\r\n        </div>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-14.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

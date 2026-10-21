@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-33",
+  "title": "Button 33 - Liquid Metal",
+  "description": "Pill button with an animated liquid metal shader border that flows faster on hover",
+  "dependencies": [
+    "@paper-design/shaders-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-33.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, useSyncExternalStore } from \"react\";\r\nimport { LiquidMetal } from \"@paper-design/shaders-react\";\r\nimport { ArrowRight } from \"lucide-react\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst REDUCED_MOTION_QUERY = \"(prefers-reduced-motion: reduce)\";\r\n\r\nconst subscribeToReducedMotion = (callback: () => void) => {\r\n  const query = window.matchMedia(REDUCED_MOTION_QUERY);\r\n  query.addEventListener(\"change\", callback);\r\n  return () => query.removeEventListener(\"change\", callback);\r\n};\r\n\r\nconst getReducedMotion = () => window.matchMedia(REDUCED_MOTION_QUERY).matches;\r\n\r\nconst getServerReducedMotion = () => false;\r\n\r\nconst LiquidMetalButton = () => {\r\n  const [isActive, setIsActive] = useState(false);\r\n  const reduceMotion = useSyncExternalStore(\r\n    subscribeToReducedMotion,\r\n    getReducedMotion,\r\n    getServerReducedMotion\r\n  );\r\n\r\n  // Metal flows faster on hover / focus, and stays still for reduced motion\r\n  const speed = reduceMotion ? 0 : isActive ? 3 : 1.5;\r\n\r\n  return (\r\n    <Button\r\n      variant=\"ghost\"\r\n      onMouseEnter={() => setIsActive(true)}\r\n      onMouseLeave={() => setIsActive(false)}\r\n      onFocus={() => setIsActive(true)}\r\n      onBlur={() => setIsActive(false)}\r\n      className=\"group relative h-auto overflow-hidden rounded-full border-0 p-1 shadow-lg transition-transform hover:bg-transparent active:scale-95 dark:hover:bg-transparent cursor-pointer\"\r\n    >\r\n      {/* Liquid metal border layer, oversized so the faded shader edges stay clipped */}\r\n      <span className=\"absolute -inset-6 z-0\" aria-hidden=\"true\">\r\n        <LiquidMetal\r\n          colorBack=\"#8a8a8f\"\r\n          colorTint=\"#ffffff\"\r\n          speed={speed}\r\n          repetition={4}\r\n          distortion={0.15}\r\n          softness={0.1}\r\n          shiftRed={0.3}\r\n          shiftBlue={-0.3}\r\n          angle={45}\r\n          shape=\"none\"\r\n          fit=\"cover\"\r\n          style={{ width: \"100%\", height: \"100%\" }}\r\n        />\r\n      </span>\r\n\r\n      {/* Inner button body */}\r\n      <span className=\"relative z-10 flex items-center gap-3 rounded-full bg-background py-1.5 ps-1.5 pe-6 text-sm font-medium text-foreground transition-colors duration-300 group-hover:bg-muted\">\r\n        <span className=\"flex size-8 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors duration-300 group-hover:bg-background group-hover:text-foreground\">\r\n          <ArrowRight className=\"size-4 transition-transform duration-300 group-hover:-rotate-45\" />\r\n        </span>\r\n        Get Started\r\n      </span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default LiquidMetalButton;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-33.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

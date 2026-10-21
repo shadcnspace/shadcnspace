@@ -20,6 +20,7 @@
     "@faker-js/faker": "^10.2.0",
     "@iconify/react": "^6.0.2",
     "@number-flow/react": "^0.6.0",
+    "@paper-design/shaders-react": "^0.0.81",
     "@shadcn/react": "^0.3.1",
     "@shikijs/transformers": "^1.24.0",
     "@types/canvas-confetti": "^1.9.0",

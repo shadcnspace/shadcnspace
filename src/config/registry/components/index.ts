@@ -167,7 +167,6 @@ export const components = [
       },
     ],
     category: categories["marquee"],
-    isNew: true,
   },
   {
     name: "marquee-05",
@@ -189,7 +188,6 @@ export const components = [
       },
     ],
     category: categories["marquee"],
-    isNew: true,
   },
   {
     name: "accordion-01",
@@ -950,7 +948,6 @@ export const components = [
       },
     ],
     category: categories["button"],
-    isNew: true,
 
   },
   {
@@ -969,7 +966,6 @@ export const components = [
       },
     ],
     category: categories["button"],
-    isNew: true,
 
   },
   {
@@ -988,8 +984,63 @@ export const components = [
       },
     ],
     category: categories["button"],
+  },
+
+{
+    name: "button-33",
+    title: "Button 33 - Liquid Metal",
+    description:
+      "Pill button with an animated liquid metal shader border that flows faster on hover",
+    type: "registry:component",
+    dependencies: ["@paper-design/shaders-react", "lucide-react"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "src/components/shadcn-space/button/button-33.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/button/button-33.tsx",
+      },
+    ],
+    category: categories["button"],
     isNew: true,
   },
+  {
+    name: "button-34",
+    title: "Button 34 - Kids Play",
+    description:
+      "Playful chunky 3D candy button for kids websites with a press-down effect, bouncing icon, and pop-out stars on hover",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "src/components/shadcn-space/button/button-34.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/button/button-34.tsx",
+      },
+    ],
+    category: categories["button"],
+    isNew: true,
+  },
+  {
+    name: "button-35",
+    title: "Button 35 - Level Up",
+    description:
+      "Gaming button with a segmented XP bar that fills up segment by segment on hover",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "src/components/shadcn-space/button/button-35.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/button/button-35.tsx",
+      },
+    ],
+    category: categories["button"],
+    isNew: true,
+  },
+
   {
     name: "button-group-01",
     title: "Button Group-01 - Basic",
@@ -1388,7 +1439,6 @@ export const components = [
     ],
     category: categories["badge"],
     isAnimate: true,
-    isNew:true
   },
   {
     name: "badge-12",
@@ -1407,7 +1457,6 @@ export const components = [
     ],
     category: categories["badge"],
     isAnimate: true,
-    isNew:true
 
   },
   {
@@ -1427,7 +1476,6 @@ export const components = [
     ],
     category: categories["badge"],
     isAnimate: true,
-    isNew:true
 
   },
   {
@@ -1822,7 +1870,6 @@ export const components = [
       },
     ],
     category: categories["tooltip"],
-    isNew:true,
 
   },
   {
@@ -1840,7 +1887,6 @@ export const components = [
       },
     ],
     category: categories["tooltip"],
-    isNew:true,
 
   },
   {
@@ -1994,7 +2040,6 @@ export const components = [
       },
     ],
     category: categories["animated-text"],
-    isNew: true,
   },
   {
     name: "animated-text-10",
@@ -2011,7 +2056,6 @@ export const components = [
       },
     ],
     category: categories["animated-text"],
-    isNew: true,
   },
   {
     name: "animated-text-11",
@@ -2028,7 +2072,6 @@ export const components = [
       },
     ],
     category: categories["animated-text"],
-    isNew: true,
   },
   {
     name: "animated-text-12",
@@ -2045,7 +2088,6 @@ export const components = [
       },
     ],
     category: categories["animated-text"],
-    isNew: true,
   },
   {
     name: "input-01",
@@ -2676,7 +2718,6 @@ export const components = [
       },
     ],
     category: categories["select"],
-    isNew: true,
   },
   {
     name: "select-11",
@@ -2694,7 +2735,6 @@ export const components = [
       },
     ],
     category: categories["select"],
-    isNew: true,
   },
   {
     name: "select-12",
@@ -2711,7 +2751,6 @@ export const components = [
       },
     ],
     category: categories["select"],
-    isNew: true,
   },
   {
     name: "checkbox-01",
@@ -2973,7 +3012,6 @@ export const components = [
       },
     ],
     category: categories["radio-group"],
-    isNew:true
   },
   {
     name: "radio-group-08",
@@ -2990,7 +3028,6 @@ export const components = [
       },
     ],
     category: categories["radio-group"],
-    isNew:true
 
   },
   {
@@ -3105,7 +3142,6 @@ export const components = [
       },
     ],
     category: categories["switch"],
-    isNew:true,
   },
   {
     name: "switch-08",
@@ -3123,7 +3159,6 @@ export const components = [
       },
     ],
     category: categories["switch"],
-    isNew:true,
 
   },
   {
@@ -3613,7 +3648,6 @@ export const components = [
       },
     ],
     category: categories["card"],
-    isNew: true,
   },
   {
     name: "card-20",
@@ -3632,7 +3666,6 @@ export const components = [
     ],
     category: categories["card"],
     isAnimate: true,
-    isNew:true,
   },
   {
     name: "shine-border-01",
@@ -3717,7 +3750,6 @@ export const components = [
       },
     ],
     category: categories["shine-border"],
-    isNew: true,
   },
   {
     name: "shine-border-06",
@@ -3735,7 +3767,6 @@ export const components = [
       },
     ],
     category: categories["shine-border"],
-    isNew: true,
   },
   {
     name: "shine-border-07",
@@ -3753,7 +3784,6 @@ export const components = [
       },
     ],
     category: categories["shine-border"],
-    isNew: true,
   },
   {
     name: "number-ticker-01",
@@ -3855,7 +3885,6 @@ export const components = [
       },
     ],
     category: categories["number-ticker"],
-    isNew: true,
   },
   {
     name: "number-ticker-07",
@@ -3873,7 +3902,6 @@ export const components = [
       },
     ],
     category: categories["number-ticker"],
-    isNew: true,
   },
   {
     name: "number-ticker-08",
@@ -3891,7 +3919,6 @@ export const components = [
       },
     ],
     category: categories["number-ticker"],
-    isNew: true,
   },
   {
     name: "spinning-text-01",
@@ -4285,7 +4312,6 @@ export const components = [
       },
     ],
     category: categories["alert"],
-    isNew:true
   },
   {
     name: "alert-08",
@@ -4303,8 +4329,115 @@ export const components = [
       },
     ],
     category: categories["alert"],
-    isNew:true
 
+  },
+   {
+    name: "alert-09",
+    title: "Alert 09 - Publish Confirmation",
+    description:
+      "Alert dialog that slides up to confirm publishing, with a rocket icon, a change summary, and full width actions",
+    type: "registry:component",
+    registryDependencies: ["alert-dialog", "button"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/alert/alert-09.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/alert/alert-09.tsx",
+      },
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+  {
+    name: "alert-10",
+    title: "Alert 10 - Two Step Delete",
+    description:
+      "Destructive alert dialog that lists what will be removed and needs a second click on delete to confirm",
+    type: "registry:component",
+    registryDependencies: ["alert-dialog", "button"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/alert/alert-10.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/alert/alert-10.tsx",
+      },
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+  {
+    name: "alert-11",
+    title: "Alert 11 - Hold to Confirm",
+    description:
+      "Compact alert dialog where the user presses and holds the revoke button until it fills, preventing accidental clicks",
+    type: "registry:component",
+    registryDependencies: ["alert-dialog", "button"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/alert/alert-11.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/alert/alert-11.tsx",
+      },
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+  {
+    name: "alert-12",
+    title: "Alert 12 - Type to Confirm",
+    description:
+      "Delete repository dialog with an impact callout that unlocks the delete action once the user types the repository name",
+    type: "registry:component",
+    registryDependencies: ["alert-dialog", "button", "field", "input"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/alert/alert-12.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/alert/alert-12.tsx",
+      },
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+  {
+    name: "alert-13",
+    title: "Alert 13 - Async with Success",
+    description:
+      "Archive dialog that moves from confirm to a loading spinner to a success state, and cannot be closed while the action runs",
+    type: "registry:component",
+    registryDependencies: ["alert-dialog", "button", "spinner"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/alert/alert-13.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/alert/alert-13.tsx",
+      },
+    ],
+    category: categories["alert"],
+    isNew: true,
+  },
+  {
+    name: "alert-14",
+    title: "Alert 14 - Logout with Profile",
+    description:
+      "Compact logout dialog with the user's avatar, name, and email, plus an option to log out of all devices",
+    type: "registry:component",
+    registryDependencies: ["alert-dialog", "avatar", "button", "checkbox", "field"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/alert/alert-14.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/alert/alert-14.tsx",
+      },
+    ],
+    category: categories["alert"],
+    isNew: true,
   },
   {
     name: "breadcrumb-01",
@@ -4652,7 +4785,6 @@ export const components = [
       },
     ],
     category: categories["popover"],
-    isNew: true,
   },
   {
     name: "popover-08",
@@ -4670,7 +4802,6 @@ export const components = [
       },
     ],
     category: categories["popover"],
-    isNew: true,
   },
   {
     name: "popover-09",
@@ -4688,7 +4819,6 @@ export const components = [
       },
     ],
     category: categories["popover"],
-    isNew: true,
   },
   {
     name: "slider-01",
@@ -4788,7 +4918,6 @@ export const components = [
       },
     ],
     category: categories["slider"],
-    isNew: true,
   },
   {
     name: "slider-07",
@@ -4806,7 +4935,6 @@ export const components = [
       },
     ],
     category: categories["slider"],
-    isNew: true,
   },
   {
     name: "skeleton-01",
@@ -5517,7 +5645,6 @@ export const components = [
     ],
     category: categories["dropdown-menu"],
    
-    isNew: true,
 
   },
   {
@@ -5544,7 +5671,6 @@ export const components = [
     ],
     category: categories["dropdown-menu"],
    
-    isNew: true,
 
   },
   {
@@ -5573,7 +5699,6 @@ export const components = [
     ],
     category: categories["dropdown-menu"],
   
-    isNew: true,
 
   },
   {
@@ -5593,7 +5718,6 @@ export const components = [
     ],
     category: categories["dropdown-menu"],
     
-    isNew: true,
 
   },
   {
@@ -5613,7 +5737,6 @@ export const components = [
     ],
     category: categories["dropdown-menu"],
     
-    isNew: true,
 
   },
   {
@@ -6657,7 +6780,6 @@ export const components = [
       },
     ],
     category: categories["resizable"],
-    isNew: true,
   },
   {
     name: "resizable-03",
@@ -6675,7 +6797,6 @@ export const components = [
       },
     ],
     category: categories["resizable"],
-    isNew: true,
   },
   {
     name: "resizable-04",
@@ -6693,7 +6814,6 @@ export const components = [
       },
     ],
     category: categories["resizable"],
-    isNew: true,
   },
   {
     name: "item-01",
@@ -6867,7 +6987,6 @@ export const components = [
       },
     ],
     category: categories["stepper"],
-    isNew:true
   },
   {
     name: "stepper-04",
@@ -6885,7 +7004,6 @@ export const components = [
       },
     ],
     category: categories["stepper"],
-    isNew:true
 
   },
   {
@@ -7073,7 +7191,6 @@ export const components = [
       },
     ],
     category: categories["sortable"],
-    isNew: true,
   },
   {
     name: "sortable-02",
@@ -7091,7 +7208,6 @@ export const components = [
       },
     ],
     category: categories["sortable"],
-    isNew: true,
   },
   {
     name: "sortable-03",
@@ -7109,7 +7225,6 @@ export const components = [
       },
     ],
     category: categories["sortable"],
-    isNew: true,
   },
   {
     name: "sortable-04",
@@ -7127,7 +7242,6 @@ export const components = [
       },
     ],
     category: categories["sortable"],
-    isNew: true,
   },
   {
     name: "sortable-05",
@@ -7145,7 +7259,6 @@ export const components = [
       },
     ],
     category: categories["sortable"],
-    isNew: true,
   },
   {
     name: "sortable-06",
@@ -7163,7 +7276,6 @@ export const components = [
       },
     ],
     category: categories["sortable"],
-    isNew: true,
   },
 
   {
@@ -7181,7 +7293,6 @@ export const components = [
       },
     ],
     category: categories["aspect-ratio"],
-    isNew: true,
 
   },
   {
@@ -7200,7 +7311,6 @@ export const components = [
       },
     ],
     category: categories["aspect-ratio"],
-    isNew: true,
 
   },
   {
@@ -7219,7 +7329,6 @@ export const components = [
       },
     ],
     category: categories["aspect-ratio"],
-    isNew: true,
 
   },
   {
@@ -7238,7 +7347,6 @@ export const components = [
       },
     ],
     category: categories["aspect-ratio"],
-    isNew: true,
 
   },
   {
@@ -7257,7 +7365,6 @@ export const components = [
       },
     ],
     category: categories["aspect-ratio"],
-    isNew: true,
 
   },
   {
@@ -7276,7 +7383,6 @@ export const components = [
       },
     ],
     category: categories["aspect-ratio"],
-    isNew: true,
 
   },
   {
@@ -7295,7 +7401,238 @@ export const components = [
       },
     ],
     category: categories["questionnaire"],
-    isNew: true,
 
+  },
+  {
+    name: "time-picker-01",
+    title: "Time Picker 01 - Scroll Columns",
+    description:
+      "Popover time picker with scrollable hour, minute, and AM or PM columns",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "label", "popover", "scroll-area"],
+    files: [
+      {
+        path: "src/components/shadcn-space/time-picker/time-picker-01.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/time-picker/time-picker-01.tsx",
+      },
+    ],
+    category: categories["time-picker"],
+    isNew: true,
+  },
+  {
+    name: "time-picker-02",
+    title: "Time Picker 02 - Booking Slots",
+    description:
+      "Grid of bookable time slots where taken slots are disabled and the chosen slot is confirmed below",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["toggle-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/time-picker/time-picker-02.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/time-picker/time-picker-02.tsx",
+      },
+    ],
+    category: categories["time-picker"],
+    isNew: true,
+  },
+  {
+    name: "time-picker-03",
+    title: "Time Picker 03 - Ring Track",
+    description:
+      "Circular ring time picker where an arc fills as you drag the knob, with the time and AM or PM toggle in the center and keyboard slider support",
+    type: "registry:component",
+    dependencies: [],
+    registryDependencies: ["button", "toggle-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/time-picker/time-picker-03.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/time-picker/time-picker-03.tsx",
+      },
+    ],
+    category: categories["time-picker"],
+    isNew: true,
+  },
+  {
+    name: "time-picker-04",
+    title: "Time Picker 04 - Time Range",
+    description:
+      "Start and end time selects with a live duration badge and validation when the end is before the start",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["badge", "field", "select"],
+    files: [
+      {
+        path: "src/components/shadcn-space/time-picker/time-picker-04.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/time-picker/time-picker-04.tsx",
+      },
+    ],
+    category: categories["time-picker"],
+    isNew: true,
+  },
+  {
+    name: "time-picker-05",
+    title: "Time Picker 05 - Stepper",
+    description:
+      "Hour and minute steppers with up and down buttons, arrow key support, 15 minute steps, and an AM or PM toggle",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "toggle-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/time-picker/time-picker-05.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/time-picker/time-picker-05.tsx",
+      },
+    ],
+    category: categories["time-picker"],
+    isNew: true,
+  },
+  {
+    name: "time-picker-06",
+    title: "Time Picker 06 - Across Time Zones",
+    description:
+      "Meeting time picker that converts the chosen time across cities with day and night icons and next day badges",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["badge", "field", "select"],
+    files: [
+      {
+        path: "src/components/shadcn-space/time-picker/time-picker-06.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/time-picker/time-picker-06.tsx",
+      },
+    ],
+    category: categories["time-picker"],
+    isNew: true,
+  },
+  {
+    name: "time-picker-07",
+    title: "Time Picker 07 - Analog Clock Popover",
+    description:
+      "Form field button that opens a draggable ring track time picker in a popover, with cancel and set actions",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "label", "popover", "toggle-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/time-picker/time-picker-07.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/time-picker/time-picker-07.tsx",
+      },
+    ],
+    category: categories["time-picker"],
+    isNew: true,
+  },
+  {
+    name: "time-picker-08",
+    title: "Time Picker 08 - Analog Clock Dialog",
+    description:
+      "Alarm card that opens a draggable ring track time picker in a modal dialog, ideal for mobile time selection",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "dialog", "toggle-group"],
+    files: [
+      {
+        path: "src/components/shadcn-space/time-picker/time-picker-08.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/time-picker/time-picker-08.tsx",
+      },
+    ],
+    category: categories["time-picker"],
+    isNew: true,
+  },
+  {
+    name: "animated-beam-01",
+    title: "Animated Beam 01 - Hub and Spoke",
+    description:
+      "Hub with the Shadcn Space logo linked to surrounding tool nodes by curved paths carrying travelling light beams",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/animated-beam/animated-beam-01.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/animated-beam/animated-beam-01.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/animated-beam/animated-beam-01.css",
+        type: "registry:style",
+        target: "components/shadcn-space/animated-beam/animated-beam-01.css",
+      },
+    ],
+    category: categories["animated-beam"],
+    isNew: true,
+  },
+  {
+    name: "animated-beam-02",
+    title: "Animated Beam 02 - Pipeline",
+    description:
+      "Left to right pipeline connecting Figma, Claude, and output nodes with animated light beams",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/animated-beam/animated-beam-02.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/animated-beam/animated-beam-02.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/animated-beam/animated-beam-02.css",
+        type: "registry:style",
+        target: "components/shadcn-space/animated-beam/animated-beam-02.css",
+      },
+    ],
+    category: categories["animated-beam"],
+    isNew: true,
+  },
+  {
+    name: "animated-beam-03",
+    title: "Animated Beam 03 - Radial Hub",
+    description:
+      "Central ShadcnSpace node connected to surrounding nodes with animated light beams",
+    type: "registry:component",
+    dependencies: [],
+    files: [
+      {
+        path: "src/components/shadcn-space/animated-beam/animated-beam-03.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/animated-beam/animated-beam-03.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/animated-beam/animated-beam-03.css",
+        type: "registry:style",
+        target: "components/shadcn-space/animated-beam/animated-beam-03.css",
+      },
+    ],
+    category: categories["animated-beam"],
+    isNew: true,
+  },
+  {
+    name: "animated-beam-04",
+    title: "Animated Beam 04 - App Flow",
+    description:
+      "App window node linked to Claude with an animated light beam",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/animated-beam/animated-beam-04.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/animated-beam/animated-beam-04.tsx",
+      },
+      {
+        path: "src/components/shadcn-space/animated-beam/animated-beam-04.css",
+        type: "registry:style",
+        target: "components/shadcn-space/animated-beam/animated-beam-04.css",
+      },
+    ],
+    category: categories["animated-beam"],
+    isNew: true,
   },
 ];
