@@ -1,7 +1,0 @@
-.tabs-12-scroll {
-  scrollbar-width: none;
-}
-
-.tabs-12-scroll::-webkit-scrollbar {
-  display: none;
-}
