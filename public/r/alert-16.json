@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-16",
+  "title": "Alert 16 - Update Available",
+  "description": "Dismissible update alert with Update now and Remind me later actions, a loading state while updating, and a way to bring it back.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button",
+    "spinner"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-16.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { RefreshCw, Sparkles, XIcon } from \"lucide-react\";\r\n\r\nimport { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Spinner } from \"@/components/ui/spinner\";\r\n\r\nconst AlertDemo = () => {\r\n  const [state, setState] = useState<\"visible\" | \"updating\" | \"hidden\">(\"visible\");\r\n\r\n  if (state === \"hidden\") {\r\n    return (\r\n      <Button variant=\"outline\" size=\"sm\" onClick={() => setState(\"visible\")}>\r\n        <RefreshCw />\r\n        Show alert again\r\n      </Button>\r\n    );\r\n  }\r\n\r\n  return (\r\n    <Alert className=\"w-full max-w-md border-blue-500/30 p-4\">\r\n      <Sparkles className=\"text-blue-500!\" />\r\n      <AlertTitle className=\"pr-8\">Version 2.4 is available</AlertTitle>\r\n      <AlertDescription className=\"flex flex-col gap-3\">\r\n        <span>Faster builds, a new command palette, and 18 bug fixes. Updating takes about a minute.</span>\r\n        <span className=\"flex gap-2\">\r\n          <Button\r\n            size=\"sm\"\r\n            disabled={state === \"updating\"}\r\n            onClick={() => {\r\n              setState(\"updating\");\r\n              setTimeout(() => setState(\"hidden\"), 1500);\r\n            }}\r\n          >\r\n            {state === \"updating\" && <Spinner aria-hidden=\"true\" />}\r\n            {state === \"updating\" ? \"Updating\" : \"Update now\"}\r\n          </Button>\r\n          <Button size=\"sm\" variant=\"ghost\" disabled={state === \"updating\"} onClick={() => setState(\"hidden\")}>\r\n            Remind me later\r\n          </Button>\r\n        </span>\r\n      </AlertDescription>\r\n      <button\r\n        type=\"button\"\r\n        aria-label=\"Dismiss\"\r\n        onClick={() => setState(\"hidden\")}\r\n        className=\"absolute top-3 right-3 rounded-sm p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring\"\r\n      >\r\n        <XIcon className=\"size-4\" />\r\n      </button>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default AlertDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-16.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

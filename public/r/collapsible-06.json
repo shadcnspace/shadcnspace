@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-06",
+  "title": "Collapsible 06 - Read More",
+  "description": "Review card that shows the first paragraph with a fade and expands the full text with a Read more / Show less toggle.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "collapsible",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/collapsible/collapsible-06.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { ChevronDown } from \"lucide-react\";\r\n\r\nimport { Avatar, AvatarFallback } from \"@/components/ui/avatar\";\r\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@/components/ui/collapsible\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst CollapsibleDemo = () => {\r\n  const [open, setOpen] = useState(false);\r\n\r\n  return (\r\n    <article className=\"w-full max-w-md rounded-lg border border-border bg-background p-5\">\r\n      <header className=\"mb-3 flex items-center gap-3\">\r\n        <Avatar>\r\n          <AvatarFallback className=\"bg-sky-400/20 text-xs font-medium text-foreground\">NK</AvatarFallback>\r\n        </Avatar>\r\n        <div>\r\n          <p className=\"text-sm font-medium text-foreground\">Noah Kim</p>\r\n          <p className=\"text-xs text-muted-foreground\">Rated 5 out of 5, 2 days ago</p>\r\n        </div>\r\n      </header>\r\n\r\n      <Collapsible open={open} onOpenChange={setOpen}>\r\n        <div className=\"relative\">\r\n          <p className=\"text-sm text-foreground/90\">\r\n            We moved our whole design system to these components in a week. The defaults are sensible, the\r\n            code is easy to read, and dark mode just worked.\r\n          </p>\r\n          {!open && (\r\n            <div\r\n              aria-hidden=\"true\"\r\n              className=\"pointer-events-none absolute inset-x-0 bottom-0 h-6 bg-linear-to-t from-background to-transparent\"\r\n            />\r\n          )}\r\n        </div>\r\n        <CollapsibleContent className=\"overflow-hidden\">\r\n          <div className=\"flex flex-col gap-3 pt-3 text-sm text-foreground/90\">\r\n            <p>\r\n              What surprised me most was the accessibility. Keyboard navigation and focus states were right out of\r\n              the box, which saved our QA team a lot of time.\r\n            </p>\r\n            <p>\r\n              My only wish is more examples for complex forms, but the community filled that gap quickly. Would\r\n              recommend to any team starting a new product.\r\n            </p>\r\n          </div>\r\n        </CollapsibleContent>\r\n        <CollapsibleTrigger className=\"group mt-3 flex items-center gap-1 rounded-sm text-sm font-medium text-foreground underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring\">\r\n          {open ? \"Show less\" : \"Read more\"}\r\n          <ChevronDown\r\n            className={cn(\"size-4 transition-transform motion-reduce:transition-none\", open && \"rotate-180\")}\r\n            aria-hidden=\"true\"\r\n          />\r\n        </CollapsibleTrigger>\r\n      </Collapsible>\r\n    </article>\r\n  );\r\n};\r\n\r\nexport default CollapsibleDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/collapsible/collapsible-06.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -733,6 +733,33 @@
       ]
     },
     {
+      "name": "footer-03",
+      "title": "Footer 03 - Minimal Brand Footer",
+      "description": "A minimal footer with a brand mark and tagline, three link columns, and a bottom bar with copyright and a short notice, in light and dark mode.",
+      "type": "registry:block",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/blocks/footer-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/footer-03/page.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/footer-03/footer.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/footer-03/footer.tsx"
+        },
+        {
+          "path": "src/components/shadcn-space/blocks/footer-03/subfooter.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/blocks/footer-03/subfooter.tsx"
+        }
+      ]
+    },
+    {
       "name": "sidebar-01",
       "title": "Sidebar 01 - Admin Dashboard Sidebar",
       "description": "A collapsible sidebar navigation with grouped menus, icons, and upgrade CTA, perfect for admin dashboards to organize pages, widgets, and apps while keeping workflows fast and intuitive.",

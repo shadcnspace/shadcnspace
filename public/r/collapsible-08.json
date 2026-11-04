@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-08",
+  "title": "Collapsible 08 - Advanced Options",
+  "description": "Webhook form that hides a signing secret, retry count, and batching switch inside an animated Advanced options section.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "collapsible",
+    "button",
+    "input",
+    "label",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/collapsible/collapsible-08.tsx",
+      "content": "\"use client\";\r\n\r\nimport { ChevronRight, Settings2 } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@/components/ui/collapsible\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst CollapsibleDemo = () => {\r\n  return (\r\n    <form\r\n      onSubmit={(event) => event.preventDefault()}\r\n      className=\"flex w-full max-w-sm flex-col gap-4 rounded-lg border border-border bg-background p-5\"\r\n    >\r\n      <div>\r\n        <p className=\"text-base font-medium text-foreground\">Create webhook</p>\r\n        <p className=\"text-sm text-muted-foreground\">Send events to your endpoint as they happen.</p>\r\n      </div>\r\n\r\n      <div className=\"flex flex-col gap-2\">\r\n        <Label htmlFor=\"webhook-url\">Endpoint URL</Label>\r\n        <Input id=\"webhook-url\" type=\"url\" placeholder=\"https://api.acme.com/webhooks\" />\r\n      </div>\r\n\r\n      <Collapsible className=\"rounded-md border border-border\">\r\n        <CollapsibleTrigger className=\"group flex w-full items-center gap-2 rounded-md px-3 py-2.5 text-left text-sm font-medium text-foreground transition-colors hover:bg-muted/50 focus-visible:outline-2 focus-visible:outline-ring\">\r\n          <Settings2 className=\"size-4 text-muted-foreground\" aria-hidden=\"true\" />\r\n          <span className=\"flex-1\">Advanced options</span>\r\n          <ChevronRight\r\n            className=\"size-4 text-muted-foreground transition-transform group-data-panel-open:rotate-90 motion-reduce:transition-none\"\r\n            aria-hidden=\"true\"\r\n          />\r\n        </CollapsibleTrigger>\r\n        <CollapsibleContent className=\"h-(--collapsible-panel-height) overflow-hidden transition-all duration-200 data-ending-style:h-0 data-starting-style:h-0 motion-reduce:transition-none\">\r\n          <div className=\"flex flex-col gap-4 border-t border-border p-3\">\r\n            <div className=\"flex flex-col gap-2\">\r\n              <Label htmlFor=\"webhook-secret\">Signing secret</Label>\r\n              <Input id=\"webhook-secret\" placeholder=\"whsec_...\" className=\"font-mono\" />\r\n            </div>\r\n            <div className=\"flex flex-col gap-2\">\r\n              <Label htmlFor=\"webhook-retries\">Max retries</Label>\r\n              <Input id=\"webhook-retries\" type=\"number\" min={0} max={10} defaultValue={3} />\r\n            </div>\r\n            <Label className=\"justify-between font-normal\">\r\n              <span className=\"flex flex-col gap-0.5\">\r\n                <span className=\"font-medium text-foreground\">Batch events</span>\r\n                <span className=\"text-xs text-muted-foreground\">Group up to 100 events per request.</span>\r\n              </span>\r\n              <Switch />\r\n            </Label>\r\n          </div>\r\n        </CollapsibleContent>\r\n      </Collapsible>\r\n\r\n      <div className=\"flex justify-end gap-2\">\r\n        <Button type=\"button\" variant=\"outline\">\r\n          Cancel\r\n        </Button>\r\n        <Button type=\"submit\">Create</Button>\r\n      </div>\r\n    </form>\r\n  );\r\n};\r\n\r\nexport default CollapsibleDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/collapsible/collapsible-08.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

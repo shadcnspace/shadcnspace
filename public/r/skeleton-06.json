@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton-06",
+  "title": "Skeleton 06 - Chat Conversation",
+  "description": "Chat skeleton with a contact header, incoming and outgoing message bubbles of varied length, and a message composer.",
+  "dependencies": [],
+  "registryDependencies": [
+    "skeleton"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/skeleton/skeleton-06.tsx",
+      "content": "import { Skeleton } from \"@/components/ui/skeleton\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst messages = [\r\n  { mine: false, lines: [\"w-48\", \"w-32\"] },\r\n  { mine: true, lines: [\"w-40\"] },\r\n  { mine: false, lines: [\"w-56\", \"w-44\", \"w-24\"] },\r\n  { mine: true, lines: [\"w-52\", \"w-28\"] },\r\n  { mine: false, lines: [\"w-36\"] },\r\n];\r\n\r\nconst SkeletonDemo = () => {\r\n  return (\r\n    <div\r\n      role=\"status\"\r\n      aria-label=\"Loading conversation\"\r\n      className=\"flex w-full max-w-sm flex-col overflow-hidden rounded-lg border border-border bg-background\"\r\n    >\r\n      <div className=\"flex items-center gap-3 border-b border-border p-3\">\r\n        <Skeleton className=\"size-9 rounded-full motion-reduce:animate-none\" />\r\n        <div className=\"flex flex-col gap-1.5\">\r\n          <Skeleton className=\"h-3.5 w-28 motion-reduce:animate-none\" />\r\n          <Skeleton className=\"h-3 w-16 motion-reduce:animate-none\" />\r\n        </div>\r\n      </div>\r\n\r\n      <div className=\"flex flex-col gap-4 p-4\">\r\n        {messages.map((message, index) => (\r\n          <div key={index} className={cn(\"flex items-end gap-2\", message.mine && \"flex-row-reverse\")}>\r\n            {!message.mine && <Skeleton className=\"size-6 shrink-0 rounded-full motion-reduce:animate-none\" />}\r\n            <div\r\n              className={cn(\r\n                \"flex flex-col gap-1.5 rounded-xl border border-border p-3\",\r\n                message.mine ? \"items-end rounded-br-sm bg-muted/30\" : \"rounded-bl-sm\",\r\n              )}\r\n            >\r\n              {message.lines.map((width, line) => (\r\n                <Skeleton key={line} className={cn(\"h-3 motion-reduce:animate-none\", width)} />\r\n              ))}\r\n            </div>\r\n          </div>\r\n        ))}\r\n      </div>\r\n\r\n      <div className=\"flex items-center gap-2 border-t border-border p-3\">\r\n        <Skeleton className=\"h-9 flex-1 rounded-full motion-reduce:animate-none\" />\r\n        <Skeleton className=\"size-9 rounded-full motion-reduce:animate-none\" />\r\n      </div>\r\n      <span className=\"sr-only\">Loading conversation...</span>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SkeletonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/skeleton/skeleton-06.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer-03",
+  "title": "Footer 03 - Minimal Brand Footer",
+  "description": "A minimal footer with a brand mark and tagline, three link columns, and a bottom bar with copyright and a short notice, in light and dark mode.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/footer-03/page.tsx",
+      "content": "import Footer from \"@/components/shadcn-space/blocks/footer-03/footer\";\n\nexport default function Page() {\n  return <Footer />;\n}\n",
+      "type": "registry:page",
+      "target": "app/footer-03/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/footer-03/footer.tsx",
+      "content": "\"use client\";\n\nimport { motion, useReducedMotion } from \"motion/react\";\nimport Subfooter from \"@/components/shadcn-space/blocks/footer-03/subfooter\";\n\ntype FooterLink = {\n  title: string;\n  href: string;\n};\n\nconst footerColumns: FooterLink[][] = [\n  [\n    { title: \"About us\", href: \"#\" },\n    { title: \"Health tests\", href: \"#\" },\n    { title: \"Your results\", href: \"#\" },\n  ],\n  [\n    { title: \"Our Experts\", href: \"#\" },\n    { title: \"Pricing\", href: \"#\" },\n    { title: \"Testimonial\", href: \"#\" },\n  ],\n  [\n    { title: \"FAQ\", href: \"#\" },\n    { title: \"Contact\", href: \"#\" },\n  ],\n];\n\nconst Footer = () => {\n  const reduceMotion = useReducedMotion();\n\n  const reveal = (delay: number) => ({\n    initial: { opacity: 0, y: reduceMotion ? 0 : 16 },\n    whileInView: { opacity: 1, y: 0 },\n    viewport: { once: true, amount: 0.3 },\n    transition: { duration: 0.5, delay, ease: \"easeOut\" as const },\n  });\n\n  return (\n    <footer className=\"w-full border-t border-border bg-background\">\n      <div className=\"mx-auto flex max-w-7xl flex-col gap-14 px-4 pt-16 pb-10 sm:px-10 lg:px-20 lg:pt-20\">\n        <div className=\"flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-10\">\n          <motion.div\n            {...reveal(0)}\n            className=\"flex flex-col gap-4 lg:flex-1\"\n          >\n            <a href=\"#\" className=\"flex w-fit items-center gap-2\">\n              <span className=\"flex rounded-lg bg-primary p-1.5\">\n                <svg\n                  width=\"16\"\n                  height=\"16\"\n                  viewBox=\"0 0 16 16\"\n                  fill=\"none\"\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  aria-hidden=\"true\"\n                >\n                  <path\n                    d=\"M13.3333 8C13.3333 10.9455 10.9455 13.3333 8 13.3333C5.05448 13.3333 2.66667 10.9455 2.66667 8C2.66667 5.05448 5.05448 2.66667 8 2.66667C10.9455 2.66667 13.3333 5.05448 13.3333 8Z\"\n                    strokeWidth=\"2\"\n                    className=\"stroke-blue-500\"\n                  />\n                  <path\n                    d=\"M8 9.66667C8.92047 9.66667 9.66667 8.92047 9.66667 8C9.66667 7.07953 8.92047 6.33333 8 6.33333C7.07953 6.33333 6.33333 7.07953 6.33333 8C6.33333 8.92047 7.07953 9.66667 8 9.66667Z\"\n                    className=\"fill-primary-foreground\"\n                  />\n                </svg>\n              </span>\n              <span className=\"text-[22px] leading-normal tracking-tight text-foreground\">\n                veyra\n              </span>\n            </a>\n            <p className=\"text-base text-muted-foreground\">\n              See what&apos;s happening inside.\n            </p>\n          </motion.div>\n\n          <div className=\"grid grid-cols-2 gap-10 sm:grid-cols-3 lg:flex lg:gap-10\">\n            {footerColumns.map((column, index) => (\n              <motion.ul\n                key={column[0].title}\n                {...reveal(0.1 + index * 0.1)}\n                className=\"flex flex-col gap-2.5 lg:w-45\"\n              >\n                {column.map(({ title, href }) => (\n                  <li key={title}>\n                    <a\n                      href={href}\n                      className=\"inline-block text-base text-foreground transition-all duration-200 hover:translate-x-1 hover:text-blue-500 motion-reduce:hover:translate-x-0\"\n                    >\n                      {title}\n                    </a>\n                  </li>\n                ))}\n              </motion.ul>\n            ))}\n          </div>\n        </div>\n\n        <motion.div {...reveal(0.4)}>\n          <Subfooter />\n        </motion.div>\n      </div>\n    </footer>\n  );\n};\n\nexport default Footer;\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/footer-03/footer.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/footer-03/subfooter.tsx",
+      "content": "export default function Subfooter() {\n  return (\n    <div className=\"flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between\">\n      <p>© 2026 Veyra Health, Inc.</p>\n      <p>Not for emergencies. Call 911.</p>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/footer-03/subfooter.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

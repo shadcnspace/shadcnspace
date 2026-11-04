@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-10",
+  "title": "Textarea 10 - AI Prompt Composer",
+  "description": "Chat prompt box where Enter sends and Shift + Enter adds a line, with attach and model buttons, a stop button while generating, and prompt suggestions.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "textarea",
+    "button",
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/textarea/textarea-10.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, type FormEvent } from \"react\";\r\nimport { ArrowUp, Paperclip, Sparkles, Square } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Kbd } from \"@/components/ui/kbd\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst suggestions = [\"Summarize this thread\", \"Draft a reply\", \"Find action items\"];\r\n\r\nconst TextareaDemo = () => {\r\n  const [value, setValue] = useState(\"\");\r\n  const [sent, setSent] = useState<string[]>([]);\r\n  const [thinking, setThinking] = useState(false);\r\n\r\n  const send = (event?: FormEvent) => {\r\n    event?.preventDefault();\r\n    const prompt = value.trim();\r\n    if (!prompt || thinking) return;\r\n    setSent((current) => [...current, prompt]);\r\n    setValue(\"\");\r\n    setThinking(true);\r\n    setTimeout(() => setThinking(false), 1500);\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-lg flex-col gap-3\">\r\n      {sent.length > 0 && (\r\n        <ul className=\"flex flex-col items-end gap-2\" aria-label=\"Sent prompts\">\r\n          {sent.slice(-2).map((prompt, index) => (\r\n            <li key={index} className=\"max-w-xs rounded-xl rounded-br-sm bg-muted px-3 py-2 text-sm text-foreground\">\r\n              {prompt}\r\n            </li>\r\n          ))}\r\n        </ul>\r\n      )}\r\n\r\n      <form\r\n        onSubmit={send}\r\n        className=\"flex flex-col gap-2 rounded-2xl border border-border bg-background p-2 transition-colors focus-within:border-ring\"\r\n      >\r\n        <Textarea\r\n          value={value}\r\n          onChange={(event) => setValue(event.target.value)}\r\n          onKeyDown={(event) => {\r\n            // Enter sends, Shift + Enter adds a new line. Skip while an IME is composing.\r\n            if (event.key === \"Enter\" && !event.shiftKey && !event.nativeEvent.isComposing) send(event);\r\n          }}\r\n          aria-label=\"Ask the assistant\"\r\n          placeholder=\"Ask anything...\"\r\n          rows={2}\r\n          className=\"max-h-48 min-h-12 resize-none border-0 px-2 focus-visible:ring-0 dark:bg-transparent\"\r\n        />\r\n        <div className=\"flex items-center gap-1\">\r\n          <Button type=\"button\" variant=\"ghost\" size=\"icon-sm\" aria-label=\"Attach file\">\r\n            <Paperclip />\r\n          </Button>\r\n          <Button type=\"button\" variant=\"ghost\" size=\"sm\" className=\"text-muted-foreground\">\r\n            <Sparkles className=\"text-blue-500\" />\r\n            Auto model\r\n          </Button>\r\n          <span className=\"ml-auto hidden items-center gap-1 text-xs text-muted-foreground sm:flex\">\r\n            <Kbd>Shift</Kbd>+<Kbd>Enter</Kbd> new line\r\n          </span>\r\n          <Button\r\n            type={thinking ? \"button\" : \"submit\"}\r\n            size=\"icon-sm\"\r\n            aria-label={thinking ? \"Stop generating\" : \"Send\"}\r\n            disabled={!thinking && !value.trim()}\r\n            onClick={thinking ? () => setThinking(false) : undefined}\r\n            className=\"ml-2 rounded-full\"\r\n          >\r\n            {thinking ? <Square className=\"fill-current\" /> : <ArrowUp />}\r\n          </Button>\r\n        </div>\r\n      </form>\r\n\r\n      {sent.length === 0 && (\r\n        <div className=\"flex flex-wrap gap-2\">\r\n          {suggestions.map((suggestion) => (\r\n            <button\r\n              key={suggestion}\r\n              type=\"button\"\r\n              onClick={() => setValue(suggestion)}\r\n              className=\"rounded-full border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring\"\r\n            >\r\n              {suggestion}\r\n            </button>\r\n          ))}\r\n        </div>\r\n      )}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default TextareaDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/textarea/textarea-10.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
