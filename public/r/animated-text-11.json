@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-text-11",
+  "title": "Animated Text 11 - Light Leak",
+  "description": "Cinematic colour veils wash diagonally through the word",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/animated-text/animated-text-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { motion, useReducedMotion } from \"motion/react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nexport interface TextLightLeakProps {\r\n  text?: string;\r\n  className?: string;\r\n  inkColor?: string;\r\n  accentColor?: string;\r\n  secondaryColor?: string;\r\n}\r\n\r\nexport function TextLightLeak({\r\n  text = \"SPACE\",\r\n  className,\r\n  inkColor,\r\n  accentColor = \"var(--color-fuchsia-500)\",\r\n  secondaryColor = \"var(--color-cyan-400)\",\r\n}: TextLightLeakProps) {\r\n  const reducedMotion = useReducedMotion();\r\n\r\n  const ink = inkColor ?? \"var(--foreground)\";\r\n\r\n  const baseClass = cn(\r\n    \"relative inline-block font-medium tracking-widest\",\r\n    className,\r\n  );\r\n\r\n  if (reducedMotion) {\r\n    return (\r\n      <span className={baseClass} style={{ color: ink }}>\r\n        {text}\r\n      </span>\r\n    );\r\n  }\r\n\r\n  return (\r\n    <span className={baseClass} style={{ color: ink }}>\r\n      <span\r\n        aria-hidden\r\n        className=\"pointer-events-none absolute inset-0 mix-blend-multiply dark:mix-blend-screen\"\r\n      >\r\n        <motion.span\r\n          className=\"absolute inset-0\"\r\n          style={{\r\n            backgroundImage:\r\n              \"linear-gradient(118deg, transparent 12%, var(--color-orange-500) 34%, var(--color-amber-300) 44%, var(--color-white) 48%, transparent 62%)\",\r\n            backgroundSize: \"240% 100%\",\r\n            filter: \"blur(0.35px)\",\r\n          }}\r\n          animate={{\r\n            backgroundPosition: [\"130% 0\", \"-30% 0\", \"130% 0\"],\r\n            opacity: [0.12, 1, 0.12],\r\n          }}\r\n          transition={{\r\n            duration: 4.4,\r\n            times: [0, 0.42, 1],\r\n            ease: \"easeInOut\",\r\n            repeat: Infinity,\r\n          }}\r\n        />\r\n        <motion.span\r\n          className=\"absolute inset-0\"\r\n          style={{\r\n            backgroundImage: `linear-gradient(248deg, transparent 18%, ${secondaryColor} 38%, ${accentColor} 48%, transparent 68%)`,\r\n            backgroundSize: \"240% 100%\",\r\n          }}\r\n          animate={{\r\n            backgroundPosition: [\"-30% 0\", \"130% 0\", \"-30% 0\"],\r\n            opacity: [0.1, 0.95, 0.1],\r\n          }}\r\n          transition={{\r\n            duration: 5.6,\r\n            times: [0, 0.55, 1],\r\n            ease: \"easeInOut\",\r\n            repeat: Infinity,\r\n          }}\r\n        />\r\n      </span>\r\n      <span className=\"relative z-10\">{text}</span>\r\n    </span>\r\n  );\r\n}\r\n\r\nconst TextLightLeakDemo = () => {\r\n  return <TextLightLeak text=\"SPACE\" className=\"text-3xl sm:text-4xl\" />;\r\n};\r\n\r\nexport default TextLightLeakDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/animated-text/animated-text-11.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

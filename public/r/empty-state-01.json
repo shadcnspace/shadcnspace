@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-state-01",
+  "title": "Empty State 01 - No Projects Yet",
+  "description": "A compact, bordered card empty state with a folder icon, heading, description, and a single primary call-to-action, ideal for project lists and dashboards before anything has been created.",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "empty"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/empty-state-01/page.tsx",
+      "content": "import EmptyState from \"@/components/shadcn-space/blocks/empty-state-01/empty-state\";\r\n\r\nconst Page = () => {\r\n  return <EmptyState />;\r\n};\r\n\r\nexport default Page;\r\n",
+      "type": "registry:page",
+      "target": "app/empty-state-01/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/empty-state-01/empty-state.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useRef } from \"react\";\r\nimport type { ReactNode } from \"react\";\r\nimport { motion, useInView, type Variants } from \"motion/react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Empty,\r\n  EmptyContent,\r\n  EmptyDescription,\r\n  EmptyHeader,\r\n  EmptyMedia,\r\n  EmptyTitle,\r\n} from \"@/components/ui/empty\";\r\nimport { FolderOpen, Plus } from \"lucide-react\";\r\n\r\ninterface EmptyStateAction {\r\n  label: string;\r\n  icon?: ReactNode;\r\n  onClick?: () => void;\r\n}\r\n\r\ninterface EmptyStateProps {\r\n  icon?: ReactNode;\r\n  title?: string;\r\n  description?: string;\r\n  primaryAction?: EmptyStateAction;\r\n}\r\n\r\nconst EASE = [0.16, 1, 0.3, 1] as const;\r\n\r\nconst containerVariants: Variants = {\r\n  hidden: {},\r\n  show: {\r\n    transition: {\r\n      staggerChildren: 0.1,\r\n      delayChildren: 0.05,\r\n    },\r\n  },\r\n};\r\n\r\nconst itemVariants: Variants = {\r\n  hidden: { opacity: 0, y: 12 },\r\n  show: {\r\n    opacity: 1,\r\n    y: 0,\r\n    transition: { duration: 0.5, ease: EASE },\r\n  },\r\n};\r\n\r\nconst EmptyState = ({\r\n  icon = <FolderOpen />,\r\n  title = \"No Projects yet\",\r\n  description = \"Get started by creating your first project\",\r\n  primaryAction = {\r\n    label: \"Create project\",\r\n    icon: <Plus className=\"size-4\" />,\r\n  },\r\n}: EmptyStateProps) => {\r\n  const ref = useRef<HTMLDivElement>(null);\r\n  const isInView = useInView(ref, { once: true, amount: 0.2 });\r\n\r\n  return (\r\n    <div\r\n      ref={ref}\r\n      className=\"flex w-full items-center justify-center px-4 py-10 sm:py-16\"\r\n    >\r\n      <motion.div\r\n        variants={containerVariants}\r\n        initial=\"hidden\"\r\n        animate={isInView ? \"show\" : \"hidden\"}\r\n        className=\"w-full max-w-83.75\"\r\n      >\r\n        <div className=\"w-full rounded-2xl border border-border bg-card p-10 shadow\">\r\n          <Empty className=\"gap-5 border-none p-0\">\r\n            <EmptyHeader className=\"gap-4\">\r\n              <motion.div variants={itemVariants}>\r\n                <EmptyMedia\r\n                  variant=\"icon\"\r\n                  className=\"mb-0 size-11 rounded-xl bg-blue-500/10 text-blue-500 [&_svg:not([class*='size-'])]:size-5\"\r\n                >\r\n                  {icon}\r\n                </EmptyMedia>\r\n              </motion.div>\r\n              <motion.div\r\n                variants={itemVariants}\r\n                className=\"flex flex-col items-center gap-0.5 w-full\"\r\n              >\r\n                <EmptyTitle className=\"text-lg font-medium text-foreground\">\r\n                  {title}\r\n                </EmptyTitle>\r\n                <EmptyDescription className=\"text-center min-w-63.75 w-full\">\r\n                  {description}\r\n                </EmptyDescription>\r\n              </motion.div>\r\n            </EmptyHeader>\r\n            {primaryAction && (\r\n              <motion.div variants={itemVariants}>\r\n                <EmptyContent>\r\n                  <motion.div\r\n                    whileHover={{ scale: 1.03 }}\r\n                    whileTap={{ scale: 0.97 }}\r\n                    transition={{ duration: 0.2, ease: EASE }}\r\n                    className=\"inline-flex\"\r\n                  >\r\n                    <Button\r\n                      onClick={primaryAction.onClick}\r\n                      className=\"cursor-pointer px-3 hover:bg-primary/80\"\r\n                    >\r\n                      {primaryAction.icon}\r\n                      {primaryAction.label}\r\n                    </Button>\r\n                  </motion.div>\r\n                </EmptyContent>\r\n              </motion.div>\r\n            )}\r\n          </Empty>\r\n        </div>\r\n      </motion.div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default EmptyState;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/empty-state-01/empty-state.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

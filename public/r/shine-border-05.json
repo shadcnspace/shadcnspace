@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shine-border-05",
+  "title": "Shine Border 05 - Aurora Glow",
+  "description": "An aurora glow shine border with a hue-rotating gradient ring and pulsing halo wrapping a simple centered card.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/shine-border/shine-border-05.tsx",
+      "content": "import React, { ReactNode } from \"react\";\r\nimport { Card, CardContent } from \"@/components/ui/card\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Sparkles } from \"lucide-react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\n/* AuroraGlowBorder */\r\n\r\ntype AuroraGlowBorderProps = {\r\n  children: ReactNode;\r\n  className?: string;\r\n  borderWidth?: number;\r\n  duration?: number;\r\n  gradient?: string;\r\n};\r\n\r\nconst AuroraGlowBorder = ({\r\n  children,\r\n  className,\r\n  borderWidth = 2,\r\n  duration = 6,\r\n  gradient = \"from-blue-500 via-orange-400 to-teal-400\",\r\n}: AuroraGlowBorderProps) => {\r\n  return (\r\n    <>\r\n      <style>{`\r\n        @keyframes aurora-hue {\r\n          0% { filter: hue-rotate(0deg); }\r\n          100% { filter: hue-rotate(360deg); }\r\n        }\r\n        @keyframes aurora-pulse {\r\n          0%, 100% { opacity: 0.55; transform: scale(1); }\r\n          50% { opacity: 1; transform: scale(1.03); }\r\n        }\r\n        .animate-aurora-hue {\r\n          animation: aurora-hue var(--duration, 6s) linear infinite;\r\n        }\r\n        .animate-aurora-pulse {\r\n          animation: aurora-pulse var(--duration, 6s) ease-in-out infinite;\r\n        }\r\n      `}</style>\r\n      <div\r\n        className={cn(\r\n          \"relative rounded-2xl overflow-hidden border p-(--bw)\",\r\n          className,\r\n        )}\r\n        style={{ \"--bw\": `${borderWidth}px` } as React.CSSProperties}\r\n      >\r\n        {/* Soft blurred glow behind the border */}\r\n        <div\r\n          className={cn(\r\n            \"absolute -inset-1 rounded-2xl bg-linear-to-r blur-lg animate-aurora-pulse animate-aurora-hue\",\r\n            gradient,\r\n          )}\r\n          style={{ \"--duration\": `${duration}s` } as React.CSSProperties}\r\n        />\r\n\r\n        {/* Crisp gradient ring */}\r\n        <div\r\n          className={cn(\r\n            \"absolute inset-0 rounded-2xl bg-linear-to-r animate-aurora-hue\",\r\n            gradient,\r\n          )}\r\n          style={{ \"--duration\": `${duration}s` } as React.CSSProperties}\r\n        />\r\n\r\n        {/* Content Layer */}\r\n        <div className=\"relative z-10 rounded-[calc(1rem-var(--bw))] bg-card h-full\">\r\n          {children}\r\n        </div>\r\n      </div>\r\n    </>\r\n  );\r\n};\r\n\r\n/* Simple Centered Card */\r\n\r\nconst AuroraCard = () => {\r\n  return (\r\n    <Card className=\"relative h-full rounded-[inherit] border-0 ring-0 bg-transparent p-0 gap-0!\">\r\n      <CardContent className=\"p-10 flex flex-col items-center text-center gap-3\">\r\n        <div className=\"size-12 rounded-full bg-primary/10 flex items-center justify-center\">\r\n          <Sparkles className=\"size-6 text-primary\" />\r\n        </div>\r\n        <Badge variant=\"secondary\">Aurora Glow</Badge>\r\n        <h3 className=\"text-lg font-semibold text-foreground\">\r\n          A border that breathes color\r\n        </h3>\r\n        <p className=\"text-sm text-muted-foreground max-w-60\">\r\n          A smooth hue‑rotating gradient ring with a soft pulsing halo.\r\n        </p>\r\n      </CardContent>\r\n    </Card>\r\n  );\r\n};\r\n\r\n/* Demo */\r\n\r\nexport default function ShineBorderDemo() {\r\n  return (\r\n    <AuroraGlowBorder\r\n      borderWidth={2}\r\n      duration={6}\r\n      gradient=\"from-blue-500 via-orange-400 to-teal-400\"\r\n      className=\"w-full max-w-sm\"\r\n    >\r\n      <AuroraCard />\r\n    </AuroraGlowBorder>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/shine-border/shine-border-05.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

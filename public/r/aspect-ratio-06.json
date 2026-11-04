@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio-06",
+  "title": "Aspect Ratio 06 - Product Card",
+  "description": "A product card using a 4:5 aspect ratio image with a discount badge and pricing details.",
+  "dependencies": [],
+  "registryDependencies": [
+    "aspect-ratio",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/aspect-ratio/aspect-ratio-06.tsx",
+      "content": "import { AspectRatio } from \"@/components/ui/aspect-ratio\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\nconst ProductCardAspectRatioDemo = () => {\r\n  return (\r\n    <div className=\"flex w-full max-w-50 items-center justify-center px-4\">\r\n      <div className=\"w-full space-y-2\">\r\n        <AspectRatio\r\n          ratio={4 / 5}\r\n          className=\"relative overflow-hidden rounded-lg bg-muted\"\r\n        >\r\n          <img\r\n            src=\"https://images.shadcnspace.com/assets/gallery/technology.webp\"\r\n            alt=\"Wireless headphones\"\r\n            className=\"h-full w-full object-cover\"\r\n          />\r\n          <Badge className=\"absolute top-2 left-2\" variant=\"destructive\">\r\n            -20%\r\n          </Badge>\r\n        </AspectRatio>\r\n        <div className=\"space-y-0.5\">\r\n          <p className=\"text-sm font-medium\">Wireless Headphones</p>\r\n          <div className=\"flex items-center gap-2\">\r\n            <span className=\"text-sm font-semibold\">$79.99</span>\r\n            <span className=\"text-xs text-muted-foreground line-through\">\r\n              $99.99\r\n            </span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ProductCardAspectRatioDemo;",
+      "type": "registry:component",
+      "target": "components/shadcn-space/aspect-ratio/aspect-ratio-06.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

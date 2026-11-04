@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-mask-01",
+  "title": "Input Mask 01 - Card Number",
+  "description": "Card number input mask with #### #### #### #### format.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input-mask/input-mask-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { CreditCard } from \"lucide-react\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nexport const title = \"Card Number Input Mask\";\r\n\r\nconst formatCardNumber = (value: string): string => {\r\n  const digits = value.replace(/\\D/g, \"\").slice(0, 16);\r\n  return digits.match(/.{1,4}/g)?.join(\" \") || digits;\r\n};\r\n\r\nconst CardNumberInputMask = () => {\r\n  const [value, setValue] = useState(\"\");\r\n\r\n  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\r\n    setValue(formatCardNumber(e.target.value));\r\n  };\r\n\r\n  return (\r\n    <div className=\"w-full max-w-sm space-y-2\">\r\n      <Label htmlFor=\"card-input\">Card Number</Label>\r\n      <div className=\"relative\">\r\n        <CreditCard className=\"absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\r\n        <Input\r\n          id=\"card-input\"\r\n          className=\"bg-background pl-9\"\r\n          placeholder=\"0000 0000 0000 0000\"\r\n          value={value}\r\n          onChange={handleChange}\r\n          inputMode=\"numeric\"\r\n          maxLength={19}\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CardNumberInputMask;\r\n\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input-mask/input-mask-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

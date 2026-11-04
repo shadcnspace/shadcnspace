@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-07",
+  "title": "Toggle 07 - Call Controls",
+  "description": "Video call control bar with microphone, camera, screen share, and raise hand toggles plus a live status line.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/toggle/toggle-07.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport {\r\n  Hand,\r\n  Mic,\r\n  MicOff,\r\n  MonitorUp,\r\n  Video,\r\n  VideoOff,\r\n} from \"lucide-react\";\r\n\r\nimport { Toggle } from \"@/components/ui/toggle\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst ToggleDemo = () => {\r\n  const [mic, setMic] = useState(true);\r\n  const [camera, setCamera] = useState(false);\r\n  const [sharing, setSharing] = useState(false);\r\n  const [hand, setHand] = useState(false);\r\n\r\n  const status = [\r\n    mic ? \"Mic on\" : \"Muted\",\r\n    camera ? \"Camera on\" : \"Camera off\",\r\n    sharing && \"Sharing screen\",\r\n    hand && \"Hand raised\",\r\n  ].filter(Boolean);\r\n\r\n  // Mic and camera are \"on\" when pressed; turning them off is the state to flag.\r\n  const deviceClass = (on: boolean) =>\r\n    cn(\r\n      \"size-11 rounded-full border\",\r\n      on\r\n        ? \"border-border bg-background aria-pressed:bg-background hover:bg-muted\"\r\n        : \"border-orange-400/40 bg-orange-400/15 hover:bg-orange-400/25\",\r\n    );\r\n\r\n  const extraClass =\r\n    \"size-11 rounded-full border border-border bg-background hover:bg-muted\";\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-center gap-3\">\r\n      <div className=\"flex items-center gap-2 rounded-full border border-border bg-muted/40 p-2\">\r\n        <Toggle\r\n          pressed={mic}\r\n          onPressedChange={setMic}\r\n          aria-label={mic ? \"Mute microphone\" : \"Unmute microphone\"}\r\n          className={deviceClass(mic)}\r\n        >\r\n          {mic ? <Mic /> : <MicOff />}\r\n        </Toggle>\r\n        <Toggle\r\n          pressed={camera}\r\n          onPressedChange={setCamera}\r\n          aria-label={camera ? \"Turn camera off\" : \"Turn camera on\"}\r\n          className={deviceClass(camera)}\r\n        >\r\n          {camera ? <Video /> : <VideoOff />}\r\n        </Toggle>\r\n        <Toggle\r\n          pressed={sharing}\r\n          onPressedChange={setSharing}\r\n          aria-label={sharing ? \"Stop sharing screen\" : \"Share screen\"}\r\n          className={cn(\r\n            extraClass,\r\n            \"aria-pressed:border-blue-500 aria-pressed:bg-blue-500 aria-pressed:text-white aria-pressed:hover:bg-blue-500/90\",\r\n          )}\r\n        >\r\n          <MonitorUp />\r\n        </Toggle>\r\n        <Toggle\r\n          pressed={hand}\r\n          onPressedChange={setHand}\r\n          aria-label={hand ? \"Lower hand\" : \"Raise hand\"}\r\n          className={cn(\r\n            extraClass,\r\n            \"aria-pressed:border-amber-300 aria-pressed:bg-amber-300 aria-pressed:text-gray-950 aria-pressed:hover:bg-amber-300/90\",\r\n          )}\r\n        >\r\n          <Hand />\r\n        </Toggle>\r\n      </div>\r\n      <p className=\"text-xs text-muted-foreground\" aria-live=\"polite\">\r\n        {status.join(\", \")}\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ToggleDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/toggle/toggle-07.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

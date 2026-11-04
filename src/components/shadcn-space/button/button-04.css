@@ -1,0 +1,18 @@
+.heartbeateffect {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0% {
+    box-shadow: 0 0 0 0 var(--heartbeat-color, var(--destructive));
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 7px transparent;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+    transform: scale(1);
+  }
+}

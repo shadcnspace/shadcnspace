@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-20",
+  "title": "Input 20 - Range",
+  "description": "Input component",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-20.tsx",
+      "content": "import { useId } from \"react\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nconst RangeInputDemo = () => {\r\n  const id = useId();\r\n  return (\r\n    <div className=\"*:not-first:mt-2\">\r\n      <Label className=\"flex-1\">Range</Label>\r\n      <div className=\"flex\">\r\n        <Input\r\n          aria-label=\"Min Value\"\r\n          className=\"flex-1 rounded-e-none [-moz-appearance:textfield] focus:z-10 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none\"\r\n          id={`${id}-1`}\r\n          placeholder=\"From\"\r\n          type=\"number\"\r\n        />\r\n        <Input\r\n          aria-label=\"Max Value\"\r\n          className=\"-ms-px flex-1 rounded-s-none [-moz-appearance:textfield] focus:z-10 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none\"\r\n          id={`${id}-2`}\r\n          placeholder=\"To\"\r\n          type=\"number\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default RangeInputDemo",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-20.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-text-10",
+  "title": "Animated Text 10 - Scanner",
+  "description": "A scanning bar sweeps the word, lighting letters as it passes",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/animated-text/animated-text-10.tsx",
+      "content": "\"use client\";\r\n\r\nimport { motion, useReducedMotion } from \"motion/react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nexport interface TextScannerProps {\r\n  text?: string;\r\n  className?: string;\r\n  inkColor?: string;\r\n  accentColor?: string;\r\n  duration?: number;\r\n}\r\n\r\nexport function TextScanner({\r\n  text = \"SCANNER\",\r\n  className,\r\n  inkColor,\r\n  accentColor,\r\n  duration = 2.6,\r\n}: TextScannerProps) {\r\n  const reducedMotion = useReducedMotion();\r\n\r\n  const ink = inkColor ?? \"var(--foreground)\";\r\n  const accent = accentColor ?? \"var(--primary)\";\r\n\r\n  const baseClass = cn(\r\n    \"relative inline-block font-semibold tracking-wide whitespace-pre\",\r\n    className,\r\n  );\r\n\r\n  if (reducedMotion) {\r\n    return (\r\n      <span className={baseClass} style={{ color: ink }}>\r\n        {text}\r\n      </span>\r\n    );\r\n  }\r\n\r\n  return (\r\n    <motion.span\r\n      className={baseClass}\r\n      style={{\r\n        backgroundImage: `linear-gradient(90deg, color-mix(in srgb, ${ink} 25%, transparent) 0 40%, ${ink} 50%, color-mix(in srgb, ${ink} 25%, transparent) 60% 100%)`,\r\n        backgroundSize: \"240% 100%\",\r\n        WebkitBackgroundClip: \"text\",\r\n        backgroundClip: \"text\",\r\n        color: \"transparent\",\r\n      }}\r\n      animate={{ backgroundPosition: [\"100% 0\", \"0% 0\"] }}\r\n      transition={{\r\n        duration,\r\n        ease: \"easeInOut\",\r\n        repeat: Infinity,\r\n        repeatType: \"reverse\",\r\n      }}\r\n    >\r\n      {text}\r\n      <motion.span\r\n        aria-hidden\r\n        className=\"pointer-events-none absolute -top-1.5 -bottom-1.5 w-0.5\"\r\n        style={{\r\n          background: accent,\r\n          boxShadow: `0 0 14px ${accent}`,\r\n        }}\r\n        animate={{ left: [\"0%\", \"100%\"], x: [\"0%\", \"-100%\"] }}\r\n        transition={{\r\n          duration,\r\n          ease: \"easeInOut\",\r\n          repeat: Infinity,\r\n          repeatType: \"reverse\",\r\n        }}\r\n      />\r\n    </motion.span>\r\n  );\r\n}\r\n\r\nconst TextScannerDemo = () => {\r\n  return (\r\n    <TextScanner\r\n      text=\"SHADCNSPACE\"\r\n      className=\"text-2xl sm:text-3xl\"\r\n      accentColor=\"var(--color-blue-500)\"\r\n    />\r\n  );\r\n};\r\n\r\nexport default TextScannerDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/animated-text/animated-text-10.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

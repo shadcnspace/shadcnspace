@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-14",
+  "title": "Calendar 14 - Range Selection",
+  "description": "Calendar component",
+  "dependencies": [
+    "date-fns",
+    "react-day-picker"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "card",
+    "scroll-area"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/calendar/calendar-14.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport {\r\n  endOfMonth,\r\n  startOfMonth,\r\n  subDays,\r\n  subMonths,\r\n  addDays,\r\n  addMonths\r\n} from 'date-fns'\r\nimport type { DateRange } from 'react-day-picker'\r\nimport { Calendar } from '@/components/ui/calendar'\r\nimport { Card, CardContent, CardFooter } from '@/components/ui/card'\r\nimport { Button } from '@/components/ui/button'\r\nimport { ScrollArea } from '@/components/ui/scroll-area'\r\nimport { cn } from '@/lib/utils'\r\n\r\nconst RangeSelectionDemo = () => {\r\n  const today = new Date()\r\n\r\n  const presetGroups = [\r\n    {\r\n      label: 'Days',\r\n      presets: [\r\n        { label: 'Today', range: { from: today, to: today } },\r\n        { label: 'Yesterday', range: { from: subDays(today, 1), to: subDays(today, 1) } },\r\n        { label: 'Tomorrow', range: { from: addDays(today, 1), to: addDays(today, 1) } }\r\n      ]\r\n    },\r\n    {\r\n      label: 'Weeks',\r\n      presets: [\r\n        { label: 'Last 7 days', range: { from: subDays(today, 6), to: today } },\r\n        { label: 'Next 7 days', range: { from: addDays(today, 1), to: addDays(today, 7) } }\r\n      ]\r\n    },\r\n    {\r\n      label: 'Months',\r\n      presets: [\r\n        { label: 'Last 30 days', range: { from: subDays(today, 29), to: today } },\r\n        { label: 'Month to date', range: { from: startOfMonth(today), to: today } },\r\n        {\r\n          label: 'Last month',\r\n          range: {\r\n            from: startOfMonth(subMonths(today, 1)),\r\n            to: endOfMonth(subMonths(today, 1))\r\n          }\r\n        },\r\n        {\r\n          label: 'Next month',\r\n          range: {\r\n            from: startOfMonth(addMonths(today, 1)),\r\n            to: endOfMonth(addMonths(today, 1))\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n\r\n  const [month, setMonth] = useState(today)\r\n  const [date, setDate] = useState<DateRange | undefined>(presetGroups[1].presets[0].range)\r\n\r\n  const isActive = (range: DateRange) =>\r\n    date?.from?.toDateString() === range.from?.toDateString() &&\r\n    date?.to?.toDateString() === range.to?.toDateString()\r\n\r\n  return (\r\n    <>\r\n      <Card className='max-w-75 w-full overflow-hidden py-0'>\r\n\r\n        <CardContent className='px-4 pt-3 pb-0'>\r\n          <Calendar\r\n            mode='range'\r\n            selected={date}\r\n            onSelect={newDate => {\r\n              if (newDate) setDate(newDate)\r\n            }}\r\n            month={month}\r\n            onMonthChange={setMonth}\r\n            className='w-full bg-transparent p-0'\r\n          />\r\n        </CardContent>\r\n\r\n        <CardFooter className='border-t p-0 bg-background'>\r\n          <ScrollArea className='h-44 w-full'>\r\n            <div className='flex flex-col gap-3 px-4 py-3'>\r\n              {presetGroups.map(group => (\r\n                <div key={group.label}>\r\n                  <p className='text-muted-foreground mb-1.5 px-1 text-[10px] font-semibold tracking-widest uppercase'>\r\n                    {group.label}\r\n                  </p>\r\n                  <div className='grid grid-cols-2 gap-1.5'>\r\n                    {group.presets.map(preset => (\r\n                      <Button\r\n                        key={preset.label}\r\n                        variant='ghost'\r\n                        size='sm'\r\n                        className={cn(\r\n                          'h-7 justify-center text-xs font-normal cursor-pointer border border-border',\r\n                          isActive(preset.range) &&\r\n                          'bg-primary/10 text-primary hover:bg-primary/15 hover:text-primary'\r\n                        )}\r\n                        onClick={() => {\r\n                          setDate(preset.range)\r\n                          setMonth(preset.range.to ?? preset.range.from ?? today)\r\n                        }}\r\n                      >\r\n                        {isActive(preset.range) &&\r\n                          <span\r\n                            className='h-1.5 w-1.5 shrink-0 rounded-full bg-primary'\r\n                          />\r\n                        }\r\n                        {preset.label}\r\n                      </Button>\r\n                    ))}\r\n                  </div>\r\n                </div>\r\n              ))}\r\n            </div>\r\n          </ScrollArea>\r\n        </CardFooter>\r\n      </Card>\r\n    </>\r\n  )\r\n}\r\n\r\nexport default RangeSelectionDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/calendar/calendar-14.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

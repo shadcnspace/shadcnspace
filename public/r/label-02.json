@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-02",
+  "title": "Label 02 - With Input",
+  "description": "Label component with input",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/label/label-02.tsx",
+      "content": "import { useId } from 'react'\r\nimport { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst LabelWithInput = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Password</Label>\r\n      <Input id={id} type='password' placeholder='••••••••' />\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default LabelWithInput\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/label/label-02.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-12",
+  "title": "Checkbox 12 - Add-on Cards",
+  "description": "Selectable add-on cards with icons, descriptions, and prices that update the monthly total as you check them.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/checkbox/checkbox-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { Checkbox } from \"@/components/ui/checkbox\";\r\n\r\nconst tags = [\r\n  { id: \"remote\", label: \"Remote\", count: 42 },\r\n  { id: \"full-time\", label: \"Full time\", count: 87 },\r\n  { id: \"contract\", label: \"Contract\", count: 19 },\r\n  { id: \"senior\", label: \"Senior\", count: 34 },\r\n  { id: \"design\", label: \"Design\", count: 23 },\r\n  { id: \"engineering\", label: \"Engineering\", count: 61 },\r\n  { id: \"visa\", label: \"Visa sponsor\", count: 8 },\r\n];\r\n\r\nconst CheckboxDemo = () => {\r\n  const [selected, setSelected] = useState<string[]>([\"remote\", \"engineering\"]);\r\n\r\n  const toggle = (id: string, checked: boolean) =>\r\n    setSelected((current) => (checked ? [...current, id] : current.filter((item) => item !== id)));\r\n\r\n  return (\r\n    <div role=\"group\" aria-labelledby=\"job-filters-label\" className=\"flex w-full max-w-md flex-col gap-3\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <p id=\"job-filters-label\" className=\"text-sm font-medium text-foreground\">Filter jobs</p>\r\n        {selected.length > 0 && (\r\n          <button\r\n            type=\"button\"\r\n            onClick={() => setSelected([])}\r\n            className=\"text-xs text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline\"\r\n          >\r\n            Clear all\r\n          </button>\r\n        )}\r\n      </div>\r\n      <div className=\"flex flex-wrap gap-2\">\r\n        {tags.map((tag) => (\r\n          <label\r\n            key={tag.id}\r\n            className=\"flex cursor-pointer items-center gap-2 rounded-full border border-border py-1.5 pr-3 pl-2 text-sm text-muted-foreground transition-colors select-none hover:bg-muted hover:text-foreground has-focus-visible:ring-2 has-focus-visible:ring-ring has-data-checked:border-foreground/40 has-data-checked:bg-muted has-data-checked:text-foreground\"\r\n          >\r\n            <Checkbox\r\n              checked={selected.includes(tag.id)}\r\n              onCheckedChange={(checked) => toggle(tag.id, checked)}\r\n              className=\"rounded-full\"\r\n            />\r\n            {tag.label}\r\n            <span className=\"text-xs text-muted-foreground tabular-nums\">{tag.count}</span>\r\n          </label>\r\n        ))}\r\n      </div>\r\n      <p className=\"text-xs text-muted-foreground\" aria-live=\"polite\">\r\n        {selected.length ? `${selected.length} filters applied` : \"Showing all jobs\"}\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CheckboxDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/checkbox/checkbox-12.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

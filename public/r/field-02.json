@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-02",
+  "title": "Field 02 - Notification Settings",
+  "description": "A notification preferences list built with the Field primitive, pairing horizontal fields with switches and separators for each toggleable option",
+  "dependencies": [],
+  "registryDependencies": [
+    "field",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/field/field-02.tsx",
+      "content": "import {\r\n  Field,\r\n  FieldContent,\r\n  FieldDescription,\r\n  FieldGroup,\r\n  FieldSeparator,\r\n  FieldTitle,\r\n} from \"@/components/ui/field\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\ntype NotificationOption = {\r\n  id: string;\r\n  title: string;\r\n  description: string;\r\n  defaultChecked: boolean;\r\n};\r\n\r\nconst notificationOptions: NotificationOption[] = [\r\n  {\r\n    id: \"notif-comments\",\r\n    title: \"Comments\",\r\n    description: \"Get notified when someone comments on your post.\",\r\n    defaultChecked: true,\r\n  },\r\n  {\r\n    id: \"notif-mentions\",\r\n    title: \"Mentions\",\r\n    description: \"Get notified when someone mentions you.\",\r\n    defaultChecked: true,\r\n  },\r\n  {\r\n    id: \"notif-marketing\",\r\n    title: \"Marketing emails\",\r\n    description: \"Receive emails about new products and features.\",\r\n    defaultChecked: false,\r\n  },\r\n];\r\n\r\nconst NotificationSettingsDemo = () => {\r\n  return (\r\n    <div className=\"w-full max-w-md rounded-xl border border-border p-6\">\r\n      <FieldGroup className=\"gap-4\">\r\n        {notificationOptions.map((option, index) => (\r\n          <div key={option.id} className=\"flex flex-col gap-4\">\r\n            <Field orientation=\"horizontal\">\r\n              <FieldContent>\r\n                <FieldTitle>{option.title}</FieldTitle>\r\n                <FieldDescription>{option.description}</FieldDescription>\r\n              </FieldContent>\r\n              <Switch id={option.id} defaultChecked={option.defaultChecked} />\r\n            </Field>\r\n            {index < notificationOptions.length - 1 && <FieldSeparator />}\r\n          </div>\r\n        ))}\r\n      </FieldGroup>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default NotificationSettingsDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/field/field-02.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

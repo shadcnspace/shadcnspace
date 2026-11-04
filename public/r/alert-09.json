@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-09",
+  "title": "Alert 09 - Publish Confirmation",
+  "description": "Alert dialog that slides up to confirm publishing, with a rocket icon, a change summary, and full width actions",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-09.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { RocketIcon } from \"lucide-react\";\r\nimport {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nexport default function Alert09() {\r\n  const [open, setOpen] = useState(false);\r\n\r\n  return (\r\n    <AlertDialog open={open} onOpenChange={setOpen}>\r\n      <AlertDialogTrigger\r\n        render={<Button variant=\"outline\" className=\"cursor-pointer\" />}\r\n      >\r\n        <RocketIcon />\r\n        Publish Changes\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent className=\"gap-0 overflow-hidden border border-border p-0 ring-0 duration-300 data-open:slide-in-from-bottom-8 data-closed:slide-out-to-bottom-8 max-sm:top-auto max-sm:bottom-6 max-sm:translate-y-0\">\r\n        <div className=\"flex flex-col items-center gap-5 px-6 pt-8 pb-6 text-center\">\r\n          <span className=\"flex size-14 items-center justify-center rounded-full bg-teal-400/15 text-teal-400\">\r\n            <RocketIcon className=\"size-6\" />\r\n          </span>\r\n          <div className=\"flex flex-col gap-1.5\">\r\n            <AlertDialogTitle className=\"text-lg font-semibold\">\r\n              Publish your changes?\r\n            </AlertDialogTitle>\r\n            <AlertDialogDescription>\r\n              Your site will go live for everyone. You can roll back to the\r\n              previous version at any time.\r\n            </AlertDialogDescription>\r\n          </div>\r\n          <div className=\"flex w-full items-center justify-between rounded-lg border border-border px-3 py-2 text-sm\">\r\n            <span className=\"text-muted-foreground\">Changes</span>\r\n            <span className=\"font-medium text-foreground\">\r\n              3 pages, 2 components\r\n            </span>\r\n          </div>\r\n        </div>\r\n        <div className=\"grid grid-cols-2 gap-2 border-t border-border p-4\">\r\n          <AlertDialogCancel className=\"cursor-pointer\">Cancel</AlertDialogCancel>\r\n          <AlertDialogAction\r\n            className=\"cursor-pointer\"\r\n            onClick={() => setOpen(false)}\r\n          >\r\n            Publish\r\n          </AlertDialogAction>\r\n        </div>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-09.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio-02",
+  "title": "Aspect Ratio 02 - Square Grid",
+  "description": "A responsive photo gallery grid using square aspect ratio tiles with a hover zoom effect.",
+  "dependencies": [],
+  "registryDependencies": [
+    "aspect-ratio"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/aspect-ratio/aspect-ratio-02.tsx",
+      "content": "import { AspectRatio } from \"@/components/ui/aspect-ratio\";\r\n\r\nconst images = [\r\n  \"https://images.shadcnspace.com/assets/gallery/design-excellence.webp\",\r\n  \"https://images.shadcnspace.com/assets/gallery/quality.webp\",\r\n  \"https://images.shadcnspace.com/assets/gallery/technology.webp\",\r\n  \"https://images.shadcnspace.com/assets/gallery/growth.webp\",\r\n];\r\n\r\nconst SquareGridAspectRatioDemo = () => {\r\n  return (\r\n    <div className=\"grid w-full max-w-sm grid-cols-2 gap-3 px-4\">\r\n      {images.map((src, index) => (\r\n        <AspectRatio\r\n          key={index}\r\n          ratio={1}\r\n          className=\"overflow-hidden rounded-lg bg-muted\"\r\n        >\r\n          <img\r\n            src={src}\r\n            alt={`Gallery image ${index + 1}`}\r\n            className=\"h-full w-full object-cover transition-transform duration-300 hover:scale-105\"\r\n          />\r\n        </AspectRatio>\r\n      ))}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SquareGridAspectRatioDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/aspect-ratio/aspect-ratio-02.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

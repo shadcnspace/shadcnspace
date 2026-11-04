@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-20",
+  "title": "Card 20 - Animated Event Card",
+  "description": "An animated event card with a cover image, floating date badge, staggered content reveal, time and location details, an attendee avatar stack, and an RSVP button.",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge",
+    "button",
+    "separator",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/card/card-20.tsx",
+      "content": "import { Card, CardContent } from \"@/components/ui/card\";\r\n\r\nexport interface PlaceCardProps {\r\n  title?: string;\r\n  description?: string;\r\n  image?: string;\r\n  href?: string;\r\n}\r\n\r\nconst PlaceCard = ({\r\n  title = \"Whispering Grasslands\",\r\n  description = \"Open plains and quiet trails, best explored at golden hour.\",\r\n  image = \"https://images.shadcnspace.com/assets/feature/feature-18-img.webp\",\r\n  href = \"#\",\r\n}: PlaceCardProps) => {\r\n  return (\r\n    <div className=\"p-6\">\r\n      <a href={href} className=\"block\">\r\n        <Card className=\"group relative h-90 w-80 gap-0 overflow-hidden rounded-2xl border-border p-0\">\r\n          <img\r\n            src={image}\r\n            alt={title}\r\n            className=\"absolute inset-0 h-full w-full object-cover grayscale transition-all duration-300 ease-out group-hover:scale-106 group-hover:grayscale-0\"\r\n          />\r\n          <div className=\"pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/10 to-transparent\" />\r\n          <CardContent className=\"absolute inset-x-0 bottom-0 p-5\">\r\n            <p className=\"text-lg font-medium text-white\">{title}</p>\r\n            <p className=\"text-sm text-white/60 max-w-60\">{description}</p>\r\n          </CardContent>\r\n        </Card>\r\n      </a>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default PlaceCard;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/card/card-20.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

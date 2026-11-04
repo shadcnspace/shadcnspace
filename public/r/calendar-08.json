@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-08",
+  "title": "Calendar 08 - With Event List",
+  "description": "Calendar component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "card",
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/calendar/calendar-08.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { Button } from '@/components/ui/button'\r\nimport { Calendar } from '@/components/ui/calendar'\r\nimport { Card, CardContent, CardFooter } from '@/components/ui/card'\r\nimport { PlusIcon } from 'lucide-react'\r\n\r\nconst formatTimeRange = (from: Date, to: Date): string => {\r\n  const timeFmt = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })\r\n  const dateFmt = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' })\r\n  if (from.toDateString() === to.toDateString()) {\r\n    return `${timeFmt.format(from)} – ${timeFmt.format(to)}`\r\n  }\r\n  return `${dateFmt.format(from)} – ${dateFmt.format(to)}`\r\n}\r\n\r\nconst colorMap = {\r\n  blue: { dot: 'bg-blue-500', bg: 'bg-blue-500/10', time: 'text-blue-500' },\r\n  teal: { dot: 'bg-teal-400', bg: 'bg-teal-400/10', time: 'text-teal-400' },\r\n  orange: { dot: 'bg-orange-400', bg: 'bg-orange-400/10', time: 'text-orange-400' }\r\n} as const\r\n\r\nconst events = [\r\n  { title: 'Product Standup', from: '2026-05-28T08:30:00', to: '2026-05-28T09:00:00', color: 'blue' as const },\r\n  { title: 'UX Walkthrough', from: '2026-05-28T11:00:00', to: '2026-05-28T12:00:00', color: 'teal' as const },\r\n  { title: 'Stakeholder Demo', from: '2026-05-28T15:00:00', to: '2026-05-28T16:30:00', color: 'orange' as const }\r\n]\r\n\r\nconst WithEventListDemo = () => {\r\n  const [date, setDate] = useState<Date | undefined>(new Date())\r\n\r\n  return (\r\n    <>\r\n      <Card className='min-w-2xs pt-4'>\r\n        <CardContent className='px-4'>\r\n          <Calendar mode='single' selected={date} onSelect={setDate} className='w-full bg-transparent p-0' required />\r\n        </CardContent>\r\n        <CardFooter className='flex flex-col items-start gap-3 border-t bg-card'>\r\n          <div className='flex w-full items-center justify-between px-1'>\r\n            <div className='text-sm font-medium'>\r\n              {date?.toLocaleDateString('en-US', {\r\n                day: 'numeric',\r\n                month: 'long',\r\n                year: 'numeric'\r\n              })}\r\n            </div>\r\n            <Button variant='ghost' size='icon' className='size-6' title='Add Event'>\r\n              <PlusIcon />\r\n              <span className='sr-only'>Add Event</span>\r\n            </Button>\r\n          </div>\r\n          <div className='flex w-full flex-col gap-2'>\r\n            {events.map(event => {\r\n              const c = colorMap[event.color]\r\n              return (\r\n                <div\r\n                  key={event.title}\r\n                  className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-opacity hover:opacity-80 ${c.bg}`}\r\n                >\r\n                  <span className={`size-1.5 shrink-0 rounded-full ${c.dot}`} />\r\n                  <span className='flex-1 truncate text-sm font-medium'>{event.title}</span>\r\n                  <span className={`shrink-0 text-xs font-medium ${c.time}`}>\r\n                    {formatTimeRange(new Date(event.from), new Date(event.to))}\r\n                  </span>\r\n                </div>\r\n              )\r\n            })}\r\n          </div>\r\n        </CardFooter>\r\n      </Card>\r\n    </>\r\n  )\r\n}\r\n\r\nexport default WithEventListDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/calendar/calendar-08.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

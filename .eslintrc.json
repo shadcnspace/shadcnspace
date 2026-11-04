@@ -1,0 +1,15 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "plugins": ["svg-jsx"],
+  "rules": {
+    "@typescript-eslint/no-empty-object-type": [
+      "error",
+      {
+        "allowInterfaces": "with-single-extends"
+      }
+    ],
+    "svg-jsx/camel-case-dash": "error",
+    "svg-jsx/camel-case-colon": "error",
+    "svg-jsx/no-style-string": "error"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-09",
+  "title": "Calendar 09 - Custom Range Select",
+  "description": "Calendar component",
+  "dependencies": [
+    "react-day-picker"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/calendar/calendar-09.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { type DateRange } from 'react-day-picker'\r\nimport { Calendar } from '@/components/ui/calendar'\r\n\r\nconst CustomRangeSelectDemo = () => {\r\n  const [dateRange, setDateRange] = useState<DateRange | undefined>({\r\n    from: new Date(2026, 5, 4),\r\n    to: new Date(2026, 5, 17)\r\n  })\r\n\r\n  return (\r\n    <>\r\n      <Calendar\r\n        mode='range'\r\n        defaultMonth={dateRange?.from}\r\n        selected={dateRange}\r\n        onSelect={setDateRange}\r\n        className='rounded-md border'\r\n        classNames={{\r\n          range_start: 'bg-blue-500/20 rounded-l-full',\r\n          range_end: 'bg-blue-500/20 rounded-r-full',\r\n          day_button:\r\n            'data-[range-end=true]:rounded-full! data-[range-start=true]:rounded-full! data-[range-start=true]:bg-blue-500! data-[range-start=true]:text-white! data-[range-start=true]:group-data-[focused=true]/day:ring-blue-500/20  data-[range-end=true]:bg-blue-500! data-[range-end=true]:text-white! data-[range-end=true]:group-data-[focused=true]/day:ring-blue-500/20 data-[range-middle=true]:rounded-none data-[range-middle=true]:bg-blue-500/20 hover:rounded-full',\r\n          today:\r\n            'data-[selected=true]:rounded-l-none! rounded-full bg-accent! data-[selected=true]:bg-blue-500/20! [&_button[data-range-middle=true]]:bg-transparent!'\r\n        }}\r\n      />\r\n    </>\r\n  )\r\n}\r\n\r\nexport default CustomRangeSelectDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/calendar/calendar-09.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

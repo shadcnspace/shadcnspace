@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-01",
+  "title": "Toggle Group 01 - Animated Formatting Toolbar",
+  "description": "A premium animated view switcher and styling toolbar utilizing Radix UI Toggle Group and Framer Motion spring sliding highlights.",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "toggle-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/toggle-group/toggle-group-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";\r\nimport { LayoutGrid, List } from \"lucide-react\";\r\nimport { motion } from \"motion/react\";\r\n\r\nconst ToggleGroupDemo = () => {\r\n  const [view, setView] = useState<string[]>([\"grid\"]);\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-1.5 w-full sm:w-auto\">\r\n      <ToggleGroup\r\n        value={view}\r\n        onValueChange={(val) => {\r\n          if (val && val.length > 0) setView(val);\r\n        }}\r\n        className=\"bg-muted/40 border p-1 rounded-xl gap-1 w-full sm:w-auto justify-start\"\r\n      >\r\n        {[\r\n          { id: \"grid\", label: \"Grid\", icon: LayoutGrid },\r\n          { id: \"list\", label: \"List\", icon: List },\r\n        ].map((item) => {\r\n          const isActive = view.includes(item.id);\r\n          return (\r\n            <ToggleGroupItem\r\n              key={item.id}\r\n              value={item.id}\r\n              className=\"relative px-3.5 py-1.5 h-9 rounded-lg text-sm font-medium transition-colors hover:text-foreground text-muted-foreground cursor-pointer outline-none border-0 hover:bg-muted/40 aria-pressed:bg-transparent! aria-pressed:text-primary-foreground!\"\r\n            >\r\n              <div className=\"flex items-center gap-2 relative z-10\">\r\n                <item.icon className=\"size-4\" />\r\n                <span>{item.label}</span>\r\n              </div>\r\n              {isActive && (\r\n                <motion.div\r\n                  layoutId=\"active-view-pill\"\r\n                  className=\"absolute inset-0 bg-primary rounded-lg z-0\"\r\n                  transition={{\r\n                    type: \"spring\",\r\n                    stiffness: 380,\r\n                    damping: 30,\r\n                  }}\r\n                />\r\n              )}\r\n            </ToggleGroupItem>\r\n          );\r\n        })}\r\n      </ToggleGroup>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ToggleGroupDemo;",
+      "type": "registry:component",
+      "target": "components/shadcn-space/toggle-group/toggle-group-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

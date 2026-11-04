@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-02",
+  "title": "Progress 02 - Onboarding Stepper",
+  "description": "A clean onboarding progress tracker with step navigation and percentage completion.",
+  "dependencies": [],
+  "registryDependencies": [
+    "progress",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/progress/progress-02.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Progress } from \"@/components/ui/progress\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst TOTAL_STEPS = 4;\r\n\r\nexport default function OnboardingStepper() {\r\n  const [current, setCurrent] = useState(1);\r\n  const progressPct = ((current - 1) / (TOTAL_STEPS - 1)) * 100;\r\n\r\n  return (\r\n    <div className=\"w-full max-w-md rounded-xl border bg-background p-6 space-y-6\">\r\n      {/* progress */}\r\n      <div className=\"space-y-2\">\r\n        <div className=\"flex items-center justify-between text-xs text-muted-foreground\">\r\n          <span>\r\n            Step {current} of {TOTAL_STEPS}\r\n          </span>\r\n          <span>{Math.round(progressPct)}% complete</span>\r\n        </div>\r\n        <Progress\r\n          value={progressPct}\r\n          className=\"**:data-[slot='progress-track']:h-1.5!\"\r\n        />\r\n      </div>\r\n\r\n      {/* Navigation */}\r\n      <div className=\"flex justify-between\">\r\n        <Button\r\n          variant=\"outline\"\r\n          size=\"sm\"\r\n          className=\"cursor-pointer\"\r\n          onClick={() => setCurrent((c) => Math.max(1, c - 1))}\r\n          disabled={current === 1}\r\n        >\r\n          Back\r\n        </Button>\r\n        <Button\r\n          size=\"sm\"\r\n          className=\"cursor-pointer hover:bg-primary/80\"\r\n          onClick={() => setCurrent((c) => Math.min(TOTAL_STEPS, c + 1))}\r\n          disabled={current === TOTAL_STEPS}\r\n        >\r\n          {current === TOTAL_STEPS - 1 ? \"Finish\" : \"Next\"}\r\n        </Button>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/progress/progress-02.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

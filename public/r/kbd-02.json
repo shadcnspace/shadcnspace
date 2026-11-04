@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-02",
+  "title": "KBD 02 - KBD Group",
+  "description": "KbdGroup showcasing grouped multi-key shortcut combinations with Mac/Windows platform switch",
+  "dependencies": [],
+  "registryDependencies": [
+    "kbd",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/kbd/kbd-02.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { Kbd, KbdGroup } from '@/components/ui/kbd'\r\nimport { Switch } from '@/components/ui/switch'\r\n\r\ntype Platform = 'mac' | 'win'\r\n\r\nconst KbdGroupDemo = () => {\r\n  const [platform, setPlatform] = useState<Platform>('mac')\r\n  const isMac = platform === 'mac'\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-4\">\r\n      {/* Platform switch */}\r\n      <div className=\"flex items-center gap-2 text-sm\">\r\n        <span className=\"text-muted-foreground\">MacOS</span>\r\n        <Switch\r\n          checked={platform === 'win'}\r\n          onCheckedChange={(checked) => setPlatform(checked ? 'win' : 'mac')}\r\n        />\r\n        <span className=\"text-muted-foreground\">Windows</span>\r\n      </div>\r\n\r\n      {/* Shortcuts */}\r\n      <div className=\"flex flex-col gap-3\">\r\n        <div className=\"flex items-center justify-between gap-4\">\r\n          <span className=\"text-sm text-muted-foreground\">Command Palette</span>\r\n          <KbdGroup>\r\n            <Kbd>{isMac ? '⌘' : 'Ctrl'}</Kbd>\r\n            <Kbd>{isMac ? '⇧' : 'Shift'}</Kbd>\r\n            <Kbd>P</Kbd>\r\n          </KbdGroup>\r\n        </div>\r\n\r\n        <div className=\"flex items-center justify-between gap-4\">\r\n          <span className=\"text-sm text-muted-foreground\">Find & Replace</span>\r\n          <KbdGroup>\r\n            <Kbd>{isMac ? '⌘' : 'Ctrl'}</Kbd>\r\n            <Kbd>{isMac ? '⇧' : 'Shift'}</Kbd>\r\n            <Kbd>H</Kbd>\r\n          </KbdGroup>\r\n        </div>\r\n\r\n        <div className=\"flex items-center justify-between gap-4\">\r\n          <span className=\"text-sm text-muted-foreground\">New Terminal</span>\r\n          <KbdGroup>\r\n            <Kbd>{isMac ? '⌘' : 'Ctrl'}</Kbd>\r\n            <Kbd>{isMac ? '⇧' : 'Shift'}</Kbd>\r\n            <Kbd>`</Kbd>\r\n          </KbdGroup>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default KbdGroupDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/kbd/kbd-02.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

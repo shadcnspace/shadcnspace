@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-07",
+  "title": "Calendar 07 - Variable Size",
+  "description": "Calendar component",
+  "dependencies": [],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/calendar/calendar-07.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { Calendar } from '@/components/ui/calendar'\r\n\r\nconst VariableSizeDemo = () => {\r\n  const [date, setDate] = useState<Date | undefined>(new Date())\r\n\r\n  return (\r\n    <>\r\n      <Calendar\r\n        mode='single'\r\n        selected={date}\r\n        onSelect={setDate}\r\n        className='rounded-lg border [--cell-size:--spacing(7)] md:[--cell-size:--spacing(10)]'\r\n      />\r\n    </>\r\n  )\r\n}\r\n\r\nexport default VariableSizeDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/calendar/calendar-07.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

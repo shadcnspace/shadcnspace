@@ -1,0 +1,173 @@
+import type { SVGProps } from "react";
+import { cn } from "@/lib/utils";
+import "@/components/shadcn-space/animated-beam/animated-beam-03.css";
+
+const ShadcnSpaceIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 40 40" fill="none" {...props}>
+    <circle cx="20" cy="20" r="20" className="fill-foreground" />
+    <path
+      d="M25.2992 26.2688C24.0576 26.2688 23.04 26 22.2464 25.4624C21.4528 24.9248 20.9728 24.1568 20.8064 23.1584L23.0336 22.5824C23.1232 23.0304 23.2704 23.3824 23.4752 23.6384C23.6928 23.8944 23.9552 24.08 24.2624 24.1952C24.5824 24.2976 24.928 24.3488 25.2992 24.3488C25.8624 24.3488 26.2784 24.2528 26.5472 24.0608C26.816 23.856 26.9504 23.6064 26.9504 23.312C26.9504 23.0176 26.8224 22.7936 26.5664 22.64C26.3104 22.4736 25.9008 22.3392 25.3376 22.2368L24.8 22.1408C24.1344 22.0128 23.5264 21.84 22.976 21.6224C22.4256 21.392 21.984 21.0784 21.6512 20.6816C21.3184 20.2848 21.152 19.7728 21.152 19.1456C21.152 18.1984 21.4976 17.4752 22.1888 16.976C22.88 16.464 23.7888 16.208 24.9152 16.208C25.9776 16.208 26.8608 16.4448 27.5648 16.9184C28.2688 17.392 28.7296 18.0128 28.9472 18.7808L26.7008 19.472C26.5984 18.9856 26.3872 18.64 26.0672 18.4352C25.76 18.2304 25.376 18.128 24.9152 18.128C24.4544 18.128 24.1024 18.2112 23.8592 18.3776C23.616 18.5312 23.4944 18.7488 23.4944 19.0304C23.4944 19.3376 23.6224 19.568 23.8784 19.7216C24.1344 19.8624 24.48 19.9712 24.9152 20.048L25.4528 20.144C26.1696 20.272 26.816 20.4448 27.392 20.6624C27.9808 20.8672 28.4416 21.168 28.7744 21.5648C29.12 21.9488 29.2928 22.4736 29.2928 23.1392C29.2928 24.1376 28.928 24.912 28.1984 25.4624C27.4816 26 26.5152 26.2688 25.2992 26.2688ZM30.6447 26V12.56H33.0639V17.648H33.4095C33.5119 17.4432 33.6719 17.2384 33.8895 17.0336C34.1071 16.8288 34.3951 16.6624 34.7535 16.5344C35.1247 16.3936 35.5919 16.3232 36.1551 16.3232C36.8975 16.3232 37.5439 16.496 38.0943 16.8416C38.6575 17.1744 39.0927 17.6416 39.3999 18.2432C39.7071 18.832 39.8607 19.5232 39.8607 20.3168V26H37.4415V20.5088C37.4415 19.792 37.2623 19.2544 36.9039 18.896C36.5583 18.5376 36.0591 18.3584 35.4063 18.3584C34.6639 18.3584 34.0879 18.608 33.6783 19.1072C33.2687 19.5936 33.0639 20.2784 33.0639 21.1616V26H30.6447Z"
+      className="fill-background"
+    />
+  </svg>
+);
+
+const GithubIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+    <path d="M8 0.000502537C3.5805 0.000502537 0 3.584 0 8.0005C0 11.537 2.292 14.5345 5.4685 15.592C5.87 15.6675 6.015 15.42 6.015 15.206C6.015 15.016 6.0105 14.5135 6.0075 13.8465C3.781 14.3285 3.312 12.771 3.312 12.771C2.9475 11.849 2.4215 11.6015 2.4215 11.6015C1.6975 11.107 2.479 11.1175 2.479 11.1175C3.281 11.172 3.703 11.94 3.703 11.94C4.4165 13.164 5.575 12.81 6.0335 12.604C6.1035 12.0885 6.312 11.734 6.539 11.5365C4.763 11.336 2.8955 10.6485 2.8955 7.583C2.8955 6.7075 3.2055 5.9945 3.718 5.4345C3.6295 5.234 3.3585 4.419 3.7885 3.317C3.7885 3.317 4.458 3.1035 5.9885 4.1375C6.64041 3.95998 7.31285 3.86903 7.9885 3.867C8.6685 3.8715 9.348 3.9605 9.9885 4.1375C11.51 3.1035 12.179 3.317 12.179 3.317C12.6085 4.419 12.3375 5.2335 12.2595 5.4345C12.767 5.9945 13.077 6.708 13.077 7.583C13.077 10.6555 11.207 11.333 9.429 11.5285C9.707 11.768 9.9675 12.2605 9.9675 13.008C9.9675 14.078 9.9575 14.94 9.9575 15.2005C9.9575 15.4085 10.0975 15.6585 10.5095 15.578C13.7095 14.5315 15.999 11.5315 15.999 8C15.999 3.5835 12.4185 2.54313e-06 7.999 2.54313e-06L8 0.000502537Z" />
+  </svg>
+);
+
+const SlackIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 12 12" fill="none" {...props}>
+    <path
+      d="M2.524 7.562a1.257 1.257 0 1 1-1.257-1.257h1.257v1.257ZM3.152 7.562a1.257 1.257 0 1 1 2.514.005v3.144a1.257 1.257 0 1 1-2.514 0V7.562Z"
+      fill="#E01E5A"
+    />
+    <path
+      d="M4.41 2.514a1.257 1.257 0 1 1 1.257-1.257v1.257H4.41ZM4.41 3.152a1.257 1.257 0 1 1-.005 2.514H1.257a1.257 1.257 0 1 1 0-2.514H4.41Z"
+      fill="#36C5F0"
+    />
+    <path
+      d="M9.448 4.41a1.257 1.257 0 1 1 1.257 1.257H9.448V4.41ZM8.819 4.41a1.257 1.257 0 1 1-1.257 1.257V2.514a1.257 1.257 0 1 1 2.514 0V4.41Z"
+      fill="#2EB67D"
+    />
+    <path
+      d="M7.562 9.448a1.257 1.257 0 1 1 1.257 1.257 1.257 1.257 0 0 1-1.257-1.257V9.448ZM7.562 8.819a1.257 1.257 0 1 1 0-2.514h3.152a1.257 1.257 0 1 1 0 2.514H7.562Z"
+      fill="#ECB22E"
+    />
+  </svg>
+);
+
+const NotionIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 12 12" fill="none" {...props}>
+    <path
+      d="M.98.518 7.62.028c.815-.07 1.024-.023 1.537.35l2.119 1.492c.35.258.467.326.467.607v8.19c0 .513-.188.817-.84.862l-7.71.466c-.49.024-.722-.046-.98-.372L.652 9.593c-.28-.373-.394-.654-.394-.98V1.334c0-.42.185-.769.722-.816Z"
+      fill="#fff"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M7.62.028.98.518c-.537.047-.722.396-.722.816v7.28c0 .325.118.606.394.979l1.56 2.03c.257.325.492.396.981.372l7.711-.466c.652-.047.84-.35.84-.863V2.477c0-.265-.106-.343-.413-.567L9.16.377C8.644.005 8.435-.042 7.62.028ZM3.368 2.344c-.63.042-.774.052-1.13-.24L1.33 1.382c-.092-.096-.047-.213.187-.237l6.382-.464c.537-.047.816.14 1.025.303l1.095.792c.047.024.164.164.023.164l-6.59.396-.082.008ZM2.634 10.596V3.644c0-.305.093-.443.372-.466l7.57-.443c.259-.024.373.14.373.443v6.905c0 .305-.047.56-.466.584l-7.245.42c-.42.023-.605-.117-.605-.49ZM9.785 4.017c.047.21 0 .42-.21.443l-.35.07v5.134c-.302.163-.581.255-.815.255-.373 0-.467-.117-.746-.466L5.38 5.86v3.475l.723.164s0 .42-.584.42l-1.607.093c-.047-.093 0-.325.163-.373l.42-.117V4.926l-.583-.047c-.047-.211.07-.514.396-.537l1.724-.117 2.376 3.64V4.647l-.605-.07c-.047-.258.14-.443.373-.466l1.608-.094Z"
+      fill="#030712"
+    />
+  </svg>
+);
+
+const LinearIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 12 12" fill="none" {...props}>
+    <path d="M0 0h12v12H0V0Z" fill="#5E6AD2" />
+    <path
+      d="M8.727 3.264v.002c.01.017.006.727.006.825l.002 3.494c-.086.005-.34.065-.434.085l-.94.199-2.693.571-.926.196a5.907 5.907 0 0 1-.454.061l-.007-.001c-.017-.038 0-3.92-.001-4.301.151-.017.448-.09.605-.124l1.213-.26 2.383-.51c.42-.09.85-.177 1.246-.237Z"
+      fill="#FEFEFE"
+    />
+  </svg>
+);
+
+const VercelIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M12 2.5 23 21.5H1L12 2.5Z" />
+  </svg>
+);
+
+const FigmaIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 38 57" {...props}>
+    <path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE" />
+    <path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83" />
+    <path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262" />
+    <path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E" />
+    <path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF" />
+  </svg>
+);
+
+// Spokes are drawn in a 300 x 300 viewBox with the hub at (150, 150)
+const CENTER = 150;
+const RADIUS = 110;
+// One beam per second, so each beam lands on the hub as the ring pulses
+const STAGGER = 1;
+
+const spokes = [
+  { label: "GitHub", icon: GithubIcon, iconClass: "size-5 text-foreground", beamClass: "stroke-sky-400" },
+  { label: "Slack", icon: SlackIcon, iconClass: "size-5", beamClass: "stroke-teal-400" },
+  { label: "Notion", icon: NotionIcon, iconClass: "size-5", beamClass: "stroke-amber-300" },
+  { label: "Linear", icon: LinearIcon, iconClass: "size-5 rounded-sm", beamClass: "stroke-blue-500" },
+  { label: "Vercel", icon: VercelIcon, iconClass: "size-5 text-foreground", beamClass: "stroke-orange-400" },
+  { label: "Figma", icon: FigmaIcon, iconClass: "h-5 w-3.5", beamClass: "stroke-teal-400" },
+].map((spoke, index, list) => {
+  // Start at the top and go clockwise
+  const angle = (index / list.length) * Math.PI * 2 - Math.PI / 2;
+  const x = CENTER + RADIUS * Math.cos(angle);
+  const y = CENTER + RADIUS * Math.sin(angle);
+  return { ...spoke, x, y, path: `M${x.toFixed(2)} ${y.toFixed(2)} L${CENTER} ${CENTER}` };
+});
+
+const AnimatedBeamHubAndSpoke = () => {
+  return (
+    <div className="relative mx-auto aspect-square w-full max-w-sm">
+      {/* Orbit ring and spokes with travelling light pulses */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 300 300"
+        fill="none"
+        className="absolute inset-0 size-full"
+      >
+        <circle
+          cx={CENTER}
+          cy={CENTER}
+          r={RADIUS}
+          strokeWidth={1}
+          strokeDasharray="4 4"
+          vectorEffect="non-scaling-stroke"
+          className="stroke-border"
+        />
+        {spokes.map((spoke, index) => (
+          <g key={spoke.label}>
+            <path
+              d={spoke.path}
+              pathLength={100}
+              strokeWidth={1.5}
+              vectorEffect="non-scaling-stroke"
+              className="stroke-border"
+            />
+            <path
+              d={spoke.path}
+              pathLength={100}
+              strokeWidth={2}
+              strokeLinecap="round"
+              vectorEffect="non-scaling-stroke"
+              className={cn("animated-beam-03-pulse", spoke.beamClass)}
+              style={{ animationDelay: `${index * STAGGER}s` }}
+            />
+          </g>
+        ))}
+      </svg>
+
+      {/* Hub */}
+      <div className="absolute top-1/2 left-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background">
+        <span
+          aria-hidden="true"
+          className="animated-beam-03-hub-ring absolute inset-0 rounded-full border border-foreground/20"
+        />
+        <ShadcnSpaceIcon aria-hidden="true" className="size-9" />
+        <span className="sr-only">ShadcnSpace</span>
+      </div>
+
+      {/* Integrations around the hub */}
+      {spokes.map((spoke) => {
+        const Icon = spoke.icon;
+        return (
+          <div
+            key={spoke.label}
+            className="absolute flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background"
+            style={{ left: `${(spoke.x / 300) * 100}%`, top: `${(spoke.y / 300) * 100}%` }}
+          >
+            <Icon aria-hidden="true" className={spoke.iconClass} />
+            <span className="sr-only">{spoke.label}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default AnimatedBeamHubAndSpoke;

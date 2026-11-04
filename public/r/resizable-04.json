@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "resizable-04",
+  "title": "Resizable 04 - Nested Panels",
+  "description": "A nested resizable layout combining horizontal and vertical panel groups for a header, sidebar, and content area.",
+  "dependencies": [],
+  "registryDependencies": [
+    "resizable"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/resizable/resizable-04.tsx",
+      "content": "import {\r\n  ResizableHandle,\r\n  ResizablePanel,\r\n  ResizablePanelGroup,\r\n} from \"@/components/ui/resizable\";\r\n\r\nexport default function NestedResizable() {\r\n  return (\r\n    <ResizablePanelGroup\r\n      orientation=\"horizontal\"\r\n      className=\"min-h-75 max-w-lg rounded-lg border\"\r\n    >\r\n      <ResizablePanel defaultSize=\"50%\">\r\n        <div className=\"flex h-50 items-center justify-center p-6\">\r\n          <span className=\"text-sm font-medium\">Sidebar</span>\r\n        </div>\r\n      </ResizablePanel>\r\n      <ResizableHandle withHandle />\r\n      <ResizablePanel defaultSize=\"50%\">\r\n        <ResizablePanelGroup orientation=\"vertical\">\r\n          <ResizablePanel defaultSize=\"25%\">\r\n            <div className=\"flex h-full items-center justify-center p-6\">\r\n              <span className=\"text-sm font-medium\">Header</span>\r\n            </div>\r\n          </ResizablePanel>\r\n          <ResizableHandle withHandle />\r\n          <ResizablePanel defaultSize=\"75%\">\r\n            <div className=\"flex h-full items-center justify-center p-6\">\r\n              <span className=\"text-sm font-medium\">Content</span>\r\n            </div>\r\n          </ResizablePanel>\r\n        </ResizablePanelGroup>\r\n      </ResizablePanel>\r\n    </ResizablePanelGroup>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/resizable/resizable-04.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

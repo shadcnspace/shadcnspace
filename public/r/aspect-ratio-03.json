@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio-03",
+  "title": "Aspect Ratio 03 - Caption Overlay",
+  "description": "A portrait aspect ratio card with a gradient overlay and caption text.",
+  "dependencies": [],
+  "registryDependencies": [
+    "aspect-ratio"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/aspect-ratio/aspect-ratio-03.tsx",
+      "content": "import { AspectRatio } from \"@/components/ui/aspect-ratio\";\r\n\r\nconst CaptionOverlayAspectRatioDemo = () => {\r\n  return (\r\n    <div className=\"flex w-full max-w-55 items-center justify-center px-4\">\r\n      <AspectRatio\r\n        ratio={3 / 4}\r\n        className=\"relative overflow-hidden rounded-xl bg-muted\"\r\n      >\r\n        <img\r\n          src=\"https://images.shadcnspace.com/assets/gallery/destinations-3.webp\"\r\n          alt=\"Swiss Alps\"\r\n          className=\"h-full w-full object-cover\"\r\n        />\r\n        <div className=\"absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent\" />\r\n        <div className=\"absolute inset-x-0 bottom-0 p-4\">\r\n          <p className=\"text-sm font-semibold text-white\">Swiss Alps</p>\r\n          <p className=\"text-xs text-white/80\">42 places to explore</p>\r\n        </div>\r\n      </AspectRatio>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CaptionOverlayAspectRatioDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/aspect-ratio/aspect-ratio-03.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

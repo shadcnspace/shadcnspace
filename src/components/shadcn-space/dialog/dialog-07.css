@@ -1,0 +1,46 @@
+@keyframes dialog-07-bubble-right {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes dialog-07-bubble-left {
+  0% {
+    left: 100%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 0%;
+    opacity: 0;
+  }
+}
+
+.dialog-07-bubble {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.dialog-07-bubble-amber {
+  animation-name: dialog-07-bubble-right;
+}
+
+.dialog-07-bubble-blue {
+  animation-name: dialog-07-bubble-left;
+}

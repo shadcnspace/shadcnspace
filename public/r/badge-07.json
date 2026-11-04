@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-07",
+  "title": "Badge-07 - Success",
+  "description": "Animated success badge with top glow and letter-by-letter reveal",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/badge/badge-07.tsx",
+      "content": "'use client'\r\n\r\nimport { motion, type Variants } from \"motion/react\";\r\nimport { CheckCircle } from \"lucide-react\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst LETTER_VARIANTS: Variants = {\r\n  hidden: { y: -14, opacity: 0 },\r\n  visible: (i: number) => ({\r\n    y: 0,\r\n    opacity: 1,\r\n    transition: {\r\n      delay: i * 0.038,\r\n      duration: 0.35,\r\n      ease: [0.215, 0.61, 0.355, 1],\r\n    },\r\n  }),\r\n};\r\n\r\nconst MotionBadge = motion.create(Badge);\r\n\r\nconst SuccessBadgeDemo = () => {\r\n  const label = \"Success\";\r\n\r\n  return (\r\n    <MotionBadge\r\n      variant=\"outline\"\r\n      className={cn(\r\n        \"relative h-auto cursor-default overflow-visible rounded-full\",\r\n        \"gap-2 px-3 py-2\",\r\n        \"bg-background backdrop-blur-md\",\r\n        \"text-foreground text-sm font-medium leading-none\",\r\n        \"border-teal-400/25\",\r\n      )}\r\n    >\r\n      {/* Top glow */}\r\n      <motion.span\r\n        aria-hidden\r\n        animate={{ opacity: 0.55 }}\r\n        transition={{ duration: 0.45 }}\r\n        className=\"pointer-events-none absolute -top-2 left-[10%] right-[10%] h-4 blur bg-[radial-gradient(ellipse_80%_100%_at_50%_100%,rgba(45,212,191,0.95)_0%,transparent_70%)]\"\r\n      />\r\n      <motion.span\r\n        aria-hidden\r\n        animate={{ opacity: 0.75 }}\r\n        transition={{ duration: 0.45 }}\r\n        className=\"pointer-events-none absolute -top-1 left-[22%] right-[22%] h-2 blur-sm bg-[radial-gradient(ellipse_70%_100%_at_50%_100%,rgba(45,212,191,0.85)_0%,transparent_70%)]\"\r\n      />\r\n      <motion.span\r\n        aria-hidden\r\n        animate={{ opacity: 0.9 }}\r\n        transition={{ duration: 0.45 }}\r\n        className=\"pointer-events-none absolute top-0 left-[28%] right-[28%] h-px bg-[radial-gradient(ellipse_40%_50%_at_50%_50%,rgba(45,212,191,0.95)_0%,transparent_100%)]\"\r\n      />\r\n\r\n      {/* Icon */}\r\n      <motion.span\r\n        initial={{ scale: 0.35, opacity: 0, rotate: -25 }}\r\n        animate={{ scale: 1, opacity: 1, rotate: 0 }}\r\n        transition={{ duration: 0.32, ease: [0.175, 0.885, 0.32, 1.275] }}\r\n        className=\"flex h-4 w-4 shrink-0 items-center justify-center\"\r\n      >\r\n        <CheckCircle size={16} strokeWidth={2} className=\"text-teal-400\" />\r\n      </motion.span>\r\n\r\n      {/* Animated label */}\r\n      <span className=\"inline-flex overflow-hidden leading-none\">\r\n        {label.split(\"\").map((char, i) => (\r\n          <motion.span\r\n            key={i}\r\n            custom={i}\r\n            variants={LETTER_VARIANTS}\r\n            initial=\"hidden\"\r\n            animate=\"visible\"\r\n            className=\"inline-block whitespace-pre\"\r\n          >\r\n            {char}\r\n          </motion.span>\r\n        ))}\r\n      </span>\r\n    </MotionBadge>\r\n  );\r\n};\r\n\r\nexport default SuccessBadgeDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/badge/badge-07.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

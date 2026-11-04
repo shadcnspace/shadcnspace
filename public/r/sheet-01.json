@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-01",
+  "title": "Sheet 01 - Different Directions",
+  "description": "Drawer with different directions - top, right, bottom, left",
+  "dependencies": [],
+  "registryDependencies": [
+    "sheet",
+    "button",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/sheet/sheet-01.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport {\r\n  Sheet,\r\n  SheetClose,\r\n  SheetContent,\r\n  SheetDescription,\r\n  SheetFooter,\r\n  SheetHeader,\r\n  SheetTitle,\r\n  SheetTrigger,\r\n} from \"@/components/ui/sheet\";\r\n\r\nconst SHEET_SIDES = [\"top\", \"right\", \"bottom\", \"left\"] as const;\r\n\r\nconst SheetSideDemo = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-2\">\r\n      {SHEET_SIDES.map((side) => (\r\n        <Sheet key={side}>\r\n          <SheetTrigger\r\n            render={\r\n              <Button variant=\"outline\" className=\"capitalize cursor-pointer\">\r\n                {side}\r\n              </Button>\r\n            }\r\n          />\r\n          <SheetContent side={side}\r\n            className=\"data-[side=bottom]:max-h-[50vh] data-[side=top]:max-h-[50vh]\">\r\n            <SheetHeader>\r\n              <SheetTitle>Edit profile</SheetTitle>\r\n              <SheetDescription>\r\n                Make changes to your profile here. Click save when you&apos;re\r\n                done.\r\n              </SheetDescription>\r\n            </SheetHeader>\r\n            <div className=\"grid flex-1 auto-rows-min gap-6 px-4\">\r\n              <div className=\"grid gap-3\">\r\n                <Label htmlFor=\"sheet-demo-name\">Name</Label>\r\n                <Input id=\"sheet-demo-name\" defaultValue=\"Pedro Duarte\" />\r\n              </div>\r\n              <div className=\"grid gap-3\">\r\n                <Label htmlFor=\"sheet-demo-username\">Username</Label>\r\n                <Input id=\"sheet-demo-username\" defaultValue=\"@peduarte\" />\r\n              </div>\r\n            </div>\r\n            <SheetFooter>\r\n              <Button type=\"submit\" className=\"cursor-pointer hover:bg-primary/80\">Save changes</Button>\r\n              <SheetClose render={<Button variant=\"outline\" className=\"cursor-pointer\">Close</Button>} />\r\n            </SheetFooter>\r\n          </SheetContent>\r\n        </Sheet>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default SheetSideDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/sheet/sheet-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

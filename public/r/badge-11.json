@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-11",
+  "title": "Badge 11 - Count Pop",
+  "description": "Notification/cart count badge that springs and pops on every count change",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/badge/badge-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { motion, AnimatePresence } from \"motion/react\";\r\nimport { ShoppingCart } from \"lucide-react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ntype CountBadgeProps = {\r\n  count: number;\r\n  max?: number;\r\n  className?: string;\r\n};\r\n\r\nfunction CountBadge({ count, max = 99, className }: CountBadgeProps) {\r\n  return (\r\n    <AnimatePresence>\r\n      {count > 0 && (\r\n        <motion.span\r\n          key={count}\r\n          initial={{ scale: 0.4, opacity: 0 }}\r\n          animate={{ scale: [1.35, 1], opacity: 1 }}\r\n          exit={{ scale: 0.4, opacity: 0 }}\r\n          transition={{ duration: 0.35, ease: [0.34, 1.56, 0.64, 1] }}\r\n          className=\"absolute -top-1.5 -right-1.5\"\r\n        >\r\n          <Badge\r\n            className={cn(\r\n              \"flex size-5.5 items-center justify-center rounded-full border-2 border-background bg-red-500 p-0.5 text-[10px] text-white\",\r\n              className,\r\n            )}\r\n          >\r\n            {count > max ? `${max}+` : count}\r\n          </Badge>\r\n        </motion.span>\r\n      )}\r\n    </AnimatePresence>\r\n  );\r\n}\r\n\r\nconst CountPopBadgeDemo = () => {\r\n  const [count, setCount] = useState(3);\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-center gap-4\">\r\n      <div className=\"relative inline-flex\">\r\n        <Button\r\n          variant=\"outline\"\r\n          size=\"icon\"\r\n          onClick={() => setCount((c) => c + 1)}\r\n          className=\"cursor-pointer\"\r\n        >\r\n          <ShoppingCart className=\"size-4\" />\r\n        </Button>\r\n        <CountBadge count={count} />\r\n      </div>\r\n      <span className=\"text-muted-foreground text-sm\">\r\n        Click the cart to add items\r\n      </span>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default CountPopBadgeDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/badge/badge-11.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

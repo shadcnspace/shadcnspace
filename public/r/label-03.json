@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-03",
+  "title": "Label 03 - With Badge",
+  "description": "Label component with badge",
+  "dependencies": [],
+  "registryDependencies": [
+    "badge",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/label/label-03.tsx",
+      "content": "import { useId } from 'react'\r\nimport { Badge } from '@/components/ui/badge'\r\nimport { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst LabelWithBadge = () => {\r\n  const id = useId()\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>\r\n        Webhook URL{' '}\r\n        <Badge className='border-none bg-teal-400/10 px-1.5 py-px text-teal-400'>\r\n          Active\r\n        </Badge>\r\n      </Label>\r\n      <Input id={id} type='url' placeholder='https://yoursite.com/webhook' />\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default LabelWithBadge\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/label/label-03.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

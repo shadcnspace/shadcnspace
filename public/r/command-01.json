@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-01",
+  "title": "Command-01 - Shortcut Menu",
+  "description": "Command component with different size variants",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "command"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/command/command-01.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { type LucideIcon } from 'lucide-react'\r\nimport { UserIcon, CreditCardIcon, SettingsIcon } from 'lucide-react'\r\nimport { Button } from '@/components/ui/button'\r\nimport {\r\n  Command,\r\n  CommandDialog,\r\n  CommandEmpty,\r\n  CommandGroup,\r\n  CommandInput,\r\n  CommandItem,\r\n  CommandList,\r\n  CommandShortcut\r\n} from '@/components/ui/command'\r\n\r\nexport interface CommandMenuItem {\r\n  label: string\r\n  icon?: LucideIcon\r\n  shortcut?: string\r\n  onSelect?: () => void\r\n}\r\n\r\nexport interface CommandMenuGroup {\r\n  heading: string\r\n  items: CommandMenuItem[]\r\n}\r\n\r\nexport interface CommandShortcutDemoProps {\r\n  buttonLabel?: string\r\n  placeholder?: string\r\n  emptyMessage?: string\r\n  groups?: CommandMenuGroup[]\r\n}\r\n\r\nconst defaultGroups: CommandMenuGroup[] = [\r\n  {\r\n    heading: 'Settings',\r\n    items: [\r\n      { label: 'Profile', icon: UserIcon, shortcut: '⌘P' },\r\n      { label: 'Billing', icon: CreditCardIcon, shortcut: '⌘B' },\r\n      { label: 'Settings', icon: SettingsIcon, shortcut: '⌘S' }\r\n    ]\r\n  }\r\n]\r\n\r\nconst CommandShortcutDemo = ({\r\n  buttonLabel = 'Shortcut Menu',\r\n  placeholder = 'Type a command or search...',\r\n  emptyMessage = 'No results found.',\r\n  groups = defaultGroups\r\n}: CommandShortcutDemoProps) => {\r\n  const [open, setOpen] = useState(false)\r\n\r\n  return (\r\n    <div className='flex flex-col gap-4'>\r\n      <Button onClick={() => setOpen(true)} variant='outline' className='w-fit cursor-pointer'>\r\n        {buttonLabel}\r\n      </Button>\r\n      <CommandDialog open={open} onOpenChange={setOpen}>\r\n        <Command>\r\n          <CommandInput placeholder={placeholder} />\r\n          <CommandList>\r\n            <CommandEmpty>{emptyMessage}</CommandEmpty>\r\n            {groups.map((group) => (\r\n              <CommandGroup key={group.heading} heading={group.heading}>\r\n                {group.items.map((item) => (\r\n                  <CommandItem\r\n                    key={item.label}\r\n                    className='cursor-pointer'\r\n                    onSelect={item.onSelect}\r\n                  >\r\n                    {item.icon && <item.icon />}\r\n                    <span>{item.label}</span>\r\n                    {item.shortcut && <CommandShortcut>{item.shortcut}</CommandShortcut>}\r\n                  </CommandItem>\r\n                ))}\r\n              </CommandGroup>\r\n            ))}\r\n          </CommandList>\r\n        </Command>\r\n      </CommandDialog>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default CommandShortcutDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/command/command-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

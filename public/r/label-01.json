@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-01",
+  "title": "Label 01 - With Checkbox",
+  "description": "Label component with checkbox",
+  "dependencies": [],
+  "registryDependencies": [
+    "checkbox",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/label/label-01.tsx",
+      "content": "import { Checkbox } from '@/components/ui/checkbox'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst LabelWithCheckbox = () => {\r\n  return (\r\n    <div className='flex gap-2'>\r\n      <Checkbox id='terms' className='cursor-pointer' />\r\n      <Label htmlFor='terms' className='cursor-pointer'>Accept terms and conditions</Label>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default LabelWithCheckbox\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/label/label-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

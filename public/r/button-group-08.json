@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-08",
+  "title": "Button Group 08 - Github star bar",
+  "description": "Github star bar style button group component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button-group/button-group-08.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Badge } from \"@/components/ui/badge\"\r\nimport { Button } from \"@/components/ui/button\"\r\nimport { ButtonGroup } from \"@/components/ui/button-group\"\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuTrigger,\r\n} from \"@/components/ui/dropdown-menu\"\r\nimport { ChevronDownIcon, StarIcon, Plus  } from 'lucide-react'\r\n\r\nexport default function Pattern() {\r\n  const [starred, setStarred] = useState(false);\r\n\r\n  return (\r\n    <ButtonGroup>\r\n      <Button variant=\"outline\" onClick={() => setStarred(!starred)}>\r\n        <StarIcon \r\n          aria-hidden=\"true\" \r\n          className={starred ? \"text-orange-400 fill-orange-400\" : \"\"}\r\n        />\r\n        <span>{starred ? \"Starred\" : \"Star\"}</span>\r\n        <Badge>2.4k</Badge>\r\n      </Button>\r\n      <DropdownMenu>\r\n        <DropdownMenuTrigger render={<Button variant=\"outline\" size=\"icon\" />}>\r\n          <ChevronDownIcon  aria-hidden=\"true\" />\r\n          <span className=\"sr-only\">Toggle dropdown</span>\r\n        </DropdownMenuTrigger>\r\n        <DropdownMenuContent align=\"end\" className=\"min-w-40\">\r\n          <DropdownMenuItem >\r\n            <Button className=\"w-full bg-green-500 hover:bg-green-500/80\">\r\n                <Plus />\r\n                Create list\r\n            </Button>\r\n          </DropdownMenuItem>\r\n        </DropdownMenuContent>\r\n      </DropdownMenu>\r\n    </ButtonGroup>\r\n  )\r\n}",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button-group/button-group-08.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-12",
+  "title": "Badge 12 - Removable Filter Chip",
+  "description": "Dismissible filter chip badge with hover/tap micro-interactions and animated removal",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/badge/badge-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { motion, AnimatePresence } from \"motion/react\";\r\nimport { X } from \"lucide-react\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst MotionButton = motion.create(Button);\r\n\r\ntype FilterChipProps = {\r\n  label: string;\r\n  onRemove: () => void;\r\n  className?: string;\r\n};\r\n\r\nfunction FilterChip({ label, onRemove, className }: FilterChipProps) {\r\n  return (\r\n    <motion.div\r\n      layout\r\n      initial={{ opacity: 0, scale: 0.8 }}\r\n      animate={{ opacity: 1, scale: 1 }}\r\n      exit={{ opacity: 0, scale: 0.7, transition: { duration: 0.15 } }}\r\n      transition={{ type: \"spring\", stiffness: 500, damping: 30 }}\r\n    >\r\n      <Badge\r\n        variant=\"outline\"\r\n        className={cn(\r\n          \"h-auto gap-1.5 rounded-full py-1 pr-1.5 pl-3 text-sm font-normal\",\r\n          className,\r\n        )}\r\n      >\r\n        {label}\r\n        <MotionButton\r\n          type=\"button\"\r\n          variant=\"ghost\"\r\n          size=\"icon-xs\"\r\n          onClick={onRemove}\r\n          whileHover={{ scale: 1.15, rotate: 90 }}\r\n          whileTap={{ scale: 0.85 }}\r\n          className=\"text-muted-foreground hover:text-foreground dark:hover:bg-muted size-4 rounded-full transition-colors active:translate-y-0\"\r\n          aria-label={`Remove ${label} filter`}\r\n        >\r\n          <X className=\"size-3\" />\r\n        </MotionButton>\r\n      </Badge>\r\n    </motion.div>\r\n  );\r\n}\r\n\r\nconst INITIAL_FILTERS = [\"In Stock\", \"Free Shipping\", \"4★ & up\"];\r\n\r\nconst RemovableFilterChipDemo = () => {\r\n  const [filters, setFilters] = useState(INITIAL_FILTERS);\r\n\r\n  const removeFilter = (filter: string) => {\r\n    setFilters((prev) => prev.filter((f) => f !== filter));\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-2\">\r\n      <AnimatePresence initial={false}>\r\n        {filters.map((filter) => (\r\n          <FilterChip\r\n            key={filter}\r\n            label={filter}\r\n            onRemove={() => removeFilter(filter)}\r\n          />\r\n        ))}\r\n      </AnimatePresence>\r\n      {filters.length === 0 && (\r\n        <span className=\"text-muted-foreground text-sm\">\r\n          No filters applied\r\n        </span>\r\n      )}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default RemovableFilterChipDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/badge/badge-12.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

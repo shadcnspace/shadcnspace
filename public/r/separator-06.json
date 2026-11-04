@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-06",
+  "title": "Separator 06 - Gradient Faded",
+  "description": "Gradient faded horizontal separator that fades from transparent to border color",
+  "dependencies": [],
+  "registryDependencies": [
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/separator/separator-06.tsx",
+      "content": "import { Separator } from \"@/components/ui/separator\";\r\n\r\nconst GradientFadedDemo = () => {\r\n  return (\r\n    <div className='w-full max-w-sm'>\r\n      <Separator className='bg-transparent bg-linear-to-r from-transparent via-primary/50 to-transparent' />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default GradientFadedDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/separator/separator-06.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

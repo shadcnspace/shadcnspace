@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-03",
+  "title": "Field 03 - Choose a Plan",
+  "description": "A plan selection layout built with the Field primitive, wrapping a radio group in field labels to create selectable, highlighted pricing cards",
+  "dependencies": [],
+  "registryDependencies": [
+    "field",
+    "radio-group",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/field/field-03.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport {\r\n  Field,\r\n  FieldContent,\r\n  FieldDescription,\r\n  FieldLabel,\r\n  FieldLegend,\r\n  FieldSet,\r\n  FieldTitle,\r\n} from \"@/components/ui/field\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\n\r\ntype Plan = {\r\n  id: string;\r\n  value: string;\r\n  title: string;\r\n  description: string;\r\n  price: string;\r\n  badge?: string;\r\n};\r\n\r\nconst plans: Plan[] = [\r\n  {\r\n    id: \"plan-starter\",\r\n    value: \"starter\",\r\n    title: \"Starter\",\r\n    description: \"For individuals and small side projects.\",\r\n    price: \"$9/mo\",\r\n  },\r\n  {\r\n    id: \"plan-team\",\r\n    value: \"team\",\r\n    title: \"Team\",\r\n    description: \"For growing teams that need more power.\",\r\n    price: \"$29/mo\",\r\n    badge: \"Popular\",\r\n  },\r\n  {\r\n    id: \"plan-enterprise\",\r\n    value: \"enterprise\",\r\n    title: \"Enterprise\",\r\n    description: \"Advanced controls and dedicated support.\",\r\n    price: \"$99/mo\",\r\n  },\r\n];\r\n\r\nconst ChoosePlanDemo = () => {\r\n  return (\r\n    <FieldSet className=\"w-full max-w-sm\">\r\n      <FieldLegend>Choose a plan</FieldLegend>\r\n      <FieldDescription>\r\n        Select the plan that best fits your team&apos;s needs.\r\n      </FieldDescription>\r\n      <RadioGroup defaultValue=\"team\">\r\n        {plans.map((plan) => (\r\n          <FieldLabel key={plan.id} htmlFor={plan.id}>\r\n            <Field orientation=\"horizontal\">\r\n              <FieldContent>\r\n                <FieldTitle>\r\n                  {plan.title}\r\n                  {plan.badge && (\r\n                    <Badge className=\"h-4\">\r\n                      {plan.badge}\r\n                    </Badge>\r\n                  )}\r\n                </FieldTitle>\r\n                <FieldDescription>{plan.description}</FieldDescription>\r\n              </FieldContent>\r\n              <span className=\"text-foreground text-sm font-medium\">\r\n                {plan.price}\r\n              </span>\r\n              <RadioGroupItem value={plan.value} id={plan.id} />\r\n            </Field>\r\n          </FieldLabel>\r\n        ))}\r\n      </RadioGroup>\r\n    </FieldSet>\r\n  );\r\n};\r\n\r\nexport default ChoosePlanDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/field/field-03.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

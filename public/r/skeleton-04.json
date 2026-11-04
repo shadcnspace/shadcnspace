@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton-04",
+  "title": "Skeleton 04 - Product Card Grid",
+  "description": "Responsive product grid skeleton with square image, title, subtitle, price, and add to cart button placeholders.",
+  "dependencies": [],
+  "registryDependencies": [
+    "skeleton"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/skeleton/skeleton-04.tsx",
+      "content": "import { Skeleton } from \"@/components/ui/skeleton\";\r\n\r\nconst SkeletonDemo = () => {\r\n  return (\r\n    <div\r\n      role=\"status\"\r\n      aria-label=\"Loading products\"\r\n      className=\"grid w-full max-w-2xl grid-cols-2 gap-4 sm:grid-cols-3\"\r\n    >\r\n      {Array.from({ length: 6 }, (_, index) => (\r\n        <div key={index} className=\"flex flex-col gap-3 rounded-lg border border-border bg-background p-3\">\r\n          <Skeleton className=\"aspect-square w-full rounded-md motion-reduce:animate-none\" />\r\n          <div className=\"flex flex-col gap-2\">\r\n            <Skeleton className=\"h-4 w-4/5 motion-reduce:animate-none\" />\r\n            <Skeleton className=\"h-3 w-1/2 motion-reduce:animate-none\" />\r\n          </div>\r\n          <div className=\"flex items-center justify-between\">\r\n            <Skeleton className=\"h-5 w-14 motion-reduce:animate-none\" />\r\n            <Skeleton className=\"size-8 rounded-full motion-reduce:animate-none\" />\r\n          </div>\r\n        </div>\r\n      ))}\r\n      <span className=\"sr-only\">Loading products...</span>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SkeletonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/skeleton/skeleton-04.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

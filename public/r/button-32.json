@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-32",
+  "title": "Button 32 - Generate AI",
+  "description": "AI generate button with a continuously spinning conic-gradient border",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-32.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { Sparkles } from \"lucide-react\";\r\n\r\nconst GenerateAIButton = () => {\r\n  return (\r\n    <Button\r\n      variant=\"outline\"\r\n      className=\"relative h-10 gap-2 overflow-hidden rounded-full border-transparent px-6 text-primary cursor-pointer\"\r\n    >\r\n      {/* Continuously animated gradient border */}\r\n      <div className=\"absolute inset-0 z-0 overflow-hidden rounded-full bg-border\">\r\n        <div className=\"absolute top-1/2 left-1/2 size-40 -translate-x-1/2 -translate-y-1/2 animate-spin animation-duration-[2.5s] bg-[conic-gradient(from_0deg,transparent_0%,transparent_35%,var(--color-blue-500)_50%,transparent_65%,transparent_85%,var(--color-orange-400)_100%)]\" />\r\n        <div className=\"absolute inset-0.5 rounded-full bg-background\" />\r\n      </div>\r\n\r\n      <span className=\"relative z-10 flex items-center gap-2\">\r\n        <Sparkles className=\"size-4\" fill=\"currentColor\" />\r\n        Generate\r\n      </span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default GenerateAIButton;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-32.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

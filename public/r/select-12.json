@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-12",
+  "title": "Select 12 - Workspace Role Select",
+  "description": "Select for workspace roles with colored icon badges and descriptive subtext per option",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/select/select-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Crown, Eye, MessageSquare, PenLine } from \"lucide-react\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectGroup,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/components/ui/select\";\r\n\r\nconst roles = [\r\n  {\r\n    value: \"owner\",\r\n    label: \"Owner\",\r\n    description: \"Full control, including billing and deletion\",\r\n    icon: Crown,\r\n    color: \"bg-blue-500\",\r\n  },\r\n  {\r\n    value: \"editor\",\r\n    label: \"Editor\",\r\n    description: \"Can edit and publish content\",\r\n    icon: PenLine,\r\n    color: \"bg-teal-400\",\r\n  },\r\n  {\r\n    value: \"commenter\",\r\n    label: \"Commenter\",\r\n    description: \"Can comment, no edit access\",\r\n    icon: MessageSquare,\r\n    color: \"bg-orange-400\",\r\n  },\r\n  {\r\n    value: \"viewer\",\r\n    label: \"Viewer\",\r\n    description: \"Can only view, no changes\",\r\n    icon: Eye,\r\n    color: \"bg-sky-400\",\r\n  },\r\n] as const;\r\n\r\ntype Role = (typeof roles)[number];\r\n\r\nconst SelectWorkspaceRoleDemo = () => {\r\n  const [value, setValue] = useState<Role[\"value\"]>(\"editor\");\r\n  const role = roles.find((r) => r.value === value) ?? roles[1];\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xs\">\r\n      <Select value={value} onValueChange={(val) => val && setValue(val)}>\r\n        <SelectTrigger className=\"w-full\">\r\n          <SelectValue>\r\n            <span className=\"flex items-center gap-2\">\r\n              <span\r\n                className={cn(\r\n                  \"flex size-5 items-center justify-center rounded-full text-white\",\r\n                  role.color,\r\n                )}\r\n              >\r\n                <role.icon className=\"size-3\" />\r\n              </span>\r\n              {role.label}\r\n            </span>\r\n          </SelectValue>\r\n        </SelectTrigger>\r\n\r\n        <SelectContent\r\n          alignItemWithTrigger={false}\r\n          className=\"min-w-72 data-[state=open]:slide-in-from-bottom-8 data-[state=open]:zoom-in-100 duration-400\"\r\n        >\r\n          <SelectGroup>\r\n            {roles.map((r) => (\r\n              <SelectItem key={r.value} value={r.value}>\r\n                <div className=\"flex w-full items-center gap-2.5 py-0.5\">\r\n                  <span\r\n                    className={cn(\r\n                      \"flex size-7 shrink-0 items-center justify-center rounded-full text-white\",\r\n                      r.color,\r\n                    )}\r\n                  >\r\n                    <r.icon className=\"size-3.5\" />\r\n                  </span>\r\n                  <span className=\"flex flex-col items-start gap-0.5\">\r\n                    <span className=\"font-medium\">{r.label}</span>\r\n                    <span className=\"text-xs text-muted-foreground\">{r.description}</span>\r\n                  </span>\r\n                </div>\r\n              </SelectItem>\r\n            ))}\r\n          </SelectGroup>\r\n        </SelectContent>\r\n      </Select>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SelectWorkspaceRoleDemo;",
+      "type": "registry:component",
+      "target": "components/shadcn-space/select/select-12.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

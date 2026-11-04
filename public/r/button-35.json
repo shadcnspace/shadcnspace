@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-35",
+  "title": "Button 35 - Level Up",
+  "description": "Gaming button with a segmented XP bar that fills up segment by segment on hover",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-35.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { Swords } from \"lucide-react\";\r\n\r\nconst SEGMENTS = 10;\r\n\r\nconst LevelUpButton = () => {\r\n  return (\r\n    <Button\r\n      variant=\"ghost\"\r\n      className=\"group h-auto flex-col items-stretch gap-2 rounded-xl border border-white/10 bg-gray-950 px-4 py-3 text-white hover:bg-gray-950 hover:text-white dark:hover:bg-gray-950 cursor-pointer\"\r\n    >\r\n      <span className=\"flex items-center gap-6\">\r\n        <span className=\"flex items-center gap-2 text-sm font-semibold tracking-wide\">\r\n          <Swords className=\"size-4 text-amber-300 transition-transform duration-300 group-hover:-rotate-45\" />\r\n          Level Up\r\n        </span>\r\n        <span className=\"ms-auto font-mono text-xs text-sky-400\">LV 07</span>\r\n      </span>\r\n\r\n      {/* Segmented XP bar, fills left to right on hover */}\r\n      <span aria-hidden=\"true\" className=\"flex gap-1\">\r\n        {Array.from({ length: SEGMENTS }).map((_, index) => (\r\n          <span\r\n            key={index}\r\n            className=\"h-1.5 flex-1 rounded-sm bg-white/15 transition-colors duration-200 group-hover:bg-teal-400 motion-reduce:transition-none\"\r\n            style={{ transitionDelay: `${index * 50}ms` }}\r\n          />\r\n        ))}\r\n      </span>\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport default LevelUpButton;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-35.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

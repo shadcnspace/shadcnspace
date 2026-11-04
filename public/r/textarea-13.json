@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-13",
+  "title": "Textarea 13 - Autosave Draft",
+  "description": "Notes textarea that autosaves after you stop typing, with unsaved, saving, and saved x seconds ago states plus word count and read time.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "textarea",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/textarea/textarea-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useMemo, useState } from \"react\";\r\nimport { AlertCircle, Braces, Check } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst initial = `{\"name\":\"acme-web\",\"version\":\"2.4.0\",\"private\":true,\"scripts\":{\"dev\":\"next dev\",\"build\":\"next build\"}}`;\r\n\r\n// Turn the parser's character position into a line and column for the error message.\r\nfunction lineAndColumn(text: string, message: string) {\r\n  const position = Number(message.match(/position (\\d+)/)?.[1]);\r\n  if (!Number.isFinite(position)) return null;\r\n  const before = text.slice(0, position).split(\"\\n\");\r\n  return { line: before.length, column: before[before.length - 1].length + 1 };\r\n}\r\n\r\nconst TextareaDemo = () => {\r\n  const [value, setValue] = useState(initial);\r\n\r\n  const result = useMemo(() => {\r\n    if (!value.trim()) return { ok: false as const, error: \"Enter some JSON\" };\r\n    try {\r\n      JSON.parse(value);\r\n      return { ok: true as const };\r\n    } catch (error) {\r\n      const message = error instanceof Error ? error.message : \"Invalid JSON\";\r\n      const where = lineAndColumn(value, message);\r\n      return { ok: false as const, error: where ? `Invalid JSON at line ${where.line}, column ${where.column}` : \"Invalid JSON\" };\r\n    }\r\n  }, [value]);\r\n\r\n  const format = () => {\r\n    if (result.ok) setValue(JSON.stringify(JSON.parse(value), null, 2));\r\n  };\r\n\r\n  const minify = () => {\r\n    if (result.ok) setValue(JSON.stringify(JSON.parse(value)));\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-md flex-col gap-2\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <Label htmlFor=\"json-input\">Request body</Label>\r\n        <div className=\"flex gap-1\">\r\n          <Button variant=\"ghost\" size=\"sm\" onClick={minify} disabled={!result.ok}>\r\n            Minify\r\n          </Button>\r\n          <Button variant=\"outline\" size=\"sm\" onClick={format} disabled={!result.ok}>\r\n            <Braces />\r\n            Format\r\n          </Button>\r\n        </div>\r\n      </div>\r\n      <Textarea\r\n        id=\"json-input\"\r\n        value={value}\r\n        onChange={(event) => setValue(event.target.value)}\r\n        spellCheck={false}\r\n        aria-invalid={!result.ok || undefined}\r\n        aria-describedby=\"json-status\"\r\n        className=\"min-h-44 font-mono text-xs md:text-xs\"\r\n      />\r\n      <p\r\n        id=\"json-status\"\r\n        aria-live=\"polite\"\r\n        className={`flex items-center gap-1.5 text-xs ${result.ok ? \"text-muted-foreground\" : \"text-destructive\"}`}\r\n      >\r\n        {result.ok ? (\r\n          <>\r\n            <Check className=\"size-3.5 text-teal-400\" aria-hidden=\"true\" />\r\n            Valid JSON\r\n          </>\r\n        ) : (\r\n          <>\r\n            <AlertCircle className=\"size-3.5\" aria-hidden=\"true\" />\r\n            {result.error}\r\n          </>\r\n        )}\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default TextareaDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/textarea/textarea-13.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "time-picker-04",
+  "title": "Time Picker 04 - Time Range",
+  "description": "Start and end time selects with a live duration badge and validation when the end is before the start",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge",
+    "field",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/time-picker/time-picker-04.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { ArrowRightIcon, TimerIcon } from \"lucide-react\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Field, FieldError, FieldLabel } from \"@/components/ui/field\";\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/components/ui/select\";\r\n\r\n// 30 minute steps from 8:00 AM to 8:00 PM\r\nconst options = Array.from({ length: 25 }, (_, i) => {\r\n  const total = 8 * 60 + i * 30;\r\n  const hours = Math.floor(total / 60);\r\n  const minutes = total % 60;\r\n  const hour12 = hours % 12 === 0 ? 12 : hours % 12;\r\n  const label = `${hour12}:${String(minutes).padStart(2, \"0\")} ${hours < 12 ? \"AM\" : \"PM\"}`;\r\n  return { label, total };\r\n});\r\n\r\nconst toMinutes = (label: string) =>\r\n  options.find((option) => option.label === label)?.total ?? 0;\r\n\r\nconst formatDuration = (minutes: number) => {\r\n  const h = Math.floor(minutes / 60);\r\n  const m = minutes % 60;\r\n  if (h && m) return `${h}h ${m}m`;\r\n  return h ? `${h}h` : `${m}m`;\r\n};\r\n\r\ntype TimeSelectProps = {\r\n  id: string;\r\n  label: string;\r\n  value: string;\r\n  invalid?: boolean;\r\n  onChange: (value: string) => void;\r\n};\r\n\r\nconst TimeSelect = ({ id, label, value, invalid, onChange }: TimeSelectProps) => (\r\n  <Field data-invalid={invalid} className=\"flex-1\">\r\n    <FieldLabel htmlFor={id}>{label}</FieldLabel>\r\n    <Select value={value} onValueChange={(next) => next && onChange(next)}>\r\n      <SelectTrigger id={id} aria-invalid={invalid} className=\"w-full cursor-pointer tabular-nums\">\r\n        <SelectValue />\r\n      </SelectTrigger>\r\n      <SelectContent>\r\n        {options.map((option) => (\r\n          <SelectItem key={option.label} value={option.label} className=\"tabular-nums\">\r\n            {option.label}\r\n          </SelectItem>\r\n        ))}\r\n      </SelectContent>\r\n    </Select>\r\n  </Field>\r\n);\r\n\r\nexport default function TimePicker04() {\r\n  const [start, setStart] = useState(\"9:00 AM\");\r\n  const [end, setEnd] = useState(\"11:30 AM\");\r\n\r\n  const duration = toMinutes(end) - toMinutes(start);\r\n  const invalid = duration <= 0;\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-4 rounded-xl border border-border p-4\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <span className=\"text-sm font-semibold text-foreground\">Working hours</span>\r\n        <Badge\r\n          variant={invalid ? \"destructive\" : \"secondary\"}\r\n          className=\"tabular-nums\"\r\n          aria-live=\"polite\"\r\n        >\r\n          <TimerIcon />\r\n          {invalid ? \"Invalid range\" : formatDuration(duration)}\r\n        </Badge>\r\n      </div>\r\n\r\n      <div className=\"flex items-end gap-2\">\r\n        <TimeSelect id=\"time-picker-04-start\" label=\"Start\" value={start} onChange={setStart} />\r\n        <ArrowRightIcon aria-hidden=\"true\" className=\"mb-2.5 size-4 shrink-0 text-muted-foreground\" />\r\n        <TimeSelect\r\n          id=\"time-picker-04-end\"\r\n          label=\"End\"\r\n          value={end}\r\n          invalid={invalid}\r\n          onChange={setEnd}\r\n        />\r\n      </div>\r\n\r\n      {invalid && <FieldError>End time must be after the start time.</FieldError>}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/time-picker/time-picker-04.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

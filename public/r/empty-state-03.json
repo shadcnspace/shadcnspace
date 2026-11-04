@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-state-03",
+  "title": "Empty State 03 - Chart Data Empty State",
+  "description": "A simple card-based empty state with a chart-themed icon, title, description, and primary connection CTA button, perfect for dashboards before metric data sources are connected.",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "empty",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/blocks/empty-state-03/page.tsx",
+      "content": "import EmptyState from \"@/components/shadcn-space/blocks/empty-state-03/empty-state\";\r\n\r\nconst Page = () => {\r\n  return <EmptyState />;\r\n};\r\n\r\nexport default Page;\r\n",
+      "type": "registry:page",
+      "target": "app/empty-state-03/page.tsx"
+    },
+    {
+      "path": "src/components/shadcn-space/blocks/empty-state-03/empty-state.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useRef } from \"react\";\r\nimport type { ReactNode } from \"react\";\r\nimport { motion, useInView, type Variants } from \"motion/react\";\r\nimport { Plug, ChartNoAxesColumn } from \"lucide-react\";\r\nimport {\r\n  Empty,\r\n  EmptyHeader,\r\n  EmptyMedia,\r\n  EmptyTitle,\r\n  EmptyDescription,\r\n  EmptyContent,\r\n} from \"@/components/ui/empty\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Card, CardContent } from \"@/components/ui/card\";\r\n\r\ninterface EmptyStateAction {\r\n  label: string;\r\n  icon?: ReactNode;\r\n  onClick?: () => void;\r\n}\r\n\r\ninterface EmptyStateProps {\r\n  icon?: ReactNode;\r\n  title?: string;\r\n  description?: string;\r\n  primaryAction?: EmptyStateAction;\r\n  secondaryAction?: EmptyStateAction;\r\n}\r\n\r\nconst EASE = [0.16, 1, 0.3, 1] as const;\r\n\r\nconst containerVariants: Variants = {\r\n  hidden: {},\r\n  show: {\r\n    transition: {\r\n      staggerChildren: 0.08,\r\n      delayChildren: 0.05,\r\n    },\r\n  },\r\n};\r\n\r\nconst itemVariants: Variants = {\r\n  hidden: { opacity: 0, y: 12 },\r\n  show: {\r\n    opacity: 1,\r\n    y: 0,\r\n    transition: { duration: 0.5, ease: EASE },\r\n  },\r\n};\r\n\r\nconst EmptyState = ({\r\n  icon = <ChartNoAxesColumn />,\r\n  title = \"No chart data available\",\r\n  description = \"Connect a data source to start visualizing your metrics here.\",\r\n  primaryAction = {\r\n    label: \"Connect data source\",\r\n    icon: <Plug className=\"size-3.5\" />,\r\n  },\r\n  secondaryAction,\r\n}: EmptyStateProps) => {\r\n  const ref = useRef<HTMLDivElement>(null);\r\n  const isInView = useInView(ref, { once: true, amount: 0.2 });\r\n\r\n  return (\r\n    <div ref={ref} className=\"w-full py-10 sm:py-16 px-4 flex items-center justify-center\">\r\n      <motion.div\r\n        variants={containerVariants}\r\n        initial=\"hidden\"\r\n        animate={isInView ? \"show\" : \"hidden\"}\r\n        className=\"w-full max-w-md animate-in fade-in-0 duration-300\"\r\n      >\r\n        <Card className=\"w-full bg-background ring-0 border-2 border-dashed\">\r\n          <CardContent className=\"p-6\">\r\n            <Empty>\r\n              <EmptyHeader>\r\n                <motion.div variants={itemVariants}>\r\n                  <EmptyMedia variant=\"icon\">\r\n                    {icon}\r\n                  </EmptyMedia>\r\n                </motion.div>\r\n                <motion.div\r\n                  variants={itemVariants}\r\n                  className=\"flex flex-col gap-1.5\"\r\n                >\r\n                  <EmptyTitle className=\"text-base font-semibold text-card-foreground\">\r\n                    {title}\r\n                  </EmptyTitle>\r\n                  <EmptyDescription className=\"text-sm\">\r\n                    {description}\r\n                  </EmptyDescription>\r\n                </motion.div>\r\n              </EmptyHeader>\r\n\r\n              <motion.div variants={itemVariants} className=\"w-full\">\r\n                <EmptyContent>\r\n                  <div className=\"flex items-center gap-2\">\r\n                    {secondaryAction && (\r\n                      <motion.div\r\n                        whileHover={{ scale: 1.03 }}\r\n                        whileTap={{ scale: 0.97 }}\r\n                        transition={{ duration: 0.2, ease: EASE }}\r\n                        className=\"inline-flex\"\r\n                      >\r\n                        <Button\r\n                          variant=\"outline\"\r\n                          onClick={secondaryAction.onClick}\r\n                          className=\"gap-1.5 cursor-pointer\"\r\n                        >\r\n                          {secondaryAction.icon}\r\n                          {secondaryAction.label}\r\n                        </Button>\r\n                      </motion.div>\r\n                    )}\r\n                    {primaryAction && (\r\n                      <motion.div\r\n                        whileHover={{ scale: 1.03 }}\r\n                        whileTap={{ scale: 0.97 }}\r\n                        transition={{ duration: 0.2, ease: EASE }}\r\n                        className=\"inline-flex\"\r\n                      >\r\n                        <Button\r\n                          onClick={primaryAction.onClick}\r\n                          className=\"cursor-pointer gap-1.5 hover:bg-primary/80\"\r\n                        >\r\n                          {primaryAction.icon}\r\n                          {primaryAction.label}\r\n                        </Button>\r\n                      </motion.div>\r\n                    )}\r\n                  </div>\r\n                </EmptyContent>\r\n              </motion.div>\r\n            </Empty>\r\n          </CardContent>\r\n        </Card>\r\n      </motion.div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default EmptyState;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/blocks/empty-state-03/empty-state.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

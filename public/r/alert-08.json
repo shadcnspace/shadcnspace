@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-08",
+  "title": "Alert 08 - Evaporate Dismiss",
+  "description": "Alert that dissolves away like evaporating water when dismissed, fading and blurring out with rising vapor wisps, built with motion/react",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-08.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { motion, AnimatePresence } from \"motion/react\";\r\nimport { InfoIcon, XIcon } from \"lucide-react\";\r\nimport {\r\n  Alert,\r\n  AlertTitle,\r\n  AlertDescription,\r\n} from \"@/components/ui/alert\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\ninterface AlertEvaporateDemoProps {\r\n  title?: string;\r\n  description?: string;\r\n}\r\n\r\nconst VAPOR = [\r\n  { left: \"10%\", size: 9, delay: 0, duration: 0.9, travel: -32 },\r\n  { left: \"26%\", size: 6, delay: 0.05, duration: 1.05, travel: -46 },\r\n  { left: \"44%\", size: 11, delay: 0.02, duration: 0.85, travel: -28 },\r\n  { left: \"60%\", size: 7, delay: 0.09, duration: 1.1, travel: -50 },\r\n  { left: \"76%\", size: 9, delay: 0.03, duration: 0.95, travel: -38 },\r\n  { left: \"90%\", size: 6, delay: 0.07, duration: 1, travel: -42 },\r\n];\r\n\r\nconst AlertEvaporateDemo = ({\r\n  title = \"New update available\",\r\n  description = \"A new version of the app is ready to install. Restart to apply the update.\",\r\n}: AlertEvaporateDemoProps) => {\r\n  const [visible, setVisible] = useState(true);\r\n\r\n  return (\r\n    <div className=\"w-full max-w-md\">\r\n      <AnimatePresence>\r\n        {visible && (\r\n          <motion.div\r\n            initial={{ opacity: 0, y: -10 }}\r\n            animate={{ opacity: 1, y: 0 }}\r\n            exit={{\r\n              opacity: 0,\r\n              scale: 1.03,\r\n              y: -8,\r\n              filter: \"blur(6px)\",\r\n              transition: { duration: 0.6, ease: \"easeOut\" },\r\n            }}\r\n            transition={{ type: \"spring\", stiffness: 400, damping: 32 }}\r\n            className=\"relative\"\r\n          >\r\n            {VAPOR.map((dot, i) => (\r\n              <motion.span\r\n                key={i}\r\n                initial={{ opacity: 0 }}\r\n                animate={{ opacity: 0 }}\r\n                exit={{\r\n                  opacity: [0, 0.8, 0],\r\n                  y: dot.travel,\r\n                  scale: [0.4, 1, 1.4],\r\n                  filter: [\"blur(0px)\", \"blur(1px)\", \"blur(3px)\"],\r\n                  transition: {\r\n                    duration: dot.duration,\r\n                    delay: dot.delay,\r\n                    ease: \"easeOut\",\r\n                  },\r\n                }}\r\n                className=\"pointer-events-none absolute bottom-2 rounded-full bg-blue-500/70\"\r\n                style={{\r\n                  left: dot.left,\r\n                  width: dot.size,\r\n                  height: dot.size,\r\n                }}\r\n              />\r\n            ))}\r\n\r\n            <Alert className=\"relative flex items-start gap-3 overflow-hidden rounded-xl border-border/60 bg-card py-3.5 pr-10 pl-4\">\r\n              <div className=\"mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-blue-500/10\">\r\n                <InfoIcon className=\"size-4! text-blue-500\" />\r\n              </div>\r\n\r\n              <div className=\"flex min-w-0 flex-1 flex-col gap-1 pt-0.5\">\r\n                <AlertTitle className=\"text-sm font-medium tracking-tight\">\r\n                  {title}\r\n                </AlertTitle>\r\n                <AlertDescription className=\"text-xs text-muted-foreground\">\r\n                  {description}\r\n                </AlertDescription>\r\n              </div>\r\n\r\n              <Button\r\n                variant=\"ghost\"\r\n                size=\"icon-xs\"\r\n                onClick={() => setVisible(false)}\r\n                className=\"absolute top-3 right-3 shrink-0 cursor-pointer rounded-full text-muted-foreground/60 hover:text-foreground\"\r\n              >\r\n                <XIcon className=\"size-3.5\" />\r\n                <span className=\"sr-only\">Dismiss</span>\r\n              </Button>\r\n            </Alert>\r\n          </motion.div>\r\n        )}\r\n      </AnimatePresence>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default AlertEvaporateDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-08.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

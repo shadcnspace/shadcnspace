@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-19",
+  "title": "Alert 19 - Usage Limit",
+  "description": "Usage warning alert with a quota progress bar, used and remaining counts, a reset date, and Upgrade plan and View usage actions.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button",
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-19.tsx",
+      "content": "import { Gauge } from \"lucide-react\";\r\n\r\nimport { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Progress } from \"@/components/ui/progress\";\r\n\r\nconst USED = 9240;\r\nconst LIMIT = 10000;\r\n\r\nconst AlertDemo = () => {\r\n  const percent = Math.round((USED / LIMIT) * 100);\r\n\r\n  return (\r\n    <Alert className=\"w-full max-w-md border-amber-300/50 p-4\">\r\n      <Gauge className=\"text-amber-300!\" />\r\n      <AlertTitle>You have used {percent}% of your API requests</AlertTitle>\r\n      <AlertDescription className=\"flex flex-col gap-3\">\r\n        <span>Requests over the limit will fail until your quota resets on Nov 1.</span>\r\n        <span className=\"flex flex-col gap-1.5\">\r\n          <Progress value={percent} aria-label=\"API requests used\" />\r\n          <span className=\"flex justify-between text-xs tabular-nums\">\r\n            <span>\r\n              {USED.toLocaleString(\"en-US\")} / {LIMIT.toLocaleString(\"en-US\")} requests\r\n            </span>\r\n            <span>{(LIMIT - USED).toLocaleString(\"en-US\")} left</span>\r\n          </span>\r\n        </span>\r\n        <span className=\"flex gap-2\">\r\n          <Button size=\"sm\">Upgrade plan</Button>\r\n          <Button size=\"sm\" variant=\"outline\">\r\n            View usage\r\n          </Button>\r\n        </span>\r\n      </AlertDescription>\r\n    </Alert>\r\n  );\r\n};\r\n\r\nexport default AlertDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-19.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

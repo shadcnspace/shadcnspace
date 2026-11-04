@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-05",
+  "title": "Calendar 05 - Month and Year Select",
+  "description": "Calendar component",
+  "dependencies": [
+    "react-day-picker"
+  ],
+  "registryDependencies": [
+    "calendar",
+    "card",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/calendar/calendar-05.tsx",
+      "content": "\"use client\"\r\n\r\nimport { ChangeEvent, ChangeEventHandler, useState } from \"react\"\r\nimport type { DropdownNavProps, DropdownProps } from \"react-day-picker\"\r\nimport { Calendar } from \"@/components/ui/calendar\"\r\nimport { Card, CardContent } from \"@/components/ui/card\"\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/components/ui/select\"\r\n\r\nconst MonthAndYearCalendar = () => {\r\n  const [date, setDate] = useState<Date | undefined>(new Date())\r\n\r\n  const handleCalendarChange = (\r\n    _value: string | number,\r\n    _e: ChangeEventHandler<HTMLSelectElement>\r\n  ) => {\r\n    const _event = {\r\n      target: {\r\n        value: String(_value),\r\n      },\r\n    } as ChangeEvent<HTMLSelectElement>\r\n    _e(_event)\r\n  }\r\n\r\n  return (\r\n    <Card className=\"p-0\">\r\n      <CardContent className=\"p-0\">\r\n        <Calendar\r\n          captionLayout=\"dropdown\"\r\n          classNames={{\r\n            month_caption: \"mx-0\",\r\n          }}\r\n          components={{\r\n            Dropdown: (props: DropdownProps) => {\r\n              return (\r\n                <Select\r\n                  onValueChange={(value) => {\r\n                    if (props.onChange && value !== null) {\r\n                      handleCalendarChange(value, props.onChange)\r\n                    }\r\n                  }}\r\n                  value={String(props.value)}\r\n                >\r\n                  <SelectTrigger className=\"first:grow\">\r\n                    <SelectValue>\r\n                      {\r\n                        props.options?.find(\r\n                          (option) => option.value === props.value\r\n                        )?.label\r\n                      }\r\n                    </SelectValue>\r\n                  </SelectTrigger>\r\n                  <SelectContent align=\"start\">\r\n                    {props.options?.map((option) => (\r\n                      <SelectItem\r\n                        disabled={option.disabled}\r\n                        key={option.value}\r\n                        value={String(option.value)}\r\n                      >\r\n                        {option.label}\r\n                      </SelectItem>\r\n                    ))}\r\n                  </SelectContent>\r\n                </Select>\r\n              )\r\n            },\r\n            DropdownNav: (props: DropdownNavProps) => {\r\n              return (\r\n                <div className=\"flex w-full items-center gap-2\">\r\n                  {props.children}\r\n                </div>\r\n              )\r\n            },\r\n          }}\r\n          defaultMonth={new Date()}\r\n          hideNavigation\r\n          mode=\"single\"\r\n          onSelect={setDate}\r\n          selected={date}\r\n          startMonth={new Date(1980, 6)}\r\n        />\r\n      </CardContent>\r\n    </Card>\r\n  )\r\n}\r\n\r\nexport default MonthAndYearCalendar\r\n\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/calendar/calendar-05.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

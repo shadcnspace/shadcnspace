@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-10",
+  "title": "Calendar 10 - Right Side Navigation",
+  "description": "Calendar component",
+  "dependencies": [
+    "lucide-react",
+    "react-day-picker"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/calendar/calendar-10.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { type ChevronProps } from 'react-day-picker'\r\nimport { Calendar } from '@/components/ui/calendar'\r\nimport { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react'\r\n\r\nconst RightSideNavigationDemo = () => {\r\n  const [date, setDate] = useState<Date | undefined>(new Date())\r\n\r\n  return (\r\n    <>\r\n      <Calendar\r\n        mode='single'\r\n        selected={date}\r\n        defaultMonth={date}\r\n        onSelect={setDate}\r\n        className='rounded-md border'\r\n        classNames={{\r\n          month_caption: 'flex items-center h-8 justify-start',\r\n          nav: 'flex justify-end absolute w-full items-center'\r\n        }}\r\n        components={{\r\n          Chevron: ({ orientation }: ChevronProps) => {\r\n            if (orientation === 'left') return <ArrowLeftIcon className='size-4' />\r\n            if (orientation === 'right') return <ArrowRightIcon className='size-4' />\r\n            return <></>\r\n          }\r\n        }}\r\n      />\r\n    </>\r\n  )\r\n}\r\n\r\nexport default RightSideNavigationDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/calendar/calendar-10.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-06",
+  "title": "Pagination 06 - Load More",
+  "description": "Photo grid with a Load more button, loading spinner, progress bar, item count, an end of list message, and focus moved to the new items.",
+  "dependencies": [],
+  "registryDependencies": [
+    "button",
+    "progress",
+    "spinner"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/pagination/pagination-06.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, type MouseEvent } from \"react\";\r\nimport { ArrowLeft, ArrowRight } from \"lucide-react\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst pages = [\r\n  { title: \"Introduction\", section: \"Getting started\" },\r\n  { title: \"Installation\", section: \"Getting started\" },\r\n  { title: \"Theming\", section: \"Customization\" },\r\n  { title: \"Dark mode\", section: \"Customization\" },\r\n  { title: \"CLI\", section: \"Reference\" },\r\n];\r\n\r\nconst cardClass =\r\n  \"group flex flex-1 flex-col gap-1 rounded-lg border border-border p-4 transition-colors hover:border-foreground/30 hover:bg-muted/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring\";\r\n\r\nconst PaginationDemo = () => {\r\n  const [current, setCurrent] = useState(2);\r\n  const previous = pages[current - 1];\r\n  const next = pages[current + 1];\r\n\r\n  const go = (index: number) => (event: MouseEvent) => {\r\n    event.preventDefault();\r\n    setCurrent(index);\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xl flex-col gap-4\">\r\n      <div className=\"rounded-lg border border-dashed border-border p-4 text-center\">\r\n        <p className=\"text-xs text-muted-foreground\">{pages[current].section}</p>\r\n        <p className=\"text-base font-medium text-foreground\">{pages[current].title}</p>\r\n      </div>\r\n\r\n      <nav aria-label=\"Docs pages\" className=\"flex flex-col gap-3 sm:flex-row\">\r\n        {previous ? (\r\n          <a href=\"#\" onClick={go(current - 1)} rel=\"prev\" className={cardClass}>\r\n            <span className=\"flex items-center gap-1.5 text-xs text-muted-foreground\">\r\n              <ArrowLeft className=\"size-3.5 transition-transform group-hover:-translate-x-0.5 motion-reduce:transition-none\" />\r\n              Previous\r\n            </span>\r\n            <span className=\"text-sm font-medium text-foreground\">{previous.title}</span>\r\n          </a>\r\n        ) : (\r\n          <span className=\"hidden flex-1 sm:block\" />\r\n        )}\r\n        {next ? (\r\n          <a href=\"#\" onClick={go(current + 1)} rel=\"next\" className={cn(cardClass, \"items-end text-right\")}>\r\n            <span className=\"flex items-center gap-1.5 text-xs text-muted-foreground\">\r\n              Next\r\n              <ArrowRight className=\"size-3.5 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none\" />\r\n            </span>\r\n            <span className=\"text-sm font-medium text-foreground\">{next.title}</span>\r\n          </a>\r\n        ) : (\r\n          <span className=\"hidden flex-1 sm:block\" />\r\n        )}\r\n      </nav>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default PaginationDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/pagination/pagination-06.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

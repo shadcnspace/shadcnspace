@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio-04",
+  "title": "Aspect Ratio 04 - Video Thumbnail",
+  "description": "A 16:9 video thumbnail with a play button overlay and duration badge.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "aspect-ratio"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/aspect-ratio/aspect-ratio-04.tsx",
+      "content": "import { PlayIcon } from \"lucide-react\";\r\n\r\nimport { AspectRatio } from \"@/components/ui/aspect-ratio\";\r\n\r\nconst VideoThumbnailAspectRatioDemo = () => {\r\n  return (\r\n    <div className=\"flex w-full max-w-sm items-center justify-center px-4\">\r\n      <AspectRatio\r\n        ratio={16 / 9}\r\n        className=\"group relative cursor-pointer overflow-hidden rounded-lg bg-muted\"\r\n      >\r\n        <img\r\n          src=\"https://images.shadcnspace.com/assets/blog/blog-img9.jpg\"\r\n          alt=\"Video thumbnail\"\r\n          className=\"h-full w-full object-cover\"\r\n        />\r\n        <div className=\"absolute inset-0 bg-black/30 transition-colors group-hover:bg-black/40\" />\r\n        <div className=\"absolute inset-0 flex items-center justify-center\">\r\n          <span className=\"flex size-12 items-center justify-center rounded-full bg-white/90 shadow-md transition-transform group-hover:scale-110\">\r\n            <PlayIcon className=\"ml-0.5 size-5 fill-black text-black\" />\r\n          </span>\r\n        </div>\r\n        <span className=\"absolute right-2 bottom-2 rounded bg-black/70 px-1.5 py-0.5 text-xs font-medium text-white\">\r\n          4:12\r\n        </span>\r\n      </AspectRatio>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default VideoThumbnailAspectRatioDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/aspect-ratio/aspect-ratio-04.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

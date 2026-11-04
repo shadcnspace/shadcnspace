@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shine-border-06",
+  "title": "Shine Border 06 - Focus Frame",
+  "description": "A camera focus-lock shine border with pulsing corner brackets instead of a continuous glowing ring, wrapping a simple centered card.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/shine-border/shine-border-06.tsx",
+      "content": "import React, { ReactNode } from \"react\";\r\nimport { Card, CardContent } from \"@/components/ui/card\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Crosshair } from \"lucide-react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\n/* FocusFrameBorder */\r\n\r\ntype FocusFrameBorderProps = {\r\n  children: ReactNode;\r\n  className?: string;\r\n  duration?: number;\r\n  color?: string;\r\n};\r\n\r\nconst corners = [\r\n  {\r\n    position: \"top-0 left-0\",\r\n    edges: \"border-t-1 border-l-1 rounded-tl-xl\",\r\n    delay: 0,\r\n  },\r\n  {\r\n    position: \"top-0 right-0\",\r\n    edges: \"border-t-1 border-r-1 rounded-tr-xl\",\r\n    delay: 0.3,\r\n  },\r\n  {\r\n    position: \"bottom-0 left-0\",\r\n    edges: \"border-b-1 border-l-1 rounded-bl-xl\",\r\n    delay: 0.6,\r\n  },\r\n  {\r\n    position: \"bottom-0 right-0\",\r\n    edges: \"border-b-1 border-r-1 rounded-br-xl\",\r\n    delay: 0.9,\r\n  },\r\n];\r\n\r\nconst FocusFrameBorder = ({\r\n  children,\r\n  className,\r\n  duration = 2.4,\r\n  color = \"var(--color-blue-500)\",\r\n}: FocusFrameBorderProps) => {\r\n  return (\r\n    <>\r\n      <style>{`\r\n        @keyframes focus-pulse {\r\n          0%, 100% { opacity: 0.6; }\r\n          50% { opacity: 1; }\r\n        }\r\n        .animate-focus-pulse {\r\n          animation: focus-pulse var(--duration, 2.4s) ease-in-out infinite;\r\n        }\r\n      `}</style>\r\n      <div className={cn(\"relative rounded-2xl\", className)}>\r\n        {/* Pulsing corner brackets */}\r\n        {corners.map((corner) => (\r\n          <div\r\n            key={corner.position}\r\n            className={cn(\r\n              \"absolute z-20 size-10 pointer-events-none animate-focus-pulse\",\r\n              corner.position,\r\n              corner.edges,\r\n            )}\r\n            style={\r\n              {\r\n                borderColor: color,\r\n                filter: `drop-shadow(0 0 6px ${color}) drop-shadow(0 0 12px ${color})`,\r\n                animationDelay: `${corner.delay}s`,\r\n                \"--duration\": `${duration}s`,\r\n              } as React.CSSProperties\r\n            }\r\n          />\r\n        ))}\r\n\r\n        {/* Content Layer */}\r\n        <div className=\"relative z-10 rounded-xl bg-card border border-border/80 overflow-hidden h-full\">\r\n          {children}\r\n        </div>\r\n      </div>\r\n    </>\r\n  );\r\n};\r\n\r\n/* Simple Centered Card */\r\n\r\nconst FocusCard = () => {\r\n  return (\r\n    <Card className=\"relative h-full rounded-[inherit] border-0 ring-0 bg-transparent p-0 gap-0!\">\r\n      <CardContent className=\"p-10 flex flex-col items-center text-center gap-3\">\r\n        <div className=\"size-12 rounded-full bg-primary/10 flex items-center justify-center\">\r\n          <Crosshair className=\"size-6 text-primary\" />\r\n        </div>\r\n        <Badge variant=\"secondary\">Focus Frame</Badge>\r\n        <h3 className=\"text-lg font-semibold text-foreground\">\r\n          Locked into focus\r\n        </h3>\r\n        <p className=\"text-sm text-muted-foreground max-w-60\">\r\n          Corner brackets pulse in sequence like a camera locking focus.\r\n        </p>\r\n      </CardContent>\r\n    </Card>\r\n  );\r\n};\r\n\r\n/* Demo */\r\n\r\nexport default function ShineBorderDemo() {\r\n  return (\r\n    <FocusFrameBorder\r\n      duration={2.4}\r\n      color=\"var(--color-blue-500)\"\r\n      className=\"w-full max-w-sm\"\r\n    >\r\n      <FocusCard />\r\n    </FocusFrameBorder>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/shine-border/shine-border-06.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

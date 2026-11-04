@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-19",
+  "title": "Button 19 - Interactive Hover",
+  "description": "Interactive Hover button",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-19.tsx",
+      "content": "import React from \"react\";\r\nimport { ArrowRight } from \"lucide-react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface InteractiveHoverButtonProps\r\n  extends React.ButtonHTMLAttributes<HTMLButtonElement> {\r\n  text?: string;\r\n}\r\n\r\nconst InteractiveHoverButton = React.forwardRef<\r\n  HTMLButtonElement,\r\n  InteractiveHoverButtonProps\r\n>(({ text = \"Button\", className, ...props }, ref) => {\r\n  return (\r\n    <Button\r\n      ref={ref}\r\n      variant=\"outline\"\r\n      className={cn(\r\n        \"group relative h-auto w-fit cursor-pointer overflow-hidden rounded-full p-2 px-5 text-center font-semibold\",\r\n        className\r\n      )}\r\n      {...props}\r\n    >\r\n      <span className=\"inline-block translate-x-0 pl-2 transition-all duration-300 group-hover:translate-x-full group-hover:opacity-0\">\r\n        {text}\r\n      </span>\r\n      <div className=\"absolute top-0 z-10 flex h-full w-full translate-x-full items-center justify-center gap-2 text-primary-foreground opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100\">\r\n        <span>{text}</span>\r\n        <ArrowRight />\r\n      </div>\r\n      <div className=\"absolute left-3 top-1/2 h-2 w-2 -translate-y-1/2 scale-100 rounded-full bg-primary transition-all duration-300 group-hover:left-0 group-hover:top-0 group-hover:h-full group-hover:w-full group-hover:translate-y-0 group-hover:scale-[1.8]\" />\r\n    </Button>\r\n  );\r\n});\r\n\r\nexport default InteractiveHoverButton\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-19.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

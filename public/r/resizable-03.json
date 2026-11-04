@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "resizable-03",
+  "title": "Resizable 03 - Vertical Split",
+  "description": "A simple vertical resizable layout with a header and content panel.",
+  "dependencies": [],
+  "registryDependencies": [
+    "resizable"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/resizable/resizable-03.tsx",
+      "content": "import {\r\n  ResizableHandle,\r\n  ResizablePanel,\r\n  ResizablePanelGroup,\r\n} from \"@/components/ui/resizable\";\r\n\r\nexport default function VerticalResizable() {\r\n  return (\r\n    <ResizablePanelGroup\r\n      orientation=\"vertical\"\r\n      className=\"min-h-75 max-w-lg rounded-lg border\"\r\n    >\r\n      <ResizablePanel defaultSize=\"25%\">\r\n        <div className=\"flex h-full items-center justify-center p-6\">\r\n          <span className=\"text-sm font-medium\">Header</span>\r\n        </div>\r\n      </ResizablePanel>\r\n      <ResizableHandle withHandle />\r\n      <ResizablePanel defaultSize=\"75%\">\r\n        <div className=\"flex h-full items-center justify-center p-6\">\r\n          <span className=\"text-sm font-medium\">Content</span>\r\n        </div>\r\n      </ResizablePanel>\r\n    </ResizablePanelGroup>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/resizable/resizable-03.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

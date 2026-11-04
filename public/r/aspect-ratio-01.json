@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio-01",
+  "title": "Aspect Ratio 01 - Default",
+  "description": "A simple image constrained to a 16:9 aspect ratio.",
+  "dependencies": [],
+  "registryDependencies": [
+    "aspect-ratio"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/aspect-ratio/aspect-ratio-01.tsx",
+      "content": "import { AspectRatio } from \"@/components/ui/aspect-ratio\";\r\n\r\nconst DefaultAspectRatioDemo = () => {\r\n  return (\r\n    <div className=\"flex w-full max-w-sm items-center justify-center px-4\">\r\n      <AspectRatio\r\n        ratio={16 / 9}\r\n        className=\"overflow-hidden rounded-lg bg-muted\"\r\n      >\r\n        <img\r\n          src=\"https://images.shadcnspace.com/assets/gallery/destinations-1.webp\"\r\n          alt=\"Landscape photo\"\r\n          className=\"h-full w-full object-cover\"\r\n        />\r\n      </AspectRatio>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default DefaultAspectRatioDemo;",
+      "type": "registry:component",
+      "target": "components/shadcn-space/aspect-ratio/aspect-ratio-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

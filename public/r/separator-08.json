@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-08",
+  "title": "Separator 08 - With Icon",
+  "description": "Horizontal separator with centered icon",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/separator/separator-08.tsx",
+      "content": "import { Separator } from \"@/components/ui/separator\";\r\nimport { Sparkles } from \"lucide-react\";\r\n\r\nconst WithIconDemo = () => {\r\n  return (\r\n    <div className=\"w-full max-w-sm\">\r\n      <div className=\"flex items-center gap-4\">\r\n        <Separator className=\"flex-1 border-border border-b-2 border-dashed bg-transparent\" />\r\n        <div className=\"shrink-0 rounded-full bg-orange-400/20 p-1.5\">\r\n          <Sparkles className=\"size-4 text-orange-400\" />\r\n        </div>\r\n        <Separator className=\"flex-1 border-border border-b-2 border-dashed bg-transparent\" />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default WithIconDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/separator/separator-08.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

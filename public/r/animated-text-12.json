@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-text-12",
+  "title": "Animated Text 12 - Origami Fold",
+  "description": "Paper letters hinge open on staggered folds, then tuck shut",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/animated-text/animated-text-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport type { CSSProperties } from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nexport interface OrigamiFoldProps {\r\n  text?: string;\r\n  className?: string;\r\n  inkColor?: string;\r\n  accentColor?: string;\r\n  secondaryColor?: string;\r\n}\r\n\r\nconst ORIGAMI_KEYFRAMES = `\r\n@keyframes origami-fold {\r\n  0%, 8% {\r\n    transform: rotateY(-92deg) translateZ(0);\r\n    opacity: 0;\r\n    color: color-mix(in srgb, var(--origami-ink) 55%, var(--color-black));\r\n    text-shadow: none;\r\n    filter: brightness(0.55);\r\n  }\r\n  22% {\r\n    transform: rotateY(8deg) translateZ(6px);\r\n    opacity: 1;\r\n    color: var(--origami-ink);\r\n    text-shadow: 4px 0 10px color-mix(in srgb, var(--origami-accent) 35%, transparent);\r\n    filter: brightness(1.08);\r\n  }\r\n  30%, 58% {\r\n    transform: rotateY(0deg) translateZ(0);\r\n    opacity: 1;\r\n    color: var(--origami-ink);\r\n    text-shadow: none;\r\n    filter: brightness(1);\r\n  }\r\n  72% {\r\n    transform: rotateY(-12deg) translateZ(4px);\r\n    opacity: 1;\r\n    color: var(--origami-accent-2);\r\n    text-shadow: -3px 0 8px color-mix(in srgb, var(--origami-accent-2) 30%, transparent);\r\n    filter: brightness(1.05);\r\n  }\r\n  86%, 100% {\r\n    transform: rotateY(92deg) translateZ(0);\r\n    opacity: 0;\r\n    color: color-mix(in srgb, var(--origami-ink) 55%, var(--color-black));\r\n    text-shadow: none;\r\n    filter: brightness(0.55);\r\n  }\r\n}\r\n`;\r\n\r\nexport function OrigamiFold({\r\n  text = \"SHADCN\",\r\n  className,\r\n  inkColor,\r\n  accentColor = \"var(--color-orange-400)\",\r\n  secondaryColor = \"var(--color-orange-400)\",\r\n}: OrigamiFoldProps) {\r\n  const style = {\r\n    \"--origami-ink\": inkColor ?? \"currentColor\",\r\n    \"--origami-accent\": accentColor,\r\n    \"--origami-accent-2\": secondaryColor,\r\n  } as CSSProperties;\r\n\r\n  return (\r\n    <>\r\n      <style dangerouslySetInnerHTML={{ __html: ORIGAMI_KEYFRAMES }} />\r\n      <span\r\n        role=\"img\"\r\n        aria-label={text}\r\n        className={cn(\r\n          \"inline-flex font-medium tracking-widest text-(--origami-ink) perspective-[640px] transform-3d\",\r\n          className,\r\n        )}\r\n        style={style}\r\n      >\r\n        {Array.from(text).map((char, i) => (\r\n          <span\r\n            key={`${text}-${i}`}\r\n            aria-hidden=\"true\"\r\n            className=\"inline-block origin-left backface-hidden transform-3d animate-[origami-fold_3.8s_cubic-bezier(0.4,0,0.2,1)_infinite] [animation-delay:calc(var(--fold-index)*0.11s)] motion-reduce:animate-none\"\r\n            style={{ \"--fold-index\": i } as CSSProperties}\r\n          >\r\n            {char === \" \" ? \"\\u00A0\" : char}\r\n          </span>\r\n        ))}\r\n      </span>\r\n    </>\r\n  );\r\n}\r\n\r\nconst OrigamiFoldDemo = () => {\r\n  return <OrigamiFold text=\"SHADCN\" className=\"text-3xl sm:text-4xl\" />;\r\n};\r\n\r\nexport default OrigamiFoldDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/animated-text/animated-text-12.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,29 @@
+@keyframes orbit {
+  0% {
+    transform: rotate(var(--angle, 0deg)) translateY(var(--radius, 50px))
+      rotate(calc(var(--angle, 0deg) * -1));
+  }
+  100% {
+    transform: rotate(calc(var(--angle, 0deg) + 360deg))
+      translateY(var(--radius, 50px))
+      rotate(calc(var(--angle, 0deg) * -1 - 360deg));
+  }
+}
+
+/* Orbit animation class */
+.animate-orbit {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform-origin: center center;
+  width: var(--icon-size, 30px);
+  height: var(--icon-size, 30px);
+  animation: orbit var(--duration, 20s) linear infinite;
+}
+
+/* Optional reverse animation */
+.animate-orbit.reverse {
+  animation-direction: reverse;
+}

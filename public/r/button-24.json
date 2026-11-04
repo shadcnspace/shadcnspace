@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-24",
+  "title": "Button 24 - Copy Button",
+  "description": "Animated copy button component with spring transitions",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-24.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { CheckIcon, CopyIcon } from \"lucide-react\";\r\nimport { motion, AnimatePresence } from \"motion/react\";\r\n\r\nconst MotionButton = motion.create(Button);\r\nconst MotionCopyIcon = motion.create(CopyIcon);\r\nconst MotionCheckIcon = motion.create(CheckIcon);\r\n\r\nconst copyIconVariants = {\r\n  initial: { rotate: 0, scale: 1, y: 0 },\r\n  hover: {\r\n    rotate: [0, -8, 8, -4, 0],\r\n    scale: 1.1,\r\n    y: -0.5,\r\n    transition: { duration: 0.4, ease: \"easeInOut\" },\r\n  },\r\n};\r\n\r\nconst checkIconVariants = {\r\n  initial: { scale: 0, rotate: -30 },\r\n  animate: {\r\n    scale: [0, 1.3, 0.95, 1],\r\n    rotate: 0,\r\n    transition: { duration: 0.4, ease: \"easeOut\" },\r\n  },\r\n};\r\n\r\nconst CopyButtonDemo = () => {\r\n  const [copied, setCopied] = useState<boolean>(false);\r\n\r\n  const handleCopy = async () => {\r\n    try {\r\n      await navigator.clipboard.writeText(\"Thank you for using shadcnspace :)\");\r\n      setCopied(true);\r\n      setTimeout(() => setCopied(false), 1500);\r\n    } catch (err) {\r\n      console.error(\"Failed to copy text: \", err);\r\n    }\r\n  };\r\n\r\n  return (\r\n    <MotionButton\r\n      variant=\"outline\"\r\n      layout\r\n      className=\"relative disabled:opacity-100 cursor-pointer min-w-22.5 overflow-hidden\"\r\n      onClick={handleCopy}\r\n      disabled={copied}\r\n      whileHover=\"hover\"\r\n      whileTap=\"tap\"\r\n      variants={{\r\n        hover: { scale: 1.02 },\r\n        tap: { scale: 0.98 },\r\n      }}\r\n      transition={{ type: \"spring\", stiffness: 400, damping: 25 }}\r\n    >\r\n      <AnimatePresence mode=\"wait\" initial={false}>\r\n        {copied ? (\r\n          <motion.span\r\n            key=\"copied\"\r\n            initial={{ opacity: 0, y: 6 }}\r\n            animate={{ opacity: 1, y: 0 }}\r\n            exit={{ opacity: 0, y: -6 }}\r\n            transition={{ duration: 0.15 }}\r\n            className=\"inline-flex items-center gap-1.5 text-teal-400\"\r\n          >\r\n            <MotionCheckIcon\r\n              className=\"size-3.5 stroke-teal-400\"\r\n              variants={checkIconVariants}\r\n              initial=\"initial\"\r\n              animate=\"animate\"\r\n            />\r\n            Copied!\r\n          </motion.span>\r\n        ) : (\r\n          <motion.span\r\n            key=\"copy\"\r\n            initial={{ opacity: 0, y: -6 }}\r\n            animate={{ opacity: 1, y: 0 }}\r\n            exit={{ opacity: 0, y: 6 }}\r\n            transition={{ duration: 0.15 }}\r\n            className=\"inline-flex items-center gap-1.5\"\r\n          >\r\n            <MotionCopyIcon\r\n              className=\"size-3.5\"\r\n              variants={copyIconVariants}\r\n              initial=\"initial\"\r\n            />\r\n            Copy\r\n          </motion.span>\r\n        )}\r\n      </AnimatePresence>\r\n    </MotionButton>\r\n  );\r\n};\r\n\r\nexport default CopyButtonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-24.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

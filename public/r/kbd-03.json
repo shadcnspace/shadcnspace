@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-03",
+  "title": "KBD 03 - KBD in Tooltip",
+  "description": "ButtonGroup with KBD shortcut hints shown inside tooltips on hover, with Mac/Windows platform switch",
+  "dependencies": [],
+  "registryDependencies": [
+    "kbd",
+    "button",
+    "button-group",
+    "tooltip",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/kbd/kbd-03.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { Button } from '@/components/ui/button'\r\nimport { ButtonGroup } from '@/components/ui/button-group'\r\nimport { Kbd } from '@/components/ui/kbd'\r\nimport { Switch } from '@/components/ui/switch'\r\nimport {\r\n  Tooltip,\r\n  TooltipContent,\r\n  TooltipProvider,\r\n  TooltipTrigger,\r\n} from '@/components/ui/tooltip'\r\n\r\ntype Platform = 'mac' | 'win'\r\n\r\nconst KbdTooltipDemo = () => {\r\n  const [platform, setPlatform] = useState<Platform>('mac')\r\n  const isMac = platform === 'mac'\r\n\r\n  return (\r\n    <TooltipProvider>\r\n      <div className=\"flex flex-col items-center gap-4\">\r\n        {/* Platform switch */}\r\n        <div className=\"flex items-center gap-2 text-sm\">\r\n          <span className=\"text-muted-foreground\">MacOS</span>\r\n          <Switch\r\n            checked={platform === 'win'}\r\n            onCheckedChange={(checked) => setPlatform(checked ? 'win' : 'mac')}\r\n          />\r\n          <span className=\"text-muted-foreground\">Windows</span>\r\n        </div>\r\n\r\n        <ButtonGroup>\r\n          <Tooltip>\r\n            <TooltipTrigger render={<Button size=\"sm\" variant=\"outline\">Accept</Button>} />\r\n            <TooltipContent>\r\n              <div className=\"flex items-center gap-2\">\r\n                Accept\r\n                <Kbd>{isMac ? '↵' : 'Enter'}</Kbd>\r\n              </div>\r\n            </TooltipContent>\r\n          </Tooltip>\r\n\r\n          <Tooltip>\r\n            <TooltipTrigger render={<Button size=\"sm\" variant=\"outline\">Cancel</Button>} />\r\n            <TooltipContent>\r\n              <div className=\"flex items-center gap-2\">\r\n                Cancel\r\n                <Kbd>Esc</Kbd>\r\n              </div>\r\n            </TooltipContent>\r\n          </Tooltip>\r\n        </ButtonGroup>\r\n      </div>\r\n    </TooltipProvider>\r\n  )\r\n}\r\n\r\nexport default KbdTooltipDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/kbd/kbd-03.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

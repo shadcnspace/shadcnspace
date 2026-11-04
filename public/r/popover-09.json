@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-09",
+  "title": "Popover 09 - Status Picker",
+  "description": "Avatar-triggered popover to set online/away/busy/offline status with a custom message.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "button",
+    "badge",
+    "input",
+    "label",
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/popover/popover-09.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { CheckIcon } from \"lucide-react\";\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/components/ui/popover\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst statuses = [\r\n  { id: \"online\", label: \"Online\", color: \"bg-teal-400\" },\r\n  { id: \"away\", label: \"Away\", color: \"bg-amber-300\" },\r\n  { id: \"busy\", label: \"Do not disturb\", color: \"bg-red-500\" },\r\n  { id: \"offline\", label: \"Offline\", color: \"bg-zinc-400\" },\r\n] as const;\r\n\r\nconst PopoverStatusPickerDemo = () => {\r\n  const [statusId, setStatusId] =\r\n    useState<(typeof statuses)[number][\"id\"]>(\"online\");\r\n  const [note, setNote] = useState(\"\");\r\n  const activeStatus = statuses.find((status) => status.id === statusId)!;\r\n\r\n  return (\r\n    <Popover>\r\n      <PopoverTrigger\r\n        render={\r\n          <Button\r\n            variant=\"ghost\"\r\n            size=\"icon\"\r\n            className=\"relative size-10 cursor-pointer rounded-full p-0 hover:bg-transparent dark:hover:bg-transparent\"\r\n          />\r\n        }\r\n      >\r\n        <Avatar className=\"size-10\">\r\n          <AvatarImage\r\n            src=\"https://images.shadcnspace.com/assets/profiles/jenny.webp\"\r\n            alt=\"Sophia Carter\"\r\n          />\r\n          <AvatarFallback>SC</AvatarFallback>\r\n        </Avatar>\r\n        <Badge\r\n          aria-hidden=\"true\"\r\n          className={cn(\r\n            \"absolute bottom-0 right-0 size-3 min-w-0 justify-center rounded-full border-2 border-background p-0 ring-0\",\r\n            activeStatus.color,\r\n          )}\r\n        />\r\n        <span className=\"sr-only\">Set your status</span>\r\n      </PopoverTrigger>\r\n\r\n      <PopoverContent className=\"w-64\" align=\"start\">\r\n        <div className=\"flex flex-col gap-1.5\">\r\n          <Label className=\"text-sm font-medium\">Set status</Label>\r\n          <p className=\"text-muted-foreground text-xs\">\r\n            Let your team know your availability.\r\n          </p>\r\n        </div>\r\n\r\n        <div className=\"flex flex-col gap-0.5\">\r\n          {statuses.map((status) => (\r\n            <Button\r\n              key={status.id}\r\n              type=\"button\"\r\n              variant=\"ghost\"\r\n              onClick={() => setStatusId(status.id)}\r\n              className=\"w-full cursor-pointer justify-start gap-2.5 px-2 font-normal\"\r\n            >\r\n              <span\r\n                className={cn(\"size-2.5 shrink-0 rounded-full\", status.color)}\r\n              />\r\n              <span className=\"flex-1 text-left\">{status.label}</span>\r\n              {status.id === statusId && (\r\n                <CheckIcon className=\"size-3.5 text-muted-foreground\" />\r\n              )}\r\n            </Button>\r\n          ))}\r\n        </div>\r\n\r\n        <div className=\"flex flex-col gap-1.5\">\r\n          <Label\r\n            htmlFor=\"status-note\"\r\n            className=\"text-xs text-muted-foreground\"\r\n          >\r\n            Custom message\r\n          </Label>\r\n          <Input\r\n            id=\"status-note\"\r\n            value={note}\r\n            onChange={(e) => setNote(e.target.value)}\r\n            placeholder=\"What's your status?\"\r\n          />\r\n        </div>\r\n      </PopoverContent>\r\n    </Popover>\r\n  );\r\n};\r\n\r\nexport default PopoverStatusPickerDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/popover/popover-09.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

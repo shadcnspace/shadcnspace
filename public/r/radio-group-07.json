@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-07",
+  "title": "Radio Group 07 - Ripple Effect",
+  "description": "Radio Group component",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "label",
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/radio-group/radio-group-07.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\nimport { AnimatePresence, motion } from \"motion/react\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst options = [\r\n  {\r\n    value: \"instant\",\r\n    title: \"Instant\",\r\n    description: \"Notify me the moment something happens.\",\r\n  },\r\n  {\r\n    value: \"daily\",\r\n    title: \"Daily digest\",\r\n    description: \"One summary email every day.\",\r\n  },\r\n  {\r\n    value: \"off\",\r\n    title: \"Off\",\r\n    description: \"Don't send me any notifications.\",\r\n  },\r\n];\r\n\r\nconst RadioGroupRippleDemo = () => {\r\n  const id = useId();\r\n  const [value, setValue] = useState(\"daily\");\r\n\r\n  return (\r\n    <RadioGroup\r\n      value={value}\r\n      onValueChange={(value) => setValue(value as string)}\r\n      className=\"w-full max-w-sm gap-2\"\r\n    >\r\n      {options.map((option) => {\r\n        const checked = value === option.value;\r\n        const itemId = `${id}-${option.value}`;\r\n\r\n        return (\r\n          <motion.div\r\n            key={option.value}\r\n            whileTap={{ scale: 0.98 }}\r\n            className=\"relative overflow-hidden rounded-lg\"\r\n          >\r\n            <Label\r\n              htmlFor={itemId}\r\n              className={cn(\r\n                \"relative flex cursor-pointer items-start gap-3 rounded-lg border p-3 transition-colors\",\r\n                checked\r\n                  ? \"border-primary bg-primary/5\"\r\n                  : \"border-input hover:bg-accent dark:hover:bg-accent/40\",\r\n              )}\r\n            >\r\n              <AnimatePresence>\r\n                {checked && (\r\n                  <motion.span\r\n                    key=\"ripple\"\r\n                    className=\"bg-primary/40 pointer-events-none absolute top-2 left-2 size-6 rounded-full\"\r\n                    initial={{ scale: 0, opacity: 0.6 }}\r\n                    animate={{ scale: 6, opacity: 0 }}\r\n                    transition={{ duration: 0.6, ease: \"easeOut\" }}\r\n                  />\r\n                )}\r\n              </AnimatePresence>\r\n\r\n              <RadioGroupItem\r\n                value={option.value}\r\n                id={itemId}\r\n                className=\"mt-0.5\"\r\n              />\r\n\r\n              <div className=\"grid gap-0.5\">\r\n                <span className=\"text-sm leading-none font-medium\">\r\n                  {option.title}\r\n                </span>\r\n                <span className=\"text-muted-foreground text-xs\">\r\n                  {option.description}\r\n                </span>\r\n              </div>\r\n            </Label>\r\n          </motion.div>\r\n        );\r\n      })}\r\n    </RadioGroup>\r\n  );\r\n};\r\n\r\nexport default RadioGroupRippleDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/radio-group/radio-group-07.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

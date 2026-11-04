@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-25",
+  "title": "Button 25 - Ripple Button",
+  "description": "Animated ripple button component with mouse-click tracking",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-25.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport type { VariantProps } from \"class-variance-authority\";\r\nimport { motion, type HTMLMotionProps, type Transition } from \"motion/react\";\r\nimport { buttonVariants } from \"@/components/ui/button\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface Ripple {\r\n  id: number;\r\n  x: number;\r\n  y: number;\r\n}\r\n\r\ninterface RippleButtonProps\r\n  extends\r\n    Omit<HTMLMotionProps<\"button\">, \"children\">,\r\n    VariantProps<typeof buttonVariants> {\r\n  children: React.ReactNode;\r\n  scale?: number;\r\n  transition?: Transition;\r\n}\r\n\r\nfunction RippleButton({\r\n  ref,\r\n  children,\r\n  onClick,\r\n  className,\r\n  variant,\r\n  size,\r\n  scale = 10,\r\n  transition = { duration: 0.6, ease: \"easeOut\" },\r\n  ...props\r\n}: RippleButtonProps) {\r\n  const [ripples, setRipples] = React.useState<Ripple[]>([]);\r\n  const buttonRef = React.useRef<HTMLButtonElement>(null);\r\n\r\n  React.useImperativeHandle(ref, () => buttonRef.current as HTMLButtonElement);\r\n\r\n  const createRipple = React.useCallback(\r\n    (event: React.MouseEvent<HTMLButtonElement>) => {\r\n      const button = buttonRef.current;\r\n\r\n      if (!button) return;\r\n\r\n      const rect = button.getBoundingClientRect();\r\n      const x = event.clientX - rect.left;\r\n      const y = event.clientY - rect.top;\r\n\r\n      const newRipple: Ripple = {\r\n        id: Date.now(),\r\n        x,\r\n        y,\r\n      };\r\n\r\n      setRipples((prev) => [...prev, newRipple]);\r\n\r\n      setTimeout(() => {\r\n        setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));\r\n      }, 600);\r\n    },\r\n    [],\r\n  );\r\n\r\n  const handleClick = React.useCallback(\r\n    (event: React.MouseEvent<HTMLButtonElement>) => {\r\n      createRipple(event);\r\n\r\n      if (onClick) {\r\n        onClick(event);\r\n      }\r\n    },\r\n    [createRipple, onClick],\r\n  );\r\n\r\n  return (\r\n    <motion.button\r\n      ref={buttonRef}\r\n      data-slot=\"button\"\r\n      onClick={handleClick}\r\n      className={cn(\r\n        buttonVariants({ variant, size }),\r\n        \"relative overflow-hidden\",\r\n        \"active:translate-y-0\",\r\n        className,\r\n      )}\r\n      {...props}\r\n    >\r\n      {children}\r\n      {ripples.map((ripple) => (\r\n        <motion.span\r\n          key={ripple.id}\r\n          initial={{ scale: 0, opacity: 0.5 }}\r\n          animate={{ scale, opacity: 0 }}\r\n          transition={transition}\r\n          className=\"pointer-events-none absolute size-5 rounded-full bg-current\"\r\n          style={{\r\n            top: ripple.y - 10,\r\n            left: ripple.x - 10,\r\n          }}\r\n        />\r\n      ))}\r\n    </motion.button>\r\n  );\r\n}\r\n\r\nexport { RippleButton, type RippleButtonProps };\r\n\r\nconst RippleButtonDemo = () => {\r\n  return <RippleButton className=\"cursor-pointer\">Click me</RippleButton>;\r\n};\r\n\r\nexport default RippleButtonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-25.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

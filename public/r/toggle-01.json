@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-01",
+  "title": "Toggle 01 - Animated Sun/Moon",
+  "description": "An animated toggle button that switches between Sun and Moon icons with smooth physics-based transitions.",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/toggle/toggle-01.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { motion } from \"motion/react\";\r\n\r\nconst ToggleDemo = () => {\r\n  const [isDark, setIsDark] = useState(false);\r\n\r\n  return (\r\n    <button\r\n      onClick={() => setIsDark((prev) => !prev)}\r\n      aria-label=\"Toggle theme animate\"\r\n      type=\"button\"\r\n      className=\"cursor-pointer\"\r\n    >\r\n      <motion.svg\r\n        xmlns=\"http://www.w3.org/2000/svg\"\r\n        viewBox=\"0 0 24 24\"\r\n        fill=\"none\"\r\n        stroke=\"currentColor\"\r\n        strokeWidth=\"2\"\r\n        strokeLinecap=\"round\"\r\n        strokeLinejoin=\"round\"\r\n        className=\"size-6\"\r\n        animate={{\r\n          rotate: isDark ? 40 : 0,\r\n        }}\r\n        transition={{ type: \"spring\", stiffness: 220, damping: 15 }}\r\n      >\r\n        <mask id=\"moon-mask-01\">\r\n          <rect x=\"0\" y=\"0\" width=\"24\" height=\"24\" fill=\"white\" />\r\n          <motion.circle\r\n            cx=\"25\"\r\n            cy=\"0\"\r\n            r=\"8\"\r\n            fill=\"black\"\r\n            animate={{\r\n              cx: isDark ? 18 : 25,\r\n              cy: isDark ? 6 : 0,\r\n            }}\r\n            transition={{ type: \"spring\", stiffness: 220, damping: 15 }}\r\n          />\r\n        </mask>\r\n\r\n        <motion.circle\r\n          cx=\"12\"\r\n          cy=\"12\"\r\n          r=\"9\"\r\n          fill=\"currentColor\"\r\n          mask=\"url(#moon-mask-01)\"\r\n          animate={{\r\n            r: isDark ? 8 : 5,\r\n          }}\r\n          transition={{ type: \"spring\", stiffness: 220, damping: 15 }}\r\n        />\r\n\r\n        <motion.g\r\n          stroke=\"currentColor\"\r\n          animate={{\r\n            opacity: isDark ? 0 : 1,\r\n            scale: isDark ? 0.3 : 1,\r\n          }}\r\n          transition={{ type: \"spring\", stiffness: 220, damping: 15 }}\r\n        >\r\n          <line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\" />\r\n          <line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\" />\r\n          <line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\" />\r\n          <line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\" />\r\n          <line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\" />\r\n          <line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\" />\r\n          <line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\" />\r\n          <line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\" />\r\n        </motion.g>\r\n      </motion.svg>\r\n    </button>\r\n  );\r\n};\r\n\r\nexport default ToggleDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/toggle/toggle-01.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

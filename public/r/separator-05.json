@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-05",
+  "title": "Separator 05 - Dashed",
+  "description": "Dashed horizontal separator",
+  "dependencies": [],
+  "registryDependencies": [
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/separator/separator-05.tsx",
+      "content": "import { Separator } from \"@/components/ui/separator\";\r\n\r\nconst DashedSeparatorDemo = () => {\r\n  return (\r\n    <div className=\"w-full max-w-sm\">\r\n      <Separator className=\"border-border border-b-2 border-dashed bg-transparent\" />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default DashedSeparatorDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/separator/separator-05.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

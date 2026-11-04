@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-30",
+  "title": "Button 30 - Confetti",
+  "description": "Celebration button that fires a confetti burst from the button and springs on click",
+  "dependencies": [
+    "motion",
+    "canvas-confetti"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button/button-30.tsx",
+      "content": "\"use client\";\r\n\r\nimport { motion, useAnimationControls } from \"motion/react\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst MotionButton = motion.create(Button);\r\n\r\nexport interface ConfettiButtonProps extends Omit<\r\n  React.ComponentProps<typeof MotionButton>,\r\n  \"onClick\"\r\n> {\r\n  children?: React.ReactNode;\r\n  label?: React.ReactNode;\r\n  onClick?: React.MouseEventHandler<HTMLButtonElement>;\r\n  particleCount?: number;\r\n  spread?: number;\r\n  startVelocity?: number;\r\n  colors?: string[];\r\n  onCelebrate?: () => void;\r\n}\r\n\r\nasync function fireConfetti(\r\n  element: HTMLElement,\r\n  options: {\r\n    particleCount: number;\r\n    spread: number;\r\n    startVelocity: number;\r\n    colors?: string[];\r\n  },\r\n) {\r\n  const rect = element.getBoundingClientRect();\r\n  const x = (rect.left + rect.width / 2) / window.innerWidth;\r\n  const y = (rect.top + rect.height / 2) / window.innerHeight;\r\n\r\n  const confetti = (await import(\"canvas-confetti\")).default;\r\n\r\n  void confetti({\r\n    particleCount: options.particleCount,\r\n    spread: options.spread,\r\n    startVelocity: options.startVelocity,\r\n    origin: { x, y },\r\n    colors: options.colors,\r\n    disableForReducedMotion: true,\r\n  });\r\n}\r\n\r\nfunction ConfettiButton({\r\n  ref,\r\n  children,\r\n  label = \"Continue\",\r\n  particleCount = 120,\r\n  spread = 72,\r\n  startVelocity = 38,\r\n  colors,\r\n  onCelebrate,\r\n  onClick,\r\n  className,\r\n  disabled,\r\n  type = \"button\",\r\n  ...props\r\n}: ConfettiButtonProps) {\r\n  const popControls = useAnimationControls();\r\n\r\n  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {\r\n    if (disabled) return;\r\n\r\n    void fireConfetti(event.currentTarget, {\r\n      particleCount,\r\n      spread,\r\n      startVelocity,\r\n      colors,\r\n    });\r\n    onCelebrate?.();\r\n\r\n    void popControls.start({\r\n      scale: [1, 1.12, 1],\r\n      transition: {\r\n        duration: 0.45,\r\n        times: [0, 0.45, 1],\r\n        ease: \"easeOut\",\r\n      },\r\n    });\r\n\r\n    onClick?.(event);\r\n  };\r\n\r\n  return (\r\n    <MotionButton\r\n      ref={ref}\r\n      type={type}\r\n      disabled={disabled}\r\n      onClick={handleClick}\r\n      className={cn(\"cursor-pointer\", className)}\r\n      animate={popControls}\r\n      {...props}\r\n    >\r\n      {children ?? label}\r\n    </MotionButton>\r\n  );\r\n}\r\n\r\nConfettiButton.displayName = \"ConfettiButton\";\r\n\r\nexport { ConfettiButton };\r\n\r\nconst ConfettiButtonDemo = () => {\r\n  return <ConfettiButton label=\"Subscribe\" />;\r\n};\r\n\r\nexport default ConfettiButtonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button/button-30.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-08",
+  "title": "Radio Group 08 - Hop Effect",
+  "description": "Radio Group component",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "label",
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/radio-group/radio-group-08.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useId, useState } from \"react\";\r\nimport { CreditCard, Landmark, Wallet } from \"lucide-react\";\r\nimport { motion } from \"motion/react\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst methods = [\r\n  {\r\n    value: \"card\",\r\n    label: \"Credit card\",\r\n    description: \"Visa, Mastercard, Amex\",\r\n    icon: CreditCard,\r\n    color: \"bg-teal-400/10 text-teal-400\",\r\n  },\r\n  {\r\n    value: \"wallet\",\r\n    label: \"Digital wallet\",\r\n    description: \"Apple Pay, Google Pay\",\r\n    icon: Wallet,\r\n    color: \"bg-blue-500/10 text-blue-500\",\r\n  },\r\n  {\r\n    value: \"bank\",\r\n    label: \"Bank transfer\",\r\n    description: \"2-3 business days\",\r\n    icon: Landmark,\r\n    color: \"bg-orange-400/10 text-orange-400\",\r\n  },\r\n];\r\n\r\nconst RadioGroupHopDemo = () => {\r\n  const id = useId();\r\n  const [value, setValue] = useState(\"card\");\r\n\r\n  return (\r\n    <RadioGroup\r\n      value={value}\r\n      onValueChange={(value) => setValue(value as string)}\r\n      className=\"w-full max-w-sm gap-2\"\r\n    >\r\n      {methods.map((method) => {\r\n        const checked = value === method.value;\r\n        const itemId = `${id}-${method.value}`;\r\n        const Icon = method.icon;\r\n\r\n        return (\r\n          <Label\r\n            key={method.value}\r\n            htmlFor={itemId}\r\n            className={cn(\r\n              \"flex cursor-pointer items-center gap-3 rounded-lg border p-3 transition-colors\",\r\n              checked\r\n                ? \"border-primary bg-primary/5\"\r\n                : \"border-input hover:bg-accent  dark:hover:bg-accent/40\",\r\n            )}\r\n          >\r\n            {/* docking slot: a marker hops here from whichever row was previously selected */}\r\n            <span className=\"relative flex size-5 shrink-0 items-center justify-center\">\r\n              <RadioGroupItem\r\n                id={itemId}\r\n                value={method.value}\r\n                className=\"size-5 data-checked:bg-transparent! **:data-[slot=radio-group-indicator]:hidden\"\r\n              />\r\n              {checked && (\r\n                <motion.span\r\n                  layoutId={`${id}-hop`}\r\n                  className=\"bg-primary pointer-events-none absolute inset-1 rounded-full\"\r\n                  transition={{ type: \"spring\", bounce: 0.25, duration: 0.45 }}\r\n                />\r\n              )}\r\n            </span>\r\n\r\n            <motion.span\r\n              animate={{ x: checked ? [0, 4, 0] : 0 }}\r\n              transition={{ duration: 0.3, ease: \"easeOut\" }}\r\n              className={cn(\r\n                \"flex size-8 shrink-0 items-center justify-center rounded-md\",\r\n                checked\r\n                  ? method.color\r\n                  : \"bg-foreground/10 text-muted-foreground\",\r\n              )}\r\n            >\r\n              <Icon className=\"size-4\" />\r\n            </motion.span>\r\n\r\n            <span className=\"grid gap-0.5\">\r\n              <span className=\"text-sm leading-none font-medium\">\r\n                {method.label}\r\n              </span>\r\n              <span className=\"text-muted-foreground text-xs\">\r\n                {method.description}\r\n              </span>\r\n            </span>\r\n          </Label>\r\n        );\r\n      })}\r\n    </RadioGroup>\r\n  );\r\n};\r\n\r\nexport default RadioGroupHopDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/radio-group/radio-group-08.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

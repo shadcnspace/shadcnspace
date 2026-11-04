@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-09",
+  "title": "Spinner 09 - Ripple",
+  "description": "A ripple-effect loading component with concentric expanding circular waves.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/spinner/spinner-09.tsx",
+      "content": "\"use client\";\r\n\r\nimport { memo } from \"react\";\r\nimport { motion, HTMLMotionProps } from \"motion/react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface RippleSpinnerProps extends HTMLMotionProps<\"div\"> {\r\n  size?: \"sm\" | \"md\" | \"lg\";\r\n}\r\n\r\nconst sizeConfig = {\r\n  sm: {\r\n    container: \"size-6\",\r\n    borderWidth: \"border\",\r\n  },\r\n  md: {\r\n    container: \"size-12\",\r\n    borderWidth: \"border-2\",\r\n  },\r\n  lg: {\r\n    container: \"size-24\",\r\n    borderWidth: \"border-[3px]\",\r\n  },\r\n} as const;\r\n\r\nconst RippleSpinner = memo(({\r\n  size = \"md\",\r\n  className,\r\n  ...props\r\n}: RippleSpinnerProps) => {\r\n  const config = sizeConfig[size as keyof typeof sizeConfig] || sizeConfig.md;\r\n\r\n  return (\r\n    <motion.div\r\n      className={cn(\r\n        \"relative flex items-center justify-center text-foreground\",\r\n        config.container,\r\n        className\r\n      )}\r\n      {...props}\r\n    >\r\n      {[0, 1, 2].map((index) => (\r\n        <motion.div\r\n          key={index}\r\n          className={cn(\r\n            \"absolute inset-0 rounded-full border-current bg-current/[0.03] opacity-0\",\r\n            config.borderWidth\r\n          )}\r\n          initial={{ scale: 0.1, opacity: 0 }}\r\n          animate={{\r\n            scale: 1,\r\n            opacity: [0, 0.8, 0],\r\n          }}\r\n          transition={{\r\n            duration: 1.8,\r\n            repeat: Infinity,\r\n            delay: index * 0.6,\r\n            ease: \"easeOut\",\r\n          }}\r\n        />\r\n      ))}\r\n    </motion.div>\r\n  );\r\n});\r\n\r\nRippleSpinner.displayName = \"RippleSpinner\";\r\n\r\nexport default RippleSpinner;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/spinner/spinner-09.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

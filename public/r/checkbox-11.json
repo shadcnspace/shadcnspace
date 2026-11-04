@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-11",
+  "title": "Checkbox 11 - Bulk Selection",
+  "description": "Inbox list with a select all checkbox that shows an indeterminate state, a selected count, and bulk mark as read, archive, and delete actions.",
+  "dependencies": [
+    "lucide-react",
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "checkbox",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/checkbox/checkbox-11.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, type FormEvent } from \"react\";\r\nimport { AlertCircle, Check } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Checkbox } from \"@/components/ui/checkbox\";\r\n\r\nconst CheckboxDemo = () => {\r\n  const [terms, setTerms] = useState(false);\r\n  const [marketing, setMarketing] = useState(false);\r\n  const [submitted, setSubmitted] = useState(false);\r\n  const [done, setDone] = useState(false);\r\n\r\n  const showError = submitted && !terms;\r\n\r\n  const handleSubmit = (event: FormEvent) => {\r\n    event.preventDefault();\r\n    setSubmitted(true);\r\n    if (terms) setDone(true);\r\n  };\r\n\r\n  if (done) {\r\n    return (\r\n      <div className=\"flex w-full max-w-sm flex-col items-center gap-3 rounded-lg border border-border bg-background p-6 text-center\">\r\n        <span className=\"flex size-10 items-center justify-center rounded-full bg-teal-400/15\">\r\n          <Check className=\"size-5 text-teal-400\" />\r\n        </span>\r\n        <p className=\"text-sm font-medium text-foreground\">Account created</p>\r\n        <p className=\"text-xs text-muted-foreground\">\r\n          {marketing ? \"We will send you product updates.\" : \"You will not receive marketing emails.\"}\r\n        </p>\r\n        <Button\r\n          variant=\"outline\"\r\n          size=\"sm\"\r\n          onClick={() => {\r\n            setDone(false);\r\n            setSubmitted(false);\r\n            setTerms(false);\r\n            setMarketing(false);\r\n          }}\r\n        >\r\n          Reset\r\n        </Button>\r\n      </div>\r\n    );\r\n  }\r\n\r\n  return (\r\n    <form onSubmit={handleSubmit} noValidate className=\"flex w-full max-w-sm flex-col gap-4 rounded-lg border border-border bg-background p-5\">\r\n      <div className=\"flex flex-col gap-1.5\">\r\n        <div className=\"flex items-start gap-3\">\r\n          <Checkbox\r\n            id=\"terms\"\r\n            checked={terms}\r\n            onCheckedChange={setTerms}\r\n            aria-invalid={showError || undefined}\r\n            aria-describedby={showError ? \"terms-error\" : undefined}\r\n            aria-required=\"true\"\r\n            className=\"mt-0.5\"\r\n          />\r\n          <label htmlFor=\"terms\" className=\"text-sm leading-snug text-foreground\">\r\n            I agree to the{\" \"}\r\n            <a href=\"#\" className=\"font-medium underline underline-offset-4 transition-colors hover:text-muted-foreground\">\r\n              Terms of Service\r\n            </a>{\" \"}\r\n            and{\" \"}\r\n            <a href=\"#\" className=\"font-medium underline underline-offset-4 transition-colors hover:text-muted-foreground\">\r\n              Privacy Policy\r\n            </a>\r\n            <span className=\"text-destructive\" aria-hidden=\"true\"> *</span>\r\n          </label>\r\n        </div>\r\n        {showError && (\r\n          <p id=\"terms-error\" className=\"flex items-center gap-1.5 pl-7 text-xs text-destructive\">\r\n            <AlertCircle className=\"size-3\" aria-hidden=\"true\" />\r\n            You need to accept the terms to continue.\r\n          </p>\r\n        )}\r\n      </div>\r\n\r\n      <div className=\"flex items-start gap-3\">\r\n        <Checkbox id=\"marketing\" checked={marketing} onCheckedChange={setMarketing} className=\"mt-0.5\" />\r\n        <div className=\"flex flex-col gap-1\">\r\n          <label htmlFor=\"marketing\" className=\"text-sm leading-snug text-foreground\">\r\n            Send me product updates\r\n          </label>\r\n          <p className=\"text-xs text-muted-foreground\">One email a month. Unsubscribe any time.</p>\r\n        </div>\r\n      </div>\r\n\r\n      <Button type=\"submit\" className=\"w-full\">\r\n        Create account\r\n      </Button>\r\n    </form>\r\n  );\r\n};\r\n\r\nexport default CheckboxDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/checkbox/checkbox-11.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-13",
+  "title": "Switch 13 - Confirm Before Enabling",
+  "description": "Maintenance mode switch that asks for confirmation in an alert dialog before turning on, and shows an offline status banner while active.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "switch",
+    "label",
+    "alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/switch/switch-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { TriangleAlert } from \"lucide-react\";\r\n\r\nimport {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogMedia,\r\n  AlertDialogTitle,\r\n} from \"@/components/ui/alert-dialog\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\n\r\nconst SwitchDemo = () => {\r\n  const [maintenance, setMaintenance] = useState(false);\r\n  const [confirmOpen, setConfirmOpen] = useState(false);\r\n\r\n  // Turning maintenance on takes the site offline, so ask first. Turning it off is safe.\r\n  const handleChange = (next: boolean) => {\r\n    if (next) setConfirmOpen(true);\r\n    else setMaintenance(false);\r\n  };\r\n\r\n  return (\r\n    <>\r\n      <div className=\"flex w-full max-w-sm flex-col gap-3 rounded-lg border border-border bg-background p-4\">\r\n        <div className=\"flex items-start justify-between gap-4\">\r\n          <div className=\"flex flex-col gap-1\">\r\n            <Label htmlFor=\"maintenance\">Maintenance mode</Label>\r\n            <p className=\"text-sm text-muted-foreground\">\r\n              Show a maintenance page to all visitors.\r\n            </p>\r\n          </div>\r\n          <Switch\r\n            id=\"maintenance\"\r\n            checked={maintenance}\r\n            onCheckedChange={handleChange}\r\n            className=\"data-checked:bg-orange-400\"\r\n          />\r\n        </div>\r\n        {maintenance && (\r\n          <p className=\"flex items-center gap-2 rounded-md border border-orange-400/40 bg-orange-400/10 px-3 py-2 text-xs text-foreground\">\r\n            <span className=\"size-2 shrink-0 animate-pulse rounded-full bg-orange-400 motion-reduce:animate-none\" aria-hidden=\"true\" />\r\n            Your site is offline for visitors\r\n          </p>\r\n        )}\r\n      </div>\r\n\r\n      <AlertDialog open={confirmOpen} onOpenChange={setConfirmOpen}>\r\n        <AlertDialogContent>\r\n          <AlertDialogHeader>\r\n            <AlertDialogMedia className=\"bg-orange-400/15 text-orange-400\">\r\n              <TriangleAlert />\r\n            </AlertDialogMedia>\r\n            <AlertDialogTitle>Turn on maintenance mode?</AlertDialogTitle>\r\n            <AlertDialogDescription>\r\n              Visitors will see a maintenance page until you turn it off. Signed in admins can still access the site.\r\n            </AlertDialogDescription>\r\n          </AlertDialogHeader>\r\n          <AlertDialogFooter>\r\n            <AlertDialogCancel>Cancel</AlertDialogCancel>\r\n            <AlertDialogAction\r\n              onClick={() => {\r\n                setMaintenance(true);\r\n                setConfirmOpen(false);\r\n              }}\r\n            >\r\n              Turn on\r\n            </AlertDialogAction>\r\n          </AlertDialogFooter>\r\n        </AlertDialogContent>\r\n      </AlertDialog>\r\n    </>\r\n  );\r\n};\r\n\r\nexport default SwitchDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/switch/switch-13.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

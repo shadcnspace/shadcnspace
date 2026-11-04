@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-13",
+  "title": "Button Group 13 - Star Rating",
+  "description": "Interactive star rating button group with hover preview and pop animation",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/button-group/button-group-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\nimport { StarIcon } from \"lucide-react\";\r\nimport { motion } from \"motion/react\";\r\n\r\nconst STARS = [1, 2, 3, 4, 5];\r\n\r\nconst RatingButtonGroup = () => {\r\n  const [rating, setRating] = useState(0);\r\n  const [hovered, setHovered] = useState(0);\r\n\r\n  const active = hovered || rating;\r\n\r\n  return (\r\n    <ButtonGroup\r\n      className=\"gap-1 border-none\"\r\n      onMouseLeave={() => setHovered(0)}\r\n      aria-label=\"Rate your experience\"\r\n    >\r\n      {STARS.map((star) => {\r\n        const isFilled = star <= active;\r\n\r\n        return (\r\n          <Button\r\n            key={star}\r\n            variant=\"ghost\"\r\n            size=\"icon-sm\"\r\n            className=\"cursor-pointer border-none bg-transparent! hover:bg-transparent!\"\r\n            onMouseEnter={() => setHovered(star)}\r\n            onClick={() => setRating(star)}\r\n            aria-label={`Rate ${star} out of 5`}\r\n            aria-pressed={star === rating}\r\n          >\r\n            <motion.span\r\n              className=\"block\"\r\n              animate={isFilled ? { scale: [1, 1.25, 1] } : { scale: 1 }}\r\n              transition={{ duration: 0.25, ease: \"easeOut\" }}\r\n            >\r\n              <StarIcon\r\n                className={cn(\r\n                  \"size-5 transition-colors\",\r\n                  isFilled\r\n                    ? \"fill-amber-300 text-amber-300\"\r\n                    : \"fill-transparent text-muted-foreground\",\r\n                )}\r\n              />\r\n            </motion.span>\r\n          </Button>\r\n        );\r\n      })}\r\n    </ButtonGroup>\r\n  );\r\n};\r\n\r\nexport default RatingButtonGroup;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/button-group/button-group-13.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

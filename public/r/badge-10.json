@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-10",
+  "title": "Badge 10 - With Avatar",
+  "description": "Badge component with avatar",
+  "dependencies": [],
+  "registryDependencies": [
+    "badge",
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/badge/badge-10.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\ninterface BadgeWithAvatarProps {\r\n  name?: string;\r\n  image?: string;\r\n}\r\n\r\nconst BadgeWithAvatar = ({\r\n  name = \"Olivia Carter\",\r\n  image = \"https://images.shadcnspace.com/assets/profiles/tom.webp\",\r\n}: BadgeWithAvatarProps) => {\r\n  return (\r\n    <Badge\r\n      variant=\"outline\"\r\n      className=\"h-auto flex items-center gap-1.5 pr-2.5 pl-1 py-1 text-sm font-medium\"\r\n    >\r\n      <Avatar className=\"size-6\">\r\n        <AvatarImage src={image} alt={name} />\r\n        <AvatarFallback>\r\n          {name\r\n            .split(\" \")\r\n            .map((n) => n[0])\r\n            .join(\"\")}\r\n        </AvatarFallback>\r\n      </Avatar>\r\n      <span>{name}</span>\r\n    </Badge>\r\n  );\r\n};\r\n\r\nexport default BadgeWithAvatar;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/badge/badge-10.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

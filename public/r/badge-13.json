@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-13",
+  "title": "Badge 13 - Streak Display",
+  "description": "Flame streak badge with a flickering icon loop and an animated roll-in day count",
+  "dependencies": [
+    "motion",
+    "lucide-react",
+    "@number-flow/react"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/badge/badge-13.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useState } from \"react\";\r\nimport { motion } from \"motion/react\";\r\nimport { Flame } from \"lucide-react\";\r\nimport NumberFlow from \"@number-flow/react\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ntype StreakBadgeProps = {\r\n  value: number;\r\n  label?: string;\r\n  className?: string;\r\n};\r\n\r\nfunction StreakBadge({ value, label, className }: StreakBadgeProps) {\r\n  return (\r\n    <Badge\r\n      variant=\"outline\"\r\n      className={cn(\r\n        \"h-auto gap-1.5 rounded-full border-orange-400/30 bg-orange-400/10 px-3 py-1 text-sm font-semibold text-orange-400\",\r\n        className,\r\n      )}\r\n    >\r\n      <motion.span\r\n        animate={{\r\n          scale: [1, 1.12, 0.96, 1.06, 1],\r\n          rotate: [0, -4, 3, -2, 0],\r\n        }}\r\n        transition={{ duration: 1.6, repeat: Infinity, ease: \"easeInOut\" }}\r\n        className=\"flex items-center justify-center\"\r\n      >\r\n        <Flame className=\"size-3.5 fill-orange-400 text-orange-400\" />\r\n      </motion.span>\r\n      <NumberFlow\r\n        value={value}\r\n        transformTiming={{ duration: 700, easing: \"ease-out\" }}\r\n        spinTiming={{ duration: 700, easing: \"ease-out\" }}\r\n        opacityTiming={{ duration: 700, easing: \"ease-out\" }}\r\n      />\r\n      {label && (\r\n        <span className=\"font-normal text-orange-400/70\">{label}</span>\r\n      )}\r\n    </Badge>\r\n  );\r\n}\r\n\r\nconst StreakBadgeDemo = () => {\r\n  const [streak, setStreak] = useState(0);\r\n\r\n  useEffect(() => {\r\n    const timer = setTimeout(() => setStreak(12), 300);\r\n    return () => clearTimeout(timer);\r\n  }, []);\r\n\r\n  return <StreakBadge value={streak} />;\r\n};\r\n\r\nexport default StreakBadgeDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/badge/badge-13.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

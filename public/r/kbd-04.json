@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-04",
+  "title": "KBD 04 - KBD in Search Input",
+  "description": "Search input with KBD shortcut in the input group addon, with Mac/Windows platform switch",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "kbd",
+    "input-group",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/kbd/kbd-04.tsx",
+      "content": "'use client'\r\n\r\nimport { useState } from 'react'\r\nimport { SearchIcon } from 'lucide-react'\r\nimport {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupInput,\r\n} from '@/components/ui/input-group'\r\nimport { Kbd, KbdGroup } from '@/components/ui/kbd'\r\nimport { Switch } from '@/components/ui/switch'\r\n\r\ntype Platform = 'mac' | 'win'\r\n\r\nconst KbdSearchInputDemo = () => {\r\n  const [platform, setPlatform] = useState<Platform>('mac')\r\n  const isMac = platform === 'mac'\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-center gap-4\">\r\n      {/* Platform switch */}\r\n      <div className=\"flex items-center gap-2 text-sm\">\r\n        <span className=\"text-muted-foreground\">MacOS</span>\r\n        <Switch\r\n          checked={platform === 'win'}\r\n          onCheckedChange={(checked) => setPlatform(checked ? 'win' : 'mac')}\r\n        />\r\n        <span className=\"text-muted-foreground\">Windows</span>\r\n      </div>\r\n\r\n      <InputGroup className=\"w-full max-w-64\">\r\n        <InputGroupAddon>\r\n          <SearchIcon />\r\n        </InputGroupAddon>\r\n        <InputGroupInput placeholder=\"Search...\" />\r\n        <InputGroupAddon align=\"inline-end\">\r\n          <KbdGroup>\r\n            <Kbd>{isMac ? '⌘' : 'Ctrl'}</Kbd>\r\n            <Kbd>K</Kbd>\r\n          </KbdGroup>\r\n        </InputGroupAddon>\r\n      </InputGroup>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default KbdSearchInputDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/kbd/kbd-04.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-02",
+  "title": "Spinner 02 - Throbber",
+  "description": "Classic 8-bar radial throbber with stepped rotation and opacity gradient.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/spinner/spinner-02.tsx",
+      "content": "export default function SpinnerThrobber() {\r\n  return (\r\n    <svg\r\n      width=\"24\"\r\n      height=\"24\"\r\n      viewBox=\"0 0 24 24\"\r\n      className=\"text-foreground\"\r\n      style={{ animation: \"spin 0.8s steps(8, end) infinite\" }}\r\n    >\r\n      {Array.from({ length: 8 }).map((_, i) => (\r\n        <rect\r\n          key={i}\r\n          x=\"11\"\r\n          y=\"2.5\"\r\n          width=\"2\"\r\n          height=\"5\"\r\n          rx=\"1\"\r\n          fill=\"currentColor\"\r\n          fillOpacity={+(1 - (i / 8) * 0.85).toFixed(2)}\r\n          transform={`rotate(${i * 45} 12 12)`}\r\n        />\r\n      ))}\r\n    </svg>\r\n  );\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/spinner/spinner-02.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

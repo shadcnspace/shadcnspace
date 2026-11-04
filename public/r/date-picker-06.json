@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker-06",
+  "title": "Date Picker 06 - Date of Birth",
+  "description": "Birthday picker with month and year dropdowns, future dates disabled, and a live age check with a minimum age message.",
+  "dependencies": [
+    "lucide-react",
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "label",
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/date-picker/date-picker-06.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { CalendarIcon, ChevronDown, X } from \"lucide-react\";\r\nimport { compareAsc, format, isSameDay, startOfDay } from \"date-fns\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Calendar } from \"@/components/ui/calendar\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverTrigger,\r\n} from \"@/components/ui/popover\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst ALLOWANCE = 5;\r\n\r\nconst DatePickerDemo = () => {\r\n  const [days, setDays] = useState<Date[]>([]);\r\n  const today = startOfDay(new Date());\r\n  const sorted = [...days].sort(compareAsc);\r\n  const remaining = ALLOWANCE - days.length;\r\n\r\n  const remove = (day: Date) => setDays((current) => current.filter((item) => !isSameDay(item, day)));\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-xs flex-col gap-2\">\r\n      <Label htmlFor=\"time-off\">Time off</Label>\r\n      <Popover>\r\n        <PopoverTrigger\r\n          render={\r\n            <Button\r\n              id=\"time-off\"\r\n              variant=\"outline\"\r\n              className={cn(\"w-full justify-start font-normal\", !days.length && \"text-muted-foreground\")}\r\n            >\r\n              <CalendarIcon className=\"text-muted-foreground\" />\r\n              {days.length\r\n                ? `${days.length} ${days.length === 1 ? \"day\" : \"days\"} selected`\r\n                : \"Select days off\"}\r\n              <ChevronDown className=\"ml-auto text-muted-foreground\" />\r\n            </Button>\r\n          }\r\n        />\r\n        <PopoverContent align=\"start\" className=\"w-auto gap-0 p-0\">\r\n          <Calendar\r\n            mode=\"multiple\"\r\n            selected={days}\r\n            onSelect={(next) => setDays(next ?? [])}\r\n            max={ALLOWANCE}\r\n            disabled={[{ before: today }, { dayOfWeek: [0, 6] }]}\r\n            className=\"p-3\"\r\n          />\r\n          <p className=\"border-t border-border px-3 py-2 text-xs text-muted-foreground\">\r\n            Weekends are excluded. {remaining} of {ALLOWANCE} days left.\r\n          </p>\r\n        </PopoverContent>\r\n      </Popover>\r\n\r\n      {sorted.length > 0 ? (\r\n        <ul className=\"flex flex-wrap gap-1.5\" aria-label=\"Selected days\">\r\n          {sorted.map((day) => (\r\n            <li\r\n              key={day.toISOString()}\r\n              className=\"flex items-center gap-1 rounded-md border border-border bg-muted/40 py-0.5 pr-0.5 pl-2 text-xs text-foreground\"\r\n            >\r\n              {format(day, \"EEE, MMM d\")}\r\n              <button\r\n                type=\"button\"\r\n                onClick={() => remove(day)}\r\n                aria-label={`Remove ${format(day, \"MMMM d\")}`}\r\n                className=\"rounded p-0.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring\"\r\n              >\r\n                <X className=\"size-3\" />\r\n              </button>\r\n            </li>\r\n          ))}\r\n        </ul>\r\n      ) : (\r\n        <p className=\"text-xs text-muted-foreground\">\r\n          You have {ALLOWANCE} days of leave available.\r\n        </p>\r\n      )}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default DatePickerDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/date-picker/date-picker-06.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
