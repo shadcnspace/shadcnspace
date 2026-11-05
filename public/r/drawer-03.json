@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "drawer-03",
-  "title": "Drawer 03 - Share Sheet",
-  "description": "Bottom share sheet with a swipe handle, colored share targets, and a read-only link field with a copy button.",
+  "title": "Drawer 03 - Filters Panel",
+  "description": "Left side filter drawer with category checkboxes, a price range slider, an in stock switch, a live result count, and Reset / Show results actions.",
   "dependencies": [
     "lucide-react"
   ],

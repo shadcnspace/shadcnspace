@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tabs-13",
-  "title": "Tabs 13 - Scrollable Overflow",
-  "description": "Horizontally scrollable tabs with arrow buttons, edge fades, and auto-scroll to the active tab.",
+  "title": "Tabs 13 - Billing Toggle",
+  "description": "Monthly and yearly billing tabs with a savings badge and animated pricing cards.",
   "dependencies": [
     "motion",
     "lucide-react"

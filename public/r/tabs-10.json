@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tabs-10",
-  "title": "Tabs 10 - Assistant Tabs",
-  "description": "Pill-style assistant tabs with chat, voice waveform, video, and settings.",
+  "title": "Tabs 10 - Package Manager",
+  "description": "Install command tabs for npm, pnpm, yarn and bun with a one-click copy button.",
   "dependencies": [
     "motion",
     "lucide-react"

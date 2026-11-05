@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-picker-04",
-  "title": "Date Picker 04 - Multi-language",
-  "description": "An advanced multi-language date selector with dialog and support for Day, Month, and Year periods.",
+  "title": "Date Picker 04 - Date of Birth",
+  "description": "Birthday picker with month and year dropdowns, future dates disabled, and a live age check with a minimum age message.",
   "dependencies": [
     "lucide-react",
     "date-fns",

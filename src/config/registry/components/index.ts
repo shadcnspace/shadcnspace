@@ -2732,9 +2732,9 @@ export const components = [
   },
   {
     name: "textarea-10",
-    title: "Textarea 10 - Markdown Write & Preview",
+    title: "Textarea 10 - AI Prompt Composer",
     description:
-      "Comment editor with Write and Preview tabs and a toolbar that wraps the selection in bold, italic, code, or link markdown.",
+      "Chat prompt box where Enter sends and Shift + Enter adds a line, with attach and model buttons, a stop button while generating, and prompt suggestions.",
     type: "registry:component",
     registryDependencies: ["textarea", "button", "tabs"],
     dependencies: ["lucide-react"],
@@ -2750,9 +2750,9 @@ export const components = [
   },
   {
     name: "textarea-11",
-    title: "Textarea 11 - AI Prompt Composer",
+    title: "Textarea 11 - Mentions",
     description:
-      "Chat prompt box where Enter sends and Shift + Enter adds a line, with attach and model buttons, a stop button while generating, and prompt suggestions.",
+      "Comment textarea that suggests people when you type @, with keyboard navigation, Enter or Tab to insert, and a mention button.",
     type: "registry:component",
     registryDependencies: ["textarea", "button", "kbd"],
     dependencies: ["lucide-react"],
@@ -2768,9 +2768,9 @@ export const components = [
   },
   {
     name: "textarea-12",
-    title: "Textarea 12 - Mentions",
+    title: "Textarea 12 - Autosave Draft",
     description:
-      "Comment textarea that suggests people when you type @, with keyboard navigation, Enter or Tab to insert, and a mention button.",
+      "Notes textarea that autosaves after you stop typing, with unsaved, saving, and saved x seconds ago states plus word count and read time.",
     type: "registry:component",
     registryDependencies: ["textarea", "avatar", "button"],
     dependencies: ["lucide-react"],
@@ -2786,9 +2786,9 @@ export const components = [
   },
   {
     name: "textarea-13",
-    title: "Textarea 13 - Autosave Draft",
+    title: "Textarea 13 - JSON Validation",
     description:
-      "Notes textarea that autosaves after you stop typing, with unsaved, saving, and saved x seconds ago states plus word count and read time.",
+      "Monospace JSON textarea with live validation, line and column error messages, and Format and Minify actions.",
     type: "registry:component",
     registryDependencies: ["textarea", "label"],
     dependencies: ["lucide-react"],
@@ -3147,8 +3147,9 @@ export const components = [
   },
   {
     name: "checkbox-10",
-    title: "Checkbox 10 - Checkbox with avatar and group",
-    description: "Checkbox component",
+    title: "Checkbox 10 - Add-on Cards",
+    description:
+      "Selectable add-on cards with icons, descriptions, and prices that update the monthly total as you check them.",
     type: "registry:component",
     registryDependencies: ["checkbox", "avatar", "field", "button"],
     dependencies: ["lucide-react"],
@@ -3164,9 +3165,9 @@ export const components = [
   },
   {
     name: "checkbox-11",
-    title: "Checkbox 11 - Bulk Selection",
+    title: "Checkbox 11 - Terms Consent",
     description:
-      "Inbox list with a select all checkbox that shows an indeterminate state, a selected count, and bulk mark as read, archive, and delete actions.",
+      "Sign up consent with a required terms checkbox that shows an error on submit, linked policies, and an optional marketing opt in.",
     type: "registry:component",
     registryDependencies: ["checkbox", "button"],
     dependencies: ["lucide-react", "@base-ui/react"],
@@ -3182,9 +3183,9 @@ export const components = [
   },
   {
     name: "checkbox-12",
-    title: "Checkbox 12 - Add-on Cards",
+    title: "Checkbox 12 - Filter Chips",
     description:
-      "Selectable add-on cards with icons, descriptions, and prices that update the monthly total as you check them.",
+      "Pill shaped checkbox chips for filtering with result counts, a checked style, and a clear all action.",
     type: "registry:component",
     registryDependencies: ["checkbox"],
     dependencies: ["lucide-react"],
@@ -3719,9 +3720,9 @@ export const components = [
   },
   {
     name: "tabs-10",
-    title: "Tabs 10 - Assistant Tabs",
+    title: "Tabs 10 - Package Manager",
     description:
-      "Pill-style assistant tabs with chat, voice waveform, video, and settings.",
+      "Install command tabs for npm, pnpm, yarn and bun with a one-click copy button.",
     type: "registry:component",
     dependencies: ["motion", "lucide-react"],
     registryDependencies: [
@@ -3745,9 +3746,9 @@ export const components = [
   },
   {
     name: "tabs-11",
-    title: "Tabs 11 - Package Manager",
+    title: "Tabs 11 - Browser Tabs",
     description:
-      "Install command tabs for npm, pnpm, yarn and bun with a one-click copy button.",
+      "Editor-style closable file tabs with file type icons and line-numbered content.",
     type: "registry:component",
     registryDependencies: ["tabs", "button"],
     dependencies: ["motion", "lucide-react"],
@@ -3763,9 +3764,9 @@ export const components = [
   },
   {
     name: "tabs-12",
-    title: "Tabs 12 - Browser Tabs",
+    title: "Tabs 12 - Scrollable Overflow",
     description:
-      "Editor-style closable file tabs with file type icons and line-numbered content.",
+      "Horizontally scrollable tabs with arrow buttons, edge fades, and auto-scroll to the active tab.",
     type: "registry:component",
     registryDependencies: ["tabs", "button"],
     dependencies: ["motion", "lucide-react"],
@@ -3781,9 +3782,9 @@ export const components = [
   },
   {
     name: "tabs-13",
-    title: "Tabs 13 - Scrollable Overflow",
+    title: "Tabs 13 - Billing Toggle",
     description:
-      "Horizontally scrollable tabs with arrow buttons, edge fades, and auto-scroll to the active tab.",
+      "Monthly and yearly billing tabs with a savings badge and animated pricing cards.",
     type: "registry:component",
     registryDependencies: ["tabs", "button"],
     dependencies: ["motion", "lucide-react"],
@@ -3804,9 +3805,9 @@ export const components = [
   },
   {
     name: "tabs-14",
-    title: "Tabs 14 - Billing Toggle",
+    title: "Tabs 14 - Status Dots",
     description:
-      "Monthly and yearly billing tabs with a savings badge and animated pricing cards.",
+      "Underline tabs with colored status dots, counts, and a filtered project list per status.",
     type: "registry:component",
     registryDependencies: ["tabs", "badge", "button"],
     dependencies: ["motion", "lucide-react"],
@@ -3822,9 +3823,9 @@ export const components = [
   },
   {
     name: "tabs-15",
-    title: "Tabs 15 - Status Dots",
+    title: "Tabs 15 - Wizard Steps",
     description:
-      "Underline tabs with colored status dots, counts, and a filtered project list per status.",
+      "Multi-step wizard tabs with numbered steps, an animated progress line, and Back and Next navigation.",
     type: "registry:component",
     registryDependencies: ["tabs"],
     dependencies: [],
@@ -4516,9 +4517,9 @@ export const components = [
   },
   {
     name: "date-picker-04",
-    title: "Date Picker 04 - Multi-language",
+    title: "Date Picker 04 - Date of Birth",
     description:
-      "An advanced multi-language date selector with dialog and support for Day, Month, and Year periods.",
+      "Birthday picker with month and year dropdowns, future dates disabled, and a live age check with a minimum age message.",
     type: "registry:component",
     registryDependencies: [
       "dialog",
@@ -4546,9 +4547,9 @@ export const components = [
   },
   {
     name: "date-picker-05",
-    title: "Date Picker 05 - Range with Presets",
+    title: "Date Picker 05 - Task Due Date",
     description:
-      "Date range picker with preset shortcuts like Last 7 days and This month, a two-month calendar, and Apply / Cancel actions.",
+      "Task due date picker with Today, Tomorrow, This weekend, and Next week shortcuts, overdue and due soon states, and a remove option.",
     type: "registry:component",
     registryDependencies: ["button", "calendar", "label", "popover"],
     dependencies: ["lucide-react", "date-fns", "react-day-picker"],
@@ -4564,9 +4565,9 @@ export const components = [
   },
   {
     name: "date-picker-06",
-    title: "Date Picker 06 - Date of Birth",
+    title: "Date Picker 06 - Multiple Dates",
     description:
-      "Birthday picker with month and year dropdowns, future dates disabled, and a live age check with a minimum age message.",
+      "Time off picker for selecting multiple dates with weekends disabled, a day allowance limit, and removable date chips.",
     type: "registry:component",
     registryDependencies: ["button", "calendar", "label", "popover"],
     dependencies: ["lucide-react", "date-fns"],
@@ -5709,9 +5710,9 @@ export const components = [
   },
   {
     name: "slider-08",
-    title: "Slider 08 - Circular Volume Dial",
+    title: "Slider 08 - With Number Input",
     description:
-      "A circular knob slider styled as a volume dial: drag around the ring to sweep a gradient arc from the top, with the live value and unit shown in the center.",
+      "Opacity slider kept in sync with a number input that clamps and rounds typed values, plus a live preview swatch.",
     type: "registry:component",
     registryDependencies: [],
     dependencies: ["motion", "@number-flow/react"],
@@ -5727,9 +5728,9 @@ export const components = [
   },
   {
     name: "slider-09",
-    title: "Slider 09 - With Number Input",
+    title: "Slider 09 - Ticks & Labels",
     description:
-      "Opacity slider kept in sync with a number input that clamps and rounds typed values, plus a live preview swatch.",
+      "Stepped instance size slider with tick marks and clickable XS to XL labels aligned to each step, showing CPU and memory for the chosen size.",
     type: "registry:component",
     registryDependencies: ["slider", "input", "label"],
     dependencies: [],
@@ -5745,9 +5746,9 @@ export const components = [
   },
   {
     name: "slider-10",
-    title: "Slider 10 - Ticks & Labels",
+    title: "Slider 10 - Floating Value Label",
     description:
-      "Stepped instance size slider with tick marks and clickable XS to XL labels aligned to each step, showing CPU and memory for the chosen size.",
+      "Decimal slider with a value label that follows the thumb, grows while dragging, and a Precise / Balanced / Creative hint.",
     type: "registry:component",
     registryDependencies: ["slider"],
     dependencies: [],
@@ -6234,9 +6235,9 @@ export const components = [
   },
   {
     name: "sonner-10",
-    title: "Sonner 10 - Promise Toast",
+    title: "Sonner 10 - Positions",
     description:
-      "Promise toast that moves from loading to success or error, with a switch to simulate a failed request and a Retry action.",
+      "Position picker that fires toasts at top left, top center, top right, bottom left, bottom center, and bottom right, each with its own stack.",
     type: "registry:component",
     registryDependencies: ["button", "label", "switch"],
     dependencies: ["motion", "lucide-react"],
@@ -6341,9 +6342,9 @@ export const components = [
   },
   {
     name: "pagination-06",
-    title: "Pagination 06 - Load More",
+    title: "Pagination 06 - Docs Previous / Next",
     description:
-      "Photo grid with a Load more button, loading spinner, progress bar, item count, an end of list message, and focus moved to the new items.",
+      "Documentation style previous and next page cards with page titles and arrow hover motion.",
     type: "registry:component",
     registryDependencies: ["button", "progress", "spinner"],
     dependencies: [],
@@ -6522,79 +6523,7 @@ export const components = [
     ],
     category: categories["collapsible"],
   },
-  {
-    name: "collapsible-06",
-    title: "Collapsible 06 - File Tree",
-    description:
-      "Nested file explorer built from collapsibles with open and closed folder icons, file type icons, a selected file, and its path.",
-    type: "registry:component",
-    registryDependencies: ["collapsible"],
-    dependencies: ["lucide-react"],
-    files: [
-      {
-        path: "src/components/shadcn-space/collapsible/collapsible-06.tsx",
-        type: "registry:component",
-        target: "components/shadcn-space/collapsible/collapsible-06.tsx",
-      },
-    ],
-    category: categories["collapsible"],
-    isNew: true,
-  },
-  {
-    name: "collapsible-07",
-    title: "Collapsible 07 - Read More",
-    description:
-      "Review card that shows the first paragraph with a fade and expands the full text with a Read more / Show less toggle.",
-    type: "registry:component",
-    registryDependencies: ["collapsible", "avatar"],
-    dependencies: ["lucide-react"],
-    files: [
-      {
-        path: "src/components/shadcn-space/collapsible/collapsible-07.tsx",
-        type: "registry:component",
-        target: "components/shadcn-space/collapsible/collapsible-07.tsx",
-      },
-    ],
-    category: categories["collapsible"],
-    isNew: true,
-  },
-  {
-    name: "collapsible-08",
-    title: "Collapsible 08 - Order Summary",
-    description:
-      "Mobile checkout order summary that shows the total in the trigger and expands to items with quantities, subtotal, shipping, and tax.",
-    type: "registry:component",
-    registryDependencies: ["collapsible"],
-    dependencies: ["lucide-react"],
-    files: [
-      {
-        path: "src/components/shadcn-space/collapsible/collapsible-08.tsx",
-        type: "registry:component",
-        target: "components/shadcn-space/collapsible/collapsible-08.tsx",
-      },
-    ],
-    category: categories["collapsible"],
-    isNew: true,
-  },
-  {
-    name: "collapsible-09",
-    title: "Collapsible 09 - Advanced Options",
-    description:
-      "Webhook form that hides a signing secret, retry count, and batching switch inside an animated Advanced options section.",
-    type: "registry:component",
-    registryDependencies: ["collapsible", "button", "input", "label", "switch"],
-    dependencies: ["lucide-react"],
-    files: [
-      {
-        path: "src/components/shadcn-space/collapsible/collapsible-09.tsx",
-        type: "registry:component",
-        target: "components/shadcn-space/collapsible/collapsible-09.tsx",
-      },
-    ],
-    category: categories["collapsible"],
-    isNew: true,
-  },
-    {
+   {
     name: "collapsible-05",
     title: "Collapsible 05 - Token Usage",
     description:
@@ -6616,6 +6545,79 @@ export const components = [
     ],
     category: categories["collapsible"],
   },
+  {
+    name: "collapsible-06",
+    title: "Collapsible 06 - Read More",
+    description:
+      "Review card that shows the first paragraph with a fade and expands the full text with a Read more / Show less toggle.",
+    type: "registry:component",
+    registryDependencies: ["collapsible"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/collapsible/collapsible-06.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/collapsible/collapsible-06.tsx",
+      },
+    ],
+    category: categories["collapsible"],
+    isNew: true,
+  },
+  {
+    name: "collapsible-07",
+    title: "Collapsible 07 - Order Summary",
+    description:
+      "Mobile checkout order summary that shows the total in the trigger and expands to items with quantities, subtotal, shipping, and tax.",
+    type: "registry:component",
+    registryDependencies: ["collapsible", "avatar"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/collapsible/collapsible-07.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/collapsible/collapsible-07.tsx",
+      },
+    ],
+    category: categories["collapsible"],
+    isNew: true,
+  },
+  {
+    name: "collapsible-08",
+    title: "Collapsible 08 - Advanced Options",
+    description:
+      "Webhook form that hides a signing secret, retry count, and batching switch inside an animated Advanced options section.",
+    type: "registry:component",
+    registryDependencies: ["collapsible"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/collapsible/collapsible-08.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/collapsible/collapsible-08.tsx",
+      },
+    ],
+    category: categories["collapsible"],
+    isNew: true,
+  },
+  {
+    name: "collapsible-09",
+    title: "Collapsible 09 - Expandable Code",
+    description:
+      "Code snippet that shows the first lines with line numbers and a fade, and expands to the full file with a Show more lines toggle.",
+    type: "registry:component",
+    registryDependencies: ["collapsible", "button", "input", "label", "switch"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/components/shadcn-space/collapsible/collapsible-09.tsx",
+        type: "registry:component",
+        target: "components/shadcn-space/collapsible/collapsible-09.tsx",
+      },
+    ],
+    category: categories["collapsible"],
+    isNew: true,
+  },
+   
   {
     name: "progress-01",
     title: "Progress 01 - Simple Upload",
@@ -8354,9 +8356,9 @@ export const components = [
   },
   {
     name: "stepper-05",
-    title: "Stepper 05 - Vertical Setup Guide",
+    title: "Stepper 05 - Checkout with Validation",
     description:
-      "Vertical stepper for a CLI setup guide where the active step expands with instructions and a command, and completed steps can be revisited.",
+      "Checkout stepper for shipping, payment, and review with per-step validation, error indicators, card formatting, and an order placed screen.",
     type: "registry:component",
     dependencies: ["lucide-react"],
     registryDependencies: ["button"],
@@ -8372,9 +8374,9 @@ export const components = [
   },
   {
     name: "stepper-06",
-    title: "Stepper 06 - Checkout with Validation",
+    title: "Stepper 06 - Compact Mobile Onboarding",
     description:
-      "Checkout stepper for shipping, payment, and review with per-step validation, error indicators, card formatting, and an order placed screen.",
+      "Compact segmented progress stepper for mobile onboarding questions with a step counter, back button, skip, and a completion screen.",
     type: "registry:component",
     dependencies: ["lucide-react"],
     registryDependencies: ["button", "input", "label"],
@@ -8390,9 +8392,9 @@ export const components = [
   },
   {
     name: "stepper-07",
-    title: "Stepper 07 - Compact Mobile Onboarding",
+    title: "Stepper 07 - Optional & Skipped Steps",
     description:
-      "Compact segmented progress stepper for mobile onboarding questions with a step counter, back button, skip, and a completion screen.",
+      "Workspace setup stepper with required and optional steps, a skipped state, and a summary that links back to skipped steps.",
     type: "registry:component",
     dependencies: ["lucide-react"],
     registryDependencies: ["button"],
@@ -8613,9 +8615,9 @@ export const components = [
   },
   {
     name: "drawer-03",
-    title: "Drawer 03 - Share Sheet",
+    title: "Drawer 03 - Filters Panel",
     description:
-      "Bottom share sheet with a swipe handle, colored share targets, and a read-only link field with a copy button.",
+      "Left side filter drawer with category checkboxes, a price range slider, an in stock switch, a live result count, and Reset / Show results actions.",
     type: "registry:component",
     dependencies: ["lucide-react"],
     registryDependencies: ["drawer", "button", "input", "label"],
@@ -8631,9 +8633,9 @@ export const components = [
   },
   {
     name: "drawer-04",
-    title: "Drawer 04 - Filters Panel",
+    title: "Drawer 04 - Notifications",
     description:
-      "Left side filter drawer with category checkboxes, a price range slider, an in stock switch, a live result count, and Reset / Show results actions.",
+      "Right side notifications drawer with an unread badge, All / Unread tabs, mark as read on click, mark all read, and an empty state.",
     type: "registry:component",
     dependencies: ["lucide-react"],
     registryDependencies: ["drawer", "badge", "button", "checkbox", "label", "separator", "slider", "switch"],
@@ -8649,9 +8651,9 @@ export const components = [
   },
   {
     name: "drawer-05",
-    title: "Drawer 05 - Notifications",
+    title: "Drawer 05 - Snap Points Order Tracking",
     description:
-      "Right side notifications drawer with an unread badge, All / Unread tabs, mark as read on click, mark all read, and an empty state.",
+      "Bottom drawer with peek, half, and full snap points showing delivery ETA, rider contact, a status timeline, and the order summary.",
     type: "registry:component",
     dependencies: ["lucide-react"],
     registryDependencies: ["drawer", "avatar", "button", "tabs"],
@@ -8667,9 +8669,9 @@ export const components = [
   },
   {
     name: "drawer-06",
-    title: "Drawer 06 - Snap Points Order Tracking",
+    title: "Drawer 06 - Mobile Navigation",
     description:
-      "Bottom drawer with peek, half, and full snap points showing delivery ETA, rider contact, a status timeline, and the order summary.",
+      "Left side mobile menu drawer with workspace header, active link state, a collapsible projects group, and an account footer.",
     type: "registry:component",
     dependencies: ["lucide-react"],
     registryDependencies: ["drawer", "avatar", "button", "progress"],

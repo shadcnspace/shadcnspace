@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "checkbox-10",
-  "title": "Checkbox 10 - Checkbox with avatar and group",
-  "description": "Checkbox component",
+  "title": "Checkbox 10 - Add-on Cards",
+  "description": "Selectable add-on cards with icons, descriptions, and prices that update the monthly total as you check them.",
   "dependencies": [
     "lucide-react"
   ],

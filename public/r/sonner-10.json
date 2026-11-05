@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sonner-10",
-  "title": "Sonner 10 - Promise Toast",
-  "description": "Promise toast that moves from loading to success or error, with a switch to simulate a failed request and a Retry action.",
+  "title": "Sonner 10 - Positions",
+  "description": "Position picker that fires toasts at top left, top center, top right, bottom left, bottom center, and bottom right, each with its own stack.",
   "dependencies": [
     "motion",
     "lucide-react"

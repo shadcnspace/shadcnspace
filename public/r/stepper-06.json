@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "stepper-06",
-  "title": "Stepper 06 - Checkout with Validation",
-  "description": "Checkout stepper for shipping, payment, and review with per-step validation, error indicators, card formatting, and an order placed screen.",
+  "title": "Stepper 06 - Compact Mobile Onboarding",
+  "description": "Compact segmented progress stepper for mobile onboarding questions with a step counter, back button, skip, and a completion screen.",
   "dependencies": [
     "lucide-react"
   ],

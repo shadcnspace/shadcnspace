@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "textarea-10",
-  "title": "Textarea 10 - Markdown Write & Preview",
-  "description": "Comment editor with Write and Preview tabs and a toolbar that wraps the selection in bold, italic, code, or link markdown.",
+  "title": "Textarea 10 - AI Prompt Composer",
+  "description": "Chat prompt box where Enter sends and Shift + Enter adds a line, with attach and model buttons, a stop button while generating, and prompt suggestions.",
   "dependencies": [
     "lucide-react"
   ],

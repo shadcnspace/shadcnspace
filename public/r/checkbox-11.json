@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "checkbox-11",
-  "title": "Checkbox 11 - Bulk Selection",
-  "description": "Inbox list with a select all checkbox that shows an indeterminate state, a selected count, and bulk mark as read, archive, and delete actions.",
+  "title": "Checkbox 11 - Terms Consent",
+  "description": "Sign up consent with a required terms checkbox that shows an error on submit, linked policies, and an optional marketing opt in.",
   "dependencies": [
     "lucide-react",
     "@base-ui/react"

@@ -5049,8 +5049,8 @@
     },
     {
       "name": "textarea-10",
-      "title": "Textarea 10 - Markdown Write & Preview",
-      "description": "Comment editor with Write and Preview tabs and a toolbar that wraps the selection in bold, italic, code, or link markdown.",
+      "title": "Textarea 10 - AI Prompt Composer",
+      "description": "Chat prompt box where Enter sends and Shift + Enter adds a line, with attach and model buttons, a stop button while generating, and prompt suggestions.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -5070,8 +5070,8 @@
     },
     {
       "name": "textarea-11",
-      "title": "Textarea 11 - AI Prompt Composer",
-      "description": "Chat prompt box where Enter sends and Shift + Enter adds a line, with attach and model buttons, a stop button while generating, and prompt suggestions.",
+      "title": "Textarea 11 - Mentions",
+      "description": "Comment textarea that suggests people when you type @, with keyboard navigation, Enter or Tab to insert, and a mention button.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -5091,8 +5091,8 @@
     },
     {
       "name": "textarea-12",
-      "title": "Textarea 12 - Mentions",
-      "description": "Comment textarea that suggests people when you type @, with keyboard navigation, Enter or Tab to insert, and a mention button.",
+      "title": "Textarea 12 - Autosave Draft",
+      "description": "Notes textarea that autosaves after you stop typing, with unsaved, saving, and saved x seconds ago states plus word count and read time.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -5112,8 +5112,8 @@
     },
     {
       "name": "textarea-13",
-      "title": "Textarea 13 - Autosave Draft",
-      "description": "Notes textarea that autosaves after you stop typing, with unsaved, saving, and saved x seconds ago states plus word count and read time.",
+      "title": "Textarea 13 - JSON Validation",
+      "description": "Monospace JSON textarea with live validation, line and column error messages, and Format and Minify actions.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -5529,8 +5529,8 @@
     },
     {
       "name": "checkbox-10",
-      "title": "Checkbox 10 - Checkbox with avatar and group",
-      "description": "Checkbox component",
+      "title": "Checkbox 10 - Add-on Cards",
+      "description": "Selectable add-on cards with icons, descriptions, and prices that update the monthly total as you check them.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -5551,8 +5551,8 @@
     },
     {
       "name": "checkbox-11",
-      "title": "Checkbox 11 - Bulk Selection",
-      "description": "Inbox list with a select all checkbox that shows an indeterminate state, a selected count, and bulk mark as read, archive, and delete actions.",
+      "title": "Checkbox 11 - Terms Consent",
+      "description": "Sign up consent with a required terms checkbox that shows an error on submit, linked policies, and an optional marketing opt in.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react",
@@ -5572,8 +5572,8 @@
     },
     {
       "name": "checkbox-12",
-      "title": "Checkbox 12 - Add-on Cards",
-      "description": "Selectable add-on cards with icons, descriptions, and prices that update the monthly total as you check them.",
+      "title": "Checkbox 12 - Filter Chips",
+      "description": "Pill shaped checkbox chips for filtering with result counts, a checked style, and a clear all action.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -6176,8 +6176,8 @@
     },
     {
       "name": "tabs-10",
-      "title": "Tabs 10 - Assistant Tabs",
-      "description": "Pill-style assistant tabs with chat, voice waveform, video, and settings.",
+      "title": "Tabs 10 - Package Manager",
+      "description": "Install command tabs for npm, pnpm, yarn and bun with a one-click copy button.",
       "type": "registry:component",
       "dependencies": [
         "motion",
@@ -6202,8 +6202,8 @@
     },
     {
       "name": "tabs-11",
-      "title": "Tabs 11 - Package Manager",
-      "description": "Install command tabs for npm, pnpm, yarn and bun with a one-click copy button.",
+      "title": "Tabs 11 - Browser Tabs",
+      "description": "Editor-style closable file tabs with file type icons and line-numbered content.",
       "type": "registry:component",
       "dependencies": [
         "motion",
@@ -6223,8 +6223,8 @@
     },
     {
       "name": "tabs-12",
-      "title": "Tabs 12 - Browser Tabs",
-      "description": "Editor-style closable file tabs with file type icons and line-numbered content.",
+      "title": "Tabs 12 - Scrollable Overflow",
+      "description": "Horizontally scrollable tabs with arrow buttons, edge fades, and auto-scroll to the active tab.",
       "type": "registry:component",
       "dependencies": [
         "motion",
@@ -6244,8 +6244,8 @@
     },
     {
       "name": "tabs-13",
-      "title": "Tabs 13 - Scrollable Overflow",
-      "description": "Horizontally scrollable tabs with arrow buttons, edge fades, and auto-scroll to the active tab.",
+      "title": "Tabs 13 - Billing Toggle",
+      "description": "Monthly and yearly billing tabs with a savings badge and animated pricing cards.",
       "type": "registry:component",
       "dependencies": [
         "motion",
@@ -6270,8 +6270,8 @@
     },
     {
       "name": "tabs-14",
-      "title": "Tabs 14 - Billing Toggle",
-      "description": "Monthly and yearly billing tabs with a savings badge and animated pricing cards.",
+      "title": "Tabs 14 - Status Dots",
+      "description": "Underline tabs with colored status dots, counts, and a filtered project list per status.",
       "type": "registry:component",
       "dependencies": [
         "motion",
@@ -6292,8 +6292,8 @@
     },
     {
       "name": "tabs-15",
-      "title": "Tabs 15 - Status Dots",
-      "description": "Underline tabs with colored status dots, counts, and a filtered project list per status.",
+      "title": "Tabs 15 - Wizard Steps",
+      "description": "Multi-step wizard tabs with numbered steps, an animated progress line, and Back and Next navigation.",
       "type": "registry:component",
       "dependencies": [],
       "registryDependencies": [
@@ -7092,8 +7092,8 @@
     },
     {
       "name": "date-picker-04",
-      "title": "Date Picker 04 - Multi-language",
-      "description": "An advanced multi-language date selector with dialog and support for Day, Month, and Year periods.",
+      "title": "Date Picker 04 - Date of Birth",
+      "description": "Birthday picker with month and year dropdowns, future dates disabled, and a live age check with a minimum age message.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react",
@@ -7119,8 +7119,8 @@
     },
     {
       "name": "date-picker-05",
-      "title": "Date Picker 05 - Range with Presets",
-      "description": "Date range picker with preset shortcuts like Last 7 days and This month, a two-month calendar, and Apply / Cancel actions.",
+      "title": "Date Picker 05 - Task Due Date",
+      "description": "Task due date picker with Today, Tomorrow, This weekend, and Next week shortcuts, overdue and due soon states, and a remove option.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react",
@@ -7143,8 +7143,8 @@
     },
     {
       "name": "date-picker-06",
-      "title": "Date Picker 06 - Date of Birth",
-      "description": "Birthday picker with month and year dropdowns, future dates disabled, and a live age check with a minimum age message.",
+      "title": "Date Picker 06 - Multiple Dates",
+      "description": "Time off picker for selecting multiple dates with weekends disabled, a day allowance limit, and removable date chips.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react",
@@ -8551,8 +8551,8 @@
     },
     {
       "name": "slider-08",
-      "title": "Slider 08 - Circular Volume Dial",
-      "description": "A circular knob slider styled as a volume dial: drag around the ring to sweep a gradient arc from the top, with the live value and unit shown in the center.",
+      "title": "Slider 08 - With Number Input",
+      "description": "Opacity slider kept in sync with a number input that clamps and rounds typed values, plus a live preview swatch.",
       "type": "registry:component",
       "dependencies": [
         "motion",
@@ -8569,8 +8569,8 @@
     },
     {
       "name": "slider-09",
-      "title": "Slider 09 - With Number Input",
-      "description": "Opacity slider kept in sync with a number input that clamps and rounds typed values, plus a live preview swatch.",
+      "title": "Slider 09 - Ticks & Labels",
+      "description": "Stepped instance size slider with tick marks and clickable XS to XL labels aligned to each step, showing CPU and memory for the chosen size.",
       "type": "registry:component",
       "dependencies": [],
       "registryDependencies": [
@@ -8588,8 +8588,8 @@
     },
     {
       "name": "slider-10",
-      "title": "Slider 10 - Ticks & Labels",
-      "description": "Stepped instance size slider with tick marks and clickable XS to XL labels aligned to each step, showing CPU and memory for the chosen size.",
+      "title": "Slider 10 - Floating Value Label",
+      "description": "Decimal slider with a value label that follows the thumb, grows while dragging, and a Precise / Balanced / Creative hint.",
       "type": "registry:component",
       "dependencies": [],
       "registryDependencies": [
@@ -9103,8 +9103,8 @@
     },
     {
       "name": "sonner-10",
-      "title": "Sonner 10 - Promise Toast",
-      "description": "Promise toast that moves from loading to success or error, with a switch to simulate a failed request and a Retry action.",
+      "title": "Sonner 10 - Positions",
+      "description": "Position picker that fires toasts at top left, top center, top right, bottom left, bottom center, and bottom right, each with its own stack.",
       "type": "registry:component",
       "dependencies": [
         "motion",
@@ -9227,8 +9227,8 @@
     },
     {
       "name": "pagination-06",
-      "title": "Pagination 06 - Load More",
-      "description": "Photo grid with a Load more button, loading spinner, progress bar, item count, an end of list message, and focus moved to the new items.",
+      "title": "Pagination 06 - Docs Previous / Next",
+      "description": "Documentation style previous and next page cards with page titles and arrow hover motion.",
       "type": "registry:component",
       "dependencies": [],
       "registryDependencies": [
@@ -9446,87 +9446,6 @@
       ]
     },
     {
-      "name": "collapsible-06",
-      "title": "Collapsible 06 - File Tree",
-      "description": "Nested file explorer built from collapsibles with open and closed folder icons, file type icons, a selected file, and its path.",
-      "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "collapsible"
-      ],
-      "files": [
-        {
-          "path": "src/components/shadcn-space/collapsible/collapsible-06.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-space/collapsible/collapsible-06.tsx"
-        }
-      ]
-    },
-    {
-      "name": "collapsible-07",
-      "title": "Collapsible 07 - Read More",
-      "description": "Review card that shows the first paragraph with a fade and expands the full text with a Read more / Show less toggle.",
-      "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "collapsible",
-        "avatar"
-      ],
-      "files": [
-        {
-          "path": "src/components/shadcn-space/collapsible/collapsible-07.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-space/collapsible/collapsible-07.tsx"
-        }
-      ]
-    },
-    {
-      "name": "collapsible-08",
-      "title": "Collapsible 08 - Order Summary",
-      "description": "Mobile checkout order summary that shows the total in the trigger and expands to items with quantities, subtotal, shipping, and tax.",
-      "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "collapsible"
-      ],
-      "files": [
-        {
-          "path": "src/components/shadcn-space/collapsible/collapsible-08.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-space/collapsible/collapsible-08.tsx"
-        }
-      ]
-    },
-    {
-      "name": "collapsible-09",
-      "title": "Collapsible 09 - Advanced Options",
-      "description": "Webhook form that hides a signing secret, retry count, and batching switch inside an animated Advanced options section.",
-      "type": "registry:component",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "collapsible",
-        "button",
-        "input",
-        "label",
-        "switch"
-      ],
-      "files": [
-        {
-          "path": "src/components/shadcn-space/collapsible/collapsible-09.tsx",
-          "type": "registry:component",
-          "target": "components/shadcn-space/collapsible/collapsible-09.tsx"
-        }
-      ]
-    },
-    {
       "name": "collapsible-05",
       "title": "Collapsible 05 - Token Usage",
       "description": "A collapsible usage card with a progress bar, summary and details.",
@@ -9546,6 +9465,87 @@
           "path": "src/components/shadcn-space/collapsible/collapsible-05.tsx",
           "type": "registry:component",
           "target": "components/shadcn-space/collapsible/collapsible-05.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-06",
+      "title": "Collapsible 06 - Read More",
+      "description": "Review card that shows the first paragraph with a fade and expands the full text with a Read more / Show less toggle.",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/collapsible/collapsible-06.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/collapsible/collapsible-06.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-07",
+      "title": "Collapsible 07 - Order Summary",
+      "description": "Mobile checkout order summary that shows the total in the trigger and expands to items with quantities, subtotal, shipping, and tax.",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/collapsible/collapsible-07.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/collapsible/collapsible-07.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-08",
+      "title": "Collapsible 08 - Advanced Options",
+      "description": "Webhook form that hides a signing secret, retry count, and batching switch inside an animated Advanced options section.",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/collapsible/collapsible-08.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/collapsible/collapsible-08.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-09",
+      "title": "Collapsible 09 - Expandable Code",
+      "description": "Code snippet that shows the first lines with line numbers and a fade, and expands to the full file with a Show more lines toggle.",
+      "type": "registry:component",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible",
+        "button",
+        "input",
+        "label",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/shadcn-space/collapsible/collapsible-09.tsx",
+          "type": "registry:component",
+          "target": "components/shadcn-space/collapsible/collapsible-09.tsx"
         }
       ]
     },
@@ -11494,8 +11494,8 @@
     },
     {
       "name": "stepper-05",
-      "title": "Stepper 05 - Vertical Setup Guide",
-      "description": "Vertical stepper for a CLI setup guide where the active step expands with instructions and a command, and completed steps can be revisited.",
+      "title": "Stepper 05 - Checkout with Validation",
+      "description": "Checkout stepper for shipping, payment, and review with per-step validation, error indicators, card formatting, and an order placed screen.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -11513,8 +11513,8 @@
     },
     {
       "name": "stepper-06",
-      "title": "Stepper 06 - Checkout with Validation",
-      "description": "Checkout stepper for shipping, payment, and review with per-step validation, error indicators, card formatting, and an order placed screen.",
+      "title": "Stepper 06 - Compact Mobile Onboarding",
+      "description": "Compact segmented progress stepper for mobile onboarding questions with a step counter, back button, skip, and a completion screen.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -11534,8 +11534,8 @@
     },
     {
       "name": "stepper-07",
-      "title": "Stepper 07 - Compact Mobile Onboarding",
-      "description": "Compact segmented progress stepper for mobile onboarding questions with a step counter, back button, skip, and a completion screen.",
+      "title": "Stepper 07 - Optional & Skipped Steps",
+      "description": "Workspace setup stepper with required and optional steps, a skipped state, and a summary that links back to skipped steps.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -11775,8 +11775,8 @@
     },
     {
       "name": "drawer-03",
-      "title": "Drawer 03 - Share Sheet",
-      "description": "Bottom share sheet with a swipe handle, colored share targets, and a read-only link field with a copy button.",
+      "title": "Drawer 03 - Filters Panel",
+      "description": "Left side filter drawer with category checkboxes, a price range slider, an in stock switch, a live result count, and Reset / Show results actions.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -11797,8 +11797,8 @@
     },
     {
       "name": "drawer-04",
-      "title": "Drawer 04 - Filters Panel",
-      "description": "Left side filter drawer with category checkboxes, a price range slider, an in stock switch, a live result count, and Reset / Show results actions.",
+      "title": "Drawer 04 - Notifications",
+      "description": "Right side notifications drawer with an unread badge, All / Unread tabs, mark as read on click, mark all read, and an empty state.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -11823,8 +11823,8 @@
     },
     {
       "name": "drawer-05",
-      "title": "Drawer 05 - Notifications",
-      "description": "Right side notifications drawer with an unread badge, All / Unread tabs, mark as read on click, mark all read, and an empty state.",
+      "title": "Drawer 05 - Snap Points Order Tracking",
+      "description": "Bottom drawer with peek, half, and full snap points showing delivery ETA, rider contact, a status timeline, and the order summary.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"
@@ -11845,8 +11845,8 @@
     },
     {
       "name": "drawer-06",
-      "title": "Drawer 06 - Snap Points Order Tracking",
-      "description": "Bottom drawer with peek, half, and full snap points showing delivery ETA, rider contact, a status timeline, and the order summary.",
+      "title": "Drawer 06 - Mobile Navigation",
+      "description": "Left side mobile menu drawer with workspace header, active link state, a collapsible projects group, and an account footer.",
       "type": "registry:component",
       "dependencies": [
         "lucide-react"

@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "slider-09",
-  "title": "Slider 09 - With Number Input",
-  "description": "Opacity slider kept in sync with a number input that clamps and rounds typed values, plus a live preview swatch.",
+  "title": "Slider 09 - Ticks & Labels",
+  "description": "Stepped instance size slider with tick marks and clickable XS to XL labels aligned to each step, showing CPU and memory for the chosen size.",
   "dependencies": [],
   "registryDependencies": [
     "slider",

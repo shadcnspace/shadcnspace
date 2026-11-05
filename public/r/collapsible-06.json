@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "collapsible-06",
-  "title": "Collapsible 06 - File Tree",
-  "description": "Nested file explorer built from collapsibles with open and closed folder icons, file type icons, a selected file, and its path.",
+  "title": "Collapsible 06 - Read More",
+  "description": "Review card that shows the first paragraph with a fade and expands the full text with a Read more / Show less toggle.",
   "dependencies": [
     "lucide-react"
   ],

@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "textarea-12",
-  "title": "Textarea 12 - Mentions",
-  "description": "Comment textarea that suggests people when you type @, with keyboard navigation, Enter or Tab to insert, and a mention button.",
+  "title": "Textarea 12 - Autosave Draft",
+  "description": "Notes textarea that autosaves after you stop typing, with unsaved, saving, and saved x seconds ago states plus word count and read time.",
   "dependencies": [
     "lucide-react"
   ],

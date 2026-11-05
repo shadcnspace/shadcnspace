@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "pagination-06",
-  "title": "Pagination 06 - Load More",
-  "description": "Photo grid with a Load more button, loading spinner, progress bar, item count, an end of list message, and focus moved to the new items.",
+  "title": "Pagination 06 - Docs Previous / Next",
+  "description": "Documentation style previous and next page cards with page titles and arrow hover motion.",
   "dependencies": [],
   "registryDependencies": [
     "button",

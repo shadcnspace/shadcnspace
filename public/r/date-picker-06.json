@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-picker-06",
-  "title": "Date Picker 06 - Date of Birth",
-  "description": "Birthday picker with month and year dropdowns, future dates disabled, and a live age check with a minimum age message.",
+  "title": "Date Picker 06 - Multiple Dates",
+  "description": "Time off picker for selecting multiple dates with weekends disabled, a day allowance limit, and removable date chips.",
   "dependencies": [
     "lucide-react",
     "date-fns"

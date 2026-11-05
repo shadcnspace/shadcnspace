@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "slider-08",
-  "title": "Slider 08 - Circular Volume Dial",
-  "description": "A circular knob slider styled as a volume dial: drag around the ring to sweep a gradient arc from the top, with the live value and unit shown in the center.",
+  "title": "Slider 08 - With Number Input",
+  "description": "Opacity slider kept in sync with a number input that clamps and rounds typed values, plus a live preview swatch.",
   "dependencies": [
     "motion",
     "@number-flow/react"

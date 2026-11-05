@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "stepper-05",
-  "title": "Stepper 05 - Vertical Setup Guide",
-  "description": "Vertical stepper for a CLI setup guide where the active step expands with instructions and a command, and completed steps can be revisited.",
+  "title": "Stepper 05 - Checkout with Validation",
+  "description": "Checkout stepper for shipping, payment, and review with per-step validation, error indicators, card formatting, and an order placed screen.",
   "dependencies": [
     "lucide-react"
   ],

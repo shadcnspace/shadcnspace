@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "drawer-06",
-  "title": "Drawer 06 - Snap Points Order Tracking",
-  "description": "Bottom drawer with peek, half, and full snap points showing delivery ETA, rider contact, a status timeline, and the order summary.",
+  "title": "Drawer 06 - Mobile Navigation",
+  "description": "Left side mobile menu drawer with workspace header, active link state, a collapsible projects group, and an account footer.",
   "dependencies": [
     "lucide-react"
   ],

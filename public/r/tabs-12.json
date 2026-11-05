@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tabs-12",
-  "title": "Tabs 12 - Browser Tabs",
-  "description": "Editor-style closable file tabs with file type icons and line-numbered content.",
+  "title": "Tabs 12 - Scrollable Overflow",
+  "description": "Horizontally scrollable tabs with arrow buttons, edge fades, and auto-scroll to the active tab.",
   "dependencies": [
     "motion",
     "lucide-react"

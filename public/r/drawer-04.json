@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "drawer-04",
-  "title": "Drawer 04 - Filters Panel",
-  "description": "Left side filter drawer with category checkboxes, a price range slider, an in stock switch, a live result count, and Reset / Show results actions.",
+  "title": "Drawer 04 - Notifications",
+  "description": "Right side notifications drawer with an unread badge, All / Unread tabs, mark as read on click, mark all read, and an empty state.",
   "dependencies": [
     "lucide-react"
   ],

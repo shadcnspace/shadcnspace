@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "collapsible-09",
-  "title": "Collapsible 09 - Advanced Options",
-  "description": "Webhook form that hides a signing secret, retry count, and batching switch inside an animated Advanced options section.",
+  "title": "Collapsible 09 - Expandable Code",
+  "description": "Code snippet that shows the first lines with line numbers and a fade, and expands to the full file with a Show more lines toggle.",
   "dependencies": [
     "lucide-react"
   ],

@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "tabs-15",
-  "title": "Tabs 15 - Status Dots",
-  "description": "Underline tabs with colored status dots, counts, and a filtered project list per status.",
+  "title": "Tabs 15 - Wizard Steps",
+  "description": "Multi-step wizard tabs with numbered steps, an animated progress line, and Back and Next navigation.",
   "dependencies": [],
   "registryDependencies": [
     "tabs"

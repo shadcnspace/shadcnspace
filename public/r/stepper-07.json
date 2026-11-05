@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "stepper-07",
-  "title": "Stepper 07 - Compact Mobile Onboarding",
-  "description": "Compact segmented progress stepper for mobile onboarding questions with a step counter, back button, skip, and a completion screen.",
+  "title": "Stepper 07 - Optional & Skipped Steps",
+  "description": "Workspace setup stepper with required and optional steps, a skipped state, and a summary that links back to skipped steps.",
   "dependencies": [
     "lucide-react"
   ],

@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "textarea-13",
-  "title": "Textarea 13 - Autosave Draft",
-  "description": "Notes textarea that autosaves after you stop typing, with unsaved, saving, and saved x seconds ago states plus word count and read time.",
+  "title": "Textarea 13 - JSON Validation",
+  "description": "Monospace JSON textarea with live validation, line and column error messages, and Format and Minify actions.",
   "dependencies": [
     "lucide-react"
   ],

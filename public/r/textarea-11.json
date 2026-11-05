@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "textarea-11",
-  "title": "Textarea 11 - AI Prompt Composer",
-  "description": "Chat prompt box where Enter sends and Shift + Enter adds a line, with attach and model buttons, a stop button while generating, and prompt suggestions.",
+  "title": "Textarea 11 - Mentions",
+  "description": "Comment textarea that suggests people when you type @, with keyboard navigation, Enter or Tab to insert, and a mention button.",
   "dependencies": [
     "lucide-react"
   ],

@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "slider-10",
-  "title": "Slider 10 - Ticks & Labels",
-  "description": "Stepped instance size slider with tick marks and clickable XS to XL labels aligned to each step, showing CPU and memory for the chosen size.",
+  "title": "Slider 10 - Floating Value Label",
+  "description": "Decimal slider with a value label that follows the thumb, grows while dragging, and a Precise / Balanced / Creative hint.",
   "dependencies": [],
   "registryDependencies": [
     "slider"

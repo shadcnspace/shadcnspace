@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "collapsible-08",
-  "title": "Collapsible 08 - Order Summary",
-  "description": "Mobile checkout order summary that shows the total in the trigger and expands to items with quantities, subtotal, shipping, and tax.",
+  "title": "Collapsible 08 - Advanced Options",
+  "description": "Webhook form that hides a signing secret, retry count, and batching switch inside an animated Advanced options section.",
   "dependencies": [
     "lucide-react"
   ],
