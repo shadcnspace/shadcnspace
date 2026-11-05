@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-23",
+  "title": "Input 23 - Username Availability",
+  "description": "Username input with debounced availability check, inline status icons, and one-click suggestions when taken.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "button",
+    "spinner"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-23.tsx",
+      "content": "'use client'\r\n\r\nimport { useEffect, useId, useState } from 'react'\r\n\r\nimport { CircleCheckIcon, CircleXIcon } from 'lucide-react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\nimport { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\nimport { Spinner } from '@/components/ui/spinner'\r\n\r\ntype Status = 'idle' | 'invalid' | 'checking' | 'available' | 'taken'\r\n\r\nconst takenUsernames = ['admin', 'shadcn', 'design', 'john', 'root', 'support']\r\n\r\nconst usernamePattern = /^[a-z0-9_]{3,20}$/\r\n\r\nconst getSuggestions = (name: string) => [`${name}_dev`, `${name}${new Date().getFullYear()}`, `the_${name}`]\r\n\r\nconst InputUsernameAvailabilityDemo = () => {\r\n  const [username, setUsername] = useState('')\r\n  const [status, setStatus] = useState<Status>('idle')\r\n\r\n  const id = useId()\r\n  const statusId = `${id}-status`\r\n\r\n  useEffect(() => {\r\n    if (!username) {\r\n      setStatus('idle')\r\n      return\r\n    }\r\n    if (!usernamePattern.test(username)) {\r\n      setStatus('invalid')\r\n      return\r\n    }\r\n    setStatus('checking')\r\n    const timeout = setTimeout(() => {\r\n      setStatus(takenUsernames.includes(username) ? 'taken' : 'available')\r\n    }, 700)\r\n    return () => clearTimeout(timeout)\r\n  }, [username])\r\n\r\n  const isError = status === 'invalid' || status === 'taken'\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Username</Label>\r\n      <div className='relative'>\r\n        <span\r\n          aria-hidden='true'\r\n          className='text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 -translate-y-1/2 text-sm'\r\n        >\r\n          @\r\n        </span>\r\n        <Input\r\n          id={id}\r\n          type='text'\r\n          placeholder='your_name'\r\n          value={username}\r\n          onChange={e => setUsername(e.target.value.toLowerCase())}\r\n          aria-describedby={statusId}\r\n          aria-invalid={isError || undefined}\r\n          autoComplete='username'\r\n          spellCheck={false}\r\n          className='pr-9 pl-7'\r\n        />\r\n        <div aria-hidden='true' className='absolute inset-y-0 right-0 flex items-center pr-2.5'>\r\n          {status === 'checking' && <Spinner className='text-muted-foreground size-4' />}\r\n          {status === 'available' && <CircleCheckIcon className='size-4 text-teal-400' />}\r\n          {isError && <CircleXIcon className='text-destructive size-4' />}\r\n        </div>\r\n      </div>\r\n\r\n      <div id={statusId} aria-live='polite' className='space-y-2 text-xs'>\r\n        {status === 'idle' && <p className='text-muted-foreground'>3 to 20 characters: letters, numbers, and underscores.</p>}\r\n        {status === 'invalid' && (\r\n          <p className='text-destructive'>Use 3 to 20 lowercase letters, numbers, or underscores.</p>\r\n        )}\r\n        {status === 'checking' && <p className='text-muted-foreground'>Checking availability...</p>}\r\n        {status === 'available' && (\r\n          <p className='text-foreground'>\r\n            <span className='font-medium'>@{username}</span> is available.\r\n          </p>\r\n        )}\r\n        {status === 'taken' && <p className='text-destructive'>@{username} is already taken. Try one of these:</p>}\r\n      </div>\r\n\r\n      {status === 'taken' && (\r\n        <div className='flex flex-wrap gap-1.5'>\r\n          {getSuggestions(username).map(suggestion => (\r\n            <Button\r\n              key={suggestion}\r\n              variant='outline'\r\n              size='xs'\r\n              onClick={() => setUsername(suggestion)}\r\n              className='cursor-pointer font-mono'\r\n            >\r\n              @{suggestion}\r\n            </Button>\r\n          ))}\r\n        </div>\r\n      )}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default InputUsernameAvailabilityDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-23.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

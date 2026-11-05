@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-21",
+  "title": "Input 21 - Password Strength",
+  "description": "Password input with a show/hide toggle, a 4-step strength meter, and a live requirements checklist.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-21.tsx",
+      "content": "'use client'\r\n\r\nimport { useId, useState } from 'react'\r\n\r\nimport { CheckIcon, EyeIcon, EyeOffIcon, XIcon } from 'lucide-react'\r\n\r\nimport { cn } from '@/lib/utils'\r\nimport { Button } from '@/components/ui/button'\r\nimport { Input } from '@/components/ui/input'\r\nimport { Label } from '@/components/ui/label'\r\n\r\nconst requirements = [\r\n  { label: 'At least 8 characters', test: (value: string) => value.length >= 8 },\r\n  { label: 'At least 1 number', test: (value: string) => /\\d/.test(value) },\r\n  { label: 'At least 1 uppercase letter', test: (value: string) => /[A-Z]/.test(value) },\r\n  { label: 'At least 1 symbol', test: (value: string) => /[^A-Za-z0-9]/.test(value) }\r\n]\r\n\r\nconst strengthLevels = [\r\n  { label: 'Too weak', color: 'bg-border' },\r\n  { label: 'Weak', color: 'bg-orange-400' },\r\n  { label: 'Fair', color: 'bg-amber-300' },\r\n  { label: 'Good', color: 'bg-sky-400' },\r\n  { label: 'Strong', color: 'bg-teal-400' }\r\n]\r\n\r\nconst InputPasswordStrengthDemo = () => {\r\n  const [password, setPassword] = useState('')\r\n  const [isVisible, setIsVisible] = useState(false)\r\n\r\n  const id = useId()\r\n  const hintId = `${id}-hint`\r\n\r\n  const results = requirements.map(requirement => ({\r\n    ...requirement,\r\n    met: requirement.test(password)\r\n  }))\r\n  const score = results.filter(result => result.met).length\r\n  const strength = strengthLevels[score]\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Password</Label>\r\n      <div className='relative'>\r\n        <Input\r\n          id={id}\r\n          type={isVisible ? 'text' : 'password'}\r\n          placeholder='Create a password'\r\n          value={password}\r\n          onChange={e => setPassword(e.target.value)}\r\n          aria-describedby={hintId}\r\n          autoComplete='new-password'\r\n          className='pr-9'\r\n        />\r\n        <Button\r\n          variant='ghost'\r\n          size='icon'\r\n          onClick={() => setIsVisible(prev => !prev)}\r\n          aria-label={isVisible ? 'Hide password' : 'Show password'}\r\n          aria-pressed={isVisible}\r\n          aria-controls={id}\r\n          className='text-muted-foreground absolute inset-y-0 right-0 rounded-l-none hover:bg-transparent cursor-pointer'\r\n        >\r\n          {isVisible ? <EyeOffIcon /> : <EyeIcon />}\r\n        </Button>\r\n      </div>\r\n\r\n      <div className='flex gap-1 pt-1' aria-hidden='true'>\r\n        {[1, 2, 3, 4].map(segment => (\r\n          <span\r\n            key={segment}\r\n            className={cn(\r\n              'h-1 flex-1 rounded-full bg-border transition-colors duration-300 motion-reduce:transition-none',\r\n              score >= segment && strength.color\r\n            )}\r\n          />\r\n        ))}\r\n      </div>\r\n\r\n      <div id={hintId} className='space-y-2'>\r\n        <p className='text-xs text-muted-foreground' aria-live='polite'>\r\n          Strength: <span className='font-medium text-foreground'>{password ? strength.label : 'Not set'}</span>\r\n        </p>\r\n        <ul className='space-y-1'>\r\n          {results.map(result => (\r\n            <li key={result.label} className='flex items-center gap-2 text-xs'>\r\n              {result.met ? (\r\n                <CheckIcon aria-hidden='true' className='size-3.5 text-teal-400' />\r\n              ) : (\r\n                <XIcon aria-hidden='true' className='size-3.5 text-muted-foreground' />\r\n              )}\r\n              <span className={result.met ? 'text-foreground' : 'text-muted-foreground'}>\r\n                {result.label}\r\n                <span className='sr-only'>{result.met ? ', met' : ', not met'}</span>\r\n              </span>\r\n            </li>\r\n          ))}\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default InputPasswordStrengthDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-21.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

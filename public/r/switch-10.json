@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-10",
+  "title": "Switch 10 - Async Save",
+  "description": "Two-factor authentication switch that saves to the server with a saving state, a saved confirmation, and a revert with an error message when the request fails.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "switch",
+    "label",
+    "spinner"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/switch/switch-10.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useRef, useState } from \"react\";\r\nimport { AlertCircle, Check } from \"lucide-react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Spinner } from \"@/components/ui/spinner\";\r\nimport { Switch } from \"@/components/ui/switch\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ntype Status = \"idle\" | \"saving\" | \"saved\" | \"error\";\r\n\r\n// Stand-in for a network request. Every third save fails so the error path is visible.\r\nlet attempt = 0;\r\nconst saveSetting = (value: boolean) =>\r\n  new Promise<boolean>((resolve, reject) => {\r\n    attempt += 1;\r\n    setTimeout(() => (attempt % 3 === 0 ? reject(new Error(\"Network error\")) : resolve(value)), 900);\r\n  });\r\n\r\nconst SwitchDemo = () => {\r\n  const [enabled, setEnabled] = useState(false);\r\n  const [status, setStatus] = useState<Status>(\"idle\");\r\n  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);\r\n\r\n  useEffect(() => () => {\r\n    if (resetTimer.current) clearTimeout(resetTimer.current);\r\n  }, []);\r\n\r\n  const handleChange = async (next: boolean) => {\r\n    const previous = enabled;\r\n    setEnabled(next);\r\n    setStatus(\"saving\");\r\n    if (resetTimer.current) clearTimeout(resetTimer.current);\r\n    try {\r\n      await saveSetting(next);\r\n      setStatus(\"saved\");\r\n      resetTimer.current = setTimeout(() => setStatus(\"idle\"), 2000);\r\n    } catch {\r\n      setEnabled(previous);\r\n      setStatus(\"error\");\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-2 rounded-lg border border-border bg-background p-4\">\r\n      <div className=\"flex items-start justify-between gap-4\">\r\n        <div className=\"flex flex-col gap-1\">\r\n          <Label htmlFor=\"two-factor\">Two-factor authentication</Label>\r\n          <p className=\"text-sm text-muted-foreground\">\r\n            Ask for a code from your authenticator app when signing in.\r\n          </p>\r\n        </div>\r\n        <Switch\r\n          id=\"two-factor\"\r\n          checked={enabled}\r\n          onCheckedChange={handleChange}\r\n          disabled={status === \"saving\"}\r\n          aria-describedby=\"two-factor-status\"\r\n        />\r\n      </div>\r\n      <p\r\n        id=\"two-factor-status\"\r\n        aria-live=\"polite\"\r\n        className={cn(\r\n          \"flex min-h-4 items-center gap-1.5 text-xs\",\r\n          status === \"error\" ? \"text-destructive\" : \"text-muted-foreground\",\r\n        )}\r\n      >\r\n        {status === \"saving\" && (\r\n          <>\r\n            <Spinner className=\"size-3\" aria-hidden=\"true\" />\r\n            Saving...\r\n          </>\r\n        )}\r\n        {status === \"saved\" && (\r\n          <>\r\n            <Check className=\"size-3 text-teal-400\" aria-hidden=\"true\" />\r\n            {enabled ? \"Two-factor authentication is on\" : \"Two-factor authentication is off\"}\r\n          </>\r\n        )}\r\n        {status === \"error\" && (\r\n          <>\r\n            <AlertCircle className=\"size-3\" aria-hidden=\"true\" />\r\n            Could not save. Your setting was not changed. Try again.\r\n          </>\r\n        )}\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SwitchDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/switch/switch-10.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

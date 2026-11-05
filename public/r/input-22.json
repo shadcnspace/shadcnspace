@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-22",
+  "title": "Input 22 - Search with Shortcut",
+  "description": "Search input with a Cmd/Ctrl K shortcut hint, loading spinner, clear button, and live result status.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "button",
+    "kbd",
+    "spinner"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/input/input-22.tsx",
+      "content": "'use client'\r\n\r\nimport { useEffect, useId, useRef, useState } from 'react'\r\n\r\nimport { SearchIcon, XIcon } from 'lucide-react'\r\n\r\nimport { Button } from '@/components/ui/button'\r\nimport { Input } from '@/components/ui/input'\r\nimport { Kbd, KbdGroup } from '@/components/ui/kbd'\r\nimport { Label } from '@/components/ui/label'\r\nimport { Spinner } from '@/components/ui/spinner'\r\n\r\nconst items = [\r\n  'Accordion',\r\n  'Alert',\r\n  'Avatar',\r\n  'Badge',\r\n  'Button',\r\n  'Button Group',\r\n  'Calendar',\r\n  'Card',\r\n  'Checkbox',\r\n  'Combobox',\r\n  'Dialog',\r\n  'Input',\r\n  'Select',\r\n  'Tabs',\r\n  'Tooltip'\r\n]\r\n\r\nconst InputSearchShortcutDemo = () => {\r\n  const [query, setQuery] = useState('')\r\n  const [isLoading, setIsLoading] = useState(false)\r\n  const [isMac, setIsMac] = useState(true)\r\n\r\n  const inputRef = useRef<HTMLInputElement>(null)\r\n\r\n  const id = useId()\r\n  const statusId = `${id}-status`\r\n\r\n  useEffect(() => {\r\n    setIsMac(/Mac|iPhone|iPad/.test(navigator.userAgent))\r\n\r\n    const handleKeyDown = (event: KeyboardEvent) => {\r\n      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {\r\n        event.preventDefault()\r\n        inputRef.current?.focus()\r\n      }\r\n    }\r\n\r\n    document.addEventListener('keydown', handleKeyDown)\r\n    return () => document.removeEventListener('keydown', handleKeyDown)\r\n  }, [])\r\n\r\n  useEffect(() => {\r\n    if (!query) {\r\n      setIsLoading(false)\r\n      return\r\n    }\r\n    setIsLoading(true)\r\n    const timeout = setTimeout(() => setIsLoading(false), 600)\r\n    return () => clearTimeout(timeout)\r\n  }, [query])\r\n\r\n  const results = items.filter(item => item.toLowerCase().includes(query.trim().toLowerCase()))\r\n\r\n  const handleClear = () => {\r\n    setQuery('')\r\n    inputRef.current?.focus()\r\n  }\r\n\r\n  return (\r\n    <div className='w-full max-w-xs space-y-2'>\r\n      <Label htmlFor={id}>Search components</Label>\r\n      <div className='relative'>\r\n        <SearchIcon\r\n          aria-hidden='true'\r\n          className='text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 size-4 -translate-y-1/2'\r\n        />\r\n        <Input\r\n          ref={inputRef}\r\n          id={id}\r\n          type='text'\r\n          role='searchbox'\r\n          enterKeyHint='search'\r\n          autoComplete='off'\r\n          placeholder='Search...'\r\n          value={query}\r\n          onChange={e => setQuery(e.target.value)}\r\n          onKeyDown={e => {\r\n            if (e.key === 'Escape') {\r\n              if (query) setQuery('')\r\n              else e.currentTarget.blur()\r\n            }\r\n          }}\r\n          aria-describedby={statusId}\r\n          aria-keyshortcuts='Meta+K Control+K'\r\n          className='pr-16 pl-8'\r\n        />\r\n        <div className='absolute inset-y-0 right-0 flex items-center pr-1.5'>\r\n          {isLoading ? (\r\n            <Spinner aria-hidden='true' className='text-muted-foreground mr-1 size-4' />\r\n          ) : query ? (\r\n            <Button\r\n              variant='ghost'\r\n              size='icon-xs'\r\n              onClick={handleClear}\r\n              aria-label='Clear search'\r\n              className='text-muted-foreground cursor-pointer'\r\n            >\r\n              <XIcon />\r\n            </Button>\r\n          ) : (\r\n            <KbdGroup aria-hidden='true'>\r\n              <Kbd>{isMac ? '⌘' : 'Ctrl'}</Kbd>\r\n              <Kbd>K</Kbd>\r\n            </KbdGroup>\r\n          )}\r\n        </div>\r\n      </div>\r\n      <p id={statusId} aria-live='polite' className='text-muted-foreground text-xs'>\r\n        {!query\r\n          ? `Press ${isMac ? '⌘' : 'Ctrl'} K to search from anywhere`\r\n          : isLoading\r\n            ? 'Searching...'\r\n            : results.length\r\n              ? `${results.length} ${results.length === 1 ? 'result' : 'results'}: ${results.slice(0, 3).join(', ')}${results.length > 3 ? '...' : ''}`\r\n              : `No results for \"${query}\"`}\r\n      </p>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default InputSearchShortcutDemo\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/input/input-22.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

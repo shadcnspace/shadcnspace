@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-12",
+  "title": "Textarea 12 - Autosave Draft",
+  "description": "Notes textarea that autosaves after you stop typing, with unsaved, saving, and saved x seconds ago states plus word count and read time.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "textarea",
+    "avatar",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/textarea/textarea-12.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useRef, useState } from \"react\";\r\nimport { Check, CloudOff, Loader2 } from \"lucide-react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\ntype Status = \"idle\" | \"typing\" | \"saving\" | \"saved\";\r\n\r\nconst DEBOUNCE_MS = 800;\r\n\r\nconst TextareaDemo = () => {\r\n  const [value, setValue] = useState(\"Meeting notes for the Q4 kickoff:\\n\\n\");\r\n  const [status, setStatus] = useState<Status>(\"idle\");\r\n  const [savedAt, setSavedAt] = useState<Date | null>(null);\r\n  const [now, setNow] = useState(() => Date.now());\r\n  const debounce = useRef<ReturnType<typeof setTimeout> | null>(null);\r\n  const save = useRef<ReturnType<typeof setTimeout> | null>(null);\r\n\r\n  useEffect(\r\n    () => () => {\r\n      if (debounce.current) clearTimeout(debounce.current);\r\n      if (save.current) clearTimeout(save.current);\r\n    },\r\n    [],\r\n  );\r\n\r\n  // Refresh the \"saved x seconds ago\" label.\r\n  useEffect(() => {\r\n    if (!savedAt) return;\r\n    const id = setInterval(() => setNow(Date.now()), 5000);\r\n    return () => clearInterval(id);\r\n  }, [savedAt]);\r\n\r\n  const handleChange = (next: string) => {\r\n    setValue(next);\r\n    setStatus(\"typing\");\r\n    if (debounce.current) clearTimeout(debounce.current);\r\n    if (save.current) clearTimeout(save.current);\r\n    debounce.current = setTimeout(() => {\r\n      setStatus(\"saving\");\r\n      save.current = setTimeout(() => {\r\n        setStatus(\"saved\");\r\n        setSavedAt(new Date());\r\n        setNow(Date.now());\r\n      }, 600);\r\n    }, DEBOUNCE_MS);\r\n  };\r\n\r\n  const ago = savedAt ? Math.max(0, Math.round((now - savedAt.getTime()) / 1000)) : 0;\r\n  const words = value.trim() ? value.trim().split(/\\s+/).length : 0;\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-md flex-col gap-2\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <Label htmlFor=\"notes\">Notes</Label>\r\n        <p className=\"flex items-center gap-1.5 text-xs text-muted-foreground\" aria-live=\"polite\">\r\n          {status === \"typing\" && (\r\n            <>\r\n              <CloudOff className=\"size-3.5\" aria-hidden=\"true\" />\r\n              Unsaved changes\r\n            </>\r\n          )}\r\n          {status === \"saving\" && (\r\n            <>\r\n              <Loader2 className=\"size-3.5 animate-spin motion-reduce:animate-none\" aria-hidden=\"true\" />\r\n              Saving\r\n            </>\r\n          )}\r\n          {status === \"saved\" && (\r\n            <>\r\n              <Check className=\"size-3.5 text-teal-400\" aria-hidden=\"true\" />\r\n              {ago < 5 ? \"Saved just now\" : ago < 60 ? `Saved ${ago}s ago` : `Saved ${Math.floor(ago / 60)}m ago`}\r\n            </>\r\n          )}\r\n          {status === \"idle\" && \"Changes save automatically\"}\r\n        </p>\r\n      </div>\r\n      <Textarea\r\n        id=\"notes\"\r\n        value={value}\r\n        onChange={(event) => handleChange(event.target.value)}\r\n        className=\"min-h-40\"\r\n      />\r\n      <p className=\"text-right text-xs text-muted-foreground tabular-nums\">\r\n        {words} {words === 1 ? \"word\" : \"words\"}, about {Math.max(1, Math.ceil(words / 200))} min read\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default TextareaDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/textarea/textarea-12.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

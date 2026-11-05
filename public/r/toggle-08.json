@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-08",
+  "title": "Toggle 08 - Editor View Options",
+  "description": "Code editor toolbar with word wrap, line numbers, and active line highlight toggles that update the code preview.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/toggle/toggle-08.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Highlighter, ListOrdered, WrapText } from \"lucide-react\";\r\n\r\nimport { Toggle } from \"@/components/ui/toggle\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst lines = [\r\n  \"import { Toggle } from \\\"@/components/ui/toggle\\\";\",\r\n  \"\",\r\n  \"export function WrapToggle({ wrap, onWrapChange }) {\",\r\n  \"  return <Toggle pressed={wrap} onPressedChange={onWrapChange}>Word wrap</Toggle>;\",\r\n  \"}\",\r\n];\r\n\r\nconst ACTIVE_LINE = 3;\r\n\r\nconst ToggleDemo = () => {\r\n  const [wrap, setWrap] = useState(false);\r\n  const [numbers, setNumbers] = useState(true);\r\n  const [highlight, setHighlight] = useState(true);\r\n\r\n  return (\r\n    <div className=\"w-full max-w-md overflow-hidden rounded-lg border border-border bg-background\">\r\n      <div className=\"flex items-center justify-between gap-2 border-b border-border px-3 py-2\">\r\n        <span className=\"text-xs font-medium text-muted-foreground\">\r\n          wrap-toggle.tsx\r\n        </span>\r\n        <div className=\"flex items-center gap-1\">\r\n          <Toggle\r\n            size=\"sm\"\r\n            pressed={wrap}\r\n            onPressedChange={setWrap}\r\n            aria-label=\"Word wrap\"\r\n          >\r\n            <WrapText />\r\n          </Toggle>\r\n          <Toggle\r\n            size=\"sm\"\r\n            pressed={numbers}\r\n            onPressedChange={setNumbers}\r\n            aria-label=\"Line numbers\"\r\n          >\r\n            <ListOrdered />\r\n          </Toggle>\r\n          <Toggle\r\n            size=\"sm\"\r\n            pressed={highlight}\r\n            onPressedChange={setHighlight}\r\n            aria-label=\"Highlight active line\"\r\n          >\r\n            <Highlighter />\r\n          </Toggle>\r\n        </div>\r\n      </div>\r\n      <div className={cn(\"py-2 font-mono text-xs\", !wrap && \"overflow-x-auto\")}>\r\n        {lines.map((line, index) => (\r\n          <div\r\n            key={index}\r\n            className={cn(\r\n              \"flex min-w-max\",\r\n              wrap && \"min-w-0\",\r\n              highlight && index === ACTIVE_LINE && \"bg-sky-400/10\",\r\n            )}\r\n          >\r\n            {numbers && (\r\n              <span className=\"w-8 shrink-0 select-none pr-3 text-right text-muted-foreground/60\">\r\n                {index + 1}\r\n              </span>\r\n            )}\r\n            <span\r\n              className={cn(\r\n                \"pr-3 text-foreground/90\",\r\n                !numbers && \"pl-3\",\r\n                wrap ? \"whitespace-pre-wrap break-all\" : \"whitespace-pre\",\r\n              )}\r\n            >\r\n              {line || \" \"}\r\n            </span>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ToggleDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/toggle/toggle-08.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

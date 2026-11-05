@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton-05",
+  "title": "Skeleton 05 - Loading to Content",
+  "description": "Blog card that shows a matching skeleton while loading, fades in the real content, and can be reloaded to replay the state.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "skeleton",
+    "avatar",
+    "badge",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/skeleton/skeleton-05.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useEffect, useRef, useState } from \"react\";\r\nimport { RotateCw } from \"lucide-react\";\r\n\r\nimport { Avatar, AvatarFallback } from \"@/components/ui/avatar\";\r\nimport { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Skeleton } from \"@/components/ui/skeleton\";\r\n\r\nconst SkeletonDemo = () => {\r\n  const [loading, setLoading] = useState(true);\r\n  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);\r\n\r\n  const load = () => {\r\n    setLoading(true);\r\n    if (timer.current) clearTimeout(timer.current);\r\n    timer.current = setTimeout(() => setLoading(false), 1600);\r\n  };\r\n\r\n  useEffect(() => {\r\n    load();\r\n    return () => {\r\n      if (timer.current) clearTimeout(timer.current);\r\n    };\r\n  }, []);\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\r\n      <article\r\n        aria-busy={loading}\r\n        className=\"overflow-hidden rounded-lg border border-border bg-background\"\r\n      >\r\n        {loading ? (\r\n          <>\r\n            <Skeleton className=\"aspect-video w-full rounded-none motion-reduce:animate-none\" />\r\n            <div className=\"flex flex-col gap-3 p-4\">\r\n              <Skeleton className=\"h-5 w-16 rounded-full motion-reduce:animate-none\" />\r\n              <div className=\"flex flex-col gap-2\">\r\n                <Skeleton className=\"h-5 w-full motion-reduce:animate-none\" />\r\n                <Skeleton className=\"h-5 w-2/3 motion-reduce:animate-none\" />\r\n              </div>\r\n              <div className=\"flex flex-col gap-1.5\">\r\n                <Skeleton className=\"h-3 w-full motion-reduce:animate-none\" />\r\n                <Skeleton className=\"h-3 w-5/6 motion-reduce:animate-none\" />\r\n              </div>\r\n              <div className=\"flex items-center gap-2 pt-1\">\r\n                <Skeleton className=\"size-7 rounded-full motion-reduce:animate-none\" />\r\n                <Skeleton className=\"h-3 w-24 motion-reduce:animate-none\" />\r\n              </div>\r\n            </div>\r\n            <span className=\"sr-only\">Loading article...</span>\r\n          </>\r\n        ) : (\r\n          <div className=\"animate-in fade-in-0 motion-reduce:animate-none\">\r\n            <div className=\"aspect-video w-full bg-linear-to-br from-sky-400/40 via-blue-500/30 to-teal-400/40\" />\r\n            <div className=\"flex flex-col gap-3 p-4\">\r\n              <Badge variant=\"secondary\" className=\"w-fit\">Engineering</Badge>\r\n              <h3 className=\"text-base font-medium text-foreground\">\r\n                How we cut our build times in half with incremental caching\r\n              </h3>\r\n              <p className=\"text-sm text-muted-foreground\">\r\n                A look at the cache layers, the mistakes we made, and the numbers after six months.\r\n              </p>\r\n              <div className=\"flex items-center gap-2 pt-1\">\r\n                <Avatar className=\"size-7\">\r\n                  <AvatarFallback className=\"bg-orange-400/20 text-xs text-foreground\">AP</AvatarFallback>\r\n                </Avatar>\r\n                <p className=\"text-xs text-muted-foreground\">Ava Patel, 6 min read</p>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        )}\r\n      </article>\r\n      <Button variant=\"outline\" size=\"sm\" onClick={load} disabled={loading} className=\"self-start\">\r\n        <RotateCw className={loading ? \"animate-spin motion-reduce:animate-none\" : undefined} />\r\n        Reload\r\n      </Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SkeletonDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/skeleton/skeleton-05.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-14",
+  "title": "Tabs 14 - Status Dots",
+  "description": "Underline tabs with colored status dots, counts, and a filtered project list per status.",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "tabs",
+    "badge",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/tabs/tabs-14.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\r\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";\r\n\r\ntype Status = \"live\" | \"review\" | \"draft\" | \"archived\";\r\n\r\nconst statuses: { value: Status; name: string; dot: string; pulse?: boolean }[] = [\r\n  { value: \"live\", name: \"Live\", dot: \"bg-teal-400\", pulse: true },\r\n  { value: \"review\", name: \"In Review\", dot: \"bg-amber-300\" },\r\n  { value: \"draft\", name: \"Draft\", dot: \"bg-sky-400\" },\r\n  { value: \"archived\", name: \"Archived\", dot: \"bg-muted-foreground\" },\r\n];\r\n\r\nconst projects: { name: string; url: string; updated: string; status: Status }[] = [\r\n  { name: \"Marketing Site\", url: \"shadcnspace.com\", updated: \"2h ago\", status: \"live\" },\r\n  { name: \"Docs\", url: \"docs.shadcnspace.com\", updated: \"5h ago\", status: \"live\" },\r\n  { name: \"Customer Portal\", url: \"portal.acme.dev\", updated: \"1d ago\", status: \"live\" },\r\n  { name: \"Pricing Redesign\", url: \"preview-412.acme.dev\", updated: \"30m ago\", status: \"review\" },\r\n  { name: \"Onboarding Flow\", url: \"preview-398.acme.dev\", updated: \"3h ago\", status: \"review\" },\r\n  { name: \"Mobile Dashboard\", url: \"Not deployed\", updated: \"Yesterday\", status: \"draft\" },\r\n  { name: \"Changelog\", url: \"Not deployed\", updated: \"2d ago\", status: \"draft\" },\r\n  { name: \"Holiday Campaign\", url: \"holiday.acme.dev\", updated: \"Jan 12\", status: \"archived\" },\r\n];\r\n\r\nconst StatusDot = ({ dot, pulse }: { dot: string; pulse?: boolean }) => (\r\n  <span aria-hidden=\"true\" className=\"relative flex size-2\">\r\n    {pulse && (\r\n      <span\r\n        className={cn(\r\n          \"absolute inline-flex size-full rounded-full opacity-75 motion-safe:animate-ping\",\r\n          dot,\r\n        )}\r\n      />\r\n    )}\r\n    <span className={cn(\"relative inline-flex size-2 rounded-full\", dot)} />\r\n  </span>\r\n);\r\n\r\nconst StatusDotsTabsDemo = () => {\r\n  return (\r\n    <div className=\"w-full max-w-lg\">\r\n      <Tabs defaultValue=\"live\" className=\"gap-4\">\r\n        <TabsList variant=\"line\" className=\"w-full justify-start\">\r\n          {statuses.map(({ value, name, dot, pulse }) => (\r\n            <TabsTrigger key={value} value={value} className=\"flex-none gap-2 px-2.5\">\r\n              <StatusDot dot={dot} pulse={pulse} />\r\n              {name}\r\n              <span className=\"rounded-md bg-muted px-1.5 text-xs text-muted-foreground tabular-nums\">\r\n                {projects.filter((project) => project.status === value).length}\r\n              </span>\r\n            </TabsTrigger>\r\n          ))}\r\n        </TabsList>\r\n\r\n        {statuses.map(({ value, name, dot }) => (\r\n          <TabsContent key={value} value={value}>\r\n            <ul className=\"divide-y divide-border rounded-xl border border-border\">\r\n              {projects\r\n                .filter((project) => project.status === value)\r\n                .map((project) => (\r\n                  <li\r\n                    key={project.name}\r\n                    className=\"flex items-center justify-between gap-4 px-4 py-3\"\r\n                  >\r\n                    <div className=\"flex min-w-0 items-center gap-3\">\r\n                      <StatusDot dot={dot} />\r\n                      <div className=\"min-w-0\">\r\n                        <p className=\"truncate font-medium text-foreground\">\r\n                          {project.name}\r\n                        </p>\r\n                        <p className=\"truncate text-xs text-muted-foreground\">\r\n                          {project.url}\r\n                        </p>\r\n                      </div>\r\n                    </div>\r\n                    <span className=\"shrink-0 text-xs text-muted-foreground\">\r\n                      <span className=\"sr-only\">{name}, updated </span>\r\n                      {project.updated}\r\n                    </span>\r\n                  </li>\r\n                ))}\r\n            </ul>\r\n          </TabsContent>\r\n        ))}\r\n      </Tabs>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default StatusDotsTabsDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/tabs/tabs-14.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -219,7 +219,7 @@ export const componentsMap: ComponentsMap = {
     url: "/components/textarea",
     blockName: "textarea",
     icon: TextCursorInput,
-    columns: 3,
+    columns: 2,
     description:
       "Browse Our 9+ Shadcn UI textarea components built with Nextjs, React, Tailwind CSS, and shadcn/ui. Ready to copy, customize, and use in real web projects.",
     image: "https://images.shadcnspace.com/assets/components/text-area.webp",
@@ -275,7 +275,7 @@ export const componentsMap: ComponentsMap = {
     url: "/components/checkbox",
     blockName: "checkbox",
     icon: TextCursorInput,
-    columns: 3,
+    columns: 2,
     description:
       "Discover a curated collection of Shadcn Checkbox components with 9+ customizable and interactive checkbox variants built using React and Tailwind CSS.",
     image: "https://images.shadcnspace.com/assets/components/checkbox.webp",
@@ -478,7 +478,7 @@ export const componentsMap: ComponentsMap = {
     headingTitle: "Shadcn Slider",
     icon: SquareChevronUp,
     blockName: "slider",
-    columns: 3,
+    columns: 2,
     description:
       "Discover our collection of Shadcn Slider components with customizable and interactive slider variants built using React and Tailwind CSS.",
     image: "https://images.shadcnspace.com/assets/components/slider.webp",

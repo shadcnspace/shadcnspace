@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-04",
+  "title": "Toggle 04 - Variants & Sizes",
+  "description": "Default and outline toggles in small, default, and large sizes with pressed, disabled, and text states.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/toggle/toggle-04.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Bold, Italic, Underline } from \"lucide-react\";\r\n\r\nimport { Toggle } from \"@/components/ui/toggle\";\r\n\r\nconst sizes = [\"sm\", \"default\", \"lg\"] as const;\r\n\r\nconst ToggleDemo = () => {\r\n  return (\r\n    <div className=\"flex flex-col gap-6\">\r\n      <div className=\"flex flex-col gap-2\">\r\n        <p className=\"text-xs font-medium text-muted-foreground\">Default</p>\r\n        <div className=\"flex items-center gap-2\">\r\n          {sizes.map((size) => (\r\n            <Toggle key={size} size={size} aria-label={`Toggle bold, ${size}`}>\r\n              <Bold />\r\n            </Toggle>\r\n          ))}\r\n          <Toggle defaultPressed aria-label=\"Toggle italic\">\r\n            <Italic />\r\n          </Toggle>\r\n          <Toggle disabled aria-label=\"Toggle underline\">\r\n            <Underline />\r\n          </Toggle>\r\n        </div>\r\n      </div>\r\n\r\n      <div className=\"flex flex-col gap-2\">\r\n        <p className=\"text-xs font-medium text-muted-foreground\">Outline</p>\r\n        <div className=\"flex items-center gap-2\">\r\n          {sizes.map((size) => (\r\n            <Toggle\r\n              key={size}\r\n              variant=\"outline\"\r\n              size={size}\r\n              aria-label={`Toggle bold, ${size}`}\r\n            >\r\n              <Bold />\r\n            </Toggle>\r\n          ))}\r\n          <Toggle variant=\"outline\" defaultPressed aria-label=\"Toggle italic\">\r\n            <Italic />\r\n          </Toggle>\r\n          <Toggle variant=\"outline\" disabled aria-label=\"Toggle underline\">\r\n            <Underline />\r\n          </Toggle>\r\n        </div>\r\n      </div>\r\n\r\n      <div className=\"flex flex-col gap-2\">\r\n        <p className=\"text-xs font-medium text-muted-foreground\">With text</p>\r\n        <div className=\"flex items-center gap-2\">\r\n          <Toggle variant=\"outline\">\r\n            <Bold />\r\n            Bold\r\n          </Toggle>\r\n          <Toggle variant=\"outline\" defaultPressed>\r\n            <Italic />\r\n            Italic\r\n          </Toggle>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ToggleDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/toggle/toggle-04.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

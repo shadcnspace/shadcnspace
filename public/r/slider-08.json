@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-08",
+  "title": "Slider 08 - With Number Input",
+  "description": "Opacity slider kept in sync with a number input that clamps and rounds typed values, plus a live preview swatch.",
+  "dependencies": [
+    "motion",
+    "@number-flow/react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/slider/slider-08.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Slider } from \"@/components/ui/slider\";\r\n\r\nconst MIN = 0;\r\nconst MAX = 100;\r\n\r\nconst SliderDemo = () => {\r\n  const [value, setValue] = useState(64);\r\n  const [draft, setDraft] = useState(\"64\");\r\n\r\n  const commit = (raw: string) => {\r\n    const parsed = Number(raw);\r\n    const next = Number.isFinite(parsed) && raw.trim() !== \"\" ? Math.min(Math.max(Math.round(parsed), MIN), MAX) : value;\r\n    setValue(next);\r\n    setDraft(String(next));\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-3\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <Label id=\"opacity-label\" htmlFor=\"opacity-input\">\r\n          Layer opacity\r\n        </Label>\r\n        <div className=\"flex items-center gap-1\">\r\n          <Input\r\n            id=\"opacity-input\"\r\n            type=\"number\"\r\n            inputMode=\"numeric\"\r\n            min={MIN}\r\n            max={MAX}\r\n            value={draft}\r\n            onChange={(event) => setDraft(event.target.value)}\r\n            onBlur={(event) => commit(event.target.value)}\r\n            onKeyDown={(event) => event.key === \"Enter\" && commit(event.currentTarget.value)}\r\n            className=\"h-7 w-16 text-right tabular-nums\"\r\n          />\r\n          <span className=\"text-sm text-muted-foreground\">%</span>\r\n        </div>\r\n      </div>\r\n      <Slider\r\n        aria-labelledby=\"opacity-label\"\r\n        min={MIN}\r\n        max={MAX}\r\n        value={[value]}\r\n        onValueChange={(next) => {\r\n          // Base UI returns a number (not an array) when there is one thumb.\r\n          const number = Array.isArray(next) ? next[0] : (next as number);\r\n          setValue(number);\r\n          setDraft(String(number));\r\n        }}\r\n      />\r\n      <div\r\n        className=\"flex h-20 items-center justify-center rounded-lg border border-border bg-muted/40\"\r\n        aria-hidden=\"true\"\r\n      >\r\n        <div className=\"size-12 rounded-md bg-blue-500\" style={{ opacity: value / 100 }} />\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SliderDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/slider/slider-08.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

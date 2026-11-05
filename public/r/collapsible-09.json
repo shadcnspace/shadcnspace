@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-09",
+  "title": "Collapsible 09 - Expandable Code",
+  "description": "Code snippet that shows the first lines with line numbers and a fade, and expands to the full file with a Show more lines toggle.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "collapsible",
+    "button",
+    "input",
+    "label",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/collapsible/collapsible-09.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, type ReactNode } from \"react\";\r\nimport { ChevronsDownUp, ChevronsUpDown } from \"lucide-react\";\r\n\r\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@/components/ui/collapsible\";\r\n\r\nconst code = `import { Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@/components/ui/collapsible\";\r\n\r\nexport function Faq({ question, answer }: { question: string; answer: string }) {\r\n  return (\r\n    <Collapsible>\r\n      <CollapsibleTrigger className=\"flex w-full items-center justify-between\">\r\n        {question}\r\n      </CollapsibleTrigger>\r\n      <CollapsibleContent>\r\n        <p className=\"pt-2 text-muted-foreground\">{answer}</p>\r\n      </CollapsibleContent>\r\n    </Collapsible>\r\n  );\r\n}`;\r\n\r\nconst PREVIEW_LINES = 5;\r\n\r\n// Tiny TSX highlighter: strings, keywords, JSX tags, attributes, and punctuation. No dependencies.\r\nconst tokenPattern =\r\n  /(\"[^\"]*\"|'[^']*'|`[^`]*`)|\\b(import|from|export|default|function|return|const|let|type|interface)\\b|(<\\/?)([A-Za-z][\\w.]*)|([A-Za-z-]+)(?==)|([{}()[\\]<>/=;:,.])/g;\r\n\r\nfunction highlight(line: string): ReactNode[] {\r\n  const nodes: ReactNode[] = [];\r\n  let last = 0;\r\n  for (const match of line.matchAll(tokenPattern)) {\r\n    const index = match.index ?? 0;\r\n    if (index > last) nodes.push(line.slice(last, index));\r\n    const [full, string, keyword, tagOpen, tagName, attribute] = match;\r\n    if (string) nodes.push(<span key={index} className=\"text-teal-400\">{string}</span>);\r\n    else if (keyword) nodes.push(<span key={index} className=\"text-blue-500\">{keyword}</span>);\r\n    else if (tagName)\r\n      nodes.push(\r\n        <span key={index}>\r\n          <span className=\"text-muted-foreground\">{tagOpen}</span>\r\n          <span className=\"text-sky-400\">{tagName}</span>\r\n        </span>,\r\n      );\r\n    else if (attribute) nodes.push(<span key={index} className=\"text-orange-400\">{attribute}</span>);\r\n    else nodes.push(<span key={index} className=\"text-muted-foreground\">{full}</span>);\r\n    last = index + full.length;\r\n  }\r\n  if (last < line.length) nodes.push(line.slice(last));\r\n  return nodes;\r\n}\r\n\r\nconst CollapsibleDemo = () => {\r\n  const [open, setOpen] = useState(false);\r\n  const lines = code.split(\"\\n\");\r\n  const preview = lines.slice(0, PREVIEW_LINES);\r\n  const rest = lines.slice(PREVIEW_LINES);\r\n\r\n  const renderLines = (list: string[], offset: number) =>\r\n    list.map((line, index) => (\r\n      <div key={index + offset} className=\"flex\">\r\n        <span className=\"w-8 shrink-0 pr-3 text-right text-muted-foreground/60 select-none\">{index + offset + 1}</span>\r\n        <span className=\"whitespace-pre text-foreground/90\">{line ? highlight(line) : \" \"}</span>\r\n      </div>\r\n    ));\r\n\r\n  return (\r\n    <Collapsible open={open} onOpenChange={setOpen} className=\"w-full max-w-lg overflow-hidden rounded-lg border border-border bg-background\">\r\n      <div className=\"flex items-center justify-between border-b border-border px-3 py-2\">\r\n        <span className=\"font-mono text-xs text-muted-foreground\">faq.tsx</span>\r\n        <span className=\"text-xs text-muted-foreground tabular-nums\">{lines.length} lines</span>\r\n      </div>\r\n      <div className=\"relative overflow-x-auto py-2 font-mono text-xs\">\r\n        {renderLines(preview, 0)}\r\n        <CollapsibleContent>{renderLines(rest, PREVIEW_LINES)}</CollapsibleContent>\r\n        {!open && (\r\n          <div\r\n            aria-hidden=\"true\"\r\n            className=\"pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-linear-to-t from-background to-transparent\"\r\n          />\r\n        )}\r\n      </div>\r\n      <CollapsibleTrigger className=\"flex w-full items-center justify-center gap-1.5 border-t border-border py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted/50 hover:text-foreground focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring\">\r\n        {open ? <ChevronsDownUp className=\"size-3.5\" aria-hidden=\"true\" /> : <ChevronsUpDown className=\"size-3.5\" aria-hidden=\"true\" />}\r\n        {open ? \"Collapse\" : `Show ${rest.length} more lines`}\r\n      </CollapsibleTrigger>\r\n    </Collapsible>\r\n  );\r\n};\r\n\r\nexport default CollapsibleDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/collapsible/collapsible-09.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-17",
+  "title": "Alert 17 - Announcement Banner",
+  "description": "Full width announcement bar for the top of a page with an icon, a call to action link, and a dismiss button.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/alert/alert-17.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { ArrowRight, Megaphone, XIcon } from \"lucide-react\";\r\n\r\nconst AlertDemo = () => {\r\n  const [open, setOpen] = useState(true);\r\n\r\n  return (\r\n    <div className=\"w-full max-w-2xl overflow-hidden rounded-lg border border-border bg-background\">\r\n      {open && (\r\n        <div\r\n          role=\"region\"\r\n          aria-label=\"Announcement\"\r\n          className=\"flex items-center gap-3 bg-gray-950 px-4 py-2.5 text-sm text-white dark:bg-muted dark:text-foreground\"\r\n        >\r\n          <Megaphone className=\"hidden size-4 shrink-0 text-amber-300 sm:block\" aria-hidden=\"true\" />\r\n          <p className=\"min-w-0 flex-1 text-center sm:text-left\">\r\n            <span className=\"font-medium\">Launch week is live.</span>{\" \"}\r\n            <span className=\"opacity-80\">Five new features, one every day.</span>{\" \"}\r\n            <a\r\n              href=\"#\"\r\n              className=\"inline-flex items-center gap-1 font-medium underline-offset-4 transition-opacity hover:underline hover:opacity-90\"\r\n            >\r\n              See what is new\r\n              <ArrowRight className=\"size-3.5\" aria-hidden=\"true\" />\r\n            </a>\r\n          </p>\r\n          <button\r\n            type=\"button\"\r\n            onClick={() => setOpen(false)}\r\n            aria-label=\"Dismiss announcement\"\r\n            className=\"shrink-0 rounded-sm p-1 opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-2 focus-visible:outline-amber-300\"\r\n          >\r\n            <XIcon className=\"size-4\" />\r\n          </button>\r\n        </div>\r\n      )}\r\n      <div className=\"flex h-32 flex-col items-center justify-center gap-2 p-6 text-center\">\r\n        <p className=\"text-sm text-muted-foreground\">Page content</p>\r\n        {!open && (\r\n          <button\r\n            type=\"button\"\r\n            onClick={() => setOpen(true)}\r\n            className=\"text-xs text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline\"\r\n          >\r\n            Show banner again\r\n          </button>\r\n        )}\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default AlertDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/alert/alert-17.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

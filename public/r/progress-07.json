@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-07",
+  "title": "Progress 07 - Segmented Storage",
+  "description": "Multi segment storage bar showing photos, apps, documents, system, and other usage with a legend and free space.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/progress/progress-07.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\r\n\r\nconst TOTAL_GB = 256;\r\n\r\nconst segments = [\r\n  { label: \"Photos\", gb: 92.4, color: \"bg-orange-400\" },\r\n  { label: \"Apps\", gb: 48.1, color: \"bg-blue-500\" },\r\n  { label: \"Documents\", gb: 21.6, color: \"bg-teal-400\" },\r\n  { label: \"System\", gb: 18.9, color: \"bg-sky-400\" },\r\n  { label: \"Other\", gb: 12.3, color: \"bg-amber-300\" },\r\n];\r\n\r\nconst ProgressDemo = () => {\r\n  const used = segments.reduce((sum, segment) => sum + segment.gb, 0);\r\n  const free = TOTAL_GB - used;\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-md flex-col gap-4 rounded-lg border border-border bg-background p-5\">\r\n      <div className=\"flex items-baseline justify-between\">\r\n        <p className=\"text-sm font-medium text-foreground\">Storage</p>\r\n        <p className=\"text-sm text-muted-foreground tabular-nums\">\r\n          {used.toFixed(1)} GB of {TOTAL_GB} GB used\r\n        </p>\r\n      </div>\r\n\r\n      <div\r\n        role=\"img\"\r\n        aria-label={`${segments.map((segment) => `${segment.label} ${segment.gb} GB`).join(\", \")}, ${free.toFixed(1)} GB free`}\r\n        className=\"flex h-3 w-full gap-0.5 overflow-hidden rounded-full bg-muted\"\r\n      >\r\n        {segments.map((segment) => (\r\n          <div\r\n            key={segment.label}\r\n            className={cn(\"h-full first:rounded-l-full\", segment.color)}\r\n            style={{ width: `${(segment.gb / TOTAL_GB) * 100}%` }}\r\n          />\r\n        ))}\r\n      </div>\r\n\r\n      <ul className=\"grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3\">\r\n        {segments.map((segment) => (\r\n          <li key={segment.label} className=\"flex items-center gap-2 text-sm\">\r\n            <span className={cn(\"size-2 shrink-0 rounded-full\", segment.color)} aria-hidden=\"true\" />\r\n            <span className=\"text-foreground\">{segment.label}</span>\r\n            <span className=\"ml-auto text-muted-foreground tabular-nums sm:ml-0\">{segment.gb} GB</span>\r\n          </li>\r\n        ))}\r\n        <li className=\"flex items-center gap-2 text-sm\">\r\n          <span className=\"size-2 shrink-0 rounded-full border border-border bg-muted\" aria-hidden=\"true\" />\r\n          <span className=\"text-foreground\">Free</span>\r\n          <span className=\"ml-auto text-muted-foreground tabular-nums sm:ml-0\">{free.toFixed(1)} GB</span>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ProgressDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/progress/progress-07.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-04",
+  "title": "Pagination 04 - Numbered with Ellipsis",
+  "description": "Classic numbered pagination that always shows the first and last page, collapses the rest into ellipses, and disables Previous and Next at the ends.",
+  "dependencies": [],
+  "registryDependencies": [
+    "pagination"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/pagination/pagination-04.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState, type MouseEvent } from \"react\";\r\n\r\nimport {\r\n  Pagination,\r\n  PaginationContent,\r\n  PaginationEllipsis,\r\n  PaginationItem,\r\n  PaginationLink,\r\n  PaginationNext,\r\n  PaginationPrevious,\r\n} from \"@/components/ui/pagination\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst TOTAL_PAGES = 20;\r\n\r\n// Always show the first and last page, plus one page on each side of the current one.\r\nfunction getPageRange(current: number, total: number): (number | \"ellipsis\")[] {\r\n  if (total <= 7) return Array.from({ length: total }, (_, index) => index + 1);\r\n  const pages = new Set([1, total, current - 1, current, current + 1]);\r\n  if (current <= 3) [2, 3, 4].forEach((page) => pages.add(page));\r\n  if (current >= total - 2) [total - 3, total - 2, total - 1].forEach((page) => pages.add(page));\r\n  const sorted = [...pages].filter((page) => page >= 1 && page <= total).sort((a, b) => a - b);\r\n\r\n  return sorted.flatMap((page, index) =>\r\n    index > 0 && page - sorted[index - 1] > 1 ? ([\"ellipsis\", page] as const) : [page],\r\n  );\r\n}\r\n\r\nconst PaginationDemo = () => {\r\n  const [page, setPage] = useState(6);\r\n\r\n  const go = (next: number) => (event: MouseEvent) => {\r\n    event.preventDefault();\r\n    setPage(Math.min(Math.max(next, 1), TOTAL_PAGES));\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-center gap-3\">\r\n      <Pagination>\r\n        <PaginationContent>\r\n          <PaginationItem>\r\n            <PaginationPrevious\r\n              href=\"#\"\r\n              onClick={go(page - 1)}\r\n              aria-disabled={page === 1}\r\n              className={cn(page === 1 && \"pointer-events-none opacity-50\")}\r\n            />\r\n          </PaginationItem>\r\n          {getPageRange(page, TOTAL_PAGES).map((item, index) =>\r\n            item === \"ellipsis\" ? (\r\n              <PaginationItem key={`ellipsis-${index}`}>\r\n                <PaginationEllipsis />\r\n              </PaginationItem>\r\n            ) : (\r\n              <PaginationItem key={item}>\r\n                <PaginationLink href=\"#\" isActive={item === page} onClick={go(item)} className=\"tabular-nums\">\r\n                  {item}\r\n                </PaginationLink>\r\n              </PaginationItem>\r\n            ),\r\n          )}\r\n          <PaginationItem>\r\n            <PaginationNext\r\n              href=\"#\"\r\n              onClick={go(page + 1)}\r\n              aria-disabled={page === TOTAL_PAGES}\r\n              className={cn(page === TOTAL_PAGES && \"pointer-events-none opacity-50\")}\r\n            />\r\n          </PaginationItem>\r\n        </PaginationContent>\r\n      </Pagination>\r\n      <p className=\"text-xs text-muted-foreground tabular-nums\" aria-live=\"polite\">\r\n        Page {page} of {TOTAL_PAGES}\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default PaginationDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/pagination/pagination-04.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

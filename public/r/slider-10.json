@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-10",
+  "title": "Slider 10 - Floating Value Label",
+  "description": "Decimal slider with a value label that follows the thumb, grows while dragging, and a Precise / Balanced / Creative hint.",
+  "dependencies": [],
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "src/components/shadcn-space/slider/slider-10.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { Label } from \"@/components/ui/label\";\r\nimport { Slider } from \"@/components/ui/slider\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nconst MIN = 0;\r\nconst MAX = 2;\r\nconst STEP = 0.1;\r\n\r\n// Matches the slider's edge-aligned thumb so the label sits right above it.\r\nconst thumbLeft = (value: number) => `calc(6px + (100% - 12px) * ${(value - MIN) / (MAX - MIN)})`;\r\n\r\nconst describe = (value: number) => {\r\n  if (value < 0.4) return \"Precise\";\r\n  if (value < 1.2) return \"Balanced\";\r\n  return \"Creative\";\r\n};\r\n\r\nconst SliderDemo = () => {\r\n  const [value, setValue] = useState(0.7);\r\n  const [active, setActive] = useState(false);\r\n\r\n  return (\r\n    <div className=\"flex w-full max-w-sm flex-col gap-2\">\r\n      <div className=\"flex items-center justify-between\">\r\n        <Label id=\"temperature-label\">Temperature</Label>\r\n        <span className=\"text-xs text-muted-foreground\">{describe(value)}</span>\r\n      </div>\r\n      <div className=\"relative pt-8\">\r\n        <span\r\n          aria-hidden=\"true\"\r\n          style={{ left: thumbLeft(value) }}\r\n          className={cn(\r\n            \"pointer-events-none absolute top-0 -translate-x-1/2 rounded-md bg-foreground px-1.5 py-0.5 text-xs font-medium text-background tabular-nums transition-transform motion-reduce:transition-none\",\r\n            active ? \"scale-110\" : \"scale-100\",\r\n          )}\r\n        >\r\n          {value.toFixed(1)}\r\n        </span>\r\n        <Slider\r\n          aria-labelledby=\"temperature-label\"\r\n          min={MIN}\r\n          max={MAX}\r\n          step={STEP}\r\n          value={[value]}\r\n          onValueChange={(next) => setValue(Array.isArray(next) ? next[0] : (next as number))}\r\n          onPointerDown={() => setActive(true)}\r\n          onPointerUp={() => setActive(false)}\r\n          onPointerLeave={() => setActive(false)}\r\n        />\r\n      </div>\r\n      <div className=\"flex justify-between text-xs text-muted-foreground tabular-nums\" aria-hidden=\"true\">\r\n        <span>{MIN.toFixed(1)}</span>\r\n        <span>{MAX.toFixed(1)}</span>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default SliderDemo;\r\n",
+      "type": "registry:component",
+      "target": "components/shadcn-space/slider/slider-10.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
